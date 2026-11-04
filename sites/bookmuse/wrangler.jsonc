@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // The Bookmuse landing (bookmuse.wanngo.com): static files only. Share links, the AI-agent sign-in page and the
+  // universal-link files live on the dashboard host (bookmuse-app.wanngo.com, bookmuse_web), not here.
+  "name": "bookmuse-landing",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  },
+  "routes": [{ "pattern": "bookmuse.wanngo.com", "custom_domain": true }],
+  "workers_dev": false
+}
