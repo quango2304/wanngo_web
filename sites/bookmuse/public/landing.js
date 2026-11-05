@@ -5,6 +5,16 @@
   var islands = Array.prototype.slice.call(document.querySelectorAll('button[data-sound]'));
   var story = document.querySelector('.story');
   var still = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // The Bookmuse icon sits in the middle of the phone until the clip is playing (CSS draws it on .wait).
+  videos.forEach(function (video) {
+    var screen = video.parentNode;
+    if (still.matches && !video.dataset.sound) return;
+    screen.classList.add('wait');
+    function ready() { screen.classList.remove('wait'); }
+    video.addEventListener('playing', ready, { once: true });
+    video.addEventListener('error', ready, { once: true });
+  });
   var step = 0;
   var sound = null;
 

@@ -36,6 +36,9 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .bezel { padding: 2.4em; border-radius: 16em; background: #080706; }
 .screen { position: relative; display: block; overflow: hidden; aspect-ratio: 1206 / 2622; border-radius: 13.7em; background: #f4ede4; transform: translateZ(0); }
 .screen video, .screen img { width: 100%; height: 100%; object-fit: cover; }
+.screen::after, .scr::after { content: ""; position: absolute; z-index: 4; top: 50%; left: 50%; width: 24%; aspect-ratio: 1; margin: -12% 0 0 -12%; border-radius: 22%; background: url(/assets/icon.png) center / cover; box-shadow: 0 10px 28px -8px rgba(0, 0, 0, 0.45); opacity: 0; transform: scale(0.9); transition: opacity 0.4s ease, transform 0.4s var(--ease); pointer-events: none; }
+.screen.wait::after, .scr.wait::after { opacity: 1; transform: none; animation: breathe 1.6s ease-in-out infinite; }
+@keyframes breathe { 50% { transform: scale(1.06); } }
 .island { position: absolute; z-index: 5; top: 1.42%; left: 50%; width: 32%; height: 4.65%; margin-left: -16%; border-radius: 99px; background: #000; }
 .scr { position: absolute; inset: 0; opacity: 0; transform: scale(1.04); transition: opacity 0.6s ease, transform 0.9s var(--ease); }
 
@@ -156,7 +159,7 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .live::after, .eq i { animation: none; }
+  .live::after, .eq i, .screen.wait::after, .scr.wait::after { animation: none; }
   .eq i { transform: scaleY(0.7); }
   .scr, .step, .store, .live { transition: none; }
 }
