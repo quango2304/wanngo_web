@@ -111,7 +111,7 @@
 
   // Lights: id, group, x, y, radius
   const LIGHTS = [
-    { id: 'desk', group: 'desk', x: 88, y: 128, r: 78, c: '255,206,130' },
+    { id: 'desk', group: 'desk', x: 97, y: 128, r: 78, c: '255,206,130' },
     { id: 'lantern', group: 'lantern', x: 438, y: 46, r: 100, c: '255,224,170' },
     { id: 'tv', group: 'tv', x: 445, y: 140, r: 64, c: '150,190,255' }
   ];
@@ -135,7 +135,7 @@
     tall: [[230, 400], [60, 470], [150, 345], [70, 345]]
   };
 
-  // Every piece of furniture is its own sprite in room-flat-d.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-flat-e.png: [x, y, w, h]
   const KIT = {
     fig: [0, 0, 62, 139], shelf: [63, 0, 88, 122], window: [152, 0, 98, 90],
     bed: [251, 0, 151, 86], bedSleep: [0, 140, 151, 86], chair: [152, 140, 39, 70],
@@ -171,7 +171,7 @@
     { id: 'snake', sprite: 'snake', group: 'snake', x: 40, y: 165, base: 232 },
     { id: 'desk', sprite: 'desk', group: 'desk', x: 72, y: 164, base: 226 },
     { id: 'monitor', sprite: 'monitor', group: 'desk', x: 86, y: 96, base: 226.2 },
-    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 62, y: 112, base: 226.25 },
+    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 71, y: 112, base: 226.25 },
     { id: 'tower', sprite: 'tower', group: 'desk', x: 168, y: 107, base: 226.2 },
     { id: 'keyboard', sprite: 'keyboard', group: 'desk', x: 104, y: 159, base: 226.3 },
     { id: 'table', sprite: 'table', group: 'coffee', x: 198, y: 191, base: 226 },
@@ -237,7 +237,7 @@
   const THINGS = [
     { id: 'ac', label: 'air conditioner', group: 'ac', x: 470, y: 14, w: 97, h: 42, act: () => toggleAC() },
     { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 420, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
-    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 62, y: 112, w: 38, h: 54, act: () => toggleLamp('desk') },
+    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 71, y: 112, w: 38, h: 54, act: () => toggleLamp('desk') },
     { id: 'window', label: 'window', group: 'window', x: 282, y: 30, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
     { id: 'clock', label: 'clock', group: 'clock', x: 212, y: 90, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
     { id: 'cork', label: 'cork board', group: 'cork', x: 90, y: 66, w: 58, h: 44, say: 'todo: fewer todos' },
@@ -1444,7 +1444,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-flat-d')]);
+  const assets = fonts.concat([load('kit', 'room-flat-e')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
