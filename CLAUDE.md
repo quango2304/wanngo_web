@@ -5,7 +5,7 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
 
 | Site | Folder | Worker | Hosts |
 |---|---|---|---|
-| Personal home: "the little room" (Three.js + 2D cutout/keyframe scene) | `sites/home` | `wanngo-home` | `wanngo.com`, `www.wanngo.com` |
+| Personal home: "the little room" (pixel-art canvas game) | `sites/home` | `wanngo-home` | `wanngo.com`, `www.wanngo.com` |
 | Bookmuse landing, privacy, support, delete-account (en, `/vi/`, `/es/`) | `sites/bookmuse` | `bookmuse-landing` | `bookmuse.wanngo.com` |
 
 - Each site is a Worker with static assets only (`wrangler.jsonc` + `public/`, `_headers` for headers): no script, so every
@@ -19,7 +19,7 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
   (the `bookmuse_web` dashboard), not on the landing. The landing's Sign in buttons link straight to that dashboard.
 - Bookmuse's privacy policy and deletion page are linked from the apps, App Store Connect, Play Console, Google and Dropbox:
   when a Bookmuse feature changes what data is kept or sent, update en/vi/es together.
-- **Home's animated room** (`sites/home/public/`) is an interactive 2.5D/3D Three.js diorama (`index.html`, `style.css`, `game.js`) with 60 FPS skeletal cutout animation (`dev_part_*.png`, `cat_part_*.png`) and pixel-locked keyframes (`dev_coding_*.png`, `dev_sleeping_*.png`, `cat_sit_*.png`) in `public/assets/`.
+- **Home's room** (`sites/home/public/`) is a pixel-art canvas game (`index.html`, `style.css`, `game.js`, no libraries): a fixed room you click around in, on Vietnam time. Art is in `public/assets/room/`: `room-wide.png` (480x268) and `room-tall.png` (270x580, the same furniture rearranged) plus sprite sheets. Sunlight, lamps, night and weather are drawn in code, not baked in the art. `?hour=3` pins the clock for testing.
 - Run locally: `npm ci`, then `npm run dev:bookmuse` (http://localhost:8788) or `npm run dev:home` (http://localhost:8790).
 - **Deploy:** push a tag `<site>-vX.Y.Z` (`bookmuse-v1.0.0`, `home-v1.0.0`); `.github/workflows/deploy.yml` runs
   `wrangler deploy` for that site. Pushing to `main` never deploys. Never push a tag unless the owner asks.
