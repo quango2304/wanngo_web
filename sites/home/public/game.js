@@ -186,6 +186,11 @@
   [[401, 111], [423, 108], [445, 105], [401, 143], [423, 140], [445, 137]].forEach(([x, y], i) => {
     ROOM.push({ id: 'item' + i, sprite: 'icon' + i, group: 'shelf', x, y, base: 232.5 });
   });
+  const SHADOWS = [
+    ['plants', 30, 223, 20, 4], ['snake', 52, 228, 15, 3], ['desk', 150, 222, 50, 13], ['coffee', 224, 205, 24, 3],
+    ['bed', 252, 226, 58, 12], ['bag', 293, 251, 29, 5], ['shelf', 338, 224, 37, 3], ['shelf', 426, 231, 48, 4],
+    ['shelf', 375, 240, 19, 3], ['shelf', 410, 258, 22, 3], ['mat', 185, 261, 11, 2]
+  ];
   const ROOM_BY_ID = {};
   ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
   const DESK_LINE = 190; // sitting, he's above the desk over this line and under it below
@@ -491,7 +496,11 @@
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
       [[0, 1], [10, 0.6]].forEach(([inset, k]) => {
-        ctx.fillStyle = `rgba(255,214,140,${a * k})`;
+        const glow = ctx.createLinearGradient(0, oy + gy, 0, oy + floorY);
+        glow.addColorStop(0, `rgba(255,214,140,${a * k})`);
+        glow.addColorStop(0.7, `rgba(255,214,140,${a * k * 0.7})`);
+        glow.addColorStop(1, 'rgba(255,214,140,0)');
+        ctx.fillStyle = glow;
         ctx.beginPath();
         ctx.moveTo(ox + gx + inset, oy + gy);
         ctx.lineTo(ox + gx + GLASS.w - inset, oy + gy);
@@ -625,6 +634,8 @@
     wave: ['dev-wave', 120, 120],
     stand: ['dev-stand', 120, 156],
     walk: ['dev-steps', 120, 156],
+    sit: ['dev-sit', 120, 156],
+    drop: ['dev-drop', 160, 156],
     back: ['dev-back', 96, 96],
     push: ['dev-push', 144, 72],
     catIdle: ['cat-idle', 56, 56],
@@ -722,7 +733,7 @@
   // 6. DEV
   // --------------------------------------------------------------------------
   // dev.x / dev.y are the top-left of a 120x156 canvas, feet at y + 146
-  const dev = { state: 'code', x: 0, y: 0, flip: false, wait: 0, breakIn: 60, thought: 8, pokes: 0, pokedAt: 0 };
+  const dev = { state: 'code', bed: 0, bedTo: 0, x: 0, y: 0, flip: false, wait: 0, breakIn: 60, thought: 8, pokes: 0, pokedAt: 0 };
 
   function seat() {
     const [x, y] = at('desk', 46, 122);
@@ -801,9 +812,9 @@
 
   function playGames() {
     standUp(() => walkTo(feetTo(SPOTS.game), () => {
-      dev.state = 'down';
+      dev.state = 'settle';
       dev.flip = false;
-      play(dev, 'stand', seq(8, 3), 12, false, () => {
+      play(dev, 'sit', seq(0, 8), 11, false, () => {
         dev.state = 'play';
         dev.wait = 10 + Math.random() * 6;
         dev.lineIn = 3;
@@ -814,9 +825,9 @@
 
   function doPushUps() {
     standUp(() => walkTo(feetTo(SPOTS.mat), () => {
-      dev.state = 'down';
+      dev.state = 'settle';
       dev.flip = false;
-      play(dev, 'stand', seq(8, 3), 12, false, () => {
+      play(dev, 'drop', seq(0, 8), 12, false, () => {
         dev.state = 'push';
         dev.wait = 9;
         dev.reps = 0;
@@ -827,8 +838,9 @@
   }
 
   function getUp(then) {
+    const clip = dev.sheet === 'back' ? 'sit' : 'drop';
     dev.state = 'up';
-    play(dev, 'stand', seq(3, 8), 12, false, then);
+    play(dev, clip, seq(8, 0), 12, false, then);
   }
 
   function visit(spot) {
@@ -846,6 +858,7 @@
   function nap() {
     standUp(() => walkTo(feetTo(SPOTS.bed), () => {
       dev.state = 'sleep';
+      dev.bedTo = 1;
       dev.napFor = 10;
       sayDev('quick nap');
     }));
@@ -874,6 +887,7 @@
     dev.state = 'pause';
     dev.wait = 1;
     dev.napFor = 0;
+    dev.bedTo = 0;
     sayDev(line);
     play(dev, 'stand', [8], 1, true);
   }
@@ -881,6 +895,7 @@
   function goToBed() {
     const toBed = () => walkTo(feetTo(SPOTS.bed), () => {
       dev.state = 'sleep';
+      dev.bedTo = 1;
       sayDev('goodnight');
     });
     if (dev.state === 'code') standUp(toBed);
@@ -963,6 +978,8 @@
       }
     }
     if (dev.state !== 'sleep') stepClip(dev, dt);
+    const fade = still ? 1 : dt / 0.5;
+    dev.bed = dev.bedTo > dev.bed ? Math.min(1, dev.bed + fade) : Math.max(0, dev.bed - fade);
   }
 
   // Jump straight to a sensible place, used at load and when the layout flips
@@ -970,16 +987,25 @@
     if (isSleepTime()) {
       [dev.x, dev.y] = feetTo(SPOTS.bed);
       dev.state = 'sleep';
+      dev.bed = dev.bedTo = 1;
+      play(dev, 'stand', [8], 1, true);
       chair.t = chair.to = 1;
     } else {
       chair.t = chair.to = 0;
+      dev.bed = dev.bedTo = 0;
       startCoding();
     }
     settleCat();
   }
 
   function drawDev() {
-    if (dev.state === 'sleep') return; // he's in the bed sprite
+    if (dev.bed >= 1) return; // he's in the bed sprite
+    ctx.globalAlpha = 1 - dev.bed;
+    drawDevFrame();
+    ctx.globalAlpha = 1;
+  }
+
+  function drawDevFrame() {
     const n = dev.sheet;
     if (n === 'push') return frame(n, dev.frames[dev.i], dev.x + 6, dev.y + 76, false);
     if (n === 'back') {
@@ -1015,9 +1041,13 @@
   function drawPiece(r) {
     const [x, y] = at(r.group, r.x, r.y);
     let name = r.sprite;
-    if (name === 'bed' && dev.state === 'sleep') name = 'bedSleep';
     if (name === 'console' && dev.state === 'play') name = 'consolePlain';
     sprite(name, x, y);
+    if (name === 'bed' && dev.bed > 0) {
+      ctx.globalAlpha = dev.bed;
+      sprite('bedSleep', x, y);
+      ctx.globalAlpha = 1;
+    }
   }
 
   function drawDevPart(upper) {
@@ -1304,6 +1334,7 @@
       sleep: 'asleep — shh',
       walk: 'up and about',
       pause: 'taking a break',
+      settle: 'taking a break',
       play: 'playing games, shh',
       push: 'push-ups, allegedly',
       up: 'up and about',
@@ -1338,6 +1369,29 @@
     ROOM.forEach((r) => {
       if (!r.base) drawPiece(r);
     });
+    drawShadows();
+  }
+
+  // Soft dark patches where things meet the floor, so nothing floats
+  function shadow(group, x, y, rx, ry) {
+    const [sx, sy] = at(group, x, y);
+    ctx.beginPath();
+    ctx.ellipse(ox + sx, oy + sy, rx, ry, 0, 0, Math.PI * 2);
+    ctx.fill();
+  }
+
+  function drawShadows() {
+    ctx.fillStyle = 'rgba(82,54,32,0.2)';
+    SHADOWS.forEach((v) => shadow(...v));
+    shadow('desk', 94 + CHAIR_OUT[0] * chair.t, 228 + CHAIR_OUT[1] * chair.t, 23, 5);
+    const on = (x, y, rx, ry) => {
+      ctx.beginPath();
+      ctx.ellipse(ox + x, oy + y, rx, ry, 0, 0, Math.PI * 2);
+      ctx.fill();
+    };
+    on(cat.x + 28, cat.y + 51, 15, 3);
+    if (dev.sheet === 'walk' || (dev.sheet === 'stand' && !atDesk())) on(dev.x + 58, dev.y + 146, 17, 3);
+    if (dev.sheet === 'push') on(dev.x + 74, dev.y + 144, 56, 4);
   }
 
   function hand(cx, cy, turn, length, color) {
