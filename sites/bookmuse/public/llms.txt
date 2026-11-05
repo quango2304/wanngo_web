@@ -2,7 +2,7 @@
 
 > Bookmuse is an AI reading companion for iPhone and iPad. Import your own books, hear them read aloud with free on-device voices, ask AI as you read, open ready-made summaries, and keep the words you meet.
 
-Bookmuse is free, with no ads and no in-app purchases, and an account is optional. It needs iOS or iPadOS 26 and also runs on Apple-silicon Macs as the iPad app. The Android app is coming to Google Play, for Android 9 or later. The app is in English, Vietnamese and Spanish. It was made by Quan Ngo Van (wanngo).
+Bookmuse is free, with no ads and no in-app purchases, and an account is optional. It needs iOS or iPadOS 26 and also runs on Apple-silicon Macs as the iPad app. The Android app (Android 9 or later) is in a closed test on Google Play: join the Google Group https://groups.google.com/g/bookmuse-testers, open https://play.google.com/apps/testing/com.leongo.bookmuse, tap Become a tester, then install from Google Play. The app is in English, Vietnamese and Spanish. It was made by Quan Ngo Van (wanngo).
 
 ## Books and library
 
