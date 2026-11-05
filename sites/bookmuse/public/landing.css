@@ -14,12 +14,12 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .store.soon { background: transparent; color: var(--soft); box-shadow: inset 0 0 0 1px var(--line); }
 
 .stage { --pw: clamp(232px, 25vw, 330px); position: relative; margin-top: clamp(56px, 7vw, 88px); padding-bottom: clamp(40px, 6vw, 96px); display: flex; justify-content: center; view-timeline-name: --stage; }
-.sun-wrap { --sun: clamp(460px, 58vw, 860px); position: absolute; left: 50%; top: -3%; width: var(--sun); height: var(--sun); margin-left: calc(var(--sun) / -2); will-change: transform; }
-.sun { width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle at 50% 32%, #ffe3a8 0%, var(--amber) 38%, #ffbe82 100%); will-change: transform; }
+.sun-wrap { --sun: clamp(460px, 58vw, 860px); position: absolute; left: 50%; top: -3%; width: var(--sun); height: var(--sun); margin-left: calc(var(--sun) / -2); }
+.sun { width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle at 50% 32%, #ffe3a8 0%, var(--amber) 38%, #ffbe82 100%); }
 .star { position: absolute; color: #ffc46b; }
 .star.a { left: 3%; top: 16%; width: 44px; }
 .star.b { right: 5%; top: 8%; width: 30px; }
-.side { position: absolute; top: 88px; z-index: 1; will-change: transform; }
+.side { position: absolute; top: 88px; z-index: 1; }
 .side.l { left: calc(50% - var(--pw) * 1.42); }
 .side.r { left: calc(50% + var(--pw) * 0.62); }
 .side .phone { --w: calc(var(--pw) * 0.8); }
@@ -89,7 +89,7 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .cta img { position: relative; z-index: 1; width: 88px; height: 88px; border-radius: 20px; margin: 0 auto 28px; box-shadow: 0 14px 34px -12px rgba(160, 80, 20, 0.5); }
 .cta h2, .cta .lede, .cta .stores { position: relative; z-index: 1; }
 .cta .lede { margin-top: 16px; }
-.cta-sun { --sun: clamp(520px, 66vw, 960px); position: absolute; left: 50%; bottom: 0; width: var(--sun); height: var(--sun); margin-left: calc(var(--sun) / -2); transform: translateY(66%); border-radius: 50%; background: radial-gradient(circle at 50% 18%, #ffe3a8 0%, var(--amber) 36%, #ffbe82 100%); will-change: transform; }
+.cta-sun { --sun: clamp(520px, 66vw, 960px); position: absolute; left: 50%; bottom: 0; width: var(--sun); height: var(--sun); margin-left: calc(var(--sun) / -2); transform: translateY(66%); border-radius: 50%; background: radial-gradient(circle at 50% 18%, #ffe3a8 0%, var(--amber) 36%, #ffbe82 100%); }
 
 /* Entrance */
 @keyframes up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
@@ -103,11 +103,9 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 @keyframes eq { to { transform: scaleY(1); } }
 
 /* Scroll */
-@keyframes rise { from { opacity: 0; transform: translateY(44px); } to { opacity: 1; transform: none; } }
 @keyframes spread-l { to { transform: translate(-16%, 7%) rotate(-5deg); } }
 @keyframes spread-r { to { transform: translate(16%, 7%) rotate(5deg); } }
 @keyframes sun-grow { to { transform: translateY(12%) scale(1.3); } }
-@keyframes cta-rise { from { transform: translateY(94%); } to { transform: translateY(66%); } }
 
 @media (prefers-reduced-motion: no-preference) {
   .ln > span { animation: line 1.1s var(--ease) both; }
@@ -121,12 +119,20 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
   .star { animation: twinkle 4.6s ease-in-out infinite; }
   .star.b { animation-delay: -2.2s; }
 
-  @supports (animation-timeline: view()) {
-    .reveal { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% entry 42%; }
-    .side.l { animation: spread-l linear both; animation-timeline: --stage; animation-range: cover 38% cover 96%; }
-    .side.r { animation: spread-r linear both; animation-timeline: --stage; animation-range: cover 38% cover 96%; }
-    .sun-wrap { animation: sun-grow linear both; animation-timeline: --stage; animation-range: cover 30% cover 100%; }
-    .cta-sun { animation: cta-rise linear both; animation-timeline: --cta; animation-range: entry 20% cover 62%; }
+  /* One-time reveals, the same on every browser: on phones a scroll-linked animation restarts its sums each time Safari's
+     toolbar changes the page height, which shows as flicker. */
+  .js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+  .js .reveal.in { opacity: 1; transform: none; }
+  .js .cta-sun { transform: translateY(94%); transition: transform 1.6s var(--ease); }
+  .js .cta.in .cta-sun { transform: translateY(66%); }
+
+  /* Scroll-linked only with a mouse or trackpad, where the viewport height holds still. */
+  @media (hover: hover) and (pointer: fine) {
+    @supports (animation-timeline: view()) {
+      .side.l { animation: spread-l linear both; animation-timeline: --stage; animation-range: cover 38% cover 96%; }
+      .side.r { animation: spread-r linear both; animation-timeline: --stage; animation-range: cover 38% cover 96%; }
+      .sun-wrap { animation: sun-grow linear both; animation-timeline: --stage; animation-range: cover 30% cover 100%; }
+    }
   }
 }
 
