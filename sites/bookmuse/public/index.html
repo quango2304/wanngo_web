@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Bookmuse — Read in the language you're learning</title>
-  <meta name="description" content="Bookmuse is a calm reader for your own books. Understand every word in its sentence, listen along, ask the book and keep the words you meet, in sync across your devices and the web.">
-  <meta name="theme-color" content="#fbf8f3" media="(prefers-color-scheme: light)">
+  <title>Bookmuse — A companion for people who love books</title>
+  <meta name="description" content="Bookmuse is a companion for people who love books. Import your books and hear them read aloud, ask AI as you read, open ready-made summaries, and keep the words you meet.">
+  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#15120e" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://bookmuse.wanngo.com/">
   <link rel="alternate" hreflang="en" href="https://bookmuse.wanngo.com/">
@@ -16,8 +16,8 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Bookmuse">
   <meta property="og:url" content="https://bookmuse.wanngo.com/">
-  <meta property="og:title" content="Bookmuse — Read in the language you're learning">
-  <meta property="og:description" content="A calm reader for your own books: every word explained in its sentence, read aloud, and kept for review. Free on the App Store.">
+  <meta property="og:title" content="Bookmuse — A companion for people who love books">
+  <meta property="og:description" content="Import your books and hear them read aloud, ask AI as you read, and keep the words you meet. Free on the App Store.">
   <meta property="og:image" content="https://bookmuse.wanngo.com/assets/og.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -29,335 +29,150 @@
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-  <link rel="preload" as="image" href="/assets/shots/en/reader.webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/landing/pages.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/be-vietnam-pro-latin-600-normal.woff2" crossorigin>
   <link rel="stylesheet" href="/landing.css">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"Bookmuse","operatingSystem":"iOS, iPadOS","applicationCategory":"BookApplication","url":"https://bookmuse.wanngo.com/","installUrl":"https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
 
-  <header class="nav" id="nav">
-    <div class="wrap">
-      <a class="brand" href="/" aria-label="Bookmuse home">
-        <img src="/assets/icon.png" alt="" width="32" height="32">
-        Bookmuse
-      </a>
-      <nav class="nav-links" aria-label="Main">
-        <a href="#features">Features</a>
-        <a href="#privacy">Privacy</a>
-        <a href="#faq">FAQ</a>
-        <a href="/support/">Support</a>
-        <a class="btn btn-glass btn-sm" href="https://bookmuse-app.wanngo.com/?lang=en">Sign in</a>
-        <a class="btn btn-primary btn-sm" href="#download">Get the app</a>
-      </nav>
-      <nav class="lang" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/es/" hreflang="es" lang="es">Español</a></nav>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/" aria-label="Bookmuse home"><img src="/assets/icon.png" alt="" width="30" height="30">Bookmuse</a>
+      <nav class="short" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/vi/" hreflang="vi" lang="vi">VI</a><a href="/es/" hreflang="es" lang="es">ES</a></nav>
+      <a class="signin" href="https://bookmuse-app.wanngo.com/?lang=en">Sign in</a>
+      <a class="btn" href="#download">Get the app</a>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- Hero -->
     <section class="hero">
       <div class="wrap">
-        <a class="pill" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446"><span class="dot"></span>On the App Store · Android coming soon</a>
-        <h1 class="display">Read in the language you're learning.</h1>
-        <p class="lede">Bookmuse is a calm reader for your own books. Translate any word in its sentence and save it to learn, listen with free voices on your phone, share books with friends, and bring your library to AI.</p>
+        <h1><span class="ln"><span>A companion for</span></span><span class="ln"><span class="serif">people who love books.</span></span></h1>
+        <p class="lede">Import your books and hear them read aloud, ask AI as you read, and keep the words you meet. Everything a reader needs, in one calm app.</p>
         <div class="stores">
-          <a class="store" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>
-            <span><small>Download on the</small><b>App Store</b></span>
-          </a>
-          <span class="store soon" aria-label="Google Play: coming soon">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 2.6c-.25.26-.4.67-.4 1.2v16.4c0 .53.15.94.4 1.2l.07.06L13.6 12.3v-.2L4.47 2.53zM16.65 15.36 13.6 12.3v-.2l3.05-3.06.07.04 3.6 2.05c1.03.58 1.03 1.54 0 2.13l-3.6 2.05zM16.72 15.32 13.6 12.2l-9.2 9.2c.34.36.9.4 1.53.05l10.8-6.13M16.72 9.08 5.93 2.95c-.63-.36-1.2-.31-1.53.05l9.2 9.2z"/></svg>
-            <span><small>Coming soon to</small><b>Google Play</b></span>
-          </span>
+        <a class="store" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>
+          <span><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <span class="store soon" aria-label="Google Play: coming soon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 2.6c-.25.26-.4.67-.4 1.2v16.4c0 .53.15.94.4 1.2l.07.06L13.6 12.3v-.2L4.47 2.53zM16.65 15.36 13.6 12.3v-.2l3.05-3.06.07.04 3.6 2.05c1.03.58 1.03 1.54 0 2.13l-3.6 2.05zM16.72 15.32 13.6 12.2l-9.2 9.2c.34.36.9.4 1.53.05l10.8-6.13M16.72 9.08 5.93 2.95c-.63-.36-1.2-.31-1.53.05l9.2 9.2z"/></svg>
+          <span><small>Coming soon to</small><b>Google Play</b></span>
+        </span>
+      </div>
+      </div>
+      <div class="stage">
+        <div class="sun-wrap" aria-hidden="true">
+          <div class="sun"></div>
+          <svg class="star a" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 7.6 4.4 11 12 12-7.6 1-11 4.4-12 12-1-7.6-4.4-11-12-12 7.6-1 11-4.4 12-12z"/></svg>
+          <svg class="star b" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c1 7.6 4.4 11 12 12-7.6 1-11 4.4-12 12-1-7.6-4.4-11-12-12 7.6-1 11-4.4 12-12z"/></svg>
         </div>
-        <p class="fine">Free · iPhone and iPad · Account optional</p>
+        <div class="side l"><div class="tilt"><div class="phone"><div class="bezel"><div class="screen"><img src="/assets/landing/home.webp" alt="Bookmuse Home with the current book and library" width="600" height="1305" loading="lazy" decoding="async"><span class="island"></span></div></div></div></div></div>
+        <div class="side r"><div class="tilt"><div class="phone"><div class="bezel"><div class="screen"><img src="/assets/landing/summary-covers.webp" alt="Book summaries with colourful covers" width="600" height="1305" loading="lazy" decoding="async"><span class="island"></span></div></div></div></div></div>
+        <div class="center"><div class="phone"><div class="bezel"><div class="screen"><video data-auto src="https://media.wanngo.com/bookmuse/landing/pages.mp4" poster="/assets/landing/pages.webp" muted loop playsinline preload="none" aria-label="Turning pages in Pride and Prejudice"></video><span class="island"></span></div></div></div></div>
+      </div>
+    </section>
 
-        <div class="hero-phones" aria-hidden="true">
-          <div class="phone side left"><div class="bezel"><img src="/assets/shots/en/home.webp" alt="" width="900" height="1955" decoding="async"></div></div>
-          <div class="phone side right"><div class="bezel"><img src="/assets/shots/en/listen.webp" alt="" width="900" height="1955" decoding="async"></div></div>
-          <div class="phone center"><div class="bezel"><img src="/assets/shots/en/reader.webp" alt="" width="900" height="1955" fetchpriority="high"></div></div>
+    <section class="night">
+      <div class="glow" aria-hidden="true"></div>
+      <div class="wrap head reveal">
+        <h2>Import any book. Hear it read aloud.</h2>
+        <p class="lede">Bring your EPUB, Kindle or TXT files. Natural voices in six languages read them to you, free, right on your phone, with the text following along.</p>
+      </div>
+      <div class="duo">
+      <figure class="reveal">
+        <div class="phone"><div class="bezel"><div class="screen">
+          <video data-auto data-sound="en" src="https://media.wanngo.com/bookmuse/landing/listen-en.mp4" poster="/assets/landing/listen-en.webp" muted loop playsinline preload="none" aria-label="An English book read aloud, with the sentence highlighted"></video>
+          <button class="island live" type="button" data-sound="en" aria-pressed="false" aria-label="Sound for the English voice">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6"/><path d="M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+            <span class="off-t">Tap for sound</span><span class="on-t">Delia</span>
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          </button>
+        </div></div></div>
+        <figcaption><b lang="en">English</b>Voice: Delia</figcaption>
+      </figure>
+      <figure class="reveal">
+        <div class="phone"><div class="bezel"><div class="screen">
+          <video data-auto data-sound="vi" src="https://media.wanngo.com/bookmuse/landing/listen-vi.mp4" poster="/assets/landing/listen-vi.webp" muted loop playsinline preload="none" aria-label="A Vietnamese book read aloud, with the sentence highlighted"></video>
+          <button class="island live" type="button" data-sound="vi" aria-pressed="false" aria-label="Sound for the Vietnamese voice">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 9a4.2 4.2 0 0 1 0 6"/><path d="M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+            <span class="off-t">Tap for sound</span><span class="on-t">Văn Thành</span>
+            <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+          </button>
+        </div></div></div>
+        <figcaption><b lang="vi">Tiếng Việt</b>Voice: Văn Thành</figcaption>
+      </figure>
+      </div>
+      <ul class="langs reveal" aria-label="Voice languages"><li lang="en"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#fff"/><path fill="#c8102e" d="M0 0h24v2.7H0zM0 5.4h24v2.7H0zM0 10.8h24v2.7H0zM0 16.2h24v2.7H0zM0 21.6h24V24H0z"/><rect width="12.5" height="13.5" fill="#012169"/><g fill="#fff"><circle cx="3" cy="3.4" r=".9"/><circle cx="6.5" cy="3.4" r=".9"/><circle cx="10" cy="3.4" r=".9"/><circle cx="4.7" cy="6.7" r=".9"/><circle cx="8.2" cy="6.7" r=".9"/><circle cx="3" cy="10" r=".9"/><circle cx="6.5" cy="10" r=".9"/><circle cx="10" cy="10" r=".9"/></g></svg>English</li><li lang="fr"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="8" height="24" fill="#002654"/><rect x="8" width="8" height="24" fill="#fff"/><rect x="16" width="8" height="24" fill="#ce1126"/></svg>Français</li><li lang="de"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="8" fill="#000"/><rect y="8" width="24" height="8" fill="#dd0000"/><rect y="16" width="24" height="8" fill="#ffce00"/></svg>Deutsch</li><li lang="es"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#aa151b"/><rect y="6" width="24" height="12" fill="#f1bf00"/></svg>Español</li><li lang="pt"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#009c3b"/><path fill="#ffdf00" d="M12 4 22.5 12 12 20 1.5 12z"/><circle cx="12" cy="12" r="4.6" fill="#002776"/></svg>Português</li><li lang="vi"><svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" fill="#da251d"/><path fill="#ff0" d="m12 5 2.06 6.34h6.66l-5.39 3.92 2.06 6.34L12 17.68 6.61 21.6l2.06-6.34-5.39-3.92h6.66z"/></svg>Tiếng Việt</li></ul>
+    </section>
+
+    <section class="wrap tour">
+      <div class="story" data-step="0">
+        <div>
+        <article class="step" data-story="0">
+          <h2>Ask AI while you read.</h2>
+          <p>Lost the thread? Ask about the page you're on, or the book so far, and get answers that point to the page.</p>
+          <div class="inline"><div class="phone"><div class="bezel"><div class="screen"><video data-auto src="https://media.wanngo.com/bookmuse/landing/ask.mp4" poster="/assets/landing/ask.webp" muted loop playsinline preload="none" aria-label="Asking AI about the book"></video><span class="island"></span></div></div></div></div>
+        </article>
+        <article class="step" data-story="1">
+          <h2>Summaries, ready to read or hear.</h2>
+          <p>Short on time? Open a ready-made book summary and read it, or let the same voices read it to you.</p>
+          <div class="inline"><div class="phone"><div class="bezel"><div class="screen"><video data-auto src="https://media.wanngo.com/bookmuse/landing/summary.mp4" poster="/assets/landing/summary.webp" muted loop playsinline preload="none" aria-label="Browsing summaries and opening one to listen or read"></video><span class="island"></span></div></div></div></div>
+        </article>
+        <article class="step" data-story="2">
+          <h2>A feed for people who read.</h2>
+          <p>Post about what you're reading, with a rating or a favourite quote, and follow the readers you like.</p>
+          <div class="inline"><div class="phone"><div class="bezel"><div class="screen"><img src="/assets/landing/feed.webp" alt="The Bookmuse Feed with posts from readers" width="600" height="1305" loading="lazy" decoding="async"><span class="island"></span></div></div></div></div>
+        </article>
+        <article class="step" data-story="3">
+          <h2>Your Drive and Dropbox, right in the app.</h2>
+          <p>Connect Google Drive or Dropbox and bring your books in from there, or pick files from your phone.</p>
+          <div class="inline"><div class="phone"><div class="bezel"><div class="screen"><video data-auto src="https://media.wanngo.com/bookmuse/landing/import.mp4" poster="/assets/landing/import.webp" muted loop playsinline preload="none" aria-label="Adding books from Files, Google Drive or Dropbox"></video><span class="island"></span></div></div></div></div>
+        </article>
+        <article class="step" data-story="4">
+          <h2>Look up a word. Keep it.</h2>
+          <p>Hold a word to see what it means in that sentence. One tap saves it, and flashcards bring it back right before you'd forget.</p>
+          <div class="inline"><div class="phone"><div class="bezel"><div class="screen"><video data-auto src="https://media.wanngo.com/bookmuse/landing/words.mp4" poster="/assets/landing/words.webp" muted loop playsinline preload="none" aria-label="Looking up a word, saving it and reviewing it"></video><span class="island"></span></div></div></div></div>
+        </article>
         </div>
-
-        <div class="strip reveal">
-          <div>
-            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h10M9 4v2m3 0c-.8 4.4-3.6 7.6-7.5 9M7.5 9.5c1.2 2.4 3 4.2 5.5 5.5M14.5 24l4.5-11 4.5 11m-7.4-3.5h5.8"/></svg>
-            <span><strong>Read and translate</strong>Every word in its sentence, saved to learn</span>
-          </div>
-          <div>
-            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 17v-3a9 9 0 0118 0v3M5 17a2 2 0 012-2h1v7H7a2 2 0 01-2-2zM23 17a2 2 0 00-2-2h-1v7h1a2 2 0 002-2z"/></svg>
-            <span><strong>Listen for free</strong>Natural voices that run on your phone</span>
-          </div>
-          <div>
-            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="10" r="3.5"/><circle cx="19.5" cy="11" r="2.8"/><path d="M3 22c.8-3.6 3.2-5.5 6-5.5s5.2 1.9 6 5.5M16 17.2c1-.6 2.2-.9 3.5-.9 2.4 0 4.3 1.5 5 4.7"/></svg>
-            <span><strong>Share with friends</strong>Books by link, and a feed for readers</span>
-          </div>
-          <div>
-            <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l1.9 5.1L21 11l-5.1 1.9L14 18l-1.9-5.1L7 11l5.1-1.9zM21.5 17.5l.9 2.6 2.6.9-2.6.9-.9 2.6-.9-2.6-2.6-.9 2.6-.9z"/></svg>
-            <span><strong>Ready for AI</strong>Ask the book, or connect Claude and ChatGPT</span>
-          </div>
+        <div class="pin" aria-hidden="true">
+          <div class="phone"><div class="bezel"><div class="screen">
+          <div class="scr scr-0"><video data-auto data-step="0" src="https://media.wanngo.com/bookmuse/landing/ask.mp4" poster="/assets/landing/ask.webp" muted loop playsinline preload="none" aria-label="Asking AI about the book"></video></div>
+          <div class="scr scr-1"><video data-auto data-step="1" src="https://media.wanngo.com/bookmuse/landing/summary.mp4" poster="/assets/landing/summary.webp" muted loop playsinline preload="none" aria-label="Browsing summaries and opening one to listen or read"></video></div>
+          <div class="scr scr-2"><img src="/assets/landing/feed.webp" alt="The Bookmuse Feed with posts from readers" width="600" height="1305" loading="lazy" decoding="async"></div>
+          <div class="scr scr-3"><video data-auto data-step="3" src="https://media.wanngo.com/bookmuse/landing/import.mp4" poster="/assets/landing/import.webp" muted loop playsinline preload="none" aria-label="Adding books from Files, Google Drive or Dropbox"></video></div>
+          <div class="scr scr-4"><video data-auto data-step="4" src="https://media.wanngo.com/bookmuse/landing/words.mp4" poster="/assets/landing/words.webp" muted loop playsinline preload="none" aria-label="Looking up a word, saving it and reviewing it"></video></div>
+            <span class="island"></span>
+          </div></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Features -->
-    <section class="section" id="features">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">Features</span>
-          <h2 class="title">Everything a reader needs. Nothing between you and the page.</h2>
-        </div>
-
-        <article class="feature reveal">
-          <div class="copy">
-            <span class="eyebrow">Read and translate</span>
-            <h3 class="title">Every word, right where you meet it.</h3>
-            <p class="lede">Hold a word and tap Translate: a card slides up with the meaning it has in that sentence. One tap saves it, and flashcards bring it back right before you'd forget it.</p>
-            <ul class="checks">
-              <li>Pronunciation, meanings, word roots and a follow-up question</li>
-              <li>Saved words are marked wherever they appear in the book, so you meet them again</li>
-              <li>Spaced repetition (FSRS), with fill-in sentences from your own books</li>
-            </ul>
-          </div>
-          <div class="phones">
-            <div class="phone"><div class="bezel"><img src="/assets/shots/en/reader.webp" alt="A word card for “rightful” over a page of Pride and Prejudice, with its meaning in the sentence and its roots" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-            <div class="phone"><div class="bezel"><img src="/assets/shots/en/saved.webp" alt="A review flashcard with Again, Hard, Good and Easy buttons" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-          </div>
-        </article>
-
-        <article class="feature flip reveal">
-          <div class="copy">
-            <span class="eyebrow">Listen</span>
-            <h3 class="title">Hear any book read aloud, free.</h3>
-            <p class="lede">Bookmuse Voices are natural voices that run on your phone: free, private, and no account needed. The text follows along as you listen.</p>
-            <ul class="checks">
-              <li>On-device Bookmuse Voices for English, French, German, Spanish, Portuguese and Vietnamese, and every Apple voice, including your own Personal Voice</li>
-              <li>Book summaries read aloud by the same voices, with the text following along</li>
-            </ul>
-          </div>
-          <div class="phones">
-            <div class="phone"><div class="bezel"><img src="/assets/shots/en/listen.webp" alt="The Listen player reading Pride and Prejudice aloud, with the spoken sentence highlighted" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-            <div class="phone"><div class="bezel"><img src="/assets/shots/en/summaries.webp" alt="The Summaries list with covers, listening times and topics" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-          </div>
-        </article>
-
-        <article class="feature reveal">
-          <div class="copy">
-            <span class="eyebrow">Share</span>
-            <h3 class="title">Reading is better with friends.</h3>
-            <p class="lede">Send a book by link and a friend gets their own copy. Post about what you're reading, with a rating or a favourite quote, and follow the readers you like.</p>
-            <ul class="checks">
-              <li>Share links work for 7 days, in the app or on the web</li>
-              <li>The Feed: all posts, or only the people you follow</li>
-              <li>Quote cards with a QR code, and community rules, report and block to keep it kind</li>
-            </ul>
-          </div>
-          <div class="phone"><div class="bezel"><img src="/assets/shots/en/feed.webp" alt="The Feed with posts about books, ratings, quotes and likes" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-        </article>
-
-        <article class="feature flip reveal">
-          <div class="copy">
-            <span class="eyebrow">Ready for AI</span>
-            <h3 class="title">Ask the book. Let AI tidy your library.</h3>
-            <p class="lede">Lost the thread? Ask about the passage you're on, or the book so far, and get answers that point to the page. Connect Claude or ChatGPT, and they can work with your library too.</p>
-            <ul class="checks">
-              <li>Ask AI answers from the book's own text, in conversations that follow you to every device</li>
-              <li>AI agents over MCP (Claude, ChatGPT, Cursor, Claude Code): search highlights, add words, organise folders, add books</li>
-              <li>BookMuse AI is built in when you sign in: nothing to set up, no key needed</li>
-            </ul>
-          </div>
-          <div class="phones">
-            <div class="phone"><div class="bezel"><img src="/assets/shots/en/ask.webp" alt="Ask AI explaining a passage of Pride and Prejudice, with page references" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-            <div class="phone"><div class="bezel"><img src="/assets/shots/en/agents.webp" alt="The AI Agents guide with the Bookmuse server address and steps for Claude and ChatGPT" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-          </div>
-        </article>
-
-        <article class="feature wide reveal" id="everywhere">
-          <div class="copy">
-            <span class="eyebrow">Everywhere</span>
-            <h3 class="title">Your library, on every screen.</h3>
-            <p class="lede">Sign in with Apple, Google or email and your books, words, highlights and progress stay in sync. Or don't sign in: everything still works on this device.</p>
-            <ul class="platforms" aria-label="Where Bookmuse runs">
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4.5" y="1.5" width="7" height="13" rx="1.8"/></svg>iPhone</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2.5" y="1.5" width="11" height="13" rx="1.8"/></svg>iPad</li>
-              <li class="soon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="4.5" y="1.5" width="7" height="13" rx="1.8"/></svg>Android · soon</li>
-              <li><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="8" cy="8" r="6.5"/><path d="M1.5 8h13M8 1.5c2 2 2 11 0 13M8 1.5c-2 2-2 11 0 13"/></svg>Web</li>
-            </ul>
-            <ul class="checks">
-              <li>Manage your library, highlights and words from a computer at <a href="https://bookmuse-app.wanngo.com/?lang=en">bookmuse-app.wanngo.com</a></li>
-              <li>Your book files are kept in your account and open on every device</li>
-            </ul>
-          </div>
-          <div class="media">
-            <div class="browser"><div class="bar" aria-hidden="true"><i></i><i></i><i></i><span>bookmuse-app.wanngo.com</span></div><img src="/assets/shots/en/dashboard.webp" alt="The Bookmuse web dashboard showing a library of book covers" width="1600" height="1000" loading="lazy" decoding="async"></div>
-            <div class="phone" aria-hidden="true"><div class="bezel"><img src="/assets/shots/en/home.webp" alt="" width="900" height="1955" loading="lazy" decoding="async"></div></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- More -->
-    <section class="section" id="more">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">And more</span>
-          <h2 class="title">Made to feel at home.</h2>
-        </div>
-
-        <div class="grid">
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4.5h3.5v15H4zM9.5 4.5H13v15H9.5zM15 5.5l3.3-1 3.7 14.4-3.3 1z"/></svg></div>
-            <h3>Books from anywhere</h3>
-            <p>Import EPUB, Kindle (MOBI, AZW3), FB2, TXT or Markdown books from Files, Google Drive or Dropbox, browse free classics from Project Gutenberg, or connect your own Calibre or OPDS server.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h9M7.5 3v2m3 0c-.7 3.8-3 6.5-6.5 7.8M6.5 8.5c1 2 2.6 3.6 4.7 4.7M13 21l4-9.5 4 9.5m-6.6-3h5.2"/></svg></div>
-            <h3>Your default Translate app</h3>
-            <p>Select text in any app on iPhone or iPad, tap Translate, and Bookmuse answers in place. Save the word in one tap.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20a8 8 0 100-16 8 8 0 000 16zM12 8v4l2.5 2.5"/></svg></div>
-            <h3>Reading goals and stats</h3>
-            <p>A daily goal, streaks, and your time spent reading and listening, by week, month and year, right on Home.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19l5.5-14h3L19 19M7.5 13.5h9"/></svg></div>
-            <h3>Make it yours</h3>
-            <p>Six themes with light and dark looks, fourteen fonts, and Scroll or Paged. Each book keeps its own theme and text size.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4.5h11l3 3v12H5zM8.5 11h7M8.5 14.5h7"/></svg></div>
-            <h3>Highlights, notes and word lists</h3>
-            <p>Highlight in five colours and add notes. Export notes as PDF or Markdown, and import or export your words as CSV.</p>
-          </div>
-          <div class="card reveal">
-            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="2"/><rect x="13.5" y="3.5" width="7" height="7" rx="2"/><rect x="3.5" y="13.5" width="17" height="7" rx="2"/></svg></div>
-            <h3>Widgets, Siri and Shortcuts</h3>
-            <p>Continue reading from your Home Screen, see the words due for review, or say “Continue reading in Bookmuse.”</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Privacy -->
-    <section class="wrap" id="privacy">
-      <div class="privacy-band reveal">
-        <span class="eyebrow">Privacy</span>
-        <h2 class="title">Your books. Your words. Nobody else's.</h2>
-        <p class="lede">No ads, no tracking, nothing sold. Use Bookmuse without an account, keep lookups on your device with Apple Translation, and delete your account whenever you like.</p>
-        <div class="promises">
-          <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="10" cy="7" r="3"/><path d="M4 17c.8-3 3.2-4.5 6-4.5s5.2 1.5 6 4.5"/></svg>Account optional</span>
-          <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 10S5.2 4.5 10 4.5 17.5 10 17.5 10 14.8 15.5 10 15.5 2.5 10 2.5 10zM3 3l14 14"/></svg>No ads or tracking</span>
-          <span><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 5.5h13M8 5.5V3.8c0-.4.3-.8.8-.8h2.4c.5 0 .8.4.8.8v1.7M5 5.5l.8 10.2c.1.7.6 1.3 1.3 1.3h5.8c.7 0 1.2-.6 1.3-1.3L15 5.5M8.2 9v4.5M11.8 9v4.5"/></svg>Delete your account any time</span>
-        </div>
-        <p class="fine"><a href="/privacy/">Read the privacy policy</a></p>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">FAQ</span>
-          <h2 class="title">Questions, answered.</h2>
-        </div>
-
-        <div class="faq reveal">
-          <details>
-            <summary>How do I get Bookmuse?</summary>
-            <div class="answer">
-              <p>Download it free from the <a href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">App Store</a> for iPhone and iPad. The Android app is coming soon to Google Play.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Is it free?</summary>
-            <div class="answer">
-              <p>Yes. Bookmuse is free, with no ads and no in-app purchases. A free account includes BookMuse AI with a daily allowance and 250 MB of cloud storage for your book files; books kept on your device have no limit.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Do I need an account?</summary>
-            <div class="answer">
-              <p>No. Reading, Apple Translation, voices, saved words and review all work without one. Sign in with Apple, Google or email to turn on sync, BookMuse AI, the Feed, sharing, Google Drive and Dropbox, and AI agents.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Which devices does it run on?</summary>
-            <div class="answer">
-              <p>iPhone and iPad with iOS 26 or iPadOS 26. Android 9 or later when the Android app arrives. The web dashboard at bookmuse-app.wanngo.com works in any modern browser.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Where do the books come from?</summary>
-            <div class="answer">
-              <p>You bring them. Import DRM-free EPUB, Kindle (MOBI, AZW3), FB2, TXT or Markdown books from Files, Google Drive or Dropbox, browse thousands of free classics from Project Gutenberg, or connect your own book server (Calibre, Komga, Stump, or any OPDS catalog). Bookmuse also has ready-made summaries you can read and listen to.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Is listening free?</summary>
-            <div class="answer">
-              <p>Yes. Bookmuse Voices (English, French, German, Spanish, Portuguese and Vietnamese) and Apple's voices run on your device, cost nothing and need no account.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Do I need an AI subscription or an API key?</summary>
-            <div class="answer">
-              <p>No. Sign in and BookMuse AI gives rich word cards, follow-up questions and Ask AI with nothing to set up.</p>
-              <p>Prefer to keep lookups on your device? Stay signed out and lookups use Apple Translation, which is free and works offline once a language is downloaded.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Which languages can I learn?</summary>
-            <div class="answer">
-              <p>Any language pair Apple Translation supports, and with BookMuse AI, almost any language it understands. Bookmuse itself speaks English, Vietnamese and Spanish.</p>
-            </div>
-          </details>
-          <details>
-            <summary>How do AI agents use my library?</summary>
-            <div class="answer">
-              <p>Bookmuse has an MCP server. Add it to Claude, ChatGPT, Cursor or Claude Code, sign in, and allow access; the agent can then search your books, highlights and words, add words, organise folders and add books. The steps are in the app under Settings › Connections › AI Agents, and on the web dashboard. Agents can't delete your account or use BookMuse AI.</p>
-            </div>
-          </details>
-          <details>
-            <summary>How do I make Bookmuse my default Translate app?</summary>
-            <div class="answer">
-              <p>On iPhone or iPad, open the Settings app, then Apps → Default Apps → Translation, and choose Bookmuse. Now select text in any app, tap Translate, and Bookmuse shows the meaning with one tap to save it.</p>
-            </div>
-          </details>
-          <details>
-            <summary>Is my reading private?</summary>
-            <div class="answer">
-              <p>Yes. There are no ads and no tracking. Without an account, your books, words and progress stay on your device. Sign in and they are stored in your Bookmuse account so they sync to your other devices and the web; you can delete your account at any time. With BookMuse AI, what you look up and ask is sent to our AI provider to be answered; stay signed out to keep lookups on your device with Apple Translation. See the <a href="/privacy/">privacy policy</a> for the details.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="final" id="download">
+    <section class="cta" id="download">
+      <div class="cta-sun" aria-hidden="true"></div>
       <div class="wrap reveal">
-        <img class="app-icon" src="/assets/icon.png" alt="Bookmuse app icon" width="96" height="96" loading="lazy">
-        <h2 class="title">Start reading with Bookmuse.</h2>
-        <p class="lede">Free on the App Store. Coming soon to Google Play.</p>
+        <img src="/assets/icon.png" alt="" width="88" height="88" loading="lazy">
+        <h2>Start reading with Bookmuse.</h2>
+        <p class="lede">Free · iPhone and iPad · Account optional</p>
         <div class="stores">
-          <a class="store" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>
-            <span><small>Download on the</small><b>App Store</b></span>
-          </a>
-          <span class="store soon" aria-label="Google Play: coming soon">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 2.6c-.25.26-.4.67-.4 1.2v16.4c0 .53.15.94.4 1.2l.07.06L13.6 12.3v-.2L4.47 2.53zM16.65 15.36 13.6 12.3v-.2l3.05-3.06.07.04 3.6 2.05c1.03.58 1.03 1.54 0 2.13l-3.6 2.05zM16.72 15.32 13.6 12.2l-9.2 9.2c.34.36.9.4 1.53.05l10.8-6.13M16.72 9.08 5.93 2.95c-.63-.36-1.2-.31-1.53.05l9.2 9.2z"/></svg>
-            <span><small>Coming soon to</small><b>Google Play</b></span>
-          </span>
-        </div>
+        <a class="store" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c-.02-2.3 1.88-3.4 1.96-3.46-1.07-1.56-2.73-1.77-3.32-1.8-1.41-.14-2.76.83-3.47.83-.72 0-1.82-.81-3-.79-1.54.02-2.96.9-3.75 2.28-1.6 2.78-.41 6.89 1.15 9.14.76 1.1 1.67 2.34 2.86 2.3 1.15-.05 1.58-.74 2.97-.74 1.38 0 1.77.74 2.98.72 1.23-.02 2.01-1.12 2.76-2.23.87-1.28 1.23-2.52 1.25-2.58-.03-.01-2.4-.92-2.42-3.66zM14.1 5.86c.63-.77 1.06-1.83.94-2.89-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.68-1.28z"/></svg>
+          <span><small>Download on the</small><b>App Store</b></span>
+        </a>
+        <span class="store soon" aria-label="Google Play: coming soon">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.4 2.6c-.25.26-.4.67-.4 1.2v16.4c0 .53.15.94.4 1.2l.07.06L13.6 12.3v-.2L4.47 2.53zM16.65 15.36 13.6 12.3v-.2l3.05-3.06.07.04 3.6 2.05c1.03.58 1.03 1.54 0 2.13l-3.6 2.05zM16.72 15.32 13.6 12.2l-9.2 9.2c.34.36.9.4 1.53.05l10.8-6.13M16.72 9.08 5.93 2.95c-.63-.36-1.2-.31-1.53.05l9.2 9.2z"/></svg>
+          <span><small>Coming soon to</small><b>Google Play</b></span>
+        </span>
+      </div>
       </div>
     </section>
+
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
+  <footer class="foot">
+    <div class="wrap foot-in">
       <a class="brand" href="/"><img src="/assets/icon.png" alt="" width="24" height="24" loading="lazy">Bookmuse</a>
       <nav aria-label="Footer">
         <a href="/privacy/">Privacy</a>
@@ -365,30 +180,11 @@
         <a href="/support/">Support</a>
         <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>
       </nav>
-      <nav class="lang" aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/es/" hreflang="es" lang="es">Español</a></nav>
+      <nav aria-label="Language"><a href="/" hreflang="en" lang="en" aria-current="page">English</a><a href="/vi/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/es/" hreflang="es" lang="es">Español</a></nav>
       <span>© 2026 Bookmuse</span>
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var nav = document.getElementById('nav');
-      var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 4); };
-      window.addEventListener('scroll', onScroll, { passive: true });
-      onScroll();
-
-      var items = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) {
-        items.forEach(function (el) { el.classList.add('in'); });
-        return;
-      }
-      var io = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-        });
-      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-      items.forEach(function (el) { io.observe(el); });
-    })();
-  </script>
+  <script src="/landing.js" defer></script>
 </body>
 </html>
