@@ -22,4 +22,5 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
 - Run locally: `npm ci`, then `npm run dev:bookmuse` (http://localhost:8788) or `npm run dev:home` (http://localhost:8790).
 - **Deploy:** push a tag `<site>-vX.Y.Z` (`bookmuse-v1.0.0`, `home-v1.0.0`); `.github/workflows/deploy.yml` runs
   `wrangler deploy` for that site. Pushing to `main` never deploys. Never push a tag unless the owner asks.
+  The Cloudflare secrets are not set on the repo yet, so a tag fails in Actions; until they are, deploy from this Mac with `npm run deploy:bookmuse` (only when the owner asks).
 - Commit straight on `main`.
