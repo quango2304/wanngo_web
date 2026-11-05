@@ -191,7 +191,12 @@
       const b = document.createElement('button');
       b.type = 'button';
       b.setAttribute('aria-label', t.label);
-      b.addEventListener('click', () => (t.act ? t.act() : sayDev(t.say)));
+      b.addEventListener('click', () => {
+        sound(t.id);
+        flash(t);
+        if (t.act) t.act();
+        else sayDev(t.say);
+      });
       hot.appendChild(b);
       t.el = b;
       if (t.id === 'dev') devHit = t;
@@ -200,6 +205,93 @@
   }
   let devHit;
   let catHit;
+
+  // --------------------------------------------------------------------------
+  // Clicks: the thing lights up for a moment and makes a small sound
+  // --------------------------------------------------------------------------
+  let flashing = null;
+  const shapes = new Map();
+
+  // The thing's own pixels, without the wall and floor behind it
+  function shapeOf(t) {
+    const key = t.id + (L.tall ? ':tall' : ':wide');
+    if (shapes.has(key)) return shapes.get(key);
+    const [x, y] = at(t.group, t.x, t.y);
+    const c = document.createElement('canvas');
+    c.width = t.w;
+    c.height = t.h;
+    const g = c.getContext('2d');
+    g.drawImage(sprites[L.tall ? 'roomTall' : 'roomWide'], -x, -y);
+    const data = g.getImageData(0, 0, t.w, t.h);
+    const d = data.data;
+    const near = (i, r, gr, b) => Math.abs(d[i] - r) + Math.abs(d[i + 1] - gr) + Math.abs(d[i + 2] - b) < 34;
+    for (let i = 0; i < d.length; i += 4) {
+      if (near(i, 235, 227, 203) || near(i, 222, 201, 166)) d[i + 3] = 0;
+    }
+    g.putImageData(data, 0, 0);
+    shapes.set(key, c);
+    return c;
+  }
+
+  function flash(t) {
+    if (t.group) flashing = { t, age: 0 };
+  }
+
+  function drawFlash(dt) {
+    if (!flashing) return;
+    flashing.age += dt;
+    const k = 1 - flashing.age / 0.3;
+    if (k <= 0) {
+      flashing = null;
+      return;
+    }
+    const [x, y] = at(flashing.t.group, flashing.t.x, flashing.t.y);
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalAlpha = 0.3 * k;
+    ctx.drawImage(shapeOf(flashing.t), ox + x, oy + y);
+    ctx.restore();
+  }
+
+  let audio = null;
+
+  function tone(freq, to, start, length, type, volume) {
+    const t0 = audio.currentTime + start;
+    const osc = audio.createOscillator();
+    const gain = audio.createGain();
+    osc.type = type;
+    osc.frequency.setValueAtTime(freq, t0);
+    osc.frequency.exponentialRampToValueAtTime(to, t0 + length);
+    gain.gain.setValueAtTime(volume, t0);
+    gain.gain.exponentialRampToValueAtTime(0.0001, t0 + length);
+    osc.connect(gain).connect(audio.destination);
+    osc.start(t0);
+    osc.stop(t0 + length);
+  }
+
+  // Made here rather than loaded: little chip sounds, kept quiet
+  function sound(id) {
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    if (!audio) audio = new Ctx();
+    if (audio.state === 'suspended') audio.resume();
+    if (id === 'cat') {
+      tone(520, 760, 0, 0.09, 'triangle', 0.08);
+      tone(760, 460, 0.09, 0.16, 'triangle', 0.07);
+    } else if (id === 'ac' || id === 'tv') {
+      tone(1240, 1240, 0, 0.05, 'square', 0.025);
+      tone(1640, 1640, 0.08, 0.06, 'square', 0.025);
+    } else if (id === 'desk' || id === 'lantern') {
+      tone(300, 150, 0, 0.05, 'square', 0.04);
+    } else if (id.startsWith('item')) {
+      tone(660, 660, 0, 0.07, 'square', 0.025);
+      tone(990, 990, 0.07, 0.11, 'square', 0.025);
+    } else if (id === 'dev') {
+      tone(440, 620, 0, 0.1, 'triangle', 0.07);
+    } else {
+      tone(720, 480, 0, 0.06, 'triangle', 0.07);
+    }
+  }
 
   function place(el, x, y, w, h) {
     el.style.left = (ox + x) * cssScale + 'px';
@@ -1118,6 +1210,7 @@
     drawLight(now);
     drawZs(now);
     drawHearts(dt);
+    drawFlash(dt);
 
     const d = devBox();
     place(devHit.el, d[0], d[1], d[2], d[3]);

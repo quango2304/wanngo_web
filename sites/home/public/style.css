@@ -48,6 +48,7 @@ button {
 
 .game {
   display: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .js .game {
@@ -177,12 +178,13 @@ button {
   background: none;
   cursor: pointer;
   outline: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.hot button:hover,
+/* Only for keyboard users; a click just lights the thing up, see flash() in game.js */
 .hot button:focus-visible {
-  box-shadow: 0 0 0 var(--px) rgba(255, 251, 239, 0.9);
-  background: rgba(255, 251, 239, 0.12);
+  outline: 2px dashed rgba(43, 42, 48, 0.55);
+  outline-offset: 2px;
 }
 
 .hot button::after {
