@@ -122,9 +122,9 @@
 
   // Spots dev walks to (feet position)
   const SPOTS = {
-    coffee: { group: 'coffee', x: 166, y: 232, tall: [62, 300], line: 'refill time' },
+    coffee: { group: 'coffee', x: 168, y: 244, tall: [62, 300], line: 'refill time' },
     window: { group: 'bed', x: 196, y: 236, tall: [150, 310], line: 'look at that sky' },
-    game: { group: 'bag', x: 296, y: 248 },
+    game: { group: 'bag', x: 296, y: 258 },
     mat: { group: 'mat', x: 110, y: 250 },
     bed: { group: 'bed', x: 196, y: 236 }
   };
@@ -132,6 +132,24 @@
     wide: [[40, 252], [240, 262], [344, 256], [420, 262]],
     tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
   };
+
+  // Furniture as pieces, so people can walk behind it. `base` is where it meets the
+  // floor: anyone whose feet are above that line is behind it.
+  const PIECES = [
+    { id: 'p-fig', group: 'desk', x: 2, y: 90, w: 60, h: 136, base: 224 },
+    { id: 'p-snake', group: 'desk', x: 38, y: 160, w: 34, h: 70, base: 229 },
+    { id: 'p-chair', group: 'desk', x: 70, y: 158, w: 44, h: 80, base: 236, away: true },
+    { id: 'p-desk', group: 'desk', x: 104, y: 150, w: 70, h: 90, base: 238, away: true },
+    { id: 'p-legs', group: 'desk', x: 104, y: 192, w: 70, h: 48, base: 238, seated: true },
+    { id: 'p-table', group: 'coffee', x: 174, y: 156, w: 47, h: 62, base: 218 },
+    { id: 'p-bed', group: 'bed', x: 200, y: 150, w: 104, h: 90, base: 240 },
+    { id: 'p-bag', group: 'bag', x: 264, y: 214, w: 58, h: 40, base: 254 },
+    { id: 'p-console', group: 'shelf', x: 304, y: 185, w: 72, h: 40, base: 224 },
+    { id: 'p-shelf', group: 'shelf', x: 375, y: 80, w: 101, h: 153, base: 232 },
+    { id: 'p-plant', group: 'shelf', x: 356, y: 180, w: 38, h: 62, base: 241 },
+    { id: 'p-catbed', group: 'shelf', x: 386, y: 226, w: 44, h: 30, base: 256 }
+  ];
+  const LANE = 110; // in the wide room he walks along the open floor in front of everything
 
   // Things to click. x, y, w, h are in the wide room.
   const THINGS = [
@@ -695,10 +713,15 @@
 
   function walkTo([x, y], then) {
     dev.state = 'walk';
-    dev.goal = [x, y];
+    dev.path = L.tall ? [[x, y]] : [[dev.x, LANE], [x, LANE], [x, y]];
     dev.then = then;
-    dev.flip = x < dev.x;
+    nextLeg();
     play(dev, 'walk', seq(0, 4), 10, true);
+  }
+
+  function nextLeg() {
+    dev.goal = dev.path.shift();
+    if (Math.abs(dev.goal[0] - dev.x) > 1) dev.flip = dev.goal[0] < dev.x;
   }
 
   function standUp(then) {
@@ -822,9 +845,13 @@
       if (left <= step || still) {
         dev.x = dev.goal[0];
         dev.y = dev.goal[1];
-        const then = dev.then;
-        dev.then = null;
-        then();
+        if (dev.path.length) {
+          nextLeg();
+        } else {
+          const then = dev.then;
+          dev.then = null;
+          then();
+        }
       } else {
         dev.x += (dx / left) * step;
         dev.y += (dy / left) * step;
@@ -893,13 +920,45 @@
       return;
     }
     const n = dev.sheet;
-    if (n === 'push') return frame(n, dev.frames[dev.i], dev.x - 12, dev.y + 76, false);
+    if (n === 'push') return frame(n, dev.frames[dev.i], dev.x + 6, dev.y + 76, false);
     if (n === 'back') {
       const [x, y] = at('bag', 246, 150);
       return frame(n, dev.frames[dev.i], x, y, false);
     }
     const y = SHEETS[n][2] === 120 ? dev.y + 36 : dev.y;
     frame(n, dev.frames[dev.i], dev.x, y, dev.flip);
+  }
+
+  function devFeet() {
+    if (dev.state === 'sleep') return at('bed', 0, 241)[1];
+    if (dev.sheet === 'back') return at('bag', 0, 255)[1];
+    return dev.y + 146;
+  }
+
+  // On his chair the desk's top stays behind his hands, only its legs are in front
+  function atDesk() {
+    const [x, y] = seat();
+    return Math.abs(dev.x - x) < 8 && Math.abs(dev.y - y) < 12;
+  }
+
+  function drawPiece(p) {
+    const [x, y] = at(p.group, p.x, p.y);
+    ctx.drawImage(shapeOf(p), ox + x, oy + y);
+  }
+
+  // Everything that stands on the floor, drawn back to front
+  function drawDepth() {
+    const dFeet = devFeet();
+    const cFeet = cat.y + 51;
+    const front = Math.min(dFeet, cFeet);
+    const seated = atDesk();
+    const layers = [{ base: dFeet, draw: drawDev }, { base: cFeet, draw: drawCat }];
+    PIECES.forEach((p) => {
+      if ((p.away && seated) || (p.seated && !seated)) return;
+      const base = at(p.group, 0, p.base)[1];
+      if (base > front) layers.push({ base, draw: () => drawPiece(p) });
+    });
+    layers.sort((a, b) => a.base - b.base).forEach((l) => l.draw());
   }
 
   function devBox() {
@@ -1203,10 +1262,7 @@
     drawRoom();
     drawClock();
     hidePad();
-    const catFirst = cat.y + 51 < dev.y + 146;
-    if (catFirst) drawCat();
-    drawDev();
-    if (!catFirst) drawCat();
+    drawDepth();
     drawLight(now);
     drawZs(now);
     drawHearts(dt);
