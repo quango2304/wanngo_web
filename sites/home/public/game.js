@@ -109,7 +109,7 @@
 
   // Lights: id, group, x, y, radius
   const LIGHTS = [
-    { id: 'desk', group: 'desk', x: 177, y: 128, r: 78, c: '255,206,130' },
+    { id: 'desk', group: 'desk', x: 181, y: 128, r: 78, c: '255,206,130' },
     { id: 'lantern', group: 'lantern', x: 338, y: 46, r: 100, c: '255,224,170' },
     { id: 'tv', group: 'shelf', x: 333, y: 150, r: 64, c: '150,190,255' }
   ];
@@ -169,9 +169,9 @@
     { id: 'snake', sprite: 'snake', group: 'snake', x: 34, y: 162, base: 229 },
     { id: 'deskLegs', sprite: 'deskLegs', group: 'desk', x: 103, y: 148, base: 230 },
     { id: 'desk', sprite: 'desk', group: 'desk', x: 103, y: 148, base: 237 },
-    { id: 'laptop', sprite: 'laptop', group: 'desk', x: 115, y: 145, base: 237.1 },
-    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 164, y: 116, base: 237.1 },
-    { id: 'mug', sprite: 'mug', group: 'desk', x: 172, y: 170, base: 237.2 },
+    { id: 'laptop', sprite: 'laptop', group: 'desk', x: 133, y: 134, base: 237.1 },
+    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 168, y: 116, base: 237 },
+    { id: 'mug', sprite: 'mug', group: 'desk', x: 124, y: 174, base: 237.2 },
     { id: 'table', sprite: 'table', group: 'coffee', x: 200, y: 168, base: 205 },
     { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 202, y: 132, base: 205.5 },
     { id: 'herb', sprite: 'herb', group: 'coffee', x: 226, y: 150, base: 205.5 },
@@ -195,8 +195,10 @@
   ];
   const ROOM_BY_ID = {};
   ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
-  const DESK_LINE = 190; // sitting, he's above the desk over this line and under it below
+  const DESK_LINE = 180; // sitting, he's above the desk over this line and under it below
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
+  const DESK_SEAT_X = 122;
+  const DESK_EXIT = [92, 234];
   const AISLE = { x: 198, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
 
   // The chair is its own sprite: it slides out when he gets up and back when he sits
@@ -218,13 +220,19 @@
   }
 
   function drawChair() {
-    const [x, y] = at('desk', 71, 155);
+    const [x, y] = at('desk', 89, 145);
     sprite('chair', x + Math.round(CHAIR_OUT[0] * chair.t), y + Math.round(CHAIR_OUT[1] * chair.t));
   }
 
   // Feet positions to walk through, so nobody crosses a piece of furniture
   function route(from, to) {
-    if (!L.tall) return [[from[0], LANE], [to[0], LANE], to];
+    if (!L.tall) {
+      // The chair is behind the desk: step out past its corner first
+      const near = (p) => p[1] < DESK_EXIT[1] && Math.abs(p[0] - DESK_SEAT_X) < 10;
+      const start = near(from) ? [DESK_EXIT, [DESK_EXIT[0], LANE]] : [[from[0], LANE]];
+      const end = near(to) ? [[DESK_EXIT[0], LANE], DESK_EXIT, to] : [[to[0], LANE], to];
+      return start.concat(end);
+    }
     const fromTop = from[1] < AISLE.split;
     if (fromTop === to[1] < AISLE.split) return [to];
     if (fromTop) return [[AISLE.x, AISLE.top], [AISLE.x, AISLE.bottom], [to[0], AISLE.bottom], to];
@@ -235,15 +243,15 @@
   const THINGS = [
     { id: 'ac', label: 'air conditioner', group: 'ac', x: 362, y: 14, w: 97, h: 42, act: () => toggleAC() },
     { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 320, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
-    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 164, y: 116, w: 38, h: 54, act: () => toggleLamp('desk') },
+    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 168, y: 116, w: 38, h: 54, act: () => toggleLamp('desk') },
     { id: 'window', label: 'window', group: 'window', x: 196, y: 36, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
     { id: 'clock', label: 'clock', group: 'clock', x: 160, y: 62, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
     { id: 'cork', label: 'cork board', group: 'cork', x: 92, y: 100, w: 58, h: 44, say: 'todo: fewer todos' },
     { id: 'succs', label: 'little succulents', group: 'succs', x: 88, y: 60, w: 67, h: 36, say: 'the only ones I never forget' },
     { id: 'fig', label: 'fig tree', group: 'plants', x: 2, y: 85, w: 62, h: 110, say: 'taller than my last app' },
     { id: 'snake', label: 'snake plant', group: 'snake', x: 34, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
-    { id: 'laptop', label: 'laptop', group: 'desk', x: 115, y: 145, w: 53, h: 44, say: 'no peeking, it’s full of bugs' },
-    { id: 'mug', label: 'mug', group: 'desk', x: 172, y: 170, w: 16, h: 16, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
+    { id: 'laptop', label: 'laptop', group: 'desk', x: 133, y: 134, w: 53, h: 44, say: 'no peeking, it’s full of bugs' },
+    { id: 'mug', label: 'mug', group: 'desk', x: 124, y: 174, w: 16, h: 14, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
     { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 202, y: 132, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
     { id: 'herb', label: 'little herb', group: 'coffee', x: 226, y: 150, w: 19, h: 26, say: 'I forgot to water it again' },
     { id: 'bed', label: 'bed', group: 'bed', x: 200, y: 140, w: 104, h: 96, act: () => invite(nap, 'not yet. one more commit.') },
@@ -738,7 +746,7 @@
   const dev = { state: 'code', bed: 0, bedTo: 0, x: 0, y: 0, flip: false, wait: 0, breakIn: 60, thought: 8, pokes: 0, pokedAt: 0 };
 
   function seat() {
-    const [x, y] = at('desk', 46, 122);
+    const [x, y] = at('desk', 64, 112);
     return [x, y - 36];
   }
 
@@ -1066,7 +1074,7 @@
   // Everything that stands on the floor, drawn back to front
   function drawDepth() {
     const layers = [
-      { base: at('desk', 0, 228 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
+      { base: at('desk', 0, 218 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
       { base: catInBed() ? at('shelf', 0, 260)[1] : cat.y + 51, draw: drawCat }
     ];
     if (atDesk()) {
@@ -1385,7 +1393,7 @@
   function drawShadows() {
     ctx.fillStyle = 'rgba(82,54,32,0.2)';
     SHADOWS.forEach((v) => shadow(...v));
-    shadow('desk', 94 + CHAIR_OUT[0] * chair.t, 228 + CHAIR_OUT[1] * chair.t, 23, 5);
+    shadow('desk', 112 + CHAIR_OUT[0] * chair.t, 218 + CHAIR_OUT[1] * chair.t, 23, 5);
     const on = (x, y, rx, ry) => {
       ctx.beginPath();
       ctx.ellipse(ox + x, oy + y, rx, ry, 0, 0, Math.PI * 2);
