@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Chính sách quyền riêng tư — Bookmuse</title>
   <meta name="description" content="Cách Bookmuse xử lý dữ liệu của bạn: những gì được lưu khi có tài khoản, lưu ở đâu, các tính năng trực tuyến gửi gì, và cách xóa.">
-  <meta name="theme-color" content="#fbf8f3">
+  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15120e" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://bookmuse.wanngo.com/vi/privacy/">
   <link rel="alternate" hreflang="en" href="https://bookmuse.wanngo.com/privacy/">
   <link rel="alternate" hreflang="vi" href="https://bookmuse.wanngo.com/vi/privacy/">
@@ -16,173 +17,132 @@
   <meta property="og:url" content="https://bookmuse.wanngo.com/vi/privacy/">
   <meta property="og:title" content="Chính sách quyền riêng tư — Bookmuse">
   <meta property="og:description" content="Cách Bookmuse xử lý dữ liệu của bạn: những gì được lưu khi có tài khoản, lưu ở đâu, các tính năng trực tuyến gửi gì, và cách xóa.">
-  <meta property="og:image" content="https://bookmuse.wanngo.com/assets/og.jpg">
+  <meta property="og:image" content="https://bookmuse.wanngo.com/assets/og-vi.jpg">
   <meta property="og:locale" content="vi_VN">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/be-vietnam-pro-latin-600-normal.woff2" crossorigin>
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/site.css">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="nav scrolled">
-    <div class="wrap">
-      <a class="brand" href="/vi/" aria-label="Trang chủ Bookmuse"><img src="/assets/icon.png" alt="" width="32" height="32">Bookmuse</a>
-      <nav class="nav-links" aria-label="Điều hướng chính">
-        <a href="/vi/support/#faq">Hỏi đáp</a>
-        <a href="/vi/support/">Hỗ trợ</a>
-        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Tải về</a>
-      </nav>
-      <nav class="lang" aria-label="Ngôn ngữ"><a href="/privacy/" hreflang="en" lang="en">English</a><a href="/vi/privacy/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a><a href="/es/privacy/" hreflang="es" lang="es">Español</a></nav>
+  <a class="skip" href="#main">Chuyển đến nội dung</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/vi/" aria-label="Trang chủ Bookmuse"><img src="/assets/icon.png" alt="" width="30" height="30">Bookmuse</a>
+      <nav class="short" aria-label="Ngôn ngữ"><a href="/privacy/" hreflang="en" lang="en">EN</a><a href="/vi/privacy/" hreflang="vi" lang="vi" aria-current="page">VI</a><a href="/es/privacy/" hreflang="es" lang="es">ES</a></nav>
+      <a class="signin" href="https://bookmuse-app.wanngo.com/?lang=vi">Đăng nhập</a>
+      <button class="theme" type="button" data-to-dark="Chuyển sang giao diện tối" data-to-light="Chuyển sang giao diện sáng" aria-label="Chuyển sang giao diện tối"><svg class="sun-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.8 4.8l1.4 1.4M17.8 17.8l1.4 1.4M2.5 12h2M19.5 12h2M4.8 19.2l1.4-1.4M17.8 6.2l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+      <a class="btn" href="/vi/#download">Tải về</a>
     </div>
   </header>
 
-  <main class="doc">
+  <main class="doc" id="main">
     <h1>Chính sách quyền riêng tư</h1>
-    <p class="meta">Bookmuse · Cập nhật lần cuối ngày 3 tháng 11 năm 2026</p>
+    <p class="meta">Bookmuse · Cập nhật lần cuối ngày 5 tháng 11 năm 2026</p>
     <p class="meta">Nếu bản dịch này khác với bản tiếng Anh, bản tiếng Anh được áp dụng.</p>
 
-    <p class="summary"><strong>Tóm tắt:</strong> Bạn có thể đọc sách trong Bookmuse mà không cần tài khoản, khi đó thư viện của bạn chỉ nằm trên thiết bị. Nếu bạn đăng nhập (bằng Apple, Google hoặc email và mật khẩu), chúng tôi lưu thư viện của bạn trên máy chủ ở Nhật Bản để đồng bộ giữa các thiết bị. Các tính năng trực tuyến chỉ gửi những gì chúng cần. Chúng tôi không hiển thị quảng cáo, không bán dữ liệu của bạn và không theo dõi bạn trên ứng dụng hay trang web khác. Bạn có thể xóa tài khoản và dữ liệu của mình bất cứ lúc nào, trong ứng dụng hoặc qua email.</p>
+    <p class="summary"><strong>Tóm tắt:</strong> không có tài khoản, thư viện của bạn nằm trên thiết bị. Có tài khoản, thư viện được lưu trên máy chủ của chúng tôi ở Nhật Bản để đồng bộ. Các tính năng trực tuyến chỉ gửi những gì cần thiết. Không quảng cáo, không theo dõi, không bán dữ liệu. Bạn có thể xóa tài khoản bất cứ lúc nào.</p>
 
     <h2>Chúng tôi là ai</h2>
-    <p>Bookmuse do Quan Ngo, một nhà phát triển độc lập, làm ra ("chúng tôi"). Chính sách này áp dụng cho ứng dụng Bookmuse trên iPhone, iPad, Mac và Android, trang web này (bookmuse.wanngo.com) và trang quản lý trên web (bookmuse-app.wanngo.com). Câu hỏi: <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>.</p>
+    <p>Bookmuse do Quan Ngo, một nhà phát triển độc lập ("chúng tôi"), làm ra. Chính sách này áp dụng cho ứng dụng Bookmuse trên iPhone, iPad, Mac và Android, bookmuse.wanngo.com và trang quản lý web bookmuse-app.wanngo.com.</p>
 
-    <h2>Khi không có tài khoản</h2>
-    <p>Đăng nhập là tùy chọn. Khi không có tài khoản, sách, từ đã lưu, phần tô sáng, ghi chú, tiến độ đọc, thống kê và cài đặt của bạn chỉ được lưu trên thiết bị, và chúng tôi không nhận được gì trong số đó. Một số tính năng vẫn kết nối mạng khi bạn dùng; chúng được mô tả trong mục "Tính năng trực tuyến" bên dưới.</p>
-
-    <h2>Tài khoản của bạn</h2>
-    <p>Bạn đăng nhập bằng Apple, bằng Google, hoặc bằng email và mật khẩu Bookmuse. Từ lần đăng nhập bằng Apple hoặc Google, chúng tôi nhận được:</p>
+    <h2>Chúng tôi giữ những gì</h2>
+    <p>Đăng nhập là tùy chọn. Không có tài khoản, sách, từ, tô sáng, tiến độ và cài đặt nằm trên thiết bị và chúng tôi không nhận được gì. Có tài khoản, chúng tôi giữ:</p>
     <ul>
-      <li><strong>Mã tài khoản</strong> từ Apple hoặc Google, dùng để nhận ra bạn.</li>
-      <li><strong>Địa chỉ email</strong> và việc email đã được xác minh hay chưa. Nếu bạn dùng Ẩn email của tôi của Apple, đây là địa chỉ chuyển tiếp riêng mà Apple chuyển thư về cho bạn. Nếu cùng một email đã xác minh đăng nhập bằng cả Apple và Google, đó là một tài khoản Bookmuse.</li>
-      <li><strong>Tên của bạn.</strong> Apple chỉ chia sẻ tên ở lần đăng nhập đầu tiên, nếu bạn đồng ý. Google chia sẻ tên trong Tài khoản Google. Bạn có thể đổi tên trong ứng dụng.</li>
-      <li><strong>Ảnh hồ sơ Google</strong> (chỉ với Google): nếu tài khoản Bookmuse chưa có ảnh, chúng tôi sao chép ảnh này một lần làm ảnh hồ sơ. Những thay đổi ảnh Google sau đó không được cập nhật theo, và bạn có thể đổi hoặc gỡ ảnh trong ứng dụng.</li>
-    </ul>
-    <p>Nếu bạn dùng email và mật khẩu, chúng tôi gửi đến email đó một mã 6 chữ số để xác nhận địa chỉ là của bạn khi bạn tạo tài khoản, thêm mật khẩu hoặc đặt lại mật khẩu. Các email này được gửi qua Oracle Cloud Infrastructure Email Delivery. Chúng tôi chỉ lưu mật khẩu dưới dạng băm một chiều (argon2id), không bao giờ lưu chính mật khẩu, và mã cũng chỉ lưu dạng băm. Sau 10 lần nhập sai mật khẩu liên tiếp, việc đăng nhập bằng email đó bị khóa trong 15 phút.</p>
-    <p>Mỗi lần đăng nhập trên một thiết bị, trang quản lý web hoặc một trợ lý AI là một phiên. Với mỗi phiên, chúng tôi lưu loại thiết bị, phiên bản ứng dụng và lần dùng gần nhất. Mã đăng nhập chỉ được lưu dưới dạng băm một chiều. Chúng tôi cũng đếm mức sử dụng các tính năng có giới hạn (dung lượng đám mây, BookMuse AI, liên kết chia sẻ, bài đăng) để áp dụng giới hạn của gói miễn phí.</p>
-
-    <h2>Những gì được đồng bộ với tài khoản</h2>
-    <p>Khi bạn đăng nhập, Bookmuse giữ thư viện trong tài khoản của bạn để mọi thiết bị và trang quản lý web đều giống nhau:</p>
-    <ul>
-      <li>Thông tin sách (tên sách, tác giả, ngôn ngữ, tên và dung lượng tệp), vị trí đang đọc, trạng thái đã đọc xong, giao diện và cỡ chữ của từng cuốn.</li>
-      <li>Phần tô sáng, gạch chân, dấu trang và ghi chú, kèm đoạn văn được đánh dấu.</li>
-      <li>Từ đã lưu cùng bản dịch, thẻ và tiến độ ôn tập, và lịch sử tra cứu trong 30 ngày gần nhất.</li>
-      <li>Các cuộc trò chuyện Hỏi AI về từng cuốn sách.</li>
-      <li>Thời gian đọc và nghe mỗi ngày, thư mục, lời nhắc, cài đặt và địa chỉ các kho sách bạn thêm (mật khẩu kho sách không bao giờ được gửi cho chúng tôi).</li>
-      <li>Một mã ngẫu nhiên cho mỗi lần cài đặt ứng dụng, để việc đồng bộ biết thay đổi đến từ thiết bị nào.</li>
+    <li><strong>Đăng nhập:</strong> mã tài khoản, email (hoặc địa chỉ chuyển tiếp riêng của Apple) và tên từ Apple hoặc Google, và ảnh Google, sao chép một lần nếu bạn chưa có ảnh. Với đăng nhập bằng email, mật khẩu được giữ dưới dạng băm một chiều (argon2id). Mã đăng nhập được gửi qua dịch vụ email của Oracle.</li>
+    <li><strong>Thư viện:</strong> thông tin sách và vị trí đọc, tô sáng, ghi chú, dấu trang, từ đã lưu và tiến độ ôn tập, lịch sử tra từ, cuộc trò chuyện Hỏi AI, thời gian đọc, thư mục, lời nhắc, cài đặt, địa chỉ danh mục (không bao giờ có mật khẩu danh mục) và một mã ngẫu nhiên cho mỗi bản cài đặt.</li>
+    <li><strong>Tệp sách và bìa:</strong> trong kho lưu trữ riêng, chỉ truy cập qua liên kết có chữ ký ngắn hạn. Các tệp giống hệt nhau có thể dùng chung một bản lưu; không ai thấy được ai khác có tệp đó.</li>
+    <li><strong>Phiên và mức dùng:</strong> loại thiết bị, phiên bản ứng dụng và lần dùng gần nhất của mỗi phiên đăng nhập, mã đăng nhập dưới dạng băm, và số lần dùng các tính năng có giới hạn của gói miễn phí.</li>
     </ul>
 
-    <h2>Tệp sách và ảnh bìa</h2>
-    <p>Các tệp EPUB bạn thêm và ảnh bìa của chúng được tải lên kho lưu trữ riêng trong tài khoản của bạn, trong giới hạn dung lượng của gói. Chúng chỉ được mở qua các liên kết có chữ ký, tồn tại ngắn, tạo riêng cho bạn. Khi nhiều người thêm cùng một tệp giống hệt nhau, chúng tôi có thể chỉ lưu một bản cho tất cả; không ai thấy được người khác cũng có tệp đó. Thư viện của bạn là của riêng bạn: không ai khác mở được.</p>
+    <h2>Lưu ở đâu</h2>
+    <p>Trên Oracle Cloud tại Nhật Bản (Osaka), truy cập qua Cloudflare. Dữ liệu được mã hóa khi truyền và khi lưu. Nếu bạn sống ở nơi khác, dữ liệu của bạn được chuyển sang Nhật Bản. Chúng tôi không sao lưu cơ sở dữ liệu, nên dữ liệu đã xóa không thể khôi phục.</p>
 
-    <h2>Dữ liệu của bạn được lưu ở đâu</h2>
-    <p>Máy chủ và kho lưu trữ của chúng tôi chạy trên Oracle Cloud Infrastructure tại Nhật Bản (khu vực Osaka). Trang web và ứng dụng kết nối đến đó qua Cloudflare, dịch vụ chuyển tải và bảo vệ lưu lượng. Mọi dữ liệu đều đi qua kết nối mã hóa (HTTPS), và Oracle mã hóa dữ liệu được lưu. Nếu bạn sống ngoài Nhật Bản, điều này có nghĩa là dữ liệu của bạn được chuyển đến và lưu tại Nhật Bản.</p>
-    <p>Chúng tôi không giữ bản sao lưu cơ sở dữ liệu, vì vậy dữ liệu bạn đã xóa không thể khôi phục.</p>
-
-    <h2>Chia sẻ sách</h2>
-    <p>Chia sẻ sách tạo một liên kết dùng được trong 7 ngày. Bất kỳ ai có liên kết đều xem được một trang công khai với ảnh bìa, tên sách, tác giả, dung lượng tệp và tên hiển thị của bạn ("Được chia sẻ bởi …"), và bất kỳ ai đăng nhập Bookmuse đều có thể thêm một bản sao của sách vào thư viện của họ. Bản sao người khác đã thêm vẫn là của họ. Phần tô sáng và ghi chú của bạn không bao giờ được chia sẻ. Xóa sách hoặc xóa tài khoản sẽ chấm dứt liên kết sớm hơn.</p>
-
-    <h2>Bảng tin và trang cá nhân (tùy chọn)</h2>
-    <p>Bảng tin là công khai. Bạn đồng ý với quy tắc trước khi dùng. Những gì bạn đăng ở đó ai cũng xem được, kể cả người chưa đăng nhập:</p>
+    <h2>Những gì bạn công khai</h2>
     <ul>
-      <li>Bài đăng của bạn (tên sách, tác giả và ảnh bìa, nội dung bạn viết, số sao, trích dẫn, và liên kết chia sẻ nếu bạn thêm), bình luận và lượt thích của bạn.</li>
-      <li>Trang cá nhân: tên hiển thị, ảnh hồ sơ, thời điểm bạn tham gia, số bài đăng, người bạn theo dõi và người theo dõi bạn.</li>
+    <li><strong>Liên kết chia sẻ</strong> dùng được 7 ngày. Ai có liên kết đều thấy bìa, tên sách, tác giả, dung lượng tệp và tên hiển thị của bạn, và người đã đăng nhập có thể thêm một bản sao, bản đó thuộc về họ. Tô sáng và ghi chú không bao giờ được chia sẻ.</li>
+    <li><strong>Bảng tin</strong> là công khai, kể cả với người chưa đăng nhập: bài đăng (sách, nội dung, đánh giá, trích dẫn, liên kết chia sẻ), bình luận, lượt thích và hồ sơ (tên, ảnh, ngày tham gia, số bài đăng, người theo dõi và đang theo dõi). Chúng tôi giữ các báo cáo và lượt chặn của bạn. Báo cáo sẽ ẩn nội dung với bạn ngay lập tức và với mọi người sau vài báo cáo. Chúng tôi có thể gỡ nội dung và dừng quyền dùng bảng tin của một tài khoản. Bài đăng và bình luận đã xóa rời bảng tin ngay; nội dung của chúng được ẩn đi cho đến khi bạn xóa tài khoản.</li>
     </ul>
-    <p>Chúng tôi cũng lưu các báo cáo và lượt chặn bạn thực hiện. Một báo cáo ẩn bài đăng, bình luận hoặc ảnh đó với bạn ngay lập tức, và với mọi người sau vài báo cáo. Để giữ bảng tin an toàn, chúng tôi có thể gỡ bài đăng, bình luận và ảnh, và chặn một tài khoản dùng bảng tin. Xóa bài đăng hoặc bình luận sẽ gỡ nó khỏi bảng tin ngay; nội dung của nó vẫn được ẩn trong cơ sở dữ liệu cho đến khi bạn xóa tài khoản (xem "Xóa dữ liệu" bên dưới). Các từ trong danh sách chặn không thể được đăng.</p>
-
-    <h2>Google Drive và Dropbox (tùy chọn)</h2>
-    <p>Bạn có thể kết nối Google Drive hoặc Dropbox để nhập sách. Kết nối được giữ trong tài khoản để mọi thiết bị của bạn đều dùng được.</p>
-    <ul>
-      <li><strong>Google Drive:</strong> Bookmuse chỉ xin quyền <code>drive.file</code>, nên chỉ mở được những tệp bạn chọn trong trình chọn tệp của chính Google, cùng email của Tài khoản Google đó để hiển thị tài khoản nào đã kết nối. Bookmuse không thấy được phần còn lại của Drive.</li>
-      <li><strong>Dropbox:</strong> Bookmuse đọc được email tài khoản Dropbox, duyệt thư mục và tên tệp, và tải xuống những tệp EPUB bạn chọn nhập. Bookmuse không thể sửa hay xóa gì trong Dropbox của bạn.</li>
-    </ul>
-    <p>Máy chủ của chúng tôi giữ mã làm mới (refresh token) của kết nối ở dạng mã hóa (AES-256-GCM) và cấp cho thiết bị của bạn mã truy cập ngắn hạn. Thiết bị tải tệp trực tiếp từ Google hoặc Dropbox; tệp không đi qua máy chủ của chúng tôi, rồi được thêm vào thư viện như mọi cuốn sách khác. Chúng tôi chỉ dùng quyền truy cập này để nhập những cuốn sách bạn chọn. Khi bạn ngắt kết nối trong Cài đặt › Kết nối, hoặc xóa tài khoản, chúng tôi thu hồi quyền truy cập với Google hoặc Dropbox. Bạn cũng có thể gỡ quyền trong cài đặt Tài khoản Google hoặc Dropbox.</p>
-    <p>Bookmuse's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements. (Việc Bookmuse sử dụng và chuyển giao thông tin nhận từ các API của Google tuân thủ Chính sách dữ liệu người dùng của Google API Services, bao gồm các yêu cầu về Sử dụng giới hạn.) Chúng tôi không dùng dữ liệu người dùng Google cho quảng cáo, không bán, không dùng để huấn luyện mô hình AI, và không ai đọc dữ liệu đó trừ khi bạn yêu cầu (ví dụ trong một yêu cầu hỗ trợ), khi cần cho bảo mật, hoặc khi luật pháp yêu cầu.</p>
-
-    <h2>Tìm sách để đăng bài (Open Library)</h2>
-    <p>Khi bạn đăng bài về một cuốn sách không có trong thư viện của mình, ô tìm sách sẽ gửi những gì bạn gõ đến Open Library, một dịch vụ của Internet Archive (openlibrary.org), trực tiếp từ thiết bị của bạn. Như mọi yêu cầu web, yêu cầu này kèm địa chỉ IP của thiết bị cùng tên và phiên bản của Bookmuse. Chúng tôi không thấy và không lưu các lượt tìm kiếm của bạn. Cuốn sách bạn chọn chỉ đến chúng tôi dưới dạng tên sách, tác giả, mã Open Library và mã ảnh bìa hiện trong bài đăng, và máy chủ của chúng tôi sẽ tải ảnh bìa đó từ Open Library. Xem <a href="https://archive.org/about/terms.php">điều khoản và chính sách quyền riêng tư của Internet Archive</a>.</p>
 
     <h2>BookMuse AI</h2>
-    <p>BookMuse AI là AI có sẵn cho tra cứu, câu hỏi tiếp theo và Hỏi AI. Tính năng này cần tài khoản. Khi bạn dùng, ứng dụng gửi đến máy chủ của chúng tôi những gì tính năng cần: đoạn văn bạn tra cứu và ngữ cảnh từ sách mà tính năng dùng, câu hỏi của bạn và, với Hỏi AI, những phần sách AI đọc để trả lời (như mục lục, trang đang hiển thị và các đoạn nó tìm kiếm). Máy chủ chuyển nội dung này cho Anthropic, nơi mô hình Claude viết câu trả lời, theo điều khoản của họ.</p>
-    <p>Máy chủ của chúng tôi không lưu và không ghi nhật ký nội dung này, trừ khi bạn báo cáo một câu trả lời (xem bên dưới). Máy chủ gửi cho Anthropic mã tài khoản của bạn ở dạng đã xáo trộn một chiều, không phải tên hay email, và đếm số lượt dùng mỗi ngày để áp dụng giới hạn của gói (số đếm bị xóa sau 40 ngày). Chúng tôi không dùng nội dung của bạn để huấn luyện mô hình AI. Những câu trả lời bạn giữ lại, trong lịch sử tra cứu, từ đã lưu và các cuộc trò chuyện Hỏi AI, được lưu trong tài khoản để đồng bộ như mô tả ở trên. Khi không có tài khoản, việc tra cứu dùng bản dịch trên thiết bị và nằm lại trên thiết bị. Nếu BookMuse AI ngoại tuyến hoặc bạn đã hết hạn mức, việc tra cứu cũng dùng bản dịch trên thiết bị.</p>
+    <p>BookMuse AI cần tài khoản. Khi bạn dùng, máy chủ của chúng tôi nhận phần chữ bạn tra, câu hỏi của bạn và các phần sách cần để trả lời (như mục lục, trang đang xem và các đoạn được tìm), rồi chuyển cho Anthropic, nơi mô hình Claude viết câu trả lời theo điều khoản của họ. Anthropic nhận một dạng mã hóa xáo trộn của mã tài khoản, không bao giờ có tên hay email của bạn. Chúng tôi không lưu hay ghi nhật ký nội dung này và không dùng để huấn luyện mô hình AI. Câu trả lời bạn giữ lại được đồng bộ với tài khoản. Không có tài khoản, hoặc khi BookMuse AI không khả dụng, việc tra từ dùng bản dịch trên thiết bị.</p>
+    <p>Nếu bạn báo cáo một câu trả lời, chúng tôi nhận câu trả lời đó, câu hỏi ngay trước nó, mô hình, cuộc trò chuyện, tên sách, lý do và ghi chú của bạn, thời gian và phiên bản ứng dụng, gắn với tài khoản nếu bạn đã đăng nhập. Chúng tôi dùng báo cáo để cải thiện AI và giữ an toàn.</p>
 
-    <h2>Báo cáo câu trả lời AI</h2>
-    <p>Nếu một câu trả lời AI sai hoặc xúc phạm, bạn có thể báo cáo từ cuộc trò chuyện (nút cờ, Báo cáo câu trả lời). Báo cáo gửi cho chúng tôi câu trả lời bạn chọn và câu hỏi ngay trước nó, mô hình AI, cuộc trò chuyện nơi nó xuất hiện, tên sách, lý do và ghi chú nếu bạn thêm, cùng thời gian, nền tảng và phiên bản ứng dụng. Không có gì khác từ sách hay cuộc trò chuyện được gửi. Bạn có thể báo cáo dù có tài khoản hay không; khi đã đăng nhập, báo cáo gắn với tài khoản của bạn. Chúng tôi xem xét các báo cáo để cải thiện AI và giữ nó an toàn. Báo cáo bị xóa sau 180 ngày, hoặc sớm hơn khi bạn xóa tài khoản; Xóa mọi dữ liệu không xóa báo cáo.</p>
+    <h2>Trợ lý AI</h2>
+    <p>Nếu bạn kết nối một trợ lý AI (như Claude, ChatGPT hay Cursor), nó có thể đọc, thêm, sửa và xóa sách, từ, tô sáng, ghi chú và thư mục của bạn. Những gì nó đọc được gửi tới công ty đó theo chính sách của họ. Trợ lý không thể xóa tài khoản, xóa dữ liệu hay dùng BookMuse AI. Chúng tôi giữ tên trợ lý và phiên của nó cho đến khi bạn ngắt kết nối.</p>
 
-    <h2>Trợ lý AI (tùy chọn)</h2>
-    <p>Bạn có thể cho một trợ lý AI, như Claude, ChatGPT hoặc Cursor, dùng thư viện Bookmuse của bạn. Bạn đăng nhập trên trang kết nối của chúng tôi và chọn Cho phép. Khi đó trợ lý có thể đọc, thêm, sửa và xóa sách, từ, phần tô sáng, ghi chú và thư mục của bạn, như ứng dụng. Những gì trợ lý đọc được gửi đến công ty của trợ lý đó theo chính sách quyền riêng tư của họ. Chúng tôi lưu tên trợ lý và phiên của nó cho đến khi bạn ngắt kết nối trong trợ lý hoặc xóa tài khoản. Trợ lý không thể xóa tài khoản, xóa dữ liệu hay dùng BookMuse AI.</p>
-
-    <h2>Tính năng trực tuyến</h2>
+    <h2>Google Drive và Dropbox</h2>
+    <p>Bạn có thể kết nối để nhập sách. Kết nối được giữ trong tài khoản, với mã truy cập đã mã hóa (AES-256-GCM). Tệp được tải thẳng về thiết bị, không qua máy chủ của chúng tôi. Chúng tôi chỉ dùng quyền này để nhập những cuốn bạn chọn. Ngắt kết nối trong Cài đặt › Kết nối, hoặc xóa tài khoản, và chúng tôi sẽ thu hồi quyền.</p>
     <ul>
-      <li><strong>Kho sách.</strong> Khi bạn duyệt Project Gutenberg hoặc một máy chủ kho sách bạn thêm (như Calibre, Komga hoặc Stump), ứng dụng kết nối trực tiếp với máy chủ đó. Mật khẩu của kho sách chỉ được gửi đến máy chủ đó.</li>
-      <li><strong>Tải xuống.</strong> Giọng đọc Bookmuse được tải từ bản phát hành công khai trên GitHub của chúng tôi, ngôn ngữ Apple Translation từ Apple, và ngôn ngữ dịch trên Android từ Google.</li>
+    <li><strong>Google Drive:</strong> chỉ dùng quyền <code>drive.file</code>, nên Bookmuse chỉ mở được các tệp bạn chọn, cùng email của tài khoản đó. Bookmuse không thấy phần còn lại của Drive.</li>
+    <li><strong>Dropbox:</strong> Bookmuse đọc email tài khoản, tên thư mục và tệp, và tải các tệp EPUB bạn chọn. Bookmuse không thể sửa hay xóa gì.</li>
     </ul>
-    <p>Như mọi yêu cầu qua internet, các dịch vụ này nhận được địa chỉ IP của thiết bị và xử lý những gì nhận được theo chính sách quyền riêng tư của họ.</p>
+    <p>Việc Bookmuse sử dụng và chuyển giao thông tin nhận từ Google API tuân thủ <a href="https://developers.google.com/terms/api-services-user-data-policy">Chính sách dữ liệu người dùng của Dịch vụ Google API</a>, bao gồm các yêu cầu về Sử dụng giới hạn. Chúng tôi không dùng dữ liệu người dùng Google cho quảng cáo, không bán, không dùng để huấn luyện mô hình AI, và không ai đọc dữ liệu đó trừ khi bạn yêu cầu (ví dụ trong một yêu cầu hỗ trợ), khi cần cho bảo mật, hoặc khi pháp luật yêu cầu.</p>
 
-    <h2>Dịch trên Android (Google ML Kit)</h2>
-    <p>Trên Android, dịch và nhận diện ngôn ngữ chạy trên thiết bị bằng ML Kit của Google. Đoạn văn bạn dịch nằm lại trên thiết bị. ML Kit gửi cho Google dữ liệu chẩn đoán và sử dụng, dù bạn đã đăng nhập hay chưa: kiểu máy và phiên bản Android, phiên bản ứng dụng, thời gian dịch, mã lỗi, loại sự kiện, các ngôn ngữ dịch và ngôn ngữ nhận diện được, và một mã cho lần cài đặt này. Google dùng dữ liệu này để ML Kit hoạt động tốt, như mô tả trong <a href="https://developers.google.com/ml-kit/android-data-disclosure">thông tin công bố dữ liệu ML Kit của Google</a>. Trên thiết bị Apple, Apple Translation chạy trên thiết bị theo điều khoản quyền riêng tư của Apple.</p>
-
-    <h2>Trang web, trang quản lý và cookie</h2>
-    <p>bookmuse.wanngo.com không có phân tích, quảng cáo hay cookie theo dõi. Trang quản lý web dùng một cookie đăng nhập, một cookie ngắn hạn trong lúc đăng nhập, và bộ nhớ trình duyệt cho các tùy chọn như ngôn ngữ; tất cả đều cần thiết để trang hoạt động. Nút đăng nhập của Apple và Google được tải từ Apple và Google khi bạn đăng nhập. Cloudflare có thể đặt một cookie bảo mật thật sự cần thiết.</p>
-
-    <h2>Nhật ký máy chủ và bảo mật</h2>
-    <p>Với mỗi yêu cầu, máy chủ ghi lại thời gian, đường dẫn, kết quả, thời gian xử lý, nền tảng và phiên bản ứng dụng, và mã tài khoản nếu bạn đã đăng nhập. Nhật ký không bao giờ chứa sách, ghi chú, từ, nội dung AI, mật khẩu hay mã đăng nhập của bạn, và chỉ được giữ trong thời gian ngắn. Cloudflare và máy chủ của chúng tôi dùng địa chỉ IP để chuyển tải lưu lượng và hạn chế lạm dụng; chúng tôi không lưu chúng cùng tài khoản của bạn.</p>
-    <p>Các biện pháp bảo vệ khác: kho lưu trữ riêng chỉ mở qua liên kết có chữ ký ngắn hạn, mã đăng nhập được lưu dạng băm, mã của nhà cung cấp được mã hóa, mật khẩu chỉ được lưu dạng băm một chiều, và cần đăng nhập lại hoặc nhập mật khẩu trước khi xóa tài khoản. Không hệ thống nào an toàn tuyệt đối, nhưng chúng tôi luôn cố gắng giữ dữ liệu của bạn an toàn.</p>
-
-    <h2>Những điều chúng tôi không làm</h2>
+    <h2>Dịch vụ khác</h2>
+    <p>Các dịch vụ này nhận địa chỉ IP của bạn như mọi yêu cầu internet và hoạt động theo chính sách riêng của họ.</p>
     <ul>
-      <li>Không quảng cáo, không mã quảng cáo, không bán hay cho thuê dữ liệu của bạn.</li>
-      <li>Không theo dõi bạn trên ứng dụng hay trang web của công ty khác.</li>
-      <li>Không có công cụ phân tích hay báo cáo sự cố trong ứng dụng, ngoài dữ liệu chẩn đoán của ML Kit trên Android như mô tả ở trên.</li>
+    <li><strong>Open Library:</strong> khi bạn tìm sách để đăng bài, thiết bị gửi nội dung bạn gõ tới Open Library (<a href="https://archive.org/about/terms.php">Internet Archive</a>). Chúng tôi không thấy nội dung tìm kiếm. Máy chủ của chúng tôi tải bìa bạn chọn.</li>
+    <li><strong>Danh mục sách:</strong> Project Gutenberg và các máy chủ bạn thêm (Calibre, Komga, Stump) được truy cập trực tiếp từ ứng dụng. Mật khẩu danh mục chỉ gửi tới máy chủ đó.</li>
+    <li><strong>Tải về:</strong> giọng đọc từ bản phát hành GitHub công khai của chúng tôi, ngôn ngữ dịch từ Apple hoặc Google.</li>
+    <li><strong>Dịch trên Android:</strong> ML Kit của Google chạy trên thiết bị và chữ của bạn ở lại đó. Nó gửi dữ liệu chẩn đoán cho Google, dù có tài khoản hay không: mẫu máy, phiên bản Android, phiên bản ứng dụng, thời gian xử lý, mã lỗi, loại sự kiện, ngôn ngữ và mã bản cài đặt (<a href="https://developers.google.com/ml-kit/android-data-disclosure">công bố của Google</a>). Trên thiết bị Apple, Dịch của Apple chạy trên thiết bị theo điều khoản của Apple.</li>
     </ul>
+
+    <h2>Trang web và nhật ký</h2>
+    <p>bookmuse.wanngo.com không có phân tích, quảng cáo hay cookie theo dõi; trình duyệt của bạn ghi nhớ lựa chọn giao diện sáng hoặc tối. Trang quản lý chỉ dùng cookie và bộ nhớ trình duyệt cần để hoạt động. Nút đăng nhập Apple và Google được tải từ họ, và Cloudflare có thể đặt một cookie bảo mật thật sự cần thiết.</p>
+    <p>Nhật ký máy chủ gồm thời gian, đường dẫn, kết quả, thời lượng, nền tảng và phiên bản ứng dụng và mã tài khoản, không bao giờ có sách, ghi chú, từ, nội dung AI, mật khẩu hay mã đăng nhập, và chỉ được giữ trong thời gian ngắn. Địa chỉ IP dùng để chuyển dữ liệu và chống lạm dụng; chúng tôi không lưu chúng cùng tài khoản.</p>
+
+    <h2>Những gì chúng tôi không làm</h2>
+    <p>Không quảng cáo, không mã quảng cáo, không bán hay cho thuê dữ liệu, không theo dõi trên ứng dụng hay trang web của công ty khác. Ứng dụng không có công cụ phân tích hay báo cáo lỗi, ngoài dữ liệu chẩn đoán của ML Kit trên Android.</p>
 
     <h2>Ai nhận dữ liệu</h2>
-    <p>Chỉ những công ty vận hành một phần của Bookmuse cho chúng tôi, mỗi công ty cho phần việc của mình: Oracle (máy chủ, lưu trữ và email đăng nhập), Cloudflare (chuyển tải và bảo vệ mạng), Anthropic (BookMuse AI), Apple và Google (đăng nhập, và ML Kit trên Android), Open Library (Internet Archive) khi bạn tìm sách để đăng bài, và Google Drive hoặc Dropbox nếu bạn kết nối. Những gì bạn công khai trên bảng tin hoặc qua liên kết chia sẻ hiển thị như mô tả ở trên. Chúng tôi có thể cung cấp dữ liệu khi luật pháp yêu cầu. Nếu Bookmuse được chuyển giao cho người khác, chính sách này vẫn áp dụng cho dữ liệu đã thu thập theo nó.</p>
+    <p>Chỉ những bên vận hành các phần của Bookmuse, mỗi bên cho phần của mình: Oracle (máy chủ, lưu trữ, email), Cloudflare (truyền tải và bảo vệ), Anthropic (BookMuse AI), Apple và Google (đăng nhập, và ML Kit trên Android), Open Library, và Google Drive hoặc Dropbox nếu bạn kết nối. Chúng tôi có thể tiết lộ dữ liệu nếu pháp luật yêu cầu. Nếu Bookmuse được chuyển giao, chính sách này vẫn áp dụng cho dữ liệu đã thu thập theo nó.</p>
 
-    <h2>Chúng tôi giữ dữ liệu bao lâu</h2>
+    <h2>Giữ trong bao lâu</h2>
     <ul>
-      <li>Tài khoản và thư viện: cho đến khi bạn xóa chúng hoặc xóa tài khoản.</li>
-      <li>Mã đăng nhập gửi qua email: xóa trong vòng một ngày.</li>
-      <li>Lịch sử tra cứu: 30 ngày. Số đếm lượt dùng AI: 40 ngày. Câu trả lời AI đã báo cáo: 180 ngày. Phiên đã kết thúc: xóa trong khoảng một tuần.</li>
-      <li>Liên kết chia sẻ hết hiệu lực sau 7 ngày.</li>
-      <li>Những mục bạn xóa (phần tô sáng, từ, ghi chú, cuộc trò chuyện hay bài đăng) biến mất khỏi thiết bị và bảng tin ngay lập tức. Nội dung cuối cùng của chúng vẫn được ẩn trong tài khoản cho đến khi bạn dùng Xóa mọi dữ liệu hoặc xóa tài khoản, khi đó nó bị xóa.</li>
+    <li>Tài khoản và thư viện: cho đến khi bạn xóa.</li>
+    <li>Mã đăng nhập: một ngày. Phiên đã kết thúc: khoảng một tuần.</li>
+    <li>Lịch sử tra từ: 30 ngày. Số lần dùng AI: 40 ngày. Câu trả lời AI bị báo cáo: 180 ngày, hoặc đến khi bạn xóa tài khoản.</li>
+    <li>Mục bạn xóa biến mất khỏi thiết bị ngay. Nội dung cuối của chúng được ẩn trong tài khoản cho đến khi bạn dùng Xóa mọi dữ liệu hoặc xóa tài khoản.</li>
     </ul>
 
-    <h2>Xóa dữ liệu</h2>
+    <h2>Lựa chọn và quyền của bạn</h2>
     <ul>
-      <li><strong>Xóa tài khoản</strong> (Cài đặt › Tài khoản › Xóa tài khoản, trên iPhone, iPad, Mac và Android) xóa tài khoản và mọi thứ trong đó ngay lập tức. Các tệp được lưu bị xóa trong vài phút. <a href="/vi/delete-account/">Những gì bị xóa, những gì được giữ, và cách yêu cầu qua email</a>.</li>
-      <li><strong>Xóa mọi dữ liệu</strong> (Cài đặt) xóa thư viện khỏi tài khoản và mọi thiết bị nhưng giữ lại tài khoản, trang cá nhân, bài đăng trên bảng tin, các câu trả lời AI bạn đã báo cáo và kết nối Drive hoặc Dropbox.</li>
-      <li>Bạn cũng có thể xóa từng cuốn sách, từ, phần tô sáng, bài đăng và bình luận, gỡ ảnh hồ sơ, và ngắt kết nối Drive, Dropbox hoặc một trợ lý AI.</li>
-      <li>Nếu bạn xóa Tài khoản Apple, Apple sẽ báo cho chúng tôi và chúng tôi xóa tài khoản Bookmuse của bạn.</li>
+    <li><strong>Xóa tài khoản</strong> (Cài đặt › Tài khoản) xóa tài khoản và mọi thứ trong đó ngay lập tức. Xem <a href="/vi/delete-account/">những gì bị xóa và cách yêu cầu qua email</a>. Xóa Tài khoản Apple cũng có tác dụng tương tự.</li>
+    <li><strong>Xóa mọi dữ liệu</strong> (Cài đặt) xóa thư viện nhưng giữ tài khoản, hồ sơ, bài đăng, câu trả lời đã báo cáo và kết nối Drive hoặc Dropbox.</li>
+    <li>Bạn có thể xem, sửa và tải dữ liệu trong ứng dụng và trang quản lý, và xuất tô sáng (Markdown) và từ (CSV).</li>
     </ul>
-
-    <h2>Quyền của bạn</h2>
-    <p>Bạn có thể xem và sửa dữ liệu trong ứng dụng và trên trang quản lý web, tải sách xuống, xuất phần tô sáng (Markdown) và từ (CSV), và xóa dữ liệu hoặc tài khoản. Bạn cũng có thể email cho chúng tôi để yêu cầu bản sao dữ liệu, sửa, xóa, hoặc phản đối cách chúng tôi sử dụng dữ liệu; chúng tôi trả lời trong vòng 30 ngày. Tùy nơi bạn sống (ví dụ EU, Vương quốc Anh hay California), bạn có các quyền này theo luật và có thể khiếu nại với cơ quan bảo vệ dữ liệu tại địa phương.</p>
-    <p>Khi luật yêu cầu cơ sở pháp lý, chúng tôi dùng dữ liệu của bạn để cung cấp dịch vụ bạn yêu cầu (tài khoản, đồng bộ, AI và chia sẻ), vì lợi ích chính đáng là giữ Bookmuse an toàn và bảng tin lành mạnh, và với sự đồng ý của bạn cho các kết nối tùy chọn, mà bạn có thể rút lại bằng cách ngắt kết nối.</p>
+    <p>Bạn cũng có thể gửi email để xin bản sao, sửa, xóa dữ liệu hoặc phản đối cách chúng tôi dùng dữ liệu; chúng tôi trả lời trong 30 ngày. Tùy nơi bạn sống (ví dụ EU, Anh hoặc California), đây là các quyền theo luật và bạn có thể khiếu nại với cơ quan bảo vệ dữ liệu. Cơ sở pháp lý của chúng tôi là cung cấp dịch vụ bạn yêu cầu, lợi ích chính đáng trong việc giữ Bookmuse an toàn, và sự đồng ý của bạn cho các kết nối tùy chọn, bạn có thể rút lại bằng cách ngắt kết nối.</p>
 
     <h2>Trẻ em</h2>
-    <p>Bookmuse dành cho người từ 13 tuổi trở lên (hoặc lớn hơn, nếu độ tuổi tối thiểu cho các dịch vụ này ở nước bạn cao hơn). Ứng dụng không hướng đến trẻ em, và chúng tôi không cố ý thu thập dữ liệu của trẻ dưới 13 tuổi. Nếu bạn nghĩ một trẻ em đã cung cấp dữ liệu cho chúng tôi, hãy email để chúng tôi xóa.</p>
+    <p>Bookmuse dành cho người từ 13 tuổi trở lên (hoặc cao hơn nếu quốc gia của bạn quy định tuổi tối thiểu cao hơn). Nếu bạn nghĩ một đứa trẻ đã cung cấp dữ liệu, hãy gửi email và chúng tôi sẽ xóa.</p>
 
     <h2>Bookmuse 1.3 trở về trước</h2>
-    <p>Các phiên bản đến 1.3 trên App Store không có tài khoản: chúng lưu thư viện trên thiết bị và đồng bộ qua iCloud của chính bạn, nơi chúng tôi không truy cập được. BookMuse AI trong các phiên bản đó gửi tra cứu trực tiếp từ thiết bị đến OpenRouter. Khi cập nhật lên phiên bản mới, thư viện trên thiết bị bắt đầu trống; không có gì được chuyển từ iCloud lên máy chủ của chúng tôi.</p>
+    <p>Các phiên bản này không có tài khoản: thư viện nằm trên thiết bị và iCloud của chính bạn, nơi chúng tôi không truy cập được, và BookMuse AI gửi nội dung tra từ từ thiết bị tới OpenRouter. Khi cập nhật, thư viện bắt đầu trống; không có gì được chuyển từ iCloud sang máy chủ của chúng tôi.</p>
 
     <h2>Thay đổi và liên hệ</h2>
-    <p>Nếu chính sách này thay đổi, chúng tôi sẽ đăng phiên bản mới tại đây với ngày mới. Câu hỏi hoặc yêu cầu: <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>.</p>
+    <p>Mọi thay đổi sẽ được đăng tại đây với ngày mới. Câu hỏi hoặc yêu cầu: <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>.</p>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <a class="brand" href="/vi/"><img src="/assets/icon.png" alt="" width="24" height="24">Bookmuse</a>
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="brand" href="/vi/"><img src="/assets/icon.png" alt="" width="24" height="24" loading="lazy">Bookmuse</a>
       <nav aria-label="Chân trang">
         <a href="/vi/privacy/">Quyền riêng tư</a>
-        <a href="/vi/support/">Hỗ trợ</a>
         <a href="/vi/delete-account/">Xóa tài khoản</a>
+        <a href="/vi/support/">Hỗ trợ</a>
         <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>
       </nav>
-      <nav class="lang" aria-label="Ngôn ngữ"><a href="/privacy/" hreflang="en" lang="en">English</a><a href="/vi/privacy/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a><a href="/es/privacy/" hreflang="es" lang="es">Español</a></nav>
+      <nav aria-label="Ngôn ngữ"><a href="/privacy/" hreflang="en" lang="en">English</a><a href="/vi/privacy/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a><a href="/es/privacy/" hreflang="es" lang="es">Español</a></nav>
       <span>© 2026 Bookmuse</span>
     </div>
   </footer>
+  <script src="/site.js" defer></script>
 </body>
 </html>

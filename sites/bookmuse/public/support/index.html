@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Support — Bookmuse</title>
   <meta name="description" content="Get help with Bookmuse: contact, troubleshooting and common questions.">
-  <meta name="theme-color" content="#fbf8f3">
+  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15120e" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://bookmuse.wanngo.com/support/">
   <link rel="alternate" hreflang="en" href="https://bookmuse.wanngo.com/support/">
   <link rel="alternate" hreflang="vi" href="https://bookmuse.wanngo.com/vi/support/">
@@ -23,22 +24,25 @@
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/be-vietnam-pro-latin-600-normal.woff2" crossorigin>
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/site.css">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="nav scrolled">
-    <div class="wrap">
-      <a class="brand" href="/" aria-label="Bookmuse home"><img src="/assets/icon.png" alt="" width="32" height="32">Bookmuse</a>
-      <nav class="nav-links" aria-label="Main">
-        <a href="/support/#faq">FAQ</a>
-        <a href="/privacy/">Privacy</a>
-        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Download</a>
-      </nav>
-      <nav class="lang" aria-label="Language"><a href="/support/" hreflang="en" lang="en" aria-current="page">English</a><a href="/vi/support/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/es/support/" hreflang="es" lang="es">Español</a></nav>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/" aria-label="Bookmuse home"><img src="/assets/icon.png" alt="" width="30" height="30">Bookmuse</a>
+      <nav class="short" aria-label="Language"><a href="/support/" hreflang="en" lang="en" aria-current="page">EN</a><a href="/vi/support/" hreflang="vi" lang="vi">VI</a><a href="/es/support/" hreflang="es" lang="es">ES</a></nav>
+      <a class="signin" href="https://bookmuse-app.wanngo.com/?lang=en">Sign in</a>
+      <button class="theme" type="button" data-to-dark="Switch to dark mode" data-to-light="Switch to light mode" aria-label="Switch to dark mode"><svg class="sun-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.8 4.8l1.4 1.4M17.8 17.8l1.4 1.4M2.5 12h2M19.5 12h2M4.8 19.2l1.4-1.4M17.8 6.2l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+      <a class="btn" href="/#download">Get the app</a>
     </div>
   </header>
 
-  <main class="doc">
+  <main class="doc" id="main">
     <h1>Support</h1>
     <p class="meta">Questions, bug reports or ideas? We'd love to hear from you.</p>
 
@@ -47,142 +51,76 @@
         <h2>Email us</h2>
         <p>We usually reply within a few days.</p>
       </div>
-      <a class="btn btn-primary" href="mailto:admin@bookmuse.wanngo.com?subject=Bookmuse%20support">admin@bookmuse.wanngo.com</a>
+      <a class="btn" href="mailto:admin@bookmuse.wanngo.com?subject=Bookmuse%20support">admin@bookmuse.wanngo.com</a>
     </div>
-
-    <h2>Help us help you</h2>
-    <p>To fix a problem quickly, please include:</p>
-    <ul>
-      <li>The Bookmuse version (Bookmuse Settings → About)</li>
-      <li>Your device and its iOS, iPadOS or Android version</li>
-      <li>What you did, what you expected, and what happened</li>
-      <li>A screenshot or screen recording, if you can</li>
-    </ul>
-
-    <h2>Troubleshooting</h2>
-    <div class="faq">
-      <details>
-        <summary>My books or words aren't syncing</summary>
-        <div class="answer">
-          <p>Make sure every device is signed in to the same Bookmuse account (Bookmuse Settings → Account), with the same Apple, Google or email sign-in. Devices catch up when Bookmuse opens or comes back to the screen, or when you pull down on Home. Settings → Account shows the sync status; if it says it couldn't sync, check your connection and tap Try Again. Large books can take a few minutes to arrive on a new device.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Translate asks to download a language</summary>
-        <div class="answer">
-          <p>Apple Translation works offline once a language is downloaded. The first lookup in a new language pair asks to download it from Apple. If a download doesn't start, check your connection, or manage languages in the Settings app → Apps → Translate → Downloaded Languages.</p>
-        </div>
-      </details>
-      <details>
-        <summary>I don't see word roots, meanings or Ask AI</summary>
-        <div class="answer">
-          <p>Apple Translation gives the translation only. Roots, meanings, follow-ups and Ask AI come from BookMuse AI, which needs you to be signed in. Signed in and still seeing only a translation? BookMuse AI may be offline, or you may have reached its daily or monthly limit. Try again later.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Bookmuse doesn't appear as my Translate app</summary>
-        <div class="answer">
-          <p>Open the Settings app → Apps → Default Apps → Translation and choose Bookmuse. This needs iOS or iPadOS 26.</p>
-        </div>
-      </details>
-      <details>
-        <summary>A book won't open</summary>
-        <div class="answer">
-          <p>Bookmuse opens DRM-free EPUB, Kindle (MOBI, AZW3), FB2, TXT and Markdown books. Books bought from stores that add DRM can't be opened. If a DRM-free book still fails, email it to us (or a link to it) and we'll take a look.</p>
-        </div>
-      </details>
-      <details>
-        <summary>How do I delete my data?</summary>
-        <div class="answer">
-          <p>To delete your account and everything in it, go to Bookmuse Settings → Account → Delete Account, or follow <a href="/delete-account/">these steps</a> if you can't open the app. To keep the account but clear your library on all your devices, use Erase All Data in Bookmuse Settings. See the <a href="/privacy/">privacy policy</a> for more.</p>
-        </div>
-      </details>
-    </div>
+    <p class="hint">For a problem, include your Bookmuse version (Settings → About), your device and what happened. A screenshot helps.</p>
 
     <h2 id="faq">Questions, answered.</h2>
     <div class="faq">
       <details>
-        <summary>How do I get Bookmuse?</summary>
-        <div class="answer">
-          <p>Download it free from the <a href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">App Store</a> for iPhone and iPad. The Android app is coming soon to Google Play.</p>
-        </div>
-      </details>
-      <details>
         <summary>Is it free?</summary>
-        <div class="answer">
-          <p>Yes. Bookmuse is free, with no ads and no in-app purchases. A free account includes BookMuse AI with a daily allowance and 250 MB of cloud storage for your book files; books kept on your device have no limit.</p>
-        </div>
+        <div class="answer"><p>Yes, with no ads and no in-app purchases. A free account includes BookMuse AI with a daily allowance and 250 MB of cloud storage. Books kept on your device have no limit.</p></div>
       </details>
       <details>
         <summary>Do I need an account?</summary>
-        <div class="answer">
-          <p>No. Reading, Apple Translation, voices, saved words and review all work without one. Sign in with Apple, Google or email to turn on sync, BookMuse AI, the Feed, sharing, Google Drive and Dropbox, and AI agents.</p>
-        </div>
+        <div class="answer"><p>No. Reading, Apple Translation, voices, saved words and review all work without one. Sign in to turn on sync, BookMuse AI, the Feed, sharing, Google Drive and Dropbox, and AI agents.</p></div>
       </details>
       <details>
         <summary>Which devices does it run on?</summary>
-        <div class="answer">
-          <p>iPhone and iPad with iOS 26 or iPadOS 26. Android 9 or later when the Android app arrives. The web dashboard at bookmuse-app.wanngo.com works in any modern browser.</p>
-        </div>
+        <div class="answer"><p>iPhone and iPad with iOS or iPadOS 26. Android 9 or later when the Android app arrives. The web dashboard works in any modern browser.</p></div>
       </details>
       <details>
-        <summary>Where do the books come from?</summary>
-        <div class="answer">
-          <p>You bring them. Import DRM-free EPUB, Kindle (MOBI, AZW3), FB2, TXT or Markdown books from Files, Google Drive or Dropbox, browse thousands of free classics from Project Gutenberg, or connect your own book server (Calibre, Komga, Stump, or any OPDS catalog). Bookmuse also has ready-made summaries you can read and listen to.</p>
-        </div>
+        <summary>Which books can I open?</summary>
+        <div class="answer"><p>DRM-free EPUB, Kindle (MOBI, AZW3), FB2, TXT and Markdown, from Files, Google Drive, Dropbox, Project Gutenberg or your own Calibre, Komga, Stump or OPDS server. Books from stores that add DRM can't be opened. If a DRM-free book fails, email it to us.</p></div>
       </details>
       <details>
         <summary>Is listening free?</summary>
-        <div class="answer">
-          <p>Yes. Bookmuse Voices (English, French, German, Spanish, Portuguese and Vietnamese) and Apple's voices run on your device, cost nothing and need no account.</p>
-        </div>
+        <div class="answer"><p>Yes. Bookmuse Voices (English, French, German, Spanish, Portuguese, Vietnamese) and Apple's voices run on your device and need no account.</p></div>
       </details>
       <details>
-        <summary>Do I need an AI subscription or an API key?</summary>
-        <div class="answer">
-          <p>No. Sign in and BookMuse AI gives rich word cards, follow-up questions and Ask AI with nothing to set up.</p>
-          <p>Prefer to keep lookups on your device? Stay signed out and lookups use Apple Translation, which is free and works offline once a language is downloaded.</p>
-        </div>
+        <summary>Do I need an AI subscription or API key?</summary>
+        <div class="answer"><p>No. Sign in and BookMuse AI gives word cards, follow-up questions and Ask AI. If you see only a translation, sign in, or BookMuse AI may be offline or at its daily or monthly limit.</p></div>
       </details>
       <details>
         <summary>Which languages can Bookmuse translate?</summary>
-        <div class="answer">
-          <p>Any language pair Apple Translation supports, and with BookMuse AI, almost any language it understands. Bookmuse itself speaks English, Vietnamese and Spanish.</p>
-        </div>
+        <div class="answer"><p>Any pair Apple Translation supports, and almost any language with BookMuse AI. Apple Translation works offline once a language is downloaded (Settings app → Apps → Translate → Downloaded Languages). Bookmuse itself speaks English, Vietnamese and Spanish.</p></div>
+      </details>
+      <details>
+        <summary>My books or words aren't syncing</summary>
+        <div class="answer"><p>Sign in to the same account on every device. Devices catch up when Bookmuse opens or when you pull down on Home. Settings → Account shows the sync status. Large books can take a few minutes.</p></div>
+      </details>
+      <details>
+        <summary>How do I make Bookmuse my Translate app?</summary>
+        <div class="answer"><p>On iOS or iPadOS 26, open the Settings app → Apps → Default Apps → Translation and choose Bookmuse.</p></div>
       </details>
       <details>
         <summary>How do AI agents use my library?</summary>
-        <div class="answer">
-          <p>Bookmuse has an MCP server. Add it to Claude, ChatGPT, Cursor or Claude Code, sign in, and allow access; the agent can then search your books, highlights and words, add words, organise folders and add books. The steps are in the app under Settings › Connections › AI Agents, and on the web dashboard. Agents can't delete your account or use BookMuse AI.</p>
-        </div>
-      </details>
-      <details>
-        <summary>How do I make Bookmuse my default Translate app?</summary>
-        <div class="answer">
-          <p>On iPhone or iPad, open the Settings app, then Apps → Default Apps → Translation, and choose Bookmuse. Now select text in any app, tap Translate, and Bookmuse shows the meaning with one tap to save it.</p>
-        </div>
+        <div class="answer"><p>Add the Bookmuse MCP server to Claude, ChatGPT, Cursor or Claude Code, sign in and allow access. Agents can search your books, highlights and words, add words, organise folders and add books. The steps are in Settings › Connections › AI Agents.</p></div>
       </details>
       <details>
         <summary>Is my reading private?</summary>
-        <div class="answer">
-          <p>Yes. There are no ads and no tracking. Without an account, your books, words and progress stay on your device. Sign in and they are stored in your Bookmuse account so they sync to your other devices and the web; you can delete your account at any time. With BookMuse AI, what you look up and ask is sent to our AI provider to be answered; stay signed out to keep lookups on your device with Apple Translation. See the <a href="/privacy/">privacy policy</a> for the details.</p>
-        </div>
+        <div class="answer"><p>Yes. No ads, no tracking. Without an account, everything stays on your device. With BookMuse AI, what you look up and ask goes to our AI provider to be answered. See the <a href="/privacy/">privacy policy</a>.</p></div>
+      </details>
+      <details>
+        <summary>How do I delete my data?</summary>
+        <div class="answer"><p>Bookmuse Settings → Account → Delete Account, or <a href="/delete-account/">these steps</a> if you can't open the app. Erase All Data in Settings clears your library and keeps the account.</p></div>
       </details>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <a class="brand" href="/"><img src="/assets/icon.png" alt="" width="24" height="24">Bookmuse</a>
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="brand" href="/"><img src="/assets/icon.png" alt="" width="24" height="24" loading="lazy">Bookmuse</a>
       <nav aria-label="Footer">
         <a href="/privacy/">Privacy</a>
+        <a href="/delete-account/">Delete account</a>
         <a href="/support/">Support</a>
-        <a href="/delete-account/">Delete Account</a>
         <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>
       </nav>
-      <nav class="lang" aria-label="Language"><a href="/support/" hreflang="en" lang="en" aria-current="page">English</a><a href="/vi/support/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/es/support/" hreflang="es" lang="es">Español</a></nav>
+      <nav aria-label="Language"><a href="/support/" hreflang="en" lang="en" aria-current="page">English</a><a href="/vi/support/" hreflang="vi" lang="vi">Tiếng Việt</a><a href="/es/support/" hreflang="es" lang="es">Español</a></nav>
       <span>© 2026 Bookmuse</span>
     </div>
   </footer>
+  <script src="/site.js" defer></script>
 </body>
 </html>

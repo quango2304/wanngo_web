@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Hỗ trợ — Bookmuse</title>
   <meta name="description" content="Nhận trợ giúp với Bookmuse: liên hệ, khắc phục sự cố và các câu hỏi thường gặp.">
-  <meta name="theme-color" content="#fbf8f3">
+  <meta name="theme-color" content="#fcfbf9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#15120e" media="(prefers-color-scheme: dark)">
   <link rel="canonical" href="https://bookmuse.wanngo.com/vi/support/">
   <link rel="alternate" hreflang="en" href="https://bookmuse.wanngo.com/support/">
   <link rel="alternate" hreflang="vi" href="https://bookmuse.wanngo.com/vi/support/">
@@ -16,29 +17,32 @@
   <meta property="og:url" content="https://bookmuse.wanngo.com/vi/support/">
   <meta property="og:title" content="Hỗ trợ — Bookmuse">
   <meta property="og:description" content="Nhận trợ giúp với Bookmuse: liên hệ, khắc phục sự cố và các câu hỏi thường gặp.">
-  <meta property="og:image" content="https://bookmuse.wanngo.com/assets/og.jpg">
+  <meta property="og:image" content="https://bookmuse.wanngo.com/assets/og-vi.jpg">
   <meta property="og:locale" content="vi_VN">
   <meta property="og:locale:alternate" content="en_US">
   <meta property="og:locale:alternate" content="es_ES">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="/assets/favicon.png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/be-vietnam-pro-latin-600-normal.woff2" crossorigin>
+  <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+  <link rel="stylesheet" href="/site.css">
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <header class="nav scrolled">
-    <div class="wrap">
-      <a class="brand" href="/vi/" aria-label="Trang chủ Bookmuse"><img src="/assets/icon.png" alt="" width="32" height="32">Bookmuse</a>
-      <nav class="nav-links" aria-label="Điều hướng chính">
-        <a href="/vi/support/#faq">Hỏi đáp</a>
-        <a href="/vi/privacy/">Quyền riêng tư</a>
-        <a class="btn btn-primary btn-sm" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Tải về</a>
-      </nav>
-      <nav class="lang" aria-label="Ngôn ngữ"><a href="/support/" hreflang="en" lang="en">English</a><a href="/vi/support/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a><a href="/es/support/" hreflang="es" lang="es">Español</a></nav>
+  <a class="skip" href="#main">Chuyển đến nội dung</a>
+
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a class="brand" href="/vi/" aria-label="Trang chủ Bookmuse"><img src="/assets/icon.png" alt="" width="30" height="30">Bookmuse</a>
+      <nav class="short" aria-label="Ngôn ngữ"><a href="/support/" hreflang="en" lang="en">EN</a><a href="/vi/support/" hreflang="vi" lang="vi" aria-current="page">VI</a><a href="/es/support/" hreflang="es" lang="es">ES</a></nav>
+      <a class="signin" href="https://bookmuse-app.wanngo.com/?lang=vi">Đăng nhập</a>
+      <button class="theme" type="button" data-to-dark="Chuyển sang giao diện tối" data-to-light="Chuyển sang giao diện sáng" aria-label="Chuyển sang giao diện tối"><svg class="sun-i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.8 4.8l1.4 1.4M17.8 17.8l1.4 1.4M2.5 12h2M19.5 12h2M4.8 19.2l1.4-1.4M17.8 6.2l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z"/></svg></button>
+      <a class="btn" href="/vi/#download">Tải về</a>
     </div>
   </header>
 
-  <main class="doc">
+  <main class="doc" id="main">
     <h1>Hỗ trợ</h1>
     <p class="meta">Có câu hỏi, báo lỗi hay ý tưởng? Chúng tôi rất muốn nghe từ bạn.</p>
 
@@ -47,142 +51,76 @@
         <h2>Gửi email cho chúng tôi</h2>
         <p>Chúng tôi thường trả lời trong vài ngày.</p>
       </div>
-      <a class="btn btn-primary" href="mailto:admin@bookmuse.wanngo.com?subject=H%E1%BB%97%20tr%E1%BB%A3%20Bookmuse">admin@bookmuse.wanngo.com</a>
+      <a class="btn" href="mailto:admin@bookmuse.wanngo.com?subject=H%E1%BB%97%20tr%E1%BB%A3%20Bookmuse">admin@bookmuse.wanngo.com</a>
     </div>
-
-    <h2>Giúp chúng tôi giúp bạn</h2>
-    <p>Để xử lý vấn đề nhanh chóng, vui lòng kèm theo:</p>
-    <ul>
-      <li>Phiên bản Bookmuse (Cài đặt Bookmuse → Giới thiệu)</li>
-      <li>Thiết bị và phiên bản iOS, iPadOS hoặc Android của bạn</li>
-      <li>Bạn đã làm gì, bạn mong đợi điều gì và điều gì đã xảy ra</li>
-      <li>Ảnh chụp màn hình hoặc bản ghi màn hình, nếu có thể</li>
-    </ul>
-
-    <h2>Khắc phục sự cố</h2>
-    <div class="faq">
-      <details>
-        <summary>Sách hoặc từ của tôi không đồng bộ</summary>
-        <div class="answer">
-          <p>Hãy chắc chắn mọi thiết bị đều đăng nhập cùng một tài khoản Bookmuse (Cài đặt Bookmuse → Tài khoản), bằng cùng một cách đăng nhập Apple, Google hoặc email. Thiết bị cập nhật khi Bookmuse mở hoặc quay lại màn hình, hoặc khi bạn kéo xuống ở Trang chủ. Cài đặt → Tài khoản hiển thị trạng thái đồng bộ; nếu báo không đồng bộ được, hãy kiểm tra kết nối và chạm Thử lại. Sách dung lượng lớn có thể mất vài phút để xuất hiện trên thiết bị mới.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Dịch yêu cầu tải về một ngôn ngữ</summary>
-        <div class="answer">
-          <p>Dịch của Apple hoạt động ngoại tuyến sau khi đã tải ngôn ngữ về. Lần tra cứu đầu tiên với một cặp ngôn ngữ mới sẽ yêu cầu tải ngôn ngữ đó từ Apple. Nếu quá trình tải không bắt đầu, hãy kiểm tra kết nối, hoặc quản lý ngôn ngữ trong ứng dụng Cài đặt → Ứng dụng → Dịch → Ngôn ngữ đã tải về.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Tôi không thấy gốc từ, nghĩa hay Hỏi AI</summary>
-        <div class="answer">
-          <p>Dịch của Apple chỉ cho bản dịch. Để có gốc từ, nghĩa, câu hỏi tiếp theo và Hỏi AI, hãy đăng nhập để dùng BookMuse AI. Đã đăng nhập mà vẫn chỉ thấy bản dịch? Có thể BookMuse AI đang ngoại tuyến, hoặc bạn đã dùng hết hạn mức theo ngày hoặc theo tháng. Hãy thử lại sau.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Bookmuse không xuất hiện trong ứng dụng Dịch của tôi</summary>
-        <div class="answer">
-          <p>Mở ứng dụng Cài đặt → Ứng dụng → Ứng dụng mặc định → Dịch và chọn Bookmuse. Cần iOS hoặc iPadOS 26.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Một cuốn sách không mở được</summary>
-        <div class="answer">
-          <p>Bookmuse mở sách EPUB, Kindle (MOBI, AZW3), FB2, TXT và Markdown không có DRM. Sách mua từ các cửa hàng có gắn DRM thì không thể mở. Nếu một cuốn sách không DRM vẫn bị lỗi, hãy gửi email cho chúng tôi (hoặc một liên kết đến nó) và chúng tôi sẽ xem xét.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Làm sao để xóa dữ liệu của tôi?</summary>
-        <div class="answer">
-          <p>Để xóa tài khoản và mọi thứ trong đó, vào Cài đặt Bookmuse → Tài khoản → Xóa tài khoản, hoặc làm theo <a href="/vi/delete-account/">các bước này</a> nếu bạn không mở được ứng dụng. Để giữ tài khoản nhưng xóa thư viện trên mọi thiết bị, dùng Xóa mọi dữ liệu trong Cài đặt Bookmuse. Xem <a href="/vi/privacy/">chính sách quyền riêng tư</a> để biết thêm.</p>
-        </div>
-      </details>
-    </div>
+    <p class="hint">Khi báo lỗi, hãy kèm phiên bản Bookmuse (Cài đặt → Giới thiệu), thiết bị và điều đã xảy ra. Ảnh chụp màn hình sẽ rất hữu ích.</p>
 
     <h2 id="faq">Câu hỏi, có lời đáp.</h2>
     <div class="faq">
       <details>
-        <summary>Làm sao để có Bookmuse?</summary>
-        <div class="answer">
-          <p>Tải về miễn phí từ <a href="https://apps.apple.com/vn/app/bookmuse-ai-reading-companion/id6815728446">App Store</a> cho iPhone và iPad. Ứng dụng Android sắp có trên Google Play.</p>
-        </div>
-      </details>
-      <details>
         <summary>Có miễn phí không?</summary>
-        <div class="answer">
-          <p>Có. Bookmuse miễn phí, không quảng cáo và không có giao dịch mua trong ứng dụng. Tài khoản miễn phí có BookMuse AI với hạn mức hằng ngày và 250 MB lưu trữ đám mây cho tệp sách; sách giữ trên thiết bị thì không giới hạn.</p>
-        </div>
+        <div class="answer"><p>Có, không quảng cáo và không mua trong ứng dụng. Tài khoản miễn phí có BookMuse AI với hạn mức hằng ngày và 250 MB lưu trữ đám mây. Sách lưu trên thiết bị không giới hạn.</p></div>
       </details>
       <details>
         <summary>Tôi có cần tài khoản không?</summary>
-        <div class="answer">
-          <p>Không. Đọc sách, Dịch của Apple, giọng đọc, từ đã lưu và ôn tập đều hoạt động khi không có tài khoản. Đăng nhập bằng Apple, Google hoặc email để bật đồng bộ, BookMuse AI, Bảng tin, chia sẻ, Google Drive và Dropbox, và trợ lý AI.</p>
-        </div>
+        <div class="answer"><p>Không. Đọc sách, Dịch của Apple, giọng đọc, từ đã lưu và ôn tập đều chạy được khi không có tài khoản. Đăng nhập để bật đồng bộ, BookMuse AI, Bảng tin, chia sẻ, Google Drive, Dropbox và trợ lý AI.</p></div>
       </details>
       <details>
         <summary>Chạy được trên những thiết bị nào?</summary>
-        <div class="answer">
-          <p>iPhone và iPad chạy iOS 26 hoặc iPadOS 26. Android 9 trở lên khi ứng dụng Android ra mắt. Bảng điều khiển web tại bookmuse-app.wanngo.com chạy trên mọi trình duyệt hiện đại.</p>
-        </div>
+        <div class="answer"><p>iPhone và iPad với iOS hoặc iPadOS 26. Android 9 trở lên khi ứng dụng Android ra mắt. Trang quản lý web chạy trên mọi trình duyệt hiện đại.</p></div>
       </details>
       <details>
-        <summary>Sách đến từ đâu?</summary>
-        <div class="answer">
-          <p>Bạn tự mang đến. Nhập sách không DRM dạng EPUB, Kindle (MOBI, AZW3), FB2, TXT hoặc Markdown từ Tệp, Google Drive hoặc Dropbox, duyệt hàng nghìn cuốn sách kinh điển miễn phí từ Project Gutenberg, hoặc kết nối máy chủ sách của riêng bạn (Calibre, Komga, Stump hay bất kỳ danh mục OPDS nào). Bookmuse cũng có sẵn các bản tóm tắt để bạn đọc và nghe.</p>
-        </div>
+        <summary>Tôi mở được những sách nào?</summary>
+        <div class="answer"><p>EPUB không DRM, Kindle (MOBI, AZW3), FB2, TXT và Markdown, từ Tệp, Google Drive, Dropbox, Project Gutenberg hoặc máy chủ Calibre, Komga, Stump, OPDS của bạn. Sách có DRM từ các cửa hàng không mở được. Nếu sách không DRM vẫn lỗi, hãy gửi email cho chúng tôi.</p></div>
       </details>
       <details>
         <summary>Nghe đọc có miễn phí không?</summary>
-        <div class="answer">
-          <p>Có. Giọng đọc Bookmuse (tiếng Anh, Pháp, Đức, Tây Ban Nha, Bồ Đào Nha và tiếng Việt) và giọng đọc của Apple chạy trên thiết bị, không tốn phí và không cần tài khoản.</p>
-        </div>
+        <div class="answer"><p>Có. Giọng Bookmuse (Anh, Pháp, Đức, Tây Ban Nha, Bồ Đào Nha, Việt) và giọng của Apple chạy trên thiết bị và không cần tài khoản.</p></div>
       </details>
       <details>
-        <summary>Tôi có cần đăng ký dịch vụ AI hay khóa API không?</summary>
-        <div class="answer">
-          <p>Không. Đăng nhập là BookMuse AI cung cấp thẻ từ phong phú, câu hỏi tiếp theo và Hỏi AI mà không cần thiết lập gì.</p>
-          <p>Muốn giữ việc tra cứu ngay trên thiết bị? Cứ để chưa đăng nhập, khi đó việc tra cứu dùng Dịch của Apple, miễn phí và hoạt động ngoại tuyến sau khi tải ngôn ngữ về.</p>
-        </div>
+        <summary>Tôi có cần gói AI hay khóa API không?</summary>
+        <div class="answer"><p>Không. Đăng nhập là BookMuse AI cho bạn thẻ từ, câu hỏi tiếp theo và Hỏi AI. Nếu chỉ thấy bản dịch, hãy đăng nhập, hoặc BookMuse AI có thể đang tạm ngừng hay đã hết hạn mức ngày hoặc tháng.</p></div>
       </details>
       <details>
         <summary>Bookmuse dịch được những ngôn ngữ nào?</summary>
-        <div class="answer">
-          <p>Bất kỳ cặp ngôn ngữ nào Dịch của Apple hỗ trợ, và với BookMuse AI, hầu như mọi ngôn ngữ mà nó hiểu. Bản thân Bookmuse có tiếng Anh, tiếng Việt và tiếng Tây Ban Nha.</p>
-        </div>
+        <div class="answer"><p>Mọi cặp ngôn ngữ Dịch của Apple hỗ trợ, và hầu như mọi ngôn ngữ với BookMuse AI. Dịch của Apple chạy ngoại tuyến sau khi tải ngôn ngữ (ứng dụng Cài đặt → Ứng dụng → Dịch → Ngôn ngữ đã tải về). Bản thân Bookmuse có tiếng Anh, tiếng Việt và tiếng Tây Ban Nha.</p></div>
+      </details>
+      <details>
+        <summary>Sách hoặc từ không đồng bộ</summary>
+        <div class="answer"><p>Đăng nhập cùng một tài khoản trên mọi thiết bị. Thiết bị cập nhật khi mở Bookmuse hoặc khi bạn kéo xuống ở Trang chủ. Cài đặt → Tài khoản hiển thị trạng thái đồng bộ. Sách lớn có thể mất vài phút.</p></div>
+      </details>
+      <details>
+        <summary>Làm sao đặt Bookmuse làm ứng dụng Dịch?</summary>
+        <div class="answer"><p>Trên iOS hoặc iPadOS 26, mở ứng dụng Cài đặt → Ứng dụng → Ứng dụng mặc định → Dịch và chọn Bookmuse.</p></div>
       </details>
       <details>
         <summary>Trợ lý AI dùng thư viện của tôi thế nào?</summary>
-        <div class="answer">
-          <p>Bookmuse có máy chủ MCP. Thêm nó vào Claude, ChatGPT, Cursor hoặc Claude Code, đăng nhập và cho phép truy cập; trợ lý AI có thể tìm sách, tô sáng và từ của bạn, thêm từ, sắp xếp thư mục và thêm sách. Hướng dẫn nằm trong ứng dụng ở Cài đặt › Kết nối › Trợ lý AI, và trên bảng điều khiển web. Trợ lý AI không thể xóa tài khoản hay dùng BookMuse AI.</p>
-        </div>
-      </details>
-      <details>
-        <summary>Làm sao đặt Bookmuse làm ứng dụng Dịch mặc định?</summary>
-        <div class="answer">
-          <p>Trên iPhone hoặc iPad, mở ứng dụng Cài đặt, rồi vào Ứng dụng → Ứng dụng mặc định → Dịch, và chọn Bookmuse. Giờ đây, chọn văn bản trong bất kỳ ứng dụng nào, chạm Dịch, và Bookmuse hiển thị nghĩa cùng nút lưu chỉ một chạm.</p>
-        </div>
+        <div class="answer"><p>Thêm máy chủ MCP của Bookmuse vào Claude, ChatGPT, Cursor hoặc Claude Code, đăng nhập và cho phép. Trợ lý có thể tìm sách, tô sáng và từ, thêm từ, sắp xếp thư mục và thêm sách. Các bước nằm trong Cài đặt › Kết nối › Trợ lý AI.</p></div>
       </details>
       <details>
         <summary>Việc đọc của tôi có riêng tư không?</summary>
-        <div class="answer">
-          <p>Có. Không có quảng cáo và không theo dõi. Khi không có tài khoản, sách, từ và tiến độ nằm trên thiết bị của bạn. Khi đăng nhập, chúng được lưu trong tài khoản Bookmuse để đồng bộ với các thiết bị khác và web; bạn có thể xóa tài khoản bất cứ lúc nào. Với BookMuse AI, nội dung bạn tra cứu và hỏi được gửi đến nhà cung cấp AI của chúng tôi để trả lời; hãy để chưa đăng nhập để giữ việc tra cứu trên thiết bị với Dịch của Apple. Xem <a href="/vi/privacy/">chính sách quyền riêng tư</a> để biết chi tiết.</p>
-        </div>
+        <div class="answer"><p>Có. Không quảng cáo, không theo dõi. Không có tài khoản, mọi thứ ở trên thiết bị. Với BookMuse AI, những gì bạn tra và hỏi được gửi tới nhà cung cấp AI để trả lời. Xem <a href="/vi/privacy/">chính sách quyền riêng tư</a>.</p></div>
+      </details>
+      <details>
+        <summary>Làm sao để xóa dữ liệu?</summary>
+        <div class="answer"><p>Cài đặt Bookmuse → Tài khoản → Xóa tài khoản, hoặc <a href="/vi/delete-account/">các bước này</a> nếu không mở được ứng dụng. Xóa mọi dữ liệu trong Cài đặt sẽ xóa thư viện và giữ tài khoản.</p></div>
       </details>
     </div>
   </main>
 
-  <footer class="footer">
-    <div class="wrap">
-      <a class="brand" href="/vi/"><img src="/assets/icon.png" alt="" width="24" height="24">Bookmuse</a>
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <a class="brand" href="/vi/"><img src="/assets/icon.png" alt="" width="24" height="24" loading="lazy">Bookmuse</a>
       <nav aria-label="Chân trang">
         <a href="/vi/privacy/">Quyền riêng tư</a>
-        <a href="/vi/support/">Hỗ trợ</a>
         <a href="/vi/delete-account/">Xóa tài khoản</a>
+        <a href="/vi/support/">Hỗ trợ</a>
         <a href="mailto:admin@bookmuse.wanngo.com">admin@bookmuse.wanngo.com</a>
       </nav>
-      <nav class="lang" aria-label="Ngôn ngữ"><a href="/support/" hreflang="en" lang="en">English</a><a href="/vi/support/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a><a href="/es/support/" hreflang="es" lang="es">Español</a></nav>
+      <nav aria-label="Ngôn ngữ"><a href="/support/" hreflang="en" lang="en">English</a><a href="/vi/support/" hreflang="vi" lang="vi" aria-current="page">Tiếng Việt</a><a href="/es/support/" hreflang="es" lang="es">Español</a></nav>
       <span>© 2026 Bookmuse</span>
     </div>
   </footer>
+  <script src="/site.js" defer></script>
 </body>
 </html>

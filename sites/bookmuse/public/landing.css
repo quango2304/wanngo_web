@@ -1,87 +1,4 @@
-/* Bookmuse — bookmuse.wanngo.com home pages (en, vi, es). The privacy, support and 404 pages keep styles.css. */
-
-@font-face { font-family: "Be Vietnam Pro"; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/be-vietnam-pro-vietnamese-400-normal.woff2) format("woff2"); unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family: "Be Vietnam Pro"; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/be-vietnam-pro-latin-ext-400-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-@font-face { font-family: "Be Vietnam Pro"; font-style: normal; font-weight: 400; font-display: swap; src: url(/assets/fonts/be-vietnam-pro-latin-400-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family: "Be Vietnam Pro"; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/be-vietnam-pro-vietnamese-600-normal.woff2) format("woff2"); unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family: "Be Vietnam Pro"; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/be-vietnam-pro-latin-ext-600-normal.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-@font-face { font-family: "Be Vietnam Pro"; font-style: normal; font-weight: 600; font-display: swap; src: url(/assets/fonts/be-vietnam-pro-latin-600-normal.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-@font-face { font-family: "Literata"; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/literata-vietnamese-400-italic.woff2) format("woff2"); unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB; }
-@font-face { font-family: "Literata"; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/literata-latin-ext-400-italic.woff2) format("woff2"); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
-@font-face { font-family: "Literata"; font-style: italic; font-weight: 400; font-display: swap; src: url(/assets/fonts/literata-latin-400-italic.woff2) format("woff2"); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
-
-:root {
-  color-scheme: light dark;
-
-  --ink: #16130f;
-  --soft: #655d53;
-  --line: #e9e4dc;
-  --ground: #fcfbf9;
-  --nav: rgba(252, 251, 249, 0.76);
-  --nav-line: rgba(22, 19, 15, 0.07);
-  --link: #9a4312;
-  --link-hover: #6f2e0a;
-  --night: #14110d;
-  --night-ink: #f7f2ea;
-  --night-soft: #b8afa3;
-  --peach: #ffb98a;
-  --amber: #ffd27a;
-  --rim: linear-gradient(140deg, #77706a, #24211e 28%, #4a453f 62%, #1c1a18);
-  --rim-button: #4a453f;
-  --phone-shadow: 0 2em 4em -1em rgba(45, 26, 8, 0.24), 0 8em 16em -5em rgba(45, 26, 8, 0.34);
-
-  --sans: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  --serif: "Literata", "Iowan Old Style", Georgia, serif;
-  --ease: cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #f5efe6;
-    --soft: #b3a99c;
-    --line: rgba(255, 255, 255, 0.12);
-    --ground: #15120e;
-    --nav: rgba(21, 18, 14, 0.72);
-    --nav-line: rgba(255, 255, 255, 0.08);
-    --link: #ffb98a;
-    --link-hover: #ffd2b2;
-    --night: #211b14;
-    --rim: linear-gradient(140deg, #8e867d, #3b3733 30%, #66605a 64%, #34312d);
-    --rim-button: #66605a;
-    --phone-shadow: 0 2em 4em -1em rgba(0, 0, 0, 0.5), 0 8em 16em -5em rgba(0, 0, 0, 0.7);
-  }
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 80px; -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--ground); color: var(--ink); font: 17px/1.55 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: clip; }
-a { color: var(--link); }
-a:hover { color: var(--link-hover); }
-img, video { display: block; }
-h1, h2, p, figure { margin: 0; }
-:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
-
-.skip { position: absolute; left: 12px; top: -60px; z-index: 60; padding: 10px 16px; border-radius: 10px; background: var(--ink); color: var(--ground); }
-.skip:focus { top: 12px; color: var(--ground); }
-
-.wrap { width: 100%; max-width: 1180px; margin: 0 auto; padding: 0 max(24px, env(safe-area-inset-left)); }
-.serif { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: -0.02em; }
-h1 { font-size: clamp(44px, 8vw, 108px); line-height: 1.04; letter-spacing: -0.04em; font-weight: 600; }
-h2 { font-size: clamp(34px, 5vw, 62px); line-height: 1.1; letter-spacing: -0.033em; font-weight: 600; text-wrap: balance; }
-.lede { font-size: clamp(18px, 1.6vw, 21px); line-height: 1.5; color: var(--soft); text-wrap: pretty; }
-
-/* Nav */
-.nav { position: sticky; top: 0; z-index: 50; background: var(--nav); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid var(--nav-line); }
-.nav-in { display: flex; align-items: center; gap: 20px; min-height: 64px; }
-.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; margin-right: auto; }
-.brand:hover { color: var(--ink); }
-.brand img { width: 30px; height: 30px; border-radius: 7px; }
-.short { display: flex; align-items: center; gap: 12px; }
-.short a, .signin { font-size: 14px; color: var(--soft); text-decoration: none; }
-.short a:hover, .signin:hover { color: var(--ink); }
-.short a[aria-current] { color: var(--ink); font-weight: 600; }
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 18px; border-radius: 99px; font-size: 14px; font-weight: 600; text-decoration: none; background: var(--ink); color: var(--ground); transition: transform 0.3s var(--ease); }
-.btn:hover { color: var(--ground); transform: scale(1.04); }
+/* Bookmuse — the home pages (en, vi, es). The colours, nav and footer are in site.css. */
 
 /* Hero */
 .hero { position: relative; text-align: center; padding-top: clamp(64px, 8vw, 112px); overflow-x: clip; }
@@ -174,15 +91,6 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .cta .lede { margin-top: 16px; }
 .cta-sun { --sun: clamp(520px, 66vw, 960px); position: absolute; left: 50%; bottom: 0; width: var(--sun); height: var(--sun); margin-left: calc(var(--sun) / -2); transform: translateY(66%); border-radius: 50%; background: radial-gradient(circle at 50% 18%, #ffe3a8 0%, var(--amber) 36%, #ffbe82 100%); will-change: transform; }
 
-.foot { border-top: 1px solid var(--line); }
-.foot-in { display: flex; align-items: center; flex-wrap: wrap; gap: 14px 24px; padding-top: 28px; padding-bottom: 36px; font-size: 14px; color: var(--soft); }
-.foot-in .brand { font-size: 15px; }
-.foot-in .brand img { width: 24px; height: 24px; border-radius: 6px; }
-.foot-in nav { display: flex; flex-wrap: wrap; gap: 8px 20px; }
-.foot-in nav a { color: var(--soft); text-decoration: none; }
-.foot-in nav a:hover { color: var(--ink); }
-.foot-in nav a[aria-current] { color: var(--ink); font-weight: 600; }
-
 /* Entrance */
 @keyframes up { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 @keyframes line { from { transform: translateY(120%); } to { transform: none; } }
@@ -223,15 +131,12 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
   .live::after, .eq i { animation: none; }
   .eq i { transform: scaleY(0.7); }
-  .scr, .step, .btn, .store, .live { transition: none; }
+  .scr, .step, .store, .live { transition: none; }
 }
 
 @media (max-width: 960px) {
-  .nav { position: static; }
-  html { scroll-padding-top: 0; }
   .story { display: block; }
   .pin { display: none; }
   .step { min-height: 0; max-width: none; opacity: 1; padding: 44px 0; text-align: center; }
@@ -240,8 +145,6 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 }
 
 @media (max-width: 620px) {
-  body { font-size: 16px; }
-  .signin, .short { display: none; }
   .side { top: 64px; }
   .side.l { left: calc(50% - var(--pw) * 1.12); }
   .side.r { left: calc(50% + var(--pw) * 0.32); }
