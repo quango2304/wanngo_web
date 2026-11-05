@@ -145,13 +145,13 @@
     { id: 'snake', label: 'snake plant', group: 'desk', x: 38, y: 165, w: 34, h: 64, say: 'impossible to kill. tested.' },
     { id: 'laptop', label: 'laptop', group: 'desk', x: 113, y: 158, w: 42, h: 28, say: 'no peeking, it’s full of bugs' },
     { id: 'mug', label: 'mug', group: 'desk', x: 118, y: 163, w: 14, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
-    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 178, y: 158, w: 24, h: 32, say: 'the real senior engineer' },
+    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 178, y: 158, w: 24, h: 32, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
     { id: 'herb', label: 'little herb', group: 'coffee', x: 200, y: 160, w: 20, h: 24, say: 'I forgot to water it again' },
-    { id: 'bed', label: 'bed', group: 'bed', x: 204, y: 152, w: 96, h: 90, say: 'not yet. one more commit.' },
+    { id: 'bed', label: 'bed', group: 'bed', x: 204, y: 152, w: 96, h: 90, act: () => invite(nap, 'not yet. one more commit.') },
     { id: 'tv', label: 'TV', group: 'shelf', x: 304, y: 130, w: 56, h: 40, act: () => toggleTV() },
     { id: 'console', label: 'game console', group: 'shelf', x: 306, y: 186, w: 44, h: 20, say: 'research. for work.' },
-    { id: 'bag', label: 'beanbag', group: 'bag', x: 266, y: 216, w: 54, h: 36, say: 'best seat in the house' },
-    { id: 'mat', label: 'exercise mat', group: 'mat', x: 62, y: 240, w: 112, h: 22, say: 'I use this. sometimes.' },
+    { id: 'bag', label: 'beanbag', group: 'bag', x: 266, y: 216, w: 54, h: 36, act: () => invite(playGames, 'best seat in the house') },
+    { id: 'mat', label: 'exercise mat', group: 'mat', x: 62, y: 240, w: 112, h: 22, act: () => invite(doPushUps, 'I use this. sometimes.') },
     { id: 'monstera', label: 'monstera', group: 'shelf', x: 356, y: 182, w: 40, h: 58, say: 'she gets the best light' },
     { id: 'catbed', label: 'cat bed', group: 'shelf', x: 388, y: 228, w: 40, h: 26, say: 'never used. he has my desk chair.' },
     { id: 'trophy', label: 'trophy', group: 'shelf', x: 378, y: 83, w: 34, h: 28, say: 'I bought it myself' },
@@ -450,7 +450,7 @@
   // 5. SPRITES AND ACTORS
   // --------------------------------------------------------------------------
   const SHEETS = {
-    type: ['dev-type', 120, 120],
+    type: ['dev-keys', 120, 120],
     wave: ['dev-wave', 120, 120],
     stand: ['dev-stand', 120, 156],
     walk: ['dev-walk', 120, 156],
@@ -564,12 +564,31 @@
     return [x - 58, y - 146];
   }
 
-  function startCoding() {
+  function startCoding(sameBreak) {
     dev.state = 'code';
     dev.flip = false;
     [dev.x, dev.y] = seat();
-    play(dev, 'type', seq(1, 8), 9, true);
-    dev.breakIn = 70 + Math.random() * 60;
+    play(dev, 'type', seq(0, 8), 0.01, true);
+    dev.burst = 1;
+    dev.keyIn = 0;
+    if (sameBreak !== true) dev.breakIn = 10 + Math.random() * 8;
+  }
+
+  // Real typing comes in bursts, with a stop to think now and then
+  const KEY_FRAMES = [1, 2, 3, 8];
+
+  function typeKeys(dt) {
+    dev.burst -= dt;
+    if (dev.burst <= 0) {
+      dev.typing = !dev.typing;
+      dev.burst = dev.typing ? 1 + Math.random() * 2.4 : 0.5 + Math.random() * 1.3;
+      if (!dev.typing) dev.i = 0;
+    }
+    dev.keyIn -= dt;
+    if (dev.typing && dev.keyIn <= 0 && !still) {
+      dev.keyIn = 0.07 + Math.random() * 0.1;
+      dev.i = KEY_FRAMES[Math.floor(Math.random() * KEY_FRAMES.length)];
+    }
   }
 
   function greet(text) {
@@ -577,7 +596,7 @@
     if (text) sayDev(text);
     play(dev, 'wave', seq(0, 8), 9, false, () => {
       play(dev, 'wave', [8, 6, 7, 5, 8, 6, 7, 8], 7, false, () => {
-        play(dev, 'wave', seq(8, 0), 11, false, startCoding);
+        play(dev, 'wave', seq(8, 0), 11, false, () => startCoding(true));
       });
     });
   }
@@ -609,7 +628,7 @@
       dev.flip = false;
       play(dev, 'stand', seq(8, 3), 12, false, () => {
         dev.state = 'play';
-        dev.wait = 14 + Math.random() * 12;
+        dev.wait = 10 + Math.random() * 6;
         dev.lineIn = 3;
         play(dev, 'back', seq(0, 4), 6, true);
       });
@@ -635,11 +654,7 @@
     play(dev, 'stand', seq(3, 8), 12, false, then);
   }
 
-  function takeBreak() {
-    const roll = Math.random();
-    if (roll < 0.3) return playGames();
-    if (roll < 0.55) return doPushUps();
-    const spot = roll < 0.8 ? SPOTS.coffee : SPOTS.window;
+  function visit(spot) {
     standUp(() => {
       walkTo(feetTo(spot), () => {
         dev.state = 'pause';
@@ -649,6 +664,40 @@
         play(dev, 'stand', [8], 1, true);
       });
     });
+  }
+
+  function nap() {
+    standUp(() => walkTo(feetTo(SPOTS.bed), () => {
+      dev.state = 'sleep';
+      dev.napFor = 10;
+      sayDev('quick nap');
+    }));
+  }
+
+  // Each break comes up once before any repeats, the fun ones first
+  let breaks = [playGames, doPushUps, () => visit(SPOTS.coffee), nap, () => visit(SPOTS.window)];
+
+  function takeBreak() {
+    if (!breaks.length) {
+      breaks = [playGames, doPushUps, () => visit(SPOTS.coffee), nap, () => visit(SPOTS.window)]
+        .sort(() => Math.random() - 0.5);
+    }
+    breaks.shift()();
+  }
+
+  // Clicking his beanbag, mat or bed talks him into it
+  function invite(go, line) {
+    if (dev.state !== 'code' || isSleepTime()) return sayDev(line);
+    sayDev('good idea');
+    go();
+  }
+
+  function wakeUp(line) {
+    dev.state = 'pause';
+    dev.wait = 1;
+    dev.napFor = 0;
+    sayDev(line);
+    play(dev, 'stand', [8], 1, true);
   }
 
   function goToBed() {
@@ -690,6 +739,7 @@
       }
     }
     if (dev.state === 'code') {
+      typeKeys(dt);
       dev.breakIn -= dt;
       dev.thought -= dt;
       if (dev.thought <= 0) {
@@ -722,11 +772,13 @@
       dev.wait -= dt;
       if (dev.wait <= 0) sitDown();
     }
-    if (dev.state === 'sleep' && !isSleepTime()) {
-      dev.state = 'pause';
-      dev.wait = 1;
-      sayDev('morning…');
-      play(dev, 'stand', [8], 1, true);
+    if (dev.state === 'sleep') {
+      if (dev.napFor > 0) {
+        dev.napFor -= dt;
+        if (dev.napFor <= 0 && !isSleepTime()) wakeUp('ok, back to it');
+      } else if (!isSleepTime()) {
+        wakeUp('morning…');
+      }
     }
     if (dev.state !== 'sleep') stepClip(dev, dt);
   }
@@ -1097,7 +1149,9 @@
     requestAnimationFrame((t) => {
       last = t;
       tick(t);
-      document.getElementById('load').classList.add('done');
+      const loader = document.getElementById('load');
+      loader.classList.add('done');
+      setTimeout(() => loader.remove(), 400);
     });
   });
 })();
