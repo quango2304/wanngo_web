@@ -200,9 +200,10 @@
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
   const AISLE = { x: 165, top: 340, bottom: 412, split: 400 }; // the tall room's way from front to back
 
-  // The chair is its own sprite: it slides out when he gets up and back when he sits
+  // The chair is its own sprite: it slides aside when he gets up, so he can walk straight
+  // out from the desk, and back when he sits
   const chair = { t: 0, to: 0, delay: 0 };
-  const chairOut = () => [0, 8];
+  const chairOut = () => [-34, 8];
 
   function moveChair(to, delay) {
     chair.to = to;
@@ -638,6 +639,8 @@
     rise: ['dev-up', 120, 156],
     stand: ['dev-stand', 120, 156],
     walk: ['dev-steps', 120, 156],
+    front: ['dev-front', 120, 156],
+    rear: ['dev-rear', 120, 156],
     sit: ['dev-sit', 120, 156],
     drop: ['dev-drop', 160, 156],
     back: ['dev-back', 96, 96],
@@ -792,12 +795,17 @@
     dev.path = route([dev.x + 58, dev.y + 146], [x + 58, y + 146]).map(([fx, fy]) => [fx - 58, fy - 146]);
     dev.then = then;
     nextLeg();
-    play(dev, 'walk', seq(0, 7), 11, true);
   }
 
+  // Walking up or down the room he shows his back or his face, not his side
   function nextLeg() {
     dev.goal = dev.path.shift();
-    if (Math.abs(dev.goal[0] - dev.x) > 1) dev.flip = dev.goal[0] < dev.x;
+    const dx = dev.goal[0] - dev.x;
+    const dy = dev.goal[1] - dev.y;
+    if (Math.abs(dx) > 1) dev.flip = dx < 0;
+    if (!dx && !dy) return;
+    const sheet = Math.abs(dy) > 6 && Math.abs(dy) > Math.abs(dx) * 1.2 ? (dy > 0 ? 'front' : 'rear') : 'walk';
+    if (dev.sheet !== sheet) play(dev, sheet, seq(0, 7), 11, true);
   }
 
   function standUp(then) {
@@ -1018,7 +1026,7 @@
       return frame(n, dev.frames[dev.i], x, y, dev.flip);
     }
     const y = SHEETS[n][2] === 120 ? dev.y + 31 : dev.y;
-    frame(n, dev.frames[dev.i], dev.x, y, dev.flip);
+    frame(n, dev.frames[dev.i], dev.x, y, dev.flip && n !== 'front' && n !== 'rear');
   }
 
   function catInBed() {
@@ -1372,14 +1380,14 @@
   function drawShadows() {
     ctx.fillStyle = 'rgba(82,54,32,0.2)';
     SHADOWS.forEach((v) => shadow(...v));
-    shadow('desk', 126, 240 + chairOut()[1] * chair.t, 21, 3);
+    shadow('desk', 126 + chairOut()[0] * chair.t, 240 + chairOut()[1] * chair.t, 21, 3);
     const on = (x, y, rx, ry) => {
       ctx.beginPath();
       ctx.ellipse(ox + x, oy + y, rx, ry, 0, 0, Math.PI * 2);
       ctx.fill();
     };
     on(cat.x + 28, cat.y + 51, 15, 3);
-    if (dev.sheet === 'walk' || dev.sheet === 'stand') on(dev.x + 58, dev.y + 146, 17, 3);
+    if (['walk', 'front', 'rear', 'stand'].includes(dev.sheet)) on(dev.x + 58, dev.y + 146, 17, 3);
     if (dev.sheet === 'push') on(dev.x + 74, dev.y + 144, 56, 4);
   }
 
