@@ -1,0 +1,63 @@
+# Bookmuse
+
+> Bookmuse is an AI reading companion for iPhone and iPad. Import your own books, hear them read aloud with free on-device voices, ask AI as you read, open ready-made summaries, and keep the words you meet.
+
+Bookmuse is free, with no ads and no in-app purchases, and an account is optional. It needs iOS or iPadOS 26 and also runs on Apple-silicon Macs as the iPad app. The Android app is coming to Google Play, for Android 9 or later. The app is in English, Vietnamese and Spanish. It was made by Quan Ngo Van (wanngo).
+
+## Books and library
+
+- Opens DRM-free EPUB, Kindle (MOBI, AZW3), FB2, TXT and Markdown. Books from stores that add DRM can't be opened.
+- Adds books from Files, other apps, Google Drive, Dropbox, Project Gutenberg, ManyBooks and OPDS servers such as Calibre, Komga, Kavita and Stump.
+- Library with folders, sorting and filters. Books on the device have no limit.
+
+## Reading
+
+- Paged or scroll mode, six themes with light and dark looks, 14 fonts, 12 text sizes and spacing controls.
+- Highlights in five colours, underlines, notes, bookmarks, footnotes and search inside a book.
+- All highlights and notes in one place, with export to PDF or Markdown.
+
+## Listening
+
+- Free voices that run on the device, in English, French, German, Spanish, Portuguese and Vietnamese. They need no account.
+- The spoken sentence is highlighted, with a sleep timer and speed from 0.5× to 2×. Apple's voices also work.
+
+## AI
+
+- Ask AI about the page or the book so far. It can search the book and answers point to the page.
+- BookMuse AI needs a free account and has daily and monthly limits. No API key or AI subscription is needed.
+
+## Summaries and books to discover
+
+- Discover has ready-made book summaries to read or hear, plus free catalogs such as Project Gutenberg.
+
+## Words
+
+- Hold a word to see what it means in that sentence. Translation works in almost any language with BookMuse AI, and offline with Apple Translation.
+- Saved words with tags and CSV import and export.
+- Spaced-repetition flashcards (FSRS) with reminders.
+
+## Readers and sharing
+
+- A Feed for posts about books, with ratings, quotes, comments, likes and follows.
+- Share a book by link, and make quote images with a QR code.
+- Reading stats with a daily goal, streaks and charts, plus widgets and Shortcuts.
+
+## Account and sync
+
+- A free account syncs books, reading position, highlights, notes, words and review progress across devices, with 250 MB of cloud storage.
+- A web dashboard shows your library, highlights, notes and words at https://bookmuse-app.wanngo.com.
+- Without an account, everything stays on the device.
+
+## AI agents
+
+- People can connect an AI agent (Claude, ChatGPT, Cursor, Claude Code) to their own library through the Bookmuse MCP server, then let it search their books, highlights and words, add words, organise folders and add books.
+
+## Links
+
+- [Home](https://bookmuse.wanngo.com/): what Bookmuse does, with common questions
+- [App Store](https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446): download for iPhone and iPad
+- [Support](https://bookmuse.wanngo.com/support/): full questions and answers, and how to contact us
+- [Tiếng Việt](https://bookmuse.wanngo.com/vi/)
+- [Español](https://bookmuse.wanngo.com/es/)
+- [Privacy Policy](https://bookmuse.wanngo.com/privacy/)
+- [Delete Your Account](https://bookmuse.wanngo.com/delete-account/)

@@ -84,6 +84,13 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .inline { display: none; margin-top: 36px; justify-content: center; }
 .inline .phone { --w: min(280px, 76vw); }
 
+/* Questions */
+.faqs { padding-top: clamp(72px, 9vw, 120px); }
+.faqs h2 { text-align: center; }
+.qa { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px 56px; margin-top: clamp(40px, 5vw, 64px); }
+.qa h3 { font-size: 19px; line-height: 1.3; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); }
+.qa p { margin-top: 10px; font-size: 17px; line-height: 1.55; color: var(--soft); text-wrap: pretty; }
+
 /* Download */
 .cta { position: relative; margin-top: clamp(40px, 6vw, 80px); padding: clamp(64px, 8vw, 104px) 0 clamp(200px, 26vw, 340px); text-align: center; overflow: clip; view-timeline-name: --cta; }
 .cta img { position: relative; z-index: 1; width: 88px; height: 88px; border-radius: 20px; margin: 0 auto 28px; box-shadow: 0 14px 34px -12px rgba(160, 80, 20, 0.5); }
@@ -144,6 +151,7 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 
 @media (max-width: 960px) {
   .story { display: block; }
+  .qa { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .pin { display: none; }
   .step { min-height: 0; max-width: none; opacity: 1; padding: 44px 0; text-align: center; }
   .inline { display: flex; }
