@@ -90,14 +90,16 @@
   // --------------------------------------------------------------------------
   // Coordinates below are in the wide room. The tall room is the same furniture
   // moved around, so each group just has an offset.
-  const WIDE = { w: 480, h: 268, tall: false, offs: {} };
+  const WIDE = { w: 568, h: 268, wall: 200, tall: false, offs: {} };
   const TALL = {
     w: 270,
     h: 580,
+    wall: 262,
     tall: true,
     offs: {
-      ac: [-356, -4], lantern: [-94, 0], window: [-192, 28], clock: [-50, 40], cork: [-77, 58], shelf: [-208, 48],
-      coffee: [-196, 69], desk: [-12, 168], plants: [-2, 168], snake: [-16, 168], bed: [-36, 216], bag: [-200, 62], mat: [-52, 180], succs: [8, 90]
+      ac: [-464, -6], lantern: [-196, -8], window: [-278, 30], clock: [-96, 6], cork: [-80, 90], succs: [96, 86],
+      shelf: [-298, 56], tv: [-322, 46], coffee: [-194, 46], desk: [-58, 178], fig: [200, 156], snake: [90, 167],
+      monstera: [-470, 64], bed: [-144, 238], bag: [-322, 58], catbed: [-326, 68], mat: [-58, 192]
     }
   };
   let L = WIDE;
@@ -109,45 +111,44 @@
 
   // Lights: id, group, x, y, radius
   const LIGHTS = [
-    { id: 'desk', group: 'desk', x: 181, y: 128, r: 78, c: '255,206,130' },
-    { id: 'lantern', group: 'lantern', x: 338, y: 46, r: 100, c: '255,224,170' },
-    { id: 'tv', group: 'shelf', x: 333, y: 150, r: 64, c: '150,190,255' }
+    { id: 'desk', group: 'desk', x: 170, y: 126, r: 78, c: '255,206,130' },
+    { id: 'lantern', group: 'lantern', x: 438, y: 46, r: 100, c: '255,224,170' },
+    { id: 'tv', group: 'tv', x: 445, y: 140, r: 64, c: '150,190,255' }
   ];
-  const STRING = [[202, 46], [214, 46], [240, 46], [250, 46], [267, 46], [285, 45]];
+  const STRING = [[288, 40], [300, 40], [326, 40], [336, 40], [353, 40], [371, 39]];
   const BULB_COLORS = ['#FFD36B', '#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0', '#F4A9B8'];
-  const GLASS = { x: 220, y: 50, w: 55, h: 60 };
-  const CLOCK = { x: 173, y: 75 };
-  const SCREEN = { x: 309, y: 133, w: 49, h: 28 };
-  const VENT = { x: 372, y: 52, w: 78 };
+  const GLASS = { x: 306, y: 44, w: 55, h: 60 };
+  const CLOCK = { x: 225, y: 103 };
+  const SCREEN = { x: 421, y: 123, w: 49, h: 28 };
+  const VENT = { x: 480, y: 52, w: 78 };
 
   // Spots dev walks to (feet position)
   const SPOTS = {
-    coffee: { group: 'coffee', x: 194, y: 242, tall: [62, 300], line: 'refill time' },
-    window: { group: 'bed', x: 196, y: 236, tall: [150, 310], line: 'look at that sky' },
-    game: { group: 'bag', x: 296, y: 258 },
+    coffee: { group: 'coffee', x: 190, y: 242, tall: [62, 304], line: 'refill time' },
+    window: { group: 'bed', x: 340, y: 252, tall: [150, 340], line: 'look at that sky' },
+    game: { group: 'bag', x: 445, y: 266 },
     mat: { group: 'mat', x: 110, y: 250 },
-    bed: { group: 'bed', x: 196, y: 236 }
+    bed: { group: 'bed', x: 246, y: 244, tall: [100, 432] }
   };
   const CAT_SPOTS = {
-    wide: [[40, 252], [240, 262], [344, 256], [420, 262]],
-    tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
+    wide: [[40, 252], [220, 262], [400, 262], [520, 262]],
+    tall: [[210, 345], [60, 470], [244, 345], [150, 345]]
   };
 
-  // Every piece of furniture is its own sprite in room-kit-d.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-flat.png: [x, y, w, h]
   const KIT = {
-    shelf: [0, 0, 93, 155], fig: [94, 0, 62, 139], bed: [157, 0, 108, 104],
-    bedSleep: [266, 0, 108, 104], window: [375, 0, 98, 90], desk: [0, 156, 95, 89],
-    deskLegs: [96, 156, 95, 89], chair: [192, 156, 47, 73], snake: [240, 156, 36, 67],
-    pothos: [277, 156, 41, 62], monstera: [319, 156, 42, 59], lantern: [362, 156, 36, 55],
-    lamp: [399, 156, 38, 54], console: [438, 156, 68, 49], consolePlain: [0, 246, 68, 49],
-    laptop: [69, 246, 53, 44], cork: [123, 246, 58, 44], ac: [182, 246, 97, 42],
-    rug: [280, 246, 121, 42], coffee: [402, 246, 27, 42], bag: [430, 246, 54, 40],
-    table: [0, 296, 47, 37], succs: [48, 296, 67, 36], tv: [116, 296, 55, 35],
-    trophy: [172, 296, 32, 34], clock: [205, 296, 27, 27], catbed: [233, 296, 40, 27],
-    herb: [274, 296, 19, 26], mat: [294, 296, 108, 26], icon0: [403, 296, 18, 18],
-    icon1: [422, 296, 18, 18], icon2: [441, 296, 18, 18], icon3: [460, 296, 18, 18],
-    icon4: [479, 296, 18, 18], icon5: [0, 334, 18, 18], dumbbells: [19, 334, 18, 16],
-    mug: [38, 334, 14, 11]
+    fig: [0, 0, 62, 139], shelf: [63, 0, 88, 122], window: [152, 0, 98, 90],
+    bed: [251, 0, 151, 86], bedSleep: [0, 140, 151, 86], chair: [152, 140, 39, 70],
+    snake: [192, 140, 36, 67], desk: [229, 140, 121, 62], pothos: [351, 140, 41, 62],
+    monstera: [393, 140, 42, 59], lantern: [436, 140, 36, 55], lamp: [473, 140, 38, 54],
+    console: [0, 227, 68, 49], consolePlain: [69, 227, 68, 49], cork: [138, 227, 58, 44],
+    laptop: [197, 227, 62, 43], ac: [260, 227, 97, 42], rug: [358, 227, 121, 42],
+    coffee: [480, 227, 27, 42], bag: [0, 277, 54, 40], succs: [55, 277, 67, 36],
+    table: [123, 277, 53, 35], tv: [177, 277, 55, 35], trophy: [233, 277, 32, 34],
+    clock: [266, 277, 27, 27], catbed: [294, 277, 40, 27], mat: [335, 277, 108, 26],
+    icon0: [444, 277, 18, 18], icon1: [463, 277, 18, 18], icon2: [482, 277, 18, 18],
+    icon3: [0, 318, 18, 18], icon4: [19, 318, 18, 18], icon5: [38, 318, 18, 18],
+    dumbbells: [57, 318, 18, 16], mug: [76, 318, 14, 11]
   };
 
   // The room, placed by hand. x, y are in the wide room; the tall room is the same
@@ -155,55 +156,50 @@
   // feet are above that line is behind it. No base means it's on the wall or flat on
   // the floor, under everyone.
   const ROOM = [
-    { id: 'window', sprite: 'window', group: 'window', x: 196, y: 36 },
-    { id: 'ac', sprite: 'ac', group: 'ac', x: 362, y: 14 },
-    { id: 'succs', sprite: 'succs', group: 'succs', x: 88, y: 60 },
-    { id: 'cork', sprite: 'cork', group: 'cork', x: 92, y: 100 },
-    { id: 'clock', sprite: 'clock', group: 'clock', x: 160, y: 62 },
-    { id: 'lantern', sprite: 'lantern', group: 'lantern', x: 320, y: 8 },
-    { id: 'tv', sprite: 'tv', group: 'shelf', x: 306, y: 130 },
-    { id: 'rug', sprite: 'rug', group: 'bed', x: 188, y: 218 },
+    { id: 'window', sprite: 'window', group: 'window', x: 282, y: 30 },
+    { id: 'ac', sprite: 'ac', group: 'ac', x: 470, y: 14 },
+    { id: 'succs', sprite: 'succs', group: 'succs', x: 12, y: 44 },
+    { id: 'cork', sprite: 'cork', group: 'cork', x: 90, y: 66 },
+    { id: 'clock', sprite: 'clock', group: 'clock', x: 212, y: 90 },
+    { id: 'lantern', sprite: 'lantern', group: 'lantern', x: 420, y: 8 },
+    { id: 'tv', sprite: 'tv', group: 'tv', x: 418, y: 120 },
+    { id: 'rug', sprite: 'rug', group: 'bed', x: 270, y: 222 },
     { id: 'mat', sprite: 'mat', group: 'mat', x: 64, y: 238 },
     { id: 'dumbbells', sprite: 'dumbbells', group: 'mat', x: 176, y: 246 },
-    { id: 'fig', sprite: 'fig', group: 'plants', x: 2, y: 85, base: 224 },
-    { id: 'snake', sprite: 'snake', group: 'snake', x: 34, y: 162, base: 229 },
-    { id: 'deskLegs', sprite: 'deskLegs', group: 'desk', x: 103, y: 148, base: 230 },
-    { id: 'desk', sprite: 'desk', group: 'desk', x: 103, y: 148, base: 237 },
-    { id: 'laptop', sprite: 'laptop', group: 'desk', x: 133, y: 134, base: 237.1 },
-    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 168, y: 116, base: 237 },
-    { id: 'mug', sprite: 'mug', group: 'desk', x: 124, y: 174, base: 237.2 },
-    { id: 'table', sprite: 'table', group: 'coffee', x: 200, y: 168, base: 205 },
-    { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 202, y: 132, base: 205.5 },
-    { id: 'herb', sprite: 'herb', group: 'coffee', x: 226, y: 150, base: 205.5 },
-    { id: 'bed', sprite: 'bed', group: 'bed', x: 198, y: 136, base: 240 },
-    { id: 'bag', sprite: 'bag', group: 'bag', x: 266, y: 214, base: 254 },
-    { id: 'console', sprite: 'console', group: 'shelf', x: 304, y: 176, base: 224 },
-    { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 378, y: 77, base: 232 },
-    { id: 'trophy', sprite: 'trophy', group: 'shelf', x: 392, y: 57, base: 232.2 },
-    { id: 'pothos', sprite: 'pothos', group: 'shelf', x: 432, y: 62, base: 232.2 },
-    { id: 'monstera', sprite: 'monstera', group: 'shelf', x: 354, y: 182, base: 241 },
-    { id: 'catbed', sprite: 'catbed', group: 'shelf', x: 390, y: 232, base: 259 }
+    { id: 'fig', sprite: 'fig', group: 'fig', x: 4, y: 85, base: 224 },
+    { id: 'snake', sprite: 'snake', group: 'snake', x: 40, y: 165, base: 232 },
+    { id: 'desk', sprite: 'desk', group: 'desk', x: 72, y: 164, base: 226 },
+    { id: 'laptop', sprite: 'laptop', group: 'desk', x: 112, y: 123, base: 226.1 },
+    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 158, y: 113, base: 226.1 },
+    { id: 'table', sprite: 'table', group: 'coffee', x: 198, y: 191, base: 226 },
+    { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 200, y: 152, base: 226.1 },
+    { id: 'mug', sprite: 'mug', group: 'coffee', x: 232, y: 182, base: 226.1 },
+    { id: 'bed', sprite: 'bed', group: 'bed', x: 256, y: 146, base: 232 },
+    { id: 'console', sprite: 'console', group: 'tv', x: 412, y: 177, base: 226 },
+    { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 478, y: 104, base: 226 },
+    { id: 'trophy', sprite: 'trophy', group: 'shelf', x: 486, y: 70, base: 226.1 },
+    { id: 'pothos', sprite: 'pothos', group: 'shelf', x: 524, y: 76, base: 226.1 },
+    { id: 'monstera', sprite: 'monstera', group: 'monstera', x: 530, y: 181, base: 240 },
+    { id: 'bag', sprite: 'bag', group: 'bag', x: 418, y: 222, base: 262 },
+    { id: 'catbed', sprite: 'catbed', group: 'catbed', x: 480, y: 232, base: 259 }
   ];
-  // The six things on the shelf. The boards run slightly uphill to the right, and so do they.
-  [[401, 111], [423, 108], [445, 105], [401, 143], [423, 140], [445, 137]].forEach(([x, y], i) => {
-    ROOM.push({ id: 'item' + i, sprite: 'icon' + i, group: 'shelf', x, y, base: 232.5 });
+  // The six things on the shelf, standing on its boards
+  [[487, 119], [513, 119], [539, 119], [487, 148], [513, 148], [539, 148]].forEach(([x, y], i) => {
+    ROOM.push({ id: 'item' + i, sprite: 'icon' + i, group: 'shelf', x, y, base: 226.2 });
   });
   const SHADOWS = [
-    ['plants', 30, 223, 20, 4], ['snake', 52, 228, 15, 3], ['desk', 150, 222, 50, 13], ['coffee', 224, 205, 24, 3],
-    ['bed', 252, 226, 58, 12], ['bag', 293, 251, 29, 5], ['shelf', 338, 224, 37, 3], ['shelf', 426, 231, 48, 4],
-    ['shelf', 375, 240, 19, 3], ['shelf', 410, 258, 22, 3], ['mat', 185, 261, 11, 2]
+    ['fig', 30, 223, 20, 3], ['snake', 58, 231, 17, 3], ['desk', 132, 226, 62, 3], ['coffee', 224, 226, 26, 3],
+    ['bed', 331, 232, 76, 4], ['bag', 445, 262, 29, 4], ['tv', 446, 226, 35, 3], ['shelf', 522, 226, 45, 3],
+    ['monstera', 551, 240, 19, 3], ['catbed', 500, 258, 21, 3], ['mat', 185, 261, 11, 2]
   ];
   const ROOM_BY_ID = {};
   ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
-  const DESK_LINE = 180; // sitting, he's above the desk over this line and under it below
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
-  const DESK_SEAT_X = 122;
-  const DESK_EXIT = [92, 234];
-  const AISLE = { x: 198, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
+  const AISLE = { x: 165, top: 340, bottom: 412, split: 400 }; // the tall room's way from front to back
 
   // The chair is its own sprite: it slides out when he gets up and back when he sits
   const chair = { t: 0, to: 0, delay: 0 };
-  const CHAIR_OUT = [-13, 6];
+  const chairOut = () => (L.tall ? [0, 8] : [-14, 6]);
 
   function moveChair(to, delay) {
     chair.to = to;
@@ -220,19 +216,13 @@
   }
 
   function drawChair() {
-    const [x, y] = at('desk', 89, 145);
-    sprite('chair', x + Math.round(CHAIR_OUT[0] * chair.t), y + Math.round(CHAIR_OUT[1] * chair.t));
+    const [x, y] = at('desk', 62, 166);
+    sprite('chair', x + Math.round(chairOut()[0] * chair.t), y + Math.round(chairOut()[1] * chair.t));
   }
 
   // Feet positions to walk through, so nobody crosses a piece of furniture
   function route(from, to) {
-    if (!L.tall) {
-      // The chair is behind the desk: step out past its corner first
-      const near = (p) => p[1] < DESK_EXIT[1] && Math.abs(p[0] - DESK_SEAT_X) < 10;
-      const start = near(from) ? [DESK_EXIT, [DESK_EXIT[0], LANE]] : [[from[0], LANE]];
-      const end = near(to) ? [[DESK_EXIT[0], LANE], DESK_EXIT, to] : [[to[0], LANE], to];
-      return start.concat(end);
-    }
+    if (!L.tall) return [[from[0], LANE], [to[0], LANE], to];
     const fromTop = from[1] < AISLE.split;
     if (fromTop === to[1] < AISLE.split) return [to];
     if (fromTop) return [[AISLE.x, AISLE.top], [AISLE.x, AISLE.bottom], [to[0], AISLE.bottom], to];
@@ -241,31 +231,30 @@
 
   // Things to click. x, y, w, h are in the wide room.
   const THINGS = [
-    { id: 'ac', label: 'air conditioner', group: 'ac', x: 362, y: 14, w: 97, h: 42, act: () => toggleAC() },
-    { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 320, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
-    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 168, y: 116, w: 38, h: 54, act: () => toggleLamp('desk') },
-    { id: 'window', label: 'window', group: 'window', x: 196, y: 36, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
-    { id: 'clock', label: 'clock', group: 'clock', x: 160, y: 62, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
-    { id: 'cork', label: 'cork board', group: 'cork', x: 92, y: 100, w: 58, h: 44, say: 'todo: fewer todos' },
-    { id: 'succs', label: 'little succulents', group: 'succs', x: 88, y: 60, w: 67, h: 36, say: 'the only ones I never forget' },
-    { id: 'fig', label: 'fig tree', group: 'plants', x: 2, y: 85, w: 62, h: 110, say: 'taller than my last app' },
-    { id: 'snake', label: 'snake plant', group: 'snake', x: 34, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
-    { id: 'laptop', label: 'laptop', group: 'desk', x: 133, y: 134, w: 53, h: 44, say: 'no peeking, it’s full of bugs' },
-    { id: 'mug', label: 'mug', group: 'desk', x: 124, y: 174, w: 16, h: 14, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
-    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 202, y: 132, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
-    { id: 'herb', label: 'little herb', group: 'coffee', x: 226, y: 150, w: 19, h: 26, say: 'I forgot to water it again' },
-    { id: 'bed', label: 'bed', group: 'bed', x: 200, y: 140, w: 104, h: 96, act: () => invite(nap, 'not yet. one more commit.') },
-    { id: 'tv', label: 'TV', group: 'shelf', x: 306, y: 130, w: 55, h: 35, act: () => toggleTV() },
-    { id: 'console', label: 'game console', group: 'shelf', x: 304, y: 176, w: 68, h: 49, say: 'research. for work.' },
-    { id: 'bag', label: 'beanbag', group: 'bag', x: 266, y: 214, w: 54, h: 40, act: () => invite(playGames, 'best seat in the house') },
+    { id: 'ac', label: 'air conditioner', group: 'ac', x: 470, y: 14, w: 97, h: 42, act: () => toggleAC() },
+    { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 420, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
+    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 158, y: 113, w: 38, h: 54, act: () => toggleLamp('desk') },
+    { id: 'window', label: 'window', group: 'window', x: 282, y: 30, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
+    { id: 'clock', label: 'clock', group: 'clock', x: 212, y: 90, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
+    { id: 'cork', label: 'cork board', group: 'cork', x: 90, y: 66, w: 58, h: 44, say: 'todo: fewer todos' },
+    { id: 'succs', label: 'little succulents', group: 'succs', x: 12, y: 44, w: 67, h: 36, say: 'the only ones I never forget' },
+    { id: 'fig', label: 'fig tree', group: 'fig', x: 4, y: 85, w: 62, h: 110, say: 'taller than my last app' },
+    { id: 'snake', label: 'snake plant', group: 'snake', x: 40, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
+    { id: 'laptop', label: 'laptop', group: 'desk', x: 112, y: 123, w: 62, h: 43, say: 'no peeking, it’s full of bugs' },
+    { id: 'mug', label: 'mug', group: 'coffee', x: 232, y: 182, w: 14, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
+    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
+    { id: 'bed', label: 'bed', group: 'bed', x: 256, y: 146, w: 151, h: 86, act: () => invite(nap, 'not yet. one more commit.') },
+    { id: 'tv', label: 'TV', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: () => toggleTV() },
+    { id: 'console', label: 'game console', group: 'tv', x: 412, y: 177, w: 68, h: 49, say: 'research. for work.' },
+    { id: 'bag', label: 'beanbag', group: 'bag', x: 418, y: 222, w: 54, h: 40, act: () => invite(playGames, 'best seat in the house') },
     { id: 'mat', label: 'exercise mat', group: 'mat', x: 64, y: 238, w: 108, h: 26, act: () => invite(doPushUps, 'I use this. sometimes.') },
-    { id: 'monstera', label: 'monstera', group: 'shelf', x: 354, y: 182, w: 42, h: 59, say: 'she gets the best light' },
-    { id: 'catbed', label: 'cat bed', group: 'shelf', x: 390, y: 232, w: 40, h: 27, say: 'never used. he has my desk chair.' },
-    { id: 'trophy', label: 'trophy', group: 'shelf', x: 392, y: 57, w: 32, h: 34, say: 'I bought it myself' },
-    { id: 'pothos', label: 'pothos', group: 'shelf', x: 432, y: 62, w: 41, h: 62, say: 'it’s slowly taking the shelf' },
-    { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 400, y: 166, w: 68, h: 58, say: 'read half of them. honest.' }
+    { id: 'monstera', label: 'monstera', group: 'monstera', x: 530, y: 181, w: 42, h: 59, say: 'she gets the best light' },
+    { id: 'catbed', label: 'cat bed', group: 'catbed', x: 480, y: 232, w: 40, h: 27, say: 'never used. he has my desk chair.' },
+    { id: 'trophy', label: 'trophy', group: 'shelf', x: 486, y: 70, w: 32, h: 34, say: 'I bought it myself' },
+    { id: 'pothos', label: 'pothos', group: 'shelf', x: 524, y: 76, w: 41, h: 62, say: 'it’s slowly taking the shelf' },
+    { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 486, y: 172, w: 76, h: 50, say: 'read half of them. honest.' }
   ];
-  [[400, 110], [422, 107], [444, 104], [400, 142], [422, 139], [444, 136]].forEach((p, i) => {
+  [[486, 118], [512, 118], [538, 118], [486, 147], [512, 147], [538, 147]].forEach((p, i) => {
     THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 20, h: 20, act: () => openCard(i) });
   });
 
@@ -501,7 +490,7 @@
     if (d < 0.7) {
       const [gx, gy] = at('window', GLASS.x, GLASS.y);
       const slant = (12.5 - vnHour()) * -9;
-      const floorY = gy + (L.tall ? 240 : 205);
+      const floorY = gy + (L.tall ? 240 : 212);
       const a = 0.08 * (1 - d / 0.7);
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
@@ -603,7 +592,7 @@
 
     // A small game on the TV
     if (tvOn()) {
-      const [sx, sy] = at('shelf', SCREEN.x, SCREEN.y);
+      const [sx, sy] = at('tv', SCREEN.x, SCREEN.y);
       const px = ox + sx;
       const py = oy + sy;
       const scroll = still ? 0 : Math.floor(t * 18);
@@ -640,8 +629,9 @@
   // 5. SPRITES AND ACTORS
   // --------------------------------------------------------------------------
   const SHEETS = {
-    type: ['dev-keys', 120, 120],
-    wave: ['dev-wave', 120, 120],
+    type: ['dev-desk', 120, 120],
+    wave: ['dev-hello', 120, 120],
+    rise: ['dev-rise', 120, 156],
     stand: ['dev-stand', 120, 156],
     walk: ['dev-steps', 120, 156],
     sit: ['dev-sit', 120, 156],
@@ -746,8 +736,7 @@
   const dev = { state: 'code', bed: 0, bedTo: 0, x: 0, y: 0, flip: false, wait: 0, breakIn: 60, thought: 8, pokes: 0, pokedAt: 0 };
 
   function seat() {
-    const [x, y] = at('desk', 64, 112);
-    return [x, y - 36];
+    return at('desk', 40, 82);
   }
 
   function feetTo(spot) {
@@ -808,7 +797,7 @@
   function standUp(then) {
     dev.state = 'up';
     moveChair(1, 0.15);
-    play(dev, 'stand', seq(0, 8), 11, false, then);
+    play(dev, 'rise', seq(0, 8), 11, false, then);
   }
 
   function sitDown() {
@@ -816,7 +805,7 @@
       dev.state = 'down';
       dev.flip = false;
       moveChair(0, 0.4);
-      play(dev, 'stand', seq(8, 0), 11, false, startCoding);
+      play(dev, 'rise', seq(8, 0), 11, false, startCoding);
     });
   }
 
@@ -1019,10 +1008,10 @@
     const n = dev.sheet;
     if (n === 'push') return frame(n, dev.frames[dev.i], dev.x + 6, dev.y + 76, false);
     if (n === 'back') {
-      const [x, y] = at('bag', 246, 150);
+      const [x, y] = at('bag', 395, 158);
       return frame(n, dev.frames[dev.i], x, y, false);
     }
-    const y = SHEETS[n][2] === 120 ? dev.y + 36 : dev.y;
+    const y = SHEETS[n][2] === 120 ? dev.y + 31 : dev.y;
     frame(n, dev.frames[dev.i], dev.x, y, dev.flip);
   }
 
@@ -1032,15 +1021,8 @@
   }
 
   function devFeet() {
-    if (dev.state === 'sleep') return at('bed', 0, 241)[1];
-    if (dev.sheet === 'back') return at('bag', 0, 255)[1];
+    if (dev.sheet === 'back') return at('bag', 0, 263)[1];
     return dev.y + 146;
-  }
-
-  // Sitting at the desk he's on top of the chair and the desk: his hands are on the laptop
-  function atDesk() {
-    const [x, y] = seat();
-    return Math.abs(dev.x - x) < 8 && Math.abs(dev.y - y) < 12;
   }
 
   function sprite(name, x, y) {
@@ -1060,30 +1042,13 @@
     }
   }
 
-  function drawDevPart(upper) {
-    const waist = oy + at('desk', 0, DESK_LINE)[1];
-    ctx.save();
-    ctx.beginPath();
-    if (upper) ctx.rect(0, 0, canvas.width, waist);
-    else ctx.rect(0, waist, canvas.width, canvas.height - waist);
-    ctx.clip();
-    drawDev();
-    ctx.restore();
-  }
-
   // Everything that stands on the floor, drawn back to front
   function drawDepth() {
     const layers = [
-      { base: at('desk', 0, 218 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
-      { base: catInBed() ? at('shelf', 0, 260)[1] : cat.y + 51, draw: drawCat }
+      { base: at('desk', 0, 236 + chairOut()[1] * chair.t)[1], draw: drawChair },
+      { base: devFeet(), draw: drawDev },
+      { base: catInBed() ? at('catbed', 0, 260)[1] : cat.y + 51, draw: drawCat }
     ];
-    if (atDesk()) {
-      // Desk legs, then his legs, then the desktop over his knees, then his body and hands
-      layers.push({ base: at('desk', 0, 236.5)[1], draw: () => drawDevPart(false) });
-      layers.push({ base: at('desk', 0, 238)[1], draw: () => drawDevPart(true) });
-    } else {
-      layers.push({ base: devFeet(), draw: drawDev });
-    }
     ROOM.forEach((r) => {
       if (r.base) layers.push({ base: at(r.group, 0, r.base)[1], draw: () => drawPiece(r) });
     });
@@ -1092,15 +1057,15 @@
 
   function devBox() {
     if (dev.state === 'sleep') {
-      const [x, y] = at('bed', 240, 150);
+      const [x, y] = at('bed', 262, 146);
       return [x, y, 60, 40];
     }
     if (dev.sheet === 'push') return [dev.x, dev.y + 80, 130, 62];
     if (dev.sheet === 'back') {
-      const [x, y] = at('bag', 270, 156);
+      const [x, y] = at('bag', 419, 164);
       return [x, y, 52, 84];
     }
-    return [dev.x + 38, dev.y + (SHEETS[dev.sheet][2] === 120 ? 44 : 10), 46, 100];
+    return [dev.x + 24, dev.y + (SHEETS[dev.sheet][2] === 120 ? 37 : 10), 60, 100];
   }
 
   // --------------------------------------------------------------------------
@@ -1151,7 +1116,7 @@
   }
 
   function catBedSpot() {
-    const [x, y] = at('shelf', 410, 254);
+    const [x, y] = at('catbed', 500, 254);
     return catFeet([x, y]);
   }
 
@@ -1283,7 +1248,7 @@
 
   function drawZs(now) {
     if (dev.state !== 'sleep' || still) return;
-    const [x, y] = at('bed', 268, 150);
+    const [x, y] = at('bed', 276, 138);
     ctx.fillStyle = 'rgba(255,251,239,0.9)';
     for (let i = 0; i < 2; i++) {
       const f = ((now / 2400 + i / 2) % 1);
@@ -1360,7 +1325,7 @@
   function drawRoom() {
     const w = canvas.width;
     const h = canvas.height;
-    const line = oy + (L.tall ? 262 : 186);
+    const line = oy + L.wall;
     ctx.imageSmoothingEnabled = false;
     ctx.globalCompositeOperation = 'source-over';
     ctx.fillStyle = '#EBE3CB';
@@ -1373,7 +1338,7 @@
     ctx.fillRect(0, line + 1, w, 3);
     ctx.fillStyle = '#2B2A30';
     ctx.fillRect(0, line, w, 1);
-    const [cx, cy] = at('lantern', 338, 8);
+    const [cx, cy] = at('lantern', 438, 8);
     ctx.fillStyle = '#8F7860';
     ctx.fillRect(ox + cx, 0, 1, oy + cy + 1);
     ROOM.forEach((r) => {
@@ -1393,14 +1358,14 @@
   function drawShadows() {
     ctx.fillStyle = 'rgba(82,54,32,0.2)';
     SHADOWS.forEach((v) => shadow(...v));
-    shadow('desk', 112 + CHAIR_OUT[0] * chair.t, 218 + CHAIR_OUT[1] * chair.t, 23, 5);
+    shadow('desk', 81 + chairOut()[0] * chair.t, 236 + chairOut()[1] * chair.t, 21, 3);
     const on = (x, y, rx, ry) => {
       ctx.beginPath();
       ctx.ellipse(ox + x, oy + y, rx, ry, 0, 0, Math.PI * 2);
       ctx.fill();
     };
     on(cat.x + 28, cat.y + 51, 15, 3);
-    if (dev.sheet === 'walk' || (dev.sheet === 'stand' && !atDesk())) on(dev.x + 58, dev.y + 146, 17, 3);
+    if (dev.sheet === 'walk' || dev.sheet === 'stand') on(dev.x + 58, dev.y + 146, 17, 3);
     if (dev.sheet === 'push') on(dev.x + 74, dev.y + 144, 56, 4);
   }
 
@@ -1456,7 +1421,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-kit-d')]);
+  const assets = fonts.concat([load('kit', 'room-flat')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
