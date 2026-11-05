@@ -251,6 +251,7 @@ button {
 }
 
 .nav a {
+  white-space: nowrap;
   text-decoration: none;
   border-bottom: 2px solid transparent;
 }
@@ -272,6 +273,23 @@ button {
 .sky[aria-pressed='true'] {
   background: #CFE0F5;
   box-shadow: inset 8px -3px 0 var(--ink);
+}
+
+.snd {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 2px solid var(--ink);
+  background: var(--paper);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.snd[data-on='true'] .cross,
+.snd[data-on='false'] .wave {
+  display: none;
 }
 
 .box {
@@ -388,7 +406,7 @@ button {
 @media (max-width: 560px) {
   .bar {
     font-size: 18px;
-    gap: 10px;
+    gap: 8px;
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -398,7 +416,7 @@ button {
   }
 
   .nav {
-    gap: 10px;
+    gap: 8px;
   }
 
   .h1,

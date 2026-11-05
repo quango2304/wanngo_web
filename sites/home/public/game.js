@@ -208,6 +208,7 @@
   function moveChair(to, delay) {
     chair.to = to;
     chair.delay = delay;
+    setTimeout(() => fx('chair', 0.5), delay * 1000);
   }
 
   function stepChair(dt) {
@@ -276,6 +277,7 @@
   const card = document.getElementById('card');
   const closeBtn = document.getElementById('close');
   const skyBtn = document.getElementById('sky');
+  const soundBtn = document.getElementById('snd');
   const lightmap = document.createElement('canvas');
   const lm = lightmap.getContext('2d');
   const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -341,7 +343,114 @@
     ctx.restore();
   }
 
+  // --------------------------------------------------------------------------
+  // Sound: short clips in assets/audio/ (made with scripts/gen-room-sounds.sh) plus the
+  // chip blips below. Browsers keep a page silent until it is touched, so everything
+  // starts on the first tap or key press, and the speaker button in the bar mutes it.
+  // --------------------------------------------------------------------------
+  const CLIPS = ['key1', 'key2', 'key3', 'meow', 'purr', 'game', 'win', 'lose', 'day', 'night', 'ac', 'snore',
+    'coffee', 'steps', 'switch', 'tvon', 'chair'];
+  const LOOP_RATE = { steps: 1.2 };
+  const clips = {};
+  const loops = {};
   let audio = null;
+  let master = null;
+  let wanted = true;
+  let purrUntil = 0;
+  try { wanted = localStorage.getItem('room-sound') !== 'off'; } catch (e) { /* private window */ }
+
+  function ensureAudio() {
+    if (audio) return;
+    const Ctx = window.AudioContext || window.webkitAudioContext;
+    if (!Ctx) return;
+    audio = new Ctx();
+    master = audio.createGain();
+    master.gain.value = wanted ? 0.9 : 0;
+    master.connect(audio.destination);
+    CLIPS.forEach((name) => {
+      fetch(`assets/audio/${name}.mp3`)
+        .then((r) => r.arrayBuffer())
+        .then((buf) => new Promise((ok, no) => audio.decodeAudioData(buf, ok, no)))
+        .then((b) => { clips[name] = b; })
+        .catch(() => {});
+    });
+    syncSound();
+  }
+
+  function fx(name, volume, rate) {
+    if (!audio || !wanted || !clips[name] || audio.state !== 'running') return;
+    const src = audio.createBufferSource();
+    const gain = audio.createGain();
+    src.buffer = clips[name];
+    src.playbackRate.value = rate || 1;
+    gain.gain.value = volume === undefined ? 1 : volume;
+    src.connect(gain).connect(master);
+    src.start();
+  }
+
+  // Ambience that follows the room: the day or the night outside, the air conditioner,
+  // the game's music, footsteps, snoring and the cat's purr
+  function mixLoops() {
+    if (!audio || audio.state !== 'running') return;
+    const d = darkness();
+    const target = {
+      day: (1 - d) * 0.5,
+      night: d * 0.5,
+      ac: isAcOn() ? 0.22 : 0,
+      game: dev.state === 'play' ? 0.28 : 0,
+      snore: dev.state === 'sleep' && dev.bed > 0.6 ? 0.4 : 0,
+      steps: dev.state === 'walk' ? 0.45 : 0,
+      purr: performance.now() < purrUntil ? 0.5 : 0
+    };
+    Object.keys(target).forEach((name) => {
+      let l = loops[name];
+      if (!l) {
+        if (!clips[name] || !target[name]) return;
+        const src = audio.createBufferSource();
+        const gain = audio.createGain();
+        gain.gain.value = 0;
+        src.buffer = clips[name];
+        src.loop = true;
+        src.playbackRate.value = LOOP_RATE[name] || 1;
+        src.connect(gain).connect(master);
+        src.start();
+        l = loops[name] = { gain };
+      }
+      l.gain.gain.setTargetAtTime(wanted ? target[name] : 0, audio.currentTime, 0.45);
+    });
+  }
+
+  function syncSound() {
+    const on = !!audio && wanted;
+    soundBtn.dataset.on = String(on);
+    soundBtn.setAttribute('aria-label', on ? 'Turn sound off' : 'Turn sound on');
+    if (!audio) return;
+    master.gain.setTargetAtTime(wanted ? 0.9 : 0, audio.currentTime, 0.1);
+    if (wanted) audio.resume();
+    else setTimeout(() => { if (!wanted) audio.suspend(); }, 400);
+  }
+
+  soundBtn.addEventListener('click', () => {
+    wanted = !(audio && wanted);
+    try { localStorage.setItem('room-sound', wanted ? 'on' : 'off'); } catch (e) { /* private window */ }
+    ensureAudio();
+    syncSound();
+    if (wanted && audio) audio.resume().then(() => fx('switch', 0.8));
+  });
+  syncSound();
+
+  ['pointerdown', 'keydown'].forEach((type) => {
+    addEventListener(type, (e) => {
+      if (wanted && !soundBtn.contains(e.target)) ensureAudio();
+      if (audio && wanted && audio.state === 'suspended') audio.resume();
+    }, { capture: true, passive: true });
+  });
+
+  document.addEventListener('visibilitychange', () => {
+    if (!audio) return;
+    if (document.hidden) audio.suspend();
+    else if (wanted) audio.resume();
+  });
 
   function tone(freq, to, start, length, type, volume) {
     const t0 = audio.currentTime + start;
@@ -352,26 +461,17 @@
     osc.frequency.exponentialRampToValueAtTime(to, t0 + length);
     gain.gain.setValueAtTime(volume, t0);
     gain.gain.exponentialRampToValueAtTime(0.0001, t0 + length);
-    osc.connect(gain).connect(audio.destination);
+    osc.connect(gain).connect(master);
     osc.start(t0);
     osc.stop(t0 + length);
   }
 
-  // Made here rather than loaded: little chip sounds, kept quiet
+  // Made here rather than loaded: little chip blips, kept quiet. The things that have a
+  // recorded clip of their own (switches, the cat) skip them.
   function sound(id) {
-    const Ctx = window.AudioContext || window.webkitAudioContext;
-    if (!Ctx) return;
-    if (!audio) audio = new Ctx();
-    if (audio.state === 'suspended') audio.resume();
-    if (id === 'cat') {
-      tone(520, 760, 0, 0.09, 'triangle', 0.08);
-      tone(760, 460, 0.09, 0.16, 'triangle', 0.07);
-    } else if (id === 'ac' || id === 'tv') {
-      tone(1240, 1240, 0, 0.05, 'square', 0.025);
-      tone(1640, 1640, 0.08, 0.06, 'square', 0.025);
-    } else if (id === 'desk' || id === 'lantern') {
-      tone(300, 150, 0, 0.05, 'square', 0.04);
-    } else if (id.startsWith('item')) {
+    if (!audio || !wanted || audio.state !== 'running') return;
+    if (['cat', 'ac', 'tv', 'lamp', 'lantern', 'coffee'].includes(id)) return;
+    if (id.startsWith('item')) {
       tone(660, 660, 0, 0.07, 'square', 0.025);
       tone(990, 990, 0.07, 0.11, 'square', 0.025);
     } else if (id === 'dev') {
@@ -456,6 +556,7 @@
 
   function toggleTV() {
     tvSet = !tvSet;
+    fx(tvSet ? 'tvon' : 'switch', 0.8);
     if (dev.state === 'play') return sayDev('hey! I was winning');
     sayDev(tvSet ? 'don’t spoil the ending' : 'back to work, both of us');
   }
@@ -473,6 +574,7 @@
   function toggleLamp(id) {
     const on = lampOn(id);
     lampsSet[id] = !on;
+    fx('switch', 0.8, id === 'desk' ? 1 : 0.85);
     if (dev.state === 'sleep') return sayDev('zzz…');
     if (!on) return sayDev(id === 'desk' ? 'ah, I can see my bugs again' : 'cozy.');
     if (darkness() > 0.5) sayDev(id === 'desk' ? 'hey! I can’t see my keyboard' : 'moody. I like it.');
@@ -481,6 +583,7 @@
 
   function toggleAC() {
     acOn = !isAcOn();
+    fx('switch', 0.8, 1.15);
     if (dev.state === 'sleep') return sayDev(acOn ? 'mmm… cold…' : 'zzz… hot…');
     sayDev(acOn ? 'ahh. thank you.' : 'it’s 34 degrees in Saigon. please.');
   }
@@ -777,6 +880,7 @@
     if (dev.typing && dev.keyIn <= 0 && !still) {
       dev.keyIn = 0.07 + Math.random() * 0.1;
       dev.i = KEY_FRAMES[Math.floor(Math.random() * KEY_FRAMES.length)];
+      fx('key' + (1 + Math.floor(Math.random() * 3)), 0.3 + Math.random() * 0.2, 0.9 + Math.random() * 0.25);
     }
   }
 
@@ -864,6 +968,7 @@
         dev.wait = 4;
         dev.flip = false;
         sayDev(spot.line);
+        if (spot === SPOTS.coffee) fx('coffee', 0.7);
         play(dev, 'stand', [8], 1, true);
       });
     });
@@ -965,7 +1070,9 @@
       dev.lineIn -= dt;
       if (dev.lineIn <= 0) {
         dev.lineIn = 6 + Math.random() * 3;
-        sayDev(GAME_LINES[Math.floor(Math.random() * GAME_LINES.length)]);
+        const line = Math.floor(Math.random() * GAME_LINES.length);
+        sayDev(GAME_LINES[line]);
+        fx(line === 1 || line === 2 ? 'lose' : 'win', 0.45);
       }
       if (dev.wait <= 0) getUp(sitDown);
     }
@@ -1151,6 +1258,7 @@
   function roam() {
     if (darkness() > 0.7) return catWalkTo(catBedSpot());
     const spots = L.tall ? CAT_SPOTS.tall : CAT_SPOTS.wide;
+    if (Math.random() < 0.4) fx('meow', 0.25, 0.9 + Math.random() * 0.2);
     catWalkTo(catFeet(spots[Math.floor(Math.random() * spots.length)]));
   }
 
@@ -1159,6 +1267,8 @@
     cat.pets = n - cat.petAt < 8000 ? cat.pets + 1 : 0;
     cat.petAt = n;
     addHeart(cat.x + 28 + (cat.flip ? -6 : 6), cat.y + 8);
+    purrUntil = n + 3200;
+    fx('meow', cat.state === 'asleep' ? 0.35 : 0.7, 0.95 + Math.random() * 0.2);
     if (cat.state === 'asleep') {
       sayAt('prrr… zzz', cat);
       return;
@@ -1166,6 +1276,8 @@
     if (cat.pets >= 4 && (cat.state === 'idle' || cat.state === 'walk')) {
       cat.pets = 0;
       sayAt('hmph.', cat);
+      purrUntil = 0;
+      fx('meow', 0.8, 1.3);
       const spots = L.tall ? CAT_SPOTS.tall : CAT_SPOTS.wide;
       const far = spots.reduce((a, b) => (Math.abs(b[0] - 28 - cat.x) > Math.abs(a[0] - 28 - cat.x) ? b : a));
       if (cat.state === 'idle') catWalkTo(catFeet(far), 60);
@@ -1425,6 +1537,7 @@
     drawZs(now);
     drawHearts(dt);
     drawFlash(dt);
+    mixLoops();
 
     const d = devBox();
     place(devHit.el, d[0], d[1], d[2], d[3]);
