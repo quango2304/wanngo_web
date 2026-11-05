@@ -816,7 +816,7 @@
   function playGames() {
     standUp(() => walkTo(feetTo(SPOTS.game), () => {
       dev.state = 'settle';
-      dev.flip = false;
+      dev.flip = L.tall; // the TV is on his left there
       play(dev, 'sit', seq(0, 8), 11, false, () => {
         dev.state = 'play';
         dev.wait = 10 + Math.random() * 6;
@@ -1013,7 +1013,7 @@
     if (n === 'push') return frame(n, dev.frames[dev.i], dev.x + 6, dev.y + 76, false);
     if (n === 'back') {
       const [x, y] = at('bag', 395, 158);
-      return frame(n, dev.frames[dev.i], x, y, false);
+      return frame(n, dev.frames[dev.i], x, y, dev.flip);
     }
     const y = SHEETS[n][2] === 120 ? dev.y + 31 : dev.y;
     frame(n, dev.frames[dev.i], dev.x, y, dev.flip);
