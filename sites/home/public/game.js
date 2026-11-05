@@ -97,7 +97,7 @@
     tall: true,
     offs: {
       ac: [-356, -4], lantern: [-94, 0], window: [-192, 28], clock: [-58, 8], cork: [-77, 58], shelf: [-208, 48],
-      coffee: [-170, 56], desk: [-2, 168], bed: [-46, 210], bag: [-200, 62], mat: [-52, 180]
+      coffee: [-170, 56], desk: [-2, 168], bed: [-46, 210], bag: [-200, 62], mat: [-52, 180], succs: [8, 90]
     }
   };
   let L = WIDE;
@@ -109,15 +109,15 @@
 
   // Lights: id, group, x, y, radius
   const LIGHTS = [
-    { id: 'desk', group: 'desk', x: 146, y: 152, r: 74, c: '255,206,130' },
-    { id: 'lantern', group: 'lantern', x: 338, y: 58, r: 100, c: '255,224,170' },
-    { id: 'tv', group: 'shelf', x: 332, y: 150, r: 64, c: '150,190,255' }
+    { id: 'desk', group: 'desk', x: 152, y: 160, r: 74, c: '255,206,130' },
+    { id: 'lantern', group: 'lantern', x: 338, y: 46, r: 100, c: '255,224,170' },
+    { id: 'tv', group: 'shelf', x: 333, y: 150, r: 64, c: '150,190,255' }
   ];
-  const STRING = [[204, 48], [214, 48], [230, 46], [240, 45], [251, 44], [262, 45], [274, 48], [284, 44]];
-  const BULB_COLORS = ['#FFD36B', '#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0', '#F4A9B8', '#FFD36B', '#9FE0B8'];
-  const GLASS = { x: 219, y: 52, w: 52, h: 56 };
+  const STRING = [[202, 46], [214, 46], [240, 46], [250, 46], [267, 46], [285, 45]];
+  const BULB_COLORS = ['#FFD36B', '#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0', '#F4A9B8'];
+  const GLASS = { x: 220, y: 50, w: 55, h: 60 };
   const CLOCK = { x: 179, y: 119 };
-  const SCREEN = { x: 307, y: 133, w: 50, h: 34 };
+  const SCREEN = { x: 309, y: 133, w: 49, h: 28 };
   const VENT = { x: 372, y: 52, w: 78 };
 
   // Spots dev walks to (feet position)
@@ -133,20 +133,49 @@
     tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
   };
 
-  // Furniture as pieces, so people can walk behind it. `base` is where it meets the
-  // floor: anyone whose feet are above that line is behind it.
-  const PIECES = [
-    { id: 'p-fig', group: 'desk', x: 2, y: 90, w: 60, h: 136, base: 224 },
-    { id: 'p-snake', group: 'desk', x: 38, y: 160, w: 34, h: 70, base: 229 },
-    { id: 'p-desk', group: 'desk', x: 104, y: 150, w: 70, h: 90, base: 238 },
-    { id: 'p-table', group: 'coffee', x: 174, y: 156, w: 47, h: 62, base: 218 },
-    { id: 'p-bed', group: 'bed', x: 200, y: 150, w: 104, h: 90, base: 240 },
-    { id: 'p-bag', group: 'bag', x: 264, y: 214, w: 58, h: 40, base: 254 },
-    { id: 'p-console', group: 'shelf', x: 304, y: 185, w: 72, h: 40, base: 224 },
-    { id: 'p-shelf', group: 'shelf', x: 375, y: 80, w: 101, h: 153, base: 232 },
-    { id: 'p-plant', group: 'shelf', x: 356, y: 180, w: 38, h: 62, base: 241 },
-    { id: 'p-catbed', group: 'shelf', x: 386, y: 226, w: 44, h: 30, base: 256 }
+  // Every piece of furniture is its own sprite in furniture.png: [x, y, w, h]
+  const KIT = {
+    shelf: [0, 0, 104, 146], fig: [105, 0, 62, 139], bed: [168, 0, 108, 104],
+    bedSleep: [277, 0, 108, 104], window: [386, 0, 98, 90], desk: [0, 147, 72, 78],
+    chair: [73, 147, 47, 73], snake: [121, 147, 36, 67], monstera: [158, 147, 42, 59],
+    lantern: [201, 147, 36, 55], console: [238, 147, 68, 49], consolePlain: [307, 147, 68, 49],
+    cork: [376, 147, 58, 44], ac: [0, 226, 97, 42], rug: [98, 226, 121, 42],
+    coffee: [220, 226, 27, 42], bag: [248, 226, 54, 40], table: [303, 226, 47, 37],
+    succs: [351, 226, 67, 36], tv: [419, 226, 55, 35], clock: [475, 226, 27, 27],
+    catbed: [0, 269, 40, 27], herb: [41, 269, 19, 26], mat: [61, 269, 108, 26],
+    dumbbells: [170, 269, 18, 16]
+  };
+
+  // The room, placed by hand. x, y are in the wide room; the tall room is the same
+  // furniture moved by group. `base` is where a thing meets the floor: anyone whose
+  // feet are above that line is behind it. No base means it's on the wall or flat on
+  // the floor, under everyone.
+  const ROOM = [
+    { id: 'window', sprite: 'window', group: 'window', x: 196, y: 36 },
+    { id: 'ac', sprite: 'ac', group: 'ac', x: 362, y: 14 },
+    { id: 'succs', sprite: 'succs', group: 'succs', x: 88, y: 60 },
+    { id: 'cork', sprite: 'cork', group: 'cork', x: 92, y: 100 },
+    { id: 'clock', sprite: 'clock', group: 'clock', x: 166, y: 106 },
+    { id: 'lantern', sprite: 'lantern', group: 'lantern', x: 320, y: 8 },
+    { id: 'tv', sprite: 'tv', group: 'shelf', x: 306, y: 130 },
+    { id: 'rug', sprite: 'rug', group: 'bed', x: 188, y: 218 },
+    { id: 'mat', sprite: 'mat', group: 'mat', x: 64, y: 238 },
+    { id: 'dumbbells', sprite: 'dumbbells', group: 'mat', x: 176, y: 246 },
+    { id: 'fig', sprite: 'fig', group: 'desk', x: 2, y: 85, base: 224 },
+    { id: 'snake', sprite: 'snake', group: 'desk', x: 38, y: 162, base: 229 },
+    { id: 'desk', sprite: 'desk', group: 'desk', x: 104, y: 149, base: 227 },
+    { id: 'table', sprite: 'table', group: 'coffee', x: 174, y: 181, base: 218 },
+    { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 176, y: 145, base: 218.5 },
+    { id: 'herb', sprite: 'herb', group: 'coffee', x: 200, y: 163, base: 218.5 },
+    { id: 'bed', sprite: 'bed', group: 'bed', x: 198, y: 136, base: 240 },
+    { id: 'bag', sprite: 'bag', group: 'bag', x: 266, y: 214, base: 254 },
+    { id: 'console', sprite: 'console', group: 'shelf', x: 304, y: 176, base: 224 },
+    { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 372, y: 86, base: 232 },
+    { id: 'monstera', sprite: 'monstera', group: 'shelf', x: 354, y: 182, base: 241 },
+    { id: 'catbed', sprite: 'catbed', group: 'shelf', x: 390, y: 232, base: 259 }
   ];
+  const ROOM_BY_ID = {};
+  ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
   const AISLE = { x: 186, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
 
@@ -169,8 +198,8 @@
   }
 
   function drawChair() {
-    const [x, y] = at('desk', 64, 152);
-    ctx.drawImage(sprites.chair, ox + x + Math.round(CHAIR_OUT[0] * chair.t), oy + y + Math.round(CHAIR_OUT[1] * chair.t));
+    const [x, y] = at('desk', 71, 155);
+    sprite('chair', x + Math.round(CHAIR_OUT[0] * chair.t), y + Math.round(CHAIR_OUT[1] * chair.t));
   }
 
   // Feet positions to walk through, so nobody crosses a piece of furniture
@@ -184,31 +213,32 @@
 
   // Things to click. x, y, w, h are in the wide room.
   const THINGS = [
-    { id: 'ac', label: 'air conditioner', group: 'ac', x: 366, y: 16, w: 90, h: 40, act: () => toggleAC() },
-    { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 320, y: 38, w: 36, h: 36, act: () => toggleLamp('lantern') },
-    { id: 'desk', label: 'desk lamp', group: 'desk', x: 135, y: 136, w: 24, h: 22, act: () => toggleLamp('desk') },
-    { id: 'window', label: 'window', group: 'window', x: 200, y: 38, w: 90, h: 86, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
-    { id: 'clock', label: 'clock', group: 'clock', x: 167, y: 106, w: 25, h: 25, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
-    { id: 'cork', label: 'cork board', group: 'cork', x: 91, y: 102, w: 60, h: 34, say: 'todo: fewer todos' },
-    { id: 'fig', label: 'fig tree', group: 'desk', x: 4, y: 90, w: 58, h: 100, say: 'taller than my last app' },
-    { id: 'snake', label: 'snake plant', group: 'desk', x: 38, y: 165, w: 34, h: 64, say: 'impossible to kill. tested.' },
-    { id: 'laptop', label: 'laptop', group: 'desk', x: 113, y: 158, w: 42, h: 28, say: 'no peeking, it’s full of bugs' },
-    { id: 'mug', label: 'mug', group: 'desk', x: 118, y: 163, w: 14, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
-    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 178, y: 158, w: 24, h: 32, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
-    { id: 'herb', label: 'little herb', group: 'coffee', x: 200, y: 160, w: 20, h: 24, say: 'I forgot to water it again' },
-    { id: 'bed', label: 'bed', group: 'bed', x: 204, y: 152, w: 96, h: 90, act: () => invite(nap, 'not yet. one more commit.') },
-    { id: 'tv', label: 'TV', group: 'shelf', x: 304, y: 130, w: 56, h: 40, act: () => toggleTV() },
-    { id: 'console', label: 'game console', group: 'shelf', x: 306, y: 186, w: 44, h: 20, say: 'research. for work.' },
-    { id: 'bag', label: 'beanbag', group: 'bag', x: 266, y: 216, w: 54, h: 36, act: () => invite(playGames, 'best seat in the house') },
-    { id: 'mat', label: 'exercise mat', group: 'mat', x: 62, y: 240, w: 112, h: 22, act: () => invite(doPushUps, 'I use this. sometimes.') },
-    { id: 'monstera', label: 'monstera', group: 'shelf', x: 356, y: 182, w: 40, h: 58, say: 'she gets the best light' },
-    { id: 'catbed', label: 'cat bed', group: 'shelf', x: 388, y: 228, w: 40, h: 26, say: 'never used. he has my desk chair.' },
-    { id: 'trophy', label: 'trophy', group: 'shelf', x: 378, y: 83, w: 34, h: 28, say: 'I bought it myself' },
-    { id: 'pothos', label: 'pothos', group: 'shelf', x: 430, y: 82, w: 46, h: 66, say: 'it’s slowly taking the shelf' },
-    { id: 'books', label: 'books', group: 'shelf', x: 382, y: 176, w: 72, h: 52, say: 'read half of them. honest.' }
+    { id: 'ac', label: 'air conditioner', group: 'ac', x: 362, y: 14, w: 97, h: 42, act: () => toggleAC() },
+    { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 320, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
+    { id: 'lamp', of: 'desk', label: 'desk lamp', group: 'desk', x: 144, y: 149, w: 30, h: 26, act: () => toggleLamp('desk') },
+    { id: 'window', label: 'window', group: 'window', x: 196, y: 36, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
+    { id: 'clock', label: 'clock', group: 'clock', x: 166, y: 106, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
+    { id: 'cork', label: 'cork board', group: 'cork', x: 92, y: 100, w: 58, h: 44, say: 'todo: fewer todos' },
+    { id: 'succs', label: 'little succulents', group: 'succs', x: 88, y: 60, w: 67, h: 36, say: 'the only ones I never forget' },
+    { id: 'fig', label: 'fig tree', group: 'desk', x: 2, y: 85, w: 62, h: 110, say: 'taller than my last app' },
+    { id: 'snake', label: 'snake plant', group: 'desk', x: 38, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
+    { id: 'laptop', of: 'desk', label: 'laptop', group: 'desk', x: 126, y: 163, w: 32, h: 24, say: 'no peeking, it’s full of bugs' },
+    { id: 'mug', of: 'desk', label: 'mug', group: 'desk', x: 114, y: 177, w: 12, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
+    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 176, y: 145, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
+    { id: 'herb', label: 'little herb', group: 'coffee', x: 200, y: 163, w: 19, h: 26, say: 'I forgot to water it again' },
+    { id: 'bed', label: 'bed', group: 'bed', x: 200, y: 140, w: 104, h: 96, act: () => invite(nap, 'not yet. one more commit.') },
+    { id: 'tv', label: 'TV', group: 'shelf', x: 306, y: 130, w: 55, h: 35, act: () => toggleTV() },
+    { id: 'console', label: 'game console', group: 'shelf', x: 304, y: 176, w: 68, h: 49, say: 'research. for work.' },
+    { id: 'bag', label: 'beanbag', group: 'bag', x: 266, y: 214, w: 54, h: 40, act: () => invite(playGames, 'best seat in the house') },
+    { id: 'mat', label: 'exercise mat', group: 'mat', x: 64, y: 238, w: 108, h: 26, act: () => invite(doPushUps, 'I use this. sometimes.') },
+    { id: 'monstera', label: 'monstera', group: 'shelf', x: 354, y: 182, w: 42, h: 59, say: 'she gets the best light' },
+    { id: 'catbed', label: 'cat bed', group: 'shelf', x: 390, y: 232, w: 40, h: 27, say: 'never used. he has my desk chair.' },
+    { id: 'trophy', of: 'shelf', label: 'trophy', group: 'shelf', x: 386, y: 90, w: 32, h: 30, say: 'I bought it myself' },
+    { id: 'pothos', of: 'shelf', label: 'pothos', group: 'shelf', x: 432, y: 88, w: 44, h: 64, say: 'it’s slowly taking the shelf' },
+    { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 392, y: 178, w: 72, h: 50, say: 'read half of them. honest.' }
   ];
-  [[378, 112], [404, 112], [432, 112], [387, 145], [410, 145], [435, 145]].forEach((p, i) => {
-    THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0] - 2, y: p[1] - 2, w: 26, h: 26, act: () => openCard(i) });
+  [[389, 116], [413, 116], [438, 116], [395, 147], [417, 147], [440, 147]].forEach((p, i) => {
+    THINGS.push({ id: 'item' + i, of: 'shelf', label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 24, h: 24, act: () => openCard(i) });
   });
 
   // --------------------------------------------------------------------------
@@ -259,28 +289,6 @@
   // Clicks: the thing lights up for a moment and makes a small sound
   // --------------------------------------------------------------------------
   let flashing = null;
-  const shapes = new Map();
-
-  // The thing's own pixels, without the wall and floor behind it
-  function shapeOf(t) {
-    const key = t.id + (L.tall ? ':tall' : ':wide');
-    if (shapes.has(key)) return shapes.get(key);
-    const [x, y] = at(t.group, t.x, t.y);
-    const c = document.createElement('canvas');
-    c.width = t.w;
-    c.height = t.h;
-    const g = c.getContext('2d');
-    g.drawImage(sprites[L.tall ? 'roomTall' : 'roomWide'], -x, -y);
-    const data = g.getImageData(0, 0, t.w, t.h);
-    const d = data.data;
-    const near = (i, r, gr, b) => Math.abs(d[i] - r) + Math.abs(d[i + 1] - gr) + Math.abs(d[i + 2] - b) < 34;
-    for (let i = 0; i < d.length; i += 4) {
-      if (near(i, 235, 227, 203) || near(i, 222, 201, 166)) d[i + 3] = 0;
-    }
-    g.putImageData(data, 0, 0);
-    shapes.set(key, c);
-    return c;
-  }
 
   function flash(t) {
     if (t.group) flashing = { t, age: 0 };
@@ -294,11 +302,20 @@
       flashing = null;
       return;
     }
-    const [x, y] = at(flashing.t.group, flashing.t.x, flashing.t.y);
+    const t = flashing.t;
+    const r = ROOM_BY_ID[t.of || t.id];
+    if (!r) return;
     ctx.save();
+    if (t.of) {
+      // Part of a bigger sprite, like an icon on the shelf: a soft round patch of it
+      const [x, y] = at(t.group, t.x, t.y);
+      ctx.beginPath();
+      ctx.ellipse(ox + x + t.w / 2, oy + y + t.h / 2, t.w / 2, t.h / 2, 0, 0, Math.PI * 2);
+      ctx.clip();
+    }
     ctx.globalCompositeOperation = 'lighter';
     ctx.globalAlpha = 0.3 * k;
-    ctx.drawImage(shapeOf(flashing.t), ox + x, oy + y);
+    drawPiece(r);
     ctx.restore();
   }
 
@@ -574,7 +591,7 @@
     // Air conditioner
     const [vx, vy] = at('ac', VENT.x, VENT.y);
     ctx.fillStyle = isAcOn() ? '#6BE08A' : '#D0705A';
-    ctx.fillRect(ox + vx + 74, oy + vy - 18, 3, 2);
+    ctx.fillRect(ox + vx + 70, oy + vy - 13, 3, 2);
     if (isAcOn() && !still) {
       ctx.fillStyle = 'rgba(190,226,250,0.8)';
       for (let i = 0; i < 9; i++) {
@@ -601,7 +618,6 @@
     catWalk: ['cat-walk', 56, 56],
     catLie: ['cat-lie', 56, 56]
   };
-  const EXTRAS = { devSleep: 'dev-sleep', chair: 'chair' };
 
   const LOAD_LINES = [
     'watering the plants…',
@@ -835,6 +851,7 @@
 
   // Clicking his beanbag, mat or bed talks him into it
   function invite(go, line) {
+    if (dev.state === 'sleep') return sayDev(MUMBLES[0]);
     if (dev.state !== 'code' || isSleepTime()) return sayDev(line);
     sayDev('good idea');
     go();
@@ -949,11 +966,7 @@
   }
 
   function drawDev() {
-    if (dev.state === 'sleep') {
-      const [x, y] = at('bed', 185, 146);
-      if (sprites.devSleep) ctx.drawImage(sprites.devSleep, ox + x, oy + y);
-      return;
-    }
+    if (dev.state === 'sleep') return; // he's in the bed sprite
     const n = dev.sheet;
     if (n === 'push') return frame(n, dev.frames[dev.i], dev.x + 6, dev.y + 76, false);
     if (n === 'back') {
@@ -962,6 +975,11 @@
     }
     const y = SHEETS[n][2] === 120 ? dev.y + 36 : dev.y;
     frame(n, dev.frames[dev.i], dev.x, y, dev.flip);
+  }
+
+  function catInBed() {
+    const [x, y] = catBedSpot();
+    return Math.abs(cat.x - x) < 2 && Math.abs(cat.y - y) < 2;
   }
 
   function devFeet() {
@@ -976,24 +994,29 @@
     return Math.abs(dev.x - x) < 8 && Math.abs(dev.y - y) < 12;
   }
 
-  function drawPiece(p) {
-    const [x, y] = at(p.group, p.x, p.y);
-    ctx.drawImage(shapeOf(p), ox + x, oy + y);
+  function sprite(name, x, y) {
+    const [sx, sy, w, h] = KIT[name];
+    ctx.drawImage(sprites.kit, sx, sy, w, h, ox + x, oy + y, w, h);
+  }
+
+  function drawPiece(r) {
+    const [x, y] = at(r.group, r.x, r.y);
+    let name = r.sprite;
+    if (name === 'bed' && dev.state === 'sleep') name = 'bedSleep';
+    if (name === 'console' && dev.state === 'play') name = 'consolePlain';
+    sprite(name, x, y);
   }
 
   // Everything that stands on the floor, drawn back to front
   function drawDepth() {
     const dFeet = atDesk() ? at('desk', 0, 246)[1] : devFeet();
-    const cFeet = cat.y + 51;
-    const front = Math.min(dFeet, cFeet);
     const layers = [
-      { base: at('desk', 0, 236 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
+      { base: at('desk', 0, 228 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
       { base: dFeet, draw: drawDev },
-      { base: cFeet, draw: drawCat }
+      { base: catInBed() ? at('shelf', 0, 260)[1] : cat.y + 51, draw: drawCat }
     ];
-    PIECES.forEach((p) => {
-      const base = at(p.group, 0, p.base)[1];
-      if (base > front) layers.push({ base, draw: () => drawPiece(p) });
+    ROOM.forEach((r) => {
+      if (r.base) layers.push({ base: at(r.group, 0, r.base)[1], draw: () => drawPiece(r) });
     });
     layers.sort((a, b) => a.base - b.base).forEach((l) => l.draw());
   }
@@ -1059,7 +1082,7 @@
   }
 
   function catBedSpot() {
-    const [x, y] = at('shelf', 408, 246);
+    const [x, y] = at('shelf', 410, 254);
     return catFeet([x, y]);
   }
 
@@ -1263,18 +1286,29 @@
   // --------------------------------------------------------------------------
   // 9. LOOP
   // --------------------------------------------------------------------------
+  // Wall and floor are plain paint, so they fit any screen shape
   function drawRoom() {
-    const bg = sprites[L.tall ? 'roomTall' : 'roomWide'];
     const w = canvas.width;
     const h = canvas.height;
+    const line = oy + (L.tall ? 262 : 205);
     ctx.imageSmoothingEnabled = false;
     ctx.globalCompositeOperation = 'source-over';
-    // The wall and floor carry on past the picture on any screen shape
-    ctx.drawImage(bg, ox, oy);
-    ctx.drawImage(bg, 1, 0, 1, L.h, 0, oy, ox + 1, L.h);
-    ctx.drawImage(bg, L.w - 3, 0, 1, L.h, ox + L.w - 2, oy, w - ox - L.w + 2, L.h);
-    ctx.drawImage(canvas, 0, oy, w, 1, 0, 0, w, oy);
-    ctx.drawImage(canvas, 0, oy + L.h - 1, w, 1, 0, oy + L.h, w, h - oy - L.h);
+    ctx.fillStyle = '#EBE3CB';
+    ctx.fillRect(0, 0, w, line);
+    ctx.fillStyle = '#DEC9A6';
+    ctx.fillRect(0, line, w, h - line);
+    ctx.fillStyle = '#D3BD99';
+    for (let x = ox % 86; x < w; x += 86) ctx.fillRect(x, line + 4, 1, h - line - 4);
+    ctx.fillStyle = '#CDB48E';
+    ctx.fillRect(0, line + 1, w, 3);
+    ctx.fillStyle = '#2B2A30';
+    ctx.fillRect(0, line, w, 1);
+    const [cx, cy] = at('lantern', 338, 8);
+    ctx.fillStyle = '#8F7860';
+    ctx.fillRect(ox + cx, 0, 1, oy + cy + 1);
+    ROOM.forEach((r) => {
+      if (!r.base) drawPiece(r);
+    });
   }
 
   function hand(cx, cy, turn, length, color) {
@@ -1294,14 +1328,6 @@
     hand(ox + x, oy + y, new Date(Date.now()).getUTCSeconds() / 60, 6, '#D0505A');
   }
 
-  // In his hands now, so it leaves the console
-  function hidePad() {
-    if (dev.state !== 'play') return;
-    const bg = sprites[L.tall ? 'roomTall' : 'roomWide'];
-    const [x, y] = at('shelf', 328, 184);
-    ctx.drawImage(bg, x - 1, y, 1, 13, ox + x, oy + y, 19, 13);
-  }
-
   let last = 0;
   let slow = 0;
 
@@ -1313,7 +1339,6 @@
     stepChair(dt);
     drawRoom();
     drawClock();
-    hidePad();
     drawDepth();
     drawLight(now);
     drawZs(now);
@@ -1335,12 +1360,11 @@
 
   makeButtons();
   addEventListener('resize', resize);
-  toLoad = 4 + Object.keys(SHEETS).length + Object.keys(EXTRAS).length;
+  toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('roomWide', 'room-landscape'), load('roomTall', 'room-portrait')]);
+  const assets = fonts.concat([load('kit', 'furniture')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
-  Object.keys(EXTRAS).forEach((k) => assets.push(load(k, EXTRAS[k])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
     resize();
