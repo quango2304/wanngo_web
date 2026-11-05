@@ -133,7 +133,7 @@
     tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
   };
 
-  // Every piece of furniture is its own sprite in furniture.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-kit.png: [x, y, w, h]
   const KIT = {
     shelf: [0, 0, 104, 146], fig: [105, 0, 62, 139], bed: [168, 0, 108, 104],
     bedSleep: [277, 0, 108, 104], window: [386, 0, 98, 90], desk: [0, 147, 72, 78],
@@ -1363,7 +1363,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'furniture')]);
+  const assets = fonts.concat([load('kit', 'room-kit')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
