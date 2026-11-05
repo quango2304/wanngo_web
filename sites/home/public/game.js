@@ -133,20 +133,21 @@
     tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
   };
 
-  // Every piece of furniture is its own sprite in room-kit-c.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-kit-d.png: [x, y, w, h]
   const KIT = {
     shelf: [0, 0, 93, 155], fig: [94, 0, 62, 139], bed: [157, 0, 108, 104],
     bedSleep: [266, 0, 108, 104], window: [375, 0, 98, 90], desk: [0, 156, 95, 89],
-    chair: [96, 156, 47, 73], snake: [144, 156, 36, 67], pothos: [181, 156, 41, 62],
-    monstera: [223, 156, 42, 59], lantern: [266, 156, 36, 55], lamp: [303, 156, 38, 54],
-    console: [342, 156, 68, 49], consolePlain: [411, 156, 68, 49], laptop: [0, 246, 53, 44],
-    cork: [54, 246, 58, 44], ac: [113, 246, 97, 42], rug: [211, 246, 121, 42],
-    coffee: [333, 246, 27, 42], bag: [361, 246, 54, 40], table: [416, 246, 47, 37],
-    succs: [0, 291, 67, 36], tv: [68, 291, 55, 35], trophy: [124, 291, 32, 34],
-    clock: [157, 291, 27, 27], catbed: [185, 291, 40, 27], herb: [226, 291, 19, 26],
-    mat: [246, 291, 108, 26], icon0: [355, 291, 18, 18], icon1: [374, 291, 18, 18],
-    icon2: [393, 291, 18, 18], icon3: [412, 291, 18, 18], icon4: [431, 291, 18, 18],
-    icon5: [450, 291, 18, 18], dumbbells: [469, 291, 18, 16], mug: [488, 291, 14, 11]
+    deskLegs: [96, 156, 95, 89], chair: [192, 156, 47, 73], snake: [240, 156, 36, 67],
+    pothos: [277, 156, 41, 62], monstera: [319, 156, 42, 59], lantern: [362, 156, 36, 55],
+    lamp: [399, 156, 38, 54], console: [438, 156, 68, 49], consolePlain: [0, 246, 68, 49],
+    laptop: [69, 246, 53, 44], cork: [123, 246, 58, 44], ac: [182, 246, 97, 42],
+    rug: [280, 246, 121, 42], coffee: [402, 246, 27, 42], bag: [430, 246, 54, 40],
+    table: [0, 296, 47, 37], succs: [48, 296, 67, 36], tv: [116, 296, 55, 35],
+    trophy: [172, 296, 32, 34], clock: [205, 296, 27, 27], catbed: [233, 296, 40, 27],
+    herb: [274, 296, 19, 26], mat: [294, 296, 108, 26], icon0: [403, 296, 18, 18],
+    icon1: [422, 296, 18, 18], icon2: [441, 296, 18, 18], icon3: [460, 296, 18, 18],
+    icon4: [479, 296, 18, 18], icon5: [0, 334, 18, 18], dumbbells: [19, 334, 18, 16],
+    mug: [38, 334, 14, 11]
   };
 
   // The room, placed by hand. x, y are in the wide room; the tall room is the same
@@ -166,6 +167,7 @@
     { id: 'dumbbells', sprite: 'dumbbells', group: 'mat', x: 176, y: 246 },
     { id: 'fig', sprite: 'fig', group: 'plants', x: 2, y: 85, base: 224 },
     { id: 'snake', sprite: 'snake', group: 'snake', x: 34, y: 162, base: 229 },
+    { id: 'deskLegs', sprite: 'deskLegs', group: 'desk', x: 103, y: 148, base: 230 },
     { id: 'desk', sprite: 'desk', group: 'desk', x: 103, y: 148, base: 237 },
     { id: 'laptop', sprite: 'laptop', group: 'desk', x: 115, y: 145, base: 237.1 },
     { id: 'lamp', sprite: 'lamp', group: 'desk', x: 164, y: 116, base: 237.1 },
@@ -1068,7 +1070,7 @@
       { base: catInBed() ? at('shelf', 0, 260)[1] : cat.y + 51, draw: drawCat }
     ];
     if (atDesk()) {
-      // His legs go under the desk, his body and hands stay over it
+      // Desk legs, then his legs, then the desktop over his knees, then his body and hands
       layers.push({ base: at('desk', 0, 236.5)[1], draw: () => drawDevPart(false) });
       layers.push({ base: at('desk', 0, 238)[1], draw: () => drawDevPart(true) });
     } else {
@@ -1446,7 +1448,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-kit-c')]);
+  const assets = fonts.concat([load('kit', 'room-kit-d')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
