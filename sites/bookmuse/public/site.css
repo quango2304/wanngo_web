@@ -146,6 +146,14 @@ html:not(.js) .theme { display: none; }
 
 @media (max-width: 620px) {
   body { font-size: 16px; }
-  .signin, .short { display: none; }
-  .nav-in { gap: 14px; }
+  /* Language and Sign in take a second row: the first has room only for the brand, the switch and the button. */
+  .nav-in { flex-wrap: wrap; gap: 0 14px; padding-top: 6px; padding-bottom: 4px; }
+  .short { order: 3; flex: 1 1 60%; gap: 4px; }
+  .short a { display: inline-flex; align-items: center; min-width: 36px; min-height: 40px; justify-content: center; }
+  .short a:first-child { justify-content: flex-start; min-width: 28px; }
+  .signin { order: 4; display: inline-flex; align-items: center; min-height: 40px; font-weight: 500; color: var(--ink); }
+}
+
+@media (max-width: 350px) {
+  .nav-in { column-gap: 6px; }
 }
