@@ -32,7 +32,8 @@
   button.addEventListener('click', function () {
     var next = mode() === 'dark' ? 'light' : 'dark';
     if (document.startViewTransition && !still.matches) {
-      document.startViewTransition(function () { pick(next); });
+      // A hidden tab skips the animation and rejects `ready`; the theme still changes.
+      document.startViewTransition(function () { pick(next); }).ready.catch(function () {});
     } else {
       pick(next);
     }
