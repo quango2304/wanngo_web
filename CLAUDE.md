@@ -14,6 +14,7 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
   `https://media.wanngo.com/<site>/<name>.{mp4,webm,jpg}`: `scripts/upload-media.sh <video> <site>/<name>` encodes and
   uploads them (needs ffmpeg and `npx wrangler login`). Videos never go in git; keep the originals elsewhere.
   The Bookmuse home pages' clips are already encoded (`bookmuse/landing/*.mp4`, specs in `../bookmuse/specs/tasks/T68-landing-redesign.md`).
+- **Bookmuse pages share `site.css` and `site.js`** (fonts, light and dark, nav, footer, the theme switch); the home pages add `landing.css`, the others `styles.css`. Bump the `?v=` on those links in every page when one changes: they are cached for an hour.
 - Bookmuse's share links (`/b/…`), the AI-agent sign-in page and the universal-link files are on `bookmuse-app.wanngo.com`
   (the `bookmuse_web` dashboard), not on the landing. The landing's Sign in buttons link straight to that dashboard.
 - Bookmuse's privacy policy and deletion page are linked from the apps, App Store Connect, Play Console, Google and Dropbox:
