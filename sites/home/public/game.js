@@ -135,7 +135,7 @@
     tall: [[230, 400], [60, 470], [150, 345], [70, 345]]
   };
 
-  // Every piece of furniture is its own sprite in room-flat-b.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-flat-c.png: [x, y, w, h]
   const KIT = {
     fig: [0, 0, 62, 139], shelf: [63, 0, 88, 122], window: [152, 0, 98, 90],
     bed: [251, 0, 151, 86], bedSleep: [0, 140, 151, 86], chair: [152, 140, 39, 70],
@@ -146,10 +146,10 @@
     rug: [0, 287, 121, 42], coffee: [122, 287, 27, 42], bag: [150, 287, 54, 40],
     succs: [205, 287, 67, 36], table: [273, 287, 53, 35], tv: [327, 287, 55, 35],
     trophy: [383, 287, 32, 34], clock: [416, 287, 27, 27], catbed: [444, 287, 40, 27],
-    mat: [0, 330, 108, 26], keyboard: [109, 330, 45, 20], icon0: [155, 330, 18, 18],
-    icon1: [174, 330, 18, 18], icon2: [193, 330, 18, 18], icon3: [212, 330, 18, 18],
-    icon4: [231, 330, 18, 18], icon5: [250, 330, 18, 18], dumbbells: [269, 330, 18, 16],
-    mug: [288, 330, 14, 11]
+    mat: [0, 330, 108, 26], icon0: [109, 330, 18, 18], icon1: [128, 330, 18, 18],
+    icon2: [147, 330, 18, 18], icon3: [166, 330, 18, 18], icon4: [185, 330, 18, 18],
+    icon5: [204, 330, 18, 18], dumbbells: [223, 330, 18, 16], mug: [242, 330, 14, 11],
+    keyboard: [257, 330, 45, 6]
   };
 
   // The room, placed by hand. x, y are in the wide room; the tall room is the same
@@ -173,7 +173,7 @@
     { id: 'lamp', sprite: 'lamp', group: 'desk', x: 58, y: 112, base: 226.1 },
     { id: 'monitor', sprite: 'monitor', group: 'desk', x: 86, y: 96, base: 226.2 },
     { id: 'tower', sprite: 'tower', group: 'desk', x: 168, y: 107, base: 226.2 },
-    { id: 'keyboard', sprite: 'keyboard', group: 'desk', x: 104, y: 148, base: 226.3 },
+    { id: 'keyboard', sprite: 'keyboard', group: 'desk', x: 104, y: 159, base: 226.3 },
     { id: 'table', sprite: 'table', group: 'coffee', x: 198, y: 191, base: 226 },
     { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 200, y: 152, base: 226.1 },
     { id: 'mug', sprite: 'mug', group: 'coffee', x: 232, y: 182, base: 226.1 },
@@ -1425,7 +1425,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-flat-b')]);
+  const assets = fonts.concat([load('kit', 'room-flat-c')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
