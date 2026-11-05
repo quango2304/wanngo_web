@@ -188,6 +188,7 @@
   });
   const ROOM_BY_ID = {};
   ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
+  const DESK_LINE = 190; // sitting, he's above the desk over this line and under it below
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
   const AISLE = { x: 198, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
 
@@ -1019,14 +1020,30 @@
     sprite(name, x, y);
   }
 
+  function drawDevPart(upper) {
+    const waist = oy + at('desk', 0, DESK_LINE)[1];
+    ctx.save();
+    ctx.beginPath();
+    if (upper) ctx.rect(0, 0, canvas.width, waist);
+    else ctx.rect(0, waist, canvas.width, canvas.height - waist);
+    ctx.clip();
+    drawDev();
+    ctx.restore();
+  }
+
   // Everything that stands on the floor, drawn back to front
   function drawDepth() {
-    const dFeet = atDesk() ? at('desk', 0, 246)[1] : devFeet();
     const layers = [
       { base: at('desk', 0, 228 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
-      { base: dFeet, draw: drawDev },
       { base: catInBed() ? at('shelf', 0, 260)[1] : cat.y + 51, draw: drawCat }
     ];
+    if (atDesk()) {
+      // His legs go under the desk, his body and hands stay over it
+      layers.push({ base: at('desk', 0, 236.5)[1], draw: () => drawDevPart(false) });
+      layers.push({ base: at('desk', 0, 238)[1], draw: () => drawDevPart(true) });
+    } else {
+      layers.push({ base: devFeet(), draw: drawDev });
+    }
     ROOM.forEach((r) => {
       if (r.base) layers.push({ base: at(r.group, 0, r.base)[1], draw: () => drawPiece(r) });
     });
@@ -1302,7 +1319,7 @@
   function drawRoom() {
     const w = canvas.width;
     const h = canvas.height;
-    const line = oy + (L.tall ? 262 : 205);
+    const line = oy + (L.tall ? 262 : 186);
     ctx.imageSmoothingEnabled = false;
     ctx.globalCompositeOperation = 'source-over';
     ctx.fillStyle = '#EBE3CB';
