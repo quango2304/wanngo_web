@@ -797,14 +797,15 @@
     nextLeg();
   }
 
-  // Walking up or down the room he shows his back or his face, not his side
+  // Walking up or down the room he shows his back or his face, not his side.
+  // A short step stays side-on: turning for a blink reads as a glitch.
   function nextLeg() {
     dev.goal = dev.path.shift();
     const dx = dev.goal[0] - dev.x;
     const dy = dev.goal[1] - dev.y;
     if (Math.abs(dx) > 1) dev.flip = dx < 0;
     if (!dx && !dy) return;
-    const sheet = Math.abs(dy) > 6 && Math.abs(dy) > Math.abs(dx) * 1.2 ? (dy > 0 ? 'front' : 'rear') : 'walk';
+    const sheet = Math.abs(dy) > 16 && Math.abs(dy) > Math.abs(dx) * 1.2 ? (dy > 0 ? 'front' : 'rear') : 'walk';
     if (dev.sheet !== sheet) play(dev, sheet, seq(0, 7), 11, true);
   }
 
