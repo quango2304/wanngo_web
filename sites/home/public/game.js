@@ -97,7 +97,7 @@
     tall: true,
     offs: {
       ac: [-356, -4], lantern: [-94, 0], window: [-192, 28], clock: [-58, 8], cork: [-77, 58], shelf: [-208, 48],
-      coffee: [-170, 56], desk: [-2, 168], bed: [-46, 198], bag: [-200, 62], mat: [-52, 180]
+      coffee: [-170, 56], desk: [-2, 168], bed: [-46, 210], bag: [-200, 62], mat: [-52, 180]
     }
   };
   let L = WIDE;
@@ -138,9 +138,7 @@
   const PIECES = [
     { id: 'p-fig', group: 'desk', x: 2, y: 90, w: 60, h: 136, base: 224 },
     { id: 'p-snake', group: 'desk', x: 38, y: 160, w: 34, h: 70, base: 229 },
-    { id: 'p-chair', group: 'desk', x: 70, y: 158, w: 44, h: 80, base: 236, away: true },
-    { id: 'p-desk', group: 'desk', x: 104, y: 150, w: 70, h: 90, base: 238, away: true },
-    { id: 'p-legs', group: 'desk', x: 104, y: 192, w: 70, h: 48, base: 238, seated: true },
+    { id: 'p-desk', group: 'desk', x: 104, y: 150, w: 70, h: 90, base: 238 },
     { id: 'p-table', group: 'coffee', x: 174, y: 156, w: 47, h: 62, base: 218 },
     { id: 'p-bed', group: 'bed', x: 200, y: 150, w: 104, h: 90, base: 240 },
     { id: 'p-bag', group: 'bag', x: 264, y: 214, w: 58, h: 40, base: 254 },
@@ -149,7 +147,40 @@
     { id: 'p-plant', group: 'shelf', x: 356, y: 180, w: 38, h: 62, base: 241 },
     { id: 'p-catbed', group: 'shelf', x: 386, y: 226, w: 44, h: 30, base: 256 }
   ];
-  const LANE = 110; // in the wide room he walks along the open floor in front of everything
+  const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
+  const AISLE = { x: 186, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
+
+  // The chair is its own sprite: it slides out when he gets up and back when he sits
+  const chair = { t: 0, to: 0, delay: 0 };
+  const CHAIR_OUT = [-13, 6];
+
+  function moveChair(to, delay) {
+    chair.to = to;
+    chair.delay = delay;
+  }
+
+  function stepChair(dt) {
+    if (still) chair.t = chair.to;
+    if (chair.t === chair.to) return;
+    chair.delay -= dt;
+    if (chair.delay > 0) return;
+    const step = dt / 0.45;
+    chair.t = chair.to > chair.t ? Math.min(chair.to, chair.t + step) : Math.max(chair.to, chair.t - step);
+  }
+
+  function drawChair() {
+    const [x, y] = at('desk', 64, 152);
+    ctx.drawImage(sprites.chair, ox + x + Math.round(CHAIR_OUT[0] * chair.t), oy + y + Math.round(CHAIR_OUT[1] * chair.t));
+  }
+
+  // Feet positions to walk through, so nobody crosses a piece of furniture
+  function route(from, to) {
+    if (!L.tall) return [[from[0], LANE], [to[0], LANE], to];
+    const fromTop = from[1] < AISLE.split;
+    if (fromTop === to[1] < AISLE.split) return [to];
+    if (fromTop) return [[AISLE.x, AISLE.top], [AISLE.x, AISLE.bottom], [to[0], AISLE.bottom], to];
+    return [[from[0], AISLE.bottom], [AISLE.x, AISLE.bottom], [AISLE.x, AISLE.top], to];
+  }
 
   // Things to click. x, y, w, h are in the wide room.
   const THINGS = [
@@ -570,7 +601,7 @@
     catWalk: ['cat-walk', 56, 56],
     catLie: ['cat-lie', 56, 56]
   };
-  const EXTRAS = { devSleep: 'dev-sleep' };
+  const EXTRAS = { devSleep: 'dev-sleep', chair: 'chair' };
 
   const LOAD_LINES = [
     'watering the plants…',
@@ -713,7 +744,7 @@
 
   function walkTo([x, y], then) {
     dev.state = 'walk';
-    dev.path = L.tall ? [[x, y]] : [[dev.x, LANE], [x, LANE], [x, y]];
+    dev.path = route([dev.x + 58, dev.y + 146], [x + 58, y + 146]).map(([fx, fy]) => [fx - 58, fy - 146]);
     dev.then = then;
     nextLeg();
     play(dev, 'walk', seq(0, 4), 10, true);
@@ -726,6 +757,7 @@
 
   function standUp(then) {
     dev.state = 'up';
+    moveChair(1, 0.15);
     play(dev, 'stand', seq(0, 8), 11, false, then);
   }
 
@@ -733,6 +765,7 @@
     walkTo(seat(), () => {
       dev.state = 'down';
       dev.flip = false;
+      moveChair(0, 0.4);
       play(dev, 'stand', seq(8, 0), 11, false, startCoding);
     });
   }
@@ -907,7 +940,9 @@
     if (isSleepTime()) {
       [dev.x, dev.y] = feetTo(SPOTS.bed);
       dev.state = 'sleep';
+      chair.t = chair.to = 1;
     } else {
+      chair.t = chair.to = 0;
       startCoding();
     }
     settleCat();
@@ -935,7 +970,7 @@
     return dev.y + 146;
   }
 
-  // On his chair the desk's top stays behind his hands, only its legs are in front
+  // Sitting at the desk he's on top of the chair and the desk: his hands are on the laptop
   function atDesk() {
     const [x, y] = seat();
     return Math.abs(dev.x - x) < 8 && Math.abs(dev.y - y) < 12;
@@ -948,13 +983,15 @@
 
   // Everything that stands on the floor, drawn back to front
   function drawDepth() {
-    const dFeet = devFeet();
+    const dFeet = atDesk() ? at('desk', 0, 246)[1] : devFeet();
     const cFeet = cat.y + 51;
     const front = Math.min(dFeet, cFeet);
-    const seated = atDesk();
-    const layers = [{ base: dFeet, draw: drawDev }, { base: cFeet, draw: drawCat }];
+    const layers = [
+      { base: at('desk', 0, 236 + CHAIR_OUT[1] * chair.t)[1], draw: drawChair },
+      { base: dFeet, draw: drawDev },
+      { base: cFeet, draw: drawCat }
+    ];
     PIECES.forEach((p) => {
-      if ((p.away && seated) || (p.seated && !seated)) return;
       const base = at(p.group, 0, p.base)[1];
       if (base > front) layers.push({ base, draw: () => drawPiece(p) });
     });
@@ -1004,11 +1041,21 @@
     cat.state = 'rise';
     play(cat, 'catWalk', seq(0, 4), 12, false, () => {
       cat.state = 'walk';
-      cat.goal = goal;
+      cat.path = catRoute(goal);
       cat.speed = speed || 26;
-      cat.flip = goal[0] < cat.x;
+      catLeg();
       play(cat, 'catWalk', seq(5, 8), 9, true);
     });
+  }
+
+  function catRoute(goal) {
+    const legs = L.tall ? route([cat.x + 28, cat.y + 51], [goal[0] + 28, goal[1] + 51]) : [[goal[0] + 28, goal[1] + 51]];
+    return legs.map(catFeet);
+  }
+
+  function catLeg() {
+    cat.goal = cat.path.shift();
+    if (Math.abs(cat.goal[0] - cat.x) > 1) cat.flip = cat.goal[0] < cat.x;
   }
 
   function catBedSpot() {
@@ -1043,9 +1090,9 @@
       const far = spots.reduce((a, b) => (Math.abs(b[0] - 28 - cat.x) > Math.abs(a[0] - 28 - cat.x) ? b : a));
       if (cat.state === 'idle') catWalkTo(catFeet(far), 60);
       else {
-        cat.goal = catFeet(far);
+        cat.path = catRoute(catFeet(far));
         cat.speed = 60;
-        cat.flip = cat.goal[0] < cat.x;
+        catLeg();
       }
       return;
     }
@@ -1065,6 +1112,10 @@
       if (left <= step || still) {
         cat.x = cat.goal[0];
         cat.y = cat.goal[1];
+        if (cat.path.length) {
+          catLeg();
+          return stepClip(cat, dt);
+        }
         cat.state = 'settle';
         const bedded = darkness() > 0.7;
         play(cat, 'catWalk', seq(4, 0), 12, false, bedded ? catLieDown : catSit);
@@ -1259,6 +1310,7 @@
     last = now;
     updateDev(dt);
     updateCat(dt);
+    stepChair(dt);
     drawRoom();
     drawClock();
     hidePad();
@@ -1286,7 +1338,7 @@
   toLoad = 4 + Object.keys(SHEETS).length + Object.keys(EXTRAS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('roomWide', 'room-wide'), load('roomTall', 'room-tall')]);
+  const assets = fonts.concat([load('roomWide', 'room-landscape'), load('roomTall', 'room-portrait')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   Object.keys(EXTRAS).forEach((k) => assets.push(load(k, EXTRAS[k])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
