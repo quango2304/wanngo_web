@@ -111,7 +111,7 @@
 
   // Lights: id, group, x, y, radius
   const LIGHTS = [
-    { id: 'desk', group: 'desk', x: 72, y: 126, r: 78, c: '255,206,130' },
+    { id: 'desk', group: 'desk', x: 88, y: 128, r: 78, c: '255,206,130' },
     { id: 'lantern', group: 'lantern', x: 438, y: 46, r: 100, c: '255,224,170' },
     { id: 'tv', group: 'tv', x: 445, y: 140, r: 64, c: '150,190,255' }
   ];
@@ -135,7 +135,7 @@
     tall: [[230, 400], [60, 470], [150, 345], [70, 345]]
   };
 
-  // Every piece of furniture is its own sprite in room-flat-c.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-flat-d.png: [x, y, w, h]
   const KIT = {
     fig: [0, 0, 62, 139], shelf: [63, 0, 88, 122], window: [152, 0, 98, 90],
     bed: [251, 0, 151, 86], bedSleep: [0, 140, 151, 86], chair: [152, 140, 39, 70],
@@ -170,8 +170,8 @@
     { id: 'fig', sprite: 'fig', group: 'fig', x: 4, y: 85, base: 224 },
     { id: 'snake', sprite: 'snake', group: 'snake', x: 40, y: 165, base: 232 },
     { id: 'desk', sprite: 'desk', group: 'desk', x: 72, y: 164, base: 226 },
-    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 58, y: 112, base: 226.1 },
     { id: 'monitor', sprite: 'monitor', group: 'desk', x: 86, y: 96, base: 226.2 },
+    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 62, y: 112, base: 226.25 },
     { id: 'tower', sprite: 'tower', group: 'desk', x: 168, y: 107, base: 226.2 },
     { id: 'keyboard', sprite: 'keyboard', group: 'desk', x: 104, y: 159, base: 226.3 },
     { id: 'table', sprite: 'table', group: 'coffee', x: 198, y: 191, base: 226 },
@@ -236,7 +236,7 @@
   const THINGS = [
     { id: 'ac', label: 'air conditioner', group: 'ac', x: 470, y: 14, w: 97, h: 42, act: () => toggleAC() },
     { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 420, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
-    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 58, y: 112, w: 30, h: 52, act: () => toggleLamp('desk') },
+    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 62, y: 112, w: 38, h: 54, act: () => toggleLamp('desk') },
     { id: 'window', label: 'window', group: 'window', x: 282, y: 30, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
     { id: 'clock', label: 'clock', group: 'clock', x: 212, y: 90, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
     { id: 'cork', label: 'cork board', group: 'cork', x: 90, y: 66, w: 58, h: 44, say: 'todo: fewer todos' },
@@ -643,6 +643,8 @@
     back: ['dev-back', 96, 96],
     push: ['dev-push', 144, 72],
     catIdle: ['cat-idle', 56, 56],
+    catFront: ['cat-front', 56, 56],
+    catRear: ['cat-rear', 56, 56],
     catWalk: ['cat-walk', 56, 56],
     catLie: ['cat-lie', 56, 56]
   };
@@ -1105,7 +1107,6 @@
       cat.path = catRoute(goal);
       cat.speed = speed || 26;
       catLeg();
-      play(cat, 'catWalk', seq(5, 8), 9, true);
     });
   }
 
@@ -1114,9 +1115,18 @@
     return legs.map(catFeet);
   }
 
+  // Walking up or down the room it shows its back or its face, not its side
   function catLeg() {
     cat.goal = cat.path.shift();
-    if (Math.abs(cat.goal[0] - cat.x) > 1) cat.flip = cat.goal[0] < cat.x;
+    const dx = cat.goal[0] - cat.x;
+    const dy = cat.goal[1] - cat.y;
+    if (Math.abs(dy) > Math.abs(dx) * 1.2) {
+      cat.flip = false;
+      play(cat, dy > 0 ? 'catFront' : 'catRear', seq(0, 7), 9, true);
+    } else {
+      if (Math.abs(dx) > 1) cat.flip = dx < 0;
+      play(cat, 'catWalk', seq(5, 8), 9, true);
+    }
   }
 
   function catBedSpot() {
@@ -1425,7 +1435,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-flat-c')]);
+  const assets = fonts.concat([load('kit', 'room-flat-d')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
