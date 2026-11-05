@@ -302,6 +302,7 @@ p, li { text-wrap: pretty; }
 .contact-card p { margin: 0; font-size: 15px; }
 
 .doc .faq { margin-top: 8px; }
+.doc h2[id] { scroll-margin-top: 88px; }
 
 /* ---------- Reduced motion ---------- */
 
