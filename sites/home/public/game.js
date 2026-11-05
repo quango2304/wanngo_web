@@ -96,8 +96,8 @@
     h: 580,
     tall: true,
     offs: {
-      ac: [-356, -4], lantern: [-94, 0], window: [-192, 28], clock: [-58, 8], cork: [-77, 58], shelf: [-208, 48],
-      coffee: [-170, 56], desk: [-2, 168], bed: [-46, 210], bag: [-200, 62], mat: [-52, 180], succs: [8, 90]
+      ac: [-356, -4], lantern: [-94, 0], window: [-192, 28], clock: [-50, 40], cork: [-77, 58], shelf: [-208, 48],
+      coffee: [-196, 69], desk: [-12, 168], plants: [-2, 168], snake: [-16, 168], bed: [-36, 216], bag: [-200, 62], mat: [-52, 180], succs: [8, 90]
     }
   };
   let L = WIDE;
@@ -109,20 +109,20 @@
 
   // Lights: id, group, x, y, radius
   const LIGHTS = [
-    { id: 'desk', group: 'desk', x: 152, y: 160, r: 74, c: '255,206,130' },
+    { id: 'desk', group: 'desk', x: 177, y: 128, r: 78, c: '255,206,130' },
     { id: 'lantern', group: 'lantern', x: 338, y: 46, r: 100, c: '255,224,170' },
     { id: 'tv', group: 'shelf', x: 333, y: 150, r: 64, c: '150,190,255' }
   ];
   const STRING = [[202, 46], [214, 46], [240, 46], [250, 46], [267, 46], [285, 45]];
   const BULB_COLORS = ['#FFD36B', '#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0', '#F4A9B8'];
   const GLASS = { x: 220, y: 50, w: 55, h: 60 };
-  const CLOCK = { x: 179, y: 119 };
+  const CLOCK = { x: 173, y: 75 };
   const SCREEN = { x: 309, y: 133, w: 49, h: 28 };
   const VENT = { x: 372, y: 52, w: 78 };
 
   // Spots dev walks to (feet position)
   const SPOTS = {
-    coffee: { group: 'coffee', x: 168, y: 244, tall: [62, 300], line: 'refill time' },
+    coffee: { group: 'coffee', x: 194, y: 242, tall: [62, 300], line: 'refill time' },
     window: { group: 'bed', x: 196, y: 236, tall: [150, 310], line: 'look at that sky' },
     game: { group: 'bag', x: 296, y: 258 },
     mat: { group: 'mat', x: 110, y: 250 },
@@ -133,19 +133,20 @@
     tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
   };
 
-  // Every piece of furniture is its own sprite in room-kit-b.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-kit-c.png: [x, y, w, h]
   const KIT = {
-    shelf: [0, 0, 104, 146], fig: [105, 0, 62, 139], bed: [168, 0, 108, 104],
-    bedSleep: [277, 0, 108, 104], window: [386, 0, 98, 90], desk: [0, 147, 72, 78],
-    chair: [73, 147, 47, 73], snake: [121, 147, 36, 67], monstera: [158, 147, 42, 59],
-    lantern: [201, 147, 36, 55], console: [238, 147, 68, 49], consolePlain: [307, 147, 68, 49],
-    cork: [376, 147, 58, 44], ac: [0, 226, 97, 42], rug: [98, 226, 121, 42],
-    coffee: [220, 226, 27, 42], bag: [248, 226, 54, 40], table: [303, 226, 47, 37],
-    succs: [351, 226, 67, 36], tv: [419, 226, 55, 35], clock: [475, 226, 27, 27],
-    catbed: [0, 269, 40, 27], herb: [41, 269, 19, 26], mat: [61, 269, 108, 26],
-    icon0: [170, 269, 18, 18], icon1: [189, 269, 18, 18], icon2: [208, 269, 18, 18],
-    icon3: [227, 269, 18, 18], icon4: [246, 269, 18, 18], icon5: [265, 269, 18, 18],
-    dumbbells: [284, 269, 18, 16]
+    shelf: [0, 0, 93, 155], fig: [94, 0, 62, 139], bed: [157, 0, 108, 104],
+    bedSleep: [266, 0, 108, 104], window: [375, 0, 98, 90], desk: [0, 156, 95, 89],
+    chair: [96, 156, 47, 73], snake: [144, 156, 36, 67], pothos: [181, 156, 41, 62],
+    monstera: [223, 156, 42, 59], lantern: [266, 156, 36, 55], lamp: [303, 156, 38, 54],
+    console: [342, 156, 68, 49], consolePlain: [411, 156, 68, 49], laptop: [0, 246, 53, 44],
+    cork: [54, 246, 58, 44], ac: [113, 246, 97, 42], rug: [211, 246, 121, 42],
+    coffee: [333, 246, 27, 42], bag: [361, 246, 54, 40], table: [416, 246, 47, 37],
+    succs: [0, 291, 67, 36], tv: [68, 291, 55, 35], trophy: [124, 291, 32, 34],
+    clock: [157, 291, 27, 27], catbed: [185, 291, 40, 27], herb: [226, 291, 19, 26],
+    mat: [246, 291, 108, 26], icon0: [355, 291, 18, 18], icon1: [374, 291, 18, 18],
+    icon2: [393, 291, 18, 18], icon3: [412, 291, 18, 18], icon4: [431, 291, 18, 18],
+    icon5: [450, 291, 18, 18], dumbbells: [469, 291, 18, 16], mug: [488, 291, 14, 11]
   };
 
   // The room, placed by hand. x, y are in the wide room; the tall room is the same
@@ -157,33 +158,38 @@
     { id: 'ac', sprite: 'ac', group: 'ac', x: 362, y: 14 },
     { id: 'succs', sprite: 'succs', group: 'succs', x: 88, y: 60 },
     { id: 'cork', sprite: 'cork', group: 'cork', x: 92, y: 100 },
-    { id: 'clock', sprite: 'clock', group: 'clock', x: 166, y: 106 },
+    { id: 'clock', sprite: 'clock', group: 'clock', x: 160, y: 62 },
     { id: 'lantern', sprite: 'lantern', group: 'lantern', x: 320, y: 8 },
     { id: 'tv', sprite: 'tv', group: 'shelf', x: 306, y: 130 },
     { id: 'rug', sprite: 'rug', group: 'bed', x: 188, y: 218 },
     { id: 'mat', sprite: 'mat', group: 'mat', x: 64, y: 238 },
     { id: 'dumbbells', sprite: 'dumbbells', group: 'mat', x: 176, y: 246 },
-    { id: 'fig', sprite: 'fig', group: 'desk', x: 2, y: 85, base: 224 },
-    { id: 'snake', sprite: 'snake', group: 'desk', x: 38, y: 162, base: 229 },
-    { id: 'desk', sprite: 'desk', group: 'desk', x: 104, y: 149, base: 227 },
-    { id: 'table', sprite: 'table', group: 'coffee', x: 174, y: 181, base: 218 },
-    { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 176, y: 145, base: 218.5 },
-    { id: 'herb', sprite: 'herb', group: 'coffee', x: 200, y: 163, base: 218.5 },
+    { id: 'fig', sprite: 'fig', group: 'plants', x: 2, y: 85, base: 224 },
+    { id: 'snake', sprite: 'snake', group: 'snake', x: 34, y: 162, base: 229 },
+    { id: 'desk', sprite: 'desk', group: 'desk', x: 103, y: 148, base: 237 },
+    { id: 'laptop', sprite: 'laptop', group: 'desk', x: 115, y: 145, base: 237.1 },
+    { id: 'lamp', sprite: 'lamp', group: 'desk', x: 164, y: 116, base: 237.1 },
+    { id: 'mug', sprite: 'mug', group: 'desk', x: 172, y: 170, base: 237.2 },
+    { id: 'table', sprite: 'table', group: 'coffee', x: 200, y: 168, base: 205 },
+    { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 202, y: 132, base: 205.5 },
+    { id: 'herb', sprite: 'herb', group: 'coffee', x: 226, y: 150, base: 205.5 },
     { id: 'bed', sprite: 'bed', group: 'bed', x: 198, y: 136, base: 240 },
     { id: 'bag', sprite: 'bag', group: 'bag', x: 266, y: 214, base: 254 },
     { id: 'console', sprite: 'console', group: 'shelf', x: 304, y: 176, base: 224 },
-    { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 372, y: 86, base: 232 },
+    { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 378, y: 77, base: 232 },
+    { id: 'trophy', sprite: 'trophy', group: 'shelf', x: 392, y: 57, base: 232.2 },
+    { id: 'pothos', sprite: 'pothos', group: 'shelf', x: 432, y: 62, base: 232.2 },
     { id: 'monstera', sprite: 'monstera', group: 'shelf', x: 354, y: 182, base: 241 },
     { id: 'catbed', sprite: 'catbed', group: 'shelf', x: 390, y: 232, base: 259 }
   ];
-  // The six things on the shelf, standing on its boards in two straight rows
-  [[395, 124], [417, 124], [439, 124], [395, 154], [417, 154], [439, 154]].forEach(([x, y], i) => {
+  // The six things on the shelf. The boards run slightly uphill to the right, and so do they.
+  [[401, 111], [423, 108], [445, 105], [401, 143], [423, 140], [445, 137]].forEach(([x, y], i) => {
     ROOM.push({ id: 'item' + i, sprite: 'icon' + i, group: 'shelf', x, y, base: 232.5 });
   });
   const ROOM_BY_ID = {};
   ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
-  const AISLE = { x: 186, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
+  const AISLE = { x: 198, top: 392, bottom: 414, split: 395 }; // the tall room's gap between desk and bed
 
   // The chair is its own sprite: it slides out when he gets up and back when he sits
   const chair = { t: 0, to: 0, delay: 0 };
@@ -221,17 +227,17 @@
   const THINGS = [
     { id: 'ac', label: 'air conditioner', group: 'ac', x: 362, y: 14, w: 97, h: 42, act: () => toggleAC() },
     { id: 'lantern', label: 'paper lantern', group: 'lantern', x: 320, y: 12, w: 36, h: 52, act: () => toggleLamp('lantern') },
-    { id: 'lamp', of: 'desk', label: 'desk lamp', group: 'desk', x: 144, y: 149, w: 30, h: 26, act: () => toggleLamp('desk') },
+    { id: 'lamp', label: 'desk lamp', group: 'desk', x: 164, y: 116, w: 38, h: 54, act: () => toggleLamp('desk') },
     { id: 'window', label: 'window', group: 'window', x: 196, y: 36, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
-    { id: 'clock', label: 'clock', group: 'clock', x: 166, y: 106, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
+    { id: 'clock', label: 'clock', group: 'clock', x: 160, y: 62, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
     { id: 'cork', label: 'cork board', group: 'cork', x: 92, y: 100, w: 58, h: 44, say: 'todo: fewer todos' },
     { id: 'succs', label: 'little succulents', group: 'succs', x: 88, y: 60, w: 67, h: 36, say: 'the only ones I never forget' },
-    { id: 'fig', label: 'fig tree', group: 'desk', x: 2, y: 85, w: 62, h: 110, say: 'taller than my last app' },
-    { id: 'snake', label: 'snake plant', group: 'desk', x: 38, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
-    { id: 'laptop', of: 'desk', label: 'laptop', group: 'desk', x: 126, y: 163, w: 32, h: 24, say: 'no peeking, it’s full of bugs' },
-    { id: 'mug', of: 'desk', label: 'mug', group: 'desk', x: 114, y: 177, w: 12, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
-    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 176, y: 145, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
-    { id: 'herb', label: 'little herb', group: 'coffee', x: 200, y: 163, w: 19, h: 26, say: 'I forgot to water it again' },
+    { id: 'fig', label: 'fig tree', group: 'plants', x: 2, y: 85, w: 62, h: 110, say: 'taller than my last app' },
+    { id: 'snake', label: 'snake plant', group: 'snake', x: 34, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
+    { id: 'laptop', label: 'laptop', group: 'desk', x: 115, y: 145, w: 53, h: 44, say: 'no peeking, it’s full of bugs' },
+    { id: 'mug', label: 'mug', group: 'desk', x: 172, y: 170, w: 16, h: 16, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
+    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 202, y: 132, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
+    { id: 'herb', label: 'little herb', group: 'coffee', x: 226, y: 150, w: 19, h: 26, say: 'I forgot to water it again' },
     { id: 'bed', label: 'bed', group: 'bed', x: 200, y: 140, w: 104, h: 96, act: () => invite(nap, 'not yet. one more commit.') },
     { id: 'tv', label: 'TV', group: 'shelf', x: 306, y: 130, w: 55, h: 35, act: () => toggleTV() },
     { id: 'console', label: 'game console', group: 'shelf', x: 304, y: 176, w: 68, h: 49, say: 'research. for work.' },
@@ -239,11 +245,11 @@
     { id: 'mat', label: 'exercise mat', group: 'mat', x: 64, y: 238, w: 108, h: 26, act: () => invite(doPushUps, 'I use this. sometimes.') },
     { id: 'monstera', label: 'monstera', group: 'shelf', x: 354, y: 182, w: 42, h: 59, say: 'she gets the best light' },
     { id: 'catbed', label: 'cat bed', group: 'shelf', x: 390, y: 232, w: 40, h: 27, say: 'never used. he has my desk chair.' },
-    { id: 'trophy', of: 'shelf', label: 'trophy', group: 'shelf', x: 386, y: 90, w: 32, h: 30, say: 'I bought it myself' },
-    { id: 'pothos', of: 'shelf', label: 'pothos', group: 'shelf', x: 432, y: 88, w: 44, h: 64, say: 'it’s slowly taking the shelf' },
-    { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 392, y: 178, w: 72, h: 50, say: 'read half of them. honest.' }
+    { id: 'trophy', label: 'trophy', group: 'shelf', x: 392, y: 57, w: 32, h: 34, say: 'I bought it myself' },
+    { id: 'pothos', label: 'pothos', group: 'shelf', x: 432, y: 62, w: 41, h: 62, say: 'it’s slowly taking the shelf' },
+    { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 400, y: 166, w: 68, h: 58, say: 'read half of them. honest.' }
   ];
-  [[394, 123], [416, 123], [438, 123], [394, 153], [416, 153], [438, 153]].forEach((p, i) => {
+  [[400, 110], [422, 107], [444, 104], [400, 142], [422, 139], [444, 136]].forEach((p, i) => {
     THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 20, h: 20, act: () => openCard(i) });
   });
 
@@ -617,7 +623,7 @@
     type: ['dev-keys', 120, 120],
     wave: ['dev-wave', 120, 120],
     stand: ['dev-stand', 120, 156],
-    walk: ['dev-walk', 120, 156],
+    walk: ['dev-steps', 120, 156],
     back: ['dev-back', 96, 96],
     push: ['dev-push', 144, 72],
     catIdle: ['cat-idle', 56, 56],
@@ -769,7 +775,7 @@
     dev.path = route([dev.x + 58, dev.y + 146], [x + 58, y + 146]).map(([fx, fy]) => [fx - 58, fy - 146]);
     dev.then = then;
     nextLeg();
-    play(dev, 'walk', seq(0, 4), 10, true);
+    play(dev, 'walk', seq(0, 7), 11, true);
   }
 
   function nextLeg() {
@@ -1369,7 +1375,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-kit-b')]);
+  const assets = fonts.concat([load('kit', 'room-kit-c')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
