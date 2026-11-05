@@ -133,7 +133,7 @@
     tall: [[210, 330], [60, 470], [244, 345], [130, 460]]
   };
 
-  // Every piece of furniture is its own sprite in room-kit.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-kit-b.png: [x, y, w, h]
   const KIT = {
     shelf: [0, 0, 104, 146], fig: [105, 0, 62, 139], bed: [168, 0, 108, 104],
     bedSleep: [277, 0, 108, 104], window: [386, 0, 98, 90], desk: [0, 147, 72, 78],
@@ -143,7 +143,9 @@
     coffee: [220, 226, 27, 42], bag: [248, 226, 54, 40], table: [303, 226, 47, 37],
     succs: [351, 226, 67, 36], tv: [419, 226, 55, 35], clock: [475, 226, 27, 27],
     catbed: [0, 269, 40, 27], herb: [41, 269, 19, 26], mat: [61, 269, 108, 26],
-    dumbbells: [170, 269, 18, 16]
+    icon0: [170, 269, 18, 18], icon1: [189, 269, 18, 18], icon2: [208, 269, 18, 18],
+    icon3: [227, 269, 18, 18], icon4: [246, 269, 18, 18], icon5: [265, 269, 18, 18],
+    dumbbells: [284, 269, 18, 16]
   };
 
   // The room, placed by hand. x, y are in the wide room; the tall room is the same
@@ -174,6 +176,10 @@
     { id: 'monstera', sprite: 'monstera', group: 'shelf', x: 354, y: 182, base: 241 },
     { id: 'catbed', sprite: 'catbed', group: 'shelf', x: 390, y: 232, base: 259 }
   ];
+  // The six things on the shelf, standing on its boards in two straight rows
+  [[395, 124], [417, 124], [439, 124], [395, 154], [417, 154], [439, 154]].forEach(([x, y], i) => {
+    ROOM.push({ id: 'item' + i, sprite: 'icon' + i, group: 'shelf', x, y, base: 232.5 });
+  });
   const ROOM_BY_ID = {};
   ROOM.forEach((r) => { ROOM_BY_ID[r.id] = r; });
   const LANE = 256; // in the wide room everyone walks along the open floor in front of everything
@@ -237,8 +243,8 @@
     { id: 'pothos', of: 'shelf', label: 'pothos', group: 'shelf', x: 432, y: 88, w: 44, h: 64, say: 'it’s slowly taking the shelf' },
     { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 392, y: 178, w: 72, h: 50, say: 'read half of them. honest.' }
   ];
-  [[389, 116], [413, 116], [438, 116], [395, 147], [417, 147], [440, 147]].forEach((p, i) => {
-    THINGS.push({ id: 'item' + i, of: 'shelf', label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 24, h: 24, act: () => openCard(i) });
+  [[394, 123], [416, 123], [438, 123], [394, 153], [416, 153], [438, 153]].forEach((p, i) => {
+    THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 20, h: 20, act: () => openCard(i) });
   });
 
   // --------------------------------------------------------------------------
@@ -1363,7 +1369,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-kit')]);
+  const assets = fonts.concat([load('kit', 'room-kit-b')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
