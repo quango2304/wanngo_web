@@ -133,6 +133,8 @@ html:not(.js) .theme { display: none; }
 .foot-in nav a { color: var(--soft); text-decoration: none; }
 .foot-in nav a:hover { color: var(--ink); }
 .foot-in nav a[aria-current] { color: var(--ink); font-weight: 600; }
+.foot-in .by { color: var(--soft); text-decoration: none; }
+.foot-in .by:hover { color: var(--ink); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
