@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>Địa cầu địa chính trị · wanngo</title>
+  <meta name="description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 5 công cụ địa chính trị, eo biển nút thắt, tuyến hàng hải, biên giới lịch sử và xung đột đương đại.">
+  <link rel="canonical" href="https://geo.wanngo.com/">
+  <meta property="og:title" content="Địa cầu địa chính trị · wanngo">
+  <meta property="og:description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: quốc gia, eo biển nút thắt, tuyến hàng hải, biên giới lịch sử và điểm nóng thế giới.">
+  <meta property="og:url" content="https://geo.wanngo.com/">
+  <script>try{const t=localStorage.getItem('geo-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/map/world-110m.json" as="fetch" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="stage"><canvas id="cv" aria-label="Quả địa cầu tương tác"></canvas></div>
+  <div id="top">
+    <div id="brand" class="card"><b>Địa cầu địa chính trị</b><span>theo phong cách Tim Marshall</span></div>
+    <div id="search">
+      <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" placeholder="Tìm quốc gia, eo biển, điểm nóng..." autocomplete="off">
+      <div id="sugg" class="card"></div>
+    </div>
+    <button class="ibtn" id="layBtn" aria-label="Lớp bản đồ" title="Lớp bản đồ">
+      <svg class="i" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
+    </button>
+  </div>
+  <div id="layers" class="card">
+    <div class="lh">ĐIỂM NÓNG</div><div id="lyHot"></div>
+    <div class="lh">THIÊN NHIÊN</div><div id="lyNat"></div>
+    <div class="lh">TÔ MÀU THEO LIÊN MINH</div><select id="alSel"><option value="">Không</option></select>
+    <div class="lh">ĐƯỜNG THAM CHIẾU</div><div class="chips" id="refs"></div>
+  </div>
+  <div id="bl">
+    <div id="legend" class="card"></div>
+  </div>
+  <div id="ctrl">
+    <button class="ibtn" id="zin" aria-label="Phóng to"><svg class="i" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg></button>
+    <button class="ibtn" id="zout" aria-label="Thu nhỏ"><svg class="i" viewBox="0 0 24 24"><path d="M5 12h14"/></svg></button>
+    <button class="ibtn" id="home" aria-label="Về Việt Nam" title="Về Việt Nam"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></button>
+    <button class="ibtn" id="spin" aria-label="Tự xoay" title="Tự xoay"><svg class="i" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></button>
+    <button class="ibtn" id="theme" aria-label="Đổi giao diện sáng tối" title="Sáng / tối"><svg class="i" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
+  </div>
+  <div id="panel" class="card">
+    <button id="pclose" aria-label="Đóng"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div id="pbody"></div>
+  </div>
+  <div id="tip"></div>
+  <div id="hint">Kéo để xoay · cuộn để phóng to · bấm vào quốc gia hoặc điểm nóng</div>
+  <script src="assets/vendor/d3-geo.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

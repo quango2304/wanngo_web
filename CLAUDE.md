@@ -7,6 +7,7 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
 |---|---|---|---|
 | Personal home: "the little room" (pixel-art canvas game) | `sites/home` | `wanngo-home` | `wanngo.com`, `www.wanngo.com` |
 | Bookmuse landing, privacy, support, delete-account (en, `/vi/`, `/es/`) | `sites/bookmuse` | `bookmuse-landing` | `bookmuse.wanngo.com` |
+| Geopolitics study notes | `sites/geo` | `wanngo-geo` | `geo.wanngo.com` |
 
 - Each site is a Worker with static assets only (`wrangler.jsonc` + `public/`, `_headers` for headers): no script, so every
   request is a free asset request. Workers assets cap one file at 25 MiB and a site at 20,000 files.
@@ -21,7 +22,8 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
   when a Bookmuse feature changes what data is kept or sent, update en/vi/es together.
 - **Home's room** (`sites/home/public/`) is a pixel-art canvas game (`index.html`, `style.css`, `game.js`, no libraries): a room you click around in, on Vietnam time. It is a straight-on 2D view: every piece of furniture is a separate flat sprite in `public/assets/room/room-flat-e.png`, placed in `ROOM` in `game.js` and drawn back to front by where it meets the floor, and people walk on the open floor in front of it. Don't draw anything at an angle or split a sprite to fake depth. Wall, floor, sunlight, lamps and night are drawn in code. Wide and tall layouts move the same sprites by group. Assets are cached for 7 days, so give a replaced image a new name. `?hour=3` pins the clock for testing.
   **Sound** is clips in `public/assets/audio/` (typing, cat, game, ambience; made with ElevenLabs by `scripts/gen-room-sounds.sh`, which needs `ELEVENLABS_API_KEY` in the environment, never in git), started on the first tap and muted by the speaker button; the chip blips are still made in code.
-- Run locally: `npm ci`, then `npm run dev:bookmuse` (http://localhost:8788) or `npm run dev:home` (http://localhost:8790).
+- **Geo** (`sites/geo/public/`) is an interactive 3D orthographic geopolitical globe (`index.html`, `style.css`, `js/{main,globe,ui,state}.js`, `data/{regions,countries,religions,hotspots,alliances}.js`, `assets/map/world-{110m,50m}.json`, `assets/vendor/d3-geo.min.js`). It boots immediately with `world-110m.json` and upgrades in the background to `world-50m.json`.
+- Run locally: `npm ci`, then `npm run dev:bookmuse` (http://localhost:8788), `npm run dev:home` (http://localhost:8790), or `npm run dev:geo` (http://localhost:8791).
 - **Deploy:** push a tag `<site>-vX.Y.Z` (`bookmuse-v1.0.0`, `home-v1.0.0`); `.github/workflows/deploy.yml` runs
   `wrangler deploy` for that site. Pushing to `main` never deploys. Never push a tag unless the owner asks.
   The Cloudflare secrets are not set on the repo yet, so a tag fails in Actions; until they are, deploy from this Mac with `npm run deploy:bookmuse` (only when the owner asks).
