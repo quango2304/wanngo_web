@@ -1,10 +1,39 @@
 import { NAMES } from '../data/regions.js';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL } from '../data/alliances.js';
+import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js';
+
+export { CAPITALS, CITIES, ISLANDS, ADMIN1_META };
 
 export const $ = s => document.querySelector(s);
 export const norm = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'd').toLowerCase();
 export const vi = en => (NAMES[en] || [en])[0];
+
+export const ADMIN_LAYERS = {
+  capitals: { n: 'Thủ đô thế giới', c: '#E8590C', grp: 'admin' },
+  islands:  { n: 'Đảo & Vùng chiến lược', c: '#0D9488', grp: 'admin' },
+  cities:   { n: 'Đô thị & Cảng lớn', c: '#2563EB', grp: 'admin' },
+  admin1:   { n: 'Bang / Tỉnh thành (zoom)', c: '#7C3AED', grp: 'admin' }
+};
+
+export const CAP_BY_ID = {};
+export const CITY_BY_ID = {};
+export const ISL_BY_ID = {};
+export const ADM1_BY_ID = {};
+export const LAKE_BY_ID = {};
+
+CAPITALS.forEach(c => {
+  c.kind = 'cap';
+  CAP_BY_ID[c.id] = c;
+});
+CITIES.forEach(ct => {
+  ct.kind = 'city';
+  CITY_BY_ID[ct.id] = ct;
+});
+ISLANDS.forEach(isl => {
+  isl.kind = 'isl';
+  ISL_BY_ID[isl.id] = isl;
+});
 
 export const AFR = new Set(
   Object.keys(NAMES).filter(k => ['nafrica', 'sahel', 'wafrica', 'cafrica', 'eafrica', 'safrica'].includes(NAMES[k][1]))
@@ -12,11 +41,11 @@ export const AFR = new Set(
 
 export const MTN = new Set(['himalaya', 'andes', 'alps', 'ural', 'zagros', 'truongson']);
 H.forEach(h => {
-  if (MTN.has(h.id) || h.t === 'mountain') h.mtn = true;
-  else if ((h.t === 'terrain' || h.t === 'river') && (h.g.line || h.g.lines || h.g.dashed)) h.riv = true;
+  if (h.t === 'mountain' || MTN.has(h.id)) h.mtn = true;
+  else if (h.t === 'river') h.riv = true;
 });
 
-export const NAT = new Set(Object.keys(LAYERS).filter(x => LAYERS[x].grp === 'nat'));
+export const NAT = new Set(['desert', 'forest', 'ice']);
 
 // Membership per country
 export const MEM = {};
@@ -35,24 +64,42 @@ export const MAP = {
   K50: [],
   B110: [],
   K110: [],
+  LAKES: [],
+  ADM1: [],
+  ADM1_BORDERS: [],
   IDX: [],
   LC: { key: '', list: [] }
 };
 
+export const DEFAULT_ON = {
+  // hot
+  strait: true,
+  route: false,
+  dispute: true,
+  conflict: false,
+  border: false,
+  chain: false,
+  // infra
+  base: false,
+  pipeline: false,
+  corridor: false,
+  resource: false,
+  // nat
+  river: true,
+  mountain: true,
+  terrain: false,
+  desert: true,
+  forest: true,
+  ice: true,
+  // admin
+  capitals: true,
+  islands: true,
+  cities: false,
+  admin1: true
+};
+
 export const st = {
-  on: {
-    strait: true,
-    route: false,
-    dispute: true,
-    border: false,
-    terrain: false,
-    conflict: false,
-    ice: true,
-    desert: true,
-    forest: true,
-    river: true,
-    mountain: false
-  },
+  on: { ...DEFAULT_ON },
   ref: {
     eq: true,
     trop: false,
@@ -85,11 +132,11 @@ export function readTheme() {
 }
 
 export function on(h) {
-  return st.on[h.t] || (h.riv && st.on.river) || (h.mtn && st.on.mountain);
+  return !!(h && st.on[h.t]);
 }
 
 export function hc(h) {
-  if (h.mtn) return C.dark ? '#C9A46A' : '#8A6A3A';
-  if (h.riv) return C.dark ? '#6FB1E8' : '#2E7CC0';
-  return LAYERS[h.t].c;
+  if (h.t === 'mountain' || h.mtn) return C.dark ? '#C9A46A' : '#8A6A3A';
+  if (h.t === 'river' || h.riv) return C.dark ? '#6FB1E8' : '#2E7CC0';
+  return (LAYERS[h.t] && LAYERS[h.t].c) || '#888888';
 }

@@ -1,7 +1,28 @@
 import { NAMES, REGIONS } from '../data/regions.js';
+import { C0 } from '../data/countries.js';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL, REF } from '../data/alliances.js';
-import { $, norm, vi, AFR, NAT, MEM, HS, BY, MAP, st, C, on, hc } from './state.js';
+import {
+  $,
+  norm,
+  vi,
+  AFR,
+  NAT,
+  MEM,
+  HS,
+  BY,
+  MAP,
+  st,
+  C,
+  on,
+  hc,
+  CAPITALS,
+  CITIES,
+  ISLANDS,
+  ADMIN1_META,
+  ADM1_BY_ID,
+  LAKE_BY_ID
+} from './state.js';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -14,8 +35,11 @@ export const pathC = d3.geoPath(proj, ctx);
 
 const splitM = m => m.coordinates.map(c => ({ type: 'LineString', coordinates: c }));
 
+const DETACHED_ADM1 = new Set(['US-HI', 'US-AK', 'RU-KGD', 'CN-HI', 'AU-TAS']);
+
 function enrichFeatures(features) {
   features.forEach(f => {
+    f.isCountry = true;
     f.bb = d3.geoBounds(f);
     f.parts = (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates).map(c => ({
       type: 'Polygon',
@@ -65,10 +89,38 @@ function ring(c) {
   return f;
 }
 
+function finalizeHotspot(h) {
+  const geo = h.geo || { type: 'MultiPolygon', coordinates: [] };
+  h.geo = geo;
+  delete h.cr;
+  delete h.polyCr;
+  h.kind = geo.type === 'Point' ? 'pt' : /Polygon/.test(geo.type) ? 'poly' : 'line';
+  if (h.kind === 'line') {
+    const L = geo.type === 'LineString' ? [geo.coordinates] : geo.coordinates;
+    h.dense = L.map(l => {
+      if (!l || !l.length) return [];
+      const o = [l[0]];
+      for (let i = 1; i < l.length; i++) {
+        const d = d3.geoDistance(l[i - 1], l[i]);
+        const n = Math.max(1, Math.ceil(d / 0.012));
+        const it = d3.geoInterpolate(l[i - 1], l[i]);
+        for (let k2 = 1; k2 <= n; k2++) o.push(it(k2 / n));
+      }
+      return o;
+    });
+    const lg = h.dense.reduce((a, b) => (b.length > a.length ? b : a), []);
+    h.lab = lg.length ? lg[Math.floor(lg.length / 2)] : [0, 0];
+  } else {
+    h.lab = h.kind === 'pt' ? geo.coordinates : d3.geoCentroid(geo);
+  }
+  HS[h.id] = h;
+}
+
 function buildHotspots(worldTopo, objCountries, onlyTopoDependent = false) {
   H.forEach(h => {
     const g = h.g;
     if (onlyTopoDependent && !g.country && !g.mesh && !g.africa) return;
+    if (h._fromPhys && !g.country && !g.mesh && !g.africa) return;
     let geo;
     if (g.cap) {
       const RR = 6371, a = g.cap[2] * 1e6;
@@ -110,47 +162,76 @@ function buildHotspots(worldTopo, objCountries, onlyTopoDependent = false) {
         (a, b) => a !== b && AFR.has(a.properties.name) && AFR.has(b.properties.name)
       );
       geo = { type: 'MultiLineString', coordinates: straightRuns(m.coordinates, 120) };
+    } else {
+      geo = { type: 'MultiPolygon', coordinates: [] };
     }
     h.geo = geo;
-    delete h.cr;
-    h.kind = geo.type === 'Point' ? 'pt' : /Polygon/.test(geo.type) ? 'poly' : 'line';
-    if (h.kind === 'line') {
-      const L = geo.type === 'LineString' ? [geo.coordinates] : geo.coordinates;
-      h.dense = L.map(l => {
-        if (!l || !l.length) return [];
-        const o = [l[0]];
-        for (let i = 1; i < l.length; i++) {
-          const d = d3.geoDistance(l[i - 1], l[i]);
-          const n = Math.max(1, Math.ceil(d / 0.01));
-          const it = d3.geoInterpolate(l[i - 1], l[i]);
-          for (let k2 = 1; k2 <= n; k2++) o.push(it(k2 / n));
-        }
-        return o;
-      });
-      const lg = h.dense.reduce((a, b) => (b.length > a.length ? b : a), []);
-      h.lab = lg.length ? lg[Math.floor(lg.length / 2)] : [0, 0];
-    } else {
-      h.lab = h.kind === 'pt' ? geo.coordinates : d3.geoCentroid(geo);
-    }
-    HS[h.id] = h;
+    finalizeHotspot(h);
   });
 }
 
-function rebuildSearchIndex() {
+export function rebuildSearchIndex() {
   MAP.IDX = [
     ...MAP.F.map(f => ({
       t: 'c',
       n: f.vi,
-      s: norm(f.vi + ' ' + f.en),
+      s: norm(f.vi + ' ' + f.en + ' ' + ((C0[f.en] && C0[f.en].cap) || '')),
       o: f,
-      sub: (REGIONS[f.rg] || [''])[0]
+      sub: (REGIONS[f.rg] || ['Quốc gia'])[0]
+    })),
+    ...MAP.ADM1.map(f => ({
+      t: 'adm1',
+      n: f.vi,
+      s: norm(
+        f.vi +
+          ' ' +
+          f.en +
+          ' ' +
+          (f.postal || '') +
+          ' ' +
+          (f.cap || '') +
+          ' ' +
+          (f.old || []).join(' ') +
+          ' ' +
+          vi(f.country)
+      ),
+      o: f,
+      sub: 'Bang / Tỉnh · ' + vi(f.country)
+    })),
+    ...CAPITALS.map(c => ({
+      t: 'cap',
+      n: c.vi,
+      s: norm(c.vi + ' ' + c.en + ' ' + vi(c.country) + ' ' + c.country),
+      o: c,
+      sub: 'Thủ đô · ' + vi(c.country)
+    })),
+    ...ISLANDS.map(isl => ({
+      t: 'isl',
+      n: isl.vi,
+      s: norm(isl.vi + ' ' + isl.en + ' ' + vi(isl.country) + ' ' + isl.country),
+      o: isl,
+      sub: 'Đảo / Vùng · ' + vi(isl.country)
+    })),
+    ...CITIES.map(ct => ({
+      t: 'city',
+      n: ct.vi,
+      s: norm(ct.vi + ' ' + ct.en + ' ' + vi(ct.country) + ' ' + ct.country),
+      o: ct,
+      sub: 'Đô thị / Cảng · ' + vi(ct.country)
     })),
     ...H.map(h => ({
       t: 'h',
       n: h.n,
-      s: norm(h.n),
+      s: norm(h.n + ' ' + h.id),
       o: h,
-      sub: LAYERS[h.t].n
+      sub: (LAYERS[h.t] && LAYERS[h.t].n) || 'Điểm nóng'
+    })),
+    ...MAP.LAKES.map(lk => ({
+      t: 'lake',
+      n: lk.vi || lk.n,
+      s: norm((lk.vi || lk.n) + ' ' + (lk.en || '')),
+      o: lk,
+      sub: 'Hồ & Biển nội địa'
     }))
   ];
 }
@@ -189,10 +270,69 @@ export function upgradeMapData(w50) {
   MAP.K50 = splitM(coast50);
 
   buildHotspots(w50, obj50, true);
-  if (st.sel && st.sel.en && BY[st.sel.en]) st.sel = BY[st.sel.en];
-  if (st.hov && st.hov.en && BY[st.hov.en]) st.hov = BY[st.hov.en];
+  if (st.sel && st.sel.isCountry && BY[st.sel.en]) st.sel = BY[st.sel.en];
+  if (st.hov && st.hov.isCountry && BY[st.hov.en]) st.hov = BY[st.hov.en];
   rebuildSearchIndex();
   MAP.LC.key = '';
+  st.dirty = true;
+}
+
+export function upgradePhysicalData(phys) {
+  if (!phys) return;
+  if (Array.isArray(phys.lakes)) {
+    phys.lakes.forEach(lk => {
+      lk.kind = 'lake';
+      lk.vi = lk.vi || lk.n;
+      lk.bb = d3.geoBounds(lk.geo);
+      lk.cen = d3.geoCentroid(lk.geo);
+      lk.ar = d3.geoArea(lk.geo);
+      delete lk.cr;
+      LAKE_BY_ID[lk.id] = lk;
+    });
+    MAP.LAKES = phys.lakes;
+  }
+  if (phys.geoms) {
+    H.forEach(h => {
+      const pKey = (h.g && h.g.phys) || h.id;
+      const pg = phys.geoms[pKey];
+      if (!pg) return;
+      if (pg.geo) {
+        h.geo = pg.geo;
+        h._fromPhys = true;
+      }
+      if (pg.polyGeo) {
+        h.polyGeo = pg.polyGeo;
+      }
+      finalizeHotspot(h);
+    });
+  }
+  rebuildSearchIndex();
+  st.dirty = true;
+}
+
+export function upgradeAdmin1Data(admGeo) {
+  if (!admGeo || !Array.isArray(admGeo.features)) return;
+  admGeo.features.forEach(f => {
+    f.isAdm1 = true;
+    f.kind = 'adm1';
+    f.id = f.properties.id;
+    f.bb = d3.geoBounds(f);
+    f.cen = f.properties.cen || d3.geoCentroid(f);
+    f.ar = f.properties.ar || d3.geoArea(f);
+    const meta = ADMIN1_META[f.id] || {};
+    f.vi = meta.vi || f.properties.vi || f.properties.name;
+    f.en = f.properties.name;
+    f.country = f.properties.country;
+    f.iso = f.properties.iso;
+    f.postal = f.properties.postal || '';
+    f.cap = meta.cap || '';
+    f.old = meta.old || f.properties.old || [];
+    f.tx = meta.tx || '';
+    delete f.cr;
+    ADM1_BY_ID[f.id] = f;
+  });
+  MAP.ADM1 = admGeo.features;
+  rebuildSearchIndex();
   st.dirty = true;
 }
 
@@ -230,6 +370,7 @@ export function recenter() {
 
 function mix(hex, a) {
   const c = d3.color(hex);
+  if (!c) return hex;
   c.opacity = a;
   return c + '';
 }
@@ -276,7 +417,7 @@ export function updView() {
 }
 
 export function cullOK(o) {
-  if (o.cr === undefined) prepCull(o, o.geo || o);
+  if (o.cr === undefined) prepCull(o, o.polyGeo || o.geo || o);
   return d3.geoDistance(VIEW.c, o.cc) - o.cr < VIEW.vr + 0.02;
 }
 
@@ -286,8 +427,9 @@ export function vh(h) {
 
 const tinyPx = f => f.ar * proj.scale() * proj.scale();
 
-function inBB(f, ll) {
+export function inBB(f, ll) {
   const b = f.bb;
+  if (!b) return true;
   if (ll[1] < b[0][1] - 0.5 || ll[1] > b[1][1] + 0.5) return false;
   if (b[0][0] <= b[1][0]) return ll[0] >= b[0][0] - 0.5 && ll[0] <= b[1][0] + 0.5;
   return ll[0] >= b[0][0] - 0.5 || ll[0] <= b[1][0] + 0.5;
@@ -370,6 +512,17 @@ function sphere() {
   return { type: 'Sphere' };
 }
 
+function drawRegPoly(x, y, rad, sides, rotRad = -Math.PI / 2) {
+  for (let i = 0; i < sides; i++) {
+    const a = rotRad + (i * 2 * Math.PI) / sides;
+    const px = x + Math.cos(a) * rad;
+    const py = y + Math.sin(a) * rad;
+    if (i === 0) ctx.moveTo(px, py);
+    else ctx.lineTo(px, py);
+  }
+  ctx.closePath();
+}
+
 export function render(now) {
   if (!MAP.F.length) return;
   const lowres = st.moving;
@@ -406,7 +559,7 @@ export function render(now) {
     ctx.stroke();
   }
 
-  // hotspot polygons (under land)
+  // sea hotspot polygons (under land)
   H.forEach(h => {
     if (h.kind !== 'poly' || !h.sea || NAT.has(h.t) || !vh(h)) return;
     const c = LAYERS[h.t].c;
@@ -430,7 +583,7 @@ export function render(now) {
   }
 
   // selected / hover country
-  const sc = st.sel && st.sel.en ? st.sel : null;
+  const sc = st.sel && st.sel.isCountry ? st.sel : null;
   if (sc && !st.al) {
     ctx.beginPath();
     pathC(sc);
@@ -448,14 +601,14 @@ export function render(now) {
     ctx.fill();
   });
 
-  if (st.hov && st.hov.en && st.hov !== sc) {
+  if (st.hov && st.hov.isCountry && st.hov !== sc) {
     ctx.beginPath();
     pathC(st.hov);
     ctx.fillStyle = C.dark ? 'rgba(255,255,255,.12)' : 'rgba(255,255,255,.45)';
     ctx.fill();
   }
 
-  // nature fills
+  // nature fills (desert, forest, ice)
   const natF = {
     desert: C.dark ? ['#8C6D2E', 0.5] : ['#E4C277', 0.55],
     forest: C.dark ? ['#3E7A3A', 0.5] : ['#6FA35A', 0.38],
@@ -475,6 +628,7 @@ export function render(now) {
       return;
     }
     const sN = natF[h.t];
+    if (!sN) return;
     ctx.fillStyle = mix(sN[0], st.sel === h ? Math.min(1, sN[1] + 0.25) : sN[1]);
     ctx.fill();
     if (st.sel === h) {
@@ -484,7 +638,88 @@ export function render(now) {
     }
   });
 
-  // borders
+  // mountain footprint polygons (h.polyGeo from physical-50m.json)
+  if (st.on.mountain) {
+    H.forEach(h => {
+      if (h.t !== 'mountain' || !h.polyGeo || !vh(h)) return;
+      ctx.beginPath();
+      pathC(h.polyGeo);
+      ctx.fillStyle = C.dark
+        ? mix('#A67C46', st.sel === h ? 0.52 : 0.34)
+        : mix('#B5894E', st.sel === h ? 0.48 : 0.3);
+      ctx.fill();
+      if (st.sel === h) {
+        ctx.strokeStyle = C.dark ? '#E0BA82' : '#8A6A3A';
+        ctx.lineWidth = 1.3;
+        ctx.stroke();
+      }
+    });
+  }
+
+  // major lakes (MAP.LAKES)
+  if (MAP.LAKES.length) {
+    const lakeFill = C.dark ? '#132B47' : '#B5D6F0';
+    ctx.beginPath();
+    for (const lk of MAP.LAKES) {
+      if (lowres && lk.ar < 0.0003) continue;
+      if (!cullOK(lk)) continue;
+      pathC(lk.geo);
+    }
+    ctx.fillStyle = lakeFill;
+    ctx.fill();
+    ctx.strokeStyle = C.coast;
+    ctx.lineWidth = 0.55;
+    ctx.stroke();
+
+    const activeLake =
+      (st.sel && st.sel.kind === 'lake' && st.sel) ||
+      (st.hov && st.hov.kind === 'lake' && st.hov);
+    if (activeLake && cullOK(activeLake)) {
+      ctx.beginPath();
+      pathC(activeLake.geo);
+      ctx.fillStyle = mix(C.accent, st.sel === activeLake ? 0.48 : 0.25);
+      ctx.fill();
+      ctx.strokeStyle = C.accent;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+  }
+
+  // Admin-1 State / Province polygons & borders
+  if (st.on.admin1 && MAP.ADM1.length) {
+    if (!lowres && k >= 1.45) {
+      ctx.beginPath();
+      for (const f of MAP.ADM1) {
+        if (!cullOK(f)) continue;
+        pathC(f);
+      }
+      ctx.setLineDash([2, 2]);
+      ctx.strokeStyle = C.dark ? 'rgba(210,215,230,0.28)' : 'rgba(70,65,55,0.28)';
+      ctx.lineWidth = Math.min(1.0, 0.35 + k * 0.1);
+      ctx.stroke();
+      ctx.setLineDash([]);
+    }
+    if (st.hov && st.hov.isAdm1 && st.hov !== st.sel && cullOK(st.hov)) {
+      ctx.beginPath();
+      pathC(st.hov);
+      ctx.fillStyle = mix(C.accent, 0.18);
+      ctx.fill();
+      ctx.strokeStyle = mix(C.accent, 0.7);
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
+    if (st.sel && st.sel.isAdm1 && cullOK(st.sel)) {
+      ctx.beginPath();
+      pathC(st.sel);
+      ctx.fillStyle = mix(C.accent, 0.38);
+      ctx.fill();
+      ctx.strokeStyle = C.accent;
+      ctx.lineWidth = 1.8;
+      ctx.stroke();
+    }
+  }
+
+  // country borders & coastlines
   ctx.beginPath();
   for (const l of lowres ? MAP.B110 : MAP.B50) if (cullOK(l)) pathC(l);
   ctx.strokeStyle = C.border;
@@ -550,20 +785,38 @@ export function render(now) {
     if (h.t === 'route') {
       ctx.setLineDash([7, 5]);
       ctx.lineDashOffset = -(now / 60) % 12;
-    } else if (h.mtn) {
-      ctx.setLineDash([1, 7]);
+    } else if (h.t === 'pipeline') {
+      ctx.setLineDash([8, 3, 2, 3]);
+    } else if (h.t === 'corridor') {
+      ctx.setLineDash([5, 3]);
+    } else if (h.t === 'chain') {
+      ctx.setLineDash([6, 4]);
+    } else if (h.t === 'mountain' || h.mtn) {
+      ctx.setLineDash([2, 5]);
     } else if (h.dash) {
       ctx.setLineDash([8, 6]);
     }
     ctx.strokeStyle = act ? c : mix(c, 0.85);
-    ctx.lineWidth = (h.mtn ? 5 : h.riv ? (h.t === 'river' ? 1.8 : 2.2) : h.t === 'border' ? 2.4 : 2) + (act ? 1.6 : 0);
+    const baseW =
+      h.t === 'mountain' || h.mtn
+        ? 3.0
+        : h.t === 'river' || h.riv
+        ? k > 2.5
+          ? 2.0
+          : 1.5
+        : h.t === 'border'
+        ? 2.4
+        : h.t === 'pipeline' || h.t === 'corridor'
+        ? 2.2
+        : 2.0;
+    ctx.lineWidth = baseW + (act ? 1.5 : 0);
     ctx.stroke();
     ctx.setLineDash([]);
     ctx.lineDashOffset = 0;
   });
 
   // dots for tiny countries
-  if (!lowres && k >= 1.6) {
+  if (!lowres && k >= 1.4) {
     const cen0 = proj.invert(proj.translate());
     for (const f of MAP.F) {
       if (f.rg === 'antarctic') continue;
@@ -573,7 +826,7 @@ export function render(now) {
       const q = proj(f.cen);
       if (q[0] < 0 || q[0] > W || q[1] < 0 || q[1] > Hh) continue;
       ctx.beginPath();
-      ctx.arc(q[0], q[1], f === sc || f === st.hov ? 4 : 2.8, 0, 7);
+      ctx.arc(q[0], q[1], f === sc || f === st.hov ? 4.2 : 2.9, 0, 7);
       ctx.fillStyle = f === sc ? C.accent : C.dark ? '#C9C4B8' : '#6B6455';
       ctx.fill();
       ctx.lineWidth = 1.2;
@@ -582,10 +835,169 @@ export function render(now) {
     }
   }
 
-  // labels countries
+  // collision-free label placement helper
   const centerPt = proj.invert([cx, cy]);
   const placed = [];
+  const placedNames = new Set();
+  const baseKey = s =>
+    norm(s)
+      .replace(/\(.*?\)/g, '')
+      .replace(/\b(tp\.?|thanh pho|tinh|quan dao|dao|vung|bang|dac khu)\b/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
   const vis = p => d3.geoDistance(p, centerPt) < 1.45;
+  const tryPlace = (box, nameKey) => {
+    if (nameKey && placedNames.has(nameKey)) return false;
+    if (box[0] < 2 || box[0] + box[2] > W - 2 || box[1] < 2 || box[1] + box[3] > Hh - 2) return false;
+    if (placed.some(b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1])))
+      return false;
+    placed.push(box);
+    if (nameKey) placedNames.add(nameKey);
+    return true;
+  };
+
+  const pushIcon = (q, r2 = 4) => {
+    if (q) placed.push([q[0] - r2, q[1] - r2, r2 * 2, r2 * 2]);
+  };
+
+  // 1. Capitals (st.on.capitals) — highest priority markers & labels
+  if (st.on.capitals) {
+    ctx.font = '600 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    for (const cap of CAPITALS) {
+      const act = st.sel === cap || st.hov === cap;
+      if (!act && (cap.rank === 1 ? k < 1.05 : cap.rank === 2 ? k < 1.55 : k < 2.2)) continue;
+      if (d3.geoDistance(cap.pt, centerPt) > Math.PI / 2 - 0.02) continue;
+      const q = proj(cap.pt);
+      if (!q) continue;
+      const rad = act ? 5.2 : cap.rank === 1 ? 3.9 : 3.2;
+      ctx.beginPath();
+      ctx.arc(q[0], q[1], rad, 0, 7);
+      ctx.fillStyle = C.dark ? '#0A0E15' : '#fff';
+      ctx.fill();
+      ctx.lineWidth = 1.4;
+      ctx.strokeStyle = '#E8590C';
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.arc(q[0], q[1], act ? 2.5 : 1.8, 0, 7);
+      ctx.fillStyle = '#E8590C';
+      ctx.fill();
+
+      if (act || (!lowres && (cap.rank === 1 ? k >= 1.35 : cap.rank === 2 ? k >= 1.85 : k >= 2.5))) {
+        const nk = baseKey(cap.vi);
+        const w = ctx.measureText(cap.vi).width + 6, hh = 13;
+        const box = [q[0] + 7, q[1] - hh / 2, w, hh];
+        if (act || tryPlace(box, nk)) {
+          if (act) {
+            placed.push(box);
+            if (nk) placedNames.add(nk);
+          }
+          ctx.lineWidth = 2.8;
+          ctx.strokeStyle = C['label-halo'];
+          ctx.strokeText(cap.vi, q[0] + 7, q[1]);
+          ctx.fillStyle = C.dark ? '#FDBA74' : '#C2410C';
+          ctx.fillText(cap.vi, q[0] + 7, q[1]);
+        }
+      }
+      pushIcon(q, 4);
+    }
+  }
+
+  // 2. Strategic Islands (st.on.islands)
+  if (st.on.islands) {
+    ctx.font = '500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    for (const isl of ISLANDS) {
+      const act = st.sel === isl || st.hov === isl;
+      if (!act && (isl.rank === 1 ? k < 1.15 : k < 1.85)) continue;
+      if (d3.geoDistance(isl.pt, centerPt) > Math.PI / 2 - 0.02) continue;
+      const q = proj(isl.pt);
+      if (!q) continue;
+      const s = act ? 5.2 : 3.4;
+      ctx.beginPath();
+      ctx.moveTo(q[0], q[1] - s);
+      ctx.lineTo(q[0] + s, q[1]);
+      ctx.lineTo(q[0], q[1] + s);
+      ctx.lineTo(q[0] - s, q[1]);
+      ctx.closePath();
+      ctx.fillStyle = '#0D9488';
+      ctx.fill();
+      ctx.lineWidth = 1.3;
+      ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
+      ctx.stroke();
+
+      if (act || (!lowres && (isl.rank === 1 ? k >= 1.5 : k >= 2.2))) {
+        const nk = baseKey(isl.vi);
+        const w = ctx.measureText(isl.vi).width + 6, hh = 13;
+        const box = [q[0] + 7, q[1] - hh / 2, w, hh];
+        if (act || tryPlace(box, nk)) {
+          if (act) {
+            placed.push(box);
+            if (nk) placedNames.add(nk);
+          }
+          ctx.lineWidth = 2.6;
+          ctx.strokeStyle = C['label-halo'];
+          ctx.strokeText(isl.vi, q[0] + 7, q[1]);
+          ctx.fillStyle = C.dark ? '#5EEAD4' : '#0F766E';
+          ctx.fillText(isl.vi, q[0] + 7, q[1]);
+        }
+      }
+      pushIcon(q, 4);
+    }
+  }
+
+  // 3. Strategic Cities & Ports (st.on.cities)
+  if (st.on.cities) {
+    ctx.font = '500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    for (const ct of CITIES) {
+      const act = st.sel === ct || st.hov === ct;
+      if (!act && (ct.rank === 1 ? k < 1.3 : k < 1.9)) continue;
+      if (d3.geoDistance(ct.pt, centerPt) > Math.PI / 2 - 0.02) continue;
+      const q = proj(ct.pt);
+      if (!q) continue;
+      const s = act ? 3.3 : 2.5;
+      ctx.beginPath();
+      ctx.rect(q[0] - s, q[1] - s, s * 2, s * 2);
+      ctx.fillStyle = '#2563EB';
+      ctx.fill();
+      ctx.lineWidth = 1.3;
+      ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
+      ctx.stroke();
+
+      if (act || (!lowres && (ct.rank === 1 ? k >= 1.65 : k >= 2.3))) {
+        const nk = baseKey(ct.vi);
+        const w = ctx.measureText(ct.vi).width + 6, hh = 13;
+        const box = [q[0] + 7, q[1] - hh / 2, w, hh];
+        if (act || tryPlace(box, nk)) {
+          if (act) {
+            placed.push(box);
+            if (nk) placedNames.add(nk);
+          }
+          ctx.lineWidth = 2.6;
+          ctx.strokeStyle = C['label-halo'];
+          ctx.strokeText(ct.vi, q[0] + 7, q[1]);
+          ctx.fillStyle = C.dark ? '#93C5FD' : '#1D4ED8';
+          ctx.fillText(ct.vi, q[0] + 7, q[1]);
+        }
+      }
+      pushIcon(q, 3.5);
+    }
+  }
+
+  // 4. Reserve hotspot point icons
+  H.forEach(h => {
+    if (h.kind !== 'pt' || !vh(h)) return;
+    const p = h.geo.coordinates;
+    if (!vis(p) || d3.geoDistance(p, centerPt) > Math.PI / 2 - 0.02) return;
+    pushIcon(proj(p), 5);
+  });
+
+  // 5. Country labels
   if (st.ref.labels && !lowres) {
     ctx.font = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
     ctx.textAlign = 'center';
@@ -593,17 +1005,56 @@ export function render(now) {
     const cand = labelCands(cx, cy, r);
     for (const o of cand) {
       const f = o.f, p = o.p;
+      const nk = baseKey(f.vi);
       const w = ctx.measureText(f.vi).width + 6, hh = 15;
-      const box = [p[0] - w / 2, p[1] - hh / 2, w, hh];
-      if (box[0] < 2 || box[0] + w > W - 2 || box[1] < 2 || box[1] + hh > Hh - 2) continue;
-      if (placed.some(b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1])))
-        continue;
-      placed.push(box);
+      let py = p[1];
+      let box = [p[0] - w / 2, py - hh / 2, w, hh];
+      if (!tryPlace(box, nk)) {
+        py = p[1] - 12;
+        box = [p[0] - w / 2, py - hh / 2, w, hh];
+        if (!tryPlace(box, nk)) continue;
+      }
       ctx.lineWidth = 3;
       ctx.strokeStyle = C['label-halo'];
-      ctx.strokeText(f.vi, p[0], p[1]);
+      ctx.strokeText(f.vi, p[0], py);
       ctx.fillStyle = C.label;
-      ctx.fillText(f.vi, p[0], p[1]);
+      ctx.fillText(f.vi, p[0], py);
+    }
+  }
+
+  // 6. Admin-1 labels (when zoomed in, placed after point markers to avoid overlapping icons/capital names)
+  if (st.on.admin1 && !lowres && k >= 2.0 && MAP.ADM1.length) {
+    ctx.font = 'italic 500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const f of MAP.ADM1) {
+      const act = st.sel === f || st.hov === f;
+      const minPx = f.iso === 'VNM' ? 90 : 450;
+      if (!act && f.ar * r * r < minPx) continue;
+      if (d3.geoDistance(f.cen, centerPt) > Math.PI / 2 - 0.04) continue;
+      const p = proj(f.cen);
+      if (!p) continue;
+      const nk = baseKey(f.vi);
+      if (nk && placedNames.has(nk) && !act) continue;
+      const w = ctx.measureText(f.vi).width + 6, hh = 13;
+      let py = p[1];
+      let box = [p[0] - w / 2, py - hh / 2, w, hh];
+      if (!act) {
+        if (!tryPlace(box, nk)) {
+          py = p[1] - 11;
+          box = [p[0] - w / 2, py - hh / 2, w, hh];
+          if (!tryPlace(box, nk)) continue;
+        }
+      } else {
+        if (nk && placedNames.has(nk)) py = p[1] - 12;
+        placed.push([p[0] - w / 2, py - hh / 2, w, hh]);
+        if (nk) placedNames.add(nk);
+      }
+      ctx.lineWidth = 2.6;
+      ctx.strokeStyle = C['label-halo'];
+      ctx.strokeText(f.vi, p[0], py);
+      ctx.fillStyle = act ? C.accent : C.dark ? 'rgba(215,220,235,0.82)' : 'rgba(65,60,52,0.82)';
+      ctx.fillText(f.vi, p[0], py);
     }
   }
 
@@ -631,6 +1082,10 @@ export function render(now) {
       ctx.lineTo(q[0], q[1] + s);
       ctx.lineTo(q[0] - s, q[1]);
       ctx.closePath();
+    } else if (h.t === 'base') {
+      drawRegPoly(q[0], q[1], act ? 7.5 : 6, 5);
+    } else if (h.t === 'resource') {
+      drawRegPoly(q[0], q[1], act ? 7.2 : 5.8, 6, 0);
     } else {
       ctx.arc(q[0], q[1], act ? 7 : 5.5, 0, 7);
     }
@@ -639,21 +1094,39 @@ export function render(now) {
     ctx.lineWidth = 1.8;
     ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
     ctx.stroke();
-    if (k >= 2.4 || act) {
-      ctx.font = '600 11.5px "Be Vietnam Pro",system-ui,sans-serif';
+    if (act || (!lowres && k >= 2.2)) {
+      ctx.font = '600 11px "Be Vietnam Pro",system-ui,sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
-      ctx.lineWidth = 3;
-      ctx.strokeStyle = C['label-halo'];
-      ctx.strokeText(h.n, q[0] + 10, q[1]);
-      ctx.fillStyle = C.dark ? d3.color(c).brighter(1.2) + '' : d3.color(c).darker(0.6) + '';
-      ctx.fillText(h.n, q[0] + 10, q[1]);
+      const w = ctx.measureText(h.n).width + 6, hh = 14;
+      const box = [q[0] + 9, q[1] - hh / 2, w, hh];
+      if (act || tryPlace(box)) {
+        if (act) placed.push(box);
+        ctx.lineWidth = 3;
+        ctx.strokeStyle = C['label-halo'];
+        ctx.strokeText(h.n, q[0] + 10, q[1]);
+        ctx.fillStyle = C.dark ? d3.color(c).brighter(1.2) + '' : d3.color(c).darker(0.6) + '';
+        ctx.fillText(h.n, q[0] + 10, q[1]);
+      }
     }
   });
 
-  // labels for hovered/selected line/poly hotspots
+  // labels for hovered/selected line/poly hotspots or lakes
   [st.sel, st.hov].forEach(h => {
-    if (!h || !h.id || h.kind === 'pt' || !vh(h)) return;
+    if (!h) return;
+    if (h.kind === 'lake') {
+      if (!vis(h.cen)) return;
+      const q = proj(h.cen);
+      ctx.font = '600 12px "Be Vietnam Pro",system-ui,sans-serif';
+      ctx.textAlign = 'center';
+      ctx.lineWidth = 3.5;
+      ctx.strokeStyle = C['label-halo'];
+      ctx.strokeText(h.vi || h.n, q[0], q[1] - 8);
+      ctx.fillStyle = C.label;
+      ctx.fillText(h.vi || h.n, q[0], q[1] - 8);
+      return;
+    }
+    if (!h.id || !h.t || h.kind === 'pt' || !vh(h)) return;
     if (!vis(h.lab)) return;
     const q = proj(h.lab);
     ctx.font = '600 12px "Be Vietnam Pro",system-ui,sans-serif';
@@ -759,8 +1232,11 @@ export function pick(mx, my) {
   const [cx, cy] = proj.translate(), r = proj.scale();
   if (Math.hypot(mx - cx, my - cy) > r) return null;
   const ll = proj.invert([mx, my]);
+  if (!ll) return null;
   const centerPt = proj.invert([cx, cy]);
-  let best = null, bd = 11;
+
+  // 1. Active Hotspot Points (within 10px)
+  let best = null, bd = 10;
   H.forEach(h => {
     if (h.kind !== 'pt' || !vh(h)) return;
     const p = h.geo.coordinates;
@@ -773,6 +1249,36 @@ export function pick(mx, my) {
     }
   });
   if (best) return best;
+
+  // 2. Visible Islands, Capitals, Cities (within 9px)
+  bd = 9;
+  const checkPt = o => {
+    if (d3.geoDistance(o.pt, centerPt) > Math.PI / 2 - 0.02) return;
+    const q = proj(o.pt);
+    const d = Math.hypot(q[0] - mx, q[1] - my);
+    if (d < bd) {
+      bd = d;
+      best = o;
+    }
+  };
+  if (st.on.islands) {
+    for (const isl of ISLANDS) {
+      if (st.sel === isl || (isl.rank === 1 ? k >= 1.15 : k >= 1.85)) checkPt(isl);
+    }
+  }
+  if (st.on.capitals) {
+    for (const cap of CAPITALS) {
+      if (st.sel === cap || (cap.rank === 1 ? k >= 1.05 : cap.rank === 2 ? k >= 1.55 : k >= 2.2)) checkPt(cap);
+    }
+  }
+  if (st.on.cities) {
+    for (const ct of CITIES) {
+      if (st.sel === ct || (ct.rank === 1 ? k >= 1.3 : k >= 1.9)) checkPt(ct);
+    }
+  }
+  if (best) return best;
+
+  // 3. Active Hotspot Lines (within 7px)
   bd = 7;
   H.forEach(h => {
     if (h.kind !== 'line' || !vh(h)) return;
@@ -796,7 +1302,9 @@ export function pick(mx, my) {
     });
   });
   if (best) return best;
-  if (k >= 1.6) {
+
+  // 4. Tiny Countries (k >= 1.4, within 9px)
+  if (k >= 1.4) {
     let bt = null, bdt = 9;
     for (const f of MAP.F) {
       if (tinyPx(f) >= 120 || d3.geoDistance(f.cen, centerPt) > Math.PI / 2) continue;
@@ -809,9 +1317,32 @@ export function pick(mx, my) {
     }
     if (bt) return bt;
   }
-  const c = MAP.F.find(f => d3.geoContains(f, ll));
+
+  // 5. Major Lakes
+  if (st.on.river && MAP.LAKES.length) {
+    const lk = MAP.LAKES.find(l => inBB(l, ll) && d3.geoContains(l.geo, ll));
+    if (lk) return lk;
+  }
+
+  // 6. Admin-1 States / Provinces
+  if (st.on.admin1 && MAP.ADM1.length) {
+    if (k >= 2.3 || (st.sel && st.sel.isAdm1 && k >= 1.5)) {
+      const adm = MAP.ADM1.find(f => inBB(f, ll) && d3.geoContains(f, ll));
+      if (adm) return adm;
+    } else if (k >= 1.3) {
+      const adm = MAP.ADM1.find(f => DETACHED_ADM1.has(f.id) && inBB(f, ll) && d3.geoContains(f, ll));
+      if (adm) return adm;
+    }
+  }
+
+  // 7. Countries
+  const c = MAP.F.find(f => inBB(f, ll) && d3.geoContains(f, ll));
   if (c) return c;
-  const hp = H.find(h => h.kind === 'poly' && !h.ringOnly && on(h) && d3.geoContains(h.geo, ll));
+
+  // 8. Hotspot Polygons (including mountain polyGeo)
+  const hp = H.find(
+    h => (h.kind === 'poly' || h.polyGeo) && !h.ringOnly && on(h) && d3.geoContains(h.polyGeo || h.geo, ll)
+  );
   return hp || null;
 }
 

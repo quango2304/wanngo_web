@@ -1,5 +1,20 @@
-import { $, MAP, st, HS, BY, readTheme } from './state.js';
-import { ctx, proj, pathC, initMapData, upgradeMapData, resize, render, loop, cullOK, updView, hideHint } from './globe.js';
+import { $, MAP, st, HS, BY, readTheme, CAPITALS, CITIES, ISLANDS, ADM1_BY_ID, CAP_BY_ID, CITY_BY_ID, ISL_BY_ID, LAKE_BY_ID } from './state.js';
+import {
+  ctx,
+  proj,
+  pathC,
+  initMapData,
+  upgradeMapData,
+  upgradePhysicalData,
+  upgradeAdmin1Data,
+  resize,
+  render,
+  loop,
+  cullOK,
+  updView,
+  hideHint,
+  pick
+} from './globe.js';
 import { initUI, select, setAl } from './ui.js';
 
 async function boot() {
@@ -20,7 +35,7 @@ async function boot() {
   }
   setTimeout(hideHint, 9000);
 
-  // 2. Load 50m high-detail map in background with low priority
+  // 2. Load 50m high-detail countries, physical geography, and Admin-1 provinces in background
   fetch('assets/map/world-50m.json', { priority: 'low' })
     .then(r => r.json())
     .then(w50 => {
@@ -28,10 +43,35 @@ async function boot() {
     })
     .catch(() => {});
 
+  fetch('assets/map/physical-50m.json', { priority: 'low' })
+    .then(r => r.json())
+    .then(phys => {
+      upgradePhysicalData(phys);
+    })
+    .catch(() => {});
+
+  fetch('assets/map/admin1-50m.json', { priority: 'low' })
+    .then(r => r.json())
+    .then(admGeo => {
+      upgradeAdmin1Data(admGeo);
+    })
+    .catch(() => {});
+
   window.__geo = {
+    MAP,
     get F() { return MAP.F; },
     get B50() { return MAP.B50; },
     get K50() { return MAP.K50; },
+    get LAKES() { return MAP.LAKES; },
+    get ADM1() { return MAP.ADM1; },
+    CAPITALS,
+    CITIES,
+    ISLANDS,
+    ADM1_BY_ID,
+    CAP_BY_ID,
+    CITY_BY_ID,
+    ISL_BY_ID,
+    LAKE_BY_ID,
     cullOK,
     updView,
     pathC,
@@ -40,6 +80,7 @@ async function boot() {
     proj,
     select,
     setAl,
+    pick,
     HS,
     BY,
     render: () => render(performance.now())

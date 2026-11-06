@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <title>Địa cầu địa chính trị · wanngo</title>
-  <meta name="description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 5 công cụ địa chính trị, eo biển nút thắt, tuyến hàng hải, biên giới lịch sử và xung đột đương đại.">
+  <meta name="description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 241 quốc gia & vùng lãnh thổ, 5 công cụ địa chính trị, eo biển nút thắt, chuỗi đảo, căn cứ quân sự, tài nguyên lõi, thủ đô và tỉnh thành.">
   <link rel="canonical" href="https://geo.wanngo.com/">
   <meta property="og:title" content="Địa cầu địa chính trị · wanngo">
-  <meta property="og:description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: quốc gia, eo biển nút thắt, tuyến hàng hải, biên giới lịch sử và điểm nóng thế giới.">
+  <meta property="og:description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 241 quốc gia, 238 điểm nóng chiến lược, thủ đô, đô thị cảng, đảo chiến lược và tỉnh thành.">
   <meta property="og:url" content="https://geo.wanngo.com/">
   <script>try{const t=localStorage.getItem('geo-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
     <div id="brand" class="card"><b>Địa cầu địa chính trị</b><span>theo phong cách Tim Marshall</span></div>
     <div id="search">
       <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" placeholder="Tìm quốc gia, eo biển, điểm nóng..." autocomplete="off">
+      <input id="q" placeholder="Tìm quốc gia, tỉnh thành, thủ đô, đảo..." autocomplete="off">
       <div id="sugg" class="card"></div>
     </div>
     <button class="ibtn" id="layBtn" aria-label="Lớp bản đồ" title="Lớp bản đồ">
@@ -31,10 +31,35 @@
     </button>
   </div>
   <div id="layers" class="card">
-    <div class="lh">ĐIỂM NÓNG</div><div id="lyHot"></div>
-    <div class="lh">THIÊN NHIÊN</div><div id="lyNat"></div>
-    <div class="lh">TÔ MÀU THEO LIÊN MINH</div><select id="alSel"><option value="">Không</option></select>
-    <div class="lh">ĐƯỜNG THAM CHIẾU</div><div class="chips" id="refs"></div>
+    <div class="ltop">
+      <span>LỚP BẢN ĐỒ</span>
+      <div class="lbtns">
+        <button class="lbtn" id="lyDef" type="button">Mặc định</button>
+        <button class="lbtn" id="lyOff" type="button">Tắt hết</button>
+      </div>
+    </div>
+    <details class="lgrp" open>
+      <summary><span>Điểm nóng &amp; Chiến lược</span><small id="cntHot"></small></summary>
+      <div id="lyHot" class="litems"></div>
+    </details>
+    <details class="lgrp" open>
+      <summary><span>Hành chính, Đô thị &amp; Đảo</span><small id="cntAdmin"></small></summary>
+      <div id="lyAdmin" class="litems"></div>
+    </details>
+    <details class="lgrp" open>
+      <summary><span>Địa lý Tự nhiên</span><small id="cntNat"></small></summary>
+      <div id="lyNat" class="litems"></div>
+    </details>
+    <details class="lgrp">
+      <summary><span>Hạ tầng, Quân sự &amp; Tài nguyên</span><small id="cntInfra"></small></summary>
+      <div id="lyInfra" class="litems"></div>
+    </details>
+    <div class="lh">TÔ MÀU THEO LIÊN MINH</div>
+    <select id="alSel" aria-label="Tô màu theo liên minh"><option value="">Không</option></select>
+    <div class="lh">GÓC NHÌN NHANH</div>
+    <div class="chips" id="qviews"></div>
+    <div class="lh">ĐƯỜNG THAM CHIẾU</div>
+    <div class="chips" id="refs"></div>
   </div>
   <div id="bl">
     <div id="legend" class="card"></div>
@@ -51,7 +76,7 @@
     <div id="pbody"></div>
   </div>
   <div id="tip"></div>
-  <div id="hint">Kéo để xoay · cuộn để phóng to · bấm vào quốc gia hoặc điểm nóng</div>
+  <div id="hint">Kéo để xoay · cuộn để phóng to · bấm vào quốc gia, tỉnh thành, thủ đô hoặc điểm nóng</div>
   <script src="assets/vendor/d3-geo.min.js"></script>
   <script type="module" src="js/main.js"></script>
 </body>
