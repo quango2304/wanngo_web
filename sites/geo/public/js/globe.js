@@ -608,52 +608,81 @@ export function render(now) {
     ctx.fill();
   }
 
-  // nature fills (desert, forest, ice)
+  // nature fills (desert, forest, terrain, mountain clipped to land; ice over ocean+land)
   const natF = {
-    desert: C.dark ? ['#8C6D2E', 0.5] : ['#E4C277', 0.55],
-    forest: C.dark ? ['#3E7A3A', 0.5] : ['#6FA35A', 0.38],
+    desert: C.dark ? ['#8C6D2E', 0.38] : ['#E4C277', 0.42],
+    forest: C.dark ? ['#386E38', 0.30] : ['#6FA35A', 0.28],
+    terrain: C.dark ? ['#1D9E75', 0.22] : ['#1D9E75', 0.20],
     ice: C.dark ? ['#DDE8F3', 0.85] : ['#FFFFFF', 0.92]
   };
-  H.forEach(h => {
-    if (h.kind !== 'poly' || !NAT.has(h.t) || !vh(h)) return;
-    if (!cullOK(h)) return;
-    ctx.beginPath();
-    pathC(h.geo);
-    if (h.ringOnly) {
-      ctx.setLineDash([5, 4]);
-      ctx.strokeStyle = C.dark ? 'rgba(220,235,250,.7)' : 'rgba(90,140,190,.8)';
-      ctx.lineWidth = 1.4;
-      ctx.stroke();
-      ctx.setLineDash([]);
-      return;
-    }
-    const sN = natF[h.t];
-    if (!sN) return;
-    ctx.fillStyle = mix(sN[0], st.sel === h ? Math.min(1, sN[1] + 0.25) : sN[1]);
-    ctx.fill();
-    if (st.sel === h) {
-      ctx.strokeStyle = mix(sN[0], 1);
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-    }
-  });
 
-  // mountain footprint polygons (h.polyGeo from physical-50m.json)
-  if (st.on.mountain) {
+  // 1) Ice features (can extend over sea ice)
+  if (st.on.ice) {
     H.forEach(h => {
-      if (h.t !== 'mountain' || !h.polyGeo || !vh(h)) return;
+      if (h.t !== 'ice' || h.kind !== 'poly' || !vh(h) || !cullOK(h)) return;
       ctx.beginPath();
-      pathC(h.polyGeo);
-      ctx.fillStyle = C.dark
-        ? mix('#A67C46', st.sel === h ? 0.52 : 0.34)
-        : mix('#B5894E', st.sel === h ? 0.48 : 0.3);
+      pathC(h.geo);
+      if (h.ringOnly) {
+        ctx.setLineDash([5, 4]);
+        ctx.strokeStyle = C.dark ? 'rgba(220,235,250,.7)' : 'rgba(90,140,190,.8)';
+        ctx.lineWidth = 1.4;
+        ctx.stroke();
+        ctx.setLineDash([]);
+        return;
+      }
+      const sN = natF.ice;
+      ctx.fillStyle = mix(sN[0], st.sel === h ? Math.min(1, sN[1] + 0.25) : sN[1]);
+      ctx.fill();
+    });
+  }
+
+  // 2) Land-clipped biomes (desert, forest, terrain, mountain footprints) so they never bleed into ocean/gulfs
+  if (st.on.desert || st.on.forest || st.on.terrain || st.on.mountain) {
+    ctx.save();
+    ctx.beginPath();
+    for (const f of feats) {
+      if (!cullOK(f)) continue;
+      if (lowres) pathC(f);
+      else {
+        for (const pt of f.parts) if (cullOK(pt)) pathC(pt);
+      }
+    }
+    ctx.clip();
+
+    H.forEach(h => {
+      if (h.kind !== 'poly' || h.t === 'ice' || !NAT.has(h.t) || !vh(h)) return;
+      if (!cullOK(h)) return;
+      const sN = natF[h.t];
+      if (!sN) return;
+      ctx.beginPath();
+      pathC(h.geo);
+      ctx.fillStyle = mix(sN[0], st.sel === h ? Math.min(1, sN[1] + 0.22) : sN[1]);
       ctx.fill();
       if (st.sel === h) {
-        ctx.strokeStyle = C.dark ? '#E0BA82' : '#8A6A3A';
-        ctx.lineWidth = 1.3;
+        ctx.strokeStyle = mix(sN[0], 0.95);
+        ctx.lineWidth = 1.5;
         ctx.stroke();
       }
     });
+
+    if (st.on.mountain) {
+      H.forEach(h => {
+        if (h.t !== 'mountain' || !h.polyGeo || !vh(h)) return;
+        ctx.beginPath();
+        pathC(h.polyGeo);
+        ctx.fillStyle = C.dark
+          ? mix('#A67C46', st.sel === h ? 0.50 : 0.32)
+          : mix('#B5894E', st.sel === h ? 0.46 : 0.28);
+        ctx.fill();
+        if (st.sel === h) {
+          ctx.strokeStyle = C.dark ? '#E0BA82' : '#8A6A3A';
+          ctx.lineWidth = 1.3;
+          ctx.stroke();
+        }
+      });
+    }
+
+    ctx.restore();
   }
 
   // major lakes (MAP.LAKES)
