@@ -2,6 +2,7 @@ import { NAMES, REGIONS } from '../data/regions.js';
 import { C0, TOOLS } from '../data/countries.js';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
+import { iconSvg } from './icons.js';
 import { AL, REF } from '../data/alliances.js';
 import {
   $,
@@ -306,6 +307,15 @@ function C_(en) {
   return isEn() ? C0_EN[en] || C0[en] : C0[en];
 }
 
+function fmtSum(txt) {
+  if (!txt) return '';
+  const paras = String(txt)
+    .split(/\n+/)
+    .map(p => p.trim())
+    .filter(Boolean);
+  return `<div class="sum">${paras.map(p => `<p>${p}</p>`).join('')}</div>`;
+}
+
 function econHTML(en) {
   const ec = ECON[en];
   if (!ec) return '';
@@ -445,7 +455,9 @@ function compareHTML(en1, en2) {
     for (let i = 0; i < 5; i++) {
       const t1 = d1.t[i] || ['n', '—'], t2 = d2.t[i] || ['n', '—'];
       const r1 = t1[1] ? t1[0] : 'n', r2 = t2[1] ? t2[0] : 'n';
-      s += `<div class="cmp-t"><div class="cmp-t-hd">${ems[i]} ${toolsArr[i][0]}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col"><span class="rt ${r1}" style="display:inline-block;margin-bottom:4px">${rtl(r1)}</span><div>${t1[1] || '—'}</div></div><div class="cmp-col"><span class="rt ${r2}" style="display:inline-block;margin-bottom:4px">${rtl(r2)}</span><div>${t2[1] || '—'}</div></div></div></div>`;
+      const dt1 = t1[2] ? `<div style="margin-top:4px;font-size:12px;color:var(--muted);line-height:1.5">${t1[2]}</div>` : '';
+      const dt2 = t2[2] ? `<div style="margin-top:4px;font-size:12px;color:var(--muted);line-height:1.5">${t2[2]}</div>` : '';
+      s += `<div class="cmp-t"><div class="cmp-t-hd">${ems[i]} ${toolsArr[i][0]}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col"><span class="rt ${r1}" style="display:inline-block;margin-bottom:4px">${rtl(r1)}</span><div style="font-weight:500">${t1[1] || '—'}</div>${dt1}</div><div class="cmp-col"><span class="rt ${r2}" style="display:inline-block;margin-bottom:4px">${rtl(r2)}</span><div style="font-weight:500">${t2[1] || '—'}</div>${dt2}</div></div></div>`;
     }
   }
   const m1 = (MEM[en1] || []).map(x => chipA(x[0], x[1])).join('');
@@ -482,16 +494,16 @@ function countryHTML(f, ll) {
   if (subTitle) s += `<div class="sub-h1">${subTitle}</div>`;
   if (d) {
     s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div>`;
-    s += `<p class="sum">${d.sum}</p>`;
+    s += fmtSum(d.sum);
     s += econHTML(f.en);
     s += relHTML(f.en);
+    s += `<div class="sec" style="margin-top:14px">${tr('5 TRỤ CỘT ĐỊA CHÍNH TRỊ', '5 GEOPOLITICAL PILLARS')}</div>`;
     s += `<div class="tools" id="tl">`;
     d.t.forEach((t, i) => {
       const r = t[1] ? t[0] : 'n';
       s += `<div class="tool"><div class="em">${['🛡️', '⚓', '🌊', '📏', '💧'][i]}</div><div><div class="nm">${toolsArr[i][0]}</div><div class="sh">${t[1] || tr('Không có điểm đáng chú ý', 'No notable feature')}</div></div><span class="rt ${r}">${rtl(r)}</span>${t[2] ? `<div class="dt">${t[2]}</div>` : ''}</div>`;
     });
     s += `</div>`;
-    if (d.t.some(t => t[2])) s += `<button class="lnk" id="moreBtn">${tr('Xem thêm ↓', 'Read more ↓')}</button>`;
 
     // Comparison dropdown
     const opts = MAP.F.filter(x => x.en !== f.en)
@@ -730,6 +742,7 @@ function rankingHTML(metricKey = 'happiness', dir = 'desc', qFilter = '', backCo
   s += `<div class="kick">📊 ${tr('BẢNG XẾP HẠNG & BẢN ĐỒ NHIỆT THẾ GIỚI', 'WORLD RANKINGS & CHOROPLETH HEATMAP')}</div>`;
   s += `<h1>${enMode ? m.en : m.vi}</h1>`;
   s += `<div class="rk-src">${tr('Đơn vị:', 'Unit:')} <b>${enMode ? m.unit_en : m.unit_vi}</b> · ${enMode ? m.src_en : m.src_vi}</div>`;
+  s += `<div class="rk-desc"><b>${tr('Tiêu chí đánh giá:', 'Methodology:')}</b> ${enMode ? m.desc_en : m.desc_vi}<br><b>${tr('Dữ liệu:', 'Data:')}</b> ${enMode ? m.data_en : m.data_vi}<br><a href="${m.link}" target="_blank" rel="noopener noreferrer">${tr('Xem nguồn gốc ↗', 'View source ↗')}</a></div>`;
   s += `<div class="rk-tabs">${tabs}</div>`;
 
   // Vietnam spotlight card
@@ -988,7 +1001,7 @@ export function buildLayers() {
   savePrefs();
   const enMode = isEn();
   const tgl = ([key, L]) =>
-    `<div class="tg${st.on[key] ? ' on' : ''}" data-l="${key}"><span class="dot" style="background:${L.c}"></span>${layName(key)}<span class="sw"></span></div>`;
+    `<div class="tg${st.on[key] ? ' on' : ''}" data-l="${key}"><span class="lico" style="color:${L.c}">${iconSvg(key)}</span>${layName(key)}<span class="sw"></span></div>`;
 
   const hotEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'hot');
   const infraEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'infra');
@@ -999,6 +1012,10 @@ export function buildLayers() {
   $('#lyAdmin').innerHTML = admEntries.map(tgl).join('');
   $('#lyNat').innerHTML = natEntries.map(tgl).join('');
   $('#lyInfra').innerHTML = infraEntries.map(tgl).join('');
+
+  document.querySelectorAll('svg[data-g]').forEach(s => {
+    s.innerHTML = iconSvg(s.dataset.g).replace(/^<svg[^>]*>|<\/svg>$/g, '');
+  });
 
   const cnt = entries => `${entries.filter(([k2]) => st.on[k2]).length}/${entries.length}`;
   if ($('#cntHot')) $('#cntHot').textContent = cnt(hotEntries);

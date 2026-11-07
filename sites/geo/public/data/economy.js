@@ -76,10 +76,10 @@ export const ECON = {
       38,
       19
     ],
-    "main_vi": "Điện tử & bán dẫn, dệt may – da giày, máy móc thiết bị, nông thủy sản xuất khẩu (gạo, cà phê, tôm), FDI công nghiệp chế tạo",
-    "main_en": "Electronics & semiconductors, textiles & footwear, machinery, agri-seafood exports (rice, coffee, shrimp), manufacturing FDI",
-    "note_vi": "Trung tâm sản xuất công nghiệp xuất khẩu năng động bậc nhất Đông Nam Á hưởng lợi lớn từ làn sóng dịch chuyển chuỗi cung ứng 'Trung Quốc + 1', độ mở thương mại cực cao (~165% GDP).",
-    "note_en": "One of Southeast Asia's most dynamic export-manufacturing hubs, a prime beneficiary of 'China+1' supply-chain shifts with trade openness exceeding 165% of GDP."
+    "main_vi": "Lắp ráp điện tử xuất khẩu (do khối FDI dẫn dắt), dệt may – da giày, chế biến gỗ & máy móc, nông – thủy sản xuất khẩu (gạo, cà phê, tôm, sầu riêng); bán dẫn & AI là ngành mới nổi đang được kỳ vọng",
+    "main_en": "FDI-led electronics assembly for export, textiles & footwear, wood products & machinery, agri-seafood exports (rice, coffee, shrimp); semiconductors & AI as emerging strategic aspirations",
+    "note_vi": "Trung tâm gia công, lắp ráp xuất khẩu năng động bậc nhất Đông Nam Á hưởng lợi lớn từ làn sóng dịch chuyển chuỗi cung ứng 'Trung Quốc + 1' với độ mở thương mại rất cao (~165% GDP). Tuy nhiên, xuất khẩu công nghiệp hiện vẫn phụ thuộc lớn vào khối doanh nghiệp FDI ở khâu lắp ráp giá trị gia tăng thấp; bài toán cốt lõi hiện nay là nâng tỷ lệ nội địa hóa và từng bước tham gia sâu hơn vào ngành mới nổi đang được kỳ vọng là đóng gói – kiểm thử bán dẫn (ATP) và thiết kế chip.",
+    "note_en": "One of Southeast Asia's most dynamic export-manufacturing hubs, benefiting strongly from 'China+1' supply-chain shifts with trade openness exceeding 165% of GDP. However, industrial exports remain heavily reliant on foreign-invested (FDI) assembly with thin domestic value-added; Vietnam's core challenge is deepening local supply chains while nurturing emerging strategic ambitions in semiconductor assembly, testing, and packaging (ATP)."
   },
   "Venezuela": {
     "tier": "dev",

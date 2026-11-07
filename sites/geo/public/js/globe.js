@@ -1404,33 +1404,15 @@ export function render(now) {
       return true;
     };
 
-    const baseLat = Math.max(-48, Math.min(52, centerPt[1]));
-    const offsets = d3.range(-11, 13).sort((a, b) => {
-      const la = a === 12 ? 180 : a * 15;
-      const lb = b === 12 ? 180 : b * 15;
-      return d3.geoDistance([la, baseLat], centerPt) - d3.geoDistance([lb, baseLat], centerPt);
-    });
+    // Badges are pinned to fixed geographic anchors (independent of view centre / zoom), so they
+    // move with the globe instead of sliding around. Neighbours alternate between two fixed
+    // latitudes so they don't collide; the priority order is fixed too, so nothing swaps places.
+    const offsets = d3.range(-11, 13).sort((a, b) => Math.abs(a) - Math.abs(b));
     for (const off of offsets) {
-      let lonC = off === 12 ? 180 : off * 15;
-      if (k >= 1.5 && off !== 12) {
-        const diff = ((((centerPt[0] - lonC) % 360) + 540) % 360) - 180;
-        if (Math.abs(diff) < 12) {
-          lonC += Math.max(-5.5, Math.min(5.5, diff));
-        }
-      }
+      const lonC = off === 12 ? 180 : off * 15;
       const { time, isDay } = fmtTz(off);
       const lbl = off === 0 ? 'UTC±0' : off === 12 ? 'UTC±12' : `UTC${off > 0 ? '+' + off : off}`;
-      const stagger = k < 1.65 ? (Math.abs(off) % 2 === 0 ? 6.5 : -6.5) : 0;
-      const l0 = Math.max(-58, Math.min(62, baseLat + stagger));
-      const candPts = [
-        [lonC, l0],
-        [lonC, Math.max(-58, Math.min(62, baseLat - stagger))],
-        [lonC, Math.max(-60, Math.min(64, l0 + 11))],
-        [lonC, Math.max(-60, Math.min(64, l0 - 11))],
-        [lonC, Math.max(-62, Math.min(66, l0 + 20))],
-        [lonC, Math.max(-62, Math.min(66, l0 - 20))]
-      ];
-      drawTzBadge(candPts, time, lbl, isDay);
+      drawTzBadge([[lonC, off % 2 === 0 ? 20 : 6]], time, lbl, isDay);
     }
 
     if (k >= 1.45) {

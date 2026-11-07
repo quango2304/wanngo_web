@@ -737,11 +737,19 @@ h1 {
 
 .sum {
   font-family: Lora, Georgia, serif;
-  font-size: 15.5px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.64;
   margin: 0 0 14px;
   padding-left: 12px;
   border-left: 3px solid var(--accent);
+}
+
+.sum p {
+  margin: 0;
+}
+
+.sum p + p {
+  margin-top: 10px;
 }
 
 .tools {
@@ -754,10 +762,14 @@ h1 {
 .tool {
   display: grid;
   grid-template-columns: 22px 1fr auto;
-  gap: 8px;
+  gap: 6px 8px;
   align-items: start;
-  padding: 8px 6px;
-  border-radius: 10px;
+  padding: 10px 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+.tool:last-child {
+  border-bottom: none;
 }
 
 .tool .em {
@@ -768,11 +780,12 @@ h1 {
 .tool .nm {
   font-size: 11.5px;
   color: var(--muted);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .tool .sh {
   font-size: 13.5px;
+  font-weight: 500;
   line-height: 1.45;
 }
 
@@ -780,12 +793,9 @@ h1 {
   grid-column: 2 / 4;
   font-size: 13px;
   color: var(--muted);
-  display: none;
-  line-height: 1.55;
-}
-
-.more .tool .dt {
   display: block;
+  line-height: 1.58;
+  margin-top: 2px;
 }
 
 .rt {
@@ -1546,3 +1556,40 @@ details.adm-list[open] > summary {
   #hint { display: none; }
   #legend { max-width: calc(100vw - 80px); }
 }
+
+/* layer icons */
+.tg .lico {
+  display: inline-flex;
+  flex: none;
+}
+
+.tg .lico svg.i {
+  width: 16px;
+  height: 16px;
+}
+
+.gname {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gname svg.i {
+  color: var(--muted);
+}
+
+.rk-desc {
+  margin: 10px 0 14px;
+  padding: 10px 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--muted, #aab2c0);
+  background: rgba(255, 255, 255, .04);
+  border-left: 3px solid #38BDF8;
+  border-radius: 8px;
+}
+.rk-desc b { color: inherit; opacity: .95; }
+.rk-desc a { color: #38BDF8; text-decoration: none; }
+.rk-desc a:hover { text-decoration: underline; }
+.rk-desc a { color: #38BDF8; text-decoration: none; }
+.rk-desc a:hover { text-decoration: underline; }
