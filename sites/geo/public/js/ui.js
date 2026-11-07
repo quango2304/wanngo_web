@@ -26,7 +26,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID
 } from './state.js';
-import { cv, proj, resize, recenter, pick, flyTo, fitK, setK, getK, stopSpin, inBB } from './globe.js';
+import { cv, proj, resize, recenter, pick, flyTo, fitK, setK, getK, MIN_K, MAX_K, stopSpin, inBB } from './globe.js';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -807,10 +807,10 @@ export function initUI() {
   // Controls
   $('#zin').onclick = () => {
     stopSpin();
-    setK(Math.min(14, getK() * 1.6), 350);
+    setK(Math.min(MAX_K, getK() * 1.6), 350);
   };
   $('#zout').onclick = () => {
-    setK(Math.max(0.85, getK() / 1.6), 350);
+    setK(Math.max(MIN_K, getK() / 1.6), 350);
   };
   $('#home').onclick = () => {
     flyTo([106, 14], 1.15);

@@ -1200,8 +1200,11 @@ export function loop(now) {
 }
 
 // ---------- zoom & hit-testing
+export const MIN_K = 0.85;
+export const MAX_K = 28;
+
 const zoom = d3.zoom()
-  .scaleExtent([0.85, 14])
+  .scaleExtent([MIN_K, MAX_K])
   .clickDistance(5)
   .on('start', e => {
     if (e.sourceEvent) {
@@ -1232,6 +1235,65 @@ const zoom = d3.zoom()
   });
 
 const sel = d3.select(cv).call(zoom).on('dblclick.zoom', null);
+
+// Prevent browser page zoom (pinch-to-zoom / ctrl+wheel) when hitting map zoom limits or pinching over UI
+let gestStartK = 1;
+let gestWheelSeen = false;
+
+cv.addEventListener(
+  'wheel',
+  e => {
+    gestWheelSeen = true;
+    e.preventDefault();
+  },
+  { passive: false }
+);
+
+window.addEventListener(
+  'wheel',
+  e => {
+    if (e.ctrlKey || e.metaKey) {
+      e.preventDefault();
+      return;
+    }
+    const inScrollable = e.target && e.target.closest && e.target.closest('#layers, #pbody, #sugg');
+    if (!inScrollable) {
+      e.preventDefault();
+    }
+  },
+  { passive: false, capture: true }
+);
+
+window.addEventListener(
+  'gesturestart',
+  e => {
+    e.preventDefault();
+    gestStartK = k;
+    gestWheelSeen = false;
+  },
+  { passive: false, capture: true }
+);
+
+window.addEventListener(
+  'gesturechange',
+  e => {
+    e.preventDefault();
+    if (!gestWheelSeen && typeof e.scale === 'number' && e.scale > 0) {
+      stopSpin();
+      const nk = Math.max(MIN_K, Math.min(MAX_K, gestStartK * e.scale));
+      zoom.scaleTo(sel, nk);
+    }
+  },
+  { passive: false, capture: true }
+);
+
+window.addEventListener(
+  'gestureend',
+  e => {
+    e.preventDefault();
+  },
+  { passive: false, capture: true }
+);
 
 export function stopSpin() {
   if (st.spin) {
@@ -1401,5 +1463,5 @@ export function fitK(f) {
   let span = Math.max(b[1][0] - b[0][0], b[1][1] - b[0][1]);
   if (b[1][0] < b[0][0]) span = Math.max(b[1][0] + 360 - b[0][0], b[1][1] - b[0][1]);
   span = Math.max(span, 3);
-  return Math.max(1, Math.min(10, 95 / span));
+  return Math.max(1, Math.min(16, 95 / span));
 }
