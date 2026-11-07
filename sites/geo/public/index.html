@@ -20,7 +20,7 @@
 <body>
   <div id="stage"><canvas id="cv" aria-label="Quả địa cầu tương tác"></canvas></div>
   <div id="top">
-    <div id="brand" class="card"><b>Địa cầu địa chính trị</b><span>theo phong cách Tim Marshall</span></div>
+    <div id="brand" class="card"><b id="brandTitle">Địa cầu địa chính trị</b><span id="brandSub">theo phong cách Tim Marshall</span></div>
     <div id="search">
       <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
       <input id="q" placeholder="Tìm quốc gia, tỉnh thành, thủ đô, đảo..." autocomplete="off">
@@ -29,36 +29,37 @@
     <button class="ibtn" id="layBtn" aria-label="Lớp bản đồ" title="Lớp bản đồ">
       <svg class="i" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
     </button>
+    <button class="ibtn lang-btn" id="langBtn" aria-label="Ngôn ngữ / Language" title="Đổi ngôn ngữ (Tiếng Việt / English)">VI</button>
   </div>
   <div id="layers" class="card">
     <div class="ltop">
-      <span>LỚP BẢN ĐỒ</span>
+      <span id="lblLayers">LỚP BẢN ĐỒ</span>
       <div class="lbtns">
         <button class="lbtn" id="lyDef" type="button">Mặc định</button>
         <button class="lbtn" id="lyOff" type="button">Tắt hết</button>
       </div>
     </div>
     <details class="lgrp" open>
-      <summary><span>Điểm nóng &amp; Chiến lược</span><small id="cntHot"></small></summary>
+      <summary><span id="grpHot">Điểm nóng &amp; Chiến lược</span><small id="cntHot"></small></summary>
       <div id="lyHot" class="litems"></div>
     </details>
     <details class="lgrp" open>
-      <summary><span>Hành chính, Đô thị &amp; Đảo</span><small id="cntAdmin"></small></summary>
+      <summary><span id="grpAdmin">Hành chính, Đô thị &amp; Đảo</span><small id="cntAdmin"></small></summary>
       <div id="lyAdmin" class="litems"></div>
     </details>
     <details class="lgrp" open>
-      <summary><span>Địa lý Tự nhiên</span><small id="cntNat"></small></summary>
+      <summary><span id="grpNat">Địa lý Tự nhiên</span><small id="cntNat"></small></summary>
       <div id="lyNat" class="litems"></div>
     </details>
     <details class="lgrp">
-      <summary><span>Hạ tầng, Quân sự &amp; Tài nguyên</span><small id="cntInfra"></small></summary>
+      <summary><span id="grpInfra">Hạ tầng, Quân sự &amp; Tài nguyên</span><small id="cntInfra"></small></summary>
       <div id="lyInfra" class="litems"></div>
     </details>
-    <div class="lh">TÔ MÀU THEO LIÊN MINH</div>
+    <div class="lh" id="lhAl">TÔ MÀU THEO KHỐI / KINH TẾ</div>
     <select id="alSel" aria-label="Tô màu theo liên minh"><option value="">Không</option></select>
-    <div class="lh">GÓC NHÌN NHANH</div>
+    <div class="lh" id="lhQv">GÓC NHÌN NHANH</div>
     <div class="chips" id="qviews"></div>
-    <div class="lh">ĐƯỜNG THAM CHIẾU</div>
+    <div class="lh" id="lhRef">ĐƯỜNG THAM CHIẾU</div>
     <div class="chips" id="refs"></div>
   </div>
   <div id="bl">

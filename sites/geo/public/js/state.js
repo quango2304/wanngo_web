@@ -2,85 +2,112 @@ import { NAMES } from '../data/regions.js';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL } from '../data/alliances.js';
 import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js';
+import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js';
+import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js';
 
-export { CAPITALS, CITIES, ISLANDS, ADMIN1_META };
+export {
+  CAPITALS,
+  CITIES,
+  ISLANDS,
+  ADMIN1_META,
+  TOOLS_EN,
+  REGIONS_EN,
+  AL_EN,
+  REF_EN,
+  RELC_EN,
+  REL_EN,
+  C0_EN,
+  LAYERS_EN,
+  UPDATED_EN,
+  H_EN,
+  LAKE_META_EN,
+  CAPITALS_EN,
+  CITIES_EN,
+  ISLANDS_EN,
+  ADMIN1_EN,
+  ECON_TIERS,
+  ECON_SECTORS,
+  ECON
+};
 
 export const $ = s => document.querySelector(s);
 export const norm = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'd').toLowerCase();
 export const vi = en => (NAMES[en] || [en])[0];
 
 export const ADMIN_LAYERS = {
-  capitals: { n: 'Thủ đô thế giới', c: '#E8590C', grp: 'admin' },
-  islands:  { n: 'Đảo & Vùng chiến lược', c: '#0D9488', grp: 'admin' },
-  cities:   { n: 'Đô thị & Cảng lớn', c: '#2563EB', grp: 'admin' },
-  admin1:   { n: 'Bang / Tỉnh thành (zoom)', c: '#7C3AED', grp: 'admin' },
-  timezone: { n: 'Múi giờ quốc tế (AM/PM)', c: '#0EA5E9', grp: 'admin' }
+  capitals: { n: 'Thủ đô thế giới', en: 'World Capitals', c: '#E8590C', grp: 'admin' },
+  islands:  { n: 'Đảo & Vùng chiến lược', en: 'Strategic Islands & Zones', c: '#0D9488', grp: 'admin' },
+  cities:   { n: 'Đô thị & Cảng lớn', en: 'Major Cities & Ports', c: '#2563EB', grp: 'admin' },
+  admin1:   { n: 'Bang / Tỉnh thành (zoom)', en: 'States / Provinces (zoom)', c: '#7C3AED', grp: 'admin' },
+  timezone: { n: 'Múi giờ quốc tế (AM/PM)', en: 'World Timezones (AM/PM)', c: '#0EA5E9', grp: 'admin' }
 };
 
 export const WATER_LABELS = [
   // Rank 1: 5 Đại dương lớn (hiện ngay từ toàn cầu k >= 0.85)
-  { n: 'BẮC THÁI BÌNH DƯƠNG', pt: [165, 22], rank: 1 },
-  { n: 'NAM THÁI BÌNH DƯƠNG', pt: [-135, -24], rank: 1 },
-  { n: 'ẤN ĐỘ DƯƠNG', pt: [78, -18], rank: 1 },
-  { n: 'BẮC ĐẠI TÂY DƯƠNG', pt: [-40, 26], rank: 1 },
-  { n: 'NAM ĐẠI TÂY DƯƠNG', pt: [-18, -24], rank: 1 },
-  { n: 'BẮC BĂNG DƯƠNG', pt: [0, 82], rank: 1 },
-  { n: 'NAM ĐẠI DƯƠNG', pt: [30, -61], rank: 1 },
-  { n: 'NAM ĐẠI DƯƠNG', pt: [-125, -61], rank: 1 },
+  { n: 'BẮC THÁI BÌNH DƯƠNG', en: 'NORTH PACIFIC OCEAN', pt: [165, 22], rank: 1 },
+  { n: 'NAM THÁI BÌNH DƯƠNG', en: 'SOUTH PACIFIC OCEAN', pt: [-135, -24], rank: 1 },
+  { n: 'ẤN ĐỘ DƯƠNG', en: 'INDIAN OCEAN', pt: [78, -18], rank: 1 },
+  { n: 'BẮC ĐẠI TÂY DƯƠNG', en: 'NORTH ATLANTIC OCEAN', pt: [-40, 26], rank: 1 },
+  { n: 'NAM ĐẠI TÂY DƯƠNG', en: 'SOUTH ATLANTIC OCEAN', pt: [-18, -24], rank: 1 },
+  { n: 'BẮC BĂNG DƯƠNG', en: 'ARCTIC OCEAN', pt: [0, 82], rank: 1 },
+  { n: 'NAM ĐẠI DƯƠNG', en: 'SOUTHERN OCEAN', pt: [30, -61], rank: 1 },
+  { n: 'NAM ĐẠI DƯƠNG', en: 'SOUTHERN OCEAN', pt: [-125, -61], rank: 1 },
 
   // Rank 2: Biển lớn & Vịnh lớn khu vực (k >= 1.15)
-  { n: 'Biển Đông', pt: [113.5, 13.5], rank: 2 },
-  { n: 'Biển Hoa Đông', pt: [125.5, 28.5], rank: 2 },
-  { n: 'Biển Nhật Bản', pt: [134.8, 40.0], rank: 2 },
-  { n: 'Biển Philippines', pt: [134.0, 18.0], rank: 2 },
-  { n: 'Vịnh Bengal', pt: [88.0, 14.5], rank: 2 },
-  { n: 'Biển Ả Rập', pt: [64.5, 15.5], rank: 2 },
-  { n: 'Địa Trung Hải', pt: [18.0, 35.0], rank: 2 },
-  { n: 'Biển Đỏ', pt: [38.5, 20.5], rank: 2 },
-  { n: 'Vịnh Ba Tư', pt: [51.5, 26.8], rank: 2 },
-  { n: 'Biển Đen', pt: [34.5, 43.2], rank: 2 },
-  { n: 'Biển Bắc', pt: [3.0, 56.5], rank: 2 },
-  { n: 'Biển Baltic', pt: [19.8, 57.5], rank: 2 },
-  { n: 'Biển Na Uy', pt: [4.0, 67.0], rank: 2 },
-  { n: 'Biển Barents', pt: [38.0, 74.0], rank: 2 },
-  { n: 'Biển Bering', pt: [-176.0, 58.0], rank: 2 },
-  { n: 'Biển Okhotsk', pt: [148.5, 53.5], rank: 2 },
-  { n: 'Biển San Hô', pt: [155.0, -17.5], rank: 2 },
-  { n: 'Biển Tasman', pt: [161.0, -37.5], rank: 2 },
-  { n: 'Biển Caribbean', pt: [-74.5, 15.0], rank: 2 },
-  { n: 'Vịnh Mexico', pt: [-90.0, 24.5], rank: 2 },
-  { n: 'Vịnh Hudson', pt: [-82.5, 59.5], rank: 2 },
-  { n: 'Vịnh Guinea', pt: [2.5, 1.5], rank: 2 },
-  { n: 'Vịnh Alaska', pt: [-146.0, 56.5], rank: 2 },
+  { n: 'Biển Đông', en: 'East Sea (South China Sea)', pt: [113.5, 13.5], rank: 2 },
+  { n: 'Biển Hoa Đông', en: 'East China Sea', pt: [125.5, 28.5], rank: 2 },
+  { n: 'Biển Nhật Bản', en: 'Sea of Japan', pt: [134.8, 40.0], rank: 2 },
+  { n: 'Biển Philippines', en: 'Philippine Sea', pt: [134.0, 18.0], rank: 2 },
+  { n: 'Vịnh Bengal', en: 'Bay of Bengal', pt: [88.0, 14.5], rank: 2 },
+  { n: 'Biển Ả Rập', en: 'Arabian Sea', pt: [64.5, 15.5], rank: 2 },
+  { n: 'Địa Trung Hải', en: 'Mediterranean Sea', pt: [18.0, 35.0], rank: 2 },
+  { n: 'Biển Đỏ', en: 'Red Sea', pt: [38.5, 20.5], rank: 2 },
+  { n: 'Vịnh Ba Tư', en: 'Persian Gulf', pt: [51.5, 26.8], rank: 2 },
+  { n: 'Biển Đen', en: 'Black Sea', pt: [34.5, 43.2], rank: 2 },
+  { n: 'Biển Bắc', en: 'North Sea', pt: [3.0, 56.5], rank: 2 },
+  { n: 'Biển Baltic', en: 'Baltic Sea', pt: [19.8, 57.5], rank: 2 },
+  { n: 'Biển Na Uy', en: 'Norwegian Sea', pt: [4.0, 67.0], rank: 2 },
+  { n: 'Biển Barents', en: 'Barents Sea', pt: [38.0, 74.0], rank: 2 },
+  { n: 'Biển Bering', en: 'Bering Sea', pt: [-176.0, 58.0], rank: 2 },
+  { n: 'Biển Okhotsk', en: 'Sea of Okhotsk', pt: [148.5, 53.5], rank: 2 },
+  { n: 'Biển San Hô', en: 'Coral Sea', pt: [155.0, -17.5], rank: 2 },
+  { n: 'Biển Tasman', en: 'Tasman Sea', pt: [161.0, -37.5], rank: 2 },
+  { n: 'Biển Caribbean', en: 'Caribbean Sea', pt: [-74.5, 15.0], rank: 2 },
+  { n: 'Vịnh Mexico', en: 'Gulf of Mexico', pt: [-90.0, 24.5], rank: 2 },
+  { n: 'Vịnh Hudson', en: 'Hudson Bay', pt: [-82.5, 59.5], rank: 2 },
+  { n: 'Vịnh Guinea', en: 'Gulf of Guinea', pt: [2.5, 1.5], rank: 2 },
+  { n: 'Vịnh Alaska', en: 'Gulf of Alaska', pt: [-146.0, 56.5], rank: 2 },
 
   // Rank 3: Biển & Vịnh cận biên chi tiết (k >= 1.65)
-  { n: 'Vịnh Bắc Bộ', pt: [107.6, 19.6], rank: 3 },
-  { n: 'Vịnh Thái Lan', pt: [101.2, 9.8], rank: 3 },
-  { n: 'Biển Andaman', pt: [95.5, 10.5], rank: 3 },
-  { n: 'Biển Hoàng Hải', pt: [123.0, 35.5], rank: 3 },
-  { n: 'Biển Sulu', pt: [120.5, 8.5], rank: 3 },
-  { n: 'Biển Sulawesi', pt: [122.0, 3.2], rank: 3 },
-  { n: 'Biển Java', pt: [112.0, -5.2], rank: 3 },
-  { n: 'Biển Banda', pt: [127.5, -5.8], rank: 3 },
-  { n: 'Biển Arafura', pt: [135.0, -9.5], rank: 3 },
-  { n: 'Biển Timor', pt: [126.5, -11.5], rank: 3 },
-  { n: 'Vịnh Oman', pt: [58.5, 24.2], rank: 3 },
-  { n: 'Vịnh Aden', pt: [48.0, 12.5], rank: 3 },
-  { n: 'Kênh Mozambique', pt: [41.5, -18.5], rank: 3 },
-  { n: 'Biển Aegean', pt: [25.2, 38.2], rank: 3 },
-  { n: 'Biển Adriatic', pt: [16.0, 42.8], rank: 3 },
-  { n: 'Biển Azov', pt: [36.8, 46.0], rank: 3 },
-  { n: 'Biển Kara', pt: [64.0, 74.5], rank: 3 },
-  { n: 'Biển Laptev', pt: [125.0, 75.5], rank: 3 },
-  { n: 'Biển Đông Siberia', pt: [160.0, 73.5], rank: 3 },
-  { n: 'Biển Chukchi', pt: [-170.0, 69.5], rank: 3 },
-  { n: 'Biển Beaufort', pt: [-140.0, 72.0], rank: 3 },
-  { n: 'Vịnh Baffin', pt: [-67.0, 72.5], rank: 3 },
-  { n: 'Biển Labrador', pt: [-53.5, 57.5], rank: 3 },
-  { n: 'Vịnh California', pt: [-110.5, 26.5], rank: 3 },
-  { n: 'Biển Sargasso', pt: [-62.0, 28.0], rank: 3 },
-  { n: 'Biển Weddell', pt: [-42.0, -72.0], rank: 3 },
-  { n: 'Biển Ross', pt: [-175.0, -74.0], rank: 3 }
+  { n: 'Vịnh Bắc Bộ', en: 'Gulf of Tonkin', pt: [107.6, 19.6], rank: 3 },
+  { n: 'Vịnh Thái Lan', en: 'Gulf of Thailand', pt: [101.2, 9.8], rank: 3 },
+  { n: 'Biển Andaman', en: 'Andaman Sea', pt: [95.5, 10.5], rank: 3 },
+  { n: 'Biển Hoàng Hải', en: 'Yellow Sea', pt: [123.0, 35.5], rank: 3 },
+  { n: 'Biển Sulu', en: 'Sulu Sea', pt: [120.5, 8.5], rank: 3 },
+  { n: 'Biển Sulawesi', en: 'Celebes Sea', pt: [122.0, 3.2], rank: 3 },
+  { n: 'Biển Java', en: 'Java Sea', pt: [112.0, -5.2], rank: 3 },
+  { n: 'Biển Banda', en: 'Banda Sea', pt: [127.5, -5.8], rank: 3 },
+  { n: 'Biển Arafura', en: 'Arafura Sea', pt: [135.0, -9.5], rank: 3 },
+  { n: 'Biển Timor', en: 'Timor Sea', pt: [126.5, -11.5], rank: 3 },
+  { n: 'Vịnh Oman', en: 'Gulf of Oman', pt: [58.5, 24.2], rank: 3 },
+  { n: 'Vịnh Aden', en: 'Gulf of Aden', pt: [48.0, 12.5], rank: 3 },
+  { n: 'Kênh Mozambique', en: 'Mozambique Channel', pt: [41.5, -18.5], rank: 3 },
+  { n: 'Biển Aegean', en: 'Aegean Sea', pt: [25.2, 38.2], rank: 3 },
+  { n: 'Biển Adriatic', en: 'Adriatic Sea', pt: [16.0, 42.8], rank: 3 },
+  { n: 'Biển Azov', en: 'Sea of Azov', pt: [36.8, 46.0], rank: 3 },
+  { n: 'Biển Kara', en: 'Kara Sea', pt: [64.0, 74.5], rank: 3 },
+  { n: 'Biển Laptev', en: 'Laptev Sea', pt: [125.0, 75.5], rank: 3 },
+  { n: 'Biển Đông Siberia', en: 'East Siberian Sea', pt: [160.0, 73.5], rank: 3 },
+  { n: 'Biển Chukchi', en: 'Chukchi Sea', pt: [-170.0, 69.5], rank: 3 },
+  { n: 'Biển Beaufort', en: 'Beaufort Sea', pt: [-140.0, 72.0], rank: 3 },
+  { n: 'Vịnh Baffin', en: 'Baffin Bay', pt: [-67.0, 72.5], rank: 3 },
+  { n: 'Biển Labrador', en: 'Labrador Sea', pt: [-53.5, 57.5], rank: 3 },
+  { n: 'Vịnh California', en: 'Gulf of California', pt: [-110.5, 26.5], rank: 3 },
+  { n: 'Biển Sargasso', en: 'Sargasso Sea', pt: [-62.0, 28.0], rank: 3 },
+  { n: 'Biển Weddell', en: 'Weddell Sea', pt: [-42.0, -72.0], rank: 3 },
+  { n: 'Biển Ross', en: 'Ross Sea', pt: [-175.0, -74.0], rank: 3 }
 ];
 
 export const CAP_BY_ID = {};
@@ -178,6 +205,7 @@ export const DEFAULT_REF = {
 const PREFS_KEY = 'geo-prefs-v2';
 
 export const st = {
+  lang: 'vi',
   on: { ...DEFAULT_ON },
   ref: { ...DEFAULT_REF },
   al: '',
@@ -191,12 +219,29 @@ export const st = {
   dirty: true
 };
 
+export const isEn = () => st.lang === 'en';
+export const tr = (viStr, enStr) => (st.lang === 'en' ? enStr : viStr);
+export const cName = en => (st.lang === 'en' ? en : (NAMES[en] || [en])[0]);
+export const hName = h => (st.lang === 'en' && H_EN[h.id] ? H_EN[h.id].n : h.n);
+export const hTx = h => (st.lang === 'en' && H_EN[h.id] ? H_EN[h.id].tx : h.tx);
+export const layName = k =>
+  st.lang === 'en'
+    ? LAYERS_EN[k] || (ADMIN_LAYERS[k] && ADMIN_LAYERS[k].en) || (LAYERS[k] && LAYERS[k].n)
+    : (LAYERS[k] && LAYERS[k].n) || (ADMIN_LAYERS[k] && ADMIN_LAYERS[k].n);
+export const capName = c => (st.lang === 'en' ? (CAPITALS_EN[c.id] && CAPITALS_EN[c.id].n) || c.en || c.vi : c.vi);
+export const cityName = ct => (st.lang === 'en' ? (CITIES_EN[ct.id] && CITIES_EN[ct.id].n) || ct.en || ct.vi : ct.vi);
+export const islName = isl => (st.lang === 'en' ? (ISLANDS_EN[isl.id] && ISLANDS_EN[isl.id].n) || isl.en || isl.vi : isl.vi);
+export const adm1Name = a => (st.lang === 'en' ? (ADMIN1_EN[a.id] && ADMIN1_EN[a.id].n) || a.en || a.vi : a.vi);
+export const lakeName = lk =>
+  st.lang === 'en' ? (LAKE_META_EN[lk.id] && LAKE_META_EN[lk.id].n) || lk.en || lk.vi || lk.n : lk.vi || lk.n;
+
 export function loadPrefs() {
   try {
     const raw = localStorage.getItem(PREFS_KEY);
     if (!raw) return;
     const p = JSON.parse(raw);
     if (p && typeof p === 'object') {
+      if (p.lang === 'en' || p.lang === 'vi') st.lang = p.lang;
       if (p.on && typeof p.on === 'object') {
         Object.keys(DEFAULT_ON).forEach(k => {
           if (typeof p.on[k] === 'boolean') st.on[k] = p.on[k];
@@ -221,6 +266,7 @@ export function savePrefs() {
     localStorage.setItem(
       PREFS_KEY,
       JSON.stringify({
+        lang: st.lang,
         on: st.on,
         ref: st.ref,
         al: st.al,

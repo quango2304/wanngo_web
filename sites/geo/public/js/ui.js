@@ -7,6 +7,33 @@ import {
   $,
   norm,
   vi,
+  isEn,
+  tr,
+  cName,
+  hName,
+  hTx,
+  layName,
+  capName,
+  cityName,
+  islName,
+  adm1Name,
+  lakeName,
+  TOOLS_EN,
+  REGIONS_EN,
+  AL_EN,
+  REF_EN,
+  RELC_EN,
+  REL_EN,
+  C0_EN,
+  UPDATED_EN,
+  LAKE_META_EN,
+  CAPITALS_EN,
+  CITIES_EN,
+  ISLANDS_EN,
+  ADMIN1_EN,
+  ECON_TIERS,
+  ECON_SECTORS,
+  ECON,
   MEM,
   HS,
   BY,
@@ -27,19 +54,36 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID
 } from './state.js';
-import { cv, proj, resize, recenter, pick, flyTo, fitK, setK, getK, MIN_K, MAX_K, stopSpin, inBB } from './globe.js';
+import {
+  cv,
+  proj,
+  resize,
+  recenter,
+  pick,
+  flyTo,
+  fitK,
+  setK,
+  getK,
+  MIN_K,
+  MAX_K,
+  stopSpin,
+  inBB,
+  rebuildSearchIndex
+} from './globe.js';
 
 const P = $('#panel');
 const PB = $('#pbody');
-const RTL = { g: 'Thuận lợi', m: 'Lẫn lộn', b: 'Thử thách', n: '—' };
+const RTL_VI = { g: 'Thuận lợi', m: 'Lẫn lộn', b: 'Thử thách', n: '—' };
+const RTL_EN = { g: 'Favorable', m: 'Mixed', b: 'Challenging', n: '—' };
+const rtl = r => (isEn() ? RTL_EN[r] || '—' : RTL_VI[r] || '—');
 
 const QVIEWS = [
-  { n: 'Việt Nam & Biển Đông', ll: [108, 15], k: 2.3 },
-  { n: 'Châu Âu & Nga', ll: [25, 52], k: 1.8 },
-  { n: 'Trung Đông', ll: [46, 27], k: 2.2 },
-  { n: 'Đông Á', ll: [122, 32], k: 1.9 },
-  { n: 'Bắc Mỹ', ll: [-98, 38], k: 1.6 },
-  { n: 'Bắc Cực', ll: [0, 82], k: 1.6 }
+  { n: 'Việt Nam & Biển Đông', en: 'Vietnam & East Sea', ll: [108, 15], k: 2.3 },
+  { n: 'Châu Âu & Nga', en: 'Europe & Russia', ll: [25, 52], k: 1.8 },
+  { n: 'Trung Đông', en: 'Middle East', ll: [46, 27], k: 2.2 },
+  { n: 'Đông Á', en: 'East Asia', ll: [122, 32], k: 1.9 },
+  { n: 'Bắc Mỹ', en: 'North America', ll: [-98, 38], k: 1.6 },
+  { n: 'Bắc Cực', en: 'The Arctic', ll: [0, 82], k: 1.6 }
 ];
 
 const LAKE_META = {
@@ -147,10 +191,13 @@ const LAKE_META = {
 
 function fmtCoord(pt) {
   if (!pt || pt.length < 2) return '—';
-  const lon = Math.abs(pt[0]).toFixed(1) + '°' + (pt[0] >= 0 ? 'Đ' : 'T');
-  const lat = Math.abs(pt[1]).toFixed(1) + '°' + (pt[1] >= 0 ? 'B' : 'N');
+  const enMode = isEn();
+  const lon = Math.abs(pt[0]).toFixed(1) + '°' + (pt[0] >= 0 ? (enMode ? 'E' : 'Đ') : (enMode ? 'W' : 'T'));
+  const lat = Math.abs(pt[1]).toFixed(1) + '°' + (pt[1] >= 0 ? (enMode ? 'N' : 'B') : (enMode ? 'S' : 'N'));
   return `${lat}, ${lon}`;
 }
+
+let activeView = null;
 
 export function openPanel(html) {
   PB.innerHTML = html;
@@ -163,6 +210,7 @@ export function openPanel(html) {
 export function closePanel() {
   P.classList.remove('show');
   st.sel = null;
+  activeView = null;
   st.dirty = true;
   recenter();
 }
@@ -170,75 +218,160 @@ export function closePanel() {
 function chipH(id) {
   const h = HS[id];
   if (!h) return '';
-  return `<span class="chip" data-h="${id}"><span class="dot" style="background:${LAYERS[h.t].c}"></span>${h.n}</span>`;
+  return `<span class="chip" data-h="${id}"><span class="dot" style="background:${LAYERS[h.t].c}"></span>${hName(h)}</span>`;
 }
 
 function chipC(en) {
   if (!BY[en]) return '';
-  return `<span class="chip" data-c="${en}">${vi(en)}</span>`;
+  return `<span class="chip" data-c="${en}">${cName(en)}</span>`;
 }
 
 function chipA(k2, full) {
   const a = AL[k2];
-  return `<span class="chip" data-a="${k2}"><span class="dot" style="background:${a.c};opacity:${full ? 1 : 0.45}"></span>${a.n}${full ? '' : ' (đối tác)'}</span>`;
+  const aEn = AL_EN[k2];
+  const name = isEn() && aEn ? aEn.n : a.n;
+  const partnerSuffix = full ? '' : tr(' (đối tác)', ' (partner)');
+  return `<span class="chip" data-a="${k2}"><span class="dot" style="background:${a.c};opacity:${full ? 1 : 0.45}"></span>${name}${partnerSuffix}</span>`;
 }
 
 function chipAdm1(a) {
-  return `<span class="chip" data-adm1="${a.id}"><span class="dot" style="background:#7C3AED"></span>${a.vi}</span>`;
+  return `<span class="chip" data-adm1="${a.id}"><span class="dot" style="background:#7C3AED"></span>${adm1Name(a)}</span>`;
 }
 
 function chipUrban(o) {
   const col = o.kind === 'cap' ? '#E8590C' : o.kind === 'isl' ? '#0D9488' : '#2563EB';
   const attr = o.kind === 'cap' ? `data-cap="${o.id}"` : o.kind === 'isl' ? `data-isl="${o.id}"` : `data-city="${o.id}"`;
-  return `<span class="chip" ${attr}><span class="dot" style="background:${col}"></span>${o.vi}</span>`;
+  const lbl = o.kind === 'cap' ? capName(o) : o.kind === 'isl' ? islName(o) : cityName(o);
+  return `<span class="chip" ${attr}><span class="dot" style="background:${col}"></span>${lbl}</span>`;
 }
 
 function C_(en) {
-  return C0[en];
+  return isEn() ? C0_EN[en] || C0[en] : C0[en];
+}
+
+function econHTML(en) {
+  const ec = ECON[en];
+  if (!ec) return '';
+  const enMode = isEn();
+  const tInfo = ECON_TIERS[ec.tier] || ECON_TIERS.dev;
+  const tierName = enMode ? tInfo.en : tInfo.vi;
+  const gdp = enMode ? ec.gdp_en : ec.gdp_vi;
+  const pc = enMode ? ec.pc_en : ec.pc_vi;
+  const main = enMode ? ec.main_en : ec.main_vi;
+  const note = enMode ? ec.note_en : ec.note_vi;
+  const sec = ec.sec || [50, 30, 20];
+  const tot = sec.reduce((a, b) => a + b, 0) || 100;
+  const pcts = sec.map(v => Math.round((v / tot) * 100));
+
+  let offset = 0;
+  const slices = pcts
+    .map((p, idx) => {
+      if (p <= 0) return '';
+      const col = ECON_SECTORS[idx].c;
+      const dash = `${p} ${100 - p}`;
+      const off = 25 - offset;
+      offset += p;
+      return `<circle cx="21" cy="21" r="15.9155" fill="none" stroke="${col}" stroke-width="6.5" stroke-dasharray="${dash}" stroke-dashoffset="${off}"/>`;
+    })
+    .join('');
+
+  const domIdx = pcts[0] >= pcts[1] && pcts[0] >= pcts[2] ? 0 : pcts[1] >= pcts[2] ? 1 : 2;
+  const sRows = ECON_SECTORS.map(
+    (s, idx) =>
+      `<div class="econ-srow"><span><i style="background:${s.c}"></i>${enMode ? s.en : s.vi}</span><b>${pcts[idx]}%</b></div>`
+  ).join('');
+
+  const grPositive = String(ec.gr || '').trim().startsWith('+');
+  const grNeg = String(ec.gr || '').trim().startsWith('-');
+  const grCol = grPositive ? 'var(--g)' : grNeg ? 'var(--b)' : 'var(--ink)';
+
+  return `<div class="econ-box">
+    <div class="econ-hd">
+      <span>${tr('KINH TẾ & PHÁT TRIỂN', 'ECONOMY & DEVELOPMENT')}</span>
+      <span class="econ-tier" data-a="__econ__" title="${tr('Bấm để tô màu bản đồ thế giới theo phân nhóm kinh tế', 'Click to color globe by economic development tier')}" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${tierName}</span>
+    </div>
+    <div class="econ-grid">
+      <div class="econ-stat"><small>${tr('Quy mô GDP (danh nghĩa)', 'Nominal GDP')}</small><b>${gdp}</b></div>
+      <div class="econ-stat"><small>${tr('Thu nhập bình quân / năm', 'GDP per Capita')}</small><b>${pc}</b></div>
+    </div>
+    <div class="econ-chart">
+      <svg class="econ-pie" viewBox="0 0 42 42" aria-label="${tr('Cơ cấu GDP', 'GDP Composition')}">
+        <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--line)" stroke-width="6.5"/>
+        ${slices}
+        <text x="21" y="22.5" text-anchor="middle" font-size="8.5" font-weight="700" fill="var(--ink)">${pcts[domIdx]}%</text>
+      </svg>
+      <div class="econ-sleg">
+        ${sRows}
+        <div class="econ-srow" style="border-top:1px solid var(--line);padding-top:3px;margin-top:1px"><span>${tr('Tăng trưởng thực tế', 'Real GDP Growth')}</span><b style="color:${grCol}">${ec.gr || '—'}</b></div>
+      </div>
+    </div>
+    <div class="econ-main"><b>${tr('Ngành mũi nhọn:', 'Key Industries:')}</b> ${main}</div>
+    ${note ? `<div class="econ-note">${note}</div>` : ''}
+  </div>`;
 }
 
 function relHTML(en) {
   const r = REL[en];
   if (!r) return '';
+  const enMode = isEn();
+  const relLabel = k => (enMode && RELC_EN[k] ? RELC_EN[k] : RELC[k][0]);
   const tot = r.d.reduce((a, b) => a + b[1], 0);
   const bar = r.d
-    .map(x => `<span title="${RELC[x[0]][0]} ~${x[1]}%" style="width:${(x[1] / tot) * 100}%;background:${RELC[x[0]][1]}"></span>`)
+    .map(x => `<span title="${relLabel(x[0])} ~${x[1]}%" style="width:${(x[1] / tot) * 100}%;background:${RELC[x[0]][1]}"></span>`)
     .join('');
   const leg = r.d
-    .map(x => `<span><i style="background:${RELC[x[0]][1]}"></i>${RELC[x[0]][0]} <b>${x[1] < 1 ? '<1' : Math.round(x[1])}%</b></span>`)
+    .map(x => `<span><i style="background:${RELC[x[0]][1]}"></i>${relLabel(x[0])} <b>${x[1] < 1 ? '<1' : Math.round(x[1])}%</b></span>`)
     .join('');
-  return `<div class="sec" style="margin-top:4px">TÔN GIÁO <span style="font-weight:400;color:var(--faint)">· ước tính</span></div><div class="rbar">${bar}</div><div class="rleg">${leg}</div>${r.note ? `<div class="rnote">${r.note}</div>` : ''}`;
+  const note = enMode ? REL_EN[en] || r.note : r.note;
+  return `<div class="sec" style="margin-top:4px">${tr('TÔN GIÁO', 'RELIGION')} <span style="font-weight:400;color:var(--faint)">· ${tr('ước tính', 'estimated')}</span></div><div class="rbar">${bar}</div><div class="rleg">${leg}</div>${note ? `<div class="rnote">${note}</div>` : ''}`;
 }
 
 function compareHTML(en1, en2) {
+  activeView = { type: 'cmp', en1, en2 };
+  const enMode = isEn();
   const d1 = C_(en1), d2 = C_(en2);
-  const v1 = vi(en1), v2 = vi(en2);
-  let s = `<div class="kick">SO SÁNH ĐỊA CHÍNH TRỊ</div><h1>${v1} ⇄ ${v2}</h1>`;
-  s += `<div style="display:flex;gap:6px;margin-bottom:12px"><button class="btn" id="cmpBack" data-c="${en1}">← Quay lại ${v1}</button><button class="btn" id="cmpSwap" data-c1="${en2}" data-c2="${en1}">⇄ Đổi chiều</button></div>`;
+  const v1 = cName(en1), v2 = cName(en2);
+  const toolsArr = enMode ? TOOLS_EN : TOOLS;
+  let s = `<div class="kick">${tr('SO SÁNH ĐỊA CHÍNH TRỊ & KINH TẾ', 'GEOPOLITICAL & ECONOMIC COMPARISON')}</div><h1>${v1} ⇄ ${v2}</h1>`;
+  s += `<div style="display:flex;gap:6px;margin-bottom:12px"><button class="btn" id="cmpBack" data-c="${en1}">← ${tr('Quay lại', 'Back to')} ${v1}</button><button class="btn" id="cmpSwap" data-c1="${en2}" data-c2="${en1}">⇄ ${tr('Đổi chiều', 'Swap')}</button></div>`;
   s += `<div class="cmp-grid">`;
-  s += `<div class="cmp-col"><b class="lnk-inline" data-c="${en1}">${v1}</b><div><small style="color:var(--muted)">Thủ đô:</small> ${(d1 && d1.cap) || '—'}</div><div><small style="color:var(--muted)">Dân số:</small> ${(d1 && d1.pop) || '—'}</div><div><small style="color:var(--muted)">Diện tích:</small> ${(d1 && d1.area) || '—'}</div></div>`;
-  s += `<div class="cmp-col"><b class="lnk-inline" data-c="${en2}">${v2}</b><div><small style="color:var(--muted)">Thủ đô:</small> ${(d2 && d2.cap) || '—'}</div><div><small style="color:var(--muted)">Dân số:</small> ${(d2 && d2.pop) || '—'}</div><div><small style="color:var(--muted)">Diện tích:</small> ${(d2 && d2.area) || '—'}</div></div>`;
+  s += `<div class="cmp-col"><b class="lnk-inline" data-c="${en1}">${v1}</b><div><small style="color:var(--muted)">${tr('Thủ đô:', 'Capital:')}</small> ${(d1 && d1.cap) || '—'}</div><div><small style="color:var(--muted)">${tr('Dân số:', 'Population:')}</small> ${(d1 && d1.pop) || '—'}</div><div><small style="color:var(--muted)">${tr('Diện tích:', 'Area:')}</small> ${(d1 && d1.area) || '—'}</div></div>`;
+  s += `<div class="cmp-col"><b class="lnk-inline" data-c="${en2}">${v2}</b><div><small style="color:var(--muted)">${tr('Thủ đô:', 'Capital:')}</small> ${(d2 && d2.cap) || '—'}</div><div><small style="color:var(--muted)">${tr('Dân số:', 'Population:')}</small> ${(d2 && d2.pop) || '—'}</div><div><small style="color:var(--muted)">${tr('Diện tích:', 'Area:')}</small> ${(d2 && d2.area) || '—'}</div></div>`;
   s += `</div>`;
+
+  const ec1 = ECON[en1], ec2 = ECON[en2];
+  if (ec1 || ec2) {
+    const fmtEc = ec => {
+      if (!ec) return '—';
+      const tInfo = ECON_TIERS[ec.tier] || ECON_TIERS.dev;
+      return `<div style="margin-bottom:4px"><span class="econ-tier" data-a="__econ__" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${enMode ? tInfo.en : tInfo.vi}</span></div><div><small style="color:var(--muted)">GDP:</small> <b>${enMode ? ec.gdp_en : ec.gdp_vi}</b></div><div><small style="color:var(--muted)">${tr('Thu nhập/người:', 'Per capita:')}</small> ${enMode ? ec.pc_en : ec.pc_vi}</div><div><small style="color:var(--muted)">${tr('Tăng trưởng:', 'Growth:')}</small> <b>${ec.gr}</b></div>`;
+    };
+    s += `<div class="cmp-t"><div class="cmp-t-hd">📊 ${tr('KINH TẾ & PHÁT TRIỂN', 'ECONOMY & DEVELOPMENT')}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col">${fmtEc(ec1)}</div><div class="cmp-col">${fmtEc(ec2)}</div></div></div>`;
+  }
 
   if (d1 && d2) {
     const ems = ['🛡️', '⚓', '🌊', '📏', '💧'];
     for (let i = 0; i < 5; i++) {
       const t1 = d1.t[i] || ['n', '—'], t2 = d2.t[i] || ['n', '—'];
       const r1 = t1[1] ? t1[0] : 'n', r2 = t2[1] ? t2[0] : 'n';
-      s += `<div class="cmp-t"><div class="cmp-t-hd">${ems[i]} ${TOOLS[i][0]}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col"><span class="rt ${r1}" style="display:inline-block;margin-bottom:4px">${RTL[r1]}</span><div>${t1[1] || '—'}</div></div><div class="cmp-col"><span class="rt ${r2}" style="display:inline-block;margin-bottom:4px">${RTL[r2]}</span><div>${t2[1] || '—'}</div></div></div></div>`;
+      s += `<div class="cmp-t"><div class="cmp-t-hd">${ems[i]} ${toolsArr[i][0]}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col"><span class="rt ${r1}" style="display:inline-block;margin-bottom:4px">${rtl(r1)}</span><div>${t1[1] || '—'}</div></div><div class="cmp-col"><span class="rt ${r2}" style="display:inline-block;margin-bottom:4px">${rtl(r2)}</span><div>${t2[1] || '—'}</div></div></div></div>`;
     }
   }
   const m1 = (MEM[en1] || []).map(x => chipA(x[0], x[1])).join('');
   const m2 = (MEM[en2] || []).map(x => chipA(x[0], x[1])).join('');
   if (m1 || m2) {
-    s += `<div class="cmp-t"><div class="cmp-t-hd">THÀNH VIÊN CÁC KHỐI</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col"><div class="chips">${m1 || '—'}</div></div><div class="cmp-col"><div class="chips">${m2 || '—'}</div></div></div></div>`;
+    s += `<div class="cmp-t"><div class="cmp-t-hd">${tr('THÀNH VIÊN CÁC KHỐI', 'ALLIANCE MEMBERSHIPS')}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col"><div class="chips">${m1 || '—'}</div></div><div class="cmp-col"><div class="chips">${m2 || '—'}</div></div></div></div>`;
   }
   return s;
 }
 
 function countryHTML(f, ll) {
+  activeView = { type: 'country', f, ll };
+  const enMode = isEn();
   const d = C_(f.en);
-  const rg = REGIONS[f.rg] || REGIONS.territory;
+  const rgDict = enMode ? REGIONS_EN : REGIONS;
+  const rg = rgDict[f.rg] || rgDict.territory;
+  const toolsArr = enMode ? TOOLS_EN : TOOLS;
   const mem = (MEM[f.en] || []).map(x => chipA(x[0], x[1])).join('');
   const inside = ll
     ? H.filter(
@@ -252,32 +385,37 @@ function countryHTML(f, ll) {
         .join('')
     : '';
   const relH = H.filter(h => (h.rel || []).includes(f.en)).map(h => h.id);
-  let s = `<div class="kick">${rg[0]}</div><h1>${f.vi}</h1>`;
-  if (f.en && f.en !== f.vi) s += `<div class="sub-h1">${f.en}</div>`;
+  const mainTitle = cName(f.en);
+  const subTitle = enMode ? (f.vi !== f.en ? f.vi : '') : f.en && f.en !== f.vi ? f.en : '';
+  let s = `<div class="kick">${rg[0]}</div><h1>${mainTitle}</h1>`;
+  if (subTitle) s += `<div class="sub-h1">${subTitle}</div>`;
   if (d) {
-    s += `<div class="stats"><div class="stat"><small>Thủ đô</small><div>${d.cap}</div></div><div class="stat"><small>Dân số</small><div>${d.pop}</div></div><div class="stat"><small>Diện tích</small><div>${d.area}</div></div></div>`;
+    s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div>`;
     s += `<p class="sum">${d.sum}</p>`;
+    s += econHTML(f.en);
     s += relHTML(f.en);
     s += `<div class="tools" id="tl">`;
     d.t.forEach((t, i) => {
       const r = t[1] ? t[0] : 'n';
-      s += `<div class="tool"><div class="em">${['🛡️', '⚓', '🌊', '📏', '💧'][i]}</div><div><div class="nm">${TOOLS[i][0]}</div><div class="sh">${t[1] || 'Không có điểm đáng chú ý'}</div></div><span class="rt ${r}">${RTL[r]}</span>${t[2] ? `<div class="dt">${t[2]}</div>` : ''}</div>`;
+      s += `<div class="tool"><div class="em">${['🛡️', '⚓', '🌊', '📏', '💧'][i]}</div><div><div class="nm">${toolsArr[i][0]}</div><div class="sh">${t[1] || tr('Không có điểm đáng chú ý', 'No notable feature')}</div></div><span class="rt ${r}">${rtl(r)}</span>${t[2] ? `<div class="dt">${t[2]}</div>` : ''}</div>`;
     });
     s += `</div>`;
-    if (d.t.some(t => t[2])) s += `<button class="lnk" id="moreBtn">Xem thêm ↓</button>`;
+    if (d.t.some(t => t[2])) s += `<button class="lnk" id="moreBtn">${tr('Xem thêm ↓', 'Read more ↓')}</button>`;
 
     // Comparison dropdown
     const opts = MAP.F.filter(x => x.en !== f.en)
-      .sort((a, b) => a.vi.localeCompare(b.vi, 'vi'))
-      .map(x => `<option value="${x.en}">${x.vi}</option>`)
+      .sort((a, b) => cName(a.en).localeCompare(cName(b.en), enMode ? 'en' : 'vi'))
+      .map(x => `<option value="${x.en}">${cName(x.en)}</option>`)
       .join('');
-    s += `<div class="cmp-bar"><select id="cmpSel" data-c1="${f.en}" aria-label="So sánh với quốc gia khác"><option value="">⇄ So sánh với quốc gia khác...</option>${opts}</select></div>`;
+    s += `<div class="cmp-bar"><select id="cmpSel" data-c1="${f.en}" aria-label="${tr('So sánh với quốc gia khác', 'Compare with another country')}"><option value="">${tr('⇄ So sánh với quốc gia khác...', '⇄ Compare with another country...')}</option>${opts}</select></div>`;
 
     // Admin-1 States / Provinces belonging to this country
-    const admList = MAP.ADM1.filter(a => a.country === f.en).sort((a, b) => a.vi.localeCompare(b.vi, 'vi'));
+    const admList = MAP.ADM1.filter(a => a.country === f.en).sort((a, b) =>
+      adm1Name(a).localeCompare(adm1Name(b), enMode ? 'en' : 'vi')
+    );
     if (admList.length) {
       const isOpen = f.en === 'Vietnam' || f.en === 'United States of America' ? ' open' : '';
-      s += `<details class="adm-list"${isOpen}><summary><span>BANG / TỈNH THÀNH (${admList.length})</span><small style="font-weight:400">bấm để mở</small></summary><div class="chips">${admList.map(chipAdm1).join('')}</div></details>`;
+      s += `<details class="adm-list"${isOpen}><summary><span>${tr('BANG / TỈNH THÀNH', 'STATES / PROVINCES')} (${admList.length})</span><small style="font-weight:400">${tr('bấm để mở', 'click to expand')}</small></summary><div class="chips">${admList.map(chipAdm1).join('')}</div></details>`;
     }
 
     // Capitals, Cities & Islands belonging to this country
@@ -287,39 +425,53 @@ function countryHTML(f, ll) {
       ...ISLANDS.filter(isl => isl.country === f.en)
     ];
     if (uList.length) {
-      s += `<div class="sec">ĐÔ THỊ, CẢNG &amp; ĐẢO CHIẾN LƯỢC</div><div class="chips">${uList.map(chipUrban).join('')}</div>`;
+      s += `<div class="sec">${tr('ĐÔ THỊ, CẢNG & ĐẢO CHIẾN LƯỢC', 'STRATEGIC CITIES, PORTS & ISLANDS')}</div><div class="chips">${uList.map(chipUrban).join('')}</div>`;
     }
 
     const ids = [...new Set([...(d.hs || []), ...relH])];
-    if (ids.length) s += `<div class="sec">ĐIỂM NÓNG LIÊN QUAN</div><div class="chips">${ids.map(chipH).join('')}</div>`;
+    if (ids.length) s += `<div class="sec">${tr('ĐIỂM NÓNG LIÊN QUAN', 'RELATED HOTSPOTS')}</div><div class="chips">${ids.map(chipH).join('')}</div>`;
   } else {
     s += `<p class="txt">${rg[1]}</p>`;
-    if (relH.length) s += `<div class="sec">ĐIỂM NÓNG LIÊN QUAN</div><div class="chips">${relH.map(chipH).join('')}</div>`;
+    s += econHTML(f.en);
+    if (relH.length) s += `<div class="sec">${tr('ĐIỂM NÓNG LIÊN QUAN', 'RELATED HOTSPOTS')}</div><div class="chips">${relH.map(chipH).join('')}</div>`;
   }
-  if (inside) s += `<div class="sec">NẰM TRONG VÙNG</div><div class="chips">${inside}</div>`;
-  if (mem) s += `<div class="sec">THÀNH VIÊN CÁC KHỐI</div><div class="chips">${mem}</div>`;
-  if (!d) s += `<p class="note">Thẻ khu vực. Các nước trọng điểm có phân tích đầy đủ theo 5 công cụ.</p>`;
+  if (inside) s += `<div class="sec">${tr('NẰM TRONG VÙNG', 'LOCATED WITHIN')}</div><div class="chips">${inside}</div>`;
+  if (mem) s += `<div class="sec">${tr('THÀNH VIÊN CÁC KHỐI', 'ALLIANCE MEMBERSHIPS')}</div><div class="chips">${mem}</div>`;
+  if (!d) s += `<p class="note">${tr('Thẻ khu vực. Các nước trọng điểm có phân tích đầy đủ theo 5 công cụ.', 'Regional card. Key nations include full 5-dimension geopolitical analysis.')}</p>`;
   return s;
 }
 
 function adm1HTML(f) {
-  const cVi = vi(f.country);
-  let s = `<div class="kick"><span class="sq" style="background:#7C3AED"></span>BANG / TỈNH THÀNH · ${cVi}</div>`;
-  s += `<h1>${f.vi}</h1>`;
-  if (f.en && f.en !== f.vi) s += `<div class="sub-h1">${f.en}${f.postal ? ` (${f.postal})` : ''}</div>`;
+  activeView = { type: 'adm1', f };
+  const enMode = isEn();
+  const cLbl = cName(f.country);
+  const enMeta = ADMIN1_EN[f.id] || {};
+  const title = adm1Name(f);
+  const sub = enMode ? (f.vi !== title ? f.vi : '') : f.en && f.en !== f.vi ? f.en : '';
+  let s = `<div class="kick"><span class="sq" style="background:#7C3AED"></span>${tr('BANG / TỈNH THÀNH', 'STATE / PROVINCE')} · ${cLbl}</div>`;
+  s += `<h1>${title}</h1>`;
+  if (sub || f.postal) s += `<div class="sub-h1">${sub}${f.postal ? ` (${f.postal})` : ''}</div>`;
 
   const stat3 =
     f.iso === 'VNM'
-      ? `<div class="stat"><small>Sáp nhập 2025</small><div>${f.old && f.old.length ? f.old.join(' + ') : 'Giữ nguyên'}</div></div>`
-      : `<div class="stat"><small>Diện tích ước tính</small><div>~${Math.max(10, Math.round((f.ar || 0) * 6371 * 6371)).toLocaleString('vi-VN')} km²</div></div>`;
+      ? `<div class="stat"><small>${tr('Sáp nhập 2025', '2025 Merger')}</small><div>${f.old && f.old.length ? f.old.join(' + ') : tr('Giữ nguyên', 'Unchanged')}</div></div>`
+      : `<div class="stat"><small>${tr('Diện tích ước tính', 'Estimated Area')}</small><div>~${Math.max(10, Math.round((f.ar || 0) * 6371 * 6371)).toLocaleString(enMode ? 'en-US' : 'vi-VN')} km²</div></div>`;
+
+  const capVal = (enMode && enMeta.cap) || f.cap || '—';
+  const txVal =
+    (enMode && enMeta.tx) ||
+    f.tx ||
+    (enMode
+      ? `First-level administrative division (${title}) of ${cLbl}, playing a key role in regional territory, demographics, and economic structure.`
+      : `Đơn vị hành chính cấp 1 (${f.vi}) thuộc ${cLbl}, giữ vai trò quan trọng trong cấu trúc lãnh thổ, dân cư và kinh tế vùng.`);
 
   s += `<div class="stats">
-    <div class="stat"><small>Quốc gia</small><div>${BY[f.country] ? `<span class="lnk-inline" data-c="${f.country}">${cVi}</span>` : cVi}</div></div>
-    <div class="stat"><small>Trung tâm hành chính</small><div>${f.cap || '—'}</div></div>
+    <div class="stat"><small>${tr('Quốc gia', 'Country')}</small><div>${BY[f.country] ? `<span class="lnk-inline" data-c="${f.country}">${cLbl}</span>` : cLbl}</div></div>
+    <div class="stat"><small>${tr('Trung tâm hành chính', 'Admin Center')}</small><div>${capVal}</div></div>
     ${stat3}
   </div>`;
 
-  s += `<p class="sum">${f.tx || `Đơn vị hành chính cấp 1 (${f.vi}) thuộc ${cVi}, giữ vai trò quan trọng trong cấu trúc lãnh thổ, dân cư và kinh tế vùng.`}</p>`;
+  s += `<p class="sum">${txVal}</p>`;
 
   const localUrban = [
     ...CAPITALS.filter(c => c.country === f.country && inBB(f, c.pt) && d3.geoContains(f, c.pt)),
@@ -327,7 +479,7 @@ function adm1HTML(f) {
     ...ISLANDS.filter(isl => isl.country === f.country && inBB(f, isl.pt) && d3.geoContains(f, isl.pt))
   ];
   if (localUrban.length) {
-    s += `<div class="sec">ĐÔ THỊ &amp; ĐẢO TRONG TỈNH / BANG</div><div class="chips">${localUrban.map(chipUrban).join('')}</div>`;
+    s += `<div class="sec">${tr('ĐÔ THỊ & ĐẢO TRONG TỈNH / BANG', 'CITIES & ISLANDS IN PROVINCE / STATE')}</div><div class="chips">${localUrban.map(chipUrban).join('')}</div>`;
   }
 
   const nearH = H.filter(h => {
@@ -335,54 +487,86 @@ function adm1HTML(f) {
     return pt && d3.geoDistance(pt, f.cen) < 0.14;
   }).slice(0, 8);
   if (nearH.length) {
-    s += `<div class="sec">ĐIỂM NÓNG &amp; ĐỊA LÝ LÂN CẬN</div><div class="chips">${nearH.map(h => chipH(h.id)).join('')}</div>`;
+    s += `<div class="sec">${tr('ĐIỂM NÓNG & ĐỊA LÝ LÂN CẬN', 'NEARBY HOTSPOTS & GEOGRAPHY')}</div><div class="chips">${nearH.map(h => chipH(h.id)).join('')}</div>`;
   }
 
   if (BY[f.country]) {
-    s += `<div style="margin-top:16px"><button class="btn" data-c="${f.country}">← Xem tổng quan ${cVi}</button></div>`;
+    s += `<div style="margin-top:16px"><button class="btn" data-c="${f.country}">← ${tr('Xem tổng quan', 'Overview of')} ${cLbl}</button></div>`;
   }
   return s;
 }
 
 function urbanIslandHTML(o) {
+  activeView = { type: 'urban', o };
+  const enMode = isEn();
   const isLake = o.kind === 'lake';
-  const lMeta = isLake ? LAKE_META[o.id] || {} : {};
+  const lMetaVi = isLake ? LAKE_META[o.id] || {} : {};
+  const lMetaEn = isLake ? LAKE_META_EN[o.id] || {} : {};
+  const lMeta = enMode ? { ...lMetaVi, ...lMetaEn } : lMetaVi;
+
+  const uEn =
+    o.kind === 'cap'
+      ? CAPITALS_EN[o.id]
+      : o.kind === 'city'
+      ? CITIES_EN[o.id]
+      : o.kind === 'isl'
+      ? ISLANDS_EN[o.id]
+      : null;
+
   const cfg =
     o.kind === 'cap'
-      ? ['THỦ ĐÔ THẾ GIỚI', '#E8590C']
+      ? [tr('THỦ ĐÔ THẾ GIỚI', 'WORLD CAPITAL'), '#E8590C']
       : o.kind === 'city'
-      ? ['ĐÔ THỊ & CẢNG CHIẾN LƯỢC', '#2563EB']
+      ? [tr('ĐÔ THỊ & CẢNG CHIẾN LƯỢC', 'STRATEGIC CITY & PORT'), '#2563EB']
       : o.kind === 'isl'
-      ? ['ĐẢO & VÙNG CHIẾN LƯỢC', '#0D9488']
-      : ['HỒ & BIỂN NỘI ĐỊA', '#2E7CC0'];
+      ? [tr('ĐẢO & VÙNG CHIẾN LƯỢC', 'STRATEGIC ISLAND & ZONE'), '#0D9488']
+      : [tr('HỒ & BIỂN NỘI ĐỊA', 'LAKE & INLAND SEA'), '#2E7CC0'];
 
-  const countryName = o.country ? vi(o.country) : '';
+  const countryName = o.country ? cName(o.country) : '';
   const pt = o.pt || o.cen;
   let s = `<div class="kick"><span class="sq" style="background:${cfg[1]}"></span>${cfg[0]}${countryName ? ' · ' + countryName : ''}</div>`;
-  const title = o.vi || o.n;
+  const title = isLake
+    ? lakeName(o)
+    : o.kind === 'cap'
+    ? capName(o)
+    : o.kind === 'isl'
+    ? islName(o)
+    : cityName(o);
   s += `<h1>${title}</h1>`;
-  if (o.en && o.en !== title) s += `<div class="sub-h1">${o.en}</div>`;
+  const sub = enMode ? (o.vi && o.vi !== title ? o.vi : '') : o.en && o.en !== title ? o.en : '';
+  if (sub) s += `<div class="sub-h1">${sub}</div>`;
 
-  const stat1Label = isLake ? 'Khu vực' : 'Quốc gia';
+  const stat1Label = isLake ? tr('Khu vực', 'Basin') : tr('Quốc gia', 'Country');
   const stat1Val =
     o.country && BY[o.country]
       ? `<span class="lnk-inline" data-c="${o.country}">${countryName}</span>`
-      : countryName || (lMeta.rel && lMeta.rel.length ? lMeta.rel.map(vi).join(', ') : 'Nội lục');
+      : countryName || (lMeta.rel && lMeta.rel.length ? lMeta.rel.map(cName).join(', ') : tr('Nội lục', 'Inland'));
 
-  const stat2 = o.pop
-    ? `<div class="stat"><small>Dân số</small><div>${o.pop}</div></div>`
-    : `<div class="stat"><small>Diện tích</small><div>${o.area || lMeta.area || '~' + Math.max(100, Math.round((o.ar || 0) * 6371 * 6371)).toLocaleString('vi-VN') + ' km²'}</div></div>`;
+  const popVal = enMode && uEn && uEn.pop && o.kind !== 'isl' ? uEn.pop : o.pop;
+  const areaVal =
+    (enMode && uEn && (uEn.area || uEn.pop) && o.kind === 'isl' ? uEn.area || uEn.pop : o.area) ||
+    lMeta.area ||
+    '~' + Math.max(100, Math.round((o.ar || 0) * 6371 * 6371)).toLocaleString(enMode ? 'en-US' : 'vi-VN') + ' km²';
+
+  const stat2 =
+    popVal && o.kind !== 'isl'
+      ? `<div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${popVal}</div></div>`
+      : `<div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${areaVal}</div></div>`;
 
   s += `<div class="stats">
     <div class="stat"><small>${stat1Label}</small><div>${stat1Val}</div></div>
     ${stat2}
-    <div class="stat"><small>Tọa độ</small><div>${fmtCoord(pt)}</div></div>
+    <div class="stat"><small>${tr('Tọa độ', 'Coordinates')}</small><div>${fmtCoord(pt)}</div></div>
   </div>`;
 
   const desc =
+    (enMode && uEn && uEn.tx) ||
+    (enMode && lMetaEn && lMetaEn.tx) ||
     o.tx ||
     lMeta.tx ||
-    `${title} (${o.en || title}) là hồ lớn quan trọng trong mạng lưới thủy văn lục địa, đóng vai trò điều tiết nguồn nước ngọt, sinh kế nông – ngư nghiệp và giao thông đường thủy nội địa khu vực.`;
+    (enMode
+      ? `${title} is a major lake in the continental hydrological network, regulating freshwater supply, fisheries, and inland navigation.`
+      : `${title} (${o.en || title}) là hồ lớn quan trọng trong mạng lưới thủy văn lục địa, đóng vai trò điều tiết nguồn nước ngọt, sinh kế nông – ngư nghiệp và giao thông đường thủy nội địa khu vực.`);
   s += `<p class="sum">${desc}</p>`;
 
   const relCountries = isLake
@@ -395,13 +579,13 @@ function urbanIslandHTML(o) {
     : [];
 
   if (relCountries.length) {
-    s += `<div class="sec">QUỐC GIA LIÊN QUAN</div><div class="chips">${relCountries.map(chipC).join('')}</div>`;
+    s += `<div class="sec">${tr('QUỐC GIA LIÊN QUAN', 'RELATED COUNTRIES')}</div><div class="chips">${relCountries.map(chipC).join('')}</div>`;
   }
 
   if (!isLake && o.country && pt && MAP.ADM1.length) {
     const adm = MAP.ADM1.find(a => a.country === o.country && inBB(a, pt) && d3.geoContains(a, pt));
     if (adm) {
-      s += `<div class="sec">THUỘC BANG / TỈNH THÀNH</div><div class="chips">${chipAdm1(adm)}</div>`;
+      s += `<div class="sec">${tr('THUỘC BANG / TỈNH THÀNH', 'LOCATED IN STATE / PROVINCE')}</div><div class="chips">${chipAdm1(adm)}</div>`;
     }
   }
 
@@ -411,19 +595,24 @@ function urbanIslandHTML(o) {
       return hp && d3.geoDistance(hp, pt) < 0.16;
     }).slice(0, 8);
     if (nearH.length) {
-      s += `<div class="sec">ĐIỂM NÓNG &amp; TUYẾN CHIẾN LƯỢC LÂN CẬN</div><div class="chips">${nearH.map(h => chipH(h.id)).join('')}</div>`;
+      s += `<div class="sec">${tr('ĐIỂM NÓNG & TUYẾN CHIẾN LƯỢC LÂN CẬN', 'NEARBY HOTSPOTS & STRATEGIC ROUTES')}</div><div class="chips">${nearH.map(h => chipH(h.id)).join('')}</div>`;
     }
   }
   return s;
 }
 
 function hotHTML(h) {
+  activeView = { type: 'hot', h };
   const L = LAYERS[h.t];
-  let s = `<div class="kick"><span class="sq" style="background:${L.c}"></span>${L.n}</div><h1>${h.n}</h1><p class="txt">${h.tx}</p>`;
-  if (h.t === 'conflict') s += `<p class="note">Cập nhật tới ${UPDATED}. Tình hình có thể đã thay đổi.</p>`;
-  if (h.id === 'africalines') s += `<p class="note">Đường đỏ hồng trên bản đồ là các đoạn biên giới thẳng tắp dài từ 120 km trở lên.</p>`;
-  if (h.id === 'ninedash') s += `<p class="note">Đường trên bản đồ chỉ vẽ ước lượng để minh họa.</p>`;
-  if (h.rel && h.rel.length) s += `<div class="sec">LIÊN QUAN</div><div class="chips">${h.rel.map(chipC).join('')}</div>`;
+  const lTitle = layName(h.t);
+  let s = `<div class="kick"><span class="sq" style="background:${L.c}"></span>${lTitle}</div><h1>${hName(h)}</h1><p class="txt">${hTx(h)}</p>`;
+  if (h.t === 'conflict')
+    s += `<p class="note">${tr(`Cập nhật tới ${UPDATED}. Tình hình có thể đã thay đổi.`, `Updated through ${UPDATED_EN}. Conditions on the ground may have evolved.`)}</p>`;
+  if (h.id === 'africalines')
+    s += `<p class="note">${tr('Đường đỏ hồng trên bản đồ là các đoạn biên giới thẳng tắp dài từ 120 km trở lên.', 'Pink-red lines on the globe highlight straight-line border segments of 120 km or longer.')}</p>`;
+  if (h.id === 'ninedash')
+    s += `<p class="note">${tr('Đường trên bản đồ chỉ vẽ ước lượng để minh họa.', 'The dashed line on the globe is an approximate geopolitical illustration.')}</p>`;
+  if (h.rel && h.rel.length) s += `<div class="sec">${tr('LIÊN QUAN', 'RELATED COUNTRIES')}</div><div class="chips">${h.rel.map(chipC).join('')}</div>`;
   return s;
 }
 
@@ -513,7 +702,9 @@ function wire() {
     mb.onclick = () => {
       const tl = $('#tl');
       tl.classList.toggle('more');
-      mb.textContent = tl.classList.contains('more') ? 'Thu gọn ↑' : 'Xem thêm ↓';
+      mb.textContent = tl.classList.contains('more')
+        ? tr('Thu gọn ↑', 'Show less ↑')
+        : tr('Xem thêm ↓', 'Read more ↓');
     };
 }
 
@@ -552,8 +743,9 @@ export function select(o, fly) {
 export function buildLayers() {
   st.on.ice = true;
   savePrefs();
+  const enMode = isEn();
   const tgl = ([key, L]) =>
-    `<div class="tg${st.on[key] ? ' on' : ''}" data-l="${key}"><span class="dot" style="background:${L.c}"></span>${L.n}<span class="sw"></span></div>`;
+    `<div class="tg${st.on[key] ? ' on' : ''}" data-l="${key}"><span class="dot" style="background:${L.c}"></span>${layName(key)}<span class="sw"></span></div>`;
 
   const hotEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'hot');
   const infraEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'infra');
@@ -582,10 +774,10 @@ export function buildLayers() {
   );
 
   $('#refs').innerHTML = Object.entries(REF)
-    .map(
-      ([key, r]) =>
-        `<span class="chip${st.ref[key] ? ' on' : ''}" data-r="${key}">${r.c ? `<span class="dot" style="background:${r.c}"></span>` : ''}${r.n}</span>`
-    )
+    .map(([key, r]) => {
+      const rName = enMode && REF_EN[key] ? REF_EN[key].n : r.n;
+      return `<span class="chip${st.ref[key] ? ' on' : ''}" data-r="${key}">${r.c ? `<span class="dot" style="background:${r.c}"></span>` : ''}${rName}</span>`;
+    })
     .join('');
   $('#refs')
     .querySelectorAll('.chip')
@@ -600,10 +792,26 @@ export function buildLayers() {
     );
 }
 
+function populateAlSel() {
+  const alSel = $('#alSel');
+  if (!alSel) return;
+  const enMode = isEn();
+  const cur = st.al || '';
+  alSel.innerHTML = `<option value="">${tr('Không', 'None')}</option><option value="__econ__">📊 ${tr('Phân nhóm Kinh tế & Thu nhập (WB/IMF)', 'Economic Development Tiers (WB/IMF)')}</option>`;
+  Object.entries(AL).forEach(([key, a]) => {
+    const aInfo = enMode && AL_EN[key] ? AL_EN[key] : a;
+    const o = document.createElement('option');
+    o.value = key;
+    o.textContent = aInfo.n + ' · ' + aInfo.f.split(' · ')[0];
+    alSel.appendChild(o);
+  });
+  alSel.value = cur;
+}
+
 export function setAl(key) {
   const alSel = $('#alSel');
   st.al = key || '';
-  alSel.value = st.al;
+  if (alSel) alSel.value = st.al;
   savePrefs();
   st.dirty = true;
   const lg = $('#legend');
@@ -611,20 +819,109 @@ export function setAl(key) {
     lg.classList.remove('show');
     return;
   }
+  const enMode = isEn();
+  if (st.al === '__econ__') {
+    const tiers = Object.values(ECON_TIERS)
+      .map(t => `<span><span class="sq" style="background:${t.c}"></span>${enMode ? t.en : t.vi}</span>`)
+      .join('');
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${tr('Phân nhóm Kinh tế Thế giới', 'Global Economic Development Tiers')}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${tr('Theo ngưỡng GNI bình quân đầu người & phân loại IMF / Ngân hàng Thế giới (2024–2025)', 'By GNI per capita thresholds & IMF / World Bank classification (2024–2025)')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${tiers}</div>`;
+    lg.classList.add('show');
+    $('#alX').onclick = () => setAl('');
+    return;
+  }
   const a = AL[st.al];
-  lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${a.n}</b><button class="lnk" id="alX" style="padding:0">Tắt</button></div><div style="color:var(--muted);font-size:12px">${a.f}</div><div style="margin-top:6px">${a.tx}</div><div class="row"><span><span class="sq" style="background:${a.c}"></span>Thành viên</span>${a.p.length ? `<span><span class="sq" style="background:${a.c};opacity:.42"></span>Đối tác / đặc biệt</span>` : ''}</div>`;
+  if (!a) {
+    lg.classList.remove('show');
+    return;
+  }
+  const aInfo = enMode && AL_EN[st.al] ? AL_EN[st.al] : a;
+  lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${aInfo.n}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${aInfo.f}</div><div style="margin-top:6px">${aInfo.tx}</div><div class="row"><span><span class="sq" style="background:${a.c}"></span>${tr('Thành viên', 'Member')}</span>${a.p.length ? `<span><span class="sq" style="background:${a.c};opacity:.42"></span>${tr('Đối tác / đặc biệt', 'Partner / observer')}</span>` : ''}</div>`;
   lg.classList.add('show');
   $('#alX').onclick = () => setAl('');
 }
 
 function tipLabel(h) {
-  if (h.isAdm1) return `${h.vi}<small>bang / tỉnh · ${vi(h.country)}</small>`;
-  if (h.kind === 'cap') return `${h.vi}<small>thủ đô · ${vi(h.country)}</small>`;
-  if (h.kind === 'city') return `${h.vi}<small>đô thị / cảng · ${vi(h.country)}</small>`;
-  if (h.kind === 'isl') return `${h.vi}<small>đảo / vùng · ${vi(h.country)}</small>`;
-  if (h.kind === 'lake') return `${h.vi || h.n}<small>hồ / biển nội địa</small>`;
-  if (h.isCountry) return `${h.vi}<small>quốc gia</small>`;
-  return `${h.n}<small>${(LAYERS[h.t] && LAYERS[h.t].n.toLowerCase()) || 'điểm nóng'}</small>`;
+  if (h.isAdm1) return `${adm1Name(h)}<small>${tr('bang / tỉnh', 'state / province')} · ${cName(h.country)}</small>`;
+  if (h.kind === 'cap') return `${capName(h)}<small>${tr('thủ đô', 'capital')} · ${cName(h.country)}</small>`;
+  if (h.kind === 'city') return `${cityName(h)}<small>${tr('đô thị / cảng', 'city / port')} · ${cName(h.country)}</small>`;
+  if (h.kind === 'isl') return `${islName(h)}<small>${tr('đảo / vùng', 'island / zone')} · ${cName(h.country)}</small>`;
+  if (h.kind === 'lake') return `${lakeName(h)}<small>${tr('hồ / biển nội địa', 'lake / inland sea')}</small>`;
+  if (h.isCountry) return `${cName(h.en)}<small>${tr('quốc gia', 'country')}</small>`;
+  return `${hName(h)}<small>${(layName(h.t) || tr('điểm nóng', 'hotspot')).toLowerCase()}</small>`;
+}
+
+export function applyLang() {
+  const enMode = isEn();
+  document.documentElement.lang = enMode ? 'en' : 'vi';
+  document.title = tr('Địa cầu địa chính trị · wanngo', 'Geopolitical Globe · wanngo');
+  if ($('#brandTitle')) $('#brandTitle').textContent = tr('Địa cầu địa chính trị', 'Geopolitical Globe');
+  if ($('#brandSub')) $('#brandSub').textContent = tr('theo phong cách Tim Marshall', 'inspired by Tim Marshall');
+  if ($('#q')) $('#q').placeholder = tr('Tìm quốc gia, tỉnh thành, thủ đô, đảo...', 'Search countries, states, capitals, islands...');
+  if ($('#layBtn')) {
+    const lTxt = tr('Lớp bản đồ', 'Map layers');
+    $('#layBtn').title = lTxt;
+    $('#layBtn').setAttribute('aria-label', lTxt);
+  }
+  if ($('#langBtn')) {
+    $('#langBtn').textContent = enMode ? 'EN' : 'VI';
+    $('#langBtn').title = enMode ? 'Switch to Vietnamese (Tiếng Việt)' : 'Chuyển sang Tiếng Anh (English)';
+  }
+  if ($('#lblLayers')) $('#lblLayers').textContent = tr('LỚP BẢN ĐỒ', 'MAP LAYERS');
+  if ($('#lyDef')) $('#lyDef').textContent = tr('Mặc định', 'Default');
+  if ($('#lyOff')) $('#lyOff').textContent = tr('Tắt hết', 'All off');
+  if ($('#grpHot')) $('#grpHot').textContent = tr('Điểm nóng & Chiến lược', 'Hotspots & Strategy');
+  if ($('#grpAdmin')) $('#grpAdmin').textContent = tr('Hành chính, Đô thị & Đảo', 'Admin, Cities & Islands');
+  if ($('#grpNat')) $('#grpNat').textContent = tr('Địa lý Tự nhiên', 'Physical Geography');
+  if ($('#grpInfra')) $('#grpInfra').textContent = tr('Hạ tầng, Quân sự & Tài nguyên', 'Infra, Military & Resources');
+  if ($('#lhAl')) $('#lhAl').textContent = tr('TÔ MÀU THEO KHỐI / KINH TẾ', 'COLOR BY BLOC / ECONOMY');
+  if ($('#lhQv')) $('#lhQv').textContent = tr('GÓC NHÌN NHANH', 'QUICK VIEWS');
+  if ($('#lhRef')) $('#lhRef').textContent = tr('ĐƯỜNG THAM CHIẾU', 'REFERENCE LINES');
+  if ($('#hint'))
+    $('#hint').textContent = tr(
+      'Kéo để xoay · cuộn để phóng to · bấm vào quốc gia, tỉnh thành, thủ đô hoặc điểm nóng',
+      'Drag to rotate · scroll to zoom · click any country, state, capital, or hotspot'
+    );
+  if ($('#zin')) $('#zin').setAttribute('aria-label', tr('Phóng to', 'Zoom in'));
+  if ($('#zout')) $('#zout').setAttribute('aria-label', tr('Thu nhỏ', 'Zoom out'));
+  if ($('#home')) {
+    $('#home').title = tr('Về Việt Nam', 'Reset to Vietnam');
+    $('#home').setAttribute('aria-label', tr('Về Việt Nam', 'Reset to Vietnam'));
+  }
+  if ($('#spin')) {
+    $('#spin').title = tr('Tự xoay', 'Auto-rotate');
+    $('#spin').setAttribute('aria-label', tr('Tự xoay', 'Auto-rotate'));
+  }
+  if ($('#theme')) {
+    $('#theme').title = tr('Sáng / tối', 'Light / dark theme');
+    $('#theme').setAttribute('aria-label', tr('Đổi giao diện sáng tối', 'Toggle light / dark theme'));
+  }
+
+  const qviews = $('#qviews');
+  if (qviews) {
+    qviews.innerHTML = QVIEWS.map((v, i) => `<span class="chip" data-qv="${i}">${enMode ? v.en : v.n}</span>`).join('');
+    qviews.querySelectorAll('.chip').forEach(
+      e =>
+        (e.onclick = () => {
+          const v = QVIEWS[+e.dataset.qv];
+          if (v) flyTo(v.ll, v.k);
+        })
+    );
+  }
+
+  populateAlSel();
+  buildLayers();
+  if (st.al) setAl(st.al);
+  rebuildSearchIndex();
+  MAP.LC.key = '';
+  st.dirty = true;
+
+  if (P.classList.contains('show') && activeView) {
+    if (activeView.type === 'cmp') openPanel(compareHTML(activeView.en1, activeView.en2));
+    else if (activeView.type === 'country') openPanel(countryHTML(activeView.f, activeView.ll));
+    else if (activeView.type === 'adm1') openPanel(adm1HTML(activeView.f));
+    else if (activeView.type === 'urban') openPanel(urbanIslandHTML(activeView.o));
+    else if (activeView.type === 'hot') openPanel(hotHTML(activeView.h));
+  }
 }
 
 export function initUI() {
@@ -676,12 +973,6 @@ export function initUI() {
   });
 
   const alSel = $('#alSel');
-  Object.entries(AL).forEach(([key, a]) => {
-    const o = document.createElement('option');
-    o.value = key;
-    o.textContent = a.n + ' · ' + a.f.split(' · ')[0];
-    alSel.appendChild(o);
-  });
   alSel.onchange = () => setAl(alSel.value);
 
   const lyDef = $('#lyDef');
@@ -704,18 +995,6 @@ export function initUI() {
     };
   }
 
-  const qviews = $('#qviews');
-  if (qviews) {
-    qviews.innerHTML = QVIEWS.map((v, i) => `<span class="chip" data-qv="${i}">${v.n}</span>`).join('');
-    qviews.querySelectorAll('.chip').forEach(
-      e =>
-        (e.onclick = () => {
-          const v = QVIEWS[+e.dataset.qv];
-          if (v) flyTo(v.ll, v.k);
-        })
-    );
-  }
-
   $('#layBtn').onclick = () => {
     $('#layers').classList.toggle('hide');
     const isHidden = $('#layers').classList.contains('hide');
@@ -724,12 +1003,21 @@ export function initUI() {
     savePrefs();
   };
 
+  const langBtn = $('#langBtn');
+  if (langBtn) {
+    langBtn.onclick = () => {
+      st.lang = st.lang === 'en' ? 'vi' : 'en';
+      savePrefs();
+      applyLang();
+    };
+  }
+
   // Search
   const q = $('#q'), sg = $('#sugg');
   let act = 0, res = [], curQuery = '';
   const drawS = () => {
     if (!res.length) {
-      sg.innerHTML = '<div class="sg"><small>Không tìm thấy</small></div>';
+      sg.innerHTML = `<div class="sg"><small>${tr('Không tìm thấy', 'No results found')}</small></div>`;
       sg.classList.add('show');
       return;
     }
@@ -738,7 +1026,7 @@ export function initUI() {
         let sub = x.sub;
         if (x.t === 'adm1' && x.o.old && x.o.old.length && !norm(x.n).includes(curQuery)) {
           const mOld = x.o.old.find(oldN => norm(oldN).includes(curQuery));
-          if (mOld) sub = `Sáp nhập từ ${mOld} · ${vi(x.o.country)}`;
+          if (mOld) sub = `${tr('Sáp nhập từ', 'Merged from')} ${mOld} · ${cName(x.o.country)}`;
         }
         return `<div class="sg${i === act ? ' act' : ''}" data-i="${i}"><span>${x.n}</span><small>${sub}</small></div>`;
       })
@@ -851,7 +1139,6 @@ export function initUI() {
   const hideDrawer = typeof st.drawerHide === 'boolean' ? st.drawerHide : innerWidth < 760;
   $('#layers').classList.toggle('hide', hideDrawer);
   $('#layBtn').classList.toggle('on', !hideDrawer);
-  if (st.al && AL[st.al]) setAl(st.al);
 
-  buildLayers();
+  applyLang();
 }

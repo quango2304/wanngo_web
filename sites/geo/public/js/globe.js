@@ -6,6 +6,23 @@ import {
   $,
   norm,
   vi,
+  isEn,
+  tr,
+  cName,
+  hName,
+  layName,
+  capName,
+  cityName,
+  islName,
+  adm1Name,
+  lakeName,
+  C0_EN,
+  REGIONS_EN,
+  H_EN,
+  LAKE_META_EN,
+  ADMIN1_EN,
+  ECON_TIERS,
+  ECON,
   AFR,
   NAT,
   MEM,
@@ -172,67 +189,83 @@ function buildHotspots(worldTopo, objCountries, onlyTopoDependent = false) {
 }
 
 export function rebuildSearchIndex() {
+  const enMode = isEn();
+  const rgDict = enMode ? REGIONS_EN : REGIONS;
   MAP.IDX = [
     ...MAP.F.map(f => ({
       t: 'c',
-      n: f.vi,
-      s: norm(f.vi + ' ' + f.en + ' ' + ((C0[f.en] && C0[f.en].cap) || '')),
-      o: f,
-      sub: (REGIONS[f.rg] || ['Quốc gia'])[0]
-    })),
-    ...MAP.ADM1.map(f => ({
-      t: 'adm1',
-      n: f.vi,
+      n: cName(f.en),
       s: norm(
         f.vi +
           ' ' +
           f.en +
           ' ' +
+          ((C0[f.en] && C0[f.en].cap) || '') +
+          ' ' +
+          ((C0_EN[f.en] && C0_EN[f.en].cap) || '')
+      ),
+      o: f,
+      sub: (rgDict[f.rg] || [tr('Quốc gia', 'Country')])[0]
+    })),
+    ...MAP.ADM1.map(f => ({
+      t: 'adm1',
+      n: adm1Name(f),
+      s: norm(
+        f.vi +
+          ' ' +
+          f.en +
+          ' ' +
+          ((ADMIN1_EN[f.id] && ADMIN1_EN[f.id].n) || '') +
+          ' ' +
           (f.postal || '') +
           ' ' +
           (f.cap || '') +
           ' ' +
+          ((ADMIN1_EN[f.id] && ADMIN1_EN[f.id].cap) || '') +
+          ' ' +
           (f.old || []).join(' ') +
           ' ' +
-          vi(f.country)
+          vi(f.country) +
+          ' ' +
+          f.country
       ),
       o: f,
-      sub: 'Bang / Tỉnh · ' + vi(f.country)
+      sub: tr('Bang / Tỉnh · ', 'State / Province · ') + cName(f.country)
     })),
     ...CAPITALS.map(c => ({
       t: 'cap',
-      n: c.vi,
-      s: norm(c.vi + ' ' + c.en + ' ' + vi(c.country) + ' ' + c.country),
+      n: capName(c),
+      s: norm(c.vi + ' ' + c.en + ' ' + capName(c) + ' ' + vi(c.country) + ' ' + c.country),
       o: c,
-      sub: 'Thủ đô · ' + vi(c.country)
+      sub: tr('Thủ đô · ', 'Capital · ') + cName(c.country)
     })),
     ...ISLANDS.map(isl => ({
       t: 'isl',
-      n: isl.vi,
-      s: norm(isl.vi + ' ' + isl.en + ' ' + vi(isl.country) + ' ' + isl.country),
+      n: islName(isl),
+      s: norm(isl.vi + ' ' + isl.en + ' ' + islName(isl) + ' ' + vi(isl.country) + ' ' + isl.country),
       o: isl,
-      sub: 'Đảo / Vùng · ' + vi(isl.country)
+      sub: tr('Đảo / Vùng · ', 'Island / Zone · ') + cName(isl.country)
     })),
     ...CITIES.map(ct => ({
       t: 'city',
-      n: ct.vi,
-      s: norm(ct.vi + ' ' + ct.en + ' ' + vi(ct.country) + ' ' + ct.country),
+      n: cityName(ct),
+      s: norm(ct.vi + ' ' + ct.en + ' ' + cityName(ct) + ' ' + vi(ct.country) + ' ' + ct.country),
       o: ct,
-      sub: 'Đô thị / Cảng · ' + vi(ct.country)
+      sub: tr('Đô thị / Cảng · ', 'City / Port · ') + cName(ct.country)
     })),
     ...H.map(h => ({
       t: 'h',
-      n: h.n,
-      s: norm(h.n + ' ' + h.id),
+      n: hName(h),
+      s: norm(h.n + ' ' + ((H_EN[h.id] && H_EN[h.id].n) || '') + ' ' + h.id),
       o: h,
-      sub: (LAYERS[h.t] && LAYERS[h.t].n) || 'Điểm nóng'
+      sub: layName(h.t) || tr('Điểm nóng', 'Hotspot')
     })),
     ...MAP.LAKES.map(lk => ({
       t: 'lake',
-      n: lk.vi || lk.n,
-      s: norm((lk.vi || lk.n) + ' ' + (lk.en || '')),
+      n: lakeName(lk),
+      s: norm((lk.vi || lk.n) + ' ' + (lk.en || '') + ' ' + ((LAKE_META_EN[lk.id] && LAKE_META_EN[lk.id].n) || '')),
       o: lk,
-      sub: 'Hồ & Biển nội địa'
+      sub: tr('Hồ & Biển nội địa', 'Lake & Inland Sea')
     }))
   ];
 }
@@ -379,13 +412,23 @@ function mix(hex, a) {
 function landColor(f) {
   const base = d3.hsl(C.land);
   base.l = Math.max(0, Math.min(1, base.l + f.j));
-  if (st.al) {
-    const a = AL[st.al];
-    const m = (MEM[f.en] || []).find(x => x[0] === st.al);
-    if (m) return m[1] ? a.c : mix(a.c, 0.42);
+  if (st.al === '__econ__') {
+    const ec = ECON[f.en];
+    const tInfo = ec && ECON_TIERS[ec.tier];
+    if (tInfo) return mix(tInfo.c, C.dark ? 0.80 : 0.76);
     const g = d3.hsl(C.land);
     g.s *= 0.3;
     return g + '';
+  }
+  if (st.al) {
+    const a = AL[st.al];
+    if (a) {
+      const m = (MEM[f.en] || []).find(x => x[0] === st.al);
+      if (m) return m[1] ? a.c : mix(a.c, 0.42);
+      const g = d3.hsl(C.land);
+      g.s *= 0.3;
+      return g + '';
+    }
   }
   if (st.hl.has(f.en)) return C.dark ? '#7a5a1e' : '#F6D9A0';
   return base + '';
@@ -803,24 +846,40 @@ export function render(now) {
     ctx.stroke();
   }
 
-  // timezone meridian lines (st.on.timezone)
+  // timezone meridian lines & alternating bands (st.on.timezone)
   if (st.on.timezone) {
+    // Subtle alternating band fills for even offsets
+    ctx.beginPath();
+    for (let off = -11; off <= 11; off += 2) {
+      const lon0 = off * 15 - 7.5;
+      const lon1 = off * 15 + 7.5;
+      const ring = [
+        ...d3.range(-75, 81, 5).map(y => [lon0, y]),
+        ...d3.range(80, -76, -5).map(y => [lon1, y]),
+        [lon0, -75]
+      ];
+      pathC({ type: 'Polygon', coordinates: [ring] });
+    }
+    ctx.fillStyle = C.dark ? 'rgba(56, 189, 248, 0.035)' : 'rgba(2, 132, 199, 0.035)';
+    ctx.fill();
+
+    // Boundary meridians (every 15° at ±7.5°)
     ctx.beginPath();
     for (let off = -11; off <= 12; off++) {
       const lonB = off * 15 - 7.5;
       pathC({ type: 'LineString', coordinates: d3.range(-75, 81, 3).map(y => [lonB, y]) });
     }
     ctx.setLineDash([4, 4]);
-    ctx.strokeStyle = C.dark ? 'rgba(56, 189, 248, 0.36)' : 'rgba(2, 132, 199, 0.32)';
-    ctx.lineWidth = 0.9;
+    ctx.strokeStyle = C.dark ? 'rgba(56, 189, 248, 0.42)' : 'rgba(2, 132, 199, 0.38)';
+    ctx.lineWidth = 1.0;
     ctx.stroke();
 
     // International Date Line (180°)
     ctx.beginPath();
     pathC({ type: 'LineString', coordinates: d3.range(-75, 81, 3).map(y => [180, y]) });
     ctx.setLineDash([6, 3]);
-    ctx.strokeStyle = C.dark ? 'rgba(251, 191, 36, 0.65)' : 'rgba(217, 119, 6, 0.65)';
-    ctx.lineWidth = 1.35;
+    ctx.strokeStyle = C.dark ? 'rgba(251, 191, 36, 0.72)' : 'rgba(217, 119, 6, 0.70)';
+    ctx.lineWidth = 1.4;
     ctx.stroke();
     ctx.setLineDash([]);
   }
@@ -938,8 +997,9 @@ export function render(now) {
       ctx.fill();
 
       if (act || (!lowres && (cap.rank === 1 ? k >= 1.35 : cap.rank === 2 ? k >= 1.85 : k >= 2.5))) {
-        const nk = baseKey(cap.vi);
-        const w = ctx.measureText(cap.vi).width + 6, hh = 13;
+        const lbl = capName(cap);
+        const nk = baseKey(lbl);
+        const w = ctx.measureText(lbl).width + 6, hh = 13;
         const box = [q[0] + 7, q[1] - hh / 2, w, hh];
         if (act || tryPlace(box, nk)) {
           if (act) {
@@ -948,9 +1008,9 @@ export function render(now) {
           }
           ctx.lineWidth = 2.8;
           ctx.strokeStyle = C['label-halo'];
-          ctx.strokeText(cap.vi, q[0] + 7, q[1]);
+          ctx.strokeText(lbl, q[0] + 7, q[1]);
           ctx.fillStyle = C.dark ? '#FDBA74' : '#C2410C';
-          ctx.fillText(cap.vi, q[0] + 7, q[1]);
+          ctx.fillText(lbl, q[0] + 7, q[1]);
         }
       }
       pushIcon(q, 4);
@@ -982,8 +1042,9 @@ export function render(now) {
       ctx.stroke();
 
       if (act || (!lowres && (isl.rank === 1 ? k >= 1.5 : k >= 2.2))) {
-        const nk = baseKey(isl.vi);
-        const w = ctx.measureText(isl.vi).width + 6, hh = 13;
+        const lbl = islName(isl);
+        const nk = baseKey(lbl);
+        const w = ctx.measureText(lbl).width + 6, hh = 13;
         const box = [q[0] + 7, q[1] - hh / 2, w, hh];
         if (act || tryPlace(box, nk)) {
           if (act) {
@@ -992,9 +1053,9 @@ export function render(now) {
           }
           ctx.lineWidth = 2.6;
           ctx.strokeStyle = C['label-halo'];
-          ctx.strokeText(isl.vi, q[0] + 7, q[1]);
+          ctx.strokeText(lbl, q[0] + 7, q[1]);
           ctx.fillStyle = C.dark ? '#5EEAD4' : '#0F766E';
-          ctx.fillText(isl.vi, q[0] + 7, q[1]);
+          ctx.fillText(lbl, q[0] + 7, q[1]);
         }
       }
       pushIcon(q, 4);
@@ -1022,8 +1083,9 @@ export function render(now) {
       ctx.stroke();
 
       if (act || (!lowres && (ct.rank === 1 ? k >= 1.65 : k >= 2.3))) {
-        const nk = baseKey(ct.vi);
-        const w = ctx.measureText(ct.vi).width + 6, hh = 13;
+        const lbl = cityName(ct);
+        const nk = baseKey(lbl);
+        const w = ctx.measureText(lbl).width + 6, hh = 13;
         const box = [q[0] + 7, q[1] - hh / 2, w, hh];
         if (act || tryPlace(box, nk)) {
           if (act) {
@@ -1032,9 +1094,9 @@ export function render(now) {
           }
           ctx.lineWidth = 2.6;
           ctx.strokeStyle = C['label-halo'];
-          ctx.strokeText(ct.vi, q[0] + 7, q[1]);
+          ctx.strokeText(lbl, q[0] + 7, q[1]);
           ctx.fillStyle = C.dark ? '#93C5FD' : '#1D4ED8';
-          ctx.fillText(ct.vi, q[0] + 7, q[1]);
+          ctx.fillText(lbl, q[0] + 7, q[1]);
         }
       }
       pushIcon(q, 3.5);
@@ -1049,6 +1111,141 @@ export function render(now) {
     pushIcon(proj(p), 5);
   });
 
+  // 4b. Timezone AM/PM Clock Badges (st.on.timezone — placed before country/ocean labels so they never get blocked or overlap text)
+  if (st.on.timezone) {
+    const utcMin = Math.floor(Date.now() / 60000);
+    const placedTz = [];
+    const fmtTz = offHours => {
+      const total = (((utcMin + Math.round(offHours * 60)) % 1440) + 1440) % 1440;
+      const h24 = Math.floor(total / 60);
+      const m = total % 60;
+      const ampm = h24 >= 12 ? 'PM' : 'AM';
+      const h12 = h24 % 12 || 12;
+      const mm = m < 10 ? '0' + m : '' + m;
+      const isDay = h24 >= 6 && h24 < 18;
+      return { time: `${h12}:${mm} ${ampm}`, isDay };
+    };
+    const tryPlaceTz = box => {
+      if (box[0] < 4 || box[0] + box[2] > W - 4 || box[1] < 4 || box[1] + box[3] > Hh - 4) return false;
+      if (
+        placedTz.some(
+          b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1])
+        )
+      )
+        return false;
+      placedTz.push(box);
+      placed.push(box);
+      return true;
+    };
+    const drawTzBadge = (candPts, topTxt, subTxt, isDay) => {
+      ctx.font = '600 10px "Be Vietnam Pro",system-ui,sans-serif';
+      const w1 = ctx.measureText(topTxt).width;
+      ctx.font = '500 9px "Be Vietnam Pro",system-ui,sans-serif';
+      const w2 = ctx.measureText(subTxt).width;
+      const bw = Math.max(w1 + 14, w2 + 10, 52);
+      const bh = 26;
+
+      let chosenQ = null;
+      for (const pt of candPts) {
+        if (d3.geoDistance(pt, centerPt) > Math.PI / 2 - 0.06) continue;
+        const q = proj(pt);
+        if (!q) continue;
+        if (Math.hypot(q[0] - cx, q[1] - cy) > r - 24) continue;
+        const bx = q[0] - bw / 2, by = q[1] - bh / 2;
+        if (tryPlaceTz([bx - 2, by - 2, bw + 4, bh + 4])) {
+          chosenQ = q;
+          break;
+        }
+      }
+      if (!chosenQ) return false;
+
+      const bx = chosenQ[0] - bw / 2, by = chosenQ[1] - bh / 2;
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 6);
+      else ctx.rect(bx, by, bw, bh);
+      ctx.fillStyle = C.dark ? 'rgba(11, 20, 34, 0.90)' : 'rgba(255, 255, 255, 0.92)';
+      ctx.fill();
+      ctx.lineWidth = 1.1;
+      ctx.strokeStyle = isDay
+        ? C.dark
+          ? 'rgba(251, 191, 36, 0.65)'
+          : 'rgba(217, 119, 6, 0.55)'
+        : C.dark
+        ? 'rgba(56, 189, 248, 0.60)'
+        : 'rgba(2, 132, 199, 0.50)';
+      ctx.stroke();
+
+      // Day/Night indicator dot
+      ctx.beginPath();
+      ctx.arc(bx + 7.5, by + 9, 2.4, 0, 7);
+      ctx.fillStyle = isDay ? '#F59E0B' : '#38BDF8';
+      ctx.fill();
+
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = '600 10px "Be Vietnam Pro",system-ui,sans-serif';
+      ctx.fillStyle = C.dark ? '#F8FAFC' : '#0F172A';
+      ctx.fillText(topTxt, chosenQ[0] + 3, by + 9);
+
+      ctx.font = '500 8.8px "Be Vietnam Pro",system-ui,sans-serif';
+      ctx.fillStyle = isDay
+        ? C.dark
+          ? '#FCD34D'
+          : '#B45309'
+        : C.dark
+        ? '#7DD3FC'
+        : '#0369A1';
+      ctx.fillText(subTxt, chosenQ[0], by + 19.5);
+      return true;
+    };
+
+    const baseLat = Math.max(-48, Math.min(52, centerPt[1]));
+    const offsets = d3.range(-11, 13).sort((a, b) => {
+      const la = a === 12 ? 180 : a * 15;
+      const lb = b === 12 ? 180 : b * 15;
+      return d3.geoDistance([la, baseLat], centerPt) - d3.geoDistance([lb, baseLat], centerPt);
+    });
+    for (const off of offsets) {
+      let lonC = off === 12 ? 180 : off * 15;
+      if (k >= 1.5 && off !== 12) {
+        const diff = ((((centerPt[0] - lonC) % 360) + 540) % 360) - 180;
+        if (Math.abs(diff) < 12) {
+          lonC += Math.max(-5.5, Math.min(5.5, diff));
+        }
+      }
+      const { time, isDay } = fmtTz(off);
+      const lbl = off === 0 ? 'UTC±0' : off === 12 ? 'UTC±12' : `UTC${off > 0 ? '+' + off : off}`;
+      const stagger = k < 1.65 ? (Math.abs(off) % 2 === 0 ? 6.5 : -6.5) : 0;
+      const l0 = Math.max(-58, Math.min(62, baseLat + stagger));
+      const candPts = [
+        [lonC, l0],
+        [lonC, Math.max(-58, Math.min(62, baseLat - stagger))],
+        [lonC, Math.max(-60, Math.min(64, l0 + 11))],
+        [lonC, Math.max(-60, Math.min(64, l0 - 11))],
+        [lonC, Math.max(-62, Math.min(66, l0 + 20))],
+        [lonC, Math.max(-62, Math.min(66, l0 - 20))]
+      ];
+      drawTzBadge(candPts, time, lbl, isDay);
+    }
+
+    if (k >= 1.45) {
+      const isEn = st.lang === 'en';
+      const specials = [
+        { pt: [79.0, 22.0], off: 5.5, sub: isEn ? 'India · UTC+5:30' : 'Ấn Độ · UTC+5:30' },
+        { pt: [53.5, 32.5], off: 3.5, sub: 'Iran · UTC+3:30' },
+        { pt: [66.0, 33.8], off: 4.5, sub: 'Afghan · UTC+4:30' },
+        { pt: [96.5, 20.5], off: 6.5, sub: 'Myanmar · UTC+6:30' },
+        { pt: [84.0, 28.2], off: 5.75, sub: 'Nepal · UTC+5:45' },
+        { pt: [134.5, -25.0], off: 9.5, sub: isEn ? 'Central AU · UTC+9:30' : 'Trung Úc · UTC+9:30' },
+        { pt: [86.0, 41.5], off: 8.0, sub: isEn ? 'Xinjiang (Beijing) · UTC+8' : 'Tân Cương (giờ BK) · UTC+8' }
+      ];
+      for (const sp of specials) {
+        const { time, isDay } = fmtTz(sp.off);
+        drawTzBadge([sp.pt, [sp.pt[0], sp.pt[1] - 5], [sp.pt[0], sp.pt[1] + 5]], time, sp.sub, isDay);
+      }
+    }
+  }
+
   // 5. Country labels
   if (st.ref.labels && !lowres) {
     ctx.font = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
@@ -1057,8 +1254,9 @@ export function render(now) {
     const cand = labelCands(cx, cy, r);
     for (const o of cand) {
       const f = o.f, p = o.p;
-      const nk = baseKey(f.vi);
-      const w = ctx.measureText(f.vi).width + 6, hh = 15;
+      const lbl = cName(f.en);
+      const nk = baseKey(lbl);
+      const w = ctx.measureText(lbl).width + 6, hh = 15;
       let py = p[1];
       let box = [p[0] - w / 2, py - hh / 2, w, hh];
       if (!tryPlace(box, nk)) {
@@ -1068,9 +1266,9 @@ export function render(now) {
       }
       ctx.lineWidth = 3;
       ctx.strokeStyle = C['label-halo'];
-      ctx.strokeText(f.vi, p[0], py);
+      ctx.strokeText(lbl, p[0], py);
       ctx.fillStyle = C.label;
-      ctx.fillText(f.vi, p[0], py);
+      ctx.fillText(lbl, p[0], py);
     }
   }
 
@@ -1086,9 +1284,10 @@ export function render(now) {
       if (d3.geoDistance(f.cen, centerPt) > Math.PI / 2 - 0.04) continue;
       const p = proj(f.cen);
       if (!p) continue;
-      const nk = baseKey(f.vi);
+      const lbl = adm1Name(f);
+      const nk = baseKey(lbl);
       if (nk && placedNames.has(nk) && !act) continue;
-      const w = ctx.measureText(f.vi).width + 6, hh = 13;
+      const w = ctx.measureText(lbl).width + 6, hh = 13;
       let py = p[1];
       let box = [p[0] - w / 2, py - hh / 2, w, hh];
       if (!act) {
@@ -1104,14 +1303,15 @@ export function render(now) {
       }
       ctx.lineWidth = 2.6;
       ctx.strokeStyle = C['label-halo'];
-      ctx.strokeText(f.vi, p[0], py);
+      ctx.strokeText(lbl, p[0], py);
       ctx.fillStyle = act ? C.accent : C.dark ? 'rgba(215,220,235,0.82)' : 'rgba(65,60,52,0.82)';
-      ctx.fillText(f.vi, p[0], py);
+      ctx.fillText(lbl, p[0], py);
     }
   }
 
   // 7. Ocean & Sea Labels (WATER_LABELS — default on with st.ref.labels)
   if (st.ref.labels) {
+    const enMode = isEn();
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     for (const w of WATER_LABELS) {
@@ -1125,19 +1325,20 @@ export function render(now) {
       if (d3.geoDistance(w.pt, centerPt) > Math.PI / 2 - 0.08) continue;
       const q = proj(w.pt);
       if (!q) continue;
+      const lbl = enMode ? w.en || w.n : w.n;
       ctx.font =
         w.rank === 1
           ? 'italic 500 12.5px "Lora", Georgia, serif'
           : w.rank === 2
           ? 'italic 500 11.5px "Lora", Georgia, serif'
           : 'italic 500 10.5px "Lora", Georgia, serif';
-      const nk = w.rank === 1 ? 'ocean_' + norm(w.n) : baseKey(w.n);
-      const tw = ctx.measureText(w.n).width + 8, hh = w.rank === 1 ? 16 : 14;
+      const nk = w.rank === 1 ? 'ocean_' + norm(lbl) : baseKey(lbl);
+      const tw = ctx.measureText(lbl).width + 8, hh = w.rank === 1 ? 16 : 14;
       const box = [q[0] - tw / 2, q[1] - hh / 2, tw, hh];
       if (!tryPlace(box, nk)) continue;
       ctx.lineWidth = 3;
       ctx.strokeStyle = C.dark ? 'rgba(10, 22, 40, 0.72)' : 'rgba(205, 228, 246, 0.78)';
-      ctx.strokeText(w.n, q[0], q[1]);
+      ctx.strokeText(lbl, q[0], q[1]);
       ctx.fillStyle =
         w.rank === 1
           ? C.dark
@@ -1146,101 +1347,7 @@ export function render(now) {
           : C.dark
           ? 'rgba(148, 198, 245, 0.68)'
           : 'rgba(24, 90, 150, 0.62)';
-      ctx.fillText(w.n, q[0], q[1]);
-    }
-  }
-
-  // 8. Timezone AM/PM Clock Badges (st.on.timezone)
-  if (st.on.timezone) {
-    const utcMin = Math.floor(Date.now() / 60000);
-    const fmtTz = offHours => {
-      const total = (((utcMin + Math.round(offHours * 60)) % 1440) + 1440) % 1440;
-      const h24 = Math.floor(total / 60);
-      const m = total % 60;
-      const ampm = h24 >= 12 ? 'PM' : 'AM';
-      const h12 = h24 % 12 || 12;
-      const mm = m < 10 ? '0' + m : '' + m;
-      const isDay = h24 >= 6 && h24 < 18;
-      return { time: `${h12}:${mm} ${ampm}`, isDay };
-    };
-    const drawTzBadge = (pt, topTxt, subTxt, isDay) => {
-      if (d3.geoDistance(pt, centerPt) > Math.PI / 2 - 0.08) return;
-      const q = proj(pt);
-      if (!q) return;
-      ctx.font = '600 10.5px "Be Vietnam Pro",system-ui,sans-serif';
-      const w1 = ctx.measureText(topTxt).width;
-      ctx.font = '500 9.5px "Be Vietnam Pro",system-ui,sans-serif';
-      const w2 = ctx.measureText(subTxt).width;
-      const bw = Math.max(w1 + 14, w2 + 12, 56);
-      const bh = 28;
-      const bx = q[0] - bw / 2, by = q[1] - bh / 2;
-      if (!tryPlace([bx - 2, by - 2, bw + 4, bh + 4])) return;
-
-      ctx.beginPath();
-      if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 6);
-      else ctx.rect(bx, by, bw, bh);
-      ctx.fillStyle = C.dark ? 'rgba(13, 22, 36, 0.88)' : 'rgba(255, 255, 255, 0.90)';
-      ctx.fill();
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = isDay
-        ? C.dark
-          ? 'rgba(251, 191, 36, 0.55)'
-          : 'rgba(217, 119, 6, 0.50)'
-        : C.dark
-        ? 'rgba(56, 189, 248, 0.50)'
-        : 'rgba(2, 132, 199, 0.45)';
-      ctx.stroke();
-
-      // Day/Night indicator dot
-      ctx.beginPath();
-      ctx.arc(bx + 8, by + 9.5, 2.6, 0, 7);
-      ctx.fillStyle = isDay ? '#F59E0B' : '#38BDF8';
-      ctx.fill();
-
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.font = '600 10.5px "Be Vietnam Pro",system-ui,sans-serif';
-      ctx.fillStyle = C.dark ? '#F8FAFC' : '#0F172A';
-      ctx.fillText(topTxt, q[0] + 3, by + 9.5);
-
-      ctx.font = '500 9px "Be Vietnam Pro",system-ui,sans-serif';
-      ctx.fillStyle = isDay
-        ? C.dark
-          ? '#FCD34D'
-          : '#B45309'
-        : C.dark
-        ? '#7DD3FC'
-        : '#0369A1';
-      ctx.fillText(subTxt, q[0], by + 20.5);
-    };
-
-    const latTz = Math.max(-52, Math.min(58, centerPt[1]));
-    const offsets = d3.range(-11, 13).sort((a, b) => {
-      const la = a === 12 ? 180 : a * 15;
-      const lb = b === 12 ? 180 : b * 15;
-      return d3.geoDistance([la, latTz], centerPt) - d3.geoDistance([lb, latTz], centerPt);
-    });
-    for (const off of offsets) {
-      const lonC = off === 12 ? 180 : off * 15;
-      const { time, isDay } = fmtTz(off);
-      const lbl = off === 0 ? 'UTC±0' : off === 12 ? 'UTC±12' : `UTC${off > 0 ? '+' + off : off}`;
-      drawTzBadge([lonC, latTz], time, lbl, isDay);
-    }
-
-    if (k >= 1.45) {
-      const specials = [
-        { pt: [79.0, 22.0], off: 5.5, sub: 'Ấn Độ · UTC+5:30' },
-        { pt: [53.5, 32.5], off: 3.5, sub: 'Iran · UTC+3:30' },
-        { pt: [66.0, 33.8], off: 4.5, sub: 'Afghan · UTC+4:30' },
-        { pt: [96.5, 20.5], off: 6.5, sub: 'Myanmar · UTC+6:30' },
-        { pt: [84.0, 28.2], off: 5.75, sub: 'Nepal · UTC+5:45' },
-        { pt: [134.5, -25.0], off: 9.5, sub: 'Trung Úc · UTC+9:30' },
-        { pt: [86.0, 41.5], off: 8.0, sub: 'Tân Cương (giờ BK) · UTC+8' }
-      ];
-      for (const sp of specials) {
-        const { time, isDay } = fmtTz(sp.off);
-        drawTzBadge(sp.pt, time, sp.sub, isDay);
-      }
+      ctx.fillText(lbl, q[0], q[1]);
     }
   }
 
@@ -1281,18 +1388,19 @@ export function render(now) {
     ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
     ctx.stroke();
     if (act || (!lowres && k >= 2.2)) {
+      const lbl = hName(h);
       ctx.font = '600 11px "Be Vietnam Pro",system-ui,sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
-      const w = ctx.measureText(h.n).width + 6, hh = 14;
+      const w = ctx.measureText(lbl).width + 6, hh = 14;
       const box = [q[0] + 9, q[1] - hh / 2, w, hh];
       if (act || tryPlace(box)) {
         if (act) placed.push(box);
         ctx.lineWidth = 3;
         ctx.strokeStyle = C['label-halo'];
-        ctx.strokeText(h.n, q[0] + 10, q[1]);
+        ctx.strokeText(lbl, q[0] + 10, q[1]);
         ctx.fillStyle = C.dark ? d3.color(c).brighter(1.2) + '' : d3.color(c).darker(0.6) + '';
-        ctx.fillText(h.n, q[0] + 10, q[1]);
+        ctx.fillText(lbl, q[0] + 10, q[1]);
       }
     }
   });
@@ -1303,25 +1411,27 @@ export function render(now) {
     if (h.kind === 'lake') {
       if (!vis(h.cen)) return;
       const q = proj(h.cen);
+      const lbl = lakeName(h);
       ctx.font = '600 12px "Be Vietnam Pro",system-ui,sans-serif';
       ctx.textAlign = 'center';
       ctx.lineWidth = 3.5;
       ctx.strokeStyle = C['label-halo'];
-      ctx.strokeText(h.vi || h.n, q[0], q[1] - 8);
+      ctx.strokeText(lbl, q[0], q[1] - 8);
       ctx.fillStyle = C.label;
-      ctx.fillText(h.vi || h.n, q[0], q[1] - 8);
+      ctx.fillText(lbl, q[0], q[1] - 8);
       return;
     }
     if (!h.id || !h.t || h.kind === 'pt' || !vh(h)) return;
     if (!vis(h.lab)) return;
     const q = proj(h.lab);
+    const lbl = hName(h);
     ctx.font = '600 12px "Be Vietnam Pro",system-ui,sans-serif';
     ctx.textAlign = 'center';
     ctx.lineWidth = 3.5;
     ctx.strokeStyle = C['label-halo'];
-    ctx.strokeText(h.n, q[0], q[1] - 10);
+    ctx.strokeText(lbl, q[0], q[1] - 10);
     ctx.fillStyle = C.label;
-    ctx.fillText(h.n, q[0], q[1] - 10);
+    ctx.fillText(lbl, q[0], q[1] - 10);
   });
 
   // shading
