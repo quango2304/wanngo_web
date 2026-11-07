@@ -1,5 +1,5 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0, TOOLS } from '../data/countries.js?v=20261107b';
+import { C0, TOOLS } from '../data/countries.js?v=20261108';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
 import { iconSvg } from './icons.js';
@@ -59,7 +59,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261107b';
+} from './state.js?v=20261108';
 import {
   cv,
   proj,
@@ -74,8 +74,27 @@ import {
   MAX_K,
   stopSpin,
   inBB,
-  rebuildSearchIndex
-} from './globe.js?v=20261107b';
+  rebuildSearchIndex,
+  CONT_OBJS,
+  contName
+} from './globe.js?v=20261108';
+import {
+  CONT,
+  AMERICAS,
+  TRANS_LAND,
+  TRANS_ISLAND,
+  NON_UN,
+  UN_EXTRA,
+  CONT_CARD,
+  AREA_SRC,
+  POP_SRC,
+  POP_NOTE,
+  BOUNDARY_NOTE,
+  UN_REGION_VI,
+  WORLD_POP_2024,
+  cardKey,
+  contOf
+} from '../data/continents.js?v=20261108';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -468,6 +487,146 @@ function compareHTML(en1, en2) {
   return s;
 }
 
+// ---------- continents
+const contMeta = key => (key === 'americas' ? AMERICAS : CONT[key]);
+const contLbl = key => (isEn() ? contMeta(key).en : contMeta(key).vi);
+// label for a continent chip: North / South America read as part of the Americas
+const contChipLbl = k2 =>
+  k2 === 'nam' || k2 === 'sam' ? `${contLbl('americas')} (${contLbl(k2)})` : contLbl(k2);
+// theme-aware swatch: CSS picks --cl (light) or --cd (dark)
+const contVars = k2 => `--cl:${CONT[k2].c[0]};--cd:${CONT[k2].c[1]}`;
+const contDot = k2 => `<span class="dot cdot" style="${contVars(k2)}"></span>`;
+const contChip = k2 => `<span class="chip" data-cont="${k2}">${contDot(k2)}${contChipLbl(k2)}</span>`;
+
+function contLineHTML(f) {
+  const tl = TRANS_LAND[f.en];
+  const ti = TRANS_ISLAND[f.en];
+  const keys = tl ? tl.c : [contOf(f.en, f.rg)];
+  let s = `<div class="cont-line"><span class="cont-lbl">${tr('Châu lục', 'Continent')}</span><span class="chips">${keys
+    .map(contChip)
+    .join('')}</span>`;
+  if (tl) s += `<span class="cont-tag">${tr('xuyên lục địa', 'transcontinental')}</span>`;
+  s += `</div>`;
+  if (tl) s += `<div class="cont-note">${isEn() ? tl.en : tl.vi}</div>`;
+  else if (ti) s += `<div class="cont-note">${tr('Có lãnh thổ hải đảo ở châu khác: ', 'Has island territory in another continent: ')}${isEn() ? ti.en : ti.vi}</div>`;
+  return s;
+}
+
+function unMembers() {
+  const list = MAP.F.filter(f => !NON_UN.has(f.en) && f.rg !== 'territory').map(f => ({ en: f.en, c: contOf(f.en, f.rg), f }));
+  Object.entries(UN_EXTRA).forEach(([en, c]) => list.push({ en, c, f: null }));
+  return list;
+}
+
+function contHTML(o) {
+  activeView = { type: 'cont', o };
+  const enMode = isEn();
+  const key = o.key;
+  const card = CONT_CARD[key];
+  const loc = enMode ? 'en-US' : 'vi-VN';
+  const meta = contMeta(key);
+  const fmtArea = v =>
+    enMode
+      ? `${(v / 1e6).toLocaleString(loc, { maximumFractionDigits: 2 })} million km²`
+      : `${(v / 1e6).toLocaleString(loc, { maximumFractionDigits: 2 })} triệu km²`;
+  const fmtPop = th =>
+    th >= 1e6
+      ? enMode
+        ? `${(th / 1e6).toLocaleString(loc, { maximumFractionDigits: 2 })} billion`
+        : `${(th / 1e6).toLocaleString(loc, { maximumFractionDigits: 2 })} tỷ`
+      : enMode
+      ? `${(th / 1e3).toLocaleString(loc, { maximumFractionDigits: 1 })} million`
+      : `${(th / 1e3).toLocaleString(loc, { maximumFractionDigits: 1 })} triệu`;
+  const pct = th => `${((th / WORLD_POP_2024) * 100).toLocaleString(loc, { maximumFractionDigits: 1 })}%`;
+  const unName = n => (enMode ? n : UN_REGION_VI[n] || n);
+  const subs = key === 'americas' ? ['nam', 'sam'] : [key];
+
+  let s = `<div class="kick">${tr('CHÂU LỤC', 'CONTINENT')}</div><h1>${contLbl(key)}</h1><div class="sub-h1">${enMode ? meta.vi : meta.en}</div>`;
+  s += `<div class="cont-leg">${subs
+    .map(k2 => `<span><i class="cdot" style="${contVars(k2)}"></i>${key === 'americas' ? contLbl(k2) : tr('Đường viền trên bản đồ', 'Outline on the map')}</span>`)
+    .join('')}</div>`;
+
+  // stats
+  const popTotal = card.pop ? card.pop.reduce((a, p) => a + p[1], 0) : null;
+  const members = unMembers();
+  const trans = Object.entries(TRANS_LAND).filter(([, t]) => t.c.some(c => cardKey(c) === key));
+  const inside = members.filter(m => cardKey(m.c) === key && !TRANS_LAND[m.en]);
+  s += `<div class="stats">
+    <div class="stat"><small>${tr('Diện tích (xấp xỉ)', 'Area (approx.)')}</small><div>${fmtArea(card.area)}</div></div>
+    <div class="stat"><small>${tr('Dân số 2024', 'Population 2024')}</small><div>${popTotal ? fmtPop(popTotal) : tr('Không có dân thường trú', 'No permanent population')}</div></div>
+    <div class="stat"><small>${tr('Nước thành viên LHQ', 'UN member states')}</small><div>${inside.length}${trans.length ? ` <span style="color:var(--muted);font-size:12px">+ ${trans.length} ${tr('xuyên lục địa', 'transcontinental')}</span>` : ''}</div></div>
+  </div>`;
+
+  // breakdown
+  const rows = [];
+  if (card.areaParts)
+    card.areaParts.forEach(([k2, v, link]) =>
+      rows.push(`<div class="cont-row"><span>${contDot(k2)}${tr('Diện tích', 'Area')} ${contLbl(k2)}</span><b>${fmtArea(v)}</b><a href="${link}" target="_blank" rel="noopener" aria-label="${tr('Nguồn', 'Source')}">↗</a></div>`)
+    );
+  if (card.pop) {
+    if (card.pop.length > 1)
+      card.pop.forEach(([n, th]) =>
+        rows.push(`<div class="cont-row"><span>${tr('Dân số', 'Population')} ${unName(n)}</span><b>${fmtPop(th)}</b><small>${pct(th)}</small></div>`)
+      );
+    else rows.push(`<div class="cont-row"><span>${tr('Tỉ lệ dân số thế giới', 'Share of world population')}</span><b>${pct(popTotal)}</b></div>`);
+  }
+  if (key === 'americas') {
+    ['nam', 'sam'].forEach(k2 => {
+      const n = inside.filter(m => m.c === k2).length;
+      rows.push(`<div class="cont-row"><span>${contDot(k2)}${tr('Nước thành viên LHQ ở', 'UN members in')} ${contLbl(k2)}</span><b>${n}</b></div>`);
+    });
+  }
+  if (rows.length) s += `<div class="cont-rows">${rows.join('')}</div>`;
+
+  if (trans.length) {
+    s += `<div class="sec">${tr('NƯỚC XUYÊN LỤC ĐỊA', 'TRANSCONTINENTAL COUNTRIES')}</div>`;
+    s += trans
+      .map(([en, t]) => `<div class="cont-trans"><span class="chip" data-c="${en}">${cName(en)}</span><small>${enMode ? t.en : t.vi}</small></div>`)
+      .join('');
+  }
+  const sorted = inside.sort((a, b) => cName(a.en).localeCompare(cName(b.en), enMode ? 'en' : 'vi'));
+  s += `<details class="adm-list"><summary><span>${tr('CÁC NƯỚC THÀNH VIÊN LHQ', 'UN MEMBER STATES')} (${sorted.length})</span><small style="font-weight:400">${tr('bấm để mở', 'click to expand')}</small></summary><div class="chips">${sorted
+    .map(m => (m.f ? `<span class="chip" data-c="${m.en}">${cName(m.en)}</span>` : `<span class="chip" style="cursor:default">${cName(m.en)}</span>`))
+    .join('')}</div></details>`;
+
+  // sources and caveats
+  const areaLinks = card.areaParts ? card.areaParts.map(p => p[2]) : [card.areaLink];
+  const areaNote = card.areaNote ? ` (${enMode ? card.areaNote.en : card.areaNote.vi})` : '';
+  s += `<div class="sec">${tr('NGUỒN SỐ LIỆU', 'DATA SOURCES')}</div><div class="cont-src">
+    <div><b>${tr('Diện tích', 'Area')}:</b> ${enMode ? AREA_SRC.en : AREA_SRC.vi}, ${tr('số xấp xỉ theo ranh giới của Britannica', 'approximate, by Britannica’s own boundaries')}${areaNote}. ${areaLinks
+      .map(l => `<a href="${l}" target="_blank" rel="noopener">${tr('Xem nguồn', 'Source')} ↗</a>`)
+      .join(' · ')}</div>
+    ${card.pop ? `<div><b>${tr('Dân số', 'Population')}:</b> ${enMode ? POP_SRC.en : POP_SRC.vi}. <a href="${POP_SRC.link}" target="_blank" rel="noopener">${tr('Xem nguồn', 'Source')} ↗</a></div>` : ''}
+    <div><b>${tr('Số nước', 'Countries')}:</b> ${tr('193 nước thành viên LHQ, xếp theo châu chứa phần lớn lãnh thổ trên bản đồ này; nước xuyên lục địa liệt kê riêng.', '193 UN member states, assigned to the continent holding most of their territory on this map; transcontinental countries listed separately.')}</div>
+  </div>`;
+  if (card.pop) s += `<p class="note">${enMode ? POP_NOTE.en : POP_NOTE.vi}</p>`;
+  s += `<p class="note">${enMode ? BOUNDARY_NOTE.en : BOUNDARY_NOTE.vi}</p>`;
+  return s;
+}
+
+function renderContLegend() {
+  const lg = $('#contLeg');
+  if (!lg) return;
+  if (!st.on.continents) {
+    lg.classList.remove('show');
+    return;
+  }
+  const item = k2 => `<button type="button" class="cl-it" data-cont="${k2}"><i class="cdot" style="${contVars(k2)}"></i>${contLbl(k2)}</button>`;
+  lg.innerHTML = `<div class="cl-hd"><b>${tr('Châu lục', 'Continents')}</b><button class="lnk" id="contX" type="button" style="padding:0">${tr('Tắt', 'Off')}</button></div>
+    <div class="cl-row">${['asia', 'europe', 'africa'].map(item).join('')}</div>
+    <div class="cl-row"><span class="cl-grp">${contLbl('americas')}:</span>${['nam', 'sam'].map(item).join('')}</div>
+    <div class="cl-row">${['oceania', 'antarctica'].map(item).join('')}<span class="cl-it cl-dash"><i></i>${tr('Ranh giới trên đất liền', 'Land boundary')}</span></div>`;
+  lg.setAttribute('aria-label', tr('Châu lục', 'Continents'));
+  lg.classList.add('show');
+  lg.querySelectorAll('[data-cont]').forEach(e => (e.onclick = () => select(CONT_OBJS[e.dataset.cont], true)));
+  $('#contX').onclick = () => {
+    st.on.continents = false;
+    savePrefs();
+    buildLayers();
+    st.dirty = true;
+  };
+}
+
 function countryHTML(f, ll) {
   activeView = { type: 'country', f, ll };
   const enMode = isEn();
@@ -492,6 +651,7 @@ function countryHTML(f, ll) {
   const subTitle = enMode ? (f.vi !== f.en ? f.vi : '') : f.en && f.en !== f.vi ? f.en : '';
   let s = `<div class="kick">${rg[0]}</div><h1>${mainTitle}</h1>`;
   if (subTitle) s += `<div class="sub-h1">${subTitle}</div>`;
+  s += contLineHTML(f);
   if (d) {
     s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div>`;
     s += fmtSum(d.sum);
@@ -842,6 +1002,19 @@ function wire() {
         if (c) select(c, true);
       })
   );
+  PB.querySelectorAll('[data-cont]').forEach(
+    e =>
+      (e.onclick = () => {
+        const o = CONT_OBJS[e.dataset.cont];
+        if (!o) return;
+        if (!st.on.continents) {
+          st.on.continents = true;
+          savePrefs();
+          buildLayers();
+        }
+        select(o, true);
+      })
+  );
   PB.querySelectorAll('[data-adm1]').forEach(
     e =>
       (e.onclick = () => {
@@ -970,7 +1143,10 @@ export function select(o, fly) {
   if (!o) return;
   st.sel = o;
   st.dirty = true;
-  if (o.isAdm1) {
+  if (o.kind === 'cont') {
+    openPanel(contHTML(o));
+    flyTo(o.fly, o.k);
+  } else if (o.isAdm1) {
     openPanel(adm1HTML(o));
     if (fly) flyTo(o.cen, Math.max(2.6, Math.min(7.5, fitK(o))));
   } else if (o.kind === 'cap' || o.kind === 'city' || o.kind === 'isl') {
@@ -1032,6 +1208,7 @@ export function buildLayers() {
         st.dirty = true;
       })
   );
+  renderContLegend();
 
   $('#refs').innerHTML = Object.entries(REF)
     .map(([key, r]) => {
@@ -1173,6 +1350,7 @@ export function setAl(key, openLeaderboard = false) {
 }
 
 function tipLabel(h) {
+  if (h.kind === 'cont') return `${contName(h)}<small>${tr('châu lục · bấm để xem', 'continent · click for details')}</small>`;
   if (h.isAdm1) return `${adm1Name(h)}<small>${tr('bang / tỉnh', 'state / province')} · ${cName(h.country)}</small>`;
   if (h.kind === 'cap') return `${capName(h)}<small>${tr('thủ đô', 'capital')} · ${cName(h.country)}</small>`;
   if (h.kind === 'city') return `${cityName(h)}<small>${tr('đô thị / cảng', 'city / port')} · ${cName(h.country)}</small>`;
@@ -1268,6 +1446,7 @@ export function applyLang() {
     else if (activeView.type === 'adm1') openPanel(adm1HTML(activeView.f));
     else if (activeView.type === 'urban') openPanel(urbanIslandHTML(activeView.o));
     else if (activeView.type === 'hot') openPanel(hotHTML(activeView.h));
+    else if (activeView.type === 'cont') openPanel(contHTML(activeView.o));
   }
 }
 

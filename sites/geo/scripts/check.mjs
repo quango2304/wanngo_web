@@ -34,5 +34,24 @@ for (const f of ['index.html', ...readdirSync(path.join(pub, 'js')).map((f) => '
 const all = new Set([...Object.values(vs)].flatMap((s) => [...s]));
 if (all.size > 1) bad(`inconsistent ?v= values: ${[...all]}`);
 
+// continents: every map feature has a continent, and the UN member list adds up to 193
+{
+  const { NAMES } = await import(pathToFileURL(path.join(pub, 'data/regions.js')));
+  const { CONT, contOf, NON_UN, UN_EXTRA, TRANS_LAND, CONT_CARD, cardKey } = await import(
+    pathToFileURL(path.join(pub, 'data/continents.js'))
+  );
+  const w50 = JSON.parse(readFileSync(path.join(pub, 'assets/map/world-50m.json'), 'utf8'));
+  const names = w50.objects.countries.geometries.map((g) => g.properties.name);
+  for (const n of names) {
+    const rg = (NAMES[n] || [, 'territory'])[1];
+    if (!CONT[contOf(n, rg)]) bad(`continent missing for ${n}`);
+  }
+  const members = names.filter((n) => !NON_UN.has(n) && (NAMES[n] || [, 'territory'])[1] !== 'territory');
+  const total = members.length + Object.keys(UN_EXTRA).length;
+  if (total !== 193) bad(`UN members on map = ${total}, expected 193`);
+  for (const n of Object.keys(TRANS_LAND)) if (!members.includes(n)) bad(`TRANS_LAND ${n} not a map member`);
+  for (const k of Object.keys(CONT)) if (!CONT_CARD[cardKey(k)]) bad(`no card for continent ${k}`);
+}
+
 console.log(fail ? `${fail} problem(s)` : 'OK');
 process.exit(fail ? 1 : 0);

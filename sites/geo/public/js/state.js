@@ -2,11 +2,11 @@ import { NAMES } from '../data/regions.js';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL } from '../data/alliances.js';
 import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261107b';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108';
 import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js';
 import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261107b';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261107';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108';
 
 export {
   CAPITALS,
@@ -85,6 +85,7 @@ export const norm = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, 
 export const vi = en => (NAMES[en] || [en])[0];
 
 export const ADMIN_LAYERS = {
+  continents: { n: 'Ranh giới châu lục', en: 'Continent outlines', c: '#C92A2A', grp: 'admin' },
   capitals: { n: 'Thủ đô thế giới', en: 'World Capitals', c: '#E8590C', grp: 'admin' },
   islands:  { n: 'Đảo & Vùng chiến lược', en: 'Strategic Islands & Zones', c: '#0D9488', grp: 'admin' },
   cities:   { n: 'Đô thị & Cảng lớn', en: 'Major Cities & Ports', c: '#2563EB', grp: 'admin' },
@@ -210,6 +211,10 @@ export const MAP = {
   ADM1: [],
   ADM1_BORDERS: [],
   IDX: [],
+  // continent outlines: { lines: { asia: [LineString], ... }, pc: [LineString] } for 110m and 50m
+  CONT110: null,
+  CONT50: null,
+  CONT_HITS: [],
   LC: { key: '', list: [] }
 };
 
@@ -236,6 +241,7 @@ export const DEFAULT_ON = {
   forest: false,
   ice: true, // always visible on base globe
   // admin
+  continents: true,
   capitals: !isMobileViewport(),
   islands: false,
   cities: false,

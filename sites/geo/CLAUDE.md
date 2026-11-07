@@ -40,7 +40,7 @@ sites/geo/
     js/state.js         shared state, prefs in localStorage, data imports
     js/icons.js         inline SVG icons
     data/*.js           content: regions, countries (+ en_*), religions, hotspots, alliances, economy,
-                        urban_islands, rankings
+                        urban_islands, rankings, continents
     assets/map/*.json   world-110m, world-50m, admin1-50m, physical-50m
     assets/vendor/d3-geo.min.js
 ```
@@ -67,6 +67,19 @@ sites/geo/
   `link` in `RANK_METRICS` to match. Names that do not match an ISO3 go into `scripts/country_aliases.json`.
   Tiny territories without published data stay `null`.
 - Never hand-edit numbers in `RANK_DATA`; change the script and regenerate.
+
+## Continents layer (`data/continents.js`)
+
+- 6-continent model (Vietnamese school convention): Asia, Europe, Africa, the Americas (drawn as North / South in two
+  shades, split at the Panama–Colombia border), Oceania, Antarctica. Outline only (coastlines colored per continent, no
+  fill), on by default (`continents` in `ADMIN_LAYERS` / `DEFAULT_ON`).
+- Boundaries are geographic: Ural crest + Ural River + Caspian + Greater Caucasus watershed + Turkish Straits (Asia–Europe),
+  Suez Canal (Asia–Africa; Sinai is Asia), New Guinea incl. Indonesian Papua is Oceania, overseas islands by location
+  (Hawaii, Easter Island → Oceania; Canaries, Madeira, Socotra → Africa; Caribbean → North America). The hand-drawn
+  lines are approximate. `contAt()` classifies coastline vertices of split countries (`TRANS_LAND`, `TRANS_ISLAND`).
+- Continent cards: area from Encyclopædia Britannica (approximate), population from UN WPP 2024 (1 July 2024, medium
+  variant) by UN M49 region with a note on how M49 differs from the map; UN member counts are computed (193, checked by
+  `scripts/check.mjs`; Tuvalu has no polygon and is added via `UN_EXTRA`).
 
 ## Conventions
 

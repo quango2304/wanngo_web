@@ -1,7 +1,8 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0 } from '../data/countries.js?v=20261107b';
+import { C0 } from '../data/countries.js?v=20261108';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL, REF } from '../data/alliances.js';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108';
 import {
   $,
   norm,
@@ -43,7 +44,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261107b';
+} from './state.js?v=20261108';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -55,6 +56,81 @@ export const proj = d3.geoOrthographic().clipAngle(90).precision(0.3).rotate([-1
 export const pathC = d3.geoPath(proj, ctx);
 
 const splitM = m => m.coordinates.map(c => ({ type: 'LineString', coordinates: c }));
+
+// ---------- continents: coastlines grouped by continent (split countries cut vertex by vertex), built once per map
+const CONT_LINE_GEOS = CONT_LINES.map(l => ({ type: 'LineString', coordinates: l.coords }));
+export const contColor = key => CONT[key].c[C.dark ? 1 : 0];
+
+function buildContinents(topo, obj) {
+  const lines = {};
+  CONT_KEYS.forEach(c => (lines[c] = []));
+  const rgOf = n => (NAMES[n] || [, 'territory'])[1];
+  const contByName = new Map();
+  for (const g of obj.geometries) {
+    const n = g.properties && g.properties.name;
+    if (n && !isSplit(n)) contByName.set(n, contOf(n, rgOf(n)));
+  }
+  for (const c of CONT_KEYS) {
+    const m = topojson.mesh(topo, obj, (a, b) => a === b && contByName.get(a.properties.name) === c);
+    for (const l of m.coordinates) lines[c].push({ type: 'LineString', coordinates: l });
+  }
+  const splitNames = new Set(obj.geometries.map(g => g.properties && g.properties.name).filter(n => n && isSplit(n)));
+  for (const n of splitNames) {
+    const main = contOf(n, rgOf(n));
+    const m = topojson.mesh(topo, obj, (a, b) => a === b && a.properties.name === n);
+    for (const l of m.coordinates) {
+      let cur = null, run = [];
+      for (const p of l) {
+        const c = contAt(n, p[0], p[1]) || main;
+        if (c !== cur) {
+          if (run.length) {
+            run.push(p);
+            lines[cur].push({ type: 'LineString', coordinates: run });
+          }
+          cur = c;
+          run = [p];
+        } else run.push(p);
+      }
+      if (run.length > 1) lines[cur].push({ type: 'LineString', coordinates: run });
+    }
+  }
+  const pc = topojson.mesh(
+    topo,
+    obj,
+    (a, b) =>
+      a !== b &&
+      ((a.properties.name === 'Panama' && b.properties.name === 'Colombia') ||
+        (a.properties.name === 'Colombia' && b.properties.name === 'Panama'))
+  );
+  return { lines, pc: splitM(pc) };
+}
+
+// Clickable continent labels. key: card key; sub: which outline(s) to highlight.
+export const CONT_OBJS = {
+  asia: { kind: 'cont', key: 'asia', subs: ['asia'], fly: [90, 42], k: 1.15 },
+  europe: { kind: 'cont', key: 'europe', subs: ['europe'], fly: [18, 53], k: 1.9 },
+  africa: { kind: 'cont', key: 'africa', subs: ['africa'], fly: [20, 2], k: 1.3 },
+  americas: { kind: 'cont', key: 'americas', subs: ['nam', 'sam'], fly: [-80, 12], k: 0.95 },
+  nam: { kind: 'cont', key: 'americas', subs: ['nam'], fly: [-100, 45], k: 1.2 },
+  sam: { kind: 'cont', key: 'americas', subs: ['sam'], fly: [-60, -18], k: 1.4 },
+  oceania: { kind: 'cont', key: 'oceania', subs: ['oceania'], fly: [148, -20], k: 1.5 },
+  antarctica: { kind: 'cont', key: 'antarctica', subs: ['antarctica'], fly: [20, -82], k: 1.3 }
+};
+const CONT_LABELS = [
+  { o: CONT_OBJS.asia, pt: CONT.asia.lab, big: true },
+  { o: CONT_OBJS.europe, pt: CONT.europe.lab, big: true },
+  { o: CONT_OBJS.africa, pt: CONT.africa.lab, big: true },
+  { o: CONT_OBJS.americas, pt: AMERICAS.lab, big: true, col: 'nam' },
+  { o: CONT_OBJS.nam, pt: CONT.nam.lab, big: false },
+  { o: CONT_OBJS.sam, pt: CONT.sam.lab, big: false },
+  { o: CONT_OBJS.oceania, pt: CONT.oceania.lab, big: true },
+  { o: CONT_OBJS.antarctica, pt: CONT.antarctica.lab, big: true }
+];
+const CONT_LABEL_MAX_K = 1.8;
+export const contName = o => {
+  const meta = o === CONT_OBJS.americas ? AMERICAS : CONT[o.subs.length > 1 ? 'nam' : o.subs[0]];
+  return isEn() ? meta.en : meta.vi;
+};
 
 const DETACHED_ADM1 = new Set(['US-HI', 'US-AK', 'RU-KGD', 'CN-HI', 'AU-TAS']);
 
@@ -422,6 +498,8 @@ export function initMapData(w110) {
   MAP.K110 = splitM(coast110);
   MAP.B50 = MAP.B110;
   MAP.K50 = MAP.K110;
+  MAP.CONT110 = buildContinents(w110, obj110);
+  MAP.CONT50 = MAP.CONT110;
 
   buildHotspots(w110, obj110, false);
   rebuildSearchIndex();
@@ -441,6 +519,7 @@ export function upgradeMapData(w50) {
   const coast50 = topojson.mesh(w50, obj50, (a, b) => a === b);
   MAP.B50 = splitM(borders50);
   MAP.K50 = splitM(coast50);
+  MAP.CONT50 = buildContinents(w50, obj50);
 
   buildHotspots(w50, obj50, true);
   if (st.sel && st.sel.isCountry && BY[st.sel.en]) st.sel = BY[st.sel.en];
@@ -989,11 +1068,40 @@ export function render(now) {
   ctx.lineWidth = Math.min(1.4, 0.5 + k * 0.12);
   ctx.stroke();
 
-  ctx.beginPath();
-  for (const l of lowres ? MAP.K110 : MAP.K50) if (cullOK(l)) pathC(l);
-  ctx.strokeStyle = C.coast;
-  ctx.lineWidth = 0.6;
-  ctx.stroke();
+  // continent outlines replace the plain coastline (same arcs, colored per continent)
+  const contSet = st.on.continents ? (lowres ? MAP.CONT110 : MAP.CONT50) : null;
+  if (!contSet) {
+    ctx.beginPath();
+    for (const l of lowres ? MAP.K110 : MAP.K50) if (cullOK(l)) pathC(l);
+    ctx.strokeStyle = C.coast;
+    ctx.lineWidth = 0.6;
+    ctx.stroke();
+  } else {
+    // continent outlines (coastline per continent + dashed land boundaries between continents)
+    const act = [st.hov, st.sel].filter(o => o && o.kind === 'cont');
+    const baseW = Math.min(2.4, 1.5 + k * 0.12);
+    ctx.lineJoin = 'round';
+    for (const key of CONT_KEYS) {
+      ctx.beginPath();
+      for (const l of contSet.lines[key]) if (cullOK(l)) pathC(l);
+      ctx.strokeStyle = contColor(key);
+      ctx.lineWidth = act.some(o => o.subs.includes(key)) ? baseW + 1.4 : baseW;
+      ctx.stroke();
+    }
+    ctx.setLineDash([6, 4]);
+    ctx.beginPath();
+    for (const l of contSet.pc) pathC(l);
+    ctx.strokeStyle = contColor('nam');
+    ctx.lineWidth = baseW + 0.4;
+    ctx.stroke();
+    ctx.beginPath();
+    for (const g2 of CONT_LINE_GEOS) pathC(g2);
+    ctx.strokeStyle = C.dark ? 'rgba(236,239,246,.85)' : 'rgba(38,38,46,.72)';
+    ctx.lineWidth = baseW + 0.4;
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.lineJoin = 'miter';
+  }
 
   if (sc) {
     ctx.beginPath();
@@ -1431,6 +1539,45 @@ export function render(now) {
         drawTzBadge([sp.pt, [sp.pt[0], sp.pt[1] - 5], [sp.pt[0], sp.pt[1] + 5]], time, sp.sub, isDay);
       }
     }
+  }
+
+  // 2b. Continent labels (zoomed out only); reserved before country labels so names never sit on top of them
+  MAP.CONT_HITS = [];
+  if (st.on.continents && k < CONT_LABEL_MAX_K) {
+    const alpha = k < 1.5 ? 1 : Math.max(0, (CONT_LABEL_MAX_K - k) / (CONT_LABEL_MAX_K - 1.5));
+    const canSpace = 'letterSpacing' in ctx;
+    ctx.save();
+    ctx.globalAlpha = alpha;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.lineJoin = 'round';
+    for (const L of CONT_LABELS) {
+      if (d3.geoDistance(L.pt, centerPt) > Math.PI / 2 - 0.12) continue;
+      const q = proj(L.pt);
+      if (!q) continue;
+      const fs = L.big ? 14 : 11.5;
+      const sp = L.big ? 2.5 : 1.5;
+      ctx.font = `${L.big ? 700 : 600} ${fs}px "Be Vietnam Pro",system-ui,sans-serif`;
+      if (canSpace) ctx.letterSpacing = sp + 'px';
+      const txt = contName(L.o).toLocaleUpperCase(isEn() ? 'en' : 'vi');
+      const w = ctx.measureText(txt).width + 6;
+      const hh = fs + 6;
+      const box = [q[0] - w / 2, q[1] - hh / 2, w, hh];
+      if (!inViewport(box)) continue;
+      const on2 = st.hov === L.o || st.sel === L.o;
+      ctx.lineWidth = 4;
+      ctx.strokeStyle = C['label-halo'];
+      ctx.strokeText(txt, q[0], q[1]);
+      ctx.fillStyle = contColor(L.col || L.o.subs[0]);
+      ctx.fillText(txt, q[0], q[1]);
+      if (on2) {
+        ctx.fillRect(box[0] + 3, box[1] + hh - 3, w - 6, 1.5);
+      }
+      placed.push(box);
+      MAP.CONT_HITS.push({ box, o: L.o });
+    }
+    if (canSpace) ctx.letterSpacing = '0px';
+    ctx.restore();
   }
 
   // 3. Country labels — placed BEFORE Capital/Island/City text labels so country names never get starved
@@ -1944,6 +2091,11 @@ function segD(px, py, a, b) {
 
 export function pick(mx, my) {
   const [cx, cy] = proj.translate(), r = proj.scale();
+  // 0. Continent labels (drawn last frame)
+  for (const h of MAP.CONT_HITS) {
+    const b = h.box;
+    if (mx >= b[0] - 3 && mx <= b[0] + b[2] + 3 && my >= b[1] - 3 && my <= b[1] + b[3] + 3) return h.o;
+  }
   if (Math.hypot(mx - cx, my - cy) > r) return null;
   const ll = proj.invert([mx, my]);
   if (!ll) return null;
