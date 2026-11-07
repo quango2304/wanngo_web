@@ -60,6 +60,15 @@
       href: 'mailto:admin@bookmuse.wanngo.com',
       cta: 'Write to me',
       say: 'oh, a message? yay'
+    },
+    {
+      name: 'The globe',
+      kind: 'Study notes',
+      desc: 'A 3D globe I spin while reading about the world: countries, alliances, straits and hotspots, and the geography behind the news.',
+      dest: 'geo.wanngo.com',
+      href: 'https://geo.wanngo.com/',
+      cta: 'Spin it',
+      say: 'where in the world…'
     }
   ];
 
@@ -135,7 +144,7 @@
     tall: [[230, 400], [60, 470], [150, 345], [70, 345]]
   };
 
-  // Every piece of furniture is its own sprite in room-flat-e.png: [x, y, w, h]
+  // Every piece of furniture is its own sprite in room-flat-f.png: [x, y, w, h]
   const KIT = {
     fig: [0, 0, 62, 139], shelf: [63, 0, 88, 122], window: [152, 0, 98, 90],
     bed: [251, 0, 151, 86], bedSleep: [0, 140, 151, 86], chair: [152, 140, 39, 70],
@@ -145,7 +154,7 @@
     consolePlain: [217, 227, 68, 49], cork: [286, 227, 58, 44], ac: [345, 227, 97, 42],
     rug: [0, 287, 121, 42], coffee: [122, 287, 27, 42], bag: [150, 287, 54, 40],
     succs: [205, 287, 67, 36], table: [273, 287, 53, 35], tv: [327, 287, 55, 35],
-    trophy: [383, 287, 32, 34], clock: [416, 287, 27, 27], catbed: [444, 287, 40, 27],
+    trophy: [383, 287, 32, 34], clock: [416, 287, 27, 27], catbed: [444, 287, 40, 27], globe: [486, 288, 17, 25],
     mat: [0, 330, 108, 26], icon0: [109, 330, 18, 18], icon1: [128, 330, 18, 18],
     icon2: [147, 330, 18, 18], icon3: [166, 330, 18, 18], icon4: [185, 330, 18, 18],
     icon5: [204, 330, 18, 18], dumbbells: [223, 330, 18, 16], mug: [242, 330, 14, 11],
@@ -180,8 +189,9 @@
     { id: 'bed', sprite: 'bed', group: 'bed', x: 256, y: 146, base: 232 },
     { id: 'console', sprite: 'console', group: 'tv', x: 412, y: 177, base: 226 },
     { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 478, y: 104, base: 226 },
-    { id: 'trophy', sprite: 'trophy', group: 'shelf', x: 486, y: 70, base: 226.1 },
-    { id: 'pothos', sprite: 'pothos', group: 'shelf', x: 524, y: 76, base: 226.1 },
+    { id: 'trophy', sprite: 'trophy', group: 'shelf', x: 478, y: 70, base: 226.1 },
+    { id: 'globe', sprite: 'globe', group: 'shelf', x: 510, y: 79, base: 226.1 },
+    { id: 'pothos', sprite: 'pothos', group: 'shelf', x: 527, y: 76, base: 226.1 },
     { id: 'monstera', sprite: 'monstera', group: 'monstera', x: 530, y: 181, base: 240 },
     { id: 'bag', sprite: 'bag', group: 'bag', x: 418, y: 222, base: 262 },
     { id: 'catbed', sprite: 'catbed', group: 'catbed', x: 480, y: 232, base: 259 }
@@ -256,8 +266,9 @@
     { id: 'mat', label: 'exercise mat', group: 'mat', x: 64, y: 238, w: 108, h: 26, act: () => invite(doPushUps, 'I use this. sometimes.') },
     { id: 'monstera', label: 'monstera', group: 'monstera', x: 530, y: 181, w: 42, h: 59, say: 'she gets the best light' },
     { id: 'catbed', label: 'cat bed', group: 'catbed', x: 480, y: 232, w: 40, h: 27, say: 'never used. he has my desk chair.' },
-    { id: 'trophy', label: 'trophy', group: 'shelf', x: 486, y: 70, w: 32, h: 34, say: 'I bought it myself' },
-    { id: 'pothos', label: 'pothos', group: 'shelf', x: 524, y: 76, w: 41, h: 62, say: 'it’s slowly taking the shelf' },
+    { id: 'trophy', label: 'trophy', group: 'shelf', x: 478, y: 70, w: 32, h: 34, say: 'I bought it myself' },
+    { id: 'globe', label: 'The globe', group: 'shelf', x: 510, y: 79, w: 17, h: 25, act: () => openCard(6) },
+    { id: 'pothos', label: 'pothos', group: 'shelf', x: 527, y: 76, w: 41, h: 62, say: 'it’s slowly taking the shelf' },
     { id: 'books', of: 'shelf', label: 'books', group: 'shelf', x: 486, y: 172, w: 76, h: 50, say: 'read half of them. honest.' }
   ];
   [[486, 118], [512, 118], [538, 118], [486, 147], [512, 147], [538, 147]].forEach((p, i) => {
@@ -471,7 +482,7 @@
   function sound(id) {
     if (!audio || !wanted || audio.state !== 'running') return;
     if (['cat', 'ac', 'tv', 'lamp', 'lantern', 'coffee'].includes(id)) return;
-    if (id.startsWith('item')) {
+    if (id.startsWith('item') || id === 'globe') {
       tone(660, 660, 0, 0.07, 'square', 0.025);
       tone(990, 990, 0.07, 0.11, 'square', 0.025);
     } else if (id === 'dev') {
@@ -1557,7 +1568,7 @@
   toLoad = 3 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-flat-e')]);
+  const assets = fonts.concat([load('kit', 'room-flat-f')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   Promise.all(assets.concat(atLeast)).then(() => {
