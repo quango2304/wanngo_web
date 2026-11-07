@@ -45,16 +45,16 @@ export const ECON_SECTORS = [
 
 export const ECON = {
   "Zimbabwe": {
-    "tier": "low",
-    "gdp_vi": "~35,2 tỷ USD (#102 thế giới)",
-    "gdp_en": "~$35.2B (#102 globally)",
-    "pc_vi": "~2.080 USD (PPP ~3.050 USD)",
-    "pc_en": "~$2,080 (PPP ~$3,050)",
-    "gr": "+3.5%",
+    "tier": "dev",
+    "gdp_vi": "~41,5 tỷ USD (#103 thế giới)",
+    "gdp_en": "~$41.5B (#103 globally)",
+    "pc_vi": "~2.500 USD (PPP ~5.930 USD)",
+    "pc_en": "~$2,500 (PPP ~$5,930)",
+    "gr": "+1.7%",
     "sec": [
       54,
-      34,
-      12
+      37,
+      9
     ],
     "main_vi": "Khai khoáng (lithium, vàng, bạch kim, kim cương), thuốc lá xuất khẩu, nông nghiệp (ngô, mía, bông), kiều hối",
     "main_en": "Mining (lithium, gold, platinum, diamonds), tobacco exports, agriculture (maize, sugar, cotton), remittances",
@@ -62,16 +62,16 @@ export const ECON = {
     "note_en": "Holding Africa's largest lithium reserves—where Chinese giants like Huayou Cobalt and Sinomine have built local concentrator plants at Arcadia and Bikita after Harare banned raw lithium ore exports—Zimbabwe is also a major exporter of gold, platinum-group metals, ferrochrome, and flue-cured tobacco (#1 in Africa). Despite surging mineral output and ~$2 billion in annual diaspora remittances, over 75% of domestic transactions remain dollarized alongside the new gold-backed ZiG currency launched in 2024, while ~$21 billion in external debt arrears continues to lock Zimbabwe out of IMF and World Bank lending."
   },
   "Zambia": {
-    "tier": "low",
-    "gdp_vi": "~26,3 tỷ USD (#111 thế giới)",
-    "gdp_en": "~$26.3B (#111 globally)",
-    "pc_vi": "~1.250 USD (PPP ~4.150 USD)",
-    "pc_en": "~$1,250 (PPP ~$4,150)",
-    "gr": "+4.0%",
+    "tier": "dev",
+    "gdp_vi": "~25,3 tỷ USD (#117 thế giới)",
+    "gdp_en": "~$25.3B (#117 globally)",
+    "pc_vi": "~1.190 USD (PPP ~4.220 USD)",
+    "pc_en": "~$1,190 (PPP ~$4,220)",
+    "gr": "+3.8%",
     "sec": [
-      57,
-      36,
-      7
+      60,
+      37,
+      3
     ],
     "main_vi": "Khai thác & luyện đồng (Copperbelt), coban, ngọc lục bảo, thủy điện (hồ Kariba), nông nghiệp (ngô, đường, thuốc lá)",
     "main_en": "Copper mining & smelting (Copperbelt), cobalt, emeralds, hydropower (Kariba), agriculture (maize, sugar, tobacco)",
@@ -96,16 +96,16 @@ export const ECON = {
     "note_en": "The Arab world's poorest nation has seen its GDP halved since 2015 and its financial system split between rival central banks in Houthi-held Sana'a and government-held Aden, with the southern currency trading at a fraction of the northern rate. Since Houthi drone strikes halted southern crude oil exports in late 2022, state revenues have collapsed, leaving over half of Yemen's 40 million people dependent on remittances from workers in Saudi Arabia and international humanitarian aid."
   },
   "Vietnam": {
-    "tier": "dev",
-    "gdp_vi": "~468 tỷ USD (#34 thế giới)",
-    "gdp_en": "~$468B (#34 globally)",
-    "pc_vi": "~4.620 USD (PPP ~16.300 USD)",
-    "pc_en": "~$4,620 (PPP ~$16,300)",
-    "gr": "+7.1%",
+    "tier": "emg",
+    "gdp_vi": "~476 tỷ USD (#32 thế giới, #4 Đông Nam Á)",
+    "gdp_en": "~$476B (#32 globally, #4 in ASEAN)",
+    "pc_vi": "~4.720 USD (PPP ~16.390 USD)",
+    "pc_en": "~$4,720 (PPP ~$16,390)",
+    "gr": "+7.0%",
     "sec": [
-      43,
-      38,
-      19
+      46,
+      41,
+      13
     ],
     "main_vi": "Lắp ráp điện tử xuất khẩu (do khối FDI dẫn dắt), dệt may – da giày, máy móc thiết bị, nông thủy sản (gạo, cà phê, tôm); bán dẫn là ngành mới nổi đang kỳ vọng (đóng gói, kiểm thử)",
     "main_en": "FDI-led electronics assembly, textiles & footwear, machinery, agri-seafood exports (rice, coffee, shrimp); semiconductors as an emerging aspirational sector (packaging & testing)",
@@ -114,10 +114,10 @@ export const ECON = {
   },
   "Venezuela": {
     "tier": "dev",
-    "gdp_vi": "~106 tỷ USD (#68 thế giới)",
-    "gdp_en": "~$106B (#68 globally)",
-    "pc_vi": "~3.870 USD (PPP ~8.480 USD)",
-    "pc_en": "~$3,870 (PPP ~$8,480)",
+    "gdp_vi": "~121 tỷ USD (#66 thế giới)",
+    "gdp_en": "~$121B (#66 globally)",
+    "pc_vi": "~4.240 USD (PPP ~8.480 USD)",
+    "pc_en": "~$4,240 (PPP ~$8,480)",
     "gr": "+5.5%",
     "sec": [
       52,
@@ -148,15 +148,15 @@ export const ECON = {
   },
   "Vanuatu": {
     "tier": "dev",
-    "gdp_vi": "~1,16 tỷ USD (#177 thế giới)",
-    "gdp_en": "~$1.16B (#177 globally)",
-    "pc_vi": "~3.490 USD (PPP ~3.780 USD)",
-    "pc_en": "~$3,490 (PPP ~$3,780)",
-    "gr": "+2.9%",
+    "gdp_vi": "~1,3 tỷ USD (#188 thế giới)",
+    "gdp_en": "~$1.3B (#188 globally)",
+    "pc_vi": "~3.960 USD (PPP ~4.370 USD)",
+    "pc_en": "~$3,960 (PPP ~$4,370)",
+    "gr": "+3.8%",
     "sec": [
-      67,
+      61,
       11,
-      22
+      28
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển & tàu biển, nông nghiệp (kava, cùi dừa khô, ca cao, thịt bò), chương trình đầu tư quốc tịch, dịch vụ tài chính ngoài khơi",
     "main_en": "Resort & cruise tourism, agriculture (kava, copra, cocoa, beef), citizenship-by-investment program, offshore financial services",
@@ -165,49 +165,49 @@ export const ECON = {
   },
   "Uzbekistan": {
     "tier": "dev",
-    "gdp_vi": "~115 tỷ USD",
-    "gdp_en": "~$115B",
-    "pc_vi": "~3.090 USD (PPP ~11.800 USD)",
-    "pc_en": "~$3,090 (PPP ~$11,800)",
-    "gr": "+6.0%",
+    "gdp_vi": "~121 tỷ USD (#65 thế giới)",
+    "gdp_en": "~$121B (#65 globally)",
+    "pc_vi": "~3.340 USD (PPP ~12.520 USD)",
+    "pc_en": "~$3,340 (PPP ~$12,520)",
+    "gr": "+6.7%",
     "sec": [
-      44,
-      34,
-      22
+      48,
+      33,
+      19
     ],
     "main_vi": "Khai thác vàng (top 10 thế giới), khí đốt tự nhiên, đồng & uranium, dệt may bông sợi (chế biến sâu trong nước), ô tô lắp ráp, kiều hối",
     "main_en": "Gold mining (top 10 globally), natural gas, copper & uranium, value-added cotton textiles, automotive assembly, remittances",
-    "note_vi": "Kinh tế Uzbekistan (~115 tỷ USD) tăng trưởng ~6%/năm nhờ cải cách mở cửa từ năm 2017, khai thác vàng (top 10 thế giới với mỏ Muruntau), đồng, uranium và nguồn kiều hối lớn. Nước này đã chấm dứt xuất khẩu bông thô từ năm 2020 để giữ lại 100% chế biến thành sợi, dệt may trong nước, đồng thời phát triển ngành lắp ráp ô tô (UzAuto, xe điện BYD) lớn nhất Trung Á. Điểm nghẽn lớn là thiếu hụt nước tưới tiêu và việc chuyển từ xuất khẩu sang phải nhập khẩu ròng khí đốt từ Nga, Turkmenistan từ năm 2023 do nhu cầu điện tăng vọt.",
-    "note_en": "Uzbekistan's ~$115B economy grows at ~6% annually following post-2017 market reforms, supported by top-ten global gold mining (Muruntau), copper, uranium, and worker remittances. Tashkent halted raw cotton exports in 2020 to process 100% of its harvest domestically into value-added textiles and garments while building Central Asia's largest auto assembly hub (including BYD EVs). Key bottlenecks are acute water scarcity and domestic gas shortages that turned Uzbekistan into a net natural gas importer from Russia and Turkmenistan in 2023."
+    "note_vi": "Kinh tế Uzbekistan (~121 tỷ USD) tăng trưởng ~6%/năm nhờ cải cách mở cửa từ năm 2017, khai thác vàng (top 10 thế giới với mỏ Muruntau), đồng, uranium và nguồn kiều hối lớn. Nước này đã chấm dứt xuất khẩu bông thô từ năm 2020 để giữ lại 100% chế biến thành sợi, dệt may trong nước, đồng thời phát triển ngành lắp ráp ô tô (UzAuto, xe điện BYD) lớn nhất Trung Á. Điểm nghẽn lớn là thiếu hụt nước tưới tiêu và việc chuyển từ xuất khẩu sang phải nhập khẩu ròng khí đốt từ Nga, Turkmenistan từ năm 2023 do nhu cầu điện tăng vọt.",
+    "note_en": "Uzbekistan's ~$121B economy grows at ~6% annually following post-2017 market reforms, supported by top-ten global gold mining (Muruntau), copper, uranium, and worker remittances. Tashkent halted raw cotton exports in 2020 to process 100% of its harvest domestically into value-added textiles and garments while building Central Asia's largest auto assembly hub (including BYD EVs). Key bottlenecks are acute water scarcity and domestic gas shortages that turned Uzbekistan into a net natural gas importer from Russia and Turkmenistan in 2023."
   },
   "Uruguay": {
     "tier": "adv",
-    "gdp_vi": "~82,6 tỷ USD (#77 thế giới)",
-    "gdp_en": "~$82.6B (#77 globally)",
-    "pc_vi": "~23.900 USD (PPP ~36.400 USD)",
-    "pc_en": "~$23,900 (PPP ~$36,400)",
-    "gr": "+3.2%",
+    "gdp_vi": "~82,3 tỷ USD (#81 thế giới)",
+    "gdp_en": "~$82.3B (#81 globally)",
+    "pc_vi": "~24.310 USD (PPP ~36.600 USD)",
+    "pc_en": "~$24,310 (PPP ~$36,600)",
+    "gr": "+3.3%",
     "sec": [
-      72,
-      20,
+      73,
+      19,
       8
     ],
     "main_vi": "Chăn nuôi bò thịt xuất khẩu, bột giấy (UPM), đậu tương, xuất khẩu phần mềm & CNTT, dịch vụ tài chính – cảng tự do, năng lượng tái tạo (98% điện xanh)",
     "main_en": "Beef & livestock exports, cellulose pulp (UPM), soybeans, software & IT exports, free-zone financial services, renewable energy (98% green grid)",
-    "note_vi": "Sở hữu mức thu nhập bình quân đầu người cao nhất Nam Mỹ (~23.900 USD), hệ thống truy xuất nguồn gốc điện tử cho 100% đàn bò 12 triệu con và các siêu nhà máy bột giấy xuất khẩu tỷ đô của tập đoàn UPM (Phần Lan) và Montes del Plata. Khu công nghệ và dịch vụ miễn thuế Zonamerica tại Montevideo đã đưa Uruguay trở thành nhà xuất khẩu phần mềm tính theo đầu người số một Mỹ Latinh (nơi ra đời kỳ lân thanh toán dLocal), dù quy mô dân số nhỏ (3,4 triệu dân) khiến nước này luôn tìm kiếm các hiệp định thương mại tự do ngoài khối Mercosur.",
-    "note_en": "Leads South America in per-capita GDP (~$23,900), combining 100% electronically traceable grass-fed beef exports and multibillion-dollar European cellulose pulp mills (UPM and Montes del Plata) with a ~98% renewable electricity grid. Tax-free technology zones like Zonamerica have made Uruguay Latin America's #1 per-capita software exporter and birthed fintech unicorn dLocal, though its small 3.4-million domestic market pushes Montevideo to seek broader trade deals beyond Mercosur's protective tariffs."
+    "note_vi": "Sở hữu mức thu nhập bình quân đầu người cao nhất Nam Mỹ (~24.300 USD), hệ thống truy xuất nguồn gốc điện tử cho 100% đàn bò 12 triệu con và các siêu nhà máy bột giấy xuất khẩu tỷ đô của tập đoàn UPM (Phần Lan) và Montes del Plata. Khu công nghệ và dịch vụ miễn thuế Zonamerica tại Montevideo đã đưa Uruguay trở thành nhà xuất khẩu phần mềm tính theo đầu người số một Mỹ Latinh (nơi ra đời kỳ lân thanh toán dLocal), dù quy mô dân số nhỏ (3,4 triệu dân) khiến nước này luôn tìm kiếm các hiệp định thương mại tự do ngoài khối Mercosur.",
+    "note_en": "Leads South America in per-capita GDP (~$24,300), combining 100% electronically traceable grass-fed beef exports and multibillion-dollar European cellulose pulp mills (UPM and Montes del Plata) with a ~98% renewable electricity grid. Tax-free technology zones like Zonamerica have made Uruguay Latin America's #1 per-capita software exporter and birthed fintech unicorn dLocal, though its small 3.4-million domestic market pushes Montevideo to seek broader trade deals beyond Mercosur's protective tariffs."
   },
   "Micronesia": {
-    "tier": "dev",
-    "gdp_vi": "~0,47 tỷ USD (#185 thế giới)",
-    "gdp_en": "~$470M (#185 globally)",
-    "pc_vi": "~4.160 USD (PPP ~4.620 USD)",
-    "pc_en": "~$4,160 (PPP ~$4,620)",
-    "gr": "+1.8%",
+    "tier": "emg",
+    "gdp_vi": "~0,50 tỷ USD (~500 triệu USD) (#195 thế giới)",
+    "gdp_en": "~$500M (#195 globally)",
+    "pc_vi": "~4.250 USD (PPP ~4.450 USD)",
+    "pc_en": "~$4,250 (PPP ~$4,450)",
+    "gr": "+2.3%",
     "sec": [
-      74,
-      6,
-      20
+      71,
+      5,
+      24
     ],
     "main_vi": "Cấp phép đánh bắt cá ngừ vùng đặc quyền kinh tế (EEZ), viện trợ Hiệp ước Liên kết Tự do (COFA) từ Mỹ, nông nghiệp tự cung (khoai môn, dừa), du lịch lặn biển",
     "main_en": "EEZ tuna fishing license fees, US Compact of Free Association (COFA) grants, subsistence agriculture (taro, copra), dive tourism (Chuuk Lagoon)",
@@ -215,16 +215,16 @@ export const ECON = {
     "note_en": "Using the US dollar as its official currency, the FSM economy rests on two primary financial pillars: renewed US Compact of Free Association (COFA) sector grants and trust-fund distributions (~$140 million annually over 20 years, plus direct access to US federal agencies like the FAA, USPS, and FEMA) and pelagic tuna fishing license fees (~$70–80 million annually). Private-sector activity remains limited by extreme geographic isolation and high shipping costs—centering on retail services for public-sector workers, subsistence farming, and world-class WWII wreck diving in Chuuk Lagoon—while visa-free access to the US labor market drives steady out-migration that keeps the domestic population flat near ~115,000."
   },
   "Marshall Is.": {
-    "tier": "dev",
-    "gdp_vi": "~0,30 tỷ USD (#188 thế giới)",
-    "gdp_en": "~$300M (#188 globally)",
-    "pc_vi": "~6.850 USD (PPP ~7.350 USD)",
-    "pc_en": "~$6,850 (PPP ~$7,350)",
-    "gr": "+2.4%",
+    "tier": "emg",
+    "gdp_vi": "~0,30 tỷ USD (~300 triệu USD) (#198 thế giới)",
+    "gdp_en": "~$300M (#198 globally)",
+    "pc_vi": "~7.590 USD (PPP ~8.240 USD)",
+    "pc_en": "~$7,590 (PPP ~$8,240)",
+    "gr": "+3.3%",
     "sec": [
-      76,
-      9,
-      15
+      67,
+      13,
+      20
     ],
     "main_vi": "Đăng ký tàu biển quốc tế (lớn thứ 2-3 thế giới), phí đánh bắt cá ngừ, căn cứ quân sự Mỹ Kwajalein, viện trợ COFA của Mỹ, chế biến dừa",
     "main_en": "International ship registry (top-3 globally), tuna fishing licenses, US Army Garrison Kwajalein, US COFA grants, copra processing",
@@ -283,7 +283,7 @@ export const ECON = {
     "note_en": "Guam's ~$6.9 billion high-income economy (~$40,800 per capita) rests on twin pillars: massive US federal defense spending and military construction (led by the >$10 billion build-out of Marine Corps Base Camp Blaz and the 360-degree Guam missile defense system) and duty-free beach resort tourism along Tumon Bay catering to Japanese and South Korean visitors. While East Asian tourist arrivals have recovered gradually due to a weak Japanese yen and post-Super Typhoon Mawar (2023) hotel repairs, unprecedented Pentagon infrastructure investment and new Google-backed trans-Pacific subsea cable landings continue to drive strong construction and services demand."
   },
   "American Samoa": {
-    "tier": "dev",
+    "tier": "adv",
     "gdp_vi": "~0,88 tỷ USD (lãnh thổ Mỹ)",
     "gdp_en": "~$880M (US Territory)",
     "pc_vi": "~18.000 USD",
@@ -301,14 +301,14 @@ export const ECON = {
   },
   "Puerto Rico": {
     "tier": "adv",
-    "gdp_vi": "~120 tỷ USD (lãnh thổ Mỹ)",
-    "gdp_en": "~$120B (US Commonwealth)",
-    "pc_vi": "~37.500 USD (PPP ~45.200 USD)",
-    "pc_en": "~$37,500 (PPP ~$45,200)",
-    "gr": "+1.8%",
+    "gdp_vi": "~126 tỷ USD (#62 thế giới, lãnh thổ Mỹ)",
+    "gdp_en": "~$126B (#62 globally, US Commonwealth)",
+    "pc_vi": "~39.350 USD (PPP ~50.330 USD)",
+    "pc_en": "~$39,350 (PPP ~$50,330)",
+    "gr": "+3.2%",
     "sec": [
-      49,
-      50,
+      52,
+      47,
       1
     ],
     "main_vi": "Sản xuất dược phẩm & công nghệ sinh học, thiết bị y tế, điện tử – hàng không, du lịch Caribe, dịch vụ tài chính & ưu đãi thuế Đạo luật 60",
@@ -318,15 +318,15 @@ export const ECON = {
   },
   "United States of America": {
     "tier": "adv",
-    "gdp_vi": "~29.200 tỷ USD (#1 thế giới)",
-    "gdp_en": "~$29.2T (#1 globally)",
-    "pc_vi": "~86.600 USD (PPP ~86.600 USD)",
-    "pc_en": "~$86,600 (PPP ~$86,600)",
+    "gdp_vi": "~29.298 tỷ USD (#1 thế giới)",
+    "gdp_en": "~$29.30T (#1 globally)",
+    "pc_vi": "~86.170 USD (PPP ~86.170 USD)",
+    "pc_en": "~$86,170 (PPP ~$86,170)",
     "gr": "+2.8%",
     "sec": [
       80,
-      18,
-      2
+      19,
+      1
     ],
     "main_vi": "Công nghệ cao & AI (Silicon Valley), tài chính – vốn toàn cầu (Wall Street), hàng không vũ trụ – quốc phòng, dầu khí đá phiến (số 1 thế giới), dược phẩm, nông nghiệp công nghệ cao",
     "main_en": "High-tech & AI (Silicon Valley), global finance (Wall Street), aerospace & defense, shale oil & gas (#1 globally), pharmaceuticals, industrial agriculture",
@@ -437,11 +437,11 @@ export const ECON = {
   },
   "Cayman Is.": {
     "tier": "adv",
-    "gdp_vi": "~7,14 tỷ USD (lãnh thổ Anh)",
-    "gdp_en": "~$7.14B (UK Overseas Territory)",
-    "pc_vi": "~99.800 USD",
-    "pc_en": "~$99,800",
-    "gr": "+3.2%",
+    "gdp_vi": "~7,8 tỷ USD (#157 thế giới, lãnh thổ Anh)",
+    "gdp_en": "~$7.8B (#157 globally, UK Overseas Territory)",
+    "pc_vi": "~104.290 USD (PPP ~92.200 USD)",
+    "pc_en": "~$104,290 (PPP ~$92,200)",
+    "gr": "+3.8%",
     "sec": [
       91,
       8,
@@ -454,15 +454,15 @@ export const ECON = {
   },
   "Bermuda": {
     "tier": "adv",
-    "gdp_vi": "~8,58 tỷ USD (lãnh thổ Anh)",
-    "gdp_en": "~$8.58B (UK Overseas Territory)",
-    "pc_vi": "~132.000 USD (#2-3 thế giới)",
-    "pc_en": "~$132,000 (top-3 globally)",
-    "gr": "+3.4%",
+    "gdp_vi": "~9,2 tỷ USD (#153 thế giới, lãnh thổ Anh)",
+    "gdp_en": "~$9.2B (#153 globally, UK Overseas Territory)",
+    "pc_vi": "~142.250 USD (PPP ~118.730 USD)",
+    "pc_en": "~$142,250 (PPP ~$118,730)",
+    "gr": "+1.9%",
     "sec": [
-      93,
-      6,
-      1
+      95,
+      5,
+      0
     ],
     "main_vi": "Tái bảo hiểm quốc tế (Reinsurance - top 3 thế giới), dịch vụ tài chính – bảo hiểm rủi ro thiên tai, du lịch cao cấp, đăng ký tàu biển & máy bay",
     "main_en": "Global reinsurance & catastrophe bonds (top-3 globally), international financial services, upscale tourism, aircraft & ship registry",
@@ -488,14 +488,14 @@ export const ECON = {
   },
   "Turks and Caicos Is.": {
     "tier": "adv",
-    "gdp_vi": "~1,45 tỷ USD (lãnh thổ Anh)",
-    "gdp_en": "~$1.45B (UK Overseas Territory)",
-    "pc_vi": "~31.000 USD",
-    "pc_en": "~$31,000",
-    "gr": "+4.2%",
+    "gdp_vi": "~1,7 tỷ USD (#184 thế giới, lãnh thổ Anh)",
+    "gdp_en": "~$1.7B (#184 globally, UK Overseas Territory)",
+    "pc_vi": "~37.510 USD (PPP ~38.010 USD)",
+    "pc_en": "~$37,510 (PPP ~$38,010)",
+    "gr": "+5.6%",
     "sec": [
-      87,
-      12,
+      88,
+      11,
       1
     ],
     "main_vi": "Du lịch nghỉ dưỡng siêu sang (bãi biển Grace Bay), bất động sản biệt thự nghỉ dưỡng, dịch vụ tài chính ngoài khơi, xuất khẩu tôm hùm & ốc hoàng hậu",
@@ -562,8 +562,8 @@ export const ECON = {
     "pc_en": "~$87,500",
     "gr": "+2.4%",
     "sec": [
-      86,
-      13,
+      92,
+      7,
       1
     ],
     "main_vi": "Bảo hiểm nhân thọ quốc tế & quản lý tài sản, công nghệ giải trí số (e-Gaming & fintech), đăng ký tàu biển – máy bay tư nhân, linh kiện hàng không vũ trụ, giải đua mô tô Isle of Man TT",
@@ -573,31 +573,31 @@ export const ECON = {
   },
   "United Kingdom": {
     "tier": "adv",
-    "gdp_vi": "~3.590 tỷ USD (#6 thế giới)",
-    "gdp_en": "~$3.59T (#6 globally)",
-    "pc_vi": "~52.400 USD (PPP ~60.600 USD)",
-    "pc_en": "~$52,400 (PPP ~$60,600)",
+    "gdp_vi": "~3.696 tỷ USD (#6 thế giới)",
+    "gdp_en": "~$3.70T (#6 globally)",
+    "pc_vi": "~53.340 USD (PPP ~62.840 USD)",
+    "pc_en": "~$53,340 (PPP ~$62,840)",
     "gr": "+1.1%",
     "sec": [
-      81,
-      18,
+      80,
+      19,
       1
     ],
     "main_vi": "Tài chính – ngân hàng – bảo hiểm toàn cầu (City of London), dược phẩm & khoa học sự sống (AstraZeneca, GSK), hàng không vũ trụ – quốc phòng (BAE, Rolls-Royce), AI & giáo dục đại học, năng lượng điện gió ngoài khơi",
     "main_en": "Global finance & insurance (City of London), pharmaceuticals & life sciences (AstraZeneca, GSK), aerospace & defense (BAE, Rolls-Royce), AI & higher education, offshore wind",
-    "note_vi": "Là nền kinh tế lớn thứ 6 thế giới (~3.590 tỷ USD) và là nhà xuất khẩu dịch vụ lớn thứ 2 toàn cầu (chỉ sau Mỹ), sức mạnh kinh tế của Vương quốc Anh hội tụ tại khu tài chính City of London (trung tâm giao dịch ngoại hối số 1 hành tinh, bảo hiểm và quản lý quỹ), hệ sinh thái Trí tuệ nhân tạo số 1 châu Âu (Google DeepMind, #3 thế giới sau Mỹ và Trung Quốc), các trường đại học tinh hoa (Oxford, Cambridge), dược phẩm – khoa học sự sống (AstraZeneca, GSK), công nghiệp hàng không – quốc phòng (BAE Systems, Rolls-Royce) và điện gió ngoài khơi Biển Bắc. Dù việc rời thị trường chung EU (Brexit) đã tạo thêm rào cản thương mại hàng hóa và tình trạng thiếu hụt lao động sau đại dịch, nước Anh vừa chính thức gia nhập Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương (CPTPP) vào tháng 12/2024 và đang đàm phán gỡ bỏ các rào cản thương mại với EU.",
-    "note_en": "The world's sixth-largest economy (~$3.59 trillion) and second-largest global exporter of services (behind only the US), the UK excels in global finance and insurance centered on the City of London (#1 in foreign-exchange trading), Europe's largest AI ecosystem (home to Google DeepMind, #3 globally), elite universities (Oxford, Cambridge), life sciences (AstraZeneca, GSK), aerospace and defense (BAE Systems, Rolls-Royce), and North Sea offshore wind. While post-Brexit trade barriers with the EU have weighed on goods exports and business investment, the UK formally acceded to the Indo-Pacific CPTPP trade bloc in December 2024 and is pursuing pragmatic regulatory alignment with Brussels under the Starmer government."
+    "note_vi": "Là nền kinh tế lớn thứ 6 thế giới (~3.696 tỷ USD) và là nhà xuất khẩu dịch vụ lớn thứ 2 toàn cầu (chỉ sau Mỹ), sức mạnh kinh tế của Vương quốc Anh hội tụ tại khu tài chính City of London (trung tâm giao dịch ngoại hối số 1 hành tinh, bảo hiểm và quản lý quỹ), hệ sinh thái Trí tuệ nhân tạo số 1 châu Âu (Google DeepMind, #3 thế giới sau Mỹ và Trung Quốc), các trường đại học tinh hoa (Oxford, Cambridge), dược phẩm – khoa học sự sống (AstraZeneca, GSK), công nghiệp hàng không – quốc phòng (BAE Systems, Rolls-Royce) và điện gió ngoài khơi Biển Bắc. Dù việc rời thị trường chung EU (Brexit) đã tạo thêm rào cản thương mại hàng hóa và tình trạng thiếu hụt lao động sau đại dịch, nước Anh vừa chính thức gia nhập Hiệp định Đối tác Toàn diện và Tiến bộ xuyên Thái Bình Dương (CPTPP) vào tháng 12/2024 và đang đàm phán gỡ bỏ các rào cản thương mại với EU.",
+    "note_en": "The world's sixth-largest economy (~$3.70 trillion) and second-largest global exporter of services (behind only the US), the UK excels in global finance and insurance centered on the City of London (#1 in foreign-exchange trading), Europe's largest AI ecosystem (home to Google DeepMind, #3 globally), elite universities (Oxford, Cambridge), life sciences (AstraZeneca, GSK), aerospace and defense (BAE Systems, Rolls-Royce), and North Sea offshore wind. While post-Brexit trade barriers with the EU have weighed on goods exports and business investment, the UK formally acceded to the Indo-Pacific CPTPP trade bloc in December 2024 and is pursuing pragmatic regulatory alignment with Brussels under the Starmer government."
   },
   "United Arab Emirates": {
     "tier": "adv",
-    "gdp_vi": "~545 tỷ USD (#28 thế giới)",
-    "gdp_en": "~$545B (#28 globally)",
-    "pc_vi": "~53.900 USD (PPP ~96.800 USD)",
-    "pc_en": "~$53,900 (PPP ~$96,800)",
+    "gdp_vi": "~552 tỷ USD (#27 thế giới)",
+    "gdp_en": "~$552B (#27 globally)",
+    "pc_vi": "~50.270 USD (PPP ~79.340 USD)",
+    "pc_en": "~$50,270 (PPP ~$79,340)",
     "gr": "+4.0%",
     "sec": [
-      57,
-      42,
+      55,
+      44,
       1
     ],
     "main_vi": "Dầu khí (Abu Dhabi – ADNOC), hàng không & logistics toàn cầu (Emirates, cảng Jebel Ali), tài chính & quản lý quỹ, bất động sản – du lịch (Dubai), AI",
@@ -606,16 +606,16 @@ export const ECON = {
     "note_en": "The UAE boasts the Gulf's most diversified economy, with non-oil sectors generating over 74% of GDP across global aviation (Emirates, Etihad), DP World port logistics, luxury tourism, and wealth management. Removed from the FATF financial \"grey list\" in 2024, the country leverages over $1.7 trillion in Abu Dhabi sovereign wealth funds (ADIA, Mubadala, ADQ) to spearhead global investments in AI data centers (G42, MGX), renewable energy, and green hydrogen."
   },
   "Ukraine": {
-    "tier": "dev",
-    "gdp_vi": "~189 tỷ USD (#56 thế giới)",
-    "gdp_en": "~$189B (#56 globally)",
-    "pc_vi": "~5.600 USD (PPP ~16.800 USD)",
-    "pc_en": "~$5,600 (PPP ~$16,800)",
-    "gr": "+3.6%",
+    "tier": "emg",
+    "gdp_vi": "~191 tỷ USD (#57 thế giới)",
+    "gdp_en": "~$191B (#57 globally)",
+    "pc_vi": "~5.390 USD (PPP ~18.640 USD)",
+    "pc_en": "~$5,390 (PPP ~$18,640)",
+    "gr": "+3.2%",
     "sec": [
-      62,
-      27,
-      11
+      70,
+      22,
+      8
     ],
     "main_vi": "Nông nghiệp xuất khẩu (ngô, lúa mì, dầu hướng dương số 1 thế giới), công nghiệp quốc phòng & drone, luyện kim – quặng sắt, gia công phần mềm & CNTT",
     "main_en": "Agri-exports (corn, wheat, world's #1 sunflower oil exporter), defense tech & drone manufacturing, iron ore & metallurgy, IT outsourcing",
@@ -624,15 +624,15 @@ export const ECON = {
   },
   "Uganda": {
     "tier": "low",
-    "gdp_vi": "~56,3 tỷ USD (#88 thế giới)",
-    "gdp_en": "~$56.3B (#88 globally)",
-    "pc_vi": "~1.160 USD (PPP ~3.380 USD)",
-    "pc_en": "~$1,160 (PPP ~$3,380)",
-    "gr": "+6.0%",
+    "gdp_vi": "~53,9 tỷ USD (#90 thế giới)",
+    "gdp_en": "~$53.9B (#90 globally)",
+    "pc_vi": "~1.080 USD (PPP ~3.280 USD)",
+    "pc_en": "~$1,080 (PPP ~$3,280)",
+    "gr": "+6.1%",
     "sec": [
-      43,
+      47,
       27,
-      30
+      26
     ],
     "main_vi": "Xuất khẩu cà phê (lớn thứ 2 châu Phi), khai thác & tinh luyện vàng, phát triển dầu khí hồ Albert (dự án Tilenga/Kingfisher & đường ống EACOP), thủy điện sông Nile, du lịch sinh thái",
     "main_en": "Coffee exports (#2 in Africa), gold refining & trade, Lake Albert oil development (Tilenga/Kingfisher & EACOP pipeline), Nile hydropower, wildlife tourism",
@@ -641,32 +641,32 @@ export const ECON = {
   },
   "Turkmenistan": {
     "tier": "emg",
-    "gdp_vi": "~64 tỷ USD",
-    "gdp_en": "~$64B",
-    "pc_vi": "~9.100 USD (PPP ~20.400 USD)",
-    "pc_en": "~$9,100 (PPP ~$20,400)",
-    "gr": "+2.3%",
+    "gdp_vi": "~44 tỷ USD (#99 thế giới)",
+    "gdp_en": "~$44B (#99 globally)",
+    "pc_vi": "~5.900 USD (PPP ~21.030 USD)",
+    "pc_en": "~$5,900 (PPP ~$21,030)",
+    "gr": "+6.3%",
     "sec": [
-      40,
       49,
-      11
+      39,
+      12
     ],
     "main_vi": "Khí đốt tự nhiên (trữ lượng #4 thế giới, mỏ Galkynysh), sản phẩm lọc hóa dầu, phân bón, bông vải",
     "main_en": "Natural gas (#4 global reserves, Galkynysh field), refined petroleum & polymers, fertilizers, cotton",
-    "note_vi": "Sở hữu trữ lượng khí đốt tự nhiên lớn thứ tư thế giới (siêu mỏ Galkynysh), kinh tế Turkmenistan (~64 tỷ USD) do nhà nước kiểm soát chặt chẽ với khí đốt và sản phẩm hóa dầu chiếm hơn 85% xuất khẩu. Từ khi Nga giảm mua khí năm 2016, Trung Quốc trở thành khách hàng gần như độc quyền khi thu mua ~80% lượng khí xuất khẩu của nước này qua đường ống Trung Á – Trung Quốc. Điểm nghẽn lớn là phụ thuộc vào một người mua duy nhất, chế độ tỷ giá kép làm tê liệt khu vực tư nhân và lượng rò rỉ khí mê-tan cao.",
-    "note_en": "Sitting atop the world's fourth-largest natural gas reserves (anchored by the Galkynysh field), Turkmenistan runs a state-controlled economy (~$64B GDP) where hydrocarbons generate over 85% of exports alongside cotton. Since Russia curtailed gas purchases in 2016, China has acted as a near-monopsony buyer, taking ~80% of Turkmen gas exports via the Central Asia–China pipeline network. Major structural weaknesses include single-buyer dependence on Beijing, a rigid dual exchange rate stifling private business, and high methane emissions."
+    "note_vi": "Sở hữu trữ lượng khí đốt tự nhiên lớn thứ tư thế giới (siêu mỏ Galkynysh), kinh tế Turkmenistan (~50 tỷ USD) do nhà nước kiểm soát chặt chẽ với khí đốt và sản phẩm hóa dầu chiếm hơn 85% xuất khẩu. Từ khi Nga giảm mua khí năm 2016, Trung Quốc trở thành khách hàng gần như độc quyền khi thu mua ~80% lượng khí xuất khẩu của nước này qua đường ống Trung Á – Trung Quốc. Điểm nghẽn lớn là phụ thuộc vào một người mua duy nhất, chế độ tỷ giá kép làm tê liệt khu vực tư nhân và lượng rò rỉ khí mê-tan cao.",
+    "note_en": "Sitting atop the world's fourth-largest natural gas reserves (anchored by the Galkynysh field), Turkmenistan runs a state-controlled economy (~$50B GDP) where hydrocarbons generate over 85% of exports alongside cotton. Since Russia curtailed gas purchases in 2016, China has acted as a near-monopsony buyer, taking ~80% of Turkmen gas exports via the Central Asia–China pipeline network. Major structural weaknesses include single-buyer dependence on Beijing, a rigid dual exchange rate stifling private business, and high methane emissions."
   },
   "Turkey": {
     "tier": "emg",
-    "gdp_vi": "~1.340 tỷ USD (#17 thế giới, thành viên G20)",
-    "gdp_en": "~$1.34T (#17 globally, G20 member)",
-    "pc_vi": "~15.600 USD (PPP ~43.900 USD)",
-    "pc_en": "~$15,600 (PPP ~$43,900)",
-    "gr": "+3.2%",
+    "gdp_vi": "~1.359 tỷ USD (#17 thế giới, thành viên G20)",
+    "gdp_en": "~$1.36T (#17 globally, G20 member)",
+    "pc_vi": "~15.890 USD (PPP ~45.120 USD)",
+    "pc_en": "~$15,890 (PPP ~$45,120)",
+    "gr": "+3.3%",
     "sec": [
-      56,
-      37,
-      7
+      65,
+      29,
+      6
     ],
     "main_vi": "Sản xuất ô tô & thiết bị gia dụng xuất sang EU, công nghiệp quốc phòng (UAV Bayraktar), dệt may, du lịch (~60 triệu khách/năm), thép, xây dựng, nông sản (hạt phỉ)",
     "main_en": "Automotive & white-goods manufacturing for EU, defense & aerospace (Bayraktar UAVs), textiles, tourism (~60M visitors/yr), steel, construction, agriculture",
@@ -675,15 +675,15 @@ export const ECON = {
   },
   "Tunisia": {
     "tier": "dev",
-    "gdp_vi": "~52,6 tỷ USD (#90 thế giới)",
-    "gdp_en": "~$52.6B (#90 globally)",
-    "pc_vi": "~4.270 USD (PPP ~14.100 USD)",
-    "pc_en": "~$4,270 (PPP ~$14,100)",
+    "gdp_vi": "~51,4 tỷ USD (#92 thế giới)",
+    "gdp_en": "~$51.4B (#92 globally)",
+    "pc_vi": "~4.190 USD (PPP ~14.540 USD)",
+    "pc_en": "~$4,190 (PPP ~$14,540)",
     "gr": "+1.6%",
     "sec": [
-      62,
-      26,
-      12
+      66,
+      24,
+      10
     ],
     "main_vi": "Linh kiện ô tô & dây cáp điện hàng không xuất sang EU, dầu ô liu xuất khẩu (top 4 thế giới), khai thác phosphate, dệt may, du lịch Địa Trung Hải",
     "main_en": "Automotive wiring harnesses & aerospace components for EU, olive oil exports (top-4 globally), phosphate mining, textiles, Mediterranean tourism",
@@ -692,15 +692,15 @@ export const ECON = {
   },
   "Trinidad and Tobago": {
     "tier": "adv",
-    "gdp_vi": "~28,4 tỷ USD (#109 thế giới)",
-    "gdp_en": "~$28.4B (#109 globally)",
-    "pc_vi": "~19.700 USD (PPP ~34.500 USD)",
-    "pc_en": "~$19,700 (PPP ~$34,500)",
-    "gr": "+2.2%",
+    "gdp_vi": "~25,6 tỷ USD (#116 thế giới)",
+    "gdp_en": "~$25.6B (#116 globally)",
+    "pc_vi": "~18.730 USD (PPP ~36.380 USD)",
+    "pc_en": "~$18,730 (PPP ~$36,380)",
+    "gr": "+2.5%",
     "sec": [
-      54,
-      45,
-      1
+      63,
+      37,
+      0
     ],
     "main_vi": "Khí thiên nhiên hóa lỏng (LNG), amoniac & methanol (thuộc nhóm xuất khẩu hàng đầu thế giới), lọc dầu, dịch vụ tài chính vùng Caribe, sản xuất thực phẩm – đồ uống",
     "main_en": "Liquefied natural gas (LNG), ammonia & methanol (among world's top exporters), petrochemicals, Caribbean regional banking, food & beverage manufacturing",
@@ -708,16 +708,16 @@ export const ECON = {
     "note_en": "Standing as CARICOM's industrial and financial heavyweight with a per-capita GDP near $20,000 (~$34,500 PPP), Trinidad and Tobago possesses the most energy-driven economy in the Caribbean. Anchored by the Point Lisas Industrial Estate and the Atlantic LNG liquefaction complex, the twin-island republic ranks among the world's top exporters of ammonia and methanol as well as a major Atlantic Basin LNG supplier, with hydrocarbons and petrochemicals generating over 80% of export earnings. Complementing energy are regional banking groups, light food-and-beverage manufacturing serving the entire Eastern Caribbean, and eco-resort tourism on sister island Tobago."
   },
   "Tonga": {
-    "tier": "dev",
-    "gdp_vi": "~0,55 tỷ USD (#184 thế giới)",
-    "gdp_en": "~$550M (#184 globally)",
-    "pc_vi": "~5.300 USD (PPP ~7.450 USD)",
-    "pc_en": "~$5,300 (PPP ~$7,450)",
-    "gr": "+2.4%",
+    "tier": "emg",
+    "gdp_vi": "~0,60 tỷ USD (~600 triệu USD) (#194 thế giới)",
+    "gdp_en": "~$600M (#194 globally)",
+    "pc_vi": "~6.220 USD (PPP ~8.170 USD)",
+    "pc_en": "~$6,220 (PPP ~$8,170)",
+    "gr": "+1.7%",
     "sec": [
-      61,
-      20,
-      19
+      58,
+      21,
+      21
     ],
     "main_vi": "Kiều hối (chiếm ~45% GDP - cao nhất thế giới), nông nghiệp xuất khẩu (bí đỏ sang Nhật, vani, kava), thủy sản, du lịch ngắm cá voi",
     "main_en": "Remittances (~45% of GDP - highest in the world), agricultural exports (squash to Japan, vanilla, kava), fisheries, whale-watching tourism",
@@ -725,16 +725,16 @@ export const ECON = {
     "note_en": "Tonga ranks as the world's single most remittance-dependent economy, with cash transfers from its 150,000+ diaspora in New Zealand, Australia, and the United States (outnumbering the domestic population) generating ~40–45% of GDP and sustaining household consumption. Domestic production centers on niche agricultural exports (squash pumpkins to Japan, vanilla, kava, and root crops), artisanal fisheries, and humpback-whale eco-tourism in Vava'u, while public finances rely heavily on Australian, New Zealand, World Bank, and Asian Development Bank grants to rebuild disaster-resilient infrastructure."
   },
   "Togo": {
-    "tier": "low",
-    "gdp_vi": "~10,0 tỷ USD (#146 thế giới)",
-    "gdp_en": "~$10.0B (#146 globally)",
-    "pc_vi": "~1.090 USD (PPP ~3.100 USD)",
-    "pc_en": "~$1,090 (PPP ~$3,100)",
-    "gr": "+5.3%",
+    "tier": "dev",
+    "gdp_vi": "~10,6 tỷ USD (#152 thế giới)",
+    "gdp_en": "~$10.6B (#152 globally)",
+    "pc_vi": "~1.270 USD (PPP ~3.810 USD)",
+    "pc_en": "~$1,270 (PPP ~$3,810)",
+    "gr": "+6.5%",
     "sec": [
-      52,
-      23,
-      25
+      54,
+      22,
+      24
     ],
     "main_vi": "Cảng nước sâu Lomé (trung chuyển container số 1 Tây Phi), khai thác quặng phosphate & đá vôi clinker, bông vải, cà phê, ca cao",
     "main_en": "Port of Lomé deepwater container transshipment (#1 in West Africa), phosphate & clinker mining, cotton, coffee, cocoa",
@@ -743,15 +743,15 @@ export const ECON = {
   },
   "Timor-Leste": {
     "tier": "dev",
-    "gdp_vi": "~2,0 tỷ USD",
-    "gdp_en": "~$2.0B",
-    "pc_vi": "~1.450 USD (PPP ~4.100 USD)",
-    "pc_en": "~$1,450 (PPP ~$4,100)",
-    "gr": "+3.4%",
+    "gdp_vi": "~1,9 tỷ USD (#182 thế giới, #11 Đông Nam Á)",
+    "gdp_en": "~$1.9B (#182 globally, #11 in ASEAN)",
+    "pc_vi": "~1.330 USD (PPP ~4.430 USD)",
+    "pc_en": "~$1,330 (PPP ~$4,430)",
+    "gr": "-9.1%",
     "sec": [
-      52,
-      31,
-      17
+      69,
+      11,
+      20
     ],
     "main_vi": "Dầu khí biển Timor (Quỹ Dầu mỏ quốc gia), cà phê hữu cơ xuất khẩu, nông nghiệp tự cung tự cấp, xây dựng hạ tầng công",
     "main_en": "Timor Sea oil & gas revenues (Petroleum Fund), organic coffee exports, subsistence agriculture, public infrastructure",
@@ -760,32 +760,32 @@ export const ECON = {
   },
   "Thailand": {
     "tier": "emg",
-    "gdp_vi": "~528 tỷ USD (#31 thế giới, #2 Đông Nam Á)",
-    "gdp_en": "~$528B (#31 globally, #2 in ASEAN)",
-    "pc_vi": "~7.530 USD (PPP ~23.400 USD)",
-    "pc_en": "~$7,530 (PPP ~$23,400)",
-    "gr": "+2.7%",
+    "gdp_vi": "~529 tỷ USD (#30 thế giới, #3 Đông Nam Á)",
+    "gdp_en": "~$529B (#30 globally, #3 in ASEAN)",
+    "pc_vi": "~7.390 USD (PPP ~24.910 USD)",
+    "pc_en": "~$7,390 (PPP ~$24,910)",
+    "gr": "+2.9%",
     "sec": [
-      58,
-      33,
+      59,
+      32,
       9
     ],
     "main_vi": "Sản xuất ô tô & linh kiện ('Detroit của Đông Nam Á'), du lịch quốc tế (~35 triệu khách/năm), điện tử & ổ cứng, hóa dầu, xuất khẩu gạo – cao su – sầu riêng",
     "main_en": "Automotive manufacturing ('Detroit of Asia'), international tourism (~35M visitors/yr), electronics & HDDs, petrochemicals, rice, rubber & durian exports",
-    "note_vi": "Là nền kinh tế lớn thứ hai ASEAN (~528 tỷ USD), Thái Lan là 'Detroit của châu Á' với cụm công nghiệp ô tô và điện tử dọc Hành lang Kinh tế phía Đông (EEC), thu hút mạnh cả hãng xe Nhật Bản lẫn nhà máy xe điện Trung Quốc (BYD). Du lịch quốc tế (~35–40 triệu khách/năm) và xuất khẩu gạo, sầu riêng, cao su đem lại nguồn ngoại tệ lớn. Tuy nhiên, tăng trưởng bị kìm hãm ở mức ~2,5–3% do nợ hộ gia đình lên tới gần 90% GDP và dân số già hóa nhanh.",
-    "note_en": "As ASEAN's second-largest economy (~$528B), Thailand is the 'Detroit of Asia,' anchoring a deep automotive and electronics cluster along its Eastern Economic Corridor (EEC) that now attracts major Chinese EV plants alongside Japanese automakers. Mass international tourism (~35–40M visitors/year) and leading exports of rice, durian, and rubber generate steady foreign-exchange inflows. However, growth lags regional peers (~2.5–3%) due to household debt near 90% of GDP and rapid population aging."
+    "note_vi": "Là nền kinh tế lớn thứ ba ASEAN (~529 tỷ USD), Thái Lan là 'Detroit của châu Á' với cụm công nghiệp ô tô và điện tử dọc Hành lang Kinh tế phía Đông (EEC), thu hút mạnh cả hãng xe Nhật Bản lẫn nhà máy xe điện Trung Quốc (BYD). Du lịch quốc tế (~35–40 triệu khách/năm) và xuất khẩu gạo, sầu riêng, cao su đem lại nguồn ngoại tệ lớn. Tuy nhiên, tăng trưởng bị kìm hãm ở mức ~2,5–3% do nợ hộ gia đình lên tới gần 90% GDP và dân số già hóa nhanh.",
+    "note_en": "As ASEAN's third-largest economy (~$529B), Thailand is the 'Detroit of Asia,' anchoring a deep automotive and electronics cluster along its Eastern Economic Corridor (EEC) that now attracts major Chinese EV plants alongside Japanese automakers. Mass international tourism (~35–40M visitors/year) and leading exports of rice, durian, and rubber generate steady foreign-exchange inflows. However, growth lags regional peers (~2.5–3%) due to household debt near 90% of GDP and rapid population aging."
   },
   "Tanzania": {
-    "tier": "low",
-    "gdp_vi": "~80,0 tỷ USD (#79 thế giới)",
-    "gdp_en": "~$80.0B (#79 globally)",
-    "pc_vi": "~1.220 USD (PPP ~4.100 USD)",
-    "pc_en": "~$1,220 (PPP ~$4,100)",
-    "gr": "+5.6%",
+    "tier": "dev",
+    "gdp_vi": "~79,2 tỷ USD (#82 thế giới)",
+    "gdp_en": "~$79.2B (#82 globally)",
+    "pc_vi": "~1.190 USD (PPP ~4.230 USD)",
+    "pc_en": "~$1,190 (PPP ~$4,230)",
+    "gr": "+5.5%",
     "sec": [
-      40,
-      33,
-      27
+      36,
+      35,
+      29
     ],
     "main_vi": "Khai thác vàng (top 4 châu Phi), đá quý Tanzanite độc nhất thế giới, du lịch sinh thái (Serengeti, Kilimanjaro, Zanzibar), cảng trung chuyển Dar es Salaam, nông sản (hạt điều, cà phê, đinh hương)",
     "main_en": "Gold mining (top-4 in Africa), exclusive Tanzanite gemstones, safari & island tourism (Serengeti, Kilimanjaro, Zanzibar), Dar es Salaam port logistics, cashews & coffee",
@@ -794,15 +794,15 @@ export const ECON = {
   },
   "Tajikistan": {
     "tier": "dev",
-    "gdp_vi": "~13,0 tỷ USD",
-    "gdp_en": "~$13.0B",
-    "pc_vi": "~1.280 USD (PPP ~5.400 USD)",
-    "pc_en": "~$1,280 (PPP ~$5,400)",
-    "gr": "+6.8%",
+    "gdp_vi": "~14,4 tỷ USD (#144 thế giới)",
+    "gdp_en": "~$14.4B (#144 globally)",
+    "pc_vi": "~1.360 USD (PPP ~5.410 USD)",
+    "pc_en": "~$1,360 (PPP ~$5,410)",
+    "gr": "+8.4%",
     "sec": [
-      42,
+      40,
       35,
-      23
+      25
     ],
     "main_vi": "Kiều hối (chiếm tới 35–45% GDP, cao bậc nhất thế giới), thủy điện (đập Nurek, Rogun), luyện nhôm (TALCO), khai thác vàng – antimon, bông",
     "main_en": "Remittances (35–45% of GDP, among highest globally), hydropower (Nurek, Rogun dams), aluminum smelting, gold & antimony mining, cotton",
@@ -834,9 +834,9 @@ export const ECON = {
     "pc_en": "~$650 (PPP ~$2,800)",
     "gr": "-1.5%",
     "sec": [
-      48,
-      25,
-      27
+      45,
+      12,
+      43
     ],
     "main_vi": "Nông nghiệp (lúa mì, bông, ô liu, chăn nuôi cừu), phốt phát, dầu khí quy mô nhỏ (ở vùng đông bắc), kiều hối và viện trợ nhân đạo",
     "main_en": "Agriculture (wheat, cotton, olives, sheep), phosphate mining, small-scale oil & gas (northeast fields), remittances & humanitarian aid",
@@ -845,14 +845,14 @@ export const ECON = {
   },
   "Switzerland": {
     "tier": "adv",
-    "gdp_vi": "~938 tỷ USD (#20 thế giới)",
-    "gdp_en": "~$938B (#20 globally)",
-    "pc_vi": "~105.600 USD (PPP ~94.000 USD)",
-    "pc_en": "~$105,600 (PPP ~$94,000)",
+    "gdp_vi": "~970 tỷ USD (#20 thế giới)",
+    "gdp_en": "~$970B (#20 globally)",
+    "pc_vi": "~107.700 USD (PPP ~97.470 USD)",
+    "pc_en": "~$107,700 (PPP ~$97,470)",
     "gr": "+1.4%",
     "sec": [
-      74,
-      25,
+      73,
+      26,
       1
     ],
     "main_vi": "Dược phẩm & công nghệ sinh học (Novartis, Roche), quản lý tài sản toàn cầu & ngân hàng (UBS), giao dịch hàng hóa nguyên liệu (Glencore, Vitol, Trafigura), đồng hồ xa xỉ, cơ khí chính xác, thực phẩm (Nestlé)",
@@ -862,14 +862,14 @@ export const ECON = {
   },
   "Sweden": {
     "tier": "adv",
-    "gdp_vi": "~609 tỷ USD (#25 thế giới)",
-    "gdp_en": "~$609B (#25 globally)",
-    "pc_vi": "~57.200 USD (PPP ~71.000 USD)",
-    "pc_en": "~$57,200 (PPP ~$71,000)",
-    "gr": "+0.9%",
+    "gdp_vi": "~605 tỷ USD (#25 thế giới)",
+    "gdp_en": "~$605B (#25 globally)",
+    "pc_vi": "~57.220 USD (PPP ~71.220 USD)",
+    "pc_en": "~$57,220 (PPP ~$71,220)",
+    "gr": "+1.0%",
     "sec": [
-      73,
-      25,
+      74,
+      24,
       2
     ],
     "main_vi": "Cơ khí chế tạo & xe tải hạng nặng (Volvo, Scania, Atlas Copco), viễn thông (Ericsson), quốc phòng – hàng không (Saab), quặng sắt (90% sản lượng EU) & thép xanh, công nghệ số (Spotify, Klarna), lâm nghiệp",
@@ -879,15 +879,15 @@ export const ECON = {
   },
   "eSwatini": {
     "tier": "dev",
-    "gdp_vi": "~5,10 tỷ USD (#155 thế giới)",
-    "gdp_en": "~$5.10B (#155 globally)",
-    "pc_vi": "~4.150 USD (PPP ~12.200 USD)",
-    "pc_en": "~$4,150 (PPP ~$12,200)",
-    "gr": "+4.6%",
+    "gdp_vi": "~4,9 tỷ USD (#163 thế giới)",
+    "gdp_en": "~$4.9B (#163 globally)",
+    "pc_vi": "~3.910 USD (PPP ~11.820 USD)",
+    "pc_en": "~$3,910 (PPP ~$11,820)",
+    "gr": "+3.0%",
     "sec": [
-      53,
+      55,
       38,
-      9
+      7
     ],
     "main_vi": "Sản xuất tinh chất nước giải khát cô đặc (nhà máy Coca-Cola lớn nhất châu Phi), mía đường, bột giấy & lâm nghiệp, dệt may, nguồn thu Liên minh Thuế quan miền Nam châu Phi (SACU)",
     "main_en": "Soft drink concentrate manufacturing (Coca-Cola hub for Africa), sugar refining, wood pulp & forestry, textiles, SACU customs revenue pool",
@@ -895,16 +895,16 @@ export const ECON = {
     "note_en": "Eswatini's economy is tightly bound to South Africa through a 1:1 currency peg between the lilangeni and the rand, with its giant neighbor accounting for roughly 70% of trade. Coca-Cola's massive concentrate plant in Matsapha—which supplies bottlers across sub-Saharan Africa—combines with sugar refining, forestry, and textiles to anchor manufacturing exports. Nevertheless, heavy fiscal reliance on volatile Southern African Customs Union (SACU) revenue transfers and sluggish rural job creation remain persistent structural bottlenecks."
   },
   "Suriname": {
-    "tier": "dev",
-    "gdp_vi": "~4,35 tỷ USD (#158 thế giới)",
-    "gdp_en": "~$4.35B (#158 globally)",
-    "pc_vi": "~6.850 USD (PPP ~21.200 USD)",
-    "pc_en": "~$6,850 (PPP ~$21,200)",
-    "gr": "+3.0%",
+    "tier": "emg",
+    "gdp_vi": "~4,4 tỷ USD (#165 thế giới)",
+    "gdp_en": "~$4.4B (#165 globally)",
+    "pc_vi": "~6.960 USD (PPP ~21.830 USD)",
+    "pc_en": "~$6,960 (PPP ~$21,830)",
+    "gr": "+1.7%",
     "sec": [
-      54,
-      37,
-      9
+      55,
+      38,
+      7
     ],
     "main_vi": "Khai thác vàng (chiếm ~80% kim ngạch xuất khẩu), dầu mỏ (mỏ ngoài khơi Lô 58 sắp khai thác), nông nghiệp (gạo, chuối), gỗ nhiệt đới",
     "main_en": "Gold mining (~80% of export earnings), oil & offshore energy (Block 58 GranMorgu project), agriculture (rice, bananas), tropical timber",
@@ -930,15 +930,15 @@ export const ECON = {
   },
   "Sudan": {
     "tier": "low",
-    "gdp_vi": "~28,5 tỷ USD (#108 thế giới)",
-    "gdp_en": "~$28.5B (#108 globally)",
-    "pc_vi": "~580 USD (PPP ~3.200 USD)",
-    "pc_en": "~$580 (PPP ~$3,200)",
-    "gr": "-18.0%",
+    "gdp_vi": "~49,7 tỷ USD (#93 thế giới)",
+    "gdp_en": "~$49.7B (#93 globally)",
+    "pc_vi": "~980 USD (PPP ~2.120 USD)",
+    "pc_en": "~$980 (PPP ~$2,120)",
+    "gr": "-14.0%",
     "sec": [
-      45,
-      22,
-      33
+      55,
+      23,
+      22
     ],
     "main_vi": "Khai thác vàng (top 3 châu Phi), nhựa cây keo (Gum Arabic - chiếm ~80% nguồn cung toàn cầu), chăn nuôi gia súc xuất sang vùng Vịnh, vừng (mè), lạc, phí trung chuyển dầu Nam Sudan",
     "main_en": "Gold mining (top-3 in Africa), gum arabic (~80% of global supply), livestock exports to the Gulf, sesame, peanuts, oil pipeline transit fees",
@@ -946,32 +946,32 @@ export const ECON = {
     "note_en": "Following the loss of three-quarters of its oil wealth in 2011, gold mining surged to become Sudan's top hard-currency earner (ranking among Africa's top three producers), though artisanal and industrial gold mines in Darfur and the north now serve as the primary war chests financing the RSF and SAF. Sudan also holds a near-monopoly (~80% of global supply) on raw gum arabic—an irreplaceable natural emulsifier for the world's soft drink, confectionery, and pharmaceutical industries—alongside major sesame, peanut, and live livestock exports to the Gulf. However, the civil war since April 2023 has gutted Khartoum's industrial and banking sectors, contracting formal GDP by over 40% and triggering widespread famine conditions."
   },
   "Sri Lanka": {
-    "tier": "dev",
-    "gdp_vi": "~89 tỷ USD",
-    "gdp_en": "~$89B",
-    "pc_vi": "~4.020 USD (PPP ~14.400 USD)",
-    "pc_en": "~$4,020 (PPP ~$14,400)",
-    "gr": "+4.4%",
+    "tier": "emg",
+    "gdp_vi": "~100 tỷ USD (#72 thế giới)",
+    "gdp_en": "~$100B (#72 globally)",
+    "pc_vi": "~4.540 USD (PPP ~15.700 USD)",
+    "pc_en": "~$4,540 (PPP ~$15,700)",
+    "gr": "+5.0%",
     "sec": [
-      60,
-      31,
+      63,
+      28,
       9
     ],
     "main_vi": "Du lịch biển & văn hóa, may mặc cao cấp, trà Ceylon, trung chuyển cảng biển (cảng Colombo), cao su, quế, kiều hối",
     "main_en": "Tourism, apparel manufacturing, Ceylon tea, maritime container transshipment (Colombo Port), rubber, cinnamon, remittances",
-    "note_vi": "Kinh tế Sri Lanka (~89 tỷ USD) dựa vào may mặc xuất khẩu, du lịch nghỉ dưỡng biển – văn hóa, trà Ceylon, gia vị, dịch vụ trung chuyển cảng Colombo và kiều hối. Sau vụ vỡ nợ ngoại tệ năm 2022 khiến lạm phát vọt lên 70%, nền kinh tế đã phục hồi tăng trưởng ~4–5% trong giai đoạn 2024–2026 nhờ tái cơ cấu nợ quốc tế, cải cách thuế theo chương trình IMF và khách du lịch quay trở lại. Điểm nghẽn lâu dài là gánh nặng trả nợ công, thu ngân sách còn mỏng và doanh nghiệp nhà nước kém hiệu quả.",
-    "note_en": "Sri Lanka's ~$89B economy relies on apparel manufacturing, tourism, Ceylon tea and spices, Colombo Port container transshipment, and overseas worker remittances. Following its 2022 sovereign default and 70% inflation crisis, the economy returned to ~4–5% growth in 2024–2026 thanks to IMF-guided tax reforms, external debt restructuring, and rebounding tourism. Long-term recovery hinges on expanding fiscal revenues, reforming state-owned enterprises, and avoiding future debt traps."
+    "note_vi": "Kinh tế Sri Lanka (~99 tỷ USD) dựa vào may mặc xuất khẩu, du lịch nghỉ dưỡng biển – văn hóa, trà Ceylon, gia vị, dịch vụ trung chuyển cảng Colombo và kiều hối. Sau vụ vỡ nợ ngoại tệ năm 2022 khiến lạm phát vọt lên 70%, nền kinh tế đã phục hồi tăng trưởng ~4–5% trong giai đoạn 2024–2026 nhờ tái cơ cấu nợ quốc tế, cải cách thuế theo chương trình IMF và khách du lịch quay trở lại. Điểm nghẽn lâu dài là gánh nặng trả nợ công, thu ngân sách còn mỏng và doanh nghiệp nhà nước kém hiệu quả.",
+    "note_en": "Sri Lanka's ~$99B economy relies on apparel manufacturing, tourism, Ceylon tea and spices, Colombo Port container transshipment, and overseas worker remittances. Following its 2022 sovereign default and 70% inflation crisis, the economy returned to ~4–5% growth in 2024–2026 thanks to IMF-guided tax reforms, external debt restructuring, and rebounding tourism. Long-term recovery hinges on expanding fiscal revenues, reforming state-owned enterprises, and avoiding future debt traps."
   },
   "Spain": {
     "tier": "adv",
-    "gdp_vi": "~1.720 tỷ USD (#15 thế giới, #4 EU)",
-    "gdp_en": "~$1.72T (#15 globally, #4 in EU)",
-    "pc_vi": "~35.300 USD (PPP ~55.100 USD)",
-    "pc_en": "~$35,300 (PPP ~$55,100)",
-    "gr": "+3.2%",
+    "gdp_vi": "~1.726 tỷ USD (#15 thế giới, #4 EU)",
+    "gdp_en": "~$1.73T (#15 globally, #4 in EU)",
+    "pc_vi": "~35.330 USD (PPP ~58.060 USD)",
+    "pc_en": "~$35,330 (PPP ~$58,060)",
+    "gr": "+3.5%",
     "sec": [
-      74,
-      23,
+      76,
+      21,
       3
     ],
     "main_vi": "Du lịch quốc tế (#2 thế giới với ~94 triệu khách/năm), sản xuất ô tô (#2 châu Âu), thời trang bán lẻ (Inditex/Zara), ngân hàng (Santander, BBVA), năng lượng tái tạo (Iberdrola), nông sản (dầu ô liu số 1 thế giới, rượu vang, thịt heo)",
@@ -981,15 +981,15 @@ export const ECON = {
   },
   "South Korea": {
     "tier": "adv",
-    "gdp_vi": "~1.870 tỷ USD (#12 thế giới)",
-    "gdp_en": "~$1.87T (#12 globally)",
-    "pc_vi": "~36.100 USD (PPP ~59.300 USD)",
-    "pc_en": "~$36,100 (PPP ~$59,300)",
-    "gr": "+2.2%",
+    "gdp_vi": "~1.875 tỷ USD (#12 thế giới)",
+    "gdp_en": "~$1.88T (#12 globally)",
+    "pc_vi": "~36.240 USD (PPP ~61.050 USD)",
+    "pc_en": "~$36,240 (PPP ~$61,050)",
+    "gr": "+2.0%",
     "sec": [
-      64,
-      34,
-      2
+      62,
+      37,
+      1
     ],
     "main_vi": "Chip nhớ bán dẫn (HBM, DRAM, NAND), ô tô & pin xe điện, đóng tàu LNG, màn hình OLED, hóa dầu, công nghiệp quốc phòng, văn hóa K-Wave",
     "main_en": "Memory semiconductors (HBM, DRAM, NAND), automobiles & EV batteries, LNG shipbuilding, OLED displays, petrochemicals, defense exports",
@@ -998,28 +998,28 @@ export const ECON = {
   },
   "South Africa": {
     "tier": "emg",
-    "gdp_vi": "~403 tỷ USD (#40 thế giới, #1 châu Phi)",
-    "gdp_en": "~$403B (#40 globally, #1 in Africa)",
-    "pc_vi": "~6.380 USD (PPP ~15.700 USD)",
-    "pc_en": "~$6,380 (PPP ~$15,700)",
-    "gr": "+1.1%",
+    "gdp_vi": "~401 tỷ USD (#40 thế giới, #1 châu Phi)",
+    "gdp_en": "~$401B (#40 globally, #1 in Africa)",
+    "pc_vi": "~6.270 USD (PPP ~15.480 USD)",
+    "pc_en": "~$6,270 (PPP ~$15,480)",
+    "gr": "+0.5%",
     "sec": [
-      69,
-      28,
+      70,
+      27,
       3
     ],
     "main_vi": "Khai khoáng (bạch kim #1 thế giới, mangan #1, crom #1, vàng, than đá), tài chính – ngân hàng (JSE - sàn chứng khoán lớn nhất châu Phi), sản xuất ô tô (BMW, Toyota, Ford, VW), nông sản & rượu vang",
     "main_en": "Mining (world's #1 platinum/PGMs, manganese & chromium producer, gold, coal), finance & banking (JSE - Africa's largest stock exchange), automotive assembly, citrus & wine exports",
-    "note_vi": "Sở hữu nền kinh tế lớn nhất và đa dạng nhất châu Phi (~403 tỷ USD), Nam Phi giữ vị trí số 1 tuyệt đối toàn cầu về khai thác bạch kim (chiếm >70% nguồn cung PGMs thế giới), quặng mangan (#1 thế giới) và quặng crôm (#1 thế giới), bên cạnh ngành lắp ráp ô tô xuất khẩu (BMW, Ford, Toyota, Volkswagen), nông sản – rượu vang Cape và Sàn giao dịch chứng khoán Johannesburg (JSE) có vốn hóa lớn nhất lục địa. Sự ra đời của Chính phủ Đoàn kết Dân tộc (GNU) giữa năm 2024 cùng việc chấm dứt khủng hoảng cắt điện Eskom và thu hút tư nhân tham gia vận hành đường sắt – cảng biển Transnet đang khôi phục niềm tin nhà đầu tư và đồng Rand, dù di sản phân hóa không gian thời Apartheid, tội phạm và tỷ lệ thất nghiệp ~32% vẫn là bài toán xã hội nan giải.",
-    "note_en": "Africa's largest and most industrialized economy (~$403B nominal GDP) ranks #1 globally in platinum-group metals (>70% of world supply), manganese, and chromium mining, complemented by a major export-oriented automotive manufacturing sector (BMW, Ford, Toyota, VW), Cape wine and citrus exports, and the continent's deepest financial markets anchored by the Johannesburg Stock Exchange (JSE). The formation of the market-friendly Government of National Unity in mid-2024, combined with the dramatic curtailment of Eskom electricity load-shedding and private-sector reforms at freight operator Transnet, has boosted investor confidence, though ~32% structural unemployment and deep income inequality remain daunting hurdles."
+    "note_vi": "Sở hữu nền kinh tế lớn nhất và đa dạng nhất châu Phi (~401 tỷ USD), Nam Phi giữ vị trí số 1 tuyệt đối toàn cầu về khai thác bạch kim (chiếm >70% nguồn cung PGMs thế giới), quặng mangan (#1 thế giới) và quặng crôm (#1 thế giới), bên cạnh ngành lắp ráp ô tô xuất khẩu (BMW, Ford, Toyota, Volkswagen), nông sản – rượu vang Cape và Sàn giao dịch chứng khoán Johannesburg (JSE) có vốn hóa lớn nhất lục địa. Sự ra đời của Chính phủ Đoàn kết Dân tộc (GNU) giữa năm 2024 cùng việc chấm dứt khủng hoảng cắt điện Eskom và thu hút tư nhân tham gia vận hành đường sắt – cảng biển Transnet đang khôi phục niềm tin nhà đầu tư và đồng Rand, dù di sản phân hóa không gian thời Apartheid, tội phạm và tỷ lệ thất nghiệp ~32% vẫn là bài toán xã hội nan giải.",
+    "note_en": "Africa's largest and most industrialized economy (~$401B nominal GDP) ranks #1 globally in platinum-group metals (>70% of world supply), manganese, and chromium mining, complemented by a major export-oriented automotive manufacturing sector (BMW, Ford, Toyota, VW), Cape wine and citrus exports, and the continent's deepest financial markets anchored by the Johannesburg Stock Exchange (JSE). The formation of the market-friendly Government of National Unity in mid-2024, combined with the dramatic curtailment of Eskom electricity load-shedding and private-sector reforms at freight operator Transnet, has boosted investor confidence, though ~32% structural unemployment and deep income inequality remain daunting hurdles."
   },
   "Somalia": {
     "tier": "low",
-    "gdp_vi": "~12,8 tỷ USD (#140 thế giới)",
-    "gdp_en": "~$12.8B (#140 globally)",
-    "pc_vi": "~680 USD (PPP ~1.850 USD)",
-    "pc_en": "~$680 (PPP ~$1,850)",
-    "gr": "+3.7%",
+    "gdp_vi": "~12,0 tỷ USD (#147 thế giới)",
+    "gdp_en": "~$12.0B (#147 globally)",
+    "pc_vi": "~630 USD (PPP ~1.600 USD)",
+    "pc_en": "~$630 (PPP ~$1,600)",
+    "gr": "+4.1%",
     "sec": [
       32,
       8,
@@ -1048,16 +1048,16 @@ export const ECON = {
     "note_en": "Locked out of direct IMF, World Bank, and sovereign bond financing due to its lack of formal UN recognition, Somaliland has nonetheless built a resilient free-market economy with its own central bank, the Somaliland shilling, and one of the world's most advanced mobile-money ecosystems (Zaad). Economic life rests on three pillars: exporting millions of live camels and prized blackhead sheep across the Gulf of Aden to Saudi Arabia, over $1.3 billion in annual diaspora remittances channeled through Hargeisa-born financial giant Dahabshiil, and growing transit revenues from the DP World Port of Berbera and its free-trade zone. High diesel-generated electricity costs and lack of access to international correspondent banking remain its principal structural hurdles."
   },
   "Solomon Is.": {
-    "tier": "low",
-    "gdp_vi": "~1,76 tỷ USD (#172 thế giới)",
-    "gdp_en": "~$1.76B (#172 globally)",
-    "pc_vi": "~2.320 USD (PPP ~2.850 USD)",
-    "pc_en": "~$2,320 (PPP ~$2,850)",
-    "gr": "+2.5%",
+    "tier": "dev",
+    "gdp_vi": "~1,6 tỷ USD (#186 thế giới)",
+    "gdp_en": "~$1.6B (#186 globally)",
+    "pc_vi": "~1.930 USD (PPP ~2.680 USD)",
+    "pc_en": "~$1,930 (PPP ~$2,680)",
+    "gr": "+3.0%",
     "sec": [
-      51,
-      15,
-      34
+      47,
+      23,
+      30
     ],
     "main_vi": "Khai thác gỗ tròn nhiệt đới xuất khẩu (chủ yếu sang Trung Quốc), đánh bắt & đóng hộp cá ngừ (SolTuna), khai thác vàng (mỏ Gold Ridge) & bauxite, dầu cọ, cùi dừa",
     "main_en": "Tropical round log exports (primarily to China), tuna fishing & canning (SolTuna), gold (Gold Ridge) & bauxite mining, palm oil, copra",
@@ -1066,15 +1066,15 @@ export const ECON = {
   },
   "Slovakia": {
     "tier": "adv",
-    "gdp_vi": "~142 tỷ USD (#60 thế giới)",
-    "gdp_en": "~$142B (#60 globally)",
-    "pc_vi": "~26.100 USD (PPP ~45.800 USD)",
-    "pc_en": "~$26,100 (PPP ~$45,800)",
-    "gr": "+2.1%",
+    "gdp_vi": "~141 tỷ USD (#61 thế giới)",
+    "gdp_en": "~$141B (#61 globally)",
+    "pc_vi": "~25.990 USD (PPP ~47.850 USD)",
+    "pc_en": "~$25,990 (PPP ~$47,850)",
+    "gr": "+1.9%",
     "sec": [
-      64,
-      33,
-      3
+      66,
+      32,
+      2
     ],
     "main_vi": "Sản xuất ô tô (#1 thế giới tính theo đầu người: VW, Kia, Peugeot, Jaguar Land Rover, Volvo), điện tử (Samsung, Foxconn), cơ khí – thép, công nghiệp quốc phòng",
     "main_en": "Automotive manufacturing (#1 per capita globally: VW, Kia, Stellantis, JLR, Volvo), electronics, steel & engineering, defense artillery production",
@@ -1083,14 +1083,14 @@ export const ECON = {
   },
   "Slovenia": {
     "tier": "adv",
-    "gdp_vi": "~73,2 tỷ USD (#82 thế giới)",
-    "gdp_en": "~$73.2B (#82 globally)",
-    "pc_vi": "~34.500 USD (PPP ~55.300 USD)",
-    "pc_en": "~$34,500 (PPP ~$55,300)",
-    "gr": "+1.6%",
+    "gdp_vi": "~73,0 tỷ USD (#87 thế giới)",
+    "gdp_en": "~$73.0B (#87 globally)",
+    "pc_vi": "~34.300 USD (PPP ~57.570 USD)",
+    "pc_en": "~$34,300 (PPP ~$57,570)",
+    "gr": "+1.7%",
     "sec": [
-      66,
-      32,
+      65,
+      33,
       2
     ],
     "main_vi": "Dược phẩm & hóa chất (Krka, Lek/Sandoz), linh kiện & lắp ráp ô tô (Revoz), thiết bị điện gia dụng (Gorenje), cảng biển Koper (cửa ngõ Bắc Adriatic), du lịch núi Alps",
@@ -1100,14 +1100,14 @@ export const ECON = {
   },
   "Singapore": {
     "tier": "adv",
-    "gdp_vi": "~530 tỷ USD (#30 thế giới)",
-    "gdp_en": "~$530B (#30 globally)",
-    "pc_vi": "~89.300 USD (PPP ~148.000 USD)",
-    "pc_en": "~$89,300 (PPP ~$148,000)",
-    "gr": "+4.0%",
+    "gdp_vi": "~573 tỷ USD (#26 thế giới, #2 Đông Nam Á)",
+    "gdp_en": "~$573B (#26 globally, #2 in ASEAN)",
+    "pc_vi": "~94.900 USD (PPP ~153.160 USD)",
+    "pc_en": "~$94,900 (PPP ~$153,160)",
+    "gr": "+5.3%",
     "sec": [
-      75,
-      25,
+      77,
+      23,
       0
     ],
     "main_vi": "Tài chính – ngân hàng & quản lý gia sản, cảng trung chuyển container (#2 thế giới), lọc hóa dầu, bán dẫn & dược phẩm sinh học, hàng không",
@@ -1117,15 +1117,15 @@ export const ECON = {
   },
   "Sierra Leone": {
     "tier": "low",
-    "gdp_vi": "~7,55 tỷ USD (#151 thế giới)",
-    "gdp_en": "~$7.55B (#151 globally)",
-    "pc_vi": "~860 USD (PPP ~3.320 USD)",
-    "pc_en": "~$860 (PPP ~$3,320)",
-    "gr": "+4.0%",
+    "gdp_vi": "~7,0 tỷ USD (#160 thế giới)",
+    "gdp_en": "~$7.0B (#160 globally)",
+    "pc_vi": "~810 USD (PPP ~3.530 USD)",
+    "pc_en": "~$810 (PPP ~$3,530)",
+    "gr": "+4.3%",
     "sec": [
-      32,
-      11,
-      57
+      44,
+      26,
+      30
     ],
     "main_vi": "Khai khoáng (quặng sắt Marampa/Tonkolili, kim cương phù sa, rutile/titan lớn hàng đầu thế giới, bauxite), nông nghiệp (gạo, ca cao, dầu cọ), đánh bắt cá",
     "main_en": "Mining (iron ore, alluvial diamonds, world-class rutile/titanium & bauxite deposits), agriculture (rice, cocoa, palm oil), fisheries",
@@ -1134,11 +1134,11 @@ export const ECON = {
   },
   "Seychelles": {
     "tier": "adv",
-    "gdp_vi": "~2,20 tỷ USD (#169 thế giới)",
-    "gdp_en": "~$2.20B (#169 globally)",
-    "pc_vi": "~21.800 USD (PPP ~43.500 USD)",
-    "pc_en": "~$21,800 (PPP ~$43,500)",
-    "gr": "+3.5%",
+    "gdp_vi": "~2,2 tỷ USD (#179 thế giới)",
+    "gdp_en": "~$2.2B (#179 globally)",
+    "pc_vi": "~18.360 USD (PPP ~33.340 USD)",
+    "pc_en": "~$18,360 (PPP ~$33,340)",
+    "gr": "+3.3%",
     "sec": [
       81,
       16,
@@ -1151,31 +1151,31 @@ export const ECON = {
   },
   "Serbia": {
     "tier": "emg",
-    "gdp_vi": "~82,5 tỷ USD (#78 thế giới)",
-    "gdp_en": "~$82.5B (#78 globally)",
-    "pc_vi": "~12.500 USD (PPP ~28.900 USD)",
-    "pc_en": "~$12,500 (PPP ~$28,900)",
+    "gdp_vi": "~90,1 tỷ USD (#76 thế giới)",
+    "gdp_en": "~$90.1B (#76 globally)",
+    "pc_vi": "~13.680 USD (PPP ~32.830 USD)",
+    "pc_en": "~$13,680 (PPP ~$32,830)",
     "gr": "+3.9%",
     "sec": [
-      60,
-      33,
-      7
+      69,
+      27,
+      4
     ],
     "main_vi": "Công nghệ thông tin & phần mềm xuất khẩu, sản xuất ô tô điện (Stellantis) & lốp xe, khai thác đồng – vàng (Zijin Bor) & trữ lượng lithium Jadar lớn nhất châu Âu, nông sản (mâm xôi số 1-2 thế giới, ngô)",
     "main_en": "IT & software exports, EV assembly (Stellantis) & tire manufacturing, copper-gold mining (Zijin Bor) & Jadar lithium deposit, agricultural exports (raspberries, corn)",
-    "note_vi": "Là nền kinh tế lớn nhất khu vực Tây Balkan (GDP ~82,5 tỷ USD, tăng trưởng ~3,8–4%/năm), Serbia thu hút hơn 60% tổng vốn đầu tư trực tiếp nước ngoài (FDI) của cả toàn vùng nhờ lực lượng kỹ sư CNTT chất lượng cao (xuất khẩu phần mềm vượt 4 tỷ Euro/năm), các nhà máy sản xuất ô tô điện (Stellantis vừa ra mắt mẫu xe điện Fiat Grande Panda tại Kragujevac), lốp xe và khai khoáng (mỏ đồng – vàng khổng lồ Zijin tại Bor). Đặc biệt, thỏa thuận chiến lược năm 2024 với EU và Đức về khai thác mỏ lithium Jadar của Rio Tinto (đủ cung cấp cho 1 triệu xe điện/năm) cùng đại công trường EXPO 2027 trị giá 18 tỷ Euro đang định hình vị thế địa kinh tế mới cho Belgrade.",
-    "note_en": "As the largest economy in the Western Balkans (GDP ~$82.5 billion, growing ~3.8–4% annually), Serbia captures over 60% of all foreign direct investment flowing into the region. Growth is propelled by booming IT and software exports (>€4 billion/year), Stellantis's new electric vehicle production in Kragujevac, Chinese giant Zijin Mining's massive copper-gold complex at Bor, an €18 billion infrastructure investment wave for Belgrade's Specialized Expo 2027, and the strategic Jadar Valley lithium deposit—Europe's largest, capable of supplying batteries for over 1 million EVs annually."
+    "note_vi": "Là nền kinh tế lớn nhất khu vực Tây Balkan (GDP ~91 tỷ USD, tăng trưởng ~3,8–4%/năm), Serbia thu hút hơn 60% tổng vốn đầu tư trực tiếp nước ngoài (FDI) của cả toàn vùng nhờ lực lượng kỹ sư CNTT chất lượng cao (xuất khẩu phần mềm vượt 4 tỷ Euro/năm), các nhà máy sản xuất ô tô điện (Stellantis vừa ra mắt mẫu xe điện Fiat Grande Panda tại Kragujevac), lốp xe và khai khoáng (mỏ đồng – vàng khổng lồ Zijin tại Bor). Đặc biệt, thỏa thuận chiến lược năm 2024 với EU và Đức về khai thác mỏ lithium Jadar của Rio Tinto (đủ cung cấp cho 1 triệu xe điện/năm) cùng đại công trường EXPO 2027 trị giá 18 tỷ Euro đang định hình vị thế địa kinh tế mới cho Belgrade.",
+    "note_en": "As the largest economy in the Western Balkans (GDP ~$91 billion, growing ~3.8–4% annually), Serbia captures over 60% of all foreign direct investment flowing into the region. Growth is propelled by booming IT and software exports (>€4 billion/year), Stellantis's new electric vehicle production in Kragujevac, Chinese giant Zijin Mining's massive copper-gold complex at Bor, an €18 billion infrastructure investment wave for Belgrade's Specialized Expo 2027, and the strategic Jadar Valley lithium deposit—Europe's largest, capable of supplying batteries for over 1 million EVs annually."
   },
   "Senegal": {
     "tier": "dev",
-    "gdp_vi": "~33,7 tỷ USD (#103 thế giới)",
-    "gdp_en": "~$33.7B (#103 globally)",
-    "pc_vi": "~1.820 USD (PPP ~4.850 USD)",
-    "pc_en": "~$1,820 (PPP ~$4,850)",
-    "gr": "+8.8%",
+    "gdp_vi": "~32,2 tỷ USD (#109 thế giới)",
+    "gdp_en": "~$32.2B (#109 globally)",
+    "pc_vi": "~1.740 USD (PPP ~5.100 USD)",
+    "pc_en": "~$1,740 (PPP ~$5,100)",
+    "gr": "+6.5%",
     "sec": [
-      53,
-      30,
+      55,
+      28,
       17
     ],
     "main_vi": "Khai thác dầu khí ngoài khơi mới (mỏ dầu Sangomar & mỏ LNG Greater Tortue Ahmeyim), khai thác vàng & phosphate – axit photphoric, thủy sản, lạc (đậu phộng), trung tâm dịch vụ Dakar",
@@ -1185,15 +1185,15 @@ export const ECON = {
   },
   "Saudi Arabia": {
     "tier": "adv",
-    "gdp_vi": "~1.100 tỷ USD (#19 thế giới, thành viên G20)",
-    "gdp_en": "~$1.10T (#19 globally, G20 member)",
-    "pc_vi": "~32.500 USD (PPP ~71.200 USD)",
-    "pc_en": "~$32,500 (PPP ~$71,200)",
-    "gr": "+1.5%",
+    "gdp_vi": "~1.254 tỷ USD (#18 thế giới, thành viên G20)",
+    "gdp_en": "~$1.25T (#18 globally, G20 member)",
+    "pc_vi": "~35.530 USD (PPP ~71.940 USD)",
+    "pc_en": "~$35,530 (PPP ~$71,940)",
+    "gr": "+2.6%",
     "sec": [
-      54,
-      43,
-      3
+      50,
+      48,
+      2
     ],
     "main_vi": "Dầu thô (Saudi Aramco – chi phí khai thác thấp nhất thế giới), hóa dầu (SABIC), du lịch hành hương (Mecca/Medina), đầu tư siêu dự án Vision 2030",
     "main_en": "Crude oil (Saudi Aramco – lowest lifting cost globally), petrochemicals (SABIC), religious pilgrimage (Hajj/Umrah), Vision 2030 giga-projects",
@@ -1202,15 +1202,15 @@ export const ECON = {
   },
   "São Tomé and Principe": {
     "tier": "dev",
-    "gdp_vi": "~0,75 tỷ USD (#180 thế giới)",
-    "gdp_en": "~$750M (#180 globally)",
-    "pc_vi": "~3.200 USD (PPP ~6.200 USD)",
-    "pc_en": "~$3,200 (PPP ~$6,200)",
-    "gr": "+1.9%",
+    "gdp_vi": "~0,80 tỷ USD (~800 triệu USD) (#192 thế giới)",
+    "gdp_en": "~$800M (#192 globally)",
+    "pc_vi": "~3.500 USD (PPP ~6.270 USD)",
+    "pc_en": "~$3,500 (PPP ~$6,270)",
+    "gr": "+1.5%",
     "sec": [
-      73,
-      13,
-      14
+      85,
+      2,
+      13
     ],
     "main_vi": "Sản xuất ca cao hữu cơ chất lượng cao ('Đảo Sô-cô-la'), dầu cọ hữu cơ, du lịch sinh thái rừng mưa & biển, đánh bắt cá, thăm dò dầu khí vịnh Guinea",
     "main_en": "Fine organic cocoa exports ('Chocolate Island'), organic palm oil, rainforest & marine eco-tourism, fisheries, Gulf of Guinea oil exploration",
@@ -1225,8 +1225,8 @@ export const ECON = {
     "pc_en": "~$59,800 (PPP ~$84,500)",
     "gr": "+1.3%",
     "sec": [
-      62,
-      38,
+      61,
+      39,
       0
     ],
     "main_vi": "Chế tạo cơ khí chính xác, gốm sứ công nghiệp, bao bì & dược phẩm – mỹ phẩm, du lịch (hơn 2 triệu khách/năm), dịch vụ ngân hàng, phát hành xu Euro & tem sưu tầm",
@@ -1235,16 +1235,16 @@ export const ECON = {
     "note_en": "Contrary to the stereotype of service-only microstates, San Marino's primary economic engine is high-value manufacturing—accounting for nearly 40% of GDP across precision machinery, ceramics, packaging, pharmaceuticals, and cosmetics integrated into northern Italian supply chains. Combined with over 2 million annual visitors to its UNESCO-listed historic center, the economy has rebounded strongly from its 2010s banking overhaul and stands to gain further from its EU Association Agreement."
   },
   "Samoa": {
-    "tier": "dev",
-    "gdp_vi": "~1,02 tỷ USD (#178 thế giới)",
-    "gdp_en": "~$1.02B (#178 globally)",
-    "pc_vi": "~4.850 USD (PPP ~7.100 USD)",
-    "pc_en": "~$4,850 (PPP ~$7,100)",
-    "gr": "+4.2%",
+    "tier": "emg",
+    "gdp_vi": "~1,2 tỷ USD (#189 thế giới)",
+    "gdp_en": "~$1.2B (#189 globally)",
+    "pc_vi": "~5.390 USD (PPP ~8.750 USD)",
+    "pc_en": "~$5,390 (PPP ~$8,750)",
+    "gr": "+4.7%",
     "sec": [
-      76,
-      14,
-      10
+      77,
+      12,
+      11
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển Polynesia, kiều hối (chiếm ~28% GDP từ New Zealand, Úc, Mỹ), nông nghiệp (khoai môn, dừa, nước cốt trái nhàu noni), đánh bắt cá ngừ",
     "main_en": "Polynesian resort tourism, diaspora remittances (~28% of GDP from NZ, Australia, US), agriculture (taro, coconut, noni juice), tuna fishing",
@@ -1252,16 +1252,16 @@ export const ECON = {
     "note_en": "Samoa's economy is deeply intertwined with New Zealand, Australia, and the United States through a global Samoan diaspora more than double the home-island population, generating steady remittance inflows worth ~25–30% of GDP alongside Polynesian resort tourism. Following the 2017 closure of Japanese auto-wiring manufacturer Yazaki—for 26 years the island's largest private employer—merchandise exports rely on taro, coconut products, noni juice, and fresh tuna, while large seasonal-worker outflows to Australian and New Zealand farms boost household incomes at the cost of domestic labor shortages."
   },
   "St. Vin. and Gren.": {
-    "tier": "dev",
-    "gdp_vi": "~1,14 tỷ USD (#176 thế giới)",
-    "gdp_en": "~$1.14B (#176 globally)",
-    "pc_vi": "~10.300 USD (PPP ~19.200 USD)",
-    "pc_en": "~$10,300 (PPP ~$19,200)",
-    "gr": "+4.8%",
+    "tier": "emg",
+    "gdp_vi": "~1,2 tỷ USD (#190 thế giới)",
+    "gdp_en": "~$1.2B (#190 globally)",
+    "pc_vi": "~11.500 USD (PPP ~21.300 USD)",
+    "pc_en": "~$11,500 (PPP ~$21,300)",
+    "gr": "+4.1%",
     "sec": [
-      75,
+      78,
       18,
-      7
+      4
     ],
     "main_vi": "Du lịch du thuyền & nghỉ dưỡng siêu sang (quần đảo Grenadines: Mustique, Canouan, Bequia), nông sản (bột bình tinh arrowroot số 1 thế giới, chuối, củ từ), đăng ký tàu biển",
     "main_en": "Yachting & ultra-luxury island resorts (Mustique, Canouan, Bequia in the Grenadines), agriculture (world's top arrowroot starch producer, root crops), ship registry",
@@ -1269,12 +1269,12 @@ export const ECON = {
     "note_en": "As a member of the Eastern Caribbean Currency Union (pegged at 2.70 XCD to 1 USD), Saint Vincent and the Grenadines has unlocked a new era of tourism growth since the 2017 opening of Argyle International Airport enabled direct wide-body flights from New York, Miami, Toronto, and London. New large-scale resorts on the main island (including Sandals Saint Vincent, opened in 2024) complement ultra-exclusive private-island retreats on Mustique and Canouan in the Grenadines, offsetting the historical decline of banana exports alongside specialty arrowroot and root-crop farming. Even so, reconstruction costs from the 2021 La Soufrière eruption and July 2024's Category 4–5 Hurricane Beryl across Union Island and Mayreau continue to test fiscal buffers."
   },
   "Saint Lucia": {
-    "tier": "dev",
-    "gdp_vi": "~2,55 tỷ USD (#165 thế giới)",
-    "gdp_en": "~$2.55B (#165 globally)",
-    "pc_vi": "~14.100 USD (PPP ~25.100 USD)",
-    "pc_en": "~$14,100 (PPP ~$25,100)",
-    "gr": "+3.7%",
+    "tier": "emg",
+    "gdp_vi": "~2,6 tỷ USD (#176 thế giới)",
+    "gdp_en": "~$2.6B (#176 globally)",
+    "pc_vi": "~14.490 USD (PPP ~28.120 USD)",
+    "pc_en": "~$14,490 (PPP ~$28,120)",
+    "gr": "+4.8%",
     "sec": [
       86,
       12,
@@ -1287,14 +1287,14 @@ export const ECON = {
   },
   "St. Kitts and Nevis": {
     "tier": "adv",
-    "gdp_vi": "~1,13 tỷ USD (#175 thế giới)",
-    "gdp_en": "~$1.13B (#175 globally)",
-    "pc_vi": "~22.800 USD (PPP ~37.500 USD)",
-    "pc_en": "~$22,800 (PPP ~$37,500)",
-    "gr": "+3.2%",
+    "gdp_vi": "~1,1 tỷ USD (#191 thế giới)",
+    "gdp_en": "~$1.1B (#191 globally)",
+    "pc_vi": "~23.960 USD (PPP ~34.900 USD)",
+    "pc_en": "~$23,960 (PPP ~$34,900)",
+    "gr": "+0.3%",
     "sec": [
-      78,
-      21,
+      75,
+      24,
       1
     ],
     "main_vi": "Chương trình Đầu tư lấy Quốc tịch (CBI lâu đời nhất thế giới từ 1984), du lịch tàu biển (cảng Port Zante) & resort cao cấp, lắp ráp linh kiện điện tử xuất sang Mỹ, tài chính ngoài khơi (Nevis)",
@@ -1304,15 +1304,15 @@ export const ECON = {
   },
   "Rwanda": {
     "tier": "low",
-    "gdp_vi": "~14,3 tỷ USD (#136 thế giới)",
-    "gdp_en": "~$14.3B (#136 globally)",
-    "pc_vi": "~1.030 USD (PPP ~3.650 USD)",
-    "pc_en": "~$1,030 (PPP ~$3,650)",
-    "gr": "+7.6%",
+    "gdp_vi": "~15,1 tỷ USD (#142 thế giới)",
+    "gdp_en": "~$15.1B (#142 globally)",
+    "pc_vi": "~1.060 USD (PPP ~3.780 USD)",
+    "pc_en": "~$1,060 (PPP ~$3,780)",
+    "gr": "+7.2%",
     "sec": [
-      49,
-      25,
-      26
+      55,
+      23,
+      22
     ],
     "main_vi": "Du lịch hội nghị MICE & ngắm khỉ đột núi cao cấp, xuất khẩu cà phê & trà đặc sản, khai thác khoáng sản công nghệ 3T (thiếc, tantali/coltan, vonfram) & tinh luyện vàng, hàng không (RwandAir)",
     "main_en": "MICE conference & luxury mountain gorilla tourism, specialty coffee & tea exports, 3T critical minerals (tin, tantalum, tungsten) & gold refining, aviation (RwandAir)",
@@ -1320,16 +1320,16 @@ export const ECON = {
     "note_en": "Frequently dubbed the \"Singapore of Africa\" for its clean governance, digital public services, and monthly community clean-up tradition (Umuganda), Rwanda has sustained impressive GDP growth of ~7.5–8% annually. Its service-led model combines international MICE conferences, global \"Visit Rwanda\" sports sponsorships, and high-margin mountain gorilla conservation tourism ($1,500 per trekking permit) with specialty coffee and tea exports, gold refining, and 3T critical minerals (tin, tantalum, tungsten) trade. Key structural challenges include transitioning its largely rural workforce into higher-productivity jobs and managing Western donor aid suspensions triggered by the conflict in eastern DR Congo."
   },
   "Russia": {
-    "tier": "emg",
-    "gdp_vi": "~2.180 tỷ USD (#11 thế giới, #4 PPP)",
-    "gdp_en": "~$2.18T (#11 globally, #4 PPP)",
-    "pc_vi": "~15.000 USD (PPP ~47.300 USD)",
-    "pc_en": "~$15,000 (PPP ~$47,300)",
-    "gr": "+3.8%",
+    "tier": "adv",
+    "gdp_vi": "~2.186 tỷ USD (#10 thế giới, #4 PPP)",
+    "gdp_en": "~$2.19T (#10 globally, #4 PPP)",
+    "pc_vi": "~14.960 USD (PPP ~47.690 USD)",
+    "pc_en": "~$14,960 (PPP ~$47,690)",
+    "gr": "+4.9%",
     "sec": [
-      56,
-      40,
-      4
+      63,
+      34,
+      3
     ],
     "main_vi": "Dầu mỏ & khí đốt tự nhiên (trữ lượng khí số 1 thế giới), công nghiệp quốc phòng & hàng không vũ trụ, năng lượng hạt nhân (Rosatom #1 xuất khẩu lò phản ứng), phân bón & lúa mì xuất khẩu (#1 thế giới), kim loại (vàng, palladium, niken, nhôm, kim cương)",
     "main_en": "Crude oil & natural gas (#1 gas reserves globally), defense industrial complex, nuclear power exports (Rosatom), wheat & fertilizer exports (#1 globally), metals (palladium, nickel, gold, aluminum, diamonds)",
@@ -1338,15 +1338,15 @@ export const ECON = {
   },
   "Romania": {
     "tier": "adv",
-    "gdp_vi": "~384 tỷ USD (#41 thế giới)",
-    "gdp_en": "~$384B (#41 globally)",
-    "pc_vi": "~20.200 USD (PPP ~47.900 USD)",
-    "pc_en": "~$20,200 (PPP ~$47,900)",
-    "gr": "+2.4%",
+    "gdp_vi": "~383 tỷ USD (#42 thế giới)",
+    "gdp_en": "~$383B (#42 globally)",
+    "pc_vi": "~20.080 USD (PPP ~49.080 USD)",
+    "pc_en": "~$20,080 (PPP ~$49,080)",
+    "gr": "+0.9%",
     "sec": [
-      65,
-      30,
-      5
+      69,
+      28,
+      3
     ],
     "main_vi": "Công nghệ thông tin & phần mềm (Cluj-Napoca, Bucharest; nơi khai sinh UiPath), sản xuất ô tô (Dacia/Renault, Ford Otosan), khai thác khí đốt Biển Đen (dự án Neptun Deep), nông nghiệp ngũ cốc, cảng biển Constanța",
     "main_en": "IT & software development (Bucharest, Cluj-Napoca; birthplace of UiPath), automotive manufacturing (Dacia/Renault, Ford Otosan), Black Sea gas (Neptun Deep), grain agriculture, Port of Constanța",
@@ -1355,15 +1355,15 @@ export const ECON = {
   },
   "Qatar": {
     "tier": "adv",
-    "gdp_vi": "~221 tỷ USD (#54 thế giới)",
-    "gdp_en": "~$221B (#54 globally)",
-    "pc_vi": "~81.400 USD (PPP ~115.000 USD)",
-    "pc_en": "~$81,400 (PPP ~$115,000)",
-    "gr": "+2.0%",
+    "gdp_vi": "~216 tỷ USD (#56 thế giới)",
+    "gdp_en": "~$216B (#56 globally)",
+    "pc_vi": "~75.680 USD (PPP ~126.710 USD)",
+    "pc_en": "~$75,680 (PPP ~$126,710)",
+    "gr": "+3.1%",
     "sec": [
-      46,
-      54,
-      0
+      43,
+      56,
+      1
     ],
     "main_vi": "Khí đốt tự nhiên hóa lỏng (LNG – một trong 3 nhà xuất khẩu lớn nhất thế giới), hóa dầu, phân bón, hàng không (Qatar Airways), quỹ đầu tư QIA",
     "main_en": "Liquefied Natural Gas (LNG – top-3 global exporter), petrochemicals, fertilizers, global aviation (Qatar Airways), sovereign wealth (QIA)",
@@ -1372,15 +1372,15 @@ export const ECON = {
   },
   "Portugal": {
     "tier": "adv",
-    "gdp_vi": "~308 tỷ USD (#47 thế giới)",
-    "gdp_en": "~$308B (#47 globally)",
-    "pc_vi": "~29.000 USD (PPP ~49.200 USD)",
-    "pc_en": "~$29,000 (PPP ~$49,200)",
-    "gr": "+1.9%",
+    "gdp_vi": "~314 tỷ USD (#46 thế giới)",
+    "gdp_en": "~$314B (#46 globally)",
+    "pc_vi": "~29.330 USD (PPP ~52.510 USD)",
+    "pc_en": "~$29,330 (PPP ~$52,510)",
+    "gr": "+2.2%",
     "sec": [
       76,
-      22,
-      2
+      21,
+      3
     ],
     "main_vi": "Du lịch & lưu trú quốc tế (~30 triệu khách/năm), linh kiện ô tô & khuôn mẫu chính xác, năng lượng tái tạo (~85% điện xanh), trung tâm công nghệ Lisbon (Web Summit), sản xuất nút bần (#1 thế giới), rượu vang & dầu ô liu",
     "main_en": "International tourism (~30M visitors/year), automotive components & precision molds, renewable electricity (~85% green grid), Lisbon tech hub, cork production (#1 globally), wine & olive oil",
@@ -1389,15 +1389,15 @@ export const ECON = {
   },
   "Poland": {
     "tier": "adv",
-    "gdp_vi": "~915 tỷ USD (#21 thế giới, #6 EU)",
-    "gdp_en": "~$915B (#21 globally, #6 in EU)",
-    "pc_vi": "~25.000 USD (PPP ~51.600 USD)",
-    "pc_en": "~$25,000 (PPP ~$51,600)",
-    "gr": "+3.2%",
+    "gdp_vi": "~918 tỷ USD (#21 thế giới, #6 EU)",
+    "gdp_en": "~$918B (#21 globally, #6 in EU)",
+    "pc_vi": "~25.100 USD (PPP ~51.260 USD)",
+    "pc_en": "~$25,100 (PPP ~$51,260)",
+    "gr": "+3.0%",
     "sec": [
-      62,
-      35,
-      3
+      67,
+      31,
+      2
     ],
     "main_vi": "Sản xuất pin xe điện (#2 thế giới, #1 châu Âu) & linh kiện ô tô, thiết bị gia dụng (#1 châu Âu), trung tâm dịch vụ tài chính – CNTT & phát triển game (CD Projekt), chế biến thực phẩm & gia cầm xuất khẩu, nội thất",
     "main_en": "EV lithium-ion battery manufacturing (#2 globally, #1 in Europe) & auto parts, home appliances, IT/BPO hubs & video games (CD Projekt), agri-food & poultry exports, furniture",
@@ -1405,15 +1405,15 @@ export const ECON = {
     "note_en": "Europe's standout post-1989 growth champion—having more than tripled real GDP per capita and avoided recession even in 2009—Poland is surging toward the $1 trillion GDP threshold as the EU's sixth-largest economy and top growth engine among major European states (~3–3.5% in 2024–2025). Serving as Europe's #1 lithium-ion EV battery manufacturing hub (#2 globally), a powerhouse in auto parts, white goods, IT/BPO services, and video games, Poland has also integrated over one million Ukrainian refugees into its workforce while building its first nuclear power plant with US partner Westinghouse and offshore Baltic wind farms to replace coal."
   },
   "Philippines": {
-    "tier": "dev",
-    "gdp_vi": "~462 tỷ USD (#35 thế giới)",
-    "gdp_en": "~$462B (#35 globally)",
-    "pc_vi": "~4.050 USD (PPP ~12.100 USD)",
-    "pc_en": "~$4,050 (PPP ~$12,100)",
-    "gr": "+5.8%",
+    "tier": "emg",
+    "gdp_vi": "~462 tỷ USD (#34 thế giới, #5 Đông Nam Á)",
+    "gdp_en": "~$462B (#34 globally, #5 in ASEAN)",
+    "pc_vi": "~3.980 USD (PPP ~11.810 USD)",
+    "pc_en": "~$3,980 (PPP ~$11,810)",
+    "gr": "+5.7%",
     "sec": [
-      62,
-      29,
+      63,
+      28,
       9
     ],
     "main_vi": "Gia công quy trình kinh doanh (BPO/call center), kiều hối (>37 tỷ USD/năm), lắp ráp bán dẫn – điện tử, khai thác niken, nông sản nhiệt đới",
@@ -1423,15 +1423,15 @@ export const ECON = {
   },
   "Peru": {
     "tier": "emg",
-    "gdp_vi": "~289 tỷ USD (#49 thế giới)",
-    "gdp_en": "~$289B (#49 globally)",
-    "pc_vi": "~8.450 USD (PPP ~17.800 USD)",
-    "pc_en": "~$8,450 (PPP ~$17,800)",
-    "gr": "+3.1%",
+    "gdp_vi": "~292 tỷ USD (#48 thế giới)",
+    "gdp_en": "~$292B (#48 globally)",
+    "pc_vi": "~8.530 USD (PPP ~17.880 USD)",
+    "pc_en": "~$8,530 (PPP ~$17,880)",
+    "gr": "+3.5%",
     "sec": [
-      54,
-      39,
-      7
+      55,
+      37,
+      8
     ],
     "main_vi": "Khai khoáng (đồng #2-3 thế giới, bạc #2, kẽm #2, vàng, thiếc), nông nghiệp công nghệ cao xuất khẩu (việt quất #1 thế giới, nho, bơ, măng tây, cà phê), bột cá (#1 thế giới), siêu cảng Chancay, du lịch Machu Picchu",
     "main_en": "Mining (world's top-3 copper, #2 silver & zinc, gold, tin), high-value agro-exports (#1 blueberries globally, table grapes, avocados), fishmeal (#1 globally), Chancay megaport, Machu Picchu tourism",
@@ -1439,16 +1439,16 @@ export const ECON = {
     "note_en": "Boasts South America's most orthodox macroeconomic framework—featuring low public debt (~33% of GDP), massive foreign-exchange reserves, and the region's most stable currency (the Sol)—which has insulated business activity from chronic presidential turnover. Combining top-tier copper, silver, and gold mining with desert-irrigated superfood exports (#1 globally in blueberries and table grapes) and the new Chancay megaport, Peru nonetheless faces structural bottlenecks from a ~70% informal labor force and social protests around highland mining corridors."
   },
   "Paraguay": {
-    "tier": "dev",
-    "gdp_vi": "~45,8 tỷ USD (#94 thế giới)",
-    "gdp_en": "~$45.8B (#94 globally)",
-    "pc_vi": "~6.250 USD (PPP ~18.500 USD)",
-    "pc_en": "~$6,250 (PPP ~$18,500)",
-    "gr": "+4.0%",
+    "tier": "emg",
+    "gdp_vi": "~44,7 tỷ USD (#98 thế giới)",
+    "gdp_en": "~$44.7B (#98 globally)",
+    "pc_vi": "~6.460 USD (PPP ~18.630 USD)",
+    "pc_en": "~$6,460 (PPP ~$18,630)",
+    "gr": "+4.7%",
     "sec": [
-      52,
-      37,
-      11
+      53,
+      35,
+      12
     ],
     "main_vi": "Xuất khẩu thủy điện sạch (#1 thế giới tính theo đầu người qua hai siêu đập Itaipu & Yacyretá), xuất khẩu đậu tương (#3-4 thế giới) & thịt bò, công nghiệp lắp ráp miễn thuế Maquila (dây cáp ô tô, dệt may)",
     "main_en": "Clean hydropower exports (Itaipu & Yacyretá dams), soybean (#3-4 globally) & beef exports, Maquila export-assembly manufacturing (auto wiring, textiles), river barge logistics",
@@ -1457,14 +1457,14 @@ export const ECON = {
   },
   "Papua New Guinea": {
     "tier": "dev",
-    "gdp_vi": "~32,5 tỷ USD (#105 thế giới)",
-    "gdp_en": "~$32.5B (#105 globally)",
-    "pc_vi": "~3.180 USD (PPP ~4.720 USD)",
-    "pc_en": "~$3,180 (PPP ~$4,720)",
-    "gr": "+4.5%",
+    "gdp_vi": "~30,8 tỷ USD (#110 thế giới)",
+    "gdp_en": "~$30.8B (#110 globally)",
+    "pc_vi": "~2.910 USD (PPP ~4.890 USD)",
+    "pc_en": "~$2,910 (PPP ~$4,890)",
+    "gr": "+3.9%",
     "sec": [
-      43,
-      39,
+      44,
+      38,
       18
     ],
     "main_vi": "Khí thiên nhiên hóa lỏng (dự án PNG LNG của ExxonMobil & Papua LNG của TotalEnergies), khai thác vàng (Porgera, Lihir) & đồng – niken, dầu cọ, cà phê, ca cao, cá ngừ",
@@ -1474,15 +1474,15 @@ export const ECON = {
   },
   "Panama": {
     "tier": "adv",
-    "gdp_vi": "~87,3 tỷ USD (#74 thế giới)",
-    "gdp_en": "~$87.3B (#74 globally)",
-    "pc_vi": "~19.300 USD (PPP ~41.200 USD)",
-    "pc_en": "~$19,300 (PPP ~$41,200)",
-    "gr": "+2.9%",
+    "gdp_vi": "~86,5 tỷ USD (#78 thế giới)",
+    "gdp_en": "~$86.5B (#78 globally)",
+    "pc_vi": "~19.160 USD (PPP ~41.430 USD)",
+    "pc_en": "~$19,160 (PPP ~$41,430)",
+    "gr": "+2.7%",
     "sec": [
       71,
-      27,
-      2
+      26,
+      3
     ],
     "main_vi": "Kênh đào Panama (~6% thương mại hàng hải toàn cầu) & cụm cảng trung chuyển Balboa/Colón, Khu thương mại tự do Colón (lớn nhất châu Mỹ), trung tâm ngân hàng quốc tế, đăng ký tàu biển (#1 thế giới), trung tâm hàng không Copa Airlines",
     "main_en": "Panama Canal (~6% of global maritime trade) & container transshipment ports, Colón Free Trade Zone, international banking center, world's #1 ship registry, Copa Airlines hub",
@@ -1491,14 +1491,14 @@ export const ECON = {
   },
   "Palau": {
     "tier": "adv",
-    "gdp_vi": "~0,31 tỷ USD (#187 thế giới)",
-    "gdp_en": "~$310M (#187 globally)",
-    "pc_vi": "~17.200 USD (PPP ~18.500 USD)",
-    "pc_en": "~$17,200 (PPP ~$18,500)",
-    "gr": "+6.5%",
+    "gdp_vi": "~0,30 tỷ USD (~300 triệu USD) (#197 thế giới)",
+    "gdp_en": "~$300M (#197 globally)",
+    "pc_vi": "~18.170 USD (PPP ~21.060 USD)",
+    "pc_en": "~$18,170 (PPP ~$21,060)",
+    "gr": "+12.0%",
     "sec": [
-      85,
-      12,
+      82,
+      15,
       3
     ],
     "main_vi": "Du lịch lặn biển & sinh thái cao cấp (quần đảo đá vôi Rock Islands), viện trợ Hiệp ước Liên kết Tự do (COFA) mới gia hạn với Mỹ, đánh bắt cá ngừ",
@@ -1508,31 +1508,31 @@ export const ECON = {
   },
   "Pakistan": {
     "tier": "dev",
-    "gdp_vi": "~374 tỷ USD (#43 thế giới)",
-    "gdp_en": "~$374B (#43 globally)",
-    "pc_vi": "~1.580 USD (PPP ~6.900 USD)",
-    "pc_en": "~$1,580 (PPP ~$6,900)",
-    "gr": "+2.5%",
+    "gdp_vi": "~372 tỷ USD (#43 thế giới)",
+    "gdp_en": "~$372B (#43 globally)",
+    "pc_vi": "~1.480 USD (PPP ~6.260 USD)",
+    "pc_en": "~$1,480 (PPP ~$6,260)",
+    "gr": "+3.1%",
     "sec": [
-      53,
-      23,
-      24
+      54,
+      21,
+      25
     ],
     "main_vi": "Dệt may & bông sợi (~60% xuất khẩu), nông nghiệp tưới tiêu lưu vực sông Indus (lúa mì, gạo Basmati, mía), kiều hối (~30 tỷ USD), xi măng",
     "main_en": "Textiles & cotton (~60% of exports), Indus Basin irrigated agriculture (wheat, Basmati rice, sugarcane), remittances (~$30B), cement",
-    "note_vi": "Kinh tế Pakistan (~374 tỷ USD) phụ thuộc vào nông nghiệp tưới tiêu lưu vực sông Indus (bông, lúa mì, gạo Basmati), ngành dệt may truyền thống (chiếm ~60% xuất khẩu) và ~30 tỷ USD kiều hối mỗi năm. Cơ sở thu thuế quá hẹp (<10% GDP), nợ chồng chéo trong ngành điện và phụ thuộc nhập khẩu xăng dầu khiến đất nước liên tục khủng hoảng ngoại hối và lạm phát cao. Giai đoạn 2024–2026, Islamabad phải dựa vào gói cứu trợ 7 tỷ USD của IMF và gia hạn nợ từ Trung Quốc, Ả Rập Xê Út để tránh vỡ nợ.",
-    "note_en": "Pakistan's ~$374B economy relies on Indus Basin irrigated farming (cotton, wheat, Basmati rice), low-margin cotton and textile exports (~60% of total exports), and ~$30B in annual worker remittances. A narrow tax base (<10% of GDP), chronic power-sector circular debt, and heavy fuel imports trigger recurring balance-of-payments and inflation crises. In 2024–2026, Islamabad avoided sovereign default only through a new $7B IMF bailout and debt rollovers from China, Saudi Arabia, and the UAE."
+    "note_vi": "Kinh tế Pakistan (~372 tỷ USD) phụ thuộc vào nông nghiệp tưới tiêu lưu vực sông Indus (bông, lúa mì, gạo Basmati), ngành dệt may truyền thống (chiếm ~60% xuất khẩu) và ~30 tỷ USD kiều hối mỗi năm. Cơ sở thu thuế quá hẹp (<10% GDP), nợ chồng chéo trong ngành điện và phụ thuộc nhập khẩu xăng dầu khiến đất nước liên tục khủng hoảng ngoại hối và lạm phát cao. Giai đoạn 2024–2026, Islamabad phải dựa vào gói cứu trợ 7 tỷ USD của IMF và gia hạn nợ từ Trung Quốc, Ả Rập Xê Út để tránh vỡ nợ.",
+    "note_en": "Pakistan's ~$372B economy relies on Indus Basin irrigated farming (cotton, wheat, Basmati rice), low-margin cotton and textile exports (~60% of total exports), and ~$30B in annual worker remittances. A narrow tax base (<10% of GDP), chronic power-sector circular debt, and heavy fuel imports trigger recurring balance-of-payments and inflation crises. In 2024–2026, Islamabad avoided sovereign default only through a new $7B IMF bailout and debt rollovers from China, Saudi Arabia, and the UAE."
   },
   "Oman": {
     "tier": "adv",
-    "gdp_vi": "~110 tỷ USD",
-    "gdp_en": "~$110B",
-    "pc_vi": "~21.300 USD (PPP ~42.500 USD)",
-    "pc_en": "~$21,300 (PPP ~$42,500)",
-    "gr": "+1.9%",
+    "gdp_vi": "~107 tỷ USD (#70 thế giới)",
+    "gdp_en": "~$107B (#70 globally)",
+    "pc_vi": "~20.280 USD (PPP ~41.800 USD)",
+    "pc_en": "~$20,280 (PPP ~$41,800)",
+    "gr": "+1.6%",
     "sec": [
-      48,
-      50,
+      45,
+      53,
       2
     ],
     "main_vi": "Dầu thô & khí LNG, cảng biển nước sâu ngoài eo Hormuz (Salalah, Duqm, Sohar), hóa dầu, du lịch sinh thái – di sản, dự án hydro xanh",
@@ -1542,14 +1542,14 @@ export const ECON = {
   },
   "Norway": {
     "tier": "adv",
-    "gdp_vi": "~504 tỷ USD (#30 thế giới)",
-    "gdp_en": "~$504B (#30 globally)",
-    "pc_vi": "~90.400 USD (PPP ~103.500 USD)",
-    "pc_en": "~$90,400 (PPP ~$103,500)",
-    "gr": "+2.0%",
+    "gdp_vi": "~501 tỷ USD (#31 thế giới)",
+    "gdp_en": "~$501B (#31 globally)",
+    "pc_vi": "~89.890 USD (PPP ~105.660 USD)",
+    "pc_en": "~$89,890 (PPP ~$105,660)",
+    "gr": "+1.4%",
     "sec": [
-      57,
-      41,
+      59,
+      39,
       2
     ],
     "main_vi": "Dầu mỏ & khí đốt tự nhiên (nhà cung cấp khí đốt qua đường ống số 1 cho châu Âu), Quỹ Đầu tư Quốc gia lớn nhất thế giới (~1.800 tỷ USD), nuôi cá hồi Đại Tây Dương (#1 thế giới), thủy điện (98% điện xanh), vận tải biển & công nghệ hàng hải, nhôm – phân bón (Yara)",
@@ -1576,15 +1576,15 @@ export const ECON = {
   },
   "Nigeria": {
     "tier": "dev",
-    "gdp_vi": "~199 tỷ USD (#54 thế giới, #1 dân số châu Phi)",
-    "gdp_en": "~$199B (#54 globally, #1 African population)",
-    "pc_vi": "~880 USD (PPP ~6.350 USD)",
-    "pc_en": "~$880 (PPP ~$6,350)",
-    "gr": "+3.3%",
+    "gdp_vi": "~252 tỷ USD (#54 thế giới, #1 dân số châu Phi)",
+    "gdp_en": "~$252B (#54 globally, most populous in Africa)",
+    "pc_vi": "~1.080 USD (PPP ~9.100 USD)",
+    "pc_en": "~$1,080 (PPP ~$9,100)",
+    "gr": "+4.1%",
     "sec": [
       55,
-      22,
-      23
+      19,
+      26
     ],
     "main_vi": "Dầu mỏ & khí hóa lỏng LNG (#1 sản lượng dầu châu Phi) & siêu nhà máy lọc dầu Dangote (650.000 thùng/ngày), viễn thông & Fintech (Flutterwave, Moniepoint), điện ảnh Nollywood & âm nhạc Afrobeats, xi măng, nông nghiệp (sắn #1 thế giới, khoai mỡ, ca cao)",
     "main_en": "Crude oil & LNG (#1 African oil producer) & Dangote Mega-Refinery (650k bpd), telecoms & Fintech unicorns (Flutterwave, Moniepoint), Nollywood & Afrobeats creative industries, cement, agriculture (cassava, yams, cocoa)",
@@ -1593,15 +1593,15 @@ export const ECON = {
   },
   "Niger": {
     "tier": "low",
-    "gdp_vi": "~19,6 tỷ USD (#123 thế giới)",
-    "gdp_en": "~$19.6B (#123 globally)",
-    "pc_vi": "~700 USD (PPP ~2.050 USD)",
-    "pc_en": "~$700 (PPP ~$2,050)",
-    "gr": "+8.8%",
+    "gdp_vi": "~19,7 tỷ USD (#129 thế giới)",
+    "gdp_en": "~$19.7B (#129 globally)",
+    "pc_vi": "~730 USD (PPP ~2.040 USD)",
+    "pc_en": "~$730 (PPP ~$2,040)",
+    "gr": "+8.3%",
     "sec": [
-      37,
-      25,
-      38
+      33,
+      18,
+      49
     ],
     "main_vi": "Khai thác & xuất khẩu dầu thô (mỏ Agadem & đường ống dài 2.000 km qua Benin), khai thác quặng uranium (#7 thế giới, ~5% nguồn cung toàn cầu), vàng, nông nghiệp & chăn nuôi gia súc vùng Sahel (hành tây, đậu đũa)",
     "main_en": "Crude oil production & export (Agadem Rift Basin & 2,000-km Niger-Benin pipeline), uranium mining (~5% of global output), gold, Sahelian livestock & agriculture (onions, cowpeas)",
@@ -1610,15 +1610,15 @@ export const ECON = {
   },
   "Nicaragua": {
     "tier": "dev",
-    "gdp_vi": "~19,4 tỷ USD (#124 thế giới)",
-    "gdp_en": "~$19.4B (#124 globally)",
-    "pc_vi": "~2.850 USD (PPP ~8.750 USD)",
-    "pc_en": "~$2,850 (PPP ~$8,750)",
-    "gr": "+3.8%",
+    "gdp_vi": "~19,7 tỷ USD (#130 thế giới)",
+    "gdp_en": "~$19.7B (#130 globally)",
+    "pc_vi": "~2.850 USD (PPP ~8.720 USD)",
+    "pc_en": "~$2,850 (PPP ~$8,720)",
+    "gr": "+3.6%",
     "sec": [
       53,
-      30,
-      17
+      31,
+      16
     ],
     "main_vi": "Kiều hối (chiếm ~27% GDP), khu chế xuất dệt may & dây cáp điện ô tô (Zona Franca), khai thác vàng (mặt hàng xuất khẩu số 1), thịt bò, cà phê, xì gà cao cấp (Estelí), mía đường",
     "main_en": "Remittances (~27% of GDP), free-zone apparel & auto wiring harness assembly, gold mining (#1 merchandise export), beef, coffee, premium cigars (Estelí), sugar",
@@ -1627,15 +1627,15 @@ export const ECON = {
   },
   "New Zealand": {
     "tier": "adv",
-    "gdp_vi": "~258 tỷ USD (#50 thế giới)",
-    "gdp_en": "~$258B (#50 globally)",
-    "pc_vi": "~48.500 USD (PPP ~54.800 USD)",
-    "pc_en": "~$48,500 (PPP ~$54,800)",
-    "gr": "+0.8%",
+    "gdp_vi": "~262 tỷ USD (#52 thế giới)",
+    "gdp_en": "~$262B (#52 globally)",
+    "pc_vi": "~49.430 USD (PPP ~55.790 USD)",
+    "pc_en": "~$49,430 (PPP ~$55,790)",
+    "gr": "-0.9%",
     "sec": [
-      72,
+      74,
       21,
-      7
+      5
     ],
     "main_vi": "Chăn nuôi bò sữa & chế biến sữa xuất khẩu (#1 thế giới - tập đoàn Fonterra), thịt cừu – thịt bò, trái kiwi (Zespri) & rượu vang Marlborough, lâm nghiệp, du lịch thiên nhiên & phim trường, hàng không vũ trụ tư nhân (Rocket Lab)",
     "main_en": "Dairy exports (#1 globally - Fonterra), lamb & beef, Zespri kiwifruit & Marlborough wine, forestry, adventure tourism & film production, commercial space launch (Rocket Lab)",
@@ -1678,15 +1678,15 @@ export const ECON = {
   },
   "Netherlands": {
     "tier": "adv",
-    "gdp_vi": "~1.220 tỷ USD (#18 thế giới, #5 EU)",
-    "gdp_en": "~$1.22T (#18 globally, #5 in EU)",
-    "pc_vi": "~67.900 USD (PPP ~81.500 USD)",
-    "pc_en": "~$67,900 (PPP ~$81,500)",
-    "gr": "+1.5%",
+    "gdp_vi": "~1.214 tỷ USD (#19 thế giới, #5 EU)",
+    "gdp_en": "~$1.21T (#19 globally, #5 in EU)",
+    "pc_vi": "~67.460 USD (PPP ~85.220 USD)",
+    "pc_en": "~$67,460 (PPP ~$85,220)",
+    "gr": "+1.1%",
     "sec": [
-      78,
+      79,
       20,
-      2
+      1
     ],
     "main_vi": "Thiết bị quang khắc bán dẫn độc quyền toàn cầu (ASML, NXP), cảng biển Rotterdam (#1 châu Âu) & logistics, nông nghiệp nhà kính công nghệ cao (#2 thế giới về giá trị xuất khẩu nông sản), lọc hóa dầu & hóa chất (Shell, AkzoNobel), tài chính – fintech (ING, Adyen)",
     "main_en": "Monopoly EUV semiconductor lithography equipment (ASML, NXP), Port of Rotterdam (#1 in Europe) & logistics, high-tech greenhouse agriculture (#2 agricultural exporter globally by value), refining & chemicals, finance & fintech (ING, Adyen)",
@@ -1695,14 +1695,14 @@ export const ECON = {
   },
   "Aruba": {
     "tier": "adv",
-    "gdp_vi": "~4,05 tỷ USD (quốc gia cấu thành Vương quốc Hà Lan)",
-    "gdp_en": "~$4.05B (constituent country of the Kingdom of the Netherlands)",
-    "pc_vi": "~37.500 USD (PPP ~51.200 USD)",
-    "pc_en": "~$37,500 (PPP ~$51,200)",
-    "gr": "+3.4%",
+    "gdp_vi": "~4,2 tỷ USD (#166 thế giới)",
+    "gdp_en": "~$4.2B (#166 globally)",
+    "pc_vi": "~38.590 USD (PPP ~51.710 USD)",
+    "pc_en": "~$38,590 (PPP ~$51,710)",
+    "gr": "+6.8%",
     "sec": [
-      87,
-      13,
+      88,
+      12,
       0
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển & tàu biển (chiếm >75% tổng hoạt động kinh tế, chủ yếu khách Mỹ), dịch vụ thương mại – bán lẻ miễn thuế, chế biến lô hội (Aloe Vera), trung chuyển hàng hóa",
@@ -1712,14 +1712,14 @@ export const ECON = {
   },
   "Curaçao": {
     "tier": "adv",
-    "gdp_vi": "~3,45 tỷ USD (quốc gia cấu thành Vương quốc Hà Lan)",
-    "gdp_en": "~$3.45B (constituent country of the Kingdom of the Netherlands)",
-    "pc_vi": "~22.500 USD (PPP ~30.800 USD)",
-    "pc_en": "~$22,500 (PPP ~$30,800)",
-    "gr": "+3.8%",
+    "gdp_vi": "~3,6 tỷ USD (#170 thế giới)",
+    "gdp_en": "~$3.6B (#170 globally)",
+    "pc_vi": "~22.830 USD (PPP ~32.740 USD)",
+    "pc_en": "~$22,830 (PPP ~$32,740)",
+    "gr": "+5.0%",
     "sec": [
-      84,
-      15,
+      85,
+      14,
       1
     ],
     "main_vi": "Du lịch di sản UNESCO Willemstad & lặn biển, dịch vụ tài chính quốc tế & cấp phép e-Gaming, cảng biển nước sâu tự nhiên & sửa chữa tàu biển (Damen), kho vận – trung chuyển năng lượng",
@@ -1729,28 +1729,28 @@ export const ECON = {
   },
   "Nepal": {
     "tier": "dev",
-    "gdp_vi": "~43 tỷ USD",
-    "gdp_en": "~$43B",
-    "pc_vi": "~1.430 USD (PPP ~5.300 USD)",
-    "pc_en": "~$1,430 (PPP ~$5,300)",
-    "gr": "+3.9%",
+    "gdp_vi": "~43 tỷ USD (#101 thế giới)",
+    "gdp_en": "~$43B (#101 globally)",
+    "pc_vi": "~1.460 USD (PPP ~5.750 USD)",
+    "pc_en": "~$1,460 (PPP ~$5,750)",
+    "gr": "+3.7%",
     "sec": [
       62,
-      13,
-      25
+      14,
+      24
     ],
     "main_vi": "Kiều hối (~25% GDP), du lịch leo núi Himalaya (Everest), thủy điện xuất khẩu sang Ấn Độ, nông nghiệp, thảm & hàng thủ công",
     "main_en": "Remittances (~25% of GDP), Himalayan trekking & mountaineering tourism, hydropower exports to India, agriculture, carpets & handicrafts",
-    "note_vi": "Kinh tế Nepal (~43 tỷ USD) sống dựa vào dòng kiều hối chiếm tới ~25–27% GDP từ hàng triệu lao động tại vùng Vịnh, Malaysia và Ấn Độ, cùng du lịch leo núi Himalaya và nông nghiệp tự cung tự cấp. Đồng Rupee Nepal neo cố định vào Rupee Ấn Độ (tỷ lệ 1,6:1) và Ấn Độ chiếm ~65% tổng ngoại thương của nước này. Cơ hội tăng trưởng mới trong giai đoạn 2024–2026 là thỏa thuận xuất khẩu 10.000 MW thủy điện sang Ấn Độ trong 10 năm tới và bắt đầu bán điện sang Bangladesh, dù trong nước vẫn thiếu việc làm trầm trọng.",
-    "note_en": "Nepal's ~$43B economy relies heavily on overseas worker remittances (~25–27% of GDP from the Gulf, Malaysia, and India), Himalayan trekking tourism, and subsistence farming. Its currency is pegged to the Indian Rupee (1.6 to 1), and India accounts for ~65% of Nepal's total external trade. While domestic industrial jobs remain scarce, Nepal is unlocking a major new revenue stream in 2024–2026 by exporting Himalayan hydropower to India (targeting 10,000 MW) and Bangladesh."
+    "note_vi": "Kinh tế Nepal (~45 tỷ USD) sống dựa vào dòng kiều hối chiếm tới ~25–27% GDP từ hàng triệu lao động tại vùng Vịnh, Malaysia và Ấn Độ, cùng du lịch leo núi Himalaya và nông nghiệp tự cung tự cấp. Đồng Rupee Nepal neo cố định vào Rupee Ấn Độ (tỷ lệ 1,6:1) và Ấn Độ chiếm ~65% tổng ngoại thương của nước này. Cơ hội tăng trưởng mới trong giai đoạn 2024–2026 là thỏa thuận xuất khẩu 10.000 MW thủy điện sang Ấn Độ trong 10 năm tới và bắt đầu bán điện sang Bangladesh, dù trong nước vẫn thiếu việc làm trầm trọng.",
+    "note_en": "Nepal's ~$45B economy relies heavily on overseas worker remittances (~25–27% of GDP from the Gulf, Malaysia, and India), Himalayan trekking tourism, and subsistence farming. Its currency is pegged to the Indian Rupee (1.6 to 1), and India accounts for ~65% of Nepal's total external trade. While domestic industrial jobs remain scarce, Nepal is unlocking a major new revenue stream in 2024–2026 by exporting Himalayan hydropower to India (targeting 10,000 MW) and Bangladesh."
   },
   "Nauru": {
-    "tier": "dev",
-    "gdp_vi": "~0,16 tỷ USD (#189 thế giới)",
-    "gdp_en": "~$160M (#189 globally)",
-    "pc_vi": "~12.500 USD (PPP ~14.200 USD)",
-    "pc_en": "~$12,500 (PPP ~$14,200)",
-    "gr": "+1.8%",
+    "tier": "adv",
+    "gdp_vi": "~0,20 tỷ USD (~200 triệu USD) (#199 thế giới)",
+    "gdp_en": "~$200M (#199 globally)",
+    "pc_vi": "~14.050 USD (PPP ~13.610 USD)",
+    "pc_en": "~$14,050 (PPP ~$13,610)",
+    "gr": "+1.4%",
     "sec": [
       68,
       28,
@@ -1763,15 +1763,15 @@ export const ECON = {
   },
   "Namibia": {
     "tier": "dev",
-    "gdp_vi": "~13,4 tỷ USD (#138 thế giới)",
-    "gdp_en": "~$13.4B (#138 globally)",
-    "pc_vi": "~4.750 USD (PPP ~12.400 USD)",
-    "pc_en": "~$4,750 (PPP ~$12,400)",
-    "gr": "+3.7%",
+    "gdp_vi": "~13,6 tỷ USD (#145 thế giới)",
+    "gdp_en": "~$13.6B (#145 globally)",
+    "pc_vi": "~4.500 USD (PPP ~11.700 USD)",
+    "pc_en": "~$4,500 (PPP ~$11,700)",
+    "gr": "+3.8%",
     "sec": [
-      58,
+      60,
       33,
-      9
+      7
     ],
     "main_vi": "Khai thác uranium (#3 thế giới - mỏ Rössing, Husab) & kim cương ngoài khơi đáy biển (Debmarine), phát hiện siêu mỏ dầu ngoài khơi bồn trũng Orange (TotalEnergies Venus, Galp Mopane), hydro xanh (Hyphen), du lịch sa mạc Namib, cảng Walvis Bay",
     "main_en": "Uranium mining (#3 globally - Rössing, Husab) & marine seabed diamond mining (Debmarine), giant Orange Basin offshore oil discoveries (Venus, Mopane), green hydrogen (Hyphen), desert safari tourism, Walvis Bay port",
@@ -1780,15 +1780,15 @@ export const ECON = {
   },
   "Mozambique": {
     "tier": "low",
-    "gdp_vi": "~22,9 tỷ USD (#115 thế giới)",
-    "gdp_en": "~$22.9B (#115 globally)",
-    "pc_vi": "~660 USD (PPP ~1.720 USD)",
-    "pc_en": "~$660 (PPP ~$1,720)",
-    "gr": "+4.3%",
+    "gdp_vi": "~22,8 tỷ USD (#124 thế giới)",
+    "gdp_en": "~$22.8B (#124 globally)",
+    "pc_vi": "~660 USD (PPP ~1.710 USD)",
+    "pc_en": "~$660 (PPP ~$1,710)",
+    "gr": "+2.1%",
     "sec": [
-      46,
-      28,
-      26
+      47,
+      25,
+      28
     ],
     "main_vi": "Siêu dự án khí thiên nhiên hóa lỏng (LNG bồn trũng Rovuma: Coral Sul FLNG của Eni, TotalEnergies, ExxonMobil), luyện nhôm (Mozal), than luyện cốc, xuất khẩu thủy điện Cahora Bassa, than chì (graphite cho pin EV), hành lang cảng Maputo/Beira/Nacala",
     "main_en": "Rovuma Basin LNG megaprojects (Eni Coral Sul FLNG, TotalEnergies, ExxonMobil), aluminum smelting (Mozal), metallurgical coal, Cahora Bassa hydropower exports, battery-grade graphite, port corridors",
@@ -1797,15 +1797,15 @@ export const ECON = {
   },
   "Morocco": {
     "tier": "dev",
-    "gdp_vi": "~157 tỷ USD (#58 thế giới)",
-    "gdp_en": "~$157B (#58 globally)",
-    "pc_vi": "~4.150 USD (PPP ~10.900 USD)",
-    "pc_en": "~$4,150 (PPP ~$10,900)",
-    "gr": "+3.6%",
+    "gdp_vi": "~161 tỷ USD (#59 thế giới)",
+    "gdp_en": "~$161B (#59 globally)",
+    "pc_vi": "~4.150 USD (PPP ~10.430 USD)",
+    "pc_en": "~$4,150 (PPP ~$10,430)",
+    "gr": "+3.8%",
     "sec": [
-      56,
-      33,
-      11
+      59,
+      29,
+      12
     ],
     "main_vi": "Trữ lượng quặng phosphate & phân bón (tập đoàn OCP nắm >70% trữ lượng toàn cầu), sản xuất ô tô (#1 châu Phi, nhà xuất khẩu xe hơi số 1 sang EU: Renault, Stellantis) & pin xe điện, linh kiện hàng không (Safran, Boeing), cảng Tanger Med (#1 Địa Trung Hải & châu Phi), du lịch (~17,4 triệu khách/năm)",
     "main_en": "Phosphate rock & fertilizers (OCP Group holds >70% of global reserves), automotive manufacturing (#1 in Africa & #1 passenger car exporter to EU) & EV batteries, aerospace parts, Tanger Med megaport (#1 in Med & Africa), tourism (~17.4M visitors)",
@@ -1831,15 +1831,15 @@ export const ECON = {
   },
   "Montenegro": {
     "tier": "emg",
-    "gdp_vi": "~8,15 tỷ USD (#149 thế giới)",
-    "gdp_en": "~$8.15B (#149 globally)",
-    "pc_vi": "~13.100 USD (PPP ~31.400 USD)",
-    "pc_en": "~$13,100 (PPP ~$31,400)",
-    "gr": "+3.8%",
+    "gdp_vi": "~8,3 tỷ USD (#156 thế giới)",
+    "gdp_en": "~$8.3B (#156 globally)",
+    "pc_vi": "~13.270 USD (PPP ~34.060 USD)",
+    "pc_en": "~$13,270 (PPP ~$34,060)",
+    "gr": "+3.2%",
     "sec": [
-      74,
-      19,
-      7
+      80,
+      15,
+      5
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển Adriatic & bến siêu du thuyền (Kotor, Porto Montenegro, Budva - chiếm ~25-30% GDP), xuất khẩu điện năng (cáp ngầm dưới biển nối Ý), cảng biển Bar, khai thác bauxite & chế biến gỗ",
     "main_en": "Adriatic coast & superyacht marina tourism (Kotor, Porto Montenegro, Budva - ~25-30% of GDP), cross-Adriatic subsea electricity exports to Italy, Port of Bar logistics, bauxite & timber",
@@ -1848,15 +1848,15 @@ export const ECON = {
   },
   "Mongolia": {
     "tier": "emg",
-    "gdp_vi": "~23,6 tỷ USD",
-    "gdp_en": "~$23.6B",
-    "pc_vi": "~6.750 USD (PPP ~18.100 USD)",
-    "pc_en": "~$6,750 (PPP ~$18,100)",
-    "gr": "+5.3%",
+    "gdp_vi": "~23,8 tỷ USD (#122 thế giới)",
+    "gdp_en": "~$23.8B (#122 globally)",
+    "pc_vi": "~6.750 USD (PPP ~19.170 USD)",
+    "pc_en": "~$6,750 (PPP ~$19,170)",
+    "gr": "+5.1%",
     "sec": [
-      43,
-      44,
-      13
+      49,
+      42,
+      9
     ],
     "main_vi": "Khai thác than luyện cốc, đồng & vàng (mỏ Oyu Tolgoi), quặng sắt, len cashmere, chăn nuôi đại gia súc du mục",
     "main_en": "Coking coal, copper & gold mining (Oyu Tolgoi), iron ore, cashmere wool, nomadic livestock husbandry",
@@ -1864,16 +1864,16 @@ export const ECON = {
     "note_en": "Mongolia's resource-driven economy relies on vast deposits of coking coal, copper and gold (anchored by the giant Oyu Tolgoi mine), uranium, and cashmere wool. Because of its landlocked geography, China absorbs over 85% of Mongolian exports via rail while Russia supplies more than 90% of its refined fuel. Key structural vulnerabilities include commodity price swings, border rail bottlenecks, and severe 'dzud' winter freezes."
   },
   "Moldova": {
-    "tier": "dev",
-    "gdp_vi": "~18,4 tỷ USD (#127 thế giới)",
-    "gdp_en": "~$18.4B (#127 globally)",
-    "pc_vi": "~7.450 USD (PPP ~18.900 USD)",
-    "pc_en": "~$7,450 (PPP ~$18,900)",
-    "gr": "+2.6%",
+    "tier": "emg",
+    "gdp_vi": "~18,2 tỷ USD (#132 thế giới)",
+    "gdp_en": "~$18.2B (#132 globally)",
+    "pc_vi": "~7.580 USD (PPP ~18.660 USD)",
+    "pc_en": "~$7,580 (PPP ~$18,660)",
+    "gr": "+0.3%",
     "sec": [
-      63,
-      28,
-      9
+      72,
+      20,
+      8
     ],
     "main_vi": "Sản xuất rượu vang xuất khẩu (hầm rượu ngầm lớn nhất thế giới Mileștii Mici & Cricova), nông sản (hạt hướng dương, táo, quả óc chó, ngũ cốc), công viên công nghệ thông tin ảo (Moldova IT Park), dây cáp điện ô tô, kiều hối (~15% GDP)",
     "main_en": "Wine production & exports (world's largest underground cellars at Mileștii Mici & Cricova), agriculture (sunflower seeds, apples, walnuts), Moldova IT Park (7% flat tax), automotive wiring, remittances",
@@ -1882,11 +1882,11 @@ export const ECON = {
   },
   "Monaco": {
     "tier": "adv",
-    "gdp_vi": "~10,0 tỷ USD (#145 thế giới)",
-    "gdp_en": "~$10.0B (#145 globally)",
-    "pc_vi": "~256.000 USD (#1 thế giới)",
-    "pc_en": "~$256,000 (#1 globally)",
-    "gr": "+4.6%",
+    "gdp_vi": "~11,1 tỷ USD (#150 thế giới)",
+    "gdp_en": "~$11.1B (#150 globally)",
+    "pc_vi": "~288.000 USD",
+    "pc_en": "~$288,000",
+    "gr": "+8.5%",
     "sec": [
       86,
       14,
@@ -1899,11 +1899,11 @@ export const ECON = {
   },
   "Mexico": {
     "tier": "emg",
-    "gdp_vi": "~1.850 tỷ USD (#12 thế giới, #2 Mỹ Latin)",
-    "gdp_en": "~$1.85T (#12 globally, #2 in Latin America)",
-    "pc_vi": "~14.100 USD (PPP ~25.900 USD)",
-    "pc_en": "~$14,100 (PPP ~$25,900)",
-    "gr": "+1.8%",
+    "gdp_vi": "~1.830 tỷ USD (#13 thế giới, #2 Mỹ Latin)",
+    "gdp_en": "~$1.83T (#13 globally, #2 in Latin America)",
+    "pc_vi": "~13.990 USD (PPP ~25.820 USD)",
+    "pc_en": "~$13,990 (PPP ~$25,820)",
+    "gr": "+1.4%",
     "sec": [
       63,
       33,
@@ -1911,19 +1911,19 @@ export const ECON = {
     ],
     "main_vi": "Sản xuất & xuất khẩu ô tô – linh kiện (#1 nhà cung cấp cho Mỹ, #7 thế giới), máy tính – điện tử – thiết bị y tế, dầu khí (Pemex) & khai thác bạc (#1 thế giới), kiều hối (>65 tỷ USD/năm), nông sản – đồ uống (bơ #1, bia Corona/Modelo #1 xuất khẩu thế giới, rượu Tequila), du lịch (#6 thế giới)",
     "main_en": "Automotive & parts manufacturing (#1 supplier to US, #7 producer globally), electronics, servers & medical devices, oil (Pemex) & silver mining (#1 globally), remittances (>$65B/year), agro-exports (avocados, beer #1 globally, Tequila), tourism",
-    "note_vi": "Là nền kinh tế lớn thứ 12 thế giới và lớn thứ 2 tại Mỹ Latinh, Mexico đã vượt qua Trung Quốc để trở thành đối tác thương mại hàng hóa số 1 của Hoa Kỳ nhờ làn sóng dịch chuyển chuỗi cung ứng (nearshoring) theo hiệp định USMCA. Các cụm công nghiệp tại Monterrey, Bajío và dọc biên giới phía bắc là trung tâm sản xuất ô tô – linh kiện (nhà cung cấp số 1 cho Mỹ), máy chủ dữ liệu, điện tử và thiết bị y tế, song hành cùng dòng kiều hối kỷ lục hơn 65 tỷ USD/năm và vị thế số 1 thế giới về khai thác bạc, xuất khẩu bia, quả bơ. Điểm nghẽn lớn nhất hiện nay là tình trạng thiếu hụt điện năng, nước công nghiệp ở miền bắc, thâm hụt tài khóa của tập đoàn dầu khí quốc doanh Pemex và rủi ro thuế quan khi đánh giá lại USMCA vào năm 2026.",
-    "note_en": "Ranking as the world's 12th-largest economy and Latin America's second-largest, Mexico has overtaken China as the top goods trading partner of the United States, propelled by a massive USMCA 'nearshoring' manufacturing boom. Industrial corridors in Monterrey, the Bajío, and northern border states anchor North America's supply chains in automobiles (#1 supplier to the US), AI servers, electronics, and medical devices, complemented by over $65 billion in annual remittances and #1 global exports of silver, beer, and avocados. Key structural bottlenecks include power grid and water constraints in the arid north, heavy debt at state oil company Pemex, and trade policy uncertainty ahead of the 2026 USMCA joint review."
+    "note_vi": "Là nền kinh tế lớn thứ 13 thế giới và lớn thứ 2 tại Mỹ Latinh, Mexico đã vượt qua Trung Quốc để trở thành đối tác thương mại hàng hóa số 1 của Hoa Kỳ nhờ làn sóng dịch chuyển chuỗi cung ứng (nearshoring) theo hiệp định USMCA. Các cụm công nghiệp tại Monterrey, Bajío và dọc biên giới phía bắc là trung tâm sản xuất ô tô – linh kiện (nhà cung cấp số 1 cho Mỹ), máy chủ dữ liệu, điện tử và thiết bị y tế, song hành cùng dòng kiều hối kỷ lục hơn 65 tỷ USD/năm và vị thế số 1 thế giới về khai thác bạc, xuất khẩu bia, quả bơ. Điểm nghẽn lớn nhất hiện nay là tình trạng thiếu hụt điện năng, nước công nghiệp ở miền bắc, thâm hụt tài khóa của tập đoàn dầu khí quốc doanh Pemex và rủi ro thuế quan khi đánh giá lại USMCA vào năm 2026.",
+    "note_en": "Ranking as the world's 13th-largest economy and Latin America's second-largest, Mexico has overtaken China as the top goods trading partner of the United States, propelled by a massive USMCA 'nearshoring' manufacturing boom. Industrial corridors in Monterrey, the Bajío, and northern border states anchor North America's supply chains in automobiles (#1 supplier to the US), AI servers, electronics, and medical devices, complemented by over $65 billion in annual remittances and #1 global exports of silver, beer, and avocados. Key structural bottlenecks include power grid and water constraints in the arid north, heavy debt at state oil company Pemex, and trade policy uncertainty ahead of the 2026 USMCA joint review."
   },
   "Mauritius": {
     "tier": "emg",
-    "gdp_vi": "~16,4 tỷ USD (#131 thế giới)",
-    "gdp_en": "~$16.4B (#131 globally)",
-    "pc_vi": "~12.900 USD (PPP ~32.800 USD)",
-    "pc_en": "~$12,900 (PPP ~$32,800)",
+    "gdp_vi": "~14,9 tỷ USD (#143 thế giới)",
+    "gdp_en": "~$14.9B (#143 globally)",
+    "pc_vi": "~11.990 USD (PPP ~31.700 USD)",
+    "pc_en": "~$11,990 (PPP ~$31,700)",
     "gr": "+4.9%",
     "sec": [
-      76,
-      20,
+      75,
+      21,
       4
     ],
     "main_vi": "Trung tâm tài chính quốc tế (trung chuyển vốn đầu tư vào Ấn Độ và châu Phi), du lịch nghỉ dưỡng biển cao cấp, công nghệ thông tin & dịch vụ thuê ngoài (BPO), dệt may cao cấp, chế biến cá ngừ & đường mía đặc sản",
@@ -1933,15 +1933,15 @@ export const ECON = {
   },
   "Mauritania": {
     "tier": "dev",
-    "gdp_vi": "~10,9 tỷ USD (#144 thế giới)",
-    "gdp_en": "~$10.9B (#144 globally)",
-    "pc_vi": "~2.250 USD (PPP ~7.350 USD)",
-    "pc_en": "~$2,250 (PPP ~$7,350)",
-    "gr": "+5.1%",
+    "gdp_vi": "~10,9 tỷ USD (#151 thế giới)",
+    "gdp_en": "~$10.9B (#151 globally)",
+    "pc_vi": "~2.100 USD (PPP ~7.380 USD)",
+    "pc_en": "~$2,100 (PPP ~$7,380)",
+    "gr": "+6.3%",
     "sec": [
-      43,
-      35,
-      22
+      46,
+      33,
+      21
     ],
     "main_vi": "Khai thác quặng sắt trên sa mạc Sahara (#2 châu Phi, vận chuyển bằng đoàn tàu dài nhất thế giới 2,5 km), khai thác vàng (mỏ Tasiast) & đồng, xuất khẩu khí hóa lỏng LNG mới (mỏ Greater Tortue Ahmeyim cùng Senegal), đánh bắt thủy sản (bạch tuộc), chăn nuôi lạc đà – gia súc",
     "main_en": "Iron ore mining in the Sahara (#2 in Africa, hauled by the world's longest 2.5-km freight train), gold (Tasiast mine) & copper, offshore LNG exports (Greater Tortue Ahmeyim with Senegal), Atlantic octopus & fish exports, livestock",
@@ -1950,14 +1950,14 @@ export const ECON = {
   },
   "Malta": {
     "tier": "adv",
-    "gdp_vi": "~24,3 tỷ USD (#113 thế giới)",
-    "gdp_en": "~$24.3B (#113 globally)",
-    "pc_vi": "~43.200 USD (PPP ~69.500 USD)",
-    "pc_en": "~$43,200 (PPP ~$69,500)",
-    "gr": "+5.0%",
+    "gdp_vi": "~25,0 tỷ USD (#118 thế giới)",
+    "gdp_en": "~$25.0B (#118 globally)",
+    "pc_vi": "~44.020 USD (PPP ~70.060 USD)",
+    "pc_en": "~$44,020 (PPP ~$70,060)",
+    "gr": "+6.2%",
     "sec": [
-      85,
-      14,
+      88,
+      11,
       1
     ],
     "main_vi": "Thủ phủ cấp phép trò chơi trực tuyến châu Âu (iGaming - chiếm ~12% GDP), du lịch Địa Trung Hải (~3,5 triệu khách/năm), đăng ký tàu biển (#1 châu Âu, #6 thế giới), bảo dưỡng máy bay (Lufthansa Technik) & bán dẫn (STMicroelectronics), dược phẩm generic, tài chính",
@@ -1967,15 +1967,15 @@ export const ECON = {
   },
   "Mali": {
     "tier": "low",
-    "gdp_vi": "~21,6 tỷ USD (#118 thế giới)",
-    "gdp_en": "~$21.6B (#118 globally)",
-    "pc_vi": "~910 USD (PPP ~2.850 USD)",
-    "pc_en": "~$910 (PPP ~$2,850)",
-    "gr": "+3.9%",
+    "gdp_vi": "~26,8 tỷ USD (#113 thế giới)",
+    "gdp_en": "~$26.8B (#113 globally)",
+    "pc_vi": "~1.090 USD (PPP ~3.320 USD)",
+    "pc_en": "~$1,090 (PPP ~$3,320)",
+    "gr": "+5.0%",
     "sec": [
-      43,
-      21,
-      36
+      39,
+      26,
+      35
     ],
     "main_vi": "Khai thác vàng (#3-4 châu Phi, chiếm >75% tổng kim ngạch xuất khẩu), khai thác lithium mới (siêu mỏ Goulamina đi vào sản xuất), trồng bông vải ('vàng trắng' đứng đầu Tây Phi), chăn nuôi gia súc & nông nghiệp dọc sông Niger (lúa gạo, hạt kê)",
     "main_en": "Gold mining (top-4 in Africa, >75% of total export earnings), lithium mining (Goulamina hard-rock lithium project), cotton production ('white gold' leader in West Africa), livestock & Niger River agriculture",
@@ -1984,15 +1984,15 @@ export const ECON = {
   },
   "Maldives": {
     "tier": "emg",
-    "gdp_vi": "~7,2 tỷ USD",
-    "gdp_en": "~$7.2B",
-    "pc_vi": "~12.600 USD (PPP ~24.800 USD)",
-    "pc_en": "~$12,600 (PPP ~$24,800)",
-    "gr": "+5.0%",
+    "gdp_vi": "~7,1 tỷ USD (#159 thế giới)",
+    "gdp_en": "~$7.1B (#159 globally)",
+    "pc_vi": "~13.380 USD (PPP ~26.220 USD)",
+    "pc_en": "~$13,380 (PPP ~$26,220)",
+    "gr": "+3.5%",
     "sec": [
-      81,
-      14,
-      5
+      85,
+      11,
+      4
     ],
     "main_vi": "Du lịch nghỉ dưỡng đảo san hô cao cấp (~30% GDP trực tiếp, >70% ngoại tệ), đánh bắt và chế biến cá ngừ, dịch vụ hàng hải",
     "main_en": "Luxury atoll resort tourism (~30% direct GDP, >70% FX earnings), skipjack & yellowfin tuna fisheries, maritime services",
@@ -2001,14 +2001,14 @@ export const ECON = {
   },
   "Malaysia": {
     "tier": "emg",
-    "gdp_vi": "~440 tỷ USD (#36 thế giới)",
-    "gdp_en": "~$440B (#36 globally)",
-    "pc_vi": "~13.100 USD (PPP ~41.000 USD)",
-    "pc_en": "~$13,100 (PPP ~$41,000)",
+    "gdp_vi": "~422 tỷ USD (#37 thế giới, #6 Đông Nam Á)",
+    "gdp_en": "~$422B (#37 globally, #6 in ASEAN)",
+    "pc_vi": "~11.870 USD (PPP ~38.840 USD)",
+    "pc_en": "~$11,870 (PPP ~$38,840)",
     "gr": "+5.1%",
     "sec": [
-      53,
-      38,
+      54,
+      37,
       9
     ],
     "main_vi": "Đóng gói & kiểm thử bán dẫn (chiếm ~13% toàn cầu), dầu khí & LNG (Petronas), dầu cọ, trung tâm dữ liệu AI (Johor), tài chính Hồi giáo",
@@ -2018,15 +2018,15 @@ export const ECON = {
   },
   "Malawi": {
     "tier": "low",
-    "gdp_vi": "~11,8 tỷ USD (#142 thế giới)",
-    "gdp_en": "~$11.8B (#142 globally)",
-    "pc_vi": "~550 USD (PPP ~1.750 USD)",
-    "pc_en": "~$550 (PPP ~$1,750)",
-    "gr": "+2.4%",
+    "gdp_vi": "~11,3 tỷ USD (#148 thế giới)",
+    "gdp_en": "~$11.3B (#148 globally)",
+    "pc_vi": "~520 USD (PPP ~1.860 USD)",
+    "pc_en": "~$520 (PPP ~$1,860)",
+    "gr": "+1.7%",
     "sec": [
-      53,
+      48,
       18,
-      29
+      34
     ],
     "main_vi": "Xuất khẩu thuốc lá (chiếm ~40-50% nguồn thu ngoại tệ xuất khẩu), trà (nhà sản xuất trà thương mại lâu đời nhất châu Phi), mía đường, đậu phộng & hạt mắc ca, đánh bắt cá hồ Malawi, thăm dò đất hiếm (Songwe Hill) & rutile (Kasiya - mỏ lớn nhất thế giới)",
     "main_en": "Tobacco exports (~40-50% of export earnings), tea (Africa's oldest commercial producer), sugar, macadamia nuts & groundnuts, Lake Malawi fisheries, rare earths (Songwe Hill) & Kasiya rutile-graphite exploration",
@@ -2035,14 +2035,14 @@ export const ECON = {
   },
   "Madagascar": {
     "tier": "low",
-    "gdp_vi": "~17,4 tỷ USD (#130 thế giới)",
-    "gdp_en": "~$17.4B (#130 globally)",
-    "pc_vi": "~560 USD (PPP ~1.980 USD)",
-    "pc_en": "~$560 (PPP ~$1,980)",
-    "gr": "+4.4%",
+    "gdp_vi": "~17,6 tỷ USD (#135 thế giới)",
+    "gdp_en": "~$17.6B (#135 globally)",
+    "pc_vi": "~550 USD (PPP ~1.890 USD)",
+    "pc_en": "~$550 (PPP ~$1,890)",
+    "gr": "+4.3%",
     "sec": [
-      51,
-      25,
+      52,
+      24,
       24
     ],
     "main_vi": "Sản xuất & xuất khẩu vani tự nhiên (#1 thế giới - chiếm ~80% nguồn cung toàn cầu), khai thác niken & coban (mỏ Ambatovy), ilmenite/titan & than chì, đá quý (sapphire), đinh hương, dệt may xuất khẩu (khu chế xuất Antananarivo), du lịch sinh thái đặc hữu",
@@ -2051,16 +2051,16 @@ export const ECON = {
     "note_en": "Madagascar holds a near-monopoly on the global natural vanilla market, with its northeastern SAVA region supplying ~80% of the world's Bourbon vanilla—a labor-intensive crop that must be hand-pollinated flower by flower—alongside major exports of cloves, lychees, and essential oils. Its industrial sector is anchored by the massive Ambatovy nickel-and-cobalt mining complex, Rio Tinto's QMM ilmenite (titanium) mine in the south, world-class flake graphite deposits for EV battery anodes, Ilakaka sapphires, and duty-free apparel factories around Antananarivo exporting to the US and EU. Nevertheless, chronic financial losses and blackouts at state power utility Jirama, cyclone-damaged highways, and low agricultural productivity remain severe structural bottlenecks."
   },
   "Macedonia": {
-    "tier": "dev",
-    "gdp_vi": "~16,0 tỷ USD",
-    "gdp_en": "~$16.0B",
-    "pc_vi": "~8.800 USD (PPP ~25.500 USD)",
-    "pc_en": "~$8,800 (PPP ~$25,500)",
-    "gr": "+2.4%",
+    "tier": "emg",
+    "gdp_vi": "~17,0 tỷ USD (#136 thế giới)",
+    "gdp_en": "~$17.0B (#136 globally)",
+    "pc_vi": "~9.290 USD (PPP ~27.000 USD)",
+    "pc_en": "~$9,290 (PPP ~$27,000)",
+    "gr": "+3.0%",
     "sec": [
-      61,
-      29,
-      10
+      65,
+      28,
+      7
     ],
     "main_vi": "Linh kiện ô tô & dây cáp điện (khu công nghiệp TIDZ), luyện kim (ferronickel, thép), dệt may, rượu vang & nông sản, CNTT gia công",
     "main_en": "Auto parts & wiring harnesses (TIDZ free zones), metallurgy (ferronickel, steel), textiles, wine & agriculture, IT outsourcing",
@@ -2069,15 +2069,15 @@ export const ECON = {
   },
   "Luxembourg": {
     "tier": "adv",
-    "gdp_vi": "~91 tỷ USD",
-    "gdp_en": "~$91B",
-    "pc_vi": "~135.000 USD (PPP ~148.000 USD, #1 thế giới)",
-    "pc_en": "~$135,000 (PPP ~$148,000, #1 globally)",
-    "gr": "+1.3%",
+    "gdp_vi": "~93 tỷ USD (#74 thế giới)",
+    "gdp_en": "~$93B (#74 globally)",
+    "pc_vi": "~137.780 USD (PPP ~156.080 USD)",
+    "pc_en": "~$137,780 (PPP ~$156,080)",
+    "gr": "+0.4%",
     "sec": [
-      88,
+      89,
       11,
-      1
+      0
     ],
     "main_vi": "Quản lý quỹ đầu tư (trung tâm lớn thứ 2 thế giới sau Mỹ), ngân hàng tư nhân, bảo hiểm, dịch vụ vệ tinh (SES), thép chất lượng cao (ArcelorMittal)",
     "main_en": "Investment fund management (#2 globally after the US), private banking, insurance, satellite communications (SES), specialty steel (ArcelorMittal)",
@@ -2086,31 +2086,31 @@ export const ECON = {
   },
   "Lithuania": {
     "tier": "adv",
-    "gdp_vi": "~82 tỷ USD",
-    "gdp_en": "~$82B",
-    "pc_vi": "~28.500 USD (PPP ~52.000 USD)",
-    "pc_en": "~$28,500 (PPP ~$52,000)",
-    "gr": "+2.4%",
+    "gdp_vi": "~86 tỷ USD (#79 thế giới)",
+    "gdp_en": "~$86B (#79 globally)",
+    "pc_vi": "~29.600 USD (PPP ~55.700 USD)",
+    "pc_en": "~$29,600 (PPP ~$55,700)",
+    "gr": "+3.0%",
     "sec": [
-      68,
-      28,
-      4
+      72,
+      26,
+      2
     ],
     "main_vi": "Fintech & dịch vụ tài chính số, công nghệ laser & quang học, lọc dầu (Mažeikiai), chế biến gỗ & nội thất (cung ứng IKEA), logistics vận tải bộ",
     "main_en": "Fintech & digital financial services, laser & photonics tech, oil refining (Mažeikiai), wood processing & furniture (IKEA supplier), road freight logistics",
-    "note_vi": "Là nền kinh tế lớn nhất và năng động nhất trong ba nước vùng Baltic (GDP ~82 tỷ USD, GDP PPP đầu người vượt cả Tây Ban Nha), Litva giữ vững nền tảng công nghiệp chế tạo thực chất (~20% GDP) từ nhà máy lọc dầu duy nhất vùng Baltic tại Mažeikiai, chuỗi cung ứng nội thất gỗ lớn cho IKEA đến công nghiệp hóa chất – phân bón. Đặc biệt, Vilnius đã vươn lên thành trung tâm cấp phép Fintech lớn nhất Liên minh châu Âu (nơi Revolut đặt ngân hàng châu Âu) và Litva hiện chiếm hơn 50% thị phần toàn cầu về máy laser xung cực ngắn phục vụ nghiên cứu khoa học.",
-    "note_en": "As the largest and most dynamic Baltic economy (GDP ~$82 billion, with PPP per-capita income surpassing Spain), Lithuania pairs a robust manufacturing base (~20% of GDP)—spanning the Baltics' sole oil refinery at Mažeikiai, major IKEA furniture manufacturing, and biotech—with booming high-tech services. Notably, Vilnius has become the EU's largest fintech licensing hub (anchoring Revolut's European bank), while Lithuanian firms command over half the global market for ultrashort-pulse scientific lasers."
+    "note_vi": "Là nền kinh tế lớn nhất và năng động nhất trong ba nước vùng Baltic (GDP ~87 tỷ USD, GDP PPP đầu người vượt cả Tây Ban Nha), Litva giữ vững nền tảng công nghiệp chế tạo thực chất (~20% GDP) từ nhà máy lọc dầu duy nhất vùng Baltic tại Mažeikiai, chuỗi cung ứng nội thất gỗ lớn cho IKEA đến công nghiệp hóa chất – phân bón. Đặc biệt, Vilnius đã vươn lên thành trung tâm cấp phép Fintech lớn nhất Liên minh châu Âu (nơi Revolut đặt ngân hàng châu Âu) và Litva hiện chiếm hơn 50% thị phần toàn cầu về máy laser xung cực ngắn phục vụ nghiên cứu khoa học.",
+    "note_en": "As the largest and most dynamic Baltic economy (GDP ~$87 billion, with PPP per-capita income surpassing Spain), Lithuania pairs a robust manufacturing base (~20% of GDP)—spanning the Baltics' sole oil refinery at Mažeikiai, major IKEA furniture manufacturing, and biotech—with booming high-tech services. Notably, Vilnius has become the EU's largest fintech licensing hub (anchoring Revolut's European bank), while Lithuanian firms command over half the global market for ultrashort-pulse scientific lasers."
   },
   "Liechtenstein": {
     "tier": "adv",
-    "gdp_vi": "~8,2 tỷ USD",
-    "gdp_en": "~$8.2B",
-    "pc_vi": "~205.000 USD",
-    "pc_en": "~$205,000",
+    "gdp_vi": "~8,9 tỷ USD (#154 thế giới)",
+    "gdp_en": "~$8.9B (#154 globally)",
+    "pc_vi": "~220.170 USD",
+    "pc_en": "~$220,170",
     "gr": "+1.8%",
     "sec": [
-      55,
-      44,
+      59,
+      40,
       1
     ],
     "main_vi": "Cơ khí chính xác & dụng cụ xây dựng (Hilti), nha khoa giả (Ivoclar), linh kiện ô tô (ThyssenKrupp Presta), ngân hàng tư nhân & quản lý gia sản",
@@ -2119,16 +2119,16 @@ export const ECON = {
     "note_en": "Often seen solely as a banking haven, Liechtenstein is actually a hyper-industrialized economy where high-tech manufacturing generates 44% of GDP—led by global champions like Hilti, Ivoclar, and ThyssenKrupp Presta. Remarkably, the principality hosts more jobs (~43,000) than residents (~40,000), relying on daily commuters from Switzerland, Austria, and Germany for over 55% of its workforce."
   },
   "Libya": {
-    "tier": "dev",
-    "gdp_vi": "~45 tỷ USD",
-    "gdp_en": "~$45B",
-    "pc_vi": "~6.500 USD (PPP ~26.000 USD)",
-    "pc_en": "~$6,500 (PPP ~$26,000)",
-    "gr": "+6.5%",
+    "tier": "emg",
+    "gdp_vi": "~48 tỷ USD (#95 thế giới)",
+    "gdp_en": "~$48B (#95 globally)",
+    "pc_vi": "~6.570 USD (PPP ~14.320 USD)",
+    "pc_en": "~$6,570 (PPP ~$14,320)",
+    "gr": "+1.9%",
     "sec": [
-      35,
-      62,
-      3
+      27,
+      71,
+      2
     ],
     "main_vi": "Khai thác dầu thô ngọt nhẹ (Light Sweet Crude), khí đốt tự nhiên (đường ống Greenstream sang Ý), lọc hóa dầu, luyện thép (Misrata)",
     "main_en": "Light sweet crude oil extraction, natural gas (Greenstream pipeline to Italy), petrochemicals & refining, steelmaking (Misrata)",
@@ -2137,15 +2137,15 @@ export const ECON = {
   },
   "Liberia": {
     "tier": "low",
-    "gdp_vi": "~4,8 tỷ USD",
-    "gdp_en": "~$4.8B",
-    "pc_vi": "~860 USD (PPP ~1.900 USD)",
-    "pc_en": "~$860 (PPP ~$1,900)",
-    "gr": "+5.1%",
+    "gdp_vi": "~4,8 tỷ USD (#164 thế giới)",
+    "gdp_en": "~$4.8B (#164 globally)",
+    "pc_vi": "~850 USD (PPP ~1.870 USD)",
+    "pc_en": "~$850 (PPP ~$1,870)",
+    "gr": "+4.0%",
     "sec": [
-      42,
-      23,
-      35
+      44,
+      22,
+      34
     ],
     "main_vi": "Quặng sắt (ArcelorMittal), cao su tự nhiên (đồn điền Firestone), khai thác vàng & kim cương, dầu cọ, đăng ký tàu biển quốc tế (cờ thuận tiện #1 thế giới)",
     "main_en": "Iron ore (ArcelorMittal), natural rubber (Firestone plantations), gold & diamond mining, palm oil, international ship registry (#1 flag of convenience)",
@@ -2153,33 +2153,33 @@ export const ECON = {
     "note_en": "Reflecting its unique historical ties with the United States, Liberia operates a dual-currency regime using both the US dollar and the Liberian dollar while earning steady fiscal fees from the world's largest merchant shipping registry. Real-sector growth is driven by ArcelorMittal's multi-billion-dollar iron-ore expansion, industrial gold mines, and the historic Firestone rubber plantation (the world's largest contiguous rubber estate since 1926), though high electricity costs and unpaved rural roads constrain broader diversification."
   },
   "Lesotho": {
-    "tier": "low",
-    "gdp_vi": "~2,4 tỷ USD",
-    "gdp_en": "~$2.4B",
-    "pc_vi": "~1.050 USD (PPP ~3.000 USD)",
-    "pc_en": "~$1,050 (PPP ~$3,000)",
-    "gr": "+2.3%",
+    "tier": "dev",
+    "gdp_vi": "~2,4 tỷ USD (#178 thế giới)",
+    "gdp_en": "~$2.4B (#178 globally)",
+    "pc_vi": "~1.020 USD (PPP ~3.070 USD)",
+    "pc_en": "~$1,020 (PPP ~$3,070)",
+    "gr": "+5.2%",
     "sec": [
-      59,
-      35,
-      6
+      60,
+      33,
+      7
     ],
     "main_vi": "Xuất khẩu nước sạch sang Nam Phi (Dự án LHWP), kim cương chất lượng cao (mỏ Letseng), dệt may xuất khẩu sang Mỹ (AGOA), kiều hối",
     "main_en": "Water & hydro exports to South Africa (LHWP), high-value gem diamonds (Letseng mine), apparel exports to the US (AGOA), migrant remittances",
-    "note_vi": "Nền kinh tế quy mô nhỏ (~2,4 tỷ USD) của Lesotho đứng trên 4 trụ cột: khoản chia sẻ doanh thu thuế quan từ Liên minh Thuế quan miền Nam châu Phi (SACU, thường chiếm tới 30–50% tổng thu ngân sách nhà nước), tiền bán nước sạch và đại công trường thi công Giai đoạn II Dự án Nước Cao nguyên Lesotho (LHWP trị giá >2 tỷ USD) với Nam Phi, khai thác kim cương siêu lớn tại mỏ Letseng (ở độ cao 3.100 m) và ngành dệt may xuất khẩu ('thủ phủ quần bò (jeans) của châu Phi'). Tuy nhiên, việc ngành may mặc phụ thuộc nặng vào ưu đãi miễn thuế sang thị trường Mỹ theo Đạo luật AGOA và việc kinh tế tăng trưởng chậm chạp của nước láng giềng Nam Phi đang đặt Maseru trước áp lực phải tạo thêm việc làm cho thanh niên và phát triển nông nghiệp công nghệ cao.",
-    "note_en": "Lesotho's small $2.4 billion economy rests on four main pillars: customs revenue transfers from the Southern African Customs Union (SACU, providing 30–50% of government budget revenue), water royalties and massive construction inflows from Phase II of the >$2 billion Lesotho Highlands Water Project with South Africa, high-value gem diamond mining at Letseng (3,100 m elevation), and export garment factories in Maseru. However, heavy exposure of its textile factories to US trade tariffs and AGOA renewal uncertainty in 2025–2026, alongside soil erosion and high youth unemployment, remains a major structural vulnerability."
+    "note_vi": "Nền kinh tế quy mô nhỏ (~2,3 tỷ USD) của Lesotho đứng trên 4 trụ cột: khoản chia sẻ doanh thu thuế quan từ Liên minh Thuế quan miền Nam châu Phi (SACU, thường chiếm tới 30–50% tổng thu ngân sách nhà nước), tiền bán nước sạch và đại công trường thi công Giai đoạn II Dự án Nước Cao nguyên Lesotho (LHWP trị giá >2 tỷ USD) với Nam Phi, khai thác kim cương siêu lớn tại mỏ Letseng (ở độ cao 3.100 m) và ngành dệt may xuất khẩu ('thủ phủ quần bò (jeans) của châu Phi'). Tuy nhiên, việc ngành may mặc phụ thuộc nặng vào ưu đãi miễn thuế sang thị trường Mỹ theo Đạo luật AGOA và việc kinh tế tăng trưởng chậm chạp của nước láng giềng Nam Phi đang đặt Maseru trước áp lực phải tạo thêm việc làm cho thanh niên và phát triển nông nghiệp công nghệ cao.",
+    "note_en": "Lesotho's small $2.3 billion economy rests on four main pillars: customs revenue transfers from the Southern African Customs Union (SACU, providing 30–50% of government budget revenue), water royalties and massive construction inflows from Phase II of the >$2 billion Lesotho Highlands Water Project with South Africa, high-value gem diamond mining at Letseng (3,100 m elevation), and export garment factories in Maseru. However, heavy exposure of its textile factories to US trade tariffs and AGOA renewal uncertainty in 2025–2026, alongside soil erosion and high youth unemployment, remains a major structural vulnerability."
   },
   "Lebanon": {
     "tier": "dev",
-    "gdp_vi": "~22 tỷ USD (giảm hơn 50% so với trước khủng hoảng 2019)",
-    "gdp_en": "~$22B (down >50% from pre-2019 peak)",
-    "pc_vi": "~3.800 USD (PPP ~11.800 USD)",
-    "pc_en": "~$3,800 (PPP ~$11,800)",
-    "gr": "-5.0%",
+    "gdp_vi": "~26,0 tỷ USD (#114 thế giới)",
+    "gdp_en": "~$26.0B (#114 globally)",
+    "pc_vi": "~4.470 USD (PPP ~11.920 USD)",
+    "pc_en": "~$4,470 (PPP ~$11,920)",
+    "gr": "-7.1%",
     "sec": [
-      78,
-      17,
-      5
+      91,
+      7,
+      2
     ],
     "main_vi": "Kiều hối từ cộng đồng hải ngoại (~6–7 tỷ USD/năm, >30% GDP), dịch vụ thương mại – ẩm thực – du lịch, chế biến thực phẩm & rượu vang, trang sức",
     "main_en": "Diaspora remittances (~$6–7B/yr, >30% of GDP), hospitality & retail services, agro-food & wine processing, jewelry",
@@ -2188,14 +2188,14 @@ export const ECON = {
   },
   "Latvia": {
     "tier": "adv",
-    "gdp_vi": "~45 tỷ USD",
-    "gdp_en": "~$45B",
-    "pc_vi": "~24.200 USD (PPP ~43.500 USD)",
-    "pc_en": "~$24,200 (PPP ~$43,500)",
-    "gr": "+1.2%",
+    "gdp_vi": "~44 tỷ USD (#100 thế giới)",
+    "gdp_en": "~$44B (#100 globally)",
+    "pc_vi": "~23.580 USD (PPP ~43.870 USD)",
+    "pc_en": "~$23,580 (PPP ~$43,870)",
+    "gr": "-0.0%",
     "sec": [
-      73,
-      22,
+      74,
+      21,
       5
     ],
     "main_vi": "Lâm nghiệp & chế biến gỗ xuất khẩu, dược phẩm (Grindeks), thiết bị mạng không dây (MikroTik), trung tâm hàng không Baltic (airBaltic), CNTT",
@@ -2205,14 +2205,14 @@ export const ECON = {
   },
   "Laos": {
     "tier": "dev",
-    "gdp_vi": "~15,2 tỷ USD",
-    "gdp_en": "~$15.2B",
-    "pc_vi": "~1.970 USD (PPP ~9.700 USD)",
-    "pc_en": "~$1,970 (PPP ~$9,700)",
+    "gdp_vi": "~16,5 tỷ USD (#137 thế giới, #9 Đông Nam Á)",
+    "gdp_en": "~$16.5B (#137 globally, #9 in ASEAN)",
+    "pc_vi": "~2.120 USD (PPP ~9.790 USD)",
+    "pc_en": "~$2,120 (PPP ~$9,790)",
     "gr": "+4.1%",
     "sec": [
-      43,
-      39,
+      49,
+      33,
       18
     ],
     "main_vi": "Xuất khẩu thủy điện ('cục pin của Đông Nam Á'), khai khoáng (vàng, đồng, kali), vận tải đường sắt Lào – Trung, nông lâm sản (sắn, cao su, bột giấy)",
@@ -2222,15 +2222,15 @@ export const ECON = {
   },
   "Kyrgyzstan": {
     "tier": "dev",
-    "gdp_vi": "~15,8 tỷ USD",
-    "gdp_en": "~$15.8B",
-    "pc_vi": "~2.200 USD (PPP ~7.700 USD)",
-    "pc_en": "~$2,200 (PPP ~$7,700)",
-    "gr": "+6.5%",
+    "gdp_vi": "~18,2 tỷ USD (#133 thế giới)",
+    "gdp_en": "~$18.2B (#133 globally)",
+    "pc_vi": "~2.520 USD (PPP ~8.210 USD)",
+    "pc_en": "~$2,520 (PPP ~$8,210)",
+    "gr": "+11.5%",
     "sec": [
-      54,
-      28,
-      18
+      61,
+      29,
+      10
     ],
     "main_vi": "Khai thác vàng (mỏ Kumtor trên núi cao), kiều hối từ Nga (~25–30% GDP), thương mại trung chuyển tái xuất, thủy điện, chăn nuôi thảo nguyên",
     "main_en": "High-altitude gold mining (Kumtor), remittances from Russia (~25–30% of GDP), re-export transit trade, hydropower, pastoral livestock",
@@ -2239,14 +2239,14 @@ export const ECON = {
   },
   "Kuwait": {
     "tier": "adv",
-    "gdp_vi": "~162 tỷ USD",
-    "gdp_en": "~$162B",
-    "pc_vi": "~33.300 USD (PPP ~56.600 USD)",
-    "pc_en": "~$33,300 (PPP ~$56,600)",
-    "gr": "-2.0%",
+    "gdp_vi": "~161 tỷ USD (#58 thế giới)",
+    "gdp_en": "~$161B (#58 globally)",
+    "pc_vi": "~32.860 USD (PPP ~53.120 USD)",
+    "pc_en": "~$32,860 (PPP ~$53,120)",
+    "gr": "-1.5%",
     "sec": [
-      48,
-      52,
+      49,
+      51,
       0
     ],
     "main_vi": "Khai thác dầu thô (~90% xuất khẩu, trữ lượng #6 thế giới), lọc hóa dầu (nhà máy lọc dầu Al-Zour), đầu tư tài chính quốc tế (KIA)",
@@ -2255,16 +2255,16 @@ export const ECON = {
     "note_en": "Endowed with the world's sixth-largest crude reserves (~101 billion barrels, anchored by the giant Burgan field) and the newly commissioned 615,000-bpd Al-Zour mega-refinery, Kuwait still relies on hydrocarbons for ~90% of state revenues while employing ~80% of citizens in the public sector. However, its Kuwait Investment Authority (KIA)—founded in 1953 as the world's oldest sovereign wealth fund and now managing ~$1 trillion—provides a formidable financial cushion as the emirate accelerates long-delayed infrastructure reforms."
   },
   "Kosovo": {
-    "tier": "dev",
-    "gdp_vi": "~11,3 tỷ USD",
-    "gdp_en": "~$11.3B",
-    "pc_vi": "~6.400 USD (PPP ~17.500 USD)",
-    "pc_en": "~$6,400 (PPP ~$17,500)",
-    "gr": "+4.0%",
+    "tier": "emg",
+    "gdp_vi": "~11,2 tỷ USD (#149 thế giới)",
+    "gdp_en": "~$11.2B (#149 globally)",
+    "pc_vi": "~7.030 USD (PPP ~17.890 USD)",
+    "pc_en": "~$7,030 (PPP ~$17,890)",
+    "gr": "+4.6%",
     "sec": [
-      64,
-      28,
-      8
+      58,
+      33,
+      9
     ],
     "main_vi": "Khai khoáng (chì, kẽm, niken tại tổ hợp Trepča), nhiệt điện than non (lignite), chế biến thực phẩm, gia công CNTT (BPO), xây dựng từ kiều hối",
     "main_en": "Base metal mining (lead, zinc, nickel at Trepča), lignite coal power, food processing, IT/BPO services, diaspora-funded construction",
@@ -2272,16 +2272,16 @@ export const ECON = {
     "note_en": "Unilateral use of the euro anchors monetary stability and facilitates massive inflows from the Kosovar diaspora in Germany and Switzerland, whose remittances and visits generate 15–20% of GDP. Europe's youngest workforce and EU visa liberalization since 2024 are fueling a fast-growing IT outsourcing and BPO sector in Pristina. Despite holding the world's fifth-largest lignite reserves and rich lead-zinc deposits at Trepča, Kosovo must overcome aging coal power plants and political friction with Serbia to attract large-scale manufacturing FDI."
   },
   "Kiribati": {
-    "tier": "low",
-    "gdp_vi": "~0,31 tỷ USD",
-    "gdp_en": "~$0.31B",
-    "pc_vi": "~2.300 USD (PPP ~3.600 USD)",
-    "pc_en": "~$2,300 (PPP ~$3,600)",
-    "gr": "+5.3%",
+    "tier": "dev",
+    "gdp_vi": "~0,30 tỷ USD (~300 triệu USD)",
+    "gdp_en": "~$300M",
+    "pc_vi": "~2.550 USD (PPP ~3.730 USD)",
+    "pc_en": "~$2,550 (PPP ~$3,730)",
+    "gr": "+4.7%",
     "sec": [
-      68,
-      9,
-      23
+      67,
+      11,
+      22
     ],
     "main_vi": "Bán giấy phép đánh bắt cá ngừ vùng đặc quyền kinh tế (EEZ), cùi dừa khô (copra), kiều hối từ thủy thủ và lao động thời vụ, quỹ đầu tư quốc gia RERF",
     "main_en": "EEZ tuna fishing license fees, copra & coconut oil, seafarer & seasonal worker remittances, Revenue Equalization Reserve Fund (RERF) returns",
@@ -2290,15 +2290,15 @@ export const ECON = {
   },
   "Kenya": {
     "tier": "dev",
-    "gdp_vi": "~116 tỷ USD",
-    "gdp_en": "~$116B",
-    "pc_vi": "~2.100 USD (PPP ~6.900 USD)",
-    "pc_en": "~$2,100 (PPP ~$6,900)",
-    "gr": "+5.0%",
+    "gdp_vi": "~120 tỷ USD (#67 thế giới)",
+    "gdp_en": "~$120B (#67 globally)",
+    "pc_vi": "~2.130 USD (PPP ~6.650 USD)",
+    "pc_en": "~$2,130 (PPP ~$6,650)",
+    "gr": "+4.7%",
     "sec": [
-      55,
+      59,
       17,
-      28
+      24
     ],
     "main_vi": "Fintech & thanh toán di động (M-Pesa), xuất khẩu trà (#1 thế giới) & hoa cắt cành sang châu Âu, du lịch safari, dịch vụ cảng biển (Mombasa), điện địa nhiệt",
     "main_en": "Fintech & mobile money (M-Pesa), black tea (#1 exporter) & cut-flower exports to Europe, safari tourism, Mombasa port logistics, geothermal power",
@@ -2309,30 +2309,30 @@ export const ECON = {
     "tier": "emg",
     "gdp_vi": "~292 tỷ USD (#49 thế giới, #1 Trung Á)",
     "gdp_en": "~$292B (#49 globally, #1 in Central Asia)",
-    "pc_vi": "~14.100 USD (PPP ~41.300 USD)",
-    "pc_en": "~$14,100 (PPP ~$41,300)",
-    "gr": "+4.4%",
+    "pc_vi": "~14.160 USD (PPP ~40.950 USD)",
+    "pc_en": "~$14,160 (PPP ~$40,950)",
+    "gr": "+5.0%",
     "sec": [
-      56,
-      39,
-      5
+      62,
+      34,
+      4
     ],
     "main_vi": "Dầu thô & khí đốt (mỏ Tengiz, Kashagan), uranium (#1 thế giới, ~40% nguồn cung toàn cầu), đồng, ferroalloy, lúa mì, vận tải quá cảnh Á – Âu",
     "main_en": "Crude oil & gas (Tengiz, Kashagan fields), uranium (#1 globally, ~40% supply), copper, ferroalloys, wheat, Eurasian transit logistics",
-    "note_vi": "Chiếm gần 60% GDP toàn vùng Trung Á (~292 tỷ USD), kinh tế Kazakhstan dựa vào ba siêu mỏ dầu khí (Tengiz, Kashagan, Karachaganak) và vị thế nhà khai thác uranium số một thế giới (chiếm ~40% nguồn cung toàn cầu), cùng xuất khẩu đồng, lúa mì. Từ sau năm 2022, lưu lượng hàng hóa qua 'Hành lang Trung tâm' xuyên biển Caspi nối Trung Quốc – châu Âu qua Kazakhstan đã tăng gấp nhiều lần. Điểm nghẽn lớn nhất là ngân sách phụ thuộc vào giá dầu thô, rủi ro đường ống CPC qua Nga và tỷ trọng công nghiệp chế tạo nội địa còn mỏng.",
-    "note_en": "Generating nearly 60% of Central Asia's GDP (~$292B), Kazakhstan is powered by giant oilfields (Tengiz, Kashagan, Karachaganak) and its position as the world's top uranium producer (~40% of global supply), alongside copper and wheat exports. Since 2022, freight traffic has surged along its Trans-Caspian 'Middle Corridor' linking China to Europe. Key structural vulnerabilities remain heavy reliance on crude oil prices, exposure to Russian CPC pipeline disruptions, and limited non-extractive manufacturing."
+    "note_vi": "Chiếm gần 60% GDP toàn vùng Trung Á (~300 tỷ USD), kinh tế Kazakhstan dựa vào ba siêu mỏ dầu khí (Tengiz, Kashagan, Karachaganak) và vị thế nhà khai thác uranium số một thế giới (chiếm ~40% nguồn cung toàn cầu), cùng xuất khẩu đồng, lúa mì. Từ sau năm 2022, lưu lượng hàng hóa qua 'Hành lang Trung tâm' xuyên biển Caspi nối Trung Quốc – châu Âu qua Kazakhstan đã tăng gấp nhiều lần. Điểm nghẽn lớn nhất là ngân sách phụ thuộc vào giá dầu thô, rủi ro đường ống CPC qua Nga và tỷ trọng công nghiệp chế tạo nội địa còn mỏng.",
+    "note_en": "Generating nearly 60% of Central Asia's GDP (~$300B), Kazakhstan is powered by giant oilfields (Tengiz, Kashagan, Karachaganak) and its position as the world's top uranium producer (~40% of global supply), alongside copper and wheat exports. Since 2022, freight traffic has surged along its Trans-Caspian 'Middle Corridor' linking China to Europe. Key structural vulnerabilities remain heavy reliance on crude oil prices, exposure to Russian CPC pipeline disruptions, and limited non-extractive manufacturing."
   },
   "Jordan": {
-    "tier": "dev",
-    "gdp_vi": "~53 tỷ USD",
-    "gdp_en": "~$53B",
-    "pc_vi": "~4.700 USD (PPP ~10.800 USD)",
-    "pc_en": "~$4,700 (PPP ~$10,800)",
-    "gr": "+2.4%",
+    "tier": "emg",
+    "gdp_vi": "~59 tỷ USD (#88 thế giới)",
+    "gdp_en": "~$59B (#88 globally)",
+    "pc_vi": "~5.070 USD (PPP ~11.920 USD)",
+    "pc_en": "~$5,070 (PPP ~$11,920)",
+    "gr": "+2.6%",
     "sec": [
-      67,
-      28,
-      5
+      64,
+      30,
+      6
     ],
     "main_vi": "Khai thác kali (potash) & phốt phát ở Biển Chết, dược phẩm xuất khẩu, du lịch di sản (Petra, Wadi Rum), dịch vụ CNTT & y tế, kiều hối",
     "main_en": "Dead Sea potash & phosphate fertilizers, pharmaceuticals, heritage tourism (Petra, Wadi Rum), regional medical & IT services, remittances",
@@ -2341,14 +2341,14 @@ export const ECON = {
   },
   "Japan": {
     "tier": "adv",
-    "gdp_vi": "~4.070 tỷ USD (#4 thế giới)",
-    "gdp_en": "~$4.07T (#4 globally)",
-    "pc_vi": "~32.850 USD (PPP ~54.200 USD)",
-    "pc_en": "~$32,850 (PPP ~$54,200)",
-    "gr": "+0.8%",
+    "gdp_vi": "~4.190 tỷ USD (#4 thế giới)",
+    "gdp_en": "~$4.19T (#4 globally)",
+    "pc_vi": "~33.800 USD (PPP ~54.160 USD)",
+    "pc_en": "~$33,800 (PPP ~$54,160)",
+    "gr": "-0.2%",
     "sec": [
-      71,
-      28,
+      72,
+      27,
       1
     ],
     "main_vi": "Ô tô & xe hybrid (Toyota, Honda), thiết bị bán dẫn & vật liệu hóa chất tinh khiết, robot công nghiệp, cơ khí chính xác, tài chính",
@@ -2357,12 +2357,12 @@ export const ECON = {
     "note_en": "Japan is the world's fourth-largest economy and the planet's largest net creditor nation thanks to vast overseas investment assets. Japanese firms control critical global supply-chain choke points in semiconductor photoresists, wafer equipment, industrial robotics, and hybrid vehicles. Now exiting decades of deflation with rising wages and major chip-fab investments (TSMC Kumamoto, Rapidus), the economy still faces public debt above 250% of GDP and acute labor shortages."
   },
   "Jamaica": {
-    "tier": "dev",
-    "gdp_vi": "~20,6 tỷ USD",
-    "gdp_en": "~$20.6B",
-    "pc_vi": "~7.300 USD (PPP ~13.500 USD)",
-    "pc_en": "~$7,300 (PPP ~$13,500)",
-    "gr": "+1.8%",
+    "tier": "emg",
+    "gdp_vi": "~22,0 tỷ USD (#125 thế giới)",
+    "gdp_en": "~$22.0B (#125 globally)",
+    "pc_vi": "~7.750 USD (PPP ~12.910 USD)",
+    "pc_en": "~$7,750 (PPP ~$12,910)",
+    "gr": "-0.5%",
     "sec": [
       71,
       20,
@@ -2375,15 +2375,15 @@ export const ECON = {
   },
   "Italy": {
     "tier": "adv",
-    "gdp_vi": "~2.380 tỷ USD (#8 thế giới)",
-    "gdp_en": "~$2.38T (#8 globally)",
-    "pc_vi": "~40.300 USD (PPP ~60.000 USD)",
-    "pc_en": "~$40,300 (PPP ~$60,000)",
-    "gr": "+0.7%",
+    "gdp_vi": "~2.383 tỷ USD (#8 thế giới, #3 EU)",
+    "gdp_en": "~$2.38T (#8 globally, #3 in EU)",
+    "pc_vi": "~40.430 USD (PPP ~62.290 USD)",
+    "pc_en": "~$40,430 (PPP ~$62,290)",
+    "gr": "+0.8%",
     "sec": [
-      73,
+      72,
       25,
-      2
+      3
     ],
     "main_vi": "Máy móc cơ khí tự động hóa, siêu xe & ô tô (Ferrari, Stellantis), thời trang & hàng xa xỉ (Milan), dược phẩm, chế biến thực phẩm – rượu vang, du lịch di sản",
     "main_en": "Industrial machinery & automation, luxury & mass automotive (Ferrari, Stellantis), high fashion & luxury goods, pharmaceuticals, food & wine, heritage tourism",
@@ -2392,14 +2392,14 @@ export const ECON = {
   },
   "Israel": {
     "tier": "adv",
-    "gdp_vi": "~530 tỷ USD (#29 thế giới)",
-    "gdp_en": "~$530B (#29 globally)",
-    "pc_vi": "~53.400 USD (PPP ~55.500 USD)",
-    "pc_en": "~$53,400 (PPP ~$55,500)",
-    "gr": "+1.5%",
+    "gdp_vi": "~542 tỷ USD (#28 thế giới)",
+    "gdp_en": "~$542B (#28 globally)",
+    "pc_vi": "~54.220 USD (PPP ~57.280 USD)",
+    "pc_en": "~$54,220 (PPP ~$57,280)",
+    "gr": "+1.0%",
     "sec": [
-      72,
-      27,
+      80,
+      19,
       1
     ],
     "main_vi": "Công nghệ cao & an ninh mạng ('Silicon Wadi', ~50% xuất khẩu), công nghiệp quốc phòng & hàng không vũ trụ, thiết kế chip, dược phẩm, khí đốt Đông Địa Trung Hải, chế tác kim cương",
@@ -2409,15 +2409,15 @@ export const ECON = {
   },
   "Palestine": {
     "tier": "dev",
-    "gdp_vi": "~14 tỷ USD (sụt giảm mạnh do chiến sự Gaza)",
-    "gdp_en": "~$14B (severely contracted by Gaza war)",
-    "pc_vi": "~2.600 USD (PPP ~5.400 USD)",
-    "pc_en": "~$2,600 (PPP ~$5,400)",
-    "gr": "-20.0%",
+    "gdp_vi": "~16,0 tỷ USD (#138 thế giới)",
+    "gdp_en": "~$16.0B (#138 globally)",
+    "pc_vi": "~3.030 USD (PPP ~4.770 USD)",
+    "pc_en": "~$3,030 (PPP ~$4,770)",
+    "gr": "-22.9%",
     "sec": [
-      68,
-      24,
-      8
+      73,
+      20,
+      7
     ],
     "main_vi": "Dịch vụ thương mại & hành chính công, xây dựng, nông nghiệp (ô liu, cam quýt, rau quả), chế tác đá vôi, viện trợ quốc tế & kiều hối",
     "main_en": "Retail & public services, construction, agriculture (olives, citrus, vegetables), stone & marble cutting, international aid & remittances",
@@ -2426,32 +2426,32 @@ export const ECON = {
   },
   "Ireland": {
     "tier": "adv",
-    "gdp_vi": "~560 tỷ USD (#26 thế giới)",
-    "gdp_en": "~$560B (#26 globally)",
-    "pc_vi": "~106.000 USD (PPP ~133.000 USD)",
-    "pc_en": "~$106,000 (PPP ~$133,000)",
-    "gr": "+1.5%",
+    "gdp_vi": "~609 tỷ USD (#24 thế giới)",
+    "gdp_en": "~$609B (#24 globally)",
+    "pc_vi": "~112.900 USD (PPP ~140.780 USD)",
+    "pc_en": "~$112,900 (PPP ~$140,780)",
+    "gr": "+2.6%",
     "sec": [
-      59,
-      40,
+      64,
+      35,
       1
     ],
     "main_vi": "Dược phẩm & công nghệ sinh học (Pfizer, Eli Lilly), trụ sở công nghệ châu Âu (Apple, Google, Meta, Microsoft), cho thuê máy bay (>50% đội bay thế giới), thực phẩm & bơ sữa",
     "main_en": "Biopharmaceuticals & medical devices (Pfizer, Eli Lilly), European Big Tech headquarters (Apple, Google, Meta, Microsoft), aircraft leasing (>50% global share), dairy & agri-food",
-    "note_vi": "Kinh tế Ireland là trung tâm đặt trụ sở châu Âu của hơn 1.000 tập đoàn đa quốc gia hàng đầu thế giới (chủ yếu từ Mỹ): từ công nghệ (Apple, Google, Meta, Microsoft), dược phẩm – công nghệ sinh học (Pfizer, Eli Lilly — nơi sản xuất nguyên liệu thuốc giảm cân/tiểu đường bom tấn và Botox toàn cầu), thiết bị y tế đến ngành cho thuê máy bay thương mại (chiếm hơn 50% đội bay cho thuê trên toàn thế giới). Do việc các tập đoàn đa quốc gia hạch toán tài sản sở hữu trí tuệ tại Ireland làm tổng GDP danh nghĩa (~560 tỷ USD, tương đương >106.000 USD/người) bị phóng đại so với thực tế tiêu dùng nội địa (các nhà kinh tế phải dùng chỉ số GNI* chỉ bằng ~55% GDP để đo quy mô thực), nguồn thu thuế doanh nghiệp khổng lồ (~28–39 tỷ Euro/năm cộng thêm 14 tỷ Euro tiền truy thu thuế từ Apple năm 2024) đã giúp chính phủ Ireland lập hai quỹ đầu tư quốc gia dài hạn trị giá 100 tỷ Euro vào năm 2024–2025 để đầu tư hạ tầng và nhà ở.",
-    "note_en": "Serving as the European headquarters for over 1,000 global multinationals—spanning Big Tech (Apple, Google, Meta, Microsoft), blockbuster biopharmaceuticals and medical devices (Pfizer, Eli Lilly, AbbVie), and commercial aircraft leasing (>50% of the global leased fleet)—Ireland generates some of the highest headline GDP per capita figures on Earth (~$106,000), though economists use Modified GNI (GNI*, ~55% of GDP) to strip out multinational intellectual-property distortions. Fueled by surging corporate tax receipts (~€28–39B annually plus a €14B Apple back-tax transfer in 2024), Dublin launched two new sovereign wealth and infrastructure funds in 2024 targeting €100 billion in assets by 2035 to cushion against heavy tax concentration in a handful of US firms and address chronic housing and power-grid bottlenecks."
+    "note_vi": "Kinh tế Ireland là trung tâm đặt trụ sở châu Âu của hơn 1.000 tập đoàn đa quốc gia hàng đầu thế giới (chủ yếu từ Mỹ): từ công nghệ (Apple, Google, Meta, Microsoft), dược phẩm – công nghệ sinh học (Pfizer, Eli Lilly — nơi sản xuất nguyên liệu thuốc giảm cân/tiểu đường bom tấn và Botox toàn cầu), thiết bị y tế đến ngành cho thuê máy bay thương mại (chiếm hơn 50% đội bay cho thuê trên toàn thế giới). Do việc các tập đoàn đa quốc gia hạch toán tài sản sở hữu trí tuệ tại Ireland làm tổng GDP danh nghĩa (~609 tỷ USD, tương đương >112.000 USD/người) bị phóng đại so với thực tế tiêu dùng nội địa (các nhà kinh tế phải dùng chỉ số GNI* chỉ bằng ~55% GDP để đo quy mô thực), nguồn thu thuế doanh nghiệp khổng lồ (~28–39 tỷ Euro/năm cộng thêm 14 tỷ Euro tiền truy thu thuế từ Apple năm 2024) đã giúp chính phủ Ireland lập hai quỹ đầu tư quốc gia dài hạn trị giá 100 tỷ Euro vào năm 2024–2025 để đầu tư hạ tầng và nhà ở.",
+    "note_en": "Serving as the European headquarters for over 1,000 global multinationals—spanning Big Tech (Apple, Google, Meta, Microsoft), blockbuster biopharmaceuticals and medical devices (Pfizer, Eli Lilly, AbbVie), and commercial aircraft leasing (>50% of the global leased fleet)—Ireland generates some of the highest headline GDP per capita figures on Earth (~$112,000), though economists use Modified GNI (GNI*, ~55% of GDP) to strip out multinational intellectual-property distortions. Fueled by surging corporate tax receipts (~€28–39B annually plus a €14B Apple back-tax transfer in 2024), Dublin launched two new sovereign wealth and infrastructure funds in 2024 targeting €100 billion in assets by 2035 to cushion against heavy tax concentration in a handful of US firms and address chronic housing and power-grid bottlenecks."
   },
   "Iraq": {
     "tier": "emg",
-    "gdp_vi": "~264 tỷ USD (#51 thế giới)",
-    "gdp_en": "~$264B (#51 globally)",
-    "pc_vi": "~5.950 USD (PPP ~14.400 USD)",
-    "pc_en": "~$5,950 (PPP ~$14,400)",
-    "gr": "+1.4%",
+    "gdp_vi": "~280 tỷ USD (#50 thế giới)",
+    "gdp_en": "~$280B (#50 globally)",
+    "pc_vi": "~6.070 USD (PPP ~14.490 USD)",
+    "pc_en": "~$6,070 (PPP ~$14,490)",
+    "gr": "-1.5%",
     "sec": [
-      46,
+      45,
       51,
-      3
+      4
     ],
     "main_vi": "Khai thác và xuất khẩu dầu thô (#2 trong OPEC, trữ lượng #5 thế giới), lọc dầu, phân bón, nông nghiệp lưu vực Lưỡng Hà (chà là, lúa mì)",
     "main_en": "Crude oil production & exports (#2 in OPEC, #5 global reserves), oil refining, fertilizers, Mesopotamian agriculture (dates, wheat)",
@@ -2460,15 +2460,15 @@ export const ECON = {
   },
   "Iran": {
     "tier": "emg",
-    "gdp_vi": "~434 tỷ USD (#36 thế giới, ~1.700 tỷ USD PPP)",
-    "gdp_en": "~$434B (#36 globally, ~$1.70T PPP)",
-    "pc_vi": "~4.800 USD (PPP ~19.600 USD)",
-    "pc_en": "~$4,800 (PPP ~$19,600)",
-    "gr": "+3.3%",
+    "gdp_vi": "~475 tỷ USD (#33 thế giới, ~1.700 tỷ USD PPP)",
+    "gdp_en": "~$475B (#33 globally, ~$1.70T PPP)",
+    "pc_vi": "~5.190 USD (PPP ~19.900 USD)",
+    "pc_en": "~$5,190 (PPP ~$19,900)",
+    "gr": "+3.7%",
     "sec": [
-      51,
-      36,
-      13
+      52,
+      37,
+      11
     ],
     "main_vi": "Dầu mỏ & khí đốt (trữ lượng khí #2, dầu #4 thế giới), hóa dầu, luyện thép, ô tô nội địa, công nghiệp quốc phòng (UAV/tên lửa), nghệ tây & hạt dẻ cười",
     "main_en": "Oil & gas (#2 gas, #4 oil reserves globally), petrochemicals, steel & metallurgy, domestic automotive, defense manufacturing, saffron & pistachios",
@@ -2477,14 +2477,14 @@ export const ECON = {
   },
   "Indonesia": {
     "tier": "emg",
-    "gdp_vi": "~1.400 tỷ USD (#16 thế giới, #1 Đông Nam Á)",
+    "gdp_vi": "~1.396 tỷ USD (#16 thế giới, #1 Đông Nam Á)",
     "gdp_en": "~$1.40T (#16 globally, #1 in ASEAN)",
-    "pc_vi": "~4.960 USD (PPP ~16.800 USD)",
-    "pc_en": "~$4,960 (PPP ~$16,800)",
+    "pc_vi": "~4.920 USD (PPP ~16.470 USD)",
+    "pc_en": "~$4,920 (PPP ~$16,470)",
     "gr": "+5.0%",
     "sec": [
-      45,
-      42,
+      46,
+      41,
       13
     ],
     "main_vi": "Niken & chuỗi cung ứng pin xe điện (nắm >50% nguồn cung niken thế giới), than đá, dầu cọ (#1 toàn cầu), khí LNG, chế biến thực phẩm, dệt may",
@@ -2494,32 +2494,32 @@ export const ECON = {
   },
   "India": {
     "tier": "dev",
-    "gdp_vi": "~3.900 tỷ USD (#5 thế giới, #3 PPP)",
-    "gdp_en": "~$3.90T (#5 globally, #3 PPP)",
-    "pc_vi": "~2.730 USD (PPP ~11.100 USD)",
-    "pc_en": "~$2,730 (PPP ~$11,100)",
-    "gr": "+6.8%",
+    "gdp_vi": "~3.761 tỷ USD (#5 thế giới, #3 PPP)",
+    "gdp_en": "~$3.76T (#5 globally, #3 PPP)",
+    "pc_vi": "~2.590 USD (PPP ~10.720 USD)",
+    "pc_en": "~$2,590 (PPP ~$10,720)",
+    "gr": "+7.1%",
     "sec": [
-      55,
+      53,
       28,
-      17
+      19
     ],
     "main_vi": "Dịch vụ CNTT & phần mềm (Bangalore, Hyderabad), dược phẩm generic (#1 thế giới), lọc hóa dầu, lắp ráp điện tử (iPhone), hóa chất, nông sản",
     "main_en": "IT services & software outsourcing, generic pharmaceuticals (#1 globally), oil refining, electronics assembly, chemicals, agriculture",
-    "note_vi": "Tăng trưởng ~6,5–7%/năm, Ấn Độ là nền kinh tế lớn tăng trưởng nhanh nhất thế giới (~3.900 tỷ USD, #5 toàn cầu), dẫn dắt bởi xuất khẩu dịch vụ phần mềm CNTT, trung tâm R&D toàn cầu (Bangalore, Hyderabad), dược phẩm generic, lọc dầu và hạ tầng thanh toán số UPI. Chương trình 'Make in India' bước đầu thu hút lắp ráp điện thoại (Apple lắp ráp >14% iPhone tại Ấn Độ) và khởi động một số dự án đóng gói bán dẫn, nhưng công nghiệp chế tạo mới chỉ chiếm ~15–17% GDP. Điểm nghẽn lớn nhất là hơn 40% lao động vẫn kẹt trong nông nghiệp năng suất thấp và thiếu việc làm công nghiệp cho hàng trăm triệu thanh niên.",
-    "note_en": "Growing at ~6.5–7% annually, India is the world's fastest-growing major economy (~$3.9T, #5 globally), propelled by IT software exports, generic pharmaceuticals, oil refining, and its UPI digital public infrastructure. While 'Make in India' incentives have expanded smartphone assembly (>14% of global iPhones), manufacturing still accounts for only ~15–17% of GDP. Key structural challenges include over 40% of workers remaining in low-yield farming and the urgent need to create formal industrial jobs."
+    "note_vi": "Tăng trưởng ~6,5–7%/năm, Ấn Độ là nền kinh tế lớn tăng trưởng nhanh nhất thế giới (~3.761 tỷ USD, #5 toàn cầu), dẫn dắt bởi xuất khẩu dịch vụ phần mềm CNTT, trung tâm R&D toàn cầu (Bangalore, Hyderabad), dược phẩm generic, lọc dầu và hạ tầng thanh toán số UPI. Chương trình 'Make in India' bước đầu thu hút lắp ráp điện thoại (Apple lắp ráp >14% iPhone tại Ấn Độ) và khởi động một số dự án đóng gói bán dẫn, nhưng công nghiệp chế tạo mới chỉ chiếm ~15–17% GDP. Điểm nghẽn lớn nhất là hơn 40% lao động vẫn kẹt trong nông nghiệp năng suất thấp và thiếu việc làm công nghiệp cho hàng trăm triệu thanh niên.",
+    "note_en": "Growing at ~6.5–7% annually, India is the world's fastest-growing major economy (~$3.76T, #5 globally), propelled by IT software exports, generic pharmaceuticals, oil refining, and its UPI digital public infrastructure. While 'Make in India' incentives have expanded smartphone assembly (>14% of global iPhones), manufacturing still accounts for only ~15–17% of GDP. Key structural challenges include over 40% of workers remaining in low-yield farming and the urgent need to create formal industrial jobs."
   },
   "Iceland": {
     "tier": "adv",
-    "gdp_vi": "~33 tỷ USD",
-    "gdp_en": "~$33B",
-    "pc_vi": "~84.500 USD (PPP ~76.000 USD)",
-    "pc_en": "~$84,500 (PPP ~$76,000)",
-    "gr": "+1.6%",
+    "gdp_vi": "~33 tỷ USD (#108 thế giới)",
+    "gdp_en": "~$33B (#108 globally)",
+    "pc_vi": "~85.860 USD (PPP ~83.560 USD)",
+    "pc_en": "~$85,860 (PPP ~$83,560)",
+    "gr": "-1.3%",
     "sec": [
-      74,
-      21,
-      5
+      73,
+      23,
+      4
     ],
     "main_vi": "Du lịch sinh thái – địa nhiệt, đánh bắt & chế biến thủy sản công nghệ cao, luyện nhôm xuất khẩu (dùng 100% điện tái tạo), trung tâm dữ liệu, công nghệ sinh học",
     "main_en": "Nature & geothermal tourism, high-tech marine fisheries & processing, green aluminum smelting, data centers, biotechnology",
@@ -2528,15 +2528,15 @@ export const ECON = {
   },
   "Hungary": {
     "tier": "adv",
-    "gdp_vi": "~228 tỷ USD (#52 thế giới)",
-    "gdp_en": "~$228B (#52 globally)",
-    "pc_vi": "~23.800 USD (PPP ~47.500 USD)",
-    "pc_en": "~$23,800 (PPP ~$47,500)",
-    "gr": "+1.5%",
+    "gdp_vi": "~223 tỷ USD (#55 thế giới)",
+    "gdp_en": "~$223B (#55 globally)",
+    "pc_vi": "~23.300 USD (PPP ~48.540 USD)",
+    "pc_en": "~$23,300 (PPP ~$48,540)",
+    "gr": "+0.7%",
     "sec": [
-      65,
-      31,
-      4
+      69,
+      28,
+      3
     ],
     "main_vi": "Sản xuất ô tô (Audi, Mercedes, BMW, BYD) & pin xe điện (CATL, Samsung SDI), điện tử, dược phẩm (Gedeon Richter), nông sản thực phẩm",
     "main_en": "Automotive manufacturing (Audi, Mercedes, BMW, BYD) & EV batteries (CATL, Samsung SDI), electronics, pharmaceuticals (Gedeon Richter), agri-food",
@@ -2545,15 +2545,15 @@ export const ECON = {
   },
   "Honduras": {
     "tier": "dev",
-    "gdp_vi": "~37 tỷ USD",
-    "gdp_en": "~$37B",
-    "pc_vi": "~3.400 USD (PPP ~7.500 USD)",
-    "pc_en": "~$3,400 (PPP ~$7,500)",
+    "gdp_vi": "~37 tỷ USD (#105 thế giới)",
+    "gdp_en": "~$37B (#105 globally)",
+    "pc_vi": "~3.420 USD (PPP ~7.500 USD)",
+    "pc_en": "~$3,420 (PPP ~$7,500)",
     "gr": "+3.6%",
     "sec": [
-      59,
-      28,
-      13
+      61,
+      27,
+      12
     ],
     "main_vi": "Dệt may gia công xuất khẩu (maquiladora tại San Pedro Sula), cà phê (nhà xuất khẩu hàng đầu Trung Mỹ), chuối & dầu cọ, nuôi tôm, kiều hối từ Mỹ",
     "main_en": "Apparel & wiring harness assembly (maquiladoras in San Pedro Sula), coffee (top Central American exporter), bananas & palm oil, shrimp, US remittances",
@@ -2561,16 +2561,16 @@ export const ECON = {
     "note_en": "The Honduran economy runs on two lifelines tied to the United States: diaspora remittances approaching $10 billion annually (exceeding 25% of GDP) and the northern Sula Valley maquiladora cluster, which ranks as a top supplier of knit apparel and automotive wiring harnesses to the US market via Puerto Cortés. In agriculture, Honduras is Central America's largest coffee exporter (ranking 5th–7th globally) alongside major shipments of bananas, palm oil, and farmed shrimp. However, the 2023 diplomatic break with Taiwan triggered a sharp drop in Pacific white-shrimp exports, while chronic state power-utility losses, gang extortion, and hurricane vulnerability continue to weigh on private investment."
   },
   "Haiti": {
-    "tier": "low",
-    "gdp_vi": "~24 tỷ USD",
-    "gdp_en": "~$24B",
-    "pc_vi": "~2.000 USD (PPP ~3.100 USD)",
-    "pc_en": "~$2,000 (PPP ~$3,100)",
-    "gr": "-3.0%",
+    "tier": "dev",
+    "gdp_vi": "~24,3 tỷ USD (#121 thế giới)",
+    "gdp_en": "~$24.3B (#121 globally)",
+    "pc_vi": "~2.060 USD (PPP ~3.170 USD)",
+    "pc_en": "~$2,060 (PPP ~$3,170)",
+    "gr": "-4.2%",
     "sec": [
-      55,
-      25,
-      20
+      54,
+      29,
+      17
     ],
     "main_vi": "Kiều hối từ hải ngoại (>20% GDP), gia công hàng may mặc xuất khẩu sang Mỹ (đạo luật HOPE/HELP), nông nghiệp tự cung tự cấp (xoài, cà phê, tinh dầu cỏ hương bài)",
     "main_en": "Diaspora remittances (>20% of GDP), apparel assembly for the US market (HOPE/HELP trade preference), subsistence agriculture (mangoes, coffee, vetiver oil)",
@@ -2578,16 +2578,16 @@ export const ECON = {
     "note_en": "As the poorest nation in the Western Hemisphere, Haiti has suffered six consecutive years of economic contraction (2019–2024) as gang warfare, fuel blockades, and hyperinflation crippled urban commerce. Diaspora remittances of roughly $3.8–4.5 billion per year (exceeding 20% of GDP) serve as the primary economic lifeline preventing total humanitarian collapse for millions of households. Outside subsistence farming and exports of prized vetiver essential oil for luxury perfumes, formal industry centers on duty-free apparel assembly for the US market under the HOPE/HELP trade preference acts—increasingly concentrated in the safer northern Caracol Industrial Park after gang violence forced factory closures in Port-au-Prince."
   },
   "Guyana": {
-    "tier": "emg",
-    "gdp_vi": "~24,8 tỷ USD",
-    "gdp_en": "~$24.8B",
-    "pc_vi": "~30.500 USD (PPP ~61.000 USD)",
-    "pc_en": "~$30,500 (PPP ~$61,000)",
-    "gr": "+33.0%",
+    "tier": "adv",
+    "gdp_vi": "~24,7 tỷ USD (#120 thế giới)",
+    "gdp_en": "~$24.7B (#120 globally)",
+    "pc_vi": "~29.680 USD (PPP ~80.270 USD)",
+    "pc_en": "~$29,680 (PPP ~$80,270)",
+    "gr": "+43.8%",
     "sec": [
-      22,
-      72,
-      6
+      15,
+      77,
+      8
     ],
     "main_vi": "Khai thác dầu khí ngoài khơi (lô Stabroek – ExxonMobil), khai thác vàng & bauxite, gạo & đường mía, lâm nghiệp bền vững",
     "main_en": "Offshore oil & gas extraction (Stabroek block led by ExxonMobil), gold & bauxite mining, rice & sugar, sustainable forestry",
@@ -2596,15 +2596,15 @@ export const ECON = {
   },
   "Guinea-Bissau": {
     "tier": "low",
-    "gdp_vi": "~2,2 tỷ USD",
-    "gdp_en": "~$2.2B",
-    "pc_vi": "~1.020 USD (PPP ~3.000 USD)",
-    "pc_en": "~$1,020 (PPP ~$3,000)",
-    "gr": "+5.0%",
+    "gdp_vi": "~2,2 tỷ USD (#180 thế giới)",
+    "gdp_en": "~$2.2B (#180 globally)",
+    "pc_vi": "~1.000 USD (PPP ~3.090 USD)",
+    "pc_en": "~$1,000 (PPP ~$3,090)",
+    "gr": "+4.4%",
     "sec": [
-      45,
-      13,
-      42
+      40,
+      17,
+      43
     ],
     "main_vi": "Hạt điều thô xuất khẩu (chiếm ~90% kim ngạch xuất khẩu), đánh bắt cá (cấp phép tàu nước ngoài), gỗ, khai thác bauxite & phốt phát tiềm năng",
     "main_en": "Raw cashew nut exports (~90% of export earnings), marine fisheries licensing, timber, prospective bauxite & phosphate mining",
@@ -2612,16 +2612,16 @@ export const ECON = {
     "note_en": "Guinea-Bissau operates one of the world's most extreme monocrop economies, with raw cashew nuts generating roughly 90% of merchandise export earnings—shipped almost entirely to India and Vietnam for shelling—and supporting over 80% of rural households. While membership in the Euro-pegged West African CFA franc zone provides monetary stability and untapped bauxite, phosphate, and offshore oil deposits offer long-term potential, chronic political turmoil and the lack of domestic processing facilities keep per-capita income among the lowest in West Africa."
   },
   "Guinea": {
-    "tier": "low",
-    "gdp_vi": "~25,5 tỷ USD",
-    "gdp_en": "~$25.5B",
-    "pc_vi": "~1.800 USD (PPP ~4.500 USD)",
-    "pc_en": "~$1,800 (PPP ~$4,500)",
-    "gr": "+5.7%",
+    "tier": "dev",
+    "gdp_vi": "~25,0 tỷ USD (#119 thế giới)",
+    "gdp_en": "~$25.0B (#119 globally)",
+    "pc_vi": "~1.700 USD (PPP ~4.570 USD)",
+    "pc_en": "~$1,700 (PPP ~$4,570)",
+    "gr": "+5.4%",
     "sec": [
-      41,
-      35,
-      24
+      39,
+      27,
+      34
     ],
     "main_vi": "Khai thác bauxite (#1 xuất khẩu thế giới, cung cấp chính cho Trung Quốc), dự án siêu mỏ quặng sắt Simandou, khai thác vàng & kim cương, thủy điện",
     "main_en": "Bauxite mining (#1 global exporter, primary supplier to China), Simandou high-grade iron ore megaproject, gold & diamond mining, hydropower",
@@ -2629,33 +2629,33 @@ export const ECON = {
     "note_en": "Holding roughly a quarter of the planet's bauxite reserves alongside the world's largest untapped high-grade iron-ore deposit at Simandou, Guinea relies on mining for over 85% of its export earnings. As the $20+ billion Simandou mine and 650-km trans-Guinean railway come online in 2025–2026—paired with government mandates for domestic alumina refineries—Guinea is projected to see a transformative surge in GDP and fiscal revenue, though political transition risks and rural poverty remain acute challenges."
   },
   "Guatemala": {
-    "tier": "dev",
-    "gdp_vi": "~112 tỷ USD (#66 thế giới)",
-    "gdp_en": "~$112B (#66 globally)",
-    "pc_vi": "~6.100 USD (PPP ~14.200 USD)",
-    "pc_en": "~$6,100 (PPP ~$14,200)",
-    "gr": "+3.5%",
+    "tier": "emg",
+    "gdp_vi": "~113 tỷ USD (#69 thế giới)",
+    "gdp_en": "~$113B (#69 globally)",
+    "pc_vi": "~6.150 USD (PPP ~14.390 USD)",
+    "pc_en": "~$6,150 (PPP ~$14,390)",
+    "gr": "+3.7%",
     "sec": [
-      63,
-      27,
-      10
+      66,
+      23,
+      11
     ],
     "main_vi": "Kiều hối (~20% GDP), cà phê chất lượng cao, chuối, đường mía, bạch đậu khấu (#1 xuất khẩu thế giới), dệt may & sản xuất nhẹ",
     "main_en": "Remittances (~20% of GDP), specialty coffee, bananas, sugar, cardamom (#1 global exporter), apparel & light manufacturing",
-    "note_vi": "Là nền kinh tế lớn nhất Trung Mỹ với GDP danh nghĩa vượt 112 tỷ USD, Guatemala nổi tiếng với truyền thống quản lý tiền tệ và tài khóa cực kỳ thận trọng, giúp đồng Quetzal giữ giá ổn định suốt nhiều thập kỷ và tỷ lệ nợ công chỉ ở mức rất thấp (~27% GDP). Động lực tăng trưởng đến từ dòng kiều hối khổng lồ từ cộng đồng người Guatemala tại Mỹ (đóng góp gần 20% GDP, tương đương hơn 21 tỷ USD/năm), ngành dệt may xuất khẩu và vị thế cường quốc nông sản nhiệt đới (xuất khẩu bạch đậu khấu số 1 thế giới, cà phê đặc sản, chuối, đường mía và dầu cọ). Tuy nhiên, tỷ lệ thu thuế trên GDP chỉ đạt khoảng 11–12% đã hạn chế nghiêm trọng nguồn vốn đầu tư công cho giáo dục, y tế nông thôn và nâng cấp cảng biển.",
-    "note_en": "As Central America's largest economy with a nominal GDP exceeding $112 billion, Guatemala is renowned for decades of conservative monetary and fiscal management that have kept its currency (the quetzal) remarkably stable and public debt below 30% of GDP. Growth is propelled by record diaspora remittances from the United States—exceeding $21 billion annually, or nearly 20% of GDP—alongside light apparel manufacturing and powerhouse agro-exports including world-leading cardamom, specialty coffee, bananas, sugar, and palm oil. However, a chronically low tax-to-GDP ratio of roughly 11–12% starves public investment in highways, ports, and rural indigenous human capital."
+    "note_vi": "Là nền kinh tế lớn nhất Trung Mỹ với GDP danh nghĩa vượt 123 tỷ USD, Guatemala nổi tiếng với truyền thống quản lý tiền tệ và tài khóa cực kỳ thận trọng, giúp đồng Quetzal giữ giá ổn định suốt nhiều thập kỷ và tỷ lệ nợ công chỉ ở mức rất thấp (~27% GDP). Động lực tăng trưởng đến từ dòng kiều hối khổng lồ từ cộng đồng người Guatemala tại Mỹ (đóng góp gần 20% GDP, tương đương hơn 21 tỷ USD/năm), ngành dệt may xuất khẩu và vị thế cường quốc nông sản nhiệt đới (xuất khẩu bạch đậu khấu số 1 thế giới, cà phê đặc sản, chuối, đường mía và dầu cọ). Tuy nhiên, tỷ lệ thu thuế trên GDP chỉ đạt khoảng 11–12% đã hạn chế nghiêm trọng nguồn vốn đầu tư công cho giáo dục, y tế nông thôn và nâng cấp cảng biển.",
+    "note_en": "As Central America's largest economy with a nominal GDP exceeding $123 billion, Guatemala is renowned for decades of conservative monetary and fiscal management that have kept its currency (the quetzal) remarkably stable and public debt below 30% of GDP. Growth is propelled by record diaspora remittances from the United States—exceeding $21 billion annually, or nearly 20% of GDP—alongside light apparel manufacturing and powerhouse agro-exports including world-leading cardamom, specialty coffee, bananas, sugar, and palm oil. However, a chronically low tax-to-GDP ratio of roughly 11–12% starves public investment in highways, ports, and rural indigenous human capital."
   },
   "Grenada": {
-    "tier": "dev",
-    "gdp_vi": "~1,4 tỷ USD",
-    "gdp_en": "~$1.4B",
-    "pc_vi": "~11.800 USD (PPP ~20.500 USD)",
-    "pc_en": "~$11,800 (PPP ~$20,500)",
-    "gr": "+4.1%",
+    "tier": "emg",
+    "gdp_vi": "~1,4 tỷ USD (#187 thế giới)",
+    "gdp_en": "~$1.4B (#187 globally)",
+    "pc_vi": "~11.530 USD (PPP ~19.900 USD)",
+    "pc_en": "~$11,530 (PPP ~$19,900)",
+    "gr": "+2.4%",
     "sec": [
-      77,
-      16,
-      7
+      79,
+      18,
+      3
     ],
     "main_vi": "Du lịch nghỉ dưỡng & du thuyền, giáo dục đại học quốc tế (Đại học Y St. George's đóng góp ~20% GDP), nhục đậu khấu & ca cao ('Đảo Gia vị'), đầu tư nhập tịch (CBI)",
     "main_en": "Yachting & resort tourism, international medical education (St. George's University ~20% of GDP), nutmeg & fine cocoa ('Isle of Spice'), Citizenship by Investment (CBI)",
@@ -2664,15 +2664,15 @@ export const ECON = {
   },
   "Greece": {
     "tier": "adv",
-    "gdp_vi": "~257 tỷ USD (#50 thế giới)",
-    "gdp_en": "~$257B (#50 globally)",
-    "pc_vi": "~24.700 USD (PPP ~43.800 USD)",
-    "pc_en": "~$24,700 (PPP ~$43,800)",
-    "gr": "+2.3%",
+    "gdp_vi": "~256 tỷ USD (#53 thế giới)",
+    "gdp_en": "~$256B (#53 globally)",
+    "pc_vi": "~24.630 USD (PPP ~44.170 USD)",
+    "pc_en": "~$24,630 (PPP ~$44,170)",
+    "gr": "+2.1%",
     "sec": [
-      79,
+      78,
       17,
-      4
+      5
     ],
     "main_vi": "Vận tải biển quốc tế (chủ tàu Hy Lạp nắm ~20% trọng tải đội tàu thế giới), du lịch biển đảo (~35 triệu khách/năm), lọc dầu, dược phẩm, dầu ô liu & nông sản",
     "main_en": "Global maritime shipping (Greek shipowners control ~20% of world deadweight tonnage), island & heritage tourism (~35M visitors/yr), oil refining, pharmaceuticals, olive oil & agri-food",
@@ -2681,15 +2681,15 @@ export const ECON = {
   },
   "Ghana": {
     "tier": "dev",
-    "gdp_vi": "~76 tỷ USD",
-    "gdp_en": "~$76B",
-    "pc_vi": "~2.200 USD (PPP ~7.700 USD)",
-    "pc_en": "~$2,200 (PPP ~$7,700)",
-    "gr": "+4.0%",
+    "gdp_vi": "~83 tỷ USD (#80 thế giới)",
+    "gdp_en": "~$83B (#80 globally)",
+    "pc_vi": "~2.420 USD (PPP ~8.050 USD)",
+    "pc_en": "~$2,420 (PPP ~$8,050)",
+    "gr": "+5.8%",
     "sec": [
-      46,
-      33,
-      21
+      47,
+      31,
+      22
     ],
     "main_vi": "Khai thác vàng (#1 châu Phi), ca cao (#2 thế giới sau Bờ Biển Ngà), dầu thô ngoài khơi (mỏ Jubilee), viễn thông & dịch vụ số, đặt trụ sở Ban thư ký AfCFTA",
     "main_en": "Gold mining (#1 producer in Africa), cocoa beans (#2 globally after Côte d'Ivoire), offshore crude oil (Jubilee field), telecom & digital services, host of AfCFTA Secretariat",
@@ -2698,31 +2698,31 @@ export const ECON = {
   },
   "Germany": {
     "tier": "adv",
-    "gdp_vi": "~4.710 tỷ USD (#3 thế giới)",
-    "gdp_en": "~$4.71T (#3 globally)",
-    "pc_vi": "~55.800 USD (PPP ~69.500 USD)",
-    "pc_en": "~$55,800 (PPP ~$69,500)",
-    "gr": "+0.1%",
+    "gdp_vi": "~4.686 tỷ USD (#3 thế giới, #1 EU)",
+    "gdp_en": "~$4.69T (#3 globally, #1 in EU)",
+    "pc_vi": "~56.100 USD (PPP ~73.960 USD)",
+    "pc_en": "~$56,100 (PPP ~$73,960)",
+    "gr": "-0.5%",
     "sec": [
-      70,
-      29,
+      71,
+      28,
       1
     ],
     "main_vi": "Ô tô & cơ khí chính xác (VW, BMW, Mercedes, Bosch), hóa chất – dược phẩm (BASF, Bayer), thiết bị điện công nghiệp & tự động hóa (Siemens), phần mềm doanh nghiệp (SAP), năng lượng tái tạo",
     "main_en": "Automotive & precision engineering (VW, BMW, Mercedes, Bosch), chemicals & pharmaceuticals (BASF, Bayer), industrial electrical & automation (Siemens), enterprise software (SAP), renewable energy",
-    "note_vi": "Vượt qua Nhật Bản để trở thành nền kinh tế lớn thứ 3 thế giới theo GDP danh nghĩa (~4.710 tỷ USD) và số 1 Liên minh châu Âu, sức mạnh của Đức dựa trên các tập đoàn công nghiệp toàn cầu (Volkswagen, BMW, Mercedes, Siemens, BASF, SAP) cùng hàng nghìn doanh nghiệp vừa và nhỏ gia đình dẫn đầu các thị trường ngách thế giới (\"Mittelstand\"). Sau hai năm tăng trưởng âm nhẹ (2023–2024) do cú sốc mất khí đốt giá rẻ của Nga (buộc phải xây gấp các cảng LNG nổi và đóng cửa 3 nhà máy điện hạt nhân cuối cùng năm 2023), cạnh tranh gay gắt từ xe điện Trung Quốc và dân số già hóa, gói kích thích hạ tầng 500 tỷ Euro và miễn trừ chi tiêu quốc phòng khỏi \"phanh nợ công\" vào năm 2025 đang mở ra chu kỳ đầu tư công nghiệp – quốc phòng mới.",
-    "note_en": "Now the world's third-largest economy by nominal GDP (~$4.71 trillion, ahead of Japan) and the undisputed industrial engine of the EU, Germany thrives on global titans (VW, Mercedes, BMW, Siemens, BASF, SAP) and thousands of export-focused \"Mittelstand\" niche manufacturers. After two years of mild contraction in 2023–2024 triggered by high post-Russian-gas energy costs, fierce Chinese EV competition, and workforce aging, Berlin's landmark 2025 constitutional debt-brake reform—creating a €500B infrastructure fund and uncapping defense spending (surging Rheinmetall and defense tech)—is set to reignite domestic investment in 2025–2026."
+    "note_vi": "Vượt qua Nhật Bản để trở thành nền kinh tế lớn thứ 3 thế giới theo GDP danh nghĩa (~4.686 tỷ USD) và số 1 Liên minh châu Âu, sức mạnh của Đức dựa trên các tập đoàn công nghiệp toàn cầu (Volkswagen, BMW, Mercedes, Siemens, BASF, SAP) cùng hàng nghìn doanh nghiệp vừa và nhỏ gia đình dẫn đầu các thị trường ngách thế giới (\"Mittelstand\"). Sau hai năm tăng trưởng âm nhẹ (2023–2024) do cú sốc mất khí đốt giá rẻ của Nga (buộc phải xây gấp các cảng LNG nổi và đóng cửa 3 nhà máy điện hạt nhân cuối cùng năm 2023), cạnh tranh gay gắt từ xe điện Trung Quốc và dân số già hóa, gói kích thích hạ tầng 500 tỷ Euro và miễn trừ chi tiêu quốc phòng khỏi \"phanh nợ công\" vào năm 2025 đang mở ra chu kỳ đầu tư công nghiệp – quốc phòng mới.",
+    "note_en": "Now the world's third-largest economy by nominal GDP (~$4.69 trillion, ahead of Japan) and the undisputed industrial engine of the EU, Germany thrives on global titans (VW, Mercedes, BMW, Siemens, BASF, SAP) and thousands of export-focused \"Mittelstand\" niche manufacturers. After two years of mild contraction in 2023–2024 triggered by high post-Russian-gas energy costs, fierce Chinese EV competition, and workforce aging, Berlin's landmark 2025 constitutional debt-brake reform—creating a €500B infrastructure fund and uncapping defense spending (surging Rheinmetall and defense tech)—is set to reignite domestic investment in 2025–2026."
   },
   "Georgia": {
     "tier": "emg",
-    "gdp_vi": "~33,2 tỷ USD",
-    "gdp_en": "~$33.2B",
-    "pc_vi": "~8.900 USD (PPP ~27.400 USD)",
-    "pc_en": "~$8,900 (PPP ~$27,400)",
-    "gr": "+7.6%",
+    "gdp_vi": "~34,2 tỷ USD (#107 thế giới)",
+    "gdp_en": "~$34.2B (#107 globally)",
+    "pc_vi": "~8.970 USD (PPP ~27.490 USD)",
+    "pc_en": "~$8,970 (PPP ~$27,490)",
+    "gr": "+9.7%",
     "sec": [
-      68,
-      25,
+      71,
+      22,
       7
     ],
     "main_vi": "Hành lang vận tải & đường ống quá cảnh (Baku–Tbilisi–Ceyhan), du lịch quốc tế, rượu vang & nước khoáng, quặng đồng, dịch vụ CNTT",
@@ -2732,15 +2732,15 @@ export const ECON = {
   },
   "Gambia": {
     "tier": "low",
-    "gdp_vi": "~2,6 tỷ USD",
-    "gdp_en": "~$2.6B",
-    "pc_vi": "~950 USD (PPP ~3.400 USD)",
-    "pc_en": "~$950 (PPP ~$3,400)",
+    "gdp_vi": "~2,4 tỷ USD (#177 thế giới)",
+    "gdp_en": "~$2.4B (#177 globally)",
+    "pc_vi": "~870 USD (PPP ~3.480 USD)",
+    "pc_en": "~$870 (PPP ~$3,480)",
     "gr": "+5.6%",
     "sec": [
-      57,
-      19,
-      24
+      61,
+      17,
+      22
     ],
     "main_vi": "Kiều hối (~25% GDP), du lịch bờ biển Đại Tây Dương (khách châu Âu mùa đông), lạc (đậu phộng) xuất khẩu, thương mại tái xuất qua cảng Banjul",
     "main_en": "Diaspora remittances (~25% of GDP), Atlantic winter sun tourism, groundnut (peanut) exports, re-export transit trade via Banjul port",
@@ -2748,15 +2748,15 @@ export const ECON = {
     "note_en": "Lacking mineral wealth and home to 2.8 million people, The Gambia's economy rests on three pillars: diaspora remittances (~25% of GDP), European winter sun tourism along its 'Smiling Coast' Atlantic beaches, and traditional groundnut farming and re-export trade via the Port of Banjul. While infrastructure upgrades and improved trade corridors with Senegal support 5–6% annual GDP growth, high public debt servicing, reliance on imported food and fuel, and currency depreciation pressure remain persistent bottlenecks."
   },
   "Gabon": {
-    "tier": "dev",
-    "gdp_vi": "~21 tỷ USD",
-    "gdp_en": "~$21B",
-    "pc_vi": "~8.800 USD (PPP ~21.500 USD)",
-    "pc_en": "~$8,800 (PPP ~$21,500)",
-    "gr": "+2.9%",
+    "tier": "emg",
+    "gdp_vi": "~20,9 tỷ USD (#127 thế giới)",
+    "gdp_en": "~$20.9B (#127 globally)",
+    "pc_vi": "~8.230 USD (PPP ~21.540 USD)",
+    "pc_en": "~$8,230 (PPP ~$21,540)",
+    "gr": "+3.4%",
     "sec": [
-      42,
-      51,
+      38,
+      55,
       7
     ],
     "main_vi": "Khai thác dầu khí, quặng mangan (mỏ Moanda, #2 thế giới), khai thác & chế biến gỗ nhiệt đới bền vững (rừng phủ 88% diện tích), tín chỉ carbon",
@@ -2766,11 +2766,11 @@ export const ECON = {
   },
   "France": {
     "tier": "adv",
-    "gdp_vi": "~3.170 tỷ USD (#7 thế giới)",
-    "gdp_en": "~$3.17T (#7 globally)",
-    "pc_vi": "~46.800 USD (PPP ~62.000 USD)",
-    "pc_en": "~$46,800 (PPP ~$62,000)",
-    "gr": "+1.1%",
+    "gdp_vi": "~3.160 tỷ USD (#7 thế giới, #2 EU)",
+    "gdp_en": "~$3.16T (#7 globally, #2 in EU)",
+    "pc_vi": "~46.100 USD (PPP ~62.520 USD)",
+    "pc_en": "~$46,100 (PPP ~$62,520)",
+    "gr": "+1.2%",
     "sec": [
       79,
       19,
@@ -2851,11 +2851,11 @@ export const ECON = {
   },
   "Fr. Polynesia": {
     "tier": "adv",
-    "gdp_vi": "~6,4 tỷ USD",
-    "gdp_en": "~$6.4B",
-    "pc_vi": "~22.800 USD",
-    "pc_en": "~$22,800",
-    "gr": "+2.6%",
+    "gdp_vi": "~6,3 tỷ USD (#161 thế giới)",
+    "gdp_en": "~$6.3B (#161 globally)",
+    "pc_vi": "~22.440 USD",
+    "pc_en": "~$22,440",
+    "gr": "+1.1%",
     "sec": [
       80,
       13,
@@ -2868,11 +2868,11 @@ export const ECON = {
   },
   "New Caledonia": {
     "tier": "adv",
-    "gdp_vi": "~9,6 tỷ USD",
-    "gdp_en": "~$9.6B",
-    "pc_vi": "~33.500 USD",
-    "pc_en": "~$33,500",
-    "gr": "-2.0%",
+    "gdp_vi": "~8,5 tỷ USD (#155 thế giới)",
+    "gdp_en": "~$8.5B (#155 globally)",
+    "pc_vi": "~29.210 USD",
+    "pc_en": "~$29,210",
+    "gr": "-13.5%",
     "sec": [
       72,
       26,
@@ -2919,14 +2919,14 @@ export const ECON = {
   },
   "Finland": {
     "tier": "adv",
-    "gdp_vi": "~306 tỷ USD (#47 thế giới)",
-    "gdp_en": "~$306B (#47 globally)",
-    "pc_vi": "~54.500 USD (PPP ~62.500 USD)",
-    "pc_en": "~$54,500 (PPP ~$62,500)",
+    "gdp_vi": "~299 tỷ USD (#47 thế giới)",
+    "gdp_en": "~$299B (#47 globally)",
+    "pc_vi": "~53.160 USD (PPP ~65.140 USD)",
+    "pc_en": "~$53,160 (PPP ~$65,140)",
     "gr": "+0.4%",
     "sec": [
-      70,
-      27,
+      71,
+      26,
       3
     ],
     "main_vi": "Thiết bị viễn thông 5G/6G (Nokia), cơ khí & thiết bị công nghiệp – hàng hải (Kone, Wärtsilä), công nghệ sinh học & lâm nghiệp (UPM, Stora Enso), đóng tàu phá băng (#1 thế giới), công nghiệp game (Supercell)",
@@ -2935,16 +2935,16 @@ export const ECON = {
     "note_en": "Finland's high-tech industrial economy punches globally through specialized engineering: Finnish yards design ~80% and build ~60% of the world's icebreakers, alongside global champions in 5G/6G telecoms (Nokia), elevators (Kone), marine engines (Wärtsilä), and forest bioeconomy (UPM, Stora Enso). Since commissioning Europe's largest nuclear reactor (Olkiluoto 3, 1,600 MW) in 2023, Finland operates a ~95% emissions-free power grid."
   },
   "Fiji": {
-    "tier": "dev",
-    "gdp_vi": "~5,8 tỷ USD",
-    "gdp_en": "~$5.8B",
-    "pc_vi": "~6.200 USD (PPP ~15.500 USD)",
-    "pc_en": "~$6,200 (PPP ~$15,500)",
-    "gr": "+3.8%",
+    "tier": "emg",
+    "gdp_vi": "~6,0 tỷ USD (#162 thế giới)",
+    "gdp_en": "~$6.0B (#162 globally)",
+    "pc_vi": "~6.430 USD (PPP ~15.470 USD)",
+    "pc_en": "~$6,430 (PPP ~$15,470)",
+    "gr": "+3.5%",
     "sec": [
-      71,
-      16,
-      13
+      65,
+      20,
+      15
     ],
     "main_vi": "Du lịch nghỉ dưỡng (~40% GDP trực tiếp & gián tiếp), xuất khẩu nước khoáng đóng chai (FIJI Water), kiều hối, đường mía, trung tâm hàng không & viễn thông Nam Thái Bình Dương (Fiji Airways)",
     "main_en": "Resort tourism (~40% of GDP direct & indirect), bottled artesian mineral water (FIJI Water), remittances, sugar, South Pacific aviation & telecom hub (Fiji Airways)",
@@ -2953,14 +2953,14 @@ export const ECON = {
   },
   "Ethiopia": {
     "tier": "low",
-    "gdp_vi": "~145 tỷ USD",
-    "gdp_en": "~$145B",
-    "pc_vi": "~1.150 USD (PPP ~3.200 USD)",
-    "pc_en": "~$1,150 (PPP ~$3,200)",
-    "gr": "+6.2%",
+    "gdp_vi": "~150 tỷ USD (#60 thế giới)",
+    "gdp_en": "~$150B (#60 globally)",
+    "pc_vi": "~1.130 USD (PPP ~3.290 USD)",
+    "pc_en": "~$1,130 (PPP ~$3,290)",
+    "gr": "+7.6%",
     "sec": [
-      40,
-      24,
+      38,
+      26,
       36
     ],
     "main_vi": "Cà phê Arabica (quê hương cây cà phê, #1 châu Phi), hàng không (Ethiopian Airlines – hãng lớn nhất châu Phi), thủy điện (Đập Đại Phục Hưng GERD), hoa cắt cành & hạt có dầu, khu công nghiệp dệt may",
@@ -2970,15 +2970,15 @@ export const ECON = {
   },
   "Estonia": {
     "tier": "adv",
-    "gdp_vi": "~43 tỷ USD",
-    "gdp_en": "~$43B",
-    "pc_vi": "~31.500 USD (PPP ~47.500 USD)",
-    "pc_en": "~$31,500 (PPP ~$47,500)",
-    "gr": "-0.3%",
+    "gdp_vi": "~43 tỷ USD (#102 thế giới)",
+    "gdp_en": "~$43B (#102 globally)",
+    "pc_vi": "~31.430 USD (PPP ~50.400 USD)",
+    "pc_en": "~$31,430 (PPP ~$50,400)",
+    "gr": "-0.1%",
     "sec": [
-      72,
-      25,
-      3
+      75,
+      23,
+      2
     ],
     "main_vi": "Công nghệ thông tin & hệ sinh thái kỳ lân khởi nghiệp (Wise, Bolt, Pipedrive), chính phủ điện tử (e-Residency), an ninh mạng, chế biến gỗ & nhà lắp ghép, thiết bị điện tử",
     "main_en": "IT & startup ecosystem (Wise, Bolt, Pipedrive), e-governance (e-Residency), cybersecurity, engineered wood & modular houses, electronics manufacturing",
@@ -3003,15 +3003,15 @@ export const ECON = {
     "note_en": "Eritrea operates one of the world's most tightly controlled command economies, where the ruling party and military monopolize trade, construction, and foreign exchange under a rigidly pegged currency (the nakfa). Hard-currency revenues rely on two critical lifelines: foreign-partnered mining—led by the Bisha copper-zinc-gold mine operated by China's Zijin Mining and the massive Colluli potash deposit in the Danakil—and a mandatory 2% \"diaspora recovery tax\" levied on Eritreans living abroad. Indefinite military conscription, Western sanctions, and the absence of a private banking sector leave its strategic Red Sea ports of Massawa and Assab severely underutilized."
   },
   "Eq. Guinea": {
-    "tier": "dev",
-    "gdp_vi": "~12,5 tỷ USD",
-    "gdp_en": "~$12.5B",
-    "pc_vi": "~7.200 USD (PPP ~18.500 USD)",
-    "pc_en": "~$7,200 (PPP ~$18,500)",
-    "gr": "+0.8%",
+    "tier": "emg",
+    "gdp_vi": "~13,3 tỷ USD (#146 thế giới)",
+    "gdp_en": "~$13.3B (#146 globally)",
+    "pc_vi": "~7.000 USD (PPP ~17.070 USD)",
+    "pc_en": "~$7,000 (PPP ~$17,070)",
+    "gr": "+0.4%",
     "sec": [
-      43,
-      54,
+      49,
+      48,
       3
     ],
     "main_vi": "Khai thác dầu thô ngoài khơi, khí thiên nhiên hóa lỏng (LNG) & methanol (đảo Bioko), xây dựng hạ tầng công, khai thác gỗ nhiệt đới",
@@ -3020,16 +3020,16 @@ export const ECON = {
     "note_en": "Hydrocarbons—crude oil, condensates, methanol, and LNG—still generate over 85% of export earnings and ~80% of government revenue in this Central African OPEC state. Because mature oil fields have seen crude output plunge from a peak of >350,000 barrels per day in the mid-2000s to roughly 55,000–60,000 bpd in 2024–2025, the government is betting on its 'Gas Mega Hub' strategy—processing cross-border gas from neighboring Cameroon and Nigeria through Bioko Island's LNG plant—to offset prolonged economic contraction."
   },
   "El Salvador": {
-    "tier": "dev",
-    "gdp_vi": "~35,8 tỷ USD",
-    "gdp_en": "~$35.8B",
-    "pc_vi": "~5.600 USD (PPP ~12.800 USD)",
-    "pc_en": "~$5,600 (PPP ~$12,800)",
-    "gr": "+2.8%",
+    "tier": "emg",
+    "gdp_vi": "~34,9 tỷ USD (#106 thế giới)",
+    "gdp_en": "~$34.9B (#106 globally)",
+    "pc_vi": "~5.500 USD (PPP ~13.260 USD)",
+    "pc_en": "~$5,500 (PPP ~$13,260)",
+    "gr": "+2.6%",
     "sec": [
-      66,
-      29,
-      5
+      68,
+      26,
+      6
     ],
     "main_vi": "Kiều hối từ Mỹ (~24% GDP), dệt may & sản xuất nhẹ, dịch vụ du lịch lướt sóng & hội nghị, cà phê & đường mía, trung tâm dịch vụ khách hàng (call centers)",
     "main_en": "US diaspora remittances (~24% of GDP), textiles & light manufacturing, surf & convention tourism, coffee & sugar, bilingual call centers",
@@ -3038,14 +3038,14 @@ export const ECON = {
   },
   "Egypt": {
     "tier": "dev",
-    "gdp_vi": "~380 tỷ USD (#42 thế giới)",
-    "gdp_en": "~$380B (#42 globally)",
-    "pc_vi": "~3.400 USD (PPP ~18.500 USD)",
-    "pc_en": "~$3,400 (PPP ~$18,500)",
-    "gr": "+3.5%",
+    "gdp_vi": "~389 tỷ USD (#41 thế giới)",
+    "gdp_en": "~$389B (#41 globally)",
+    "pc_vi": "~3.340 USD (PPP ~19.120 USD)",
+    "pc_en": "~$3,340 (PPP ~$19,120)",
+    "gr": "+2.4%",
     "sec": [
-      52,
-      33,
+      51,
+      34,
       15
     ],
     "main_vi": "Phí qua Kênh đào Suez, du lịch văn hóa – biển Đỏ, khí đốt tự nhiên (mỏ Zohr) & hóa dầu, kiều hối, bất động sản & đại dự án đô thị mới, nông nghiệp đồng bằng sông Nile (bông, cam quýt, phân bón)",
@@ -3054,15 +3054,15 @@ export const ECON = {
     "note_en": "As a 116-million-strong economic bridge between the Mediterranean, Red Sea, and Middle East, Egypt relies on four traditional hard-currency pillars: Suez Canal tolls, heritage and Red Sea tourism, petrochemicals and gas, and diaspora remittances. In March 2024, Cairo overcame an acute foreign-exchange crunch by floating the Egyptian pound and securing a historic $35 billion UAE investment to develop Ras El-Hekma on the Mediterranean coast, unlocking expanded IMF and EU support. Long-term prosperity hinges on reining in inflation, reducing the state-military footprint in the economy, and creating jobs for over one million new labor-market entrants each year."
   },
   "Ecuador": {
-    "tier": "dev",
-    "gdp_vi": "~121 tỷ USD (#62 thế giới)",
-    "gdp_en": "~$121B (#62 globally)",
-    "pc_vi": "~6.600 USD (PPP ~15.200 USD)",
-    "pc_en": "~$6,600 (PPP ~$15,200)",
-    "gr": "+1.2%",
+    "tier": "emg",
+    "gdp_vi": "~124 tỷ USD (#64 thế giới)",
+    "gdp_en": "~$124B (#64 globally)",
+    "pc_vi": "~6.830 USD (PPP ~15.850 USD)",
+    "pc_en": "~$6,830 (PPP ~$15,850)",
+    "gr": "-1.9%",
     "sec": [
-      58,
-      32,
+      61,
+      29,
       10
     ],
     "main_vi": "Nuôi & xuất khẩu tôm thẻ chân trắng (#1 thế giới), dầu thô vùng Amazon, chuối (#1 xuất khẩu thế giới), hoa hồng cắt cành, ca cao hương vị cao cấp (Arriba), khai thác đồng & vàng",
@@ -3071,16 +3071,16 @@ export const ECON = {
     "note_en": "Full official dollarization since 2000 has eliminated exchange-rate risk and anchored some of Latin America's lowest inflation, enabling private agro-exporters—led by farmed whiteleg shrimp (~$7B annually), bananas, roses, and cocoa—to overtake crude oil as the nation's top foreign-exchange earners. Yet lacking a national currency leaves Quito tightly constrained by fiscal deficits and sovereign debt repayments, while drought-induced electricity rationing, narco-insecurity, and the voter-mandated shutdown of the Yasuní Amazon oil block weigh heavily on medium-term growth."
   },
   "Dominican Rep.": {
-    "tier": "dev",
-    "gdp_vi": "~127 tỷ USD (#60 thế giới)",
-    "gdp_en": "~$127B (#60 globally)",
-    "pc_vi": "~11.200 USD (PPP ~27.500 USD)",
-    "pc_en": "~$11,200 (PPP ~$27,500)",
-    "gr": "+5.1%",
+    "tier": "emg",
+    "gdp_vi": "~124 tỷ USD (#63 thế giới)",
+    "gdp_en": "~$124B (#63 globally)",
+    "pc_vi": "~10.880 USD (PPP ~27.580 USD)",
+    "pc_en": "~$10,880 (PPP ~$27,580)",
+    "gr": "+5.0%",
     "sec": [
-      62,
-      32,
-      6
+      64,
+      31,
+      5
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển (Punta Cana, >10 triệu khách/năm), khu chế xuất (thiết bị y tế, điện tử, xì gà cao cấp #1 thế giới), khai thác vàng (mỏ Pueblo Viejo), kiều hối",
     "main_en": "Beach resort tourism (Punta Cana, >10M visitors/yr), free-trade zone manufacturing (medical devices, electronics, #1 premium hand-rolled cigars), gold mining (Pueblo Viejo), remittances",
@@ -3088,16 +3088,16 @@ export const ECON = {
     "note_en": "Now the largest economy in the Caribbean (~$127 billion) after two decades of ~5% average annual growth, the Dominican Republic benefits from an unusually diversified four-engine economic model. It combines the Caribbean's #1 tourism industry (>11 million annual visitors anchored by Punta Cana and the new Cabo Rojo cruise port), over 80 free-trade manufacturing zones exporting medical devices, electrical equipment, and the world's top hand-rolled cigars to the US, more than $10.5 billion in annual remittances, and the giant Pueblo Viejo gold-and-silver mine (the largest gold mine in Latin America). Structural priorities focus on cutting heavy state electricity distribution losses and broadening the domestic tax base."
   },
   "Dominica": {
-    "tier": "dev",
-    "gdp_vi": "~0,70 tỷ USD",
-    "gdp_en": "~$0.70B",
-    "pc_vi": "~9.800 USD (PPP ~16.500 USD)",
-    "pc_en": "~$9,800 (PPP ~$16,500)",
-    "gr": "+4.6%",
+    "tier": "emg",
+    "gdp_vi": "~0,70 tỷ USD (~700 triệu USD)",
+    "gdp_en": "~$700M",
+    "pc_vi": "~10.400 USD (PPP ~21.330 USD)",
+    "pc_en": "~$10,400 (PPP ~$21,330)",
+    "gr": "+2.1%",
     "sec": [
-      68,
+      69,
       17,
-      15
+      14
     ],
     "main_vi": "Chương trình đầu tư nhập tịch (CBI), du lịch sinh thái – lặn biển & suối nước nóng ('Đảo Thiên nhiên vùng Caribe'), nông sản nhiệt đới (chuối, trái cây có múi, khoai sọ), điện địa nhiệt",
     "main_en": "Citizenship by Investment (CBI) program, eco-tourism & diving ('Nature Island of the Caribbean'), tropical agriculture (bananas, citrus, root crops), geothermal energy development",
@@ -3106,14 +3106,14 @@ export const ECON = {
   },
   "Djibouti": {
     "tier": "dev",
-    "gdp_vi": "~4,3 tỷ USD",
-    "gdp_en": "~$4.3B",
-    "pc_vi": "~3.800 USD (PPP ~7.800 USD)",
-    "pc_en": "~$3,800 (PPP ~$7,800)",
-    "gr": "+6.5%",
+    "gdp_vi": "~4,2 tỷ USD (#167 thế giới)",
+    "gdp_en": "~$4.2B (#167 globally)",
+    "pc_vi": "~3.550 USD (PPP ~7.820 USD)",
+    "pc_en": "~$3,550 (PPP ~$7,820)",
+    "gr": "+7.0%",
     "sec": [
-      77,
-      21,
+      81,
+      17,
       2
     ],
     "main_vi": "Dịch vụ cảng biển nước sâu & trung chuyển hàng hóa cho Ethiopia (>90% ngoại thương Ethiopia), cho thuê căn cứ quân sự quốc tế (Mỹ, Pháp, Trung Quốc, Nhật Bản), đường sắt Addis Ababa – Djibouti, trạm cáp quang biển",
@@ -3130,8 +3130,8 @@ export const ECON = {
     "gr": "+1.5%",
     "sec": [
       64,
-      15,
-      21
+      19,
+      17
     ],
     "main_vi": "Đánh bắt & chế biến thủy sản lạnh (tôm nước lạnh, cá bơn Greenland chiếm >90% xuất khẩu), trợ cấp ngân sách hàng năm từ Đan Mạch (Bloktilskud ~500 triệu USD), du lịch băng hà Bắc Cực, thăm dò đất hiếm & khoáng sản chiến lược",
     "main_en": "Cold-water fisheries & processing (prawns, Greenland halibut >90% of exports), Danish annual block grant (Bloktilskud ~$500M), Arctic glacier tourism, critical minerals & rare earth exploration",
@@ -3140,15 +3140,15 @@ export const ECON = {
   },
   "Faeroe Is.": {
     "tier": "adv",
-    "gdp_vi": "~3,9 tỷ USD",
-    "gdp_en": "~$3.9B",
-    "pc_vi": "~71.500 USD",
-    "pc_en": "~$71,500",
-    "gr": "+2.8%",
+    "gdp_vi": "~4,1 tỷ USD (#168 thế giới)",
+    "gdp_en": "~$4.1B (#168 globally)",
+    "pc_vi": "~74.180 USD (PPP ~82.090 USD)",
+    "pc_en": "~$74,180 (PPP ~$82,090)",
+    "gr": "+0.8%",
     "sec": [
-      57,
-      23,
-      20
+      61,
+      21,
+      18
     ],
     "main_vi": "Nuôi cá hồi Đại Tây Dương cao cấp trên vịnh hẹp (Bakkafrost), đánh bắt cá biển khơi (cá thu, cá trích, cá tuyết), vận tải biển & đóng tàu dịch vụ ngư nghiệp, du lịch cảnh quan Bắc Đại Tây Dương",
     "main_en": "Premium fjord-farmed Atlantic salmon (Bakkafrost), pelagic & demersal fisheries (mackerel, herring, cod), maritime shipping & vessel servicing, North Atlantic nature tourism",
@@ -3157,15 +3157,15 @@ export const ECON = {
   },
   "Denmark": {
     "tier": "adv",
-    "gdp_vi": "~412 tỷ USD (#36 thế giới)",
-    "gdp_en": "~$412B (#36 globally)",
-    "pc_vi": "~69.200 USD (PPP ~79.500 USD)",
-    "pc_en": "~$69,200 (PPP ~$79,500)",
-    "gr": "+2.9%",
+    "gdp_vi": "~424 tỷ USD (#36 thế giới)",
+    "gdp_en": "~$424B (#36 globally)",
+    "pc_vi": "~71.030 USD (PPP ~80.940 USD)",
+    "pc_en": "~$71,030 (PPP ~$80,940)",
+    "gr": "+3.5%",
     "sec": [
-      76,
-      22,
-      2
+      72,
+      27,
+      1
     ],
     "main_vi": "Dược phẩm & công nghệ sinh học (Novo Nordisk – thuốc tiểu đường/giảm cân Ozempic & Wegovy), vận tải container biển toàn cầu (Maersk), năng lượng gió ngoài khơi (Vestas, Ørsted), đồ chơi (LEGO), thịt lợn & bơ sữa công nghệ cao",
     "main_en": "Pharmaceuticals & biotech (Novo Nordisk – Ozempic & Wegovy), global container shipping (Maersk), offshore wind energy (Vestas, Ørsted), consumer goods (LEGO), high-tech pork & dairy agribusiness",
@@ -3174,14 +3174,14 @@ export const ECON = {
   },
   "Czechia": {
     "tier": "adv",
-    "gdp_vi": "~345 tỷ USD (#45 thế giới)",
-    "gdp_en": "~$345B (#45 globally)",
-    "pc_vi": "~31.800 USD (PPP ~53.500 USD)",
-    "pc_en": "~$31,800 (PPP ~$53,500)",
-    "gr": "+1.1%",
+    "gdp_vi": "~347 tỷ USD (#44 thế giới)",
+    "gdp_en": "~$347B (#44 globally)",
+    "pc_vi": "~31.830 USD (PPP ~57.630 USD)",
+    "pc_en": "~$31,830 (PPP ~$57,630)",
+    "gr": "+1.3%",
     "sec": [
-      63,
-      35,
+      66,
+      32,
       2
     ],
     "main_vi": "Sản xuất ô tô & phụ tùng (Škoda Auto, Hyundai), cơ khí chế tạo & đầu máy xe lửa (Škoda Group), công nghiệp quốc phòng & đạn dược (CSG, Colt CZ), an ninh mạng & phần mềm, kính pha lê & bia",
@@ -3208,15 +3208,15 @@ export const ECON = {
   },
   "Cyprus": {
     "tier": "adv",
-    "gdp_vi": "~34,8 tỷ USD",
-    "gdp_en": "~$34.8B",
-    "pc_vi": "~37.100 USD (PPP ~60.500 USD)",
-    "pc_en": "~$37,100 (PPP ~$60,500)",
-    "gr": "+3.6%",
+    "gdp_vi": "~37,6 tỷ USD (#104 thế giới)",
+    "gdp_en": "~$37.6B (#104 globally)",
+    "pc_vi": "~38.670 USD (PPP ~63.010 USD)",
+    "pc_en": "~$38,670 (PPP ~$63,010)",
+    "gr": "+3.9%",
     "sec": [
-      85,
+      86,
       13,
-      2
+      1
     ],
     "main_vi": "Quản lý đội tàu biển quốc tế (top 3 EU), du lịch biển Địa Trung Hải, dịch vụ CNTT – công nghệ tài chính, bất động sản, dược phẩm, phô mai Halloumi",
     "main_en": "International ship management (top 3 in EU), Mediterranean tourism, IT & fintech services, real estate, pharmaceuticals, Halloumi cheese exports",
@@ -3224,16 +3224,16 @@ export const ECON = {
     "note_en": "Having overhauled its banking sector after the 2013 financial crisis and shed Russian offshore capital post-2022, Cyprus now outperforms the Eurozone average (~3%+ GDP growth) thanks to booming tourism (~4 million visitors/year), global ship management, and a thriving IT and fintech cluster in Limassol attracting tech firms from Israel and Eastern Europe. Running solid fiscal surpluses that have pushed public debt below 70% of GDP, Nicosia is advancing offshore gas development and the Great Sea Interconnector subsea power cable to end its status as the EU's last isolated electricity grid."
   },
   "Cuba": {
-    "tier": "dev",
+    "tier": "emg",
     "gdp_vi": "~95 tỷ USD (ước tính chính thức / quy đổi đa tỷ giá)",
     "gdp_en": "~$95B (official / multi-rate estimate)",
     "pc_vi": "~8.500 USD (thực tế theo tỷ giá thị trường tự do thấp hơn nhiều)",
     "pc_en": "~$8,500 (substantially lower at informal market exchange rates)",
-    "gr": "-1.5%",
+    "gr": "-1.1%",
     "sec": [
-      74,
-      22,
-      4
+      75,
+      24,
+      1
     ],
     "main_vi": "Du lịch biển (Varadero, La Habana), xuất khẩu dịch vụ y tế & bác sĩ ra nước ngoài, công nghệ sinh học & vắc-xin nội địa, khai thác niken & coban (Moa), xì gà Habanos, rượu rum & kiều hối",
     "main_en": "Beach & heritage tourism (Varadero, Havana), overseas medical mission services, domestic biotech & vaccines, nickel & cobalt mining (Moa), Habanos cigars, rum & remittances",
@@ -3242,14 +3242,14 @@ export const ECON = {
   },
   "Croatia": {
     "tier": "adv",
-    "gdp_vi": "~89 tỷ USD",
-    "gdp_en": "~$89B",
-    "pc_vi": "~23.000 USD (PPP ~45.500 USD)",
-    "pc_en": "~$23,000 (PPP ~$45,500)",
-    "gr": "+3.5%",
+    "gdp_vi": "~93 tỷ USD (#75 thế giới)",
+    "gdp_en": "~$93B (#75 globally)",
+    "pc_vi": "~24.050 USD (PPP ~49.550 USD)",
+    "pc_en": "~$24,050 (PPP ~$49,550)",
+    "gr": "+3.8%",
     "sec": [
-      72,
-      24,
+      73,
+      23,
       4
     ],
     "main_vi": "Du lịch bờ biển Adriatic & 1.200 hòn đảo (Dubrovnik, Split; chiếm ~20% GDP), công nghệ siêu xe điện & pin (Rimac), dược phẩm (Pliva), đóng tàu, trạm nhập khẩu LNG đảo Krk",
@@ -3259,15 +3259,15 @@ export const ECON = {
   },
   "Côte d'Ivoire": {
     "tier": "dev",
-    "gdp_vi": "~86 tỷ USD (#70 thế giới)",
-    "gdp_en": "~$86B (#70 globally)",
-    "pc_vi": "~2.800 USD (PPP ~7.600 USD)",
-    "pc_en": "~$2,800 (PPP ~$7,600)",
-    "gr": "+6.5%",
+    "gdp_vi": "~87 tỷ USD (#77 thế giới)",
+    "gdp_en": "~$87B (#77 globally)",
+    "pc_vi": "~2.730 USD (PPP ~7.680 USD)",
+    "pc_en": "~$2,730 (PPP ~$7,680)",
+    "gr": "+6.0%",
     "sec": [
-      53,
-      25,
-      22
+      57,
+      26,
+      17
     ],
     "main_vi": "Ca cao (#1 thế giới, chiếm ~40% nguồn cung toàn cầu), hạt điều (#1 sản xuất thế giới), khai thác dầu khí mới (mỏ Baleine), vàng, cao su tự nhiên, cảng biển Abidjan & San-Pédro",
     "main_en": "Cocoa beans (#1 globally, ~40% of world supply), cashew nuts (#1 global producer), offshore oil & gas (Baleine field), gold mining, natural rubber, Abidjan & San-Pédro port logistics",
@@ -3275,16 +3275,16 @@ export const ECON = {
     "note_en": "Serving as the economic locomotive of the Euro-pegged West African CFA franc zone, Côte d'Ivoire supplies ~40% of the world's cocoa and leads global cashew production alongside burgeoning gold, rubber, and palm oil exports. By aggressively expanding domestic value-added processing—overtaking the Netherlands as the world's #1 cocoa-grinding nation in 2024–2025—and ramping up offshore oil and gas production at the Baleine field, the economy maintains ~6.5% annual growth despite climate pressures on aging cocoa trees."
   },
   "Costa Rica": {
-    "tier": "emg",
-    "gdp_vi": "~95 tỷ USD (#69 thế giới)",
-    "gdp_en": "~$95B (#69 globally)",
-    "pc_vi": "~18.000 USD (PPP ~29.500 USD)",
-    "pc_en": "~$18,000 (PPP ~$29,500)",
-    "gr": "+4.2%",
+    "tier": "adv",
+    "gdp_vi": "~97 tỷ USD (#73 thế giới)",
+    "gdp_en": "~$97B (#73 globally)",
+    "pc_vi": "~18.850 USD (PPP ~31.550 USD)",
+    "pc_en": "~$18,850 (PPP ~$31,550)",
+    "gr": "+4.1%",
     "sec": [
-      72,
-      23,
-      5
+      75,
+      21,
+      4
     ],
     "main_vi": "Sản xuất thiết bị y tế chính xác (van tim, ống thông, nha khoa – mặt hàng xuất khẩu #1), đóng gói & kiểm thử bán dẫn (Intel), dịch vụ chia sẻ toàn cầu (GBS/CNTT), du lịch sinh thái, dứa & cà phê",
     "main_en": "Precision medical devices (heart valves, catheters, dental – #1 export), semiconductor assembly & testing (Intel), global business & IT services, eco-tourism, pineapples & specialty coffee",
@@ -3293,15 +3293,15 @@ export const ECON = {
   },
   "Dem. Rep. Congo": {
     "tier": "low",
-    "gdp_vi": "~73 tỷ USD",
-    "gdp_en": "~$73B",
-    "pc_vi": "~680 USD (PPP ~1.700 USD)",
-    "pc_en": "~$680 (PPP ~$1,700)",
-    "gr": "+6.0%",
+    "gdp_vi": "~76 tỷ USD (#84 thế giới)",
+    "gdp_en": "~$76B (#84 globally)",
+    "pc_vi": "~690 USD (PPP ~1.820 USD)",
+    "pc_en": "~$690 (PPP ~$1,820)",
+    "gr": "+6.1%",
     "sec": [
-      33,
-      47,
-      20
+      49,
+      40,
+      11
     ],
     "main_vi": "Khai thác coban (#1 thế giới, chiếm >70% nguồn cung toàn cầu), đồng trữ lượng hàm lượng cao (#2 thế giới, siêu mỏ Kamoa-Kakula), coltan (tantalum), kim cương, vàng, tiềm năng thủy điện sông Congo (Inga)",
     "main_en": "Cobalt mining (#1 globally, >70% of world supply), high-grade copper (#2 globally, Kamoa-Kakula megamine), coltan (tantalum), diamonds, gold, Congo River hydropower (Inga dams)",
@@ -3310,15 +3310,15 @@ export const ECON = {
   },
   "Congo": {
     "tier": "dev",
-    "gdp_vi": "~15,5 tỷ USD",
-    "gdp_en": "~$15.5B",
-    "pc_vi": "~2.500 USD (PPP ~6.500 USD)",
-    "pc_en": "~$2,500 (PPP ~$6,500)",
-    "gr": "+2.8%",
+    "gdp_vi": "~15,7 tỷ USD (#140 thế giới)",
+    "gdp_en": "~$15.7B (#140 globally)",
+    "pc_vi": "~2.480 USD (PPP ~7.000 USD)",
+    "pc_en": "~$2,480 (PPP ~$7,000)",
+    "gr": "+2.1%",
     "sec": [
-      38,
-      54,
-      8
+      48,
+      42,
+      10
     ],
     "main_vi": "Khai thác dầu thô ngoài khơi (TotalEnergies, Eni), xuất khẩu khí thiên nhiên hóa lỏng (dự án Congo FLNG), gỗ nhiệt đới lưu vực Congo, khai thác kali (potash) & quặng sắt, cảng biển nước sâu Pointe-Noire",
     "main_en": "Offshore crude oil extraction (TotalEnergies, Eni), floating liquefied natural gas exports (Congo FLNG), tropical timber, potash & iron ore mining, Pointe-Noire deepwater port",
@@ -3326,16 +3326,16 @@ export const ECON = {
     "note_en": "Offshore crude oil and newly launched floating LNG exports account for over 80% of export earnings and roughly two-thirds of state revenues in this OPEC member, supplemented by tropical timber and coastal potash mining projects in Kouilou. While the 2024–2026 expansion of Eni's Congo FLNG project boosts hydrocarbon output within the stable CFA franc zone, high public debt servicing and the paradox of importing most staple foods despite vast uncultivated arable land remain key structural weaknesses."
   },
   "Comoros": {
-    "tier": "low",
-    "gdp_vi": "~1,4 tỷ USD",
-    "gdp_en": "~$1.4B",
-    "pc_vi": "~1.600 USD (PPP ~3.900 USD)",
-    "pc_en": "~$1,600 (PPP ~$3,900)",
-    "gr": "+3.5%",
+    "tier": "dev",
+    "gdp_vi": "~1,6 tỷ USD (#185 thế giới)",
+    "gdp_en": "~$1.6B (#185 globally)",
+    "pc_vi": "~1.860 USD (PPP ~4.050 USD)",
+    "pc_en": "~$1,860 (PPP ~$4,050)",
+    "gr": "+3.3%",
     "sec": [
-      56,
-      12,
-      32
+      52,
+      10,
+      38
     ],
     "main_vi": "Kiều hối từ cộng đồng người Comoros tại Pháp (>20% GDP), tinh dầu hoa ngọc lan tây (ylang-ylang #1 thế giới cho nước hoa Pháp), đinh hương, vani ('Quần đảo Hương liệu'), đánh bắt cá",
     "main_en": "Diaspora remittances from France (>20% of GDP), ylang-ylang essential oil (#1 global supplier for luxury perfumes), cloves, Bourbon vanilla ('Perfume Islands'), artisanal fishing",
@@ -3344,15 +3344,15 @@ export const ECON = {
   },
   "Colombia": {
     "tier": "emg",
-    "gdp_vi": "~418 tỷ USD (#35 thế giới)",
-    "gdp_en": "~$418B (#35 globally)",
-    "pc_vi": "~7.900 USD (PPP ~21.500 USD)",
-    "pc_en": "~$7,900 (PPP ~$21,500)",
-    "gr": "+1.8%",
+    "gdp_vi": "~420 tỷ USD (#38 thế giới, #4 Mỹ Latin)",
+    "gdp_en": "~$420B (#38 globally, #4 in Latin America)",
+    "pc_vi": "~7.950 USD (PPP ~22.440 USD)",
+    "pc_en": "~$7,950 (PPP ~$22,440)",
+    "gr": "+1.5%",
     "sec": [
       64,
-      27,
-      9
+      26,
+      10
     ],
     "main_vi": "Dầu thô (Ecopetrol) & than đá xuất khẩu, cà phê Arabica chế biến ướt (#3 thế giới), hoa tươi cắt cành (#2 thế giới), ngọc lục bảo (#1 chất lượng thế giới), du lịch & dịch vụ công nghệ (Medellín, Bogotá)",
     "main_en": "Crude oil (Ecopetrol) & thermal coal exports, washed Arabica coffee (#3 globally), cut flowers (#2 globally), emeralds, tourism & nearshore tech services (Medellín, Bogotá)",
@@ -3361,14 +3361,14 @@ export const ECON = {
   },
   "China": {
     "tier": "emg",
-    "gdp_vi": "~18.800 tỷ USD (#2 thế giới, #1 PPP)",
-    "gdp_en": "~$18.8T (#2 globally, #1 PPP)",
-    "pc_vi": "~13.300 USD (PPP ~26.300 USD)",
-    "pc_en": "~$13,300 (PPP ~$26,300)",
+    "gdp_vi": "~18.730 tỷ USD (#2 thế giới, #1 PPP)",
+    "gdp_en": "~$18.73T (#2 globally, #1 PPP)",
+    "pc_vi": "~13.290 USD (PPP ~27.140 USD)",
+    "pc_en": "~$13,290 (PPP ~$27,140)",
     "gr": "+5.0%",
     "sec": [
-      55,
-      38,
+      57,
+      36,
       7
     ],
     "main_vi": "Xe điện (EV), pin lithium, năng lượng mặt trời, điện tử, máy móc công nghiệp, thép, đất hiếm, đóng tàu, thương mại điện tử",
@@ -3378,11 +3378,11 @@ export const ECON = {
   },
   "Macao": {
     "tier": "adv",
-    "gdp_vi": "~53 tỷ USD",
-    "gdp_en": "~$53B",
-    "pc_vi": "~76.400 USD (PPP ~128.000 USD)",
-    "pc_en": "~$76,400 (PPP ~$128,000)",
-    "gr": "+8.8%",
+    "gdp_vi": "~50 tỷ USD (#94 thế giới)",
+    "gdp_en": "~$50B (#94 globally)",
+    "pc_vi": "~72.000 USD (PPP ~127.140 USD)",
+    "pc_en": "~$72,000 (PPP ~$127,140)",
+    "gr": "+7.8%",
     "sec": [
       95,
       5,
@@ -3395,15 +3395,15 @@ export const ECON = {
   },
   "Hong Kong": {
     "tier": "adv",
-    "gdp_vi": "~407 tỷ USD (#38 thế giới)",
-    "gdp_en": "~$407B (#38 globally)",
-    "pc_vi": "~54.100 USD (PPP ~75.100 USD)",
-    "pc_en": "~$54,100 (PPP ~$75,100)",
-    "gr": "+2.7%",
+    "gdp_vi": "~408 tỷ USD (#39 thế giới)",
+    "gdp_en": "~$408B (#39 globally)",
+    "pc_vi": "~54.280 USD (PPP ~75.340 USD)",
+    "pc_en": "~$54,280 (PPP ~$75,340)",
+    "gr": "+2.6%",
     "sec": [
-      93,
+      94,
       6,
-      1
+      0
     ],
     "main_vi": "Ngân hàng & tài chính quốc tế, quản lý tài sản, trung chuyển cảng biển & hàng không, thương mại xuất nhập khẩu, bảo hiểm",
     "main_en": "International banking & finance, wealth management, port & air logistics transshipment, re-export trade, insurance",
@@ -3411,15 +3411,15 @@ export const ECON = {
     "note_en": "Hong Kong serves as the premier offshore capital market, IPO venue, and wealth-management gateway connecting Mainland China with global investors. Its economy thrives on low taxation, free capital flows, common-law commercial courts, and a currency board pegging the HKD to the US dollar since 1983. Amid geopolitical tensions, the city is actively courting family offices, green finance, and fintech within the Greater Bay Area."
   },
   "Chile": {
-    "tier": "emg",
-    "gdp_vi": "~333 tỷ USD (#46 thế giới)",
-    "gdp_en": "~$333B (#46 globally)",
-    "pc_vi": "~16.800 USD (PPP ~33.000 USD)",
-    "pc_en": "~$16,800 (PPP ~$33,000)",
-    "gr": "+2.4%",
+    "tier": "adv",
+    "gdp_vi": "~329 tỷ USD (#45 thế giới)",
+    "gdp_en": "~$329B (#45 globally)",
+    "pc_vi": "~16.660 USD (PPP ~36.070 USD)",
+    "pc_en": "~$16,660 (PPP ~$36,070)",
+    "gr": "+2.8%",
     "sec": [
-      63,
-      33,
+      62,
+      34,
       4
     ],
     "main_vi": "Khai thác đồng (#1 thế giới, ~25% nguồn cung toàn cầu – Codelco, Escondida), lithium sa mạc Atacama (#2 sản xuất, #1 trữ lượng thế giới), cá hồi nuôi (#2 thế giới), trái cây ôn đới trái vụ (anh đào, nho) & rượu vang, năng lượng mặt trời & hydro xanh",
@@ -3429,15 +3429,15 @@ export const ECON = {
   },
   "Chad": {
     "tier": "low",
-    "gdp_vi": "~18,5 tỷ USD",
-    "gdp_en": "~$18.5B",
-    "pc_vi": "~980 USD (PPP ~2.600 USD)",
-    "pc_en": "~$980 (PPP ~$2,600)",
-    "gr": "+3.2%",
+    "gdp_vi": "~19,9 tỷ USD (#128 thế giới)",
+    "gdp_en": "~$19.9B (#128 globally)",
+    "pc_vi": "~980 USD (PPP ~2.770 USD)",
+    "pc_en": "~$980 (PPP ~$2,770)",
+    "gr": "+5.0%",
     "sec": [
-      34,
-      33,
-      33
+      32,
+      30,
+      38
     ],
     "main_vi": "Khai thác dầu thô (xuất khẩu qua đường ống dài 1.070 km tới cảng Kribi của Cameroon), chăn nuôi gia súc sống xuất khẩu, nhựa cây keo (gum arabic #2 thế giới), bông vải & hạt vừng",
     "main_en": "Crude oil extraction (exported via the 1,070 km Chad–Cameroon pipeline to Kribi), live cattle & livestock exports, gum arabic (#2 globally), cotton & sesame seeds",
@@ -3446,15 +3446,15 @@ export const ECON = {
   },
   "Central African Rep.": {
     "tier": "low",
-    "gdp_vi": "~2,8 tỷ USD",
-    "gdp_en": "~$2.8B",
-    "pc_vi": "~510 USD (PPP ~1.150 USD)",
-    "pc_en": "~$510 (PPP ~$1,150)",
+    "gdp_vi": "~2,8 tỷ USD (#174 thế giới)",
+    "gdp_en": "~$2.8B (#174 globally)",
+    "pc_vi": "~520 USD (PPP ~1.260 USD)",
+    "pc_en": "~$520 (PPP ~$1,260)",
     "gr": "+1.5%",
     "sec": [
-      45,
-      21,
-      34
+      47,
+      22,
+      31
     ],
     "main_vi": "Khai thác kim cương phù sa & vàng thủ công, gỗ tròn nhiệt đới, nông nghiệp tự cung tự cấp (sắn, ngô, lạc), cà phê & bông vải",
     "main_en": "Alluvial diamond & artisanal gold mining, tropical timber logging, subsistence agriculture (cassava, maize, groundnuts), coffee & cotton",
@@ -3462,15 +3462,15 @@ export const ECON = {
     "note_en": "Despite possessing prized gem-quality alluvial diamonds, industrial gold deposits (such as the Wagner-controlled Ndassima mine), virgin tropical timber, and uranium reserves at Bakouma, CAR remains among the five poorest countries on Earth (~$510 nominal GDP per capita). While the Kimberley Process fully lifted its decade-long diamond export embargo on CAR in late 2024, widespread cross-border smuggling, chronic electricity shortages, and exorbitant landlocked freight costs keep the formal economy tiny and heavily aid-dependent."
   },
   "Cabo Verde": {
-    "tier": "dev",
-    "gdp_vi": "~2,7 tỷ USD",
-    "gdp_en": "~$2.7B",
-    "pc_vi": "~4.800 USD (PPP ~11.200 USD)",
-    "pc_en": "~$4,800 (PPP ~$11,200)",
-    "gr": "+5.1%",
+    "tier": "emg",
+    "gdp_vi": "~2,7 tỷ USD (#175 thế giới)",
+    "gdp_en": "~$2.7B (#175 globally)",
+    "pc_vi": "~5.170 USD (PPP ~11.180 USD)",
+    "pc_en": "~$5,170 (PPP ~$11,180)",
+    "gr": "+7.0%",
     "sec": [
-      74,
-      20,
+      81,
+      13,
       6
     ],
     "main_vi": "Du lịch biển đảo quanh năm (đảo Sal và Boa Vista chiếm ~25% GDP), kiều hối từ cộng đồng hải ngoại (đông hơn dân số trong nước), chế biến cá ngừ & cá thu đóng hộp, dịch vụ hàng hải & hàng không Đại Tây Dương",
@@ -3480,14 +3480,14 @@ export const ECON = {
   },
   "Canada": {
     "tier": "adv",
-    "gdp_vi": "~2.240 tỷ USD (#9–10 thế giới)",
-    "gdp_en": "~$2.24T (#9–10 globally)",
-    "pc_vi": "~54.500 USD (PPP ~62.500 USD)",
-    "pc_en": "~$54,500 (PPP ~$62,500)",
-    "gr": "+1.3%",
+    "gdp_vi": "~2.270 tỷ USD (#9 thế giới)",
+    "gdp_en": "~$2.27T (#9 globally)",
+    "pc_vi": "~55.020 USD (PPP ~65.480 USD)",
+    "pc_en": "~$55,020 (PPP ~$65,480)",
+    "gr": "+2.0%",
     "sec": [
-      71,
-      27,
+      69,
+      29,
       2
     ],
     "main_vi": "Dầu khí & cát dầu Alberta (#4 sản xuất dầu thế giới), ngân hàng – bảo hiểm & quỹ hưu trí (Toronto), ô tô & hàng không vũ trụ (Ontario, Quebec), khoáng sản chiến lược (kali/potash #1 thế giới, uranium #2, vàng, niken), gỗ & nông sản (lúa mì, hạt cải dầu canola)",
@@ -3497,15 +3497,15 @@ export const ECON = {
   },
   "Cameroon": {
     "tier": "dev",
-    "gdp_vi": "~53 tỷ USD",
-    "gdp_en": "~$53B",
-    "pc_vi": "~1.800 USD (PPP ~5.400 USD)",
-    "pc_en": "~$1,800 (PPP ~$5,400)",
-    "gr": "+3.9%",
+    "gdp_vi": "~53 tỷ USD (#91 thế giới)",
+    "gdp_en": "~$53B (#91 globally)",
+    "pc_vi": "~1.830 USD (PPP ~5.600 USD)",
+    "pc_en": "~$1,830 (PPP ~$5,600)",
+    "gr": "+3.5%",
     "sec": [
-      52,
-      29,
-      19
+      55,
+      25,
+      20
     ],
     "main_vi": "Dầu thô & khí thiên nhiên hóa lỏng (FLNG Kribi), ca cao (#4–5 thế giới), gỗ nhiệt đới, cà phê, chuối & bông vải, luyện nhôm (Alucam), cảng biển trung chuyển Douala & Kribi",
     "main_en": "Crude oil & floating LNG (Kribi), cocoa beans (#4–5 globally), tropical timber, coffee, bananas & cotton, aluminum smelting (Alucam), Douala & Kribi port transit logistics",
@@ -3514,15 +3514,15 @@ export const ECON = {
   },
   "Cambodia": {
     "tier": "dev",
-    "gdp_vi": "~46 tỷ USD",
-    "gdp_en": "~$46B",
-    "pc_vi": "~2.630 USD (PPP ~8.200 USD)",
-    "pc_en": "~$2,630 (PPP ~$8,200)",
-    "gr": "+5.8%",
+    "gdp_vi": "~46 tỷ USD (#97 thế giới, #8 Đông Nam Á)",
+    "gdp_en": "~$46B (#97 globally, #8 in ASEAN)",
+    "pc_vi": "~2.630 USD (PPP ~7.980 USD)",
+    "pc_en": "~$2,630 (PPP ~$7,980)",
+    "gr": "+6.0%",
     "sec": [
-      40,
       38,
-      22
+      44,
+      18
     ],
     "main_vi": "Dệt may – da giày – túi xách xuất khẩu (sang Mỹ, EU), xây dựng & bất động sản, du lịch (Angkor Wat), lúa gạo & hạt điều",
     "main_en": "Garments, footwear & travel goods exports (to US & EU), construction & real estate, tourism (Angkor Wat), rice & cashew nuts",
@@ -3531,15 +3531,15 @@ export const ECON = {
   },
   "Myanmar": {
     "tier": "dev",
-    "gdp_vi": "~64 tỷ USD",
-    "gdp_en": "~$64B",
-    "pc_vi": "~1.180 USD (PPP ~5.200 USD)",
-    "pc_en": "~$1,180 (PPP ~$5,200)",
-    "gr": "+1.0%",
+    "gdp_vi": "~74 tỷ USD (#86 thế giới, #7 Đông Nam Á)",
+    "gdp_en": "~$74B (#86 globally, #7 in ASEAN)",
+    "pc_vi": "~1.360 USD (PPP ~6.010 USD)",
+    "pc_en": "~$1,360 (PPP ~$6,010)",
+    "gr": "-1.0%",
     "sec": [
       38,
-      39,
-      23
+      36,
+      26
     ],
     "main_vi": "Khí đốt tự nhiên (xuất sang Thái Lan & Trung Quốc), đất hiếm nặng, ngọc bích (jade), nông sản (gạo, đậu đỗ), dệt may gia công",
     "main_en": "Natural gas pipelines (to Thailand & China), heavy rare earths, jade & gems, agriculture (rice, pulses), garment assembly",
@@ -3548,15 +3548,15 @@ export const ECON = {
   },
   "Burundi": {
     "tier": "low",
-    "gdp_vi": "~3,1 tỷ USD",
-    "gdp_en": "~$3.1B",
-    "pc_vi": "~230 USD (PPP ~950 USD, thấp nhất thế giới)",
-    "pc_en": "~$230 (PPP ~$950, lowest globally)",
-    "gr": "+3.8%",
+    "gdp_vi": "~3,0 tỷ USD (#173 thế giới)",
+    "gdp_en": "~$3.0B (#173 globally)",
+    "pc_vi": "~220 USD (PPP ~1.190 USD)",
+    "pc_en": "~$220 (PPP ~$1,190)",
+    "gr": "+4.1%",
     "sec": [
-      43,
+      45,
       18,
-      39
+      37
     ],
     "main_vi": "Cà phê Arabica trồng trên vùng cao & trà đen (chiếm >80% nguồn thu ngoại tệ hàng hóa), nông nghiệp tự cung tự cấp (chuối, sắn, đậu), khai thác vàng thủ công, trữ lượng niken (Musongati) & đất hiếm",
     "main_en": "High-altitude Arabica coffee & black tea (>80% of merchandise FX earnings), subsistence farming (plantains, cassava, beans), artisanal gold, undeveloped nickel (Musongati) & rare-earth deposits",
@@ -3565,15 +3565,15 @@ export const ECON = {
   },
   "Burkina Faso": {
     "tier": "low",
-    "gdp_vi": "~21,5 tỷ USD",
-    "gdp_en": "~$21.5B",
-    "pc_vi": "~910 USD (PPP ~2.800 USD)",
-    "pc_en": "~$910 (PPP ~$2,800)",
+    "gdp_vi": "~23,1 tỷ USD (#123 thế giới)",
+    "gdp_en": "~$23.1B (#123 globally)",
+    "pc_vi": "~980 USD (PPP ~2.900 USD)",
+    "pc_en": "~$980 (PPP ~$2,900)",
     "gr": "+4.8%",
     "sec": [
-      46,
-      32,
-      22
+      48,
+      29,
+      23
     ],
     "main_vi": "Khai thác vàng công nghiệp & thủ công (chiếm ~80% kim ngạch xuất khẩu, #4 châu Phi), bông vải ('vàng trắng' vùng Sahel), hạt điều & hạt vừng, chăn nuôi gia súc",
     "main_en": "Industrial & artisanal gold mining (~80% of export earnings, #4 producer in Africa), cotton ('white gold' of the Sahel), sesame & cashew nuts, livestock",
@@ -3582,15 +3582,15 @@ export const ECON = {
   },
   "Bulgaria": {
     "tier": "adv",
-    "gdp_vi": "~108 tỷ USD (#67 thế giới)",
-    "gdp_en": "~$108B (#67 globally)",
-    "pc_vi": "~16.800 USD (PPP ~38.500 USD)",
-    "pc_en": "~$16,800 (PPP ~$38,500)",
-    "gr": "+2.2%",
+    "gdp_vi": "~113 tỷ USD (#68 thế giới)",
+    "gdp_en": "~$113B (#68 globally)",
+    "pc_vi": "~17.600 USD (PPP ~41.970 USD)",
+    "pc_en": "~$17,600 (PPP ~$41,970)",
+    "gr": "+3.4%",
     "sec": [
-      69,
-      27,
-      4
+      73,
+      24,
+      3
     ],
     "main_vi": "Gia công phần mềm & dịch vụ CNTT (Sofia), linh kiện ô tô & thiết bị điện, luyện đồng (Aurubis) & xuất khẩu điện (nhà máy hạt nhân Kozloduy), công nghiệp đạn dược, nông sản (lúa mì, hướng dương, tinh dầu hoa hồng #1 thế giới), du lịch Biển Đen",
     "main_en": "IT outsourcing & software development (Sofia), automotive components & electrical equipment, copper refining (Aurubis) & electricity exports (Kozloduy nuclear plant), defense ammunition, agriculture (#1 rose oil, wheat, sunflower), Black Sea tourism",
@@ -3599,14 +3599,14 @@ export const ECON = {
   },
   "Brunei": {
     "tier": "adv",
-    "gdp_vi": "~15,5 tỷ USD",
-    "gdp_en": "~$15.5B",
-    "pc_vi": "~34.300 USD (PPP ~77.500 USD)",
-    "pc_en": "~$34,300 (PPP ~$77,500)",
-    "gr": "+2.4%",
+    "gdp_vi": "~15,3 tỷ USD (#141 thế giới, #10 Đông Nam Á)",
+    "gdp_en": "~$15.3B (#141 globally, #10 in ASEAN)",
+    "pc_vi": "~33.150 USD (PPP ~90.010 USD)",
+    "pc_en": "~$33,150 (PPP ~$90,010)",
+    "gr": "+4.1%",
     "sec": [
-      37,
-      62,
+      38,
+      61,
       1
     ],
     "main_vi": "Dầu thô ngoài khơi, khí đốt hóa lỏng (LNG), lọc hóa dầu (tổ hợp Pulau Muara Besar), phân bón urê",
@@ -3616,11 +3616,11 @@ export const ECON = {
   },
   "Brazil": {
     "tier": "emg",
-    "gdp_vi": "~2.190 tỷ USD (#8–10 thế giới)",
-    "gdp_en": "~$2.19T (#8–10 globally)",
-    "pc_vi": "~10.300 USD (PPP ~21.800 USD)",
-    "pc_en": "~$10,300 (PPP ~$21,800)",
-    "gr": "+3.0%",
+    "gdp_vi": "~2.186 tỷ USD (#11 thế giới, #1 Mỹ Latin)",
+    "gdp_en": "~$2.19T (#11 globally, #1 in Latin America)",
+    "pc_vi": "~10.310 USD (PPP ~22.370 USD)",
+    "pc_en": "~$10,310 (PPP ~$22,370)",
+    "gr": "+3.4%",
     "sec": [
       69,
       24,
@@ -3628,19 +3628,19 @@ export const ECON = {
     ],
     "main_vi": "Siêu cường nông sản xuất khẩu (#1 thế giới về đậu tương, cà phê, đường, nước cam, thịt bò, thịt gà), dầu khí tầng muối sâu ngoài khơi (Pre-salt – Petrobras), quặng sắt (#2 thế giới – Vale), máy bay phản lực thương mại (Embraer), ngân hàng số & Fintech (Nubank, hệ thống thanh toán Pix), nhiên liệu sinh học ethanol",
     "main_en": "Global agribusiness superpower (#1 exporter of soybeans, coffee, sugar, orange juice, beef, poultry), deepwater pre-salt oil & gas (Petrobras), iron ore (#2 globally – Vale), commercial regional jets (Embraer), fintech & banking (Nubank, Pix instant payments), sugarcane ethanol",
-    "note_vi": "Là nền kinh tế lớn nhất Mỹ Latinh (top 8–10 thế giới), Brazil đóng vai trò không thể thay thế đối với an ninh lương thực toàn cầu khi đứng số một thế giới về xuất khẩu đậu tương, thịt bò, thịt gia cầm, cà phê, đường mía và nước cam, đồng thời đứng thứ hai thế giới về quặng sắt (tập đoàn Vale) và nằm trong top đầu về dầu thô nước sâu (Petrobras). Bên cạnh năng lực công nghệ cao hiếm có ở các nước đang phát triển như chế tạo máy bay phản lực thương mại (Embraer đứng thứ 3 thế giới sau Boeing và Airbus) và hệ thống thanh toán tức thời Pix phủ sóng toàn dân, nền kinh tế vẫn đối mặt với \"Chi phí Brazil\" (Custo Brasil) do hệ thống thuế phức tạp, lãi suất thực cao và hạ tầng logistics quá tải.",
-    "note_en": "As Latin America's largest economy (ranking 8th–10th globally), Brazil is indispensable to global food and commodity security—standing #1 worldwide in exports of soybeans, beef, poultry, coffee, sugar, and orange juice, #2 in iron ore (Vale), and among the top global producers of deepwater pre-salt crude oil (Petrobras). Complemented by world-class industrial and digital capabilities—including regional jet manufacturer Embraer (#3 commercial aircraft maker globally), fintech giant Nubank, the universal Pix instant-payment system, and an ~85% renewable power grid—Brazil's primary structural headwinds remain fiscal deficits, high real interest rates, and infrastructure bottlenecks known as the \"Custo Brasil.\""
+    "note_vi": "Là nền kinh tế lớn nhất Mỹ Latinh (top 11 thế giới), Brazil đóng vai trò không thể thay thế đối với an ninh lương thực toàn cầu khi đứng số một thế giới về xuất khẩu đậu tương, thịt bò, thịt gia cầm, cà phê, đường mía và nước cam, đồng thời đứng thứ hai thế giới về quặng sắt (tập đoàn Vale) và nằm trong top đầu về dầu thô nước sâu (Petrobras). Bên cạnh năng lực công nghệ cao hiếm có ở các nước đang phát triển như chế tạo máy bay phản lực thương mại (Embraer đứng thứ 3 thế giới sau Boeing và Airbus) và hệ thống thanh toán tức thời Pix phủ sóng toàn dân, nền kinh tế vẫn đối mặt với \"Chi phí Brazil\" (Custo Brasil) do hệ thống thuế phức tạp, lãi suất thực cao và hạ tầng logistics quá tải.",
+    "note_en": "As Latin America's largest economy (ranking 11th globally), Brazil is indispensable to global food and commodity security—standing #1 worldwide in exports of soybeans, beef, poultry, coffee, sugar, and orange juice, #2 in iron ore (Vale), and among the top global producers of deepwater pre-salt crude oil (Petrobras). Complemented by world-class industrial and digital capabilities—including regional jet manufacturer Embraer (#3 commercial aircraft maker globally), fintech giant Nubank, the universal Pix instant-payment system, and an ~85% renewable power grid—Brazil's primary structural headwinds remain fiscal deficits, high real interest rates, and infrastructure bottlenecks known as the \"Custo Brasil.\""
   },
   "Botswana": {
-    "tier": "dev",
-    "gdp_vi": "~19,8 tỷ USD",
-    "gdp_en": "~$19.8B",
-    "pc_vi": "~7.400 USD (PPP ~20.200 USD)",
-    "pc_en": "~$7,400 (PPP ~$20,200)",
-    "gr": "+1.0%",
+    "tier": "emg",
+    "gdp_vi": "~19,3 tỷ USD (#131 thế giới)",
+    "gdp_en": "~$19.3B (#131 globally)",
+    "pc_vi": "~7.650 USD (PPP ~20.610 USD)",
+    "pc_en": "~$7,650 (PPP ~$20,610)",
+    "gr": "-2.8%",
     "sec": [
-      66,
-      32,
+      67,
+      31,
       2
     ],
     "main_vi": "Khai thác, phân loại & buôn bán kim cương tự nhiên (#1 thế giới theo giá trị, #2 theo sản lượng qua liên doanh Debswana với De Beers), khai thác đồng (Khoemacau), du lịch safari sinh thái cao cấp (châu thổ Okavango), xuất khẩu thịt bò sang EU",
@@ -3649,16 +3649,16 @@ export const ECON = {
     "note_en": "Botswana is the world's #1 diamond producer by value (via Debswana's flagship Jwaneng and Orapa mines), with diamonds generating ~80% of merchandise exports and a third of fiscal revenue, while Gaborone serves as De Beers' global rough-diamond sorting and sightholder trading hub (relocated from London in 2013). As weak Chinese luxury demand and competition from lab-grown diamonds triggered a global diamond downturn in 2023–2025, Botswana is accelerating copper mining in the Kalahari Copperbelt (led by the Khoemacau mine), 'high-value, low-volume' luxury safari tourism in the Okavango Delta, and financial services."
   },
   "Bosnia and Herz.": {
-    "tier": "dev",
-    "gdp_vi": "~29 tỷ USD",
-    "gdp_en": "~$29B",
-    "pc_vi": "~8.600 USD (PPP ~22.500 USD)",
-    "pc_en": "~$8,600 (PPP ~$22,500)",
-    "gr": "+2.5%",
+    "tier": "emg",
+    "gdp_vi": "~29,7 tỷ USD (#111 thế giới)",
+    "gdp_en": "~$29.7B (#111 globally)",
+    "pc_vi": "~9.400 USD (PPP ~25.150 USD)",
+    "pc_en": "~$9,400 (PPP ~$25,150)",
+    "gr": "+3.2%",
     "sec": [
-      65,
-      29,
-      6
+      68,
+      27,
+      5
     ],
     "main_vi": "Gia công kim loại & phụ tùng ô tô xuất khẩu sang EU, sản xuất và xuất khẩu điện (thủy điện & nhiệt điện), chế biến gỗ & nội thất, công nghiệp đạn dược, du lịch (Sarajevo, Mostar) & kiều hối",
     "main_en": "Metal processing & automotive parts for EU supply chains, electricity generation & net exports (hydro & coal), wood processing & furniture, defense ammunition, heritage/winter tourism & remittances",
@@ -3667,15 +3667,15 @@ export const ECON = {
   },
   "Bolivia": {
     "tier": "dev",
-    "gdp_vi": "~48 tỷ USD",
-    "gdp_en": "~$48B",
-    "pc_vi": "~3.900 USD (PPP ~11.100 USD)",
-    "pc_en": "~$3,900 (PPP ~$11,100)",
-    "gr": "+1.6%",
+    "gdp_vi": "~55 tỷ USD (#89 thế giới)",
+    "gdp_en": "~$55B (#89 globally)",
+    "pc_vi": "~4.420 USD (PPP ~12.900 USD)",
+    "pc_en": "~$4,420 (PPP ~$12,900)",
+    "gr": "-1.1%",
     "sec": [
-      54,
+      57,
       33,
-      13
+      10
     ],
     "main_vi": "Khí đốt tự nhiên (xuất khẩu sang Brazil & Argentina), khai thác bạc, kẽm, thiếc & vàng, trữ lượng lithium lớn nhất thế giới (cánh đồng muối Salar de Uyuni), đậu tương & hạt diêm mạch (quinoa) vùng Santa Cruz",
     "main_en": "Natural gas exports (to Brazil & Argentina), silver, zinc, tin & gold mining, world's largest lithium resource (Salar de Uyuni salt flats), soybeans & quinoa agribusiness (Santa Cruz)",
@@ -3684,31 +3684,31 @@ export const ECON = {
   },
   "Bhutan": {
     "tier": "dev",
-    "gdp_vi": "~3,1 tỷ USD",
-    "gdp_en": "~$3.1B",
-    "pc_vi": "~3.900 USD (PPP ~15.400 USD)",
-    "pc_en": "~$3,900 (PPP ~$15,400)",
-    "gr": "+4.9%",
+    "gdp_vi": "~3,3 tỷ USD (#171 thế giới)",
+    "gdp_en": "~$3.3B (#171 globally)",
+    "pc_vi": "~4.230 USD (PPP ~17.760 USD)",
+    "pc_en": "~$4,230 (PPP ~$17,760)",
+    "gr": "+7.5%",
     "sec": [
-      47,
-      38,
-      15
+      53,
+      33,
+      14
     ],
     "main_vi": "Thủy điện xuất khẩu sang Ấn Độ, du lịch sinh thái 'giá trị cao – tác động thấp', hợp kim fero-silic, nông lâm nghiệp hữu cơ",
     "main_en": "Hydropower exports to India, 'high-value, low-volume' eco-tourism, ferrosilicon alloys, organic forestry & agriculture",
-    "note_vi": "Kinh tế Bhutan (~3,1 tỷ USD) gắn chặt với Ấn Độ (~80% thương mại, đồng Ngultrum neo 1:1 vào Rupee Ấn Độ), dựa vào xuất khẩu thủy điện sang Ấn Độ và du lịch sinh thái 'giá trị cao, tác động thấp' (thu phí 100 USD/đêm). Vương quốc còn dùng thủy điện dư thừa để luyện hợp kim fero-silic và đào Bitcoin quốc gia (qua quỹ Druk Holding). Điểm nghẽn lớn nhất là thất nghiệp trong thanh niên cao khiến nhiều người trẻ di cư sang Úc, thúc đẩy dự án Đặc khu Kinh tế Gelephu.",
-    "note_en": "Bhutan's ~$3.1B economy is tightly bound to India (~80% of trade, with the Ngultrum pegged 1:1 to the Indian Rupee), anchored by hydropower exports to India and 'high-value, low-volume' eco-tourism charging a $100/night fee. The kingdom also uses surplus hydroelectricity for ferrosilicon production and state-backed Bitcoin mining. Its most urgent structural challenge is youth unemployment and skilled emigration to Australia, which the planned Gelephu Mindfulness City aims to reverse."
+    "note_vi": "Kinh tế Bhutan (~3,4 tỷ USD) gắn chặt với Ấn Độ (~80% thương mại, đồng Ngultrum neo 1:1 vào Rupee Ấn Độ), dựa vào xuất khẩu thủy điện sang Ấn Độ và du lịch sinh thái 'giá trị cao, tác động thấp' (thu phí 100 USD/đêm). Vương quốc còn dùng thủy điện dư thừa để luyện hợp kim fero-silic và đào Bitcoin quốc gia (qua quỹ Druk Holding). Điểm nghẽn lớn nhất là thất nghiệp trong thanh niên cao khiến nhiều người trẻ di cư sang Úc, thúc đẩy dự án Đặc khu Kinh tế Gelephu.",
+    "note_en": "Bhutan's ~$3.4B economy is tightly bound to India (~80% of trade, with the Ngultrum pegged 1:1 to the Indian Rupee), anchored by hydropower exports to India and 'high-value, low-volume' eco-tourism charging a $100/night fee. The kingdom also uses surplus hydroelectricity for ferrosilicon production and state-backed Bitcoin mining. Its most urgent structural challenge is youth unemployment and skilled emigration to Australia, which the planned Gelephu Mindfulness City aims to reverse."
   },
   "Benin": {
-    "tier": "low",
-    "gdp_vi": "~21,4 tỷ USD",
-    "gdp_en": "~$21.4B",
-    "pc_vi": "~1.500 USD (PPP ~4.500 USD)",
-    "pc_en": "~$1,500 (PPP ~$4,500)",
-    "gr": "+6.3%",
+    "tier": "dev",
+    "gdp_vi": "~21,5 tỷ USD (#126 thế giới)",
+    "gdp_en": "~$21.5B (#126 globally)",
+    "pc_vi": "~1.480 USD (PPP ~4.440 USD)",
+    "pc_en": "~$1,480 (PPP ~$4,440)",
+    "gr": "+7.5%",
     "sec": [
-      51,
-      22,
+      54,
+      19,
       27
     ],
     "main_vi": "Sản xuất & chế biến bông vải (#1–2 châu Phi), dịch vụ cảng biển Cotonou & thương mại quá cảnh sang Nigeria và Niger, khu công nghiệp Glo-Djigbé (GDIZ – dệt may, chế biến điều & đậu tương), trạm cuối đường ống dẫn dầu Niger – Benin",
@@ -3717,16 +3717,16 @@ export const ECON = {
     "note_en": "Historically reliant on transit trade into neighboring Nigeria and raw cotton exports (ranking #1–2 in Africa), Benin is rapidly industrializing around its 1,640-hectare Glo-Djigbé Industrial Zone (GDIZ) just north of Cotonou. Strict government bans on raw cashew and cotton exports have spurred local garment manufacturing and agro-processing, which—alongside transit fees from the new Niger–Benin oil pipeline and heritage tourism—propel 6–6.5% annual GDP growth within the low-inflation CFA franc zone."
   },
   "Belize": {
-    "tier": "dev",
-    "gdp_vi": "~3,3 tỷ USD",
-    "gdp_en": "~$3.3B",
-    "pc_vi": "~7.900 USD (PPP ~14.500 USD)",
-    "pc_en": "~$7,900 (PPP ~$14,500)",
-    "gr": "+4.5%",
+    "tier": "emg",
+    "gdp_vi": "~3,2 tỷ USD (#172 thế giới)",
+    "gdp_en": "~$3.2B (#172 globally)",
+    "pc_vi": "~7.680 USD (PPP ~14.370 USD)",
+    "pc_en": "~$7,680 (PPP ~$14,370)",
+    "gr": "+3.5%",
     "sec": [
-      70,
-      19,
-      11
+      73,
+      17,
+      10
     ],
     "main_vi": "Du lịch biển & lặn ngắm rạn san hô (Rạn san hô chắn bờ Belize lớn thứ 2 thế giới), gia công quy trình kinh doanh bằng tiếng Anh (BPO), đường mía, chuối, nước cam cô đặc & thủy sản",
     "main_en": "Marine & eco-tourism (Belize Barrier Reef – #2 globally), English-speaking BPO call centers, sugar, bananas, citrus concentrates & farmed seafood",
@@ -3735,11 +3735,11 @@ export const ECON = {
   },
   "Belgium": {
     "tier": "adv",
-    "gdp_vi": "~655 tỷ USD (#22 thế giới)",
-    "gdp_en": "~$655B (#22 globally)",
-    "pc_vi": "~55.500 USD (PPP ~70.500 USD)",
-    "pc_en": "~$55,500 (PPP ~$70,500)",
-    "gr": "+1.2%",
+    "gdp_vi": "~671 tỷ USD (#22 thế giới)",
+    "gdp_en": "~$671B (#22 globally)",
+    "pc_vi": "~56.580 USD (PPP ~74.220 USD)",
+    "pc_en": "~$56,580 (PPP ~$74,220)",
+    "gr": "+1.1%",
     "sec": [
       78,
       21,
@@ -3751,16 +3751,16 @@ export const ECON = {
     "note_en": "One of the world's most trade-open economies—with trade exceeding 160% of GDP—Belgium thrives as Europe's premier petrochemical, biopharma, and logistics hub around Antwerp–Bruges. It also commands critical strategic assets including the IMEC semiconductor institute in Leuven and the SWIFT and Euroclear financial networks, though public debt above 105% of GDP and high wage indexing remain challenges."
   },
   "Belarus": {
-    "tier": "dev",
-    "gdp_vi": "~73 tỷ USD",
-    "gdp_en": "~$73B",
-    "pc_vi": "~8.000 USD (PPP ~30.500 USD)",
-    "pc_en": "~$8,000 (PPP ~$30,500)",
-    "gr": "+3.8%",
+    "tier": "emg",
+    "gdp_vi": "~79 tỷ USD (#83 thế giới)",
+    "gdp_en": "~$79B (#83 globally)",
+    "pc_vi": "~8.610 USD (PPP ~33.170 USD)",
+    "pc_en": "~$8,610 (PPP ~$33,170)",
+    "gr": "+4.3%",
     "sec": [
-      51,
-      42,
-      7
+      56,
+      36,
+      8
     ],
     "main_vi": "Phân bón kali (potash – Belaruskali, top 3 thế giới), lọc dầu (từ dầu thô Nga giá ưu đãi), máy kéo (MTZ) & xe tải siêu trọng mỏ (BelAZ), công nghiệp quốc phòng, chế biến sữa & thực phẩm xuất sang Nga, công nghệ thông tin",
     "main_en": "Potash fertilizers (Belaruskali, top-3 globally), oil refining (discounted Russian crude), tractors (MTZ) & ultra-heavy mining dump trucks (BelAZ), defense manufacturing, dairy & meat exports to Russia, IT services",
@@ -3769,15 +3769,15 @@ export const ECON = {
   },
   "Barbados": {
     "tier": "adv",
-    "gdp_vi": "~6,9 tỷ USD",
-    "gdp_en": "~$6.9B",
-    "pc_vi": "~24.500 USD (PPP ~22.000 USD)",
-    "pc_en": "~$24,500 (PPP ~$22,000)",
-    "gr": "+3.9%",
+    "gdp_vi": "~7,6 tỷ USD (#158 thế giới)",
+    "gdp_en": "~$7.6B (#158 globally)",
+    "pc_vi": "~26.900 USD (PPP ~24.540 USD)",
+    "pc_en": "~$26,900 (PPP ~$24,540)",
+    "gr": "+3.4%",
     "sec": [
       85,
-      13,
-      2
+      14,
+      1
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển cao cấp & tàu du lịch (Bridgetown), dịch vụ tài chính – bảo hiểm quốc tế & quản lý doanh nghiệp toàn cầu, sản xuất rượu rum truyền thống (Mount Gay – quê hương rượu rum thế giới), năng lượng tái tạo",
     "main_en": "Upscale beach resort & cruise tourism (Bridgetown), international banking, captive insurance & corporate services, heritage rum distilling (Mount Gay – birthplace of rum), renewable energy",
@@ -3786,14 +3786,14 @@ export const ECON = {
   },
   "Bangladesh": {
     "tier": "dev",
-    "gdp_vi": "~450 tỷ USD (#37 thế giới)",
-    "gdp_en": "~$450B (#37 globally)",
-    "pc_vi": "~2.600 USD (PPP ~9.400 USD)",
-    "pc_en": "~$2,600 (PPP ~$9,400)",
-    "gr": "+4.5%",
+    "gdp_vi": "~450 tỷ USD (#35 thế giới)",
+    "gdp_en": "~$450B (#35 globally)",
+    "pc_vi": "~2.590 USD (PPP ~9.660 USD)",
+    "pc_en": "~$2,590 (PPP ~$9,660)",
+    "gr": "+4.2%",
     "sec": [
-      52,
-      36,
+      53,
+      35,
       12
     ],
     "main_vi": "May mặc xuất khẩu (#2 thế giới sau Trung Quốc, chiếm >80% xuất khẩu), kiều hối (>23 tỷ USD), đay, dược phẩm nội địa, nông thủy sản",
@@ -3803,14 +3803,14 @@ export const ECON = {
   },
   "Bahrain": {
     "tier": "adv",
-    "gdp_vi": "~47 tỷ USD",
-    "gdp_en": "~$47B",
-    "pc_vi": "~29.500 USD (PPP ~62.700 USD)",
-    "pc_en": "~$29,500 (PPP ~$62,700)",
-    "gr": "+3.0%",
+    "gdp_vi": "~47 tỷ USD (#96 thế giới)",
+    "gdp_en": "~$47B (#96 globally)",
+    "pc_vi": "~29.720 USD (PPP ~67.230 USD)",
+    "pc_en": "~$29,720 (PPP ~$67,230)",
+    "gr": "+2.9%",
     "sec": [
-      58,
-      42,
+      56,
+      44,
       0
     ],
     "main_vi": "Tài chính – ngân hàng (đặc biệt ngân hàng Hồi giáo & fintech), luyện nhôm (Alba – một trong những nhà máy lớn nhất thế giới), lọc dầu, du lịch từ Ả Rập Xê Út",
@@ -3820,14 +3820,14 @@ export const ECON = {
   },
   "Bahamas": {
     "tier": "adv",
-    "gdp_vi": "~14,8 tỷ USD",
-    "gdp_en": "~$14.8B",
-    "pc_vi": "~36.000 USD (PPP ~38.500 USD)",
-    "pc_en": "~$36,000 (PPP ~$38,500)",
-    "gr": "+2.3%",
+    "gdp_vi": "~15,8 tỷ USD (#139 thế giới)",
+    "gdp_en": "~$15.8B (#139 globally)",
+    "pc_vi": "~39.460 USD (PPP ~41.260 USD)",
+    "pc_en": "~$39,460 (PPP ~$41,260)",
+    "gr": "+3.4%",
     "sec": [
-      87,
-      12,
+      88,
+      11,
       1
     ],
     "main_vi": "Du lịch nghỉ dưỡng siêu tổ hợp & tàu du lịch (Nassau, Atlantis, Baha Mar – đón ~10 triệu khách/năm, chiếm >50% GDP), ngân hàng tư nhân & quản lý quỹ ngoài khơi, đăng ký tàu biển quốc tế (#3 thế giới), trung chuyển container (Freeport)",
@@ -3837,14 +3837,14 @@ export const ECON = {
   },
   "Azerbaijan": {
     "tier": "emg",
-    "gdp_vi": "~76 tỷ USD",
-    "gdp_en": "~$76B",
-    "pc_vi": "~7.380 USD (PPP ~21.300 USD)",
-    "pc_en": "~$7,380 (PPP ~$21,300)",
+    "gdp_vi": "~74 tỷ USD (#85 thế giới)",
+    "gdp_en": "~$74B (#85 globally)",
+    "pc_vi": "~7.300 USD (PPP ~25.150 USD)",
+    "pc_en": "~$7,300 (PPP ~$25,150)",
     "gr": "+4.2%",
     "sec": [
-      43,
-      51,
+      47,
+      47,
       6
     ],
     "main_vi": "Dầu thô & khí đốt biển Caspi (~90% xuất khẩu), đường ống khí đốt Hành lang phía Nam sang châu Âu (TANAP/TAP), hóa dầu, nông sản",
@@ -3854,15 +3854,15 @@ export const ECON = {
   },
   "Austria": {
     "tier": "adv",
-    "gdp_vi": "~525 tỷ USD (#27 thế giới)",
-    "gdp_en": "~$525B (#27 globally)",
-    "pc_vi": "~57.500 USD (PPP ~71.000 USD)",
-    "pc_en": "~$57,500 (PPP ~$71,000)",
-    "gr": "-0.4%",
+    "gdp_vi": "~535 tỷ USD (#29 thế giới)",
+    "gdp_en": "~$535B (#29 globally)",
+    "pc_vi": "~58.270 USD (PPP ~75.770 USD)",
+    "pc_en": "~$58,270 (PPP ~$75,770)",
+    "gr": "-0.7%",
     "sec": [
       71,
-      28,
-      1
+      27,
+      2
     ],
     "main_vi": "Cơ khí chính xác, linh kiện ô tô & luyện thép đặc biệt (Voestalpine, Magna), du lịch trượt tuyết dãy Alps & văn hóa cổ điển (Vienna, Salzburg), ngân hàng khu vực Trung – Đông Âu (Erste, Raiffeisen), đồ uống (Red Bull), thủy điện & lâm nghiệp",
     "main_en": "Precision machinery, automotive components & specialty steel (Voestalpine, Magna), Alpine ski & classical cultural tourism (Vienna, Salzburg), Central & Eastern European banking (Erste, Raiffeisen), beverages (Red Bull), hydropower & forestry",
@@ -3871,15 +3871,15 @@ export const ECON = {
   },
   "Australia": {
     "tier": "adv",
-    "gdp_vi": "~1.790 tỷ USD (#13 thế giới)",
-    "gdp_en": "~$1.79T (#13 globally)",
-    "pc_vi": "~66.000 USD (PPP ~70.500 USD)",
-    "pc_en": "~$66,000 (PPP ~$70,500)",
-    "gr": "+1.5%",
+    "gdp_vi": "~1.757 tỷ USD (#14 thế giới)",
+    "gdp_en": "~$1.76T (#14 globally)",
+    "pc_vi": "~64.610 USD (PPP ~72.120 USD)",
+    "pc_en": "~$64,610 (PPP ~$72,120)",
+    "gr": "+1.4%",
     "sec": [
-      72,
-      25,
-      3
+      71,
+      27,
+      2
     ],
     "main_vi": "Khai thác quặng sắt (#1 thế giới – BHP, Rio Tinto, Fortescue), lithium cứng spodumene (#1 sản xuất thế giới), khí thiên nhiên hóa lỏng (LNG) & than luyện kim, vàng (#3 thế giới), dịch vụ tài chính & quỹ hưu trí (Superannuation ~2.600 tỷ USD), giáo dục quốc tế, nông sản (thịt bò, lúa mì, len lông cừu, rượu vang)",
     "main_en": "Iron ore mining (#1 globally – BHP, Rio Tinto, Fortescue), hard-rock lithium (#1 global producer), liquefied natural gas (LNG) & metallurgical coal, gold (#3 globally), banking & compulsory superannuation funds (~$2.6T), international higher education, agribusiness (beef, wheat, merino wool, wine)",
@@ -3956,15 +3956,15 @@ export const ECON = {
   },
   "Armenia": {
     "tier": "emg",
-    "gdp_vi": "~25,4 tỷ USD",
-    "gdp_en": "~$25.4B",
-    "pc_vi": "~8.500 USD (PPP ~23.400 USD)",
-    "pc_en": "~$8,500 (PPP ~$23,400)",
-    "gr": "+6.0%",
+    "gdp_vi": "~26,0 tỷ USD (#115 thế giới)",
+    "gdp_en": "~$26.0B (#115 globally)",
+    "pc_vi": "~8.560 USD (PPP ~22.860 USD)",
+    "pc_en": "~$8,560 (PPP ~$22,860)",
+    "gr": "+5.9%",
     "sec": [
-      62,
-      27,
-      11
+      67,
+      25,
+      8
     ],
     "main_vi": "Công nghệ thông tin & phần mềm, khai thác đồng & molypden, chế tác vàng – kim cương tái xuất, rượu brandy (Ararat), kiều hối",
     "main_en": "IT & software engineering, copper & molybdenum mining, gold & diamond processing/re-exports, brandy & wine, diaspora remittances",
@@ -3973,15 +3973,15 @@ export const ECON = {
   },
   "Argentina": {
     "tier": "emg",
-    "gdp_vi": "~620 tỷ USD (#24 thế giới)",
-    "gdp_en": "~$620B (#24 globally)",
-    "pc_vi": "~13.300 USD (PPP ~28.500 USD)",
-    "pc_en": "~$13,300 (PPP ~$28,500)",
-    "gr": "-1.8%",
+    "gdp_vi": "~638 tỷ USD (#23 thế giới, #3 Mỹ Latin)",
+    "gdp_en": "~$638B (#23 globally, #3 in Latin America)",
+    "pc_vi": "~13.970 USD (PPP ~30.480 USD)",
+    "pc_en": "~$13,970 (PPP ~$30,480)",
+    "gr": "-1.3%",
     "sec": [
-      62,
+      64,
       29,
-      9
+      7
     ],
     "main_vi": "Nông sản xuất khẩu vùng đồng bằng Pampas (khô đậu tương & dầu đậu tương #1 thế giới, ngô, lúa mì, thịt bò, rượu vang Malbec), dầu khí đá phiến (mỏ Vaca Muerta lớn thứ 2 thế giới), khai thác lithium ('Tam giác Lithium'), sản xuất xe bán tải, dịch vụ phần mềm & kỳ lân công nghệ (MercadoLibre, Globant)",
     "main_en": "Pampas agribusiness exports (#1 global soybean meal & oil exporter, corn, wheat, beef, Malbec wine), shale oil & gas (Vaca Muerta – #2 global shale gas reserve), lithium mining ('Lithium Triangle'), pickup truck manufacturing, tech & software unicorns (MercadoLibre, Globant)",
@@ -3990,14 +3990,14 @@ export const ECON = {
   },
   "Antigua and Barb.": {
     "tier": "adv",
-    "gdp_vi": "~2,2 tỷ USD",
-    "gdp_en": "~$2.2B",
-    "pc_vi": "~21.500 USD (PPP ~31.000 USD)",
-    "pc_en": "~$21,500 (PPP ~$31,000)",
-    "gr": "+5.0%",
+    "gdp_vi": "~2,2 tỷ USD (#181 thế giới)",
+    "gdp_en": "~$2.2B (#181 globally)",
+    "pc_vi": "~23.060 USD (PPP ~33.350 USD)",
+    "pc_en": "~$23,060 (PPP ~$33,350)",
+    "gr": "+2.5%",
     "sec": [
-      80,
-      18,
+      79,
+      19,
       2
     ],
     "main_vi": "Du lịch nghỉ dưỡng biển cao cấp (365 bãi biển) & bến siêu du thuyền (English Harbour, tuần lễ đua thuyền Antigua Sailing Week), cảng tàu du lịch St. John's, chương trình đầu tư nhập tịch (CBI), trung tâm hàng không Đông Caribe",
@@ -4007,15 +4007,15 @@ export const ECON = {
   },
   "Angola": {
     "tier": "dev",
-    "gdp_vi": "~115 tỷ USD (#64 thế giới)",
-    "gdp_en": "~$115B (#64 globally)",
-    "pc_vi": "~3.000 USD (PPP ~8.000 USD)",
-    "pc_en": "~$3,000 (PPP ~$8,000)",
-    "gr": "+3.2%",
+    "gdp_vi": "~103 tỷ USD (#71 thế giới)",
+    "gdp_en": "~$103B (#71 globally)",
+    "pc_vi": "~2.720 USD (PPP ~9.960 USD)",
+    "pc_en": "~$2,720 (PPP ~$9,960)",
+    "gr": "+5.0%",
     "sec": [
-      42,
-      46,
-      12
+      45,
+      34,
+      21
     ],
     "main_vi": "Khai thác dầu thô ngoài khơi (#2–3 châu Phi hạ Sahara) & khí thiên nhiên hóa lỏng (Angola LNG), khai thác kim cương (#4 thế giới theo giá trị – mỏ Catoca, Luele), hành lang đường sắt khoáng sản Lobito nối vành đai đồng Congo – Zambia ra Đại Tây Dương",
     "main_en": "Offshore crude oil extraction (#2–3 in Sub-Saharan Africa) & LNG (Angola LNG), diamond mining (#4 globally by value – Catoca, Luele mines), Lobito Corridor rail logistics linking DRC/Zambia copperbelt to the Atlantic",
@@ -4024,14 +4024,14 @@ export const ECON = {
   },
   "Andorra": {
     "tier": "adv",
-    "gdp_vi": "~3,9 tỷ USD",
-    "gdp_en": "~$3.9B",
-    "pc_vi": "~46.500 USD (PPP ~68.000 USD)",
-    "pc_en": "~$46,500 (PPP ~$68,000)",
-    "gr": "+1.9%",
+    "gdp_vi": "~4,0 tỷ USD (#169 thế giới)",
+    "gdp_en": "~$4.0B (#169 globally)",
+    "pc_vi": "~49.360 USD (PPP ~75.390 USD)",
+    "pc_en": "~$49,360 (PPP ~$75,390)",
+    "gr": "+3.8%",
     "sec": [
-      88,
-      11,
+      85,
+      14,
       1
     ],
     "main_vi": "Du lịch trượt tuyết dãy Pyrenees (Grandvalira, Vallnord – đón >8 triệu khách/năm), thương mại bán lẻ thuế suất thấp (IGI chỉ 4,5%), ngân hàng tư nhân & quản lý tài sản, thu hút cư dân thu nhập cao & sáng tạo nội dung số",
@@ -4040,16 +4040,16 @@ export const ECON = {
     "note_en": "Tourism and duty-light retail generate roughly 80% of Andorra's GDP, anchored by the vast Grandvalira ski resorts (>8 million visitors annually) and a 4.5% value-added tax (IGI) that undercuts French and Spanish rates of 20–21%. Combined with a flat maximum 10% personal and corporate income tax, the principality has attracted high-net-worth residents and digital creators, though winter climate warming and housing shortages pose growing challenges."
   },
   "Algeria": {
-    "tier": "dev",
-    "gdp_vi": "~260 tỷ USD (#49 thế giới)",
-    "gdp_en": "~$260B (#49 globally)",
-    "pc_vi": "~5.600 USD (PPP ~17.000 USD)",
-    "pc_en": "~$5,600 (PPP ~$17,000)",
-    "gr": "+3.8%",
+    "tier": "emg",
+    "gdp_vi": "~269 tỷ USD (#51 thế giới)",
+    "gdp_en": "~$269B (#51 globally)",
+    "pc_vi": "~5.750 USD (PPP ~17.650 USD)",
+    "pc_en": "~$5,750 (PPP ~$17,650)",
+    "gr": "+3.7%",
     "sec": [
-      46,
-      41,
-      13
+      48,
+      37,
+      15
     ],
     "main_vi": "Khai thác khí đốt tự nhiên & LNG (tập đoàn quốc doanh Sonatrach – nhà cung cấp khí đốt qua đường ống biển lớn cho Ý và Tây Ban Nha), dầu thô, hóa dầu & phân bón (amoniac, urê), khai thác quặng sắt khổng lồ Gara Djebilet & phốt phát, nông nghiệp ngũ cốc",
     "main_en": "Natural gas & LNG exports (state giant Sonatrach – major pipeline supplier to Italy and Spain), crude oil, petrochemicals & fertilizers (ammonia, urea), Gara Djebilet iron ore & phosphate megaprojects, cereal farming",
@@ -4057,16 +4057,16 @@ export const ECON = {
     "note_en": "Africa's third-largest economy is anchored by state energy giant Sonatrach, which manages the world's tenth-largest natural gas reserves and supplies Europe via pipelines and LNG tankers. Elevated European gas demand since 2022 has enabled Algiers to amass ~$70 billion in foreign-exchange reserves, stay virtually free of external debt, and fund massive industrial diversification projects including the 3.5-billion-ton Gara Djebilet Saharan iron-ore mine, trans-Saharan railways, and petrochemical fertilizer complexes. Nonetheless, heavy reliance on hydrocarbons for ~90% of exports and a state-heavy business climate remain hurdles to private-sector job growth."
   },
   "Albania": {
-    "tier": "dev",
-    "gdp_vi": "~26,5 tỷ USD",
-    "gdp_en": "~$26.5B",
-    "pc_vi": "~9.600 USD (PPP ~21.500 USD)",
-    "pc_en": "~$9,600 (PPP ~$21,500)",
-    "gr": "+3.6%",
+    "tier": "emg",
+    "gdp_vi": "~27,0 tỷ USD (#112 thế giới)",
+    "gdp_en": "~$27.0B (#112 globally)",
+    "pc_vi": "~11.370 USD (PPP ~26.700 USD)",
+    "pc_en": "~$11,370 (PPP ~$26,700)",
+    "gr": "+4.0%",
     "sec": [
-      54,
-      27,
-      19
+      56,
+      26,
+      18
     ],
     "main_vi": "Du lịch biển Địa Trung Hải bùng nổ (Albanian Riviera – Ksamil, Vlorë, Sarandë đón >10 triệu khách/năm), thủy điện (sản xuất ~100% điện nội địa), khai thác quặng crôm (Bulqizë) & dầu thô trên bờ (Patos-Marinza), kiều hối (từ Ý, Hy Lạp), gia công dệt may – giày dép",
     "main_en": "Booming Mediterranean coastal tourism (Albanian Riviera – >10M visitors/yr), hydropower (~100% of domestic electricity), chromium ore (Bulqizë) & onshore crude oil (Patos-Marinza), diaspora remittances (Italy, Greece), footwear & apparel assembly",
@@ -4075,15 +4075,15 @@ export const ECON = {
   },
   "Afghanistan": {
     "tier": "low",
-    "gdp_vi": "~17 tỷ USD",
-    "gdp_en": "~$17B",
-    "pc_vi": "~410 USD (PPP ~2.100 USD)",
-    "pc_en": "~$410 (PPP ~$2,100)",
-    "gr": "+2.0%",
+    "gdp_vi": "~17,8 tỷ USD (#134 thế giới)",
+    "gdp_en": "~$17.8B (#134 globally)",
+    "pc_vi": "~420 USD (PPP ~2.240 USD)",
+    "pc_en": "~$420 (PPP ~$2,240)",
+    "gr": "+1.9%",
     "sec": [
-      46,
-      18,
-      36
+      48,
+      15,
+      37
     ],
     "main_vi": "Nông nghiệp tự cung tự cấp & trái cây khô (lựu, nho, nghệ tây), khai thác than đá & khoáng sản (đồng, sắt, đá quý), thương mại quá cảnh",
     "main_en": "Subsistence agriculture & dried fruits (pomegranates, raisins, saffron), coal & mineral extraction (copper, iron, gems), transit trade",
@@ -4126,11 +4126,11 @@ export const ECON = {
   },
   "Sint Maarten": {
     "tier": "adv",
-    "gdp_vi": "~1,7 tỷ USD",
-    "gdp_en": "~$1.7B",
-    "pc_vi": "~39.500 USD (PPP ~44.000 USD)",
-    "pc_en": "~$39,500 (PPP ~$44,000)",
-    "gr": "+3.2%",
+    "gdp_vi": "~1,8 tỷ USD (#183 thế giới)",
+    "gdp_en": "~$1.8B (#183 globally)",
+    "pc_vi": "~41.470 USD (PPP ~53.850 USD)",
+    "pc_en": "~$41,470 (PPP ~$53,850)",
+    "gr": "+3.0%",
     "sec": [
       86,
       13,
