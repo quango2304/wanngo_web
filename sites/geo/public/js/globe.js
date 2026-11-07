@@ -19,6 +19,7 @@ import {
   CAPITALS,
   CITIES,
   ISLANDS,
+  WATER_LABELS,
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
@@ -671,12 +672,12 @@ export function render(now) {
         ctx.beginPath();
         pathC(h.polyGeo);
         ctx.fillStyle = C.dark
-          ? mix('#A67C46', st.sel === h ? 0.50 : 0.32)
-          : mix('#B5894E', st.sel === h ? 0.46 : 0.28);
+          ? mix('#9CA3AF', st.sel === h ? 0.26 : 0.11)
+          : mix('#6B7280', st.sel === h ? 0.22 : 0.10);
         ctx.fill();
         if (st.sel === h) {
-          ctx.strokeStyle = C.dark ? '#E0BA82' : '#8A6A3A';
-          ctx.lineWidth = 1.3;
+          ctx.strokeStyle = C.dark ? '#D1D5DB' : '#4B5563';
+          ctx.lineWidth = 1.2;
           ctx.stroke();
         }
       });
@@ -802,6 +803,28 @@ export function render(now) {
     ctx.stroke();
   }
 
+  // timezone meridian lines (st.on.timezone)
+  if (st.on.timezone) {
+    ctx.beginPath();
+    for (let off = -11; off <= 12; off++) {
+      const lonB = off * 15 - 7.5;
+      pathC({ type: 'LineString', coordinates: d3.range(-75, 81, 3).map(y => [lonB, y]) });
+    }
+    ctx.setLineDash([4, 4]);
+    ctx.strokeStyle = C.dark ? 'rgba(56, 189, 248, 0.36)' : 'rgba(2, 132, 199, 0.32)';
+    ctx.lineWidth = 0.9;
+    ctx.stroke();
+
+    // International Date Line (180°)
+    ctx.beginPath();
+    pathC({ type: 'LineString', coordinates: d3.range(-75, 81, 3).map(y => [180, y]) });
+    ctx.setLineDash([6, 3]);
+    ctx.strokeStyle = C.dark ? 'rgba(251, 191, 36, 0.65)' : 'rgba(217, 119, 6, 0.65)';
+    ctx.lineWidth = 1.35;
+    ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
   // hotspot lines
   H.forEach(h => {
     if (h.kind !== 'line' || !vh(h)) return;
@@ -821,14 +844,14 @@ export function render(now) {
     } else if (h.t === 'chain') {
       ctx.setLineDash([6, 4]);
     } else if (h.t === 'mountain' || h.mtn) {
-      ctx.setLineDash([2, 5]);
+      ctx.setLineDash([3, 4]);
     } else if (h.dash) {
       ctx.setLineDash([8, 6]);
     }
-    ctx.strokeStyle = act ? c : mix(c, 0.85);
+    ctx.strokeStyle = act ? c : mix(c, h.t === 'mountain' || h.mtn ? 0.72 : 0.85);
     const baseW =
       h.t === 'mountain' || h.mtn
-        ? 3.0
+        ? 1.85
         : h.t === 'river' || h.riv
         ? k > 2.5
           ? 2.0
@@ -1087,6 +1110,140 @@ export function render(now) {
     }
   }
 
+  // 7. Ocean & Sea Labels (WATER_LABELS — default on with st.ref.labels)
+  if (st.ref.labels) {
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    for (const w of WATER_LABELS) {
+      if (w.rank === 1) {
+        if (k > 3.2) continue;
+      } else if (w.rank === 2) {
+        if (lowres || k < 1.15) continue;
+      } else {
+        if (lowres || k < 1.65) continue;
+      }
+      if (d3.geoDistance(w.pt, centerPt) > Math.PI / 2 - 0.08) continue;
+      const q = proj(w.pt);
+      if (!q) continue;
+      ctx.font =
+        w.rank === 1
+          ? 'italic 500 12.5px "Lora", Georgia, serif'
+          : w.rank === 2
+          ? 'italic 500 11.5px "Lora", Georgia, serif'
+          : 'italic 500 10.5px "Lora", Georgia, serif';
+      const nk = w.rank === 1 ? 'ocean_' + norm(w.n) : baseKey(w.n);
+      const tw = ctx.measureText(w.n).width + 8, hh = w.rank === 1 ? 16 : 14;
+      const box = [q[0] - tw / 2, q[1] - hh / 2, tw, hh];
+      if (!tryPlace(box, nk)) continue;
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = C.dark ? 'rgba(10, 22, 40, 0.72)' : 'rgba(205, 228, 246, 0.78)';
+      ctx.strokeText(w.n, q[0], q[1]);
+      ctx.fillStyle =
+        w.rank === 1
+          ? C.dark
+            ? 'rgba(135, 185, 238, 0.56)'
+            : 'rgba(28, 86, 142, 0.52)'
+          : C.dark
+          ? 'rgba(148, 198, 245, 0.68)'
+          : 'rgba(24, 90, 150, 0.62)';
+      ctx.fillText(w.n, q[0], q[1]);
+    }
+  }
+
+  // 8. Timezone AM/PM Clock Badges (st.on.timezone)
+  if (st.on.timezone) {
+    const utcMin = Math.floor(Date.now() / 60000);
+    const fmtTz = offHours => {
+      const total = (((utcMin + Math.round(offHours * 60)) % 1440) + 1440) % 1440;
+      const h24 = Math.floor(total / 60);
+      const m = total % 60;
+      const ampm = h24 >= 12 ? 'PM' : 'AM';
+      const h12 = h24 % 12 || 12;
+      const mm = m < 10 ? '0' + m : '' + m;
+      const isDay = h24 >= 6 && h24 < 18;
+      return { time: `${h12}:${mm} ${ampm}`, isDay };
+    };
+    const drawTzBadge = (pt, topTxt, subTxt, isDay) => {
+      if (d3.geoDistance(pt, centerPt) > Math.PI / 2 - 0.08) return;
+      const q = proj(pt);
+      if (!q) return;
+      ctx.font = '600 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+      const w1 = ctx.measureText(topTxt).width;
+      ctx.font = '500 9.5px "Be Vietnam Pro",system-ui,sans-serif';
+      const w2 = ctx.measureText(subTxt).width;
+      const bw = Math.max(w1 + 14, w2 + 12, 56);
+      const bh = 28;
+      const bx = q[0] - bw / 2, by = q[1] - bh / 2;
+      if (!tryPlace([bx - 2, by - 2, bw + 4, bh + 4])) return;
+
+      ctx.beginPath();
+      if (ctx.roundRect) ctx.roundRect(bx, by, bw, bh, 6);
+      else ctx.rect(bx, by, bw, bh);
+      ctx.fillStyle = C.dark ? 'rgba(13, 22, 36, 0.88)' : 'rgba(255, 255, 255, 0.90)';
+      ctx.fill();
+      ctx.lineWidth = 1;
+      ctx.strokeStyle = isDay
+        ? C.dark
+          ? 'rgba(251, 191, 36, 0.55)'
+          : 'rgba(217, 119, 6, 0.50)'
+        : C.dark
+        ? 'rgba(56, 189, 248, 0.50)'
+        : 'rgba(2, 132, 199, 0.45)';
+      ctx.stroke();
+
+      // Day/Night indicator dot
+      ctx.beginPath();
+      ctx.arc(bx + 8, by + 9.5, 2.6, 0, 7);
+      ctx.fillStyle = isDay ? '#F59E0B' : '#38BDF8';
+      ctx.fill();
+
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.font = '600 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+      ctx.fillStyle = C.dark ? '#F8FAFC' : '#0F172A';
+      ctx.fillText(topTxt, q[0] + 3, by + 9.5);
+
+      ctx.font = '500 9px "Be Vietnam Pro",system-ui,sans-serif';
+      ctx.fillStyle = isDay
+        ? C.dark
+          ? '#FCD34D'
+          : '#B45309'
+        : C.dark
+        ? '#7DD3FC'
+        : '#0369A1';
+      ctx.fillText(subTxt, q[0], by + 20.5);
+    };
+
+    const latTz = Math.max(-52, Math.min(58, centerPt[1]));
+    const offsets = d3.range(-11, 13).sort((a, b) => {
+      const la = a === 12 ? 180 : a * 15;
+      const lb = b === 12 ? 180 : b * 15;
+      return d3.geoDistance([la, latTz], centerPt) - d3.geoDistance([lb, latTz], centerPt);
+    });
+    for (const off of offsets) {
+      const lonC = off === 12 ? 180 : off * 15;
+      const { time, isDay } = fmtTz(off);
+      const lbl = off === 0 ? 'UTC±0' : off === 12 ? 'UTC±12' : `UTC${off > 0 ? '+' + off : off}`;
+      drawTzBadge([lonC, latTz], time, lbl, isDay);
+    }
+
+    if (k >= 1.45) {
+      const specials = [
+        { pt: [79.0, 22.0], off: 5.5, sub: 'Ấn Độ · UTC+5:30' },
+        { pt: [53.5, 32.5], off: 3.5, sub: 'Iran · UTC+3:30' },
+        { pt: [66.0, 33.8], off: 4.5, sub: 'Afghan · UTC+4:30' },
+        { pt: [96.5, 20.5], off: 6.5, sub: 'Myanmar · UTC+6:30' },
+        { pt: [84.0, 28.2], off: 5.75, sub: 'Nepal · UTC+5:45' },
+        { pt: [134.5, -25.0], off: 9.5, sub: 'Trung Úc · UTC+9:30' },
+        { pt: [86.0, 41.5], off: 8.0, sub: 'Tân Cương (giờ BK) · UTC+8' }
+      ];
+      for (const sp of specials) {
+        const { time, isDay } = fmtTz(sp.off);
+        drawTzBadge(sp.pt, time, sp.sub, isDay);
+      }
+    }
+  }
+
   // hotspot points
   H.forEach(h => {
     if (h.kind !== 'pt' || !vh(h)) return;
@@ -1178,6 +1335,8 @@ export function render(now) {
   ctx.fill();
 }
 
+let lastTzTick = 0;
+
 function needsAnim() {
   return st.spin || st.on.conflict || st.on.route;
 }
@@ -1186,6 +1345,10 @@ export function loop(now) {
   if (st.spin && !st.drag) {
     const r = proj.rotate();
     proj.rotate([r[0] + 0.06, r[1], r[2]]);
+    st.dirty = true;
+  }
+  if (st.on.timezone && now - lastTzTick > 15000) {
+    lastTzTick = now;
     st.dirty = true;
   }
   if (st.dirty || needsAnim()) {
@@ -1410,7 +1573,7 @@ export function pick(mx, my) {
   }
 
   // 5. Major Lakes
-  if (st.on.river && MAP.LAKES.length) {
+  if (MAP.LAKES.length) {
     const lk = MAP.LAKES.find(l => inBB(l, ll) && d3.geoContains(l.geo, ll));
     if (lk) return lk;
   }

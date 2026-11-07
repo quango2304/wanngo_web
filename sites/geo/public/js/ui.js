@@ -14,6 +14,7 @@ import {
   st,
   C,
   readTheme,
+  savePrefs,
   on,
   ADMIN_LAYERS,
   DEFAULT_ON,
@@ -549,12 +550,14 @@ export function select(o, fly) {
 }
 
 export function buildLayers() {
+  st.on.ice = true;
+  savePrefs();
   const tgl = ([key, L]) =>
     `<div class="tg${st.on[key] ? ' on' : ''}" data-l="${key}"><span class="dot" style="background:${L.c}"></span>${L.n}<span class="sw"></span></div>`;
 
   const hotEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'hot');
   const infraEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'infra');
-  const natEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'nat');
+  const natEntries = Object.entries(LAYERS).filter(e => e[1].grp === 'nat' && e[0] !== 'ice');
   const admEntries = Object.entries(ADMIN_LAYERS);
 
   $('#lyHot').innerHTML = hotEntries.map(tgl).join('');
@@ -572,6 +575,7 @@ export function buildLayers() {
     e =>
       (e.onclick = () => {
         st.on[e.dataset.l] = !st.on[e.dataset.l];
+        savePrefs();
         buildLayers();
         st.dirty = true;
       })
@@ -589,6 +593,7 @@ export function buildLayers() {
       e =>
         (e.onclick = () => {
           st.ref[e.dataset.r] = !st.ref[e.dataset.r];
+          savePrefs();
           buildLayers();
           st.dirty = true;
         })
@@ -599,6 +604,7 @@ export function setAl(key) {
   const alSel = $('#alSel');
   st.al = key || '';
   alSel.value = st.al;
+  savePrefs();
   st.dirty = true;
   const lg = $('#legend');
   if (!st.al) {
@@ -682,6 +688,8 @@ export function initUI() {
   if (lyDef) {
     lyDef.onclick = () => {
       Object.assign(st.on, DEFAULT_ON);
+      st.on.ice = true;
+      savePrefs();
       buildLayers();
       st.dirty = true;
     };
@@ -689,7 +697,8 @@ export function initUI() {
   const lyOff = $('#lyOff');
   if (lyOff) {
     lyOff.onclick = () => {
-      Object.keys(st.on).forEach(k2 => (st.on[k2] = false));
+      Object.keys(st.on).forEach(k2 => (st.on[k2] = k2 === 'ice'));
+      savePrefs();
       buildLayers();
       st.dirty = true;
     };
@@ -709,7 +718,10 @@ export function initUI() {
 
   $('#layBtn').onclick = () => {
     $('#layers').classList.toggle('hide');
-    $('#layBtn').classList.toggle('on', !$('#layers').classList.contains('hide'));
+    const isHidden = $('#layers').classList.contains('hide');
+    $('#layBtn').classList.toggle('on', !isHidden);
+    st.drawerHide = isHidden;
+    savePrefs();
   };
 
   // Search
@@ -818,6 +830,7 @@ export function initUI() {
   $('#spin').onclick = () => {
     st.spin = !st.spin;
     $('#spin').classList.toggle('on', st.spin);
+    savePrefs();
   };
   $('#theme').onclick = () => {
     const cur = C.dark ? 'dark' : 'light';
@@ -834,12 +847,11 @@ export function initUI() {
     if (e.key === 'Escape' && document.activeElement !== q) closePanel();
   });
 
-  $('#spin').classList.add('on');
-  if (innerWidth < 760) {
-    $('#layers').classList.add('hide');
-  } else {
-    $('#layBtn').classList.add('on');
-  }
+  $('#spin').classList.toggle('on', !!st.spin);
+  const hideDrawer = typeof st.drawerHide === 'boolean' ? st.drawerHide : innerWidth < 760;
+  $('#layers').classList.toggle('hide', hideDrawer);
+  $('#layBtn').classList.toggle('on', !hideDrawer);
+  if (st.al && AL[st.al]) setAl(st.al);
 
   buildLayers();
 }
