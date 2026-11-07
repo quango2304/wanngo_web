@@ -1,5 +1,5 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0 } from '../data/countries.js';
+import { C0 } from '../data/countries.js?v=20261107b';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL, REF } from '../data/alliances.js';
 import {
@@ -43,7 +43,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261107';
+} from './state.js?v=20261107b';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');

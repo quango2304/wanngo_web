@@ -1,5 +1,5 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0, TOOLS } from '../data/countries.js';
+import { C0, TOOLS } from '../data/countries.js?v=20261107b';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
 import { iconSvg } from './icons.js';
@@ -59,7 +59,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261107';
+} from './state.js?v=20261107b';
 import {
   cv,
   proj,
@@ -75,7 +75,7 @@ import {
   stopSpin,
   inBB,
   rebuildSearchIndex
-} from './globe.js?v=20261107';
+} from './globe.js?v=20261107b';
 
 const P = $('#panel');
 const PB = $('#pbody');
