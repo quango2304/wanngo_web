@@ -442,7 +442,7 @@ export const C0 = {
   },
   "Malaysia": {
     "cap": "Kuala Lumpur (hành chính: Putrajaya)",
-    "pop": "~34 triệu",
+    "pop": "~35,6 triệu",
     "area": "330 nghìn km²",
     "sum": "Lãnh thổ Malaysia gồm hai nửa tách rời nhau hơn 600 km qua Biển Đông: Tây Malaysia trên bán đảo Mã Lai và Đông Malaysia (Sabah, Sarawak) trên đảo Borneo. Bán đảo Mã Lai với dãy núi Titiwangsa kiểm soát toàn bộ bờ bắc eo biển Malacca, trong khi vùng Đông Malaysia sở hữu rừng mưa nguyên sinh và trữ lượng dầu khí lớn. Từ Vương quốc thương cảng Malacca thế kỷ 15 qua thời thuộc địa Anh, Liên bang Malaysia hình thành năm 1963 khi hợp nhất bán đảo Mã Lai với Sabah và Sarawak.\n\nMalaysia vận hành chế độ quân chủ lập hiến liên bang luân phiên độc đáo (9 vị Quốc vương các bang thay nhau làm Vua mỗi 5 năm) trong xã hội đa sắc tộc Mã Lai, Hoa, Ấn. Nhờ nguồn thu dầu khí từ Petronas và hạ tầng hiện đại, nước này trở thành cứ điểm đóng gói bán dẫn hàng đầu tại Penang và trung tâm dữ liệu AI tại Johor. Giai đoạn 2025–2026 (Chủ tịch ASEAN 2025), Malaysia đẩy mạnh Đặc khu Kinh tế Johor – Singapore và giữ ngoại giao cân bằng để tiến lên ngưỡng thu nhập cao.",
     "t": [
@@ -589,7 +589,7 @@ export const C0 = {
   },
   "Thailand": {
     "cap": "Bangkok",
-    "pop": "~66 triệu",
+    "pop": "~71,7 triệu",
     "area": "513 nghìn km²",
     "sum": "Nằm ở trung tâm bán đảo Đông Dương, lãnh thổ Thái Lan có vùng lõi là đồng bằng sông Chao Phraya trù phú, cao nguyên Khorat (Isan) ở phía đông bắc, núi cao phía bắc và bán đảo Mã Lai vươn dài ở phía nam. Vị trí ấy giúp Thái Lan sở hữu hai mặt tiền biển là vịnh Thái Lan và biển Andaman (Ấn Độ Dương), ngăn cách bởi eo đất Kra nơi hẹp nhất chỉ rộng 44 km. Thời thực dân thế kỷ 19, Vương quốc Xiêm dưới triều Chakri là nước duy nhất ở Đông Nam Á giữ được độc lập nhờ cải cách hiện đại hóa và làm vùng đệm giữa Anh và Pháp.\n\nXã hội Thái Lan gắn với ba trụ cột 'Dân tộc – Phật giáo – Quốc vương', dù chính trường thường chứng kiến sự giằng co giữa giới bảo hoàng – quân đội với các lực lượng cải cách trẻ. Nhờ 'ngoại giao cây sậy' linh hoạt giữa Mỹ và Trung Quốc, Thái Lan đã vươn lên thành nền kinh tế lớn thứ hai ASEAN và trung tâm sản xuất ô tô ('Detroit của châu Á'). Giai đoạn 2025–2026, Bangkok xúc tiến dự án 'Cầu đất liền' (Landbridge) nối tắt hai đại dương nhưng đối mặt tăng trưởng chậm lại, nợ hộ gia đình cao và già hóa dân số.",
     "t": [
@@ -898,7 +898,7 @@ export const C0 = {
   },
   "Nepal": {
     "cap": "Kathmandu",
-    "pop": "~31 triệu",
+    "pop": "~29,7 triệu",
     "area": "147 nghìn km²",
     "sum": "Nằm vắt ngang sườn nam dãy Himalaya, Nepal có độ chênh địa hình dốc nhất hành tinh: từ đồng bằng Terai cao dưới 100 m ở phía nam vọt lên đỉnh Everest cao 8.848,86 m ở biên giới phía bắc chỉ trong hơn 100 km. Không giáp biển và bị kẹp giữa Tây Tạng (Trung Quốc) ở phía bắc với Ấn Độ ở ba phía nam, đông, tây, vị vua lập quốc thế kỷ 18 đã ví Nepal như 'củ khoai nằm giữa hai tảng đá khổng lồ'. Chưa từng bị thực dân Anh đô hộ hoàn toàn nhờ núi cao hiểm trở và các chiến binh Gurkha dũng mãnh, Nepal đã xóa bỏ chế độ quân chủ Hindu 240 năm vào năm 2008 để lập nước cộng hòa liên bang.\n\nXã hội Nepal (31 triệu dân) giao thoa giữa văn hóa Ấn – Arya ở vùng thấp và văn hóa Tạng – Miến trên vùng núi cao, nơi có vườn Lâm Tỳ Ni (Lumbini) — nơi Đức Phật đản sinh. Do bức tường Himalaya chắn phía bắc, nền kinh tế và đời sống của Nepal gắn chặt vào Ấn Độ qua đường biên giới mở và tỷ giá đồng tiền neo cố định. Giai đoạn 2025–2026, bên cạnh nguồn kiều hối nuôi sống các gia đình, Nepal đang đẩy mạnh xuất khẩu thủy điện Himalaya sang Ấn Độ và Bangladesh.",
     "t": [
@@ -1156,7 +1156,7 @@ export const C0 = {
   },
   "Turkmenistan": {
     "cap": "Ashgabat",
-    "pop": "~7 triệu",
+    "pop": "~7,5 triệu",
     "area": "491 nghìn km²",
     "sum": "Trải rộng 491.210 km² ở tây nam Trung Á giữa biển Caspi và sông Amu Darya, Turkmenistan có hơn 80% diện tích bị bao phủ bởi sa mạc cát đen Karakum khô hạn. Hầu hết dân cư (~7 triệu người) và thủ đô đá cẩm thạch trắng Ashgabat nằm thành dải hẹp dưới chân dãy núi Kopet Dag giáp Iran, sống nhờ dòng kênh đào nhân tạo Karakum dài nhất thế giới. Từng là quê hương của các bộ tộc kỵ binh Turkmen dọc ốc đảo cổ Merv và kháng cự quyết liệt trước Đế quốc Nga cuối thế kỷ 19, Turkmenistan thuộc Liên Xô trước khi độc lập năm 1991.\n\nTừ năm 1991, đất nước vận hành thể chế tổng thống tập quyền khép kín bậc nhất thế giới, chuyển giao quyền lực từ ông Gurbanguly Berdimuhamedow sang con trai là Tổng thống Serdar Berdimuhamedow vào năm 2022. Về đối ngoại, Ashgabat giữ quy chế 'Trung lập Vĩnh viễn' được Liên Hợp Quốc công nhận năm 1995, không tham gia bất kỳ liên minh quân sự hay kinh tế nào. Ngồi trên trữ lượng khí đốt lớn thứ tư thế giới (mỏ Galkynysh), thách thức của Turkmenistan giai đoạn 2025–2026 là quá phụ thuộc vào việc bán khí đốt cho Trung Quốc và nguy cơ thiếu nước sông Amu Darya.",
     "t": [
@@ -1264,7 +1264,7 @@ export const C0 = {
     "cap": "Tbilisi",
     "pop": "~3,7 triệu",
     "area": "69,7 nghìn km²",
-    "sum": "Nằm kẹp giữa bức tường núi Đại Kavkaz cao trên 5.000 m ở phía bắc và dãy Tiểu Kavkaz ở phía nam, Gruzia (Georgia) sở hữu mặt tiền Biển Đen quý giá mở ra từ thung lũng sông Rioni và Kura. Vị trí địa lý độc nhất vô nhị này biến Gruzia thành nút cổ chai duy nhất cho phép các đường ống dầu khí và tuyến vận tải từ biển Caspi cùng Trung Á đi sang châu Âu mà không phải bước qua lãnh thổ Nga hay Iran. Là một trong những quốc gia Kitô giáo Chính thống cổ xưa nhất thế giới (từ thế kỷ 4) với chữ viết và ngôn ngữ riêng biệt, Gruzia từng bị Đế quốc Nga sáp nhập thế kỷ 19 và giành lại độc lập năm 1991 khi Liên Xô tan rã.\n\nKể từ cuộc Cách mạng Hoa hồng (2003) và cuộc chiến 5 ngày với Nga năm 2008 khiến 20% lãnh thổ rơi vào tay phe ly khai, xã hội Gruzia luôn giằng xé giữa khát vọng hội nhập phương Tây của người dân với nỗi sợ bị Moskva trừng phạt. Trong giai đoạn 2024–2026, chính trường Tbilisi rơi vào khủng hoảng sâu sắc khi đảng cầm quyền \"Giấc mơ Gruzia\" thông qua các đạo luật gây tranh cãi và đóng băng đàm phán gia nhập EU đến năm 2028, châm ngòi cho các cuộc biểu tình lớn. Dẫu vậy, nền kinh tế Gruzia vẫn tăng trưởng ấn tượng nhờ bùng nổ thương mại quá cảnh qua \"Hành lang Trung tâm\" (Middle Corridor) nối Trung Quốc – Trung Á với châu Âu.",
+    "sum": "Nằm kẹp giữa bức tường núi Đại Kavkaz cao trên 5.000 m ở phía bắc và dãy Tiểu Kavkaz ở phía nam, Gruzia (Georgia) sở hữu mặt tiền Biển Đen quý giá mở ra từ thung lũng sông Rioni và Kura. Vị trí địa lý độc nhất vô nhị này biến Gruzia thành nút cổ chai duy nhất cho phép các đường ống dầu khí và tuyến vận tải từ biển Caspi cùng Trung Á đi sang châu Âu mà không phải bước qua lãnh thổ Nga hay Iran. Là một trong những quốc gia Kitô giáo Chính thống cổ xưa nhất thế giới (từ thế kỷ 4) với chữ viết và ngôn ngữ riêng biệt, Gruzia từng bị Đế quốc Nga sáp nhập thế kỷ 19 và giành lại độc lập năm 1991 khi Liên Xô tan rã.\n\nKể từ cuộc Cách mạng Hoa hồng (2003) và cuộc chiến 5 ngày với Nga năm 2008 (sau đó Moskva công nhận độc lập của Abkhazia và Nam Ossetia, khoảng 20% lãnh thổ), xã hội Gruzia luôn giằng xé giữa khát vọng hội nhập phương Tây của người dân với nỗi sợ bị Moskva trừng phạt. Trong giai đoạn 2024–2026, chính trường Tbilisi rơi vào khủng hoảng sâu sắc khi đảng cầm quyền \"Giấc mơ Gruzia\" thông qua các đạo luật gây tranh cãi và gác lại tiến trình gia nhập EU đến năm 2028, châm ngòi cho các cuộc biểu tình lớn và các lệnh trừng phạt của phương Tây; cuối năm 2026, đảng này còn đề nghị Tòa án Hiến pháp cấm các đảng đối lập chính. Dẫu vậy, nền kinh tế Gruzia vẫn tăng trưởng ấn tượng nhờ bùng nổ thương mại quá cảnh qua \"Hành lang Trung tâm\" (Middle Corridor) nối Trung Quốc – Trung Á với châu Âu.",
     "t": [
       [
         "m",
@@ -1294,14 +1294,16 @@ export const C0 = {
     ],
     "hs": [
       "caucasus",
-      "bosphorus"
+      "bosphorus",
+      "abkhazia",
+      "blacksea"
     ]
   },
   "Armenia": {
     "cap": "Yerevan",
     "pop": "~3 triệu",
     "area": "29,7 nghìn km²",
-    "sum": "Nằm trên cao nguyên núi lửa Nam Kavkaz có độ cao trung bình 1.800 m so với mực nước biển, Armenia là một quốc gia không giáp biển được bao bọc bởi các dãy núi Tiểu Kavkaz và ôm trọn hồ nước ngọt Sevan rộng lớn. Là quốc gia đầu tiên trong lịch sử nhân loại công nhận Kitô giáo là quốc đạo vào năm 301 SCN, dân tộc Armenia mang bản sắc văn hóa cổ xưa gắn liền với biểu tượng núi thiêng Ararat (nay nằm bên kia biên giới Thổ Nhĩ Kỳ). Bi kịch diệt chủng người Armenia năm 1915 dưới thời Đế chế Ottoman cùng sự phân chia lãnh thổ thời Liên Xô đã tạo nên một cộng đồng kiều dân (diaspora) đông gấp ba lần dân số trong nước và những tranh chấp biên giới dai dẳng.\n\nSau ba thập kỷ xung đột với Azerbaijan, việc Baku tái chiếm toàn bộ vùng Nagorno-Karabakh vào năm 2020 và tháng 9/2023 (khiến hơn 100.000 người Armenia di tản) đã tạo ra bước ngoặt lịch sử đối với Yerevan. Trong giai đoạn 2024–2026, Thủ tướng Nikol Pashinyan thực hiện xoay trục chiến lược khi đóng băng tư cách thành viên trong khối quân sự CSTO do Nga đứng đầu, mua vũ khí của Pháp và Ấn Độ, thông qua luật hướng tới gia nhập EU và đàm phán hiệp ước hòa bình lịch sử với Azerbaijan. Thách thức sống còn của Armenia hiện nay là phá vỡ thế bị phong tỏa 80% đường biên giới và giữ vững chủ quyền tỉnh cực nam Syunik trước sức ép mở hành lang Zangezur.",
+    "sum": "Nằm trên cao nguyên núi lửa Nam Kavkaz có độ cao trung bình 1.800 m so với mực nước biển, Armenia là một quốc gia không giáp biển được bao bọc bởi các dãy núi Tiểu Kavkaz và ôm trọn hồ nước ngọt Sevan rộng lớn. Là quốc gia đầu tiên trong lịch sử nhân loại công nhận Kitô giáo là quốc đạo vào năm 301 SCN, dân tộc Armenia mang bản sắc văn hóa cổ xưa gắn liền với biểu tượng núi thiêng Ararat (nay nằm bên kia biên giới Thổ Nhĩ Kỳ). Bi kịch diệt chủng người Armenia năm 1915 dưới thời Đế chế Ottoman cùng sự phân chia lãnh thổ thời Liên Xô đã tạo nên một cộng đồng kiều dân (diaspora) đông gấp ba lần dân số trong nước và những tranh chấp biên giới dai dẳng.\n\nSau ba thập kỷ xung đột với Azerbaijan, việc Baku giành lại 7 huyện phụ cận cùng một phần Nagorno-Karabakh năm 2020 rồi toàn bộ vùng này vào tháng 9/2023 (khiến hơn 100.000 người Armenia di tản) đã tạo ra bước ngoặt lịch sử đối với Yerevan. Trong giai đoạn 2024–2026, Thủ tướng Nikol Pashinyan thực hiện xoay trục chiến lược khi đóng băng tư cách thành viên trong khối quân sự CSTO do Nga đứng đầu, mua vũ khí của Pháp và Ấn Độ, thông qua luật khởi động tiến trình xin gia nhập EU (3/2025) và ký tắt hiệp định hòa bình với Azerbaijan tại Nhà Trắng (8/8/2025); tháng 6/2026, đảng Khế ước Dân sự của ông tái đắc cử với đa số ghế. Thách thức sống còn của Armenia hiện nay là phá vỡ thế bị phong tỏa 80% đường biên giới và giữ vững chủ quyền tỉnh cực nam Syunik, nơi tuyến quá cảnh TRIPP do Mỹ bảo trợ nối Azerbaijan với Nakhchivan sẽ đi qua.",
     "t": [
       [
         "g",
@@ -1311,7 +1313,7 @@ export const C0 = {
       [
         "b",
         "Không giáp biển; 80% đường biên giới (với Thổ Nhĩ Kỳ và Azerbaijan) bị phong tỏa",
-        "Không giáp biển và bị hai láng giềng Thổ Nhĩ Kỳ (phía tây) cùng Azerbaijan (phía đông) đóng chặt hơn 80% tổng chiều dài biên giới trên bộ suốt từ đầu thập niên 1990. Mọi hoạt động xuất nhập khẩu của Armenia đều phải đi qua hai huyết mạch hẹp: hướng bắc qua đèo núi sang các cảng Biển Đen của Gruzia (chiếm ~70% ngoại thương) và hướng nam qua cầu sông Aras sang Iran."
+        "Không giáp biển và bị hai láng giềng Thổ Nhĩ Kỳ (phía tây) cùng Azerbaijan (phía đông) đóng chặt hơn 80% tổng chiều dài biên giới trên bộ suốt từ đầu thập niên 1990. Mọi hoạt động xuất nhập khẩu của Armenia đều phải đi qua hai huyết mạch hẹp: hướng bắc qua đèo núi sang các cảng Biển Đen của Gruzia (tuyến chính của ngoại thương) và hướng nam qua cầu sông Aras sang Iran."
       ],
       [
         "m",
@@ -1320,13 +1322,13 @@ export const C0 = {
       ],
       [
         "b",
-        "Thất bại tại Nagorno-Karabakh (2020, 2023) và sức ép mở hành lang Zangezur",
-        "Sau thất bại quân sự tại Nagorno-Karabakh (2020, 2023) và việc lực lượng Nga không can thiệp, Yerevan đã đình chỉ hoạt động trong khối CSTO và yêu cầu biên phòng Nga rút khỏi sân bay Zvartnots cùng biên giới Iran năm 2024. Trọng tâm an ninh hiện dồn vào tỉnh cực nam Syunik — dải đất hẹp 40 km ngăn cách Azerbaijan với vùng Nakhchivan, nơi Baku đòi mở \"Hành lang Zangezur\" còn Yerevan đề xuất sáng kiến \"Ngã tư Hòa bình\" dưới chủ quyền Armenia."
+        "Thất bại tại Nagorno-Karabakh (2020, 2023) và tuyến quá cảnh qua Syunik",
+        "Sau thất bại quân sự tại Nagorno-Karabakh (2020, 2023) và việc lực lượng Nga không can thiệp, Yerevan đã đình chỉ hoạt động trong khối CSTO và yêu cầu biên phòng Nga rút khỏi sân bay Zvartnots (2024) và cửa khẩu Agarak với Iran (từ 2025). Trọng tâm an ninh hiện dồn vào tỉnh cực nam Syunik, dải đất hẹp khoảng 40 km ngăn cách Azerbaijan với vùng Nakhchivan, nơi Baku từng đòi mở \"Hành lang Zangezur\"; theo thỏa thuận Washington (8/2025), tuyến TRIPP (đường sắt, đường bộ, đường điện) do một liên doanh có Mỹ tham gia phát triển nhưng vẫn thuộc quyền tài phán của Armenia."
       ],
       [
         "g",
         "Hồ Sevan và các sông núi nội địa đáp ứng nhu cầu nước ngọt",
-        "Hồ núi cao Sevan ở độ cao 1.900 m (chiếm 1/6 diện tích đất nước) chứa tới 80% trữ lượng nước ngọt của Armenia, kết hợp cùng băng tuyết tan trên núi giúp quốc gia này tự chủ nguồn nước sinh hoạt. Nước ngọt từ các sông Debed và Vorotan của Armenia còn chảy xuống hạ nguồn sang Gruzia và Azerbaijan, dù hệ thống thủy lợi nội địa vẫn chịu thất thoát lớn."
+        "Hồ núi cao Sevan ở độ cao 1.900 m (lưu vực của hồ chiếm khoảng 1/6 diện tích đất nước) chứa phần lớn nước mặt của Armenia, kết hợp cùng băng tuyết tan trên núi giúp quốc gia này tự chủ nguồn nước sinh hoạt. Nước ngọt từ các sông Debed và Vorotan của Armenia còn chảy xuống hạ nguồn sang Gruzia và Azerbaijan, dù hệ thống thủy lợi nội địa vẫn chịu thất thoát lớn."
       ]
     ],
     "hs": [
@@ -1337,7 +1339,7 @@ export const C0 = {
     "cap": "Baku",
     "pop": "~10,4 triệu",
     "area": "86,6 nghìn km²",
-    "sum": "Nằm ở bờ tây biển Caspi với bán đảo Absheron vươn ra vùng mỏ dầu khí khổng lồ, Azerbaijan được bao bọc bởi dãy núi Đại Kavkaz ở phía bắc giáp Nga và dãy Tiểu Kavkaz ở phía tây giáp Armenia. Là mảnh đất của những ngọn lửa vĩnh cửu phun lên từ lòng đất đá vôi giàu khí đốt, Baku từng cung cấp một nửa sản lượng dầu mỏ của toàn thế giới vào đầu thế kỷ 20 và là mục tiêu chiến lược mà quân đội Hitler ráo riết nhắm tới năm 1942. Sau khi Liên Xô sụp đổ năm 1991, quốc gia Hồi giáo thế tục nói tiếng hệ Turk này từng mất quyền kiểm soát vùng Nagorno-Karabakh và 7 huyện phụ cận vào tay lực lượng Armenia trong cuộc chiến đầu thập niên 1990.\n\nTrong suốt ba thập kỷ dưới sự lãnh đạo của gia tộc Aliyev (Heydar và Ilham Aliyev), Azerbaijan đã kiên trì biến doanh thu dầu khí thành tiềm lực quân sự hiện đại vượt trội cùng liên minh chiến lược \"Một dân tộc, hai quốc gia\" với Thổ Nhĩ Kỳ. Sau chiến thắng bằng UAV năm 2020 và chiến dịch chớp nhoáng chỉ kéo dài 24 giờ vào tháng 9/2023, Baku đã khôi phục toàn vẹn chủ quyền trên toàn bộ vùng Karabakh và tổ chức Hội nghị thượng đỉnh khí hậu COP29 năm 2024 để khẳng định vị thế quốc tế. Bước sang 2025–2026, Azerbaijan vừa là nhà cung cấp khí đốt thay thế quan trọng cho châu Âu vừa là mắt xích trung tâm của Hành lang Trung tâm, đồng thời thúc đẩy kết nối đất liền với vùng tách rời Nakhchivan.",
+    "sum": "Nằm ở bờ tây biển Caspi với bán đảo Absheron vươn ra vùng mỏ dầu khí khổng lồ, Azerbaijan được bao bọc bởi dãy núi Đại Kavkaz ở phía bắc giáp Nga và dãy Tiểu Kavkaz ở phía tây giáp Armenia. Là mảnh đất của những ngọn lửa vĩnh cửu phun lên từ lòng đất đá vôi giàu khí đốt, Baku từng cung cấp một nửa sản lượng dầu mỏ của toàn thế giới vào đầu thế kỷ 20 và là mục tiêu chiến lược mà quân đội Hitler ráo riết nhắm tới năm 1942. Sau khi Liên Xô sụp đổ năm 1991, quốc gia Hồi giáo thế tục nói tiếng hệ Turk này từng mất quyền kiểm soát vùng Nagorno-Karabakh và 7 huyện phụ cận vào tay lực lượng Armenia trong cuộc chiến đầu thập niên 1990.\n\nTrong suốt ba thập kỷ dưới sự lãnh đạo của gia tộc Aliyev (Heydar và Ilham Aliyev), Azerbaijan đã kiên trì biến doanh thu dầu khí thành tiềm lực quân sự hiện đại vượt trội cùng liên minh chiến lược \"Một dân tộc, hai quốc gia\" với Thổ Nhĩ Kỳ. Sau chiến thắng bằng UAV năm 2020 và chiến dịch chớp nhoáng chỉ kéo dài 24 giờ vào tháng 9/2023, Baku đã khôi phục toàn vẹn chủ quyền trên toàn bộ vùng Karabakh và tổ chức Hội nghị thượng đỉnh khí hậu COP29 năm 2024 để khẳng định vị thế quốc tế. Bước sang 2025–2026, Azerbaijan vừa là nhà cung cấp khí đốt thay thế quan trọng cho châu Âu vừa là mắt xích trung tâm của Hành lang Trung tâm, đồng thời ký tắt hiệp định hòa bình với Armenia tại Washington (8/2025), mở đường cho tuyến TRIPP qua miền nam Armenia nối với vùng tách rời Nakhchivan.",
     "t": [
       [
         "g",
@@ -1357,16 +1359,17 @@ export const C0 = {
       [
         "m",
         "Vùng đất tách rời Nakhchivan bị lãnh thổ Armenia ngăn cách",
-        "Lãnh thổ Azerbaijan bị chia cắt khi vùng tự trị Nakhchivan (giáp Thổ Nhĩ Kỳ và Iran) bị tỉnh Syunik của Armenia ngăn cách khỏi đất liền chính quốc. Sau khi khép lại hồ sơ Karabakh và yêu cầu lực lượng gìn giữ hòa bình Nga rút quân sớm vào tháng 4/2024, ưu tiên địa chính trị hàng đầu của Baku là mở tuyến giao thông Zangezur nối thẳng đất liền Azerbaijan qua miền nam Armenia hoặc qua ngả Iran (Hành lang Aras) sang Thổ Nhĩ Kỳ."
+        "Lãnh thổ Azerbaijan bị chia cắt khi vùng tự trị Nakhchivan (giáp Thổ Nhĩ Kỳ và Iran) bị tỉnh Syunik của Armenia ngăn cách khỏi đất liền chính quốc. Sau khi khép lại hồ sơ Karabakh và yêu cầu lực lượng gìn giữ hòa bình Nga rút quân sớm vào tháng 4/2024, ưu tiên hàng đầu của Baku là tuyến giao thông nối đất liền với Nakhchivan: thỏa thuận Washington (8/2025) thống nhất tuyến TRIPP qua tỉnh Syunik của Armenia, song song với Hành lang Aras qua lãnh thổ Iran."
       ],
       [
         "b",
         "Hạ nguồn sông Kura và Aras chảy từ Thổ Nhĩ Kỳ, Gruzia, Armenia",
-        "Bất lợi địa lý lớn nhất của Azerbaijan là an ninh nguồn nước: khoảng 70% lượng nước ngọt bề mặt của đất nước chảy từ thượng nguồn bên ngoài biên giới (sông Kura từ Thổ Nhĩ Kỳ – Gruzia, sông Aras từ Thổ Nhĩ Kỳ – Armenia). Tốc độ khô hạn ngày càng gay gắt cùng ô nhiễm nguồn nước xuyên biên giới buộc Baku phải đầu tư mạnh vào kênh đào thủy lợi mới từ Karabakh và nhà máy khử mặn nước biển Caspi đầu tiên."
+        "Bất lợi địa lý lớn nhất của Azerbaijan là an ninh nguồn nước: khoảng 70% lượng nước ngọt bề mặt của đất nước chảy từ thượng nguồn bên ngoài biên giới (sông Kura từ Thổ Nhĩ Kỳ – Gruzia, sông Aras từ Thổ Nhĩ Kỳ – Armenia). Tốc độ khô hạn ngày càng gay gắt cùng ô nhiễm nguồn nước xuyên biên giới buộc Baku phải đầu tư mạnh vào kênh đào thủy lợi mới từ Karabakh và các dự án khử mặn nước biển Caspi quy mô lớn."
       ]
     ],
     "hs": [
-      "caucasus"
+      "caucasus",
+      "pipe_btc"
     ]
   },
   "Iran": {
@@ -1374,7 +1377,7 @@ export const C0 = {
     "pop": "~91 triệu",
     "area": "1,65 triệu km²",
     "ch": "c6",
-    "sum": "Nằm trên cao nguyên Ba Tư rộng 1,65 triệu km², Iran được cấu trúc như một pháo đài núi khổng lồ với dãy Zagros sừng sững ở phía tây, dãy Elburz (Alborz) ở phía bắc giáp biển Caspi và hai sa mạc muối hoang vu Dasht-e Kavir, Dasht-e Lut ở trung tâm. Vị trí nối liền Trung Đông, Nam Á và vùng Kavkaz đồng thời kiểm soát trọn vẹn bờ bắc vịnh Ba Tư và eo biển Hormuz biến Iran thành cường quốc bản lề của lục địa Á – Âu. Kế thừa truyền thống đế chế hơn 2.500 năm từ thời Cyrus Đại đế và chọn nhánh Hồi giáo Shia Mười hai Imam làm quốc giáo từ triều đại Safavid thế kỷ 16, Iran mang bản sắc văn minh Ba Tư riêng biệt giữa thế giới Ả Rập Sunni bao quanh.\n\nKể từ cuộc Cách mạng Hồi giáo năm 1979 lật đổ Hoàng đế Pahlavi và thiết lập chế độ Cộng hòa Hồi giáo thần quyền đứng đầu bởi Đại Giáo chủ, Tehran luôn theo đuổi chiến lược phòng thủ từ xa thông qua mạng lưới \"Trục Kháng chiến\" khắp Trung Đông. Tuy nhiên, giai đoạn 2024–2026 đánh dấu thử thách địa chính trị lớn nhất của Tehran trong nhiều thập kỷ khi đồng minh chiến lược Syria (Assad) sụp đổ cuối năm 2024, lực lượng Hezbollah và Hamas suy yếu nặng nề, còn bản thân Iran lần đầu tiên đấu tên lửa và không kích trực tiếp với Israel. Giữa vòng vây cấm vận kinh tế gay gắt, lạm phát cao và khủng hoảng nước ngọt, Iran đẩy mạnh liên minh quân sự – kinh tế với Nga và Trung Quốc trong khi duy trì chương trình hạt nhân ở sát ngưỡng vũ khí.",
+    "sum": "Nằm trên cao nguyên Ba Tư rộng 1,65 triệu km², Iran được cấu trúc như một pháo đài núi khổng lồ với dãy Zagros sừng sững ở phía tây, dãy Elburz (Alborz) ở phía bắc giáp biển Caspi và hai sa mạc muối hoang vu Dasht-e Kavir, Dasht-e Lut ở trung tâm. Vị trí nối liền Trung Đông, Nam Á và vùng Kavkaz đồng thời kiểm soát trọn vẹn bờ bắc vịnh Ba Tư và eo biển Hormuz biến Iran thành cường quốc bản lề của lục địa Á – Âu. Kế thừa truyền thống đế chế hơn 2.500 năm từ thời Cyrus Đại đế và chọn nhánh Hồi giáo Shia Mười hai Imam làm quốc giáo từ triều đại Safavid thế kỷ 16, Iran mang bản sắc văn minh Ba Tư riêng biệt giữa thế giới Ả Rập Sunni bao quanh.\n\nKể từ cuộc Cách mạng Hồi giáo năm 1979 lật đổ Hoàng đế Pahlavi và thiết lập chế độ Cộng hòa Hồi giáo thần quyền đứng đầu bởi Đại Giáo chủ, Tehran luôn theo đuổi chiến lược phòng thủ từ xa thông qua mạng lưới \"Trục Kháng chiến\" khắp Trung Đông. Tuy nhiên, giai đoạn 2024–2026 là thử thách lớn nhất của Tehran trong nhiều thập kỷ: chế độ Assad ở Syria sụp đổ (12/2024), Hezbollah và Hamas suy yếu nặng, Iran đấu tên lửa trực tiếp với Israel (2024) rồi hứng chịu \"Chiến tranh 12 ngày\" (6/2025) khi Israel và Mỹ không kích các cơ sở quân sự, hạt nhân. Ngày 28/2/2026, Mỹ và Israel mở chiến dịch không kích quy mô lớn làm Lãnh tụ Tối cao Ali Khamenei thiệt mạng; con trai ông là Mojtaba Khamenei được chọn kế nhiệm, Iran đáp trả bằng tên lửa nhắm vào Israel và các căn cứ Mỹ ở vùng Vịnh, đồng thời phong tỏa eo Hormuz. Dù có lệnh ngừng bắn (4/2026) và Bản ghi nhớ Islamabad (6/2026), đến cuối năm 2026 giao tranh cường độ thấp và cuộc phong tỏa hải quân của Mỹ quanh Hormuz vẫn tiếp diễn, đẩy nền kinh tế vốn chịu cấm vận, lạm phát cao và khủng hoảng nước ngọt vào thế kiệt quệ.",
     "t": [
       [
         "g",
@@ -1384,7 +1387,7 @@ export const C0 = {
       [
         "g",
         "Kiểm soát toàn bộ bờ bắc eo biển Hormuz và vịnh Oman",
-        "Iran sở hữu hơn 2.400 km bờ biển dọc vịnh Ba Tư và vịnh Oman, trực tiếp khống chế bờ bắc của nút cổ chai năng lượng quan trọng nhất hành tinh là eo biển Hormuz (rộng chỉ 33 km ở chỗ hẹp nhất). Với các căn cứ tên lửa bờ biển, thủy lôi, xuồng cao tốc của Vệ binh Cách mạng Hồi giáo (IRGC) trên các đảo Qeshm, Abu Musa và cảng Chabahar ngoài Ấn Độ Dương, khả năng đóng cửa eo Hormuz (nơi 20% dầu mỏ và LNG thế giới đi qua) là lá bài răn đe tối thượng của Tehran."
+        "Iran sở hữu hơn 2.400 km bờ biển dọc vịnh Ba Tư và vịnh Oman, trực tiếp khống chế bờ bắc của nút cổ chai năng lượng quan trọng nhất hành tinh là eo biển Hormuz (rộng chỉ 33 km ở chỗ hẹp nhất). Với các căn cứ tên lửa bờ biển, thủy lôi, xuồng cao tốc của Vệ binh Cách mạng Hồi giáo (IRGC) trên các đảo Qeshm, Abu Musa và cảng Chabahar ngoài Ấn Độ Dương, khả năng đóng cửa eo Hormuz (nơi 20% dầu mỏ và LNG thế giới đi qua) là lá bài răn đe tối thượng của Tehran; Iran đã thực sự dùng tới lá bài này khi phong tỏa eo biển từ tháng 3/2026."
       ],
       [
         "b",
@@ -1394,19 +1397,22 @@ export const C0 = {
       [
         "m",
         "Kẹp giữa thế giới Ả Rập Sunni, Thổ Nhĩ Kỳ, Kavkaz và Pakistan/Afghanistan",
-        "Là quốc gia đa sắc tộc (người Ba Tư chiếm ~60%, cùng người Azeri, Kurd, Ả Rập, Baloch) giáp tới 7 nước trên bộ, Iran luôn lo sợ bị các cường quốc bên ngoài kích động ly khai ở vùng biên viễn. Chiến lược \"phòng thủ tiền tiêu\" qua Trục Kháng chiến bị giáng đòn nặng nề trong năm 2024 khi chính quyền Assad tại Syria sụp đổ và hệ thống phòng không của Iran bị Israel tập kích trực diện, buộc Tehran phải tái tính toán học thuyết răn đe hạt nhân và tên lửa đạn đạo."
+        "Là quốc gia đa sắc tộc (người Ba Tư chiếm ~60%, cùng người Azeri, Kurd, Ả Rập, Baloch) giáp tới 7 nước trên bộ, Iran luôn lo sợ bị các cường quốc bên ngoài kích động ly khai ở vùng biên viễn. Chiến lược \"phòng thủ tiền tiêu\" qua Trục Kháng chiến bị giáng đòn nặng nề từ năm 2024 khi chính quyền Assad tại Syria sụp đổ, rồi chiến tranh lan thẳng vào lãnh thổ Iran (6/2025 và từ 2/2026), khiến tranh luận về học thuyết hạt nhân trong nội bộ Tehran ngày càng gay gắt."
       ],
       [
         "b",
         "Khủng hoảng khan hiếm nước ngọt và khô hạn hồ Urmia",
-        "Iran đang đối mặt với cuộc khủng hoảng khô hạn và cạn kiệt tầng nước ngầm mang tính sống còn: hồ nước mặn lớn nhất Trung Đông là hồ Urmia ở tây bắc đã mất hơn 90% diện tích mặt nước, còn sông Zayandeh Rud chảy qua cố đô Isfahan thường xuyên trơ đáy. Việc khai thác quá mức hơn 70% nguồn nước tái tạo cho nông nghiệp thâm dụng nước cùng hạn hán kéo dài đang gây sụt lún đất nghiêm trọng quanh Tehran và kích hoạt nhiều cuộc biểu tình vì thiếu nước."
+        "Iran đang đối mặt với cuộc khủng hoảng khô hạn và cạn kiệt tầng nước ngầm mang tính sống còn: hồ nước mặn lớn nhất Trung Đông là hồ Urmia ở tây bắc đã mất phần lớn diện tích mặt nước so với thập niên 1990, còn sông Zayandeh Rud chảy qua cố đô Isfahan thường xuyên trơ đáy. Việc nông nghiệp tưới tiêu tiêu thụ khoảng 90% lượng nước khai thác cùng hạn hán kéo dài đang gây sụt lún đất nghiêm trọng quanh Tehran và kích hoạt nhiều cuộc biểu tình vì thiếu nước."
       ]
     ],
     "hs": [
       "hormuz",
       "zagros",
       "conf_iran",
-      "r_gulf_asia"
+      "r_gulf_asia",
+      "persiangulf",
+      "field_southpars",
+      "elburz"
     ]
   },
   "Iraq": {
@@ -1414,7 +1420,7 @@ export const C0 = {
     "pop": "~46 triệu",
     "area": "438 nghìn km²",
     "ch": "c6",
-    "sum": "Trải dài trên vùng đồng bằng Lưỡng Hà (Mesopotamia) màu mỡ giữa hai dòng sông lịch sử Tigris và Euphrates, lãnh thổ Iraq được bao quanh bởi sa mạc Syria – Ả Rập ở phía tây nam và dãy núi Zagros ở phía bắc cùng phía đông. Là cái nôi của những nền văn minh cổ xưa nhất nhân loại như Sumer, Babylon, Assyria và từng là kinh đô Baghdad huy hoàng của Đế chế Hồi giáo Abbasid, vùng đất này luôn là ngã tư giao tranh giữa cao nguyên Ba Tư, bán đảo Tiểu Á và thế giới Ả Rập. Nhà nước Iraq hiện đại ra đời năm 1920 khi thực dân Anh dùng thước kẻ ghép 3 tỉnh (vilayet) của Đế chế Ottoman lại với nhau: Mosul của người Kurd ở phía bắc, Baghdad của người Ả Rập Sunni ở miền trung và Basra của người Ả Rập Shia ở miền nam.\n\nCấu trúc biên giới nhân tạo đó cùng nỗi bức bối địa lý — bị bóp nghẹt lối ra biển ở vịnh Ba Tư và phụ thuộc hoàn toàn nguồn nước từ bên ngoài — đã đẩy Iraq dưới thời Saddam Hussein vào các cuộc chiến với Iran (1980–1988) và Kuwait (1990), tiếp nối bởi cuộc chiến của Mỹ năm 2003 và cuộc chiến chống IS (2014–2017). Bước sang giai đoạn 2025–2026, Iraq đạt được mức độ ổn định tương đối nhất trong hai thập kỷ dưới chính phủ ở Baghdad, tìm cách cân bằng quan hệ giữa Mỹ và Iran đồng thời khởi động siêu dự án \"Con đường Phát triển\" (Development Road) trị giá 17 tỷ USD nối cảng Al-Faw với Thổ Nhĩ Kỳ. Tuy nhiên, sự phụ thuộc tới 95% ngân sách vào dầu thô và cuộc khủng hoảng cạn kiệt nước sông Tigris – Euphrates vẫn là thách thức sinh tử của quốc gia 46 triệu dân này.",
+    "sum": "Trải dài trên vùng đồng bằng Lưỡng Hà (Mesopotamia) màu mỡ giữa hai dòng sông lịch sử Tigris và Euphrates, lãnh thổ Iraq được bao quanh bởi sa mạc Syria – Ả Rập ở phía tây nam và dãy núi Zagros ở phía bắc cùng phía đông. Là cái nôi của những nền văn minh cổ xưa nhất nhân loại như Sumer, Babylon, Assyria và từng là kinh đô Baghdad huy hoàng của Đế chế Hồi giáo Abbasid, vùng đất này luôn là ngã tư giao tranh giữa cao nguyên Ba Tư, bán đảo Tiểu Á và thế giới Ả Rập. Nhà nước Iraq hiện đại ra đời năm 1920 khi thực dân Anh dùng thước kẻ ghép 3 tỉnh (vilayet) của Đế chế Ottoman lại với nhau: Mosul của người Kurd ở phía bắc, Baghdad của người Ả Rập Sunni ở miền trung và Basra của người Ả Rập Shia ở miền nam.\n\nCấu trúc biên giới nhân tạo đó cùng nỗi bức bối địa lý — bị bóp nghẹt lối ra biển ở vịnh Ba Tư và phụ thuộc hoàn toàn nguồn nước từ bên ngoài — đã đẩy Iraq dưới thời Saddam Hussein vào các cuộc chiến với Iran (1980–1988) và Kuwait (1990), tiếp nối bởi cuộc chiến của Mỹ năm 2003 và cuộc chiến chống IS (2014–2017). Sau cuộc bầu cử tháng 11/2025 và gần sáu tháng bế tắc, chính phủ của Thủ tướng Ali al-Zaidi nhậm chức tháng 5/2026, tiếp tục cân bằng giữa Mỹ và Iran giữa lúc cuộc chiến Mỹ – Israel – Iran (từ 2/2026) đe dọa an ninh và nguồn thu dầu đồng thời khởi động siêu dự án \"Con đường Phát triển\" (Development Road) trị giá 17 tỷ USD nối cảng Al-Faw với Thổ Nhĩ Kỳ. Tuy nhiên, sự phụ thuộc khoảng 90% nguồn thu ngân sách vào dầu thô và cuộc khủng hoảng cạn kiệt nước sông Tigris – Euphrates vẫn là thách thức sinh tử của quốc gia 46 triệu dân này.",
     "t": [
       [
         "b",
@@ -1454,7 +1460,7 @@ export const C0 = {
     "cap": "Riyadh",
     "pop": "~35 triệu",
     "area": "2,15 triệu km²",
-    "sum": "Chiếm tới 80% diện tích bán đảo Ả Rập với hơn 2,15 triệu km², Ả Rập Xê Út là một vương quốc sa mạc rộng lớn nằm giữa hai tuyến hàng hải huyết mạch là vịnh Ba Tư ở phía đông và Biển Đỏ ở phía tây. Địa hình đất nước nghiêng dần từ dãy núi Hejaz – Asir chạy dọc bờ Biển Đỏ sang cao nguyên trung tâm Najd (nơi đặt thủ đô Riyadh) và kết thúc ở sa mạc cát liên hoàn lớn nhất hành tinh Rub' al Khali (Không gian Trống rỗng) ở phía đông nam. Là quê hương ra đời của đạo Hồi vào thế kỷ 7 với hai thánh địa tối linh Mecca và Medina, nhà nước Ả Rập Xê Út hiện đại được vua Abdulaziz Ibn Saud thống nhất bằng gươm giáo vào năm 1932 và lột xác hoàn toàn khi phát hiện các siêu mỏ dầu mỏ năm 1938.\n\nGiữ tước hiệu \"Người bảo hộ Hai Thánh đường\" đồng thời sở hữu trữ lượng dầu thô có chi phí khai thác rẻ nhất thế giới quanh vùng bờ đông vịnh Ba Tư, Riyadh đóng vai trò trụ cột kép của cả thế giới Hồi giáo Sunni lẫn thị trường năng lượng toàn cầu. Dưới sự dẫn dắt thực quyền của Thái tử kiêm Thủ tướng Mohammed bin Salman (MBS), vương quốc đang thực hiện cuộc đại cải cách xã hội – kinh tế \"Tầm nhìn 2030\" (Vision 2030) nhằm mở cửa văn hóa, phát triển công nghệ, du lịch và chuẩn bị đăng cai World Cup 2034. Về đối ngoại giai đoạn 2025–2026, Riyadh theo đuổi đường lối tự chủ chiến lược đa phương: vừa duy trì hòa dịu với Iran (do Trung Quốc trung gian năm 2023), vừa hợp tác điều tiết giá dầu với Nga trong OPEC+, vừa đàm phán hiệp ước phòng thủ và công nghệ AI với Mỹ.",
+    "sum": "Chiếm tới 80% diện tích bán đảo Ả Rập với hơn 2,15 triệu km², Ả Rập Xê Út là một vương quốc sa mạc rộng lớn nằm giữa hai tuyến hàng hải huyết mạch là vịnh Ba Tư ở phía đông và Biển Đỏ ở phía tây. Địa hình đất nước nghiêng dần từ dãy núi Hejaz – Asir chạy dọc bờ Biển Đỏ sang cao nguyên trung tâm Najd (nơi đặt thủ đô Riyadh) và kết thúc ở sa mạc cát liên hoàn lớn nhất hành tinh Rub' al Khali (Không gian Trống rỗng) ở phía đông nam. Là quê hương ra đời của đạo Hồi vào thế kỷ 7 với hai thánh địa tối linh Mecca và Medina, nhà nước Ả Rập Xê Út hiện đại được vua Abdulaziz Ibn Saud thống nhất bằng gươm giáo vào năm 1932 và lột xác hoàn toàn khi phát hiện các siêu mỏ dầu mỏ năm 1938.\n\nGiữ tước hiệu \"Người bảo hộ Hai Thánh đường\" đồng thời sở hữu trữ lượng dầu thô có chi phí khai thác rẻ nhất thế giới quanh vùng bờ đông vịnh Ba Tư, Riyadh đóng vai trò trụ cột kép của cả thế giới Hồi giáo Sunni lẫn thị trường năng lượng toàn cầu. Dưới sự dẫn dắt thực quyền của Thái tử kiêm Thủ tướng Mohammed bin Salman (MBS), vương quốc đang thực hiện cuộc đại cải cách xã hội – kinh tế \"Tầm nhìn 2030\" (Vision 2030) nhằm mở cửa văn hóa, phát triển công nghệ, du lịch và chuẩn bị đăng cai World Cup 2034. Về đối ngoại giai đoạn 2025–2026, Riyadh theo đuổi đường lối tự chủ chiến lược đa phương: vừa cố giữ hòa dịu với Iran (do Trung Quốc trung gian năm 2023) dù bị cuốn vào cuộc chiến năm 2026, vừa hợp tác điều tiết giá dầu với Nga trong OPEC+, vừa ký Thỏa thuận Quốc phòng Chiến lược với Mỹ (11/2025, kèm quy chế Đồng minh chính ngoài NATO) và Hiệp định Phòng thủ chung với Pakistan (9/2025).",
     "t": [
       [
         "g",
@@ -1464,7 +1470,7 @@ export const C0 = {
       [
         "m",
         "Giáp cả vịnh Ba Tư lẫn Biển Đỏ, nhưng cả hai đều bị khóa bởi cổ chai",
-        "Ả Rập Xê Út là quốc gia duy nhất có bờ biển dài trên cả vịnh Ba Tư (nơi tập trung mỏ dầu Ghawar lớn nhất thế giới và cảng Ras Tanura) lẫn Biển Đỏ (cảng Jeddah, Yanbu), nhưng cả hai mặt biển đều bị khóa bởi các nút cổ chai chiến lược. Phía đông phải chui qua eo biển Hormuz ngay dưới tầm tên lửa Iran, còn phía tây bị chặn bởi kênh đào Suez ở đầu bắc và eo biển Bab el-Mandeb (nơi Houthi kiểm soát bờ Yemen) ở đầu nam; vì vậy Riyadh phải vận hành đường ống Đông – Tây dài 1.200 km công suất 5–7 triệu thùng/ngày nối thẳng sang cảng Yanbu bên Biển Đỏ."
+        "Ả Rập Xê Út là quốc gia duy nhất có bờ biển dài trên cả vịnh Ba Tư (nơi tập trung mỏ dầu Ghawar lớn nhất thế giới và cảng Ras Tanura) lẫn Biển Đỏ (cảng Jeddah, Yanbu), nhưng cả hai mặt biển đều bị khóa bởi các nút cổ chai chiến lược. Phía đông phải chui qua eo biển Hormuz ngay dưới tầm tên lửa Iran, còn phía tây bị chặn bởi kênh đào Suez ở đầu bắc và eo biển Bab el-Mandeb (nơi Houthi kiểm soát bờ Yemen) ở đầu nam; vì vậy Riyadh phải vận hành đường ống Đông – Tây dài 1.200 km công suất 5–7 triệu thùng/ngày nối thẳng sang cảng Yanbu bên Biển Đỏ; khi eo Hormuz bị phong tỏa năm 2026, đường ống này trở thành lối xuất khẩu chính."
       ],
       [
         "b",
@@ -1474,7 +1480,7 @@ export const C0 = {
       [
         "m",
         "Biên giới kẻ thẳng qua sa mạc; cạnh tranh địa chính trị với Iran và bất ổn từ Yemen",
-        "Các đường biên giới dài trên sa mạc từng được hoạch định cùng người Anh trong thế kỷ 20 đặt Riyadh đối diện trực tiếp với những điểm nóng bậc nhất Trung Đông: Iraq ở phía bắc, Yemen bất ổn ở phía nam và đối thủ truyền kiếp Iran bên kia vịnh Ba Tư (nơi tỉnh Đông giàu dầu mỏ nhất của vương quốc lại có đông người thiểu số theo nhánh Shia sinh sống). Sau nhiều năm can dự quân sự tại Yemen từ 2015, Riyadh đã chuyển sang hạ nhiệt căng thẳng với Houthi và khôi phục quan hệ ngoại giao với Tehran để tập trung nguồn lực cho phát triển kinh tế."
+        "Các đường biên giới dài trên sa mạc từng được hoạch định cùng người Anh trong thế kỷ 20 đặt Riyadh đối diện trực tiếp với những điểm nóng bậc nhất Trung Đông: Iraq ở phía bắc, Yemen bất ổn ở phía nam và đối thủ truyền kiếp Iran bên kia vịnh Ba Tư (nơi tỉnh Đông giàu dầu mỏ nhất của vương quốc lại có đông người thiểu số theo nhánh Shia sinh sống). Sau nhiều năm can dự quân sự tại Yemen từ 2015, Riyadh đã chuyển sang hạ nhiệt căng thẳng với Houthi và khôi phục quan hệ ngoại giao với Tehran để tập trung nguồn lực cho phát triển kinh tế; cuối 2025 – đầu 2026, Riyadh lại can thiệp quyết liệt ở miền nam Yemen để đẩy lùi lực lượng STC do UAE hậu thuẫn."
       ],
       [
         "b",
@@ -1486,14 +1492,16 @@ export const C0 = {
       "hormuz",
       "babelmandeb",
       "conf_redsea",
-      "arabian"
+      "arabian",
+      "pipe_petroline",
+      "field_ghawar"
     ]
   },
   "United Arab Emirates": {
     "cap": "Abu Dhabi (kinh tế: Dubai)",
-    "pop": "~10,5 triệu",
+    "pop": "~11 triệu",
     "area": "83,6 nghìn km²",
-    "sum": "Nằm ở rìa đông nam bán đảo Ả Rập ngay tại khúc cua chiến lược của eo biển Hormuz, Các Tiểu vương quốc Ả Rập Thống nhất (UAE) có địa hình chủ yếu là sa mạc cát thấp phẳng nối liền với dãy núi Hajar sừng sững ở phía đông. Sở hữu bờ biển dài dọc vịnh Ba Tư và một dải bờ biển quý giá mở thẳng ra vịnh Oman tại Fujairah, vị trí của UAE là trạm trung chuyển hàng hải tự nhiên giữa Ấn Độ Dương, Trung Đông và châu Âu. Từng là các tiểu quốc bộ lạc nghèo sống bằng nghề mò ngọc trai dưới sự bảo hộ của Đế quốc Anh (Trucial States), 7 tiểu vương quốc đã hợp nhất thành liên bang độc lập năm 1971 dưới sự dẫn dắt của cố Tổng thống Sheikh Zayed.\n\nVới cấu trúc quyền lực song hành giữa Abu Dhabi (nắm giữ hơn 90% trữ lượng dầu khí và quyền lực chính trị) và Dubai (thủ phủ tài chính, cảng biển và hàng không), UAE đã kiến tạo mô hình kinh tế cởi mở với gần 90% dân số là người lao động và chuyên gia nước ngoài. Bước sang giai đoạn 2025–2026, quốc gia thành viên khối BRICS mở rộng này nổi lên như một cường quốc tầm trung đầy tham vọng: đầu tư hàng chục tỷ USD vào hạ tầng Trí tuệ nhân tạo (AI), vận hành cảng biển khắp Biển Đỏ – châu Phi và duy trì Hiệp định Abraham với Israel. Thách thức chiến lược lớn nhất của UAE vẫn là sự phụ thuộc trên 80% nước sinh hoạt vào khử mặn nước biển và nguy cơ xung đột lan rộng quanh eo biển Hormuz.",
+    "sum": "Nằm ở rìa đông nam bán đảo Ả Rập ngay tại khúc cua chiến lược của eo biển Hormuz, Các Tiểu vương quốc Ả Rập Thống nhất (UAE) có địa hình chủ yếu là sa mạc cát thấp phẳng nối liền với dãy núi Hajar sừng sững ở phía đông. Sở hữu bờ biển dài dọc vịnh Ba Tư và một dải bờ biển quý giá mở thẳng ra vịnh Oman tại Fujairah, vị trí của UAE là trạm trung chuyển hàng hải tự nhiên giữa Ấn Độ Dương, Trung Đông và châu Âu. Từng là các tiểu quốc bộ lạc nghèo sống bằng nghề mò ngọc trai dưới sự bảo hộ của Đế quốc Anh (Trucial States), 7 tiểu vương quốc đã hợp nhất thành liên bang độc lập năm 1971 dưới sự dẫn dắt của cố Tổng thống Sheikh Zayed.\n\nVới cấu trúc quyền lực song hành giữa Abu Dhabi (nắm giữ hơn 90% trữ lượng dầu khí và quyền lực chính trị) và Dubai (thủ phủ tài chính, cảng biển và hàng không), UAE đã kiến tạo mô hình kinh tế cởi mở với gần 90% dân số là người lao động và chuyên gia nước ngoài. Bước sang giai đoạn 2025–2026, quốc gia thành viên khối BRICS mở rộng này nổi lên như một cường quốc tầm trung đầy tham vọng: đầu tư hàng chục tỷ USD vào hạ tầng Trí tuệ nhân tạo (AI), vận hành cảng biển khắp Biển Đỏ – châu Phi và duy trì Hiệp định Abraham với Israel. Thách thức chiến lược lớn nhất của UAE vẫn là sự phụ thuộc trên 80% nước sinh hoạt vào khử mặn nước biển và xung đột quanh eo biển Hormuz: trong cuộc chiến năm 2026, UAE cũng bị tên lửa và UAV của Iran tấn công.",
     "t": [
       [
         "m",
@@ -1503,7 +1511,7 @@ export const C0 = {
       [
         "g",
         "Cảng Jebel Ali (Dubai) và cảng Fujairah nằm ngoài eo biển Hormuz",
-        "UAE sở hữu siêu cảng Jebel Ali tại Dubai (cảng nhân tạo lớn nhất thế giới và trung tâm container số 1 Trung Đông) cùng cảng chiến lược Fujairah nằm bên ngoài eo biển Hormuz. Nhờ tuyến đường ống dầu Habshan – Fujairah dài 360 km công suất 1,5 triệu thùng/ngày, Abu Dhabi có thể xuất khẩu phần lớn dầu thô thẳng ra vịnh Oman ngay cả khi eo Hormuz bị phong tỏa."
+        "UAE sở hữu siêu cảng Jebel Ali tại Dubai (cảng nhân tạo lớn nhất thế giới và trung tâm container số 1 Trung Đông) cùng cảng chiến lược Fujairah nằm bên ngoài eo biển Hormuz. Nhờ tuyến đường ống dầu Habshan – Fujairah dài 360 km công suất 1,5 triệu thùng/ngày, Abu Dhabi có thể xuất khẩu khoảng một nửa lượng dầu thô thẳng ra vịnh Oman ngay cả khi eo Hormuz bị phong tỏa, như đã diễn ra năm 2026."
       ],
       [
         "b",
@@ -1513,7 +1521,7 @@ export const C0 = {
       [
         "m",
         "Tranh chấp 3 đảo nhỏ (Abu Musa, Greater & Lesser Tunbs) với Iran ở cửa Hormuz",
-        "Ba hòn đảo nhỏ có vị trí yết hầu ngay cửa ngõ eo biển Hormuz (Abu Musa, Greater Tunb và Lesser Tunb) đã bị Iran kiểm soát từ năm 1971 bất chấp yêu sách chủ quyền liên tục của UAE. Trong khi khéo léo duy trì thương mại với Tehran, Abu Dhabi mở rộng ảnh hưởng hàng hải và ngoại giao khắp Sừng châu Phi, Yemen (hậu thuẫn STC), Sudan và Biển Đỏ."
+        "Ba hòn đảo nhỏ có vị trí yết hầu ngay cửa ngõ eo biển Hormuz (Abu Musa, Greater Tunb và Lesser Tunb) đã bị Iran kiểm soát từ năm 1971 bất chấp yêu sách chủ quyền liên tục của UAE. Trong khi khéo léo duy trì thương mại với Tehran, Abu Dhabi mở rộng ảnh hưởng hàng hải và ngoại giao khắp Sừng châu Phi, Sudan và Biển Đỏ; tại Yemen, lực lượng STC do UAE hậu thuẫn đã tuyên bố giải thể (1/2026) sau khi bị liên quân do Ả Rập Xê Út hậu thuẫn đẩy lùi."
       ],
       [
         "b",
@@ -1523,14 +1531,15 @@ export const C0 = {
     ],
     "hs": [
       "hormuz",
-      "arabian"
+      "arabian",
+      "pipe_habshan"
     ]
   },
   "Qatar": {
     "cap": "Doha",
     "pop": "~2,9 triệu",
     "area": "11,6 nghìn km²",
-    "sum": "Là một bán đảo đá vôi thấp phẳng rộng 11.600 km² nhô thẳng từ bờ đông bán đảo Ả Rập ra giữa vịnh Ba Tư như một ngón tay cái, Qatar có đường biên giới đất liền duy nhất dài khoảng 87 km giáp Ả Rập Xê Út ở phía nam. Địa hình khô cằn không bóng núi cao hay rừng rậm từng khiến vùng đất này chỉ là nơi sinh sống của vài vạn cư dân du mục và thợ lặn tìm ngọc trai trước khi giành độc lập khỏi sự bảo hộ của Anh năm 1971. Bước ngoặt lịch sử vĩ đại đến khi Qatar phát triển thành công công nghệ hóa lỏng khí tự nhiên (LNG) vào thập niên 1990 trên mỏ khí đốt ngoài khơi lớn nhất hành tinh (North Field), biến tiểu quốc này thành một trong những quốc gia giàu nhất thế giới.\n\nDưới sự trị vì của hoàng gia Al Thani và Quốc vương Tamim bin Hamad, Doha đã xây dựng vị thế ngoại giao vượt xa diện tích địa lý nhờ kết hợp túi tiền khổng lồ, mạng lưới truyền thông toàn cầu Al Jazeera và căn cứ quân sự lớn nhất của Mỹ tại Trung Đông (Al Udeid). Sau khi đứng vững trước cuộc phong tỏa của 4 nước Ả Rập (2017–2021) và đăng cai World Cup 2022, Qatar trong giai đoạn 2025–2026 giữ vai trò trung gian hòa giải không thể thay thế trong các cuộc đàm phán ngừng bắn Gaza, trao đổi tù nhân Mỹ – Iran và hồ sơ Afghanistan. Điểm yếu địa chiến lược chí mạng của Doha là 100% tàu chở LNG đều phải đi qua eo biển Hormuz và sự phụ thuộc tuyệt đối vào nước biển khử mặn.",
+    "sum": "Là một bán đảo đá vôi thấp phẳng rộng 11.600 km² nhô thẳng từ bờ đông bán đảo Ả Rập ra giữa vịnh Ba Tư như một ngón tay cái, Qatar có đường biên giới đất liền duy nhất dài khoảng 87 km giáp Ả Rập Xê Út ở phía nam. Địa hình khô cằn không bóng núi cao hay rừng rậm từng khiến vùng đất này chỉ là nơi sinh sống của vài vạn cư dân du mục và thợ lặn tìm ngọc trai trước khi giành độc lập khỏi sự bảo hộ của Anh năm 1971. Bước ngoặt lịch sử vĩ đại đến khi Qatar phát triển thành công công nghệ hóa lỏng khí tự nhiên (LNG) vào thập niên 1990 trên mỏ khí đốt ngoài khơi lớn nhất hành tinh (North Field), biến tiểu quốc này thành một trong những quốc gia giàu nhất thế giới.\n\nDưới sự trị vì của hoàng gia Al Thani và Quốc vương Tamim bin Hamad, Doha đã xây dựng vị thế ngoại giao vượt xa diện tích địa lý nhờ kết hợp túi tiền khổng lồ, mạng lưới truyền thông toàn cầu Al Jazeera và căn cứ quân sự lớn nhất của Mỹ tại Trung Đông (Al Udeid). Sau khi đứng vững trước cuộc phong tỏa của 4 nước Ả Rập (2017–2021) và đăng cai World Cup 2022, Qatar trong giai đoạn 2025–2026 giữ vai trò trung gian hòa giải không thể thay thế trong các cuộc đàm phán ngừng bắn Gaza, trao đổi tù nhân Mỹ – Iran và hồ sơ Afghanistan. Điểm yếu địa chiến lược chí mạng của Doha là 100% tàu chở LNG đều phải đi qua eo biển Hormuz và sự phụ thuộc tuyệt đối vào nước biển khử mặn; khi Hormuz bị phong tỏa và Ras Laffan bị Iran tập kích năm 2026, QatarEnergy đã phải tuyên bố bất khả kháng với các hợp đồng LNG.",
     "t": [
       [
         "b",
@@ -1550,7 +1559,7 @@ export const C0 = {
       [
         "m",
         "Khéo léo cân bằng giữa Mỹ, Iran và các phong trào Hồi giáo",
-        "Vì cùng khai thác chung một vỉa khí đốt khổng lồ dưới đáy vịnh Ba Tư với Iran (phía Qatar gọi là North Field, phía Iran gọi là South Pars), Doha buộc phải duy trì quan hệ làm ăn hòa dịu với Tehran. Chính sách đối ngoại độc lập và hỗ trợ các phong trào Hồi giáo từng khiến Qatar bị Ả Rập Xê Út, UAE, Bahrain và Ai Cập cắt đứt quan hệ suốt năm 2017–2021 trước khi làm lành tại Hội nghị Al-Ula, giúp Doha khẳng định vị thế \"trung gian hòa giải của thế giới\" giai đoạn 2024–2026."
+        "Vì cùng khai thác chung một vỉa khí đốt khổng lồ dưới đáy vịnh Ba Tư với Iran (phía Qatar gọi là North Field, phía Iran gọi là South Pars), Doha buộc phải duy trì quan hệ làm ăn hòa dịu với Tehran. Chính sách đối ngoại độc lập và hỗ trợ các phong trào Hồi giáo từng khiến Qatar bị Ả Rập Xê Út, UAE, Bahrain và Ai Cập cắt đứt quan hệ suốt năm 2017–2021 trước khi làm lành tại Hội nghị Al-Ula, giúp Doha khẳng định vị thế \"trung gian hòa giải của thế giới\" giai đoạn 2024–2026 (đồng bảo trợ lệnh ngừng bắn Gaza 10/2025), dù chính Doha từng bị Israel không kích (9/2025) và căn cứ Al Udeid bị Iran tấn công (6/2025)."
       ],
       [
         "b",
@@ -1559,14 +1568,16 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "hormuz"
+      "hormuz",
+      "field_southpars",
+      "base_aludeid"
     ]
   },
   "Kuwait": {
     "cap": "Kuwait City",
     "pop": "~4,9 triệu",
     "area": "17,8 nghìn km²",
-    "sum": "Tọa lạc ở góc cực bắc của vịnh Ba Tư, Kuwait là một tiểu vương quốc sa mạc nhỏ bé rộng 17.800 km² nhưng sở hữu vịnh Kuwait — bến cảng nước sâu tự nhiên tốt nhất toàn vùng cùng hai đảo lớn Bubiyan và Warbah chắn ngay trước cửa ngõ ra biển của Iraq. Kẹp sát giữa ba láng giềng khổng lồ là Iraq ở phía bắc – tây, Ả Rập Xê Út ở phía nam và Iran ngay bên kia bờ vịnh, vị trí địa lý của Kuwait vừa là tâm điểm thương mại hàng hải vừa là điểm nóng xung đột lịch sử. Hình thành từ thế kỷ 18 như một thương cảng tự trị dưới triều đại Al-Sabah và đặt dưới sự bảo hộ của Anh từ năm 1899 đến khi độc lập năm 1961, Kuwait từng bị quân đội của Saddam Hussein xâm lược và sáp nhập trong 7 tháng năm 1990–1991.\n\nSau khi được liên quân do Mỹ dẫn đầu giải phóng trong Chiến tranh vùng Vịnh năm 1991, Kuwait duy trì mô hình chính trị có Quốc hội dân cử sôi động hiếm thấy ở vùng Vịnh, nhưng sự đối đầu dai dẳng giữa Quốc hội và Chính phủ hoàng gia đã làm tê liệt nhiều dự án đầu tư hạ tầng suốt hai thập kỷ. Tháng 5/2024, tân Quốc vương Sheikh Mishal Al-Ahmad Al-Jaber Al-Sabah đã giải tán Quốc hội và đình chỉ một số điều khoản hiến pháp trong tối đa 4 năm nhằm phá vỡ bế tắc chính trị và đẩy nhanh cải cách kinh tế (giai đoạn 2024–2026). Thách thức sống còn của đất nước là giảm sự phụ thuộc tới 90% ngân sách vào dầu thô và giải quyết tranh chấp biên giới hàng hải Khor Abdullah với Iraq.",
+    "sum": "Tọa lạc ở góc cực bắc của vịnh Ba Tư, Kuwait là một tiểu vương quốc sa mạc nhỏ bé rộng 17.800 km² nhưng sở hữu vịnh Kuwait — bến cảng nước sâu tự nhiên tốt nhất toàn vùng cùng hai đảo lớn Bubiyan và Warbah chắn ngay trước cửa ngõ ra biển của Iraq. Kẹp sát giữa ba láng giềng khổng lồ là Iraq ở phía bắc – tây, Ả Rập Xê Út ở phía nam và Iran ngay bên kia bờ vịnh, vị trí địa lý của Kuwait vừa là tâm điểm thương mại hàng hải vừa là điểm nóng xung đột lịch sử. Hình thành từ thế kỷ 18 như một thương cảng tự trị dưới triều đại Al-Sabah và đặt dưới sự bảo hộ của Anh từ năm 1899 đến khi độc lập năm 1961, Kuwait từng bị quân đội của Saddam Hussein xâm lược và sáp nhập trong 7 tháng năm 1990–1991.\n\nSau khi được liên quân do Mỹ dẫn đầu giải phóng trong Chiến tranh vùng Vịnh năm 1991, Kuwait duy trì mô hình chính trị có Quốc hội dân cử sôi động hiếm thấy ở vùng Vịnh, nhưng sự đối đầu dai dẳng giữa Quốc hội và Chính phủ hoàng gia đã làm tê liệt nhiều dự án đầu tư hạ tầng suốt hai thập kỷ. Tháng 5/2024, tân Quốc vương Sheikh Mishal Al-Ahmad Al-Jaber Al-Sabah đã giải tán Quốc hội và đình chỉ một số điều khoản hiến pháp trong tối đa 4 năm nhằm phá vỡ bế tắc chính trị và đẩy nhanh cải cách kinh tế (giai đoạn 2024–2026). Thách thức sống còn của đất nước là giảm sự phụ thuộc tới 90% ngân sách vào dầu thô và giải quyết tranh chấp biên giới hàng hải Khor Abdullah với Iraq; năm 2026, các căn cứ Mỹ trên đất Kuwait cũng trở thành mục tiêu tên lửa trả đũa của Iran.",
     "t": [
       [
         "b",
@@ -1595,14 +1606,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "hormuz"
+      "hormuz",
+      "persiangulf"
     ]
   },
   "Bahrain": {
     "cap": "Manama",
     "pop": "~1,6 triệu",
     "area": "~785 km²",
-    "sum": "Là quốc đảo duy nhất ở vùng Vịnh và là quốc gia Ả Rập có diện tích nhỏ nhất (khoảng 785 km², không ngừng mở rộng nhờ lấn biển), Bahrain gồm một quần đảo hơn 30 đảo tự nhiên và nhân tạo nằm trong vịnh nông giữa bán đảo Qatar và bờ đông Ả Rập Xê Út. Vị trí nằm ngay trung tâm vịnh Ba Tư cùng các mạch nước ngọt ngầm hiếm hoi phun ra dưới đáy biển từng biến hòn đảo này thành trung tâm văn minh thương mại Dilmun cổ đại cách đây hơn 4.000 năm và thủ phủ ngọc trai tự nhiên của Trung Đông. Từng là nơi đầu tiên ở bờ Ả Rập vịnh Ba Tư phát hiện ra dầu mỏ vào năm 1932 và giành độc lập khỏi Anh năm 1971, Bahrain được nối liền trực tiếp với đất liền Ả Rập Xê Út qua cây cầu vượt biển King Fahd dài 25 km từ năm 1986.\n\nĐặc trưng xã hội – chính trị nhạy cảm nhất của vương quốc là việc hoàng gia Al Khalifa theo dòng Hồi giáo Sunni cai trị một đất nước có đa số công dân bản địa theo dòng Shia, điều từng dẫn tới các cuộc biểu tình lớn trong Mùa xuân Ả Rập năm 2011. Về địa chiến lược giai đoạn 2025–2026, Manama là nơi đặt Bộ Tư lệnh Hạm đội 5 của Hải quân Mỹ (chịu trách nhiệm tuần tra toàn bộ vịnh Ba Tư, Biển Đỏ và biển Ả Rập), đã ký Hiệp định tích hợp an ninh – thịnh vượng toàn diện (CIPA) với Mỹ – Anh và duy trì bình thường hóa quan hệ với Israel. Do trữ lượng dầu mỏ nội địa khiêm tốn, thách thức lớn nhất của Bahrain là nợ công cao và sự phụ thuộc kinh tế – an ninh vào láng giềng khổng lồ Ả Rập Xê Út.",
+    "sum": "Là quốc đảo duy nhất ở vùng Vịnh và là quốc gia Ả Rập có diện tích nhỏ nhất (khoảng 785 km², không ngừng mở rộng nhờ lấn biển), Bahrain gồm một quần đảo hơn 30 đảo tự nhiên và nhân tạo nằm trong vịnh nông giữa bán đảo Qatar và bờ đông Ả Rập Xê Út. Vị trí nằm ngay trung tâm vịnh Ba Tư cùng các mạch nước ngọt ngầm hiếm hoi phun ra dưới đáy biển từng biến hòn đảo này thành trung tâm văn minh thương mại Dilmun cổ đại cách đây hơn 4.000 năm và thủ phủ ngọc trai tự nhiên của Trung Đông. Từng là nơi đầu tiên ở bờ Ả Rập vịnh Ba Tư phát hiện ra dầu mỏ vào năm 1932 và giành độc lập khỏi Anh năm 1971, Bahrain được nối liền trực tiếp với đất liền Ả Rập Xê Út qua cây cầu vượt biển King Fahd dài 25 km từ năm 1986.\n\nĐặc trưng xã hội – chính trị nhạy cảm nhất của vương quốc là việc hoàng gia Al Khalifa theo dòng Hồi giáo Sunni cai trị một đất nước có đa số công dân bản địa theo dòng Shia, điều từng dẫn tới các cuộc biểu tình lớn trong Mùa xuân Ả Rập năm 2011. Về địa chiến lược giai đoạn 2025–2026, Manama là nơi đặt Bộ Tư lệnh Hạm đội 5 của Hải quân Mỹ (chịu trách nhiệm tuần tra toàn bộ vịnh Ba Tư, Biển Đỏ và biển Ả Rập), đã ký Hiệp định tích hợp an ninh – thịnh vượng toàn diện (CIPA) với Mỹ – Anh và duy trì bình thường hóa quan hệ với Israel. Do trữ lượng dầu mỏ nội địa khiêm tốn, thách thức lớn nhất của Bahrain là nợ công cao và sự phụ thuộc kinh tế – an ninh vào láng giềng khổng lồ Ả Rập Xê Út; trong cuộc chiến năm 2026, Bahrain, nơi đặt Hạm đội 5, cũng bị Iran tấn công bằng tên lửa và UAV.",
     "t": [
       [
         "m",
@@ -1622,7 +1634,7 @@ export const C0 = {
       [
         "m",
         "Hoàng gia Sunni cai trị đa số dân cư theo nhánh Shia",
-        "Bahrain từng phải đối mặt với yêu sách chủ quyền lịch sử từ Iran (cho tới cuộc trưng cầu dân ý do LHQ giám sát năm 1970) và thường xuyên cáo buộc Tehran hậu thuẫn các nhóm đối lập Shia trên đảo; hai nước hiện đang từng bước đàm phán nối lại quan hệ ngoại giao sau khi cắt đứt từ năm 2016. Ngoài ra, năm 2001 Tòa án Công lý Quốc tế (ICJ) đã phân xử dứt điểm tranh chấp quần đảo Hawar có lợi cho Bahrain trước Qatar."
+        "Bahrain từng phải đối mặt với yêu sách chủ quyền lịch sử từ Iran (cho tới cuộc trưng cầu dân ý do LHQ giám sát năm 1970) và thường xuyên cáo buộc Tehran hậu thuẫn các nhóm đối lập Shia trên đảo; hai nước từng khởi động đàm phán nối lại quan hệ ngoại giao (2024) sau khi cắt đứt từ năm 2016. Ngoài ra, năm 2001 Tòa án Công lý Quốc tế (ICJ) đã phân xử dứt điểm tranh chấp quần đảo Hawar có lợi cho Bahrain trước Qatar."
       ],
       [
         "b",
@@ -1631,7 +1643,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "hormuz"
+      "hormuz",
+      "base_bahrain"
     ]
   },
   "Oman": {
@@ -1658,7 +1671,7 @@ export const C0 = {
       [
         "g",
         "Giữ quan hệ hữu hảo với cả Iran, Ả Rập Xê Út lẫn phương Tây",
-        "Nhờ bản sắc Hồi giáo Ibadi khoan dung (khác biệt với cả dòng Sunni của Ả Rập Xê Út lẫn dòng Shia của Iran), Muscat kiên định chính sách trung lập tích cực và không bao giờ cắt đứt ngoại giao với các nước láng giềng. Oman từng bí mật tổ chức các cuộc đàm phán Mỹ – Iran dẫn tới Thỏa thuận hạt nhân JCPOA (2015), từ chối tham gia liên quân không kích Yemen cũng như cuộc phong tỏa Qatar, và tiếp tục làm trung gian hạ nhiệt Biển Đỏ giai đoạn 2024–2026."
+        "Nhờ bản sắc Hồi giáo Ibadi khoan dung (khác biệt với cả dòng Sunni của Ả Rập Xê Út lẫn dòng Shia của Iran), Muscat kiên định chính sách trung lập tích cực và không bao giờ cắt đứt ngoại giao với các nước láng giềng. Oman từng bí mật tổ chức các cuộc đàm phán Mỹ – Iran dẫn tới Thỏa thuận hạt nhân JCPOA (2015), từ chối tham gia liên quân không kích Yemen cũng như cuộc phong tỏa Qatar, đồng thời làm trung gian cho thỏa thuận ngừng bắn Mỹ – Houthi (5/2025) và đăng cai các vòng đàm phán hạt nhân Mỹ – Iran năm 2025."
       ],
       [
         "m",
@@ -1675,7 +1688,7 @@ export const C0 = {
     "cap": "Sana'a (Houthi kiểm soát) / Aden (chính phủ quốc tế)",
     "pop": "~40 triệu",
     "area": "528 nghìn km²",
-    "sum": "Án ngữ ở góc tây nam của bán đảo Ả Rập với bờ biển dài ôm trọn cả Biển Đỏ lẫn vịnh Aden, Yemen sở hữu địa hình đa dạng bậc nhất khu vực: từ dải đồng bằng ven biển Tihama nóng bức vươn lên cao nguyên núi lửa phía tây cao gần 3.700 m (nơi đặt thủ đô Sana'a) rồi thoải dần sang vùng sa mạc Hadhramaut ở phía đông. Vị trí nằm ngay trên bờ đông của eo biển Bab el-Mandeb rộng chưa đầy 30 km cùng cảng nước sâu tự nhiên Aden và quần đảo Socotra ngoài Ấn Độ Dương biến Yemen thành người gác cổng yết hầu hàng hải nối châu Á với Địa Trung Hải qua kênh đào Suez. Từng được người La Mã cổ đại gọi là \"Arabia Felix\" (Ả Rập Hạnh phúc) nhờ lượng mưa gió mùa dồi dào, hương trầm và cà phê Mocha, nhưng Yemen hiện đại lại mới thống nhất năm 1990 từ hai nhà nước Bắc và Nam có lịch sử hoàn toàn khác biệt.\n\nCuộc nội chiến bùng phát từ năm 2014 khi phong trào Houthi (Ansar Allah, thuộc nhánh Shia Zaidi ở cao nguyên phía bắc) chiếm thủ đô Sana'a và kéo theo sự can thiệp quân sự của liên quân do Ả Rập Xê Út dẫn đầu (từ 2015) đã đẩy đất nước 40 triệu dân vào thảm họa nhân đạo tồi tệ nhất thế giới. Trong giai đoạn 2023–2026, lực lượng Houthi với vũ khí tên lửa đạn đạo và UAV tầm xa do Iran hậu thuẫn đã thực hiện hàng trăm vụ tấn công tàu thương mại trên Biển Đỏ cũng như phóng tên lửa sang Israel, buộc các hãng tàu lớn phải vòng qua mũi Hảo Vọng và kéo theo các đợt không kích trả đũa của Mỹ – Anh – Israel. Hiện tại, Yemen vẫn bị xé lẻ về chính trị – tiền tệ trong khi đối mặt nguy cơ cạn kiệt hoàn toàn nguồn nước ngầm tại thủ đô Sana'a.",
+    "sum": "Án ngữ ở góc tây nam của bán đảo Ả Rập với bờ biển dài ôm trọn cả Biển Đỏ lẫn vịnh Aden, Yemen sở hữu địa hình đa dạng bậc nhất khu vực: từ dải đồng bằng ven biển Tihama nóng bức vươn lên cao nguyên núi lửa phía tây cao gần 3.700 m (nơi đặt thủ đô Sana'a) rồi thoải dần sang vùng sa mạc Hadhramaut ở phía đông. Vị trí nằm ngay trên bờ đông của eo biển Bab el-Mandeb rộng chưa đầy 30 km cùng cảng nước sâu tự nhiên Aden và quần đảo Socotra ngoài Ấn Độ Dương biến Yemen thành người gác cổng yết hầu hàng hải nối châu Á với Địa Trung Hải qua kênh đào Suez. Từng được người La Mã cổ đại gọi là \"Arabia Felix\" (Ả Rập Hạnh phúc) nhờ lượng mưa gió mùa dồi dào, hương trầm và cà phê Mocha, nhưng Yemen hiện đại lại mới thống nhất năm 1990 từ hai nhà nước Bắc và Nam có lịch sử hoàn toàn khác biệt.\n\nCuộc nội chiến bùng phát từ năm 2014 khi phong trào Houthi (Ansar Allah, thuộc nhánh Shia Zaidi ở cao nguyên phía bắc) chiếm thủ đô Sana'a và kéo theo sự can thiệp quân sự của liên quân do Ả Rập Xê Út dẫn đầu (từ 2015) đã đẩy đất nước 40 triệu dân vào thảm họa nhân đạo tồi tệ nhất thế giới. Trong giai đoạn 2023–2026, lực lượng Houthi với vũ khí tên lửa đạn đạo và UAV tầm xa do Iran hậu thuẫn đã thực hiện hàng trăm vụ tấn công tàu thương mại trên Biển Đỏ cũng như phóng tên lửa sang Israel, buộc các hãng tàu lớn phải vòng qua mũi Hảo Vọng và kéo theo các đợt không kích trả đũa của Mỹ – Anh – Israel. Ở miền nam, cuộc tấn công của STC (12/2025) bị lực lượng do Ả Rập Xê Út hậu thuẫn đẩy lùi và STC tuyên bố giải thể (1/2026), nhưng Yemen vẫn bị chia cắt giữa Houthi và chính phủ được công nhận trong khi đối mặt nguy cơ cạn kiệt hoàn toàn nguồn nước ngầm tại thủ đô Sana'a.",
     "t": [
       [
         "g",
@@ -1694,8 +1707,8 @@ export const C0 = {
       ],
       [
         "b",
-        "Đất nước bị xé lẻ giữa Houthi (miền bắc), chính phủ được công nhận và phe ly khai miền nam (STC)",
-        "Bản đồ thực địa Yemen từ sau năm 2015 bị chia cắt thành ít nhất ba mảnh: Houthi kiểm soát vùng núi phía bắc và bờ Biển Đỏ (nơi hơn 70% dân số sinh sống); Chính phủ được quốc tế công nhận (PLC) do Ả Rập Xê Út hậu thuẫn kiểm soát miền trung – đông (Marib, Hadhramaut); và Hội đồng Chuyển tiếp miền Nam (STC) do UAE hậu thuẫn kiểm soát cảng Aden cùng đảo Socotra với mục tiêu khôi phục nhà nước Nam Yemen độc lập như trước năm 1990."
+        "Đất nước bị chia cắt giữa Houthi (miền bắc) và chính phủ được công nhận; phe ly khai miền nam (STC) tan rã năm 2026",
+        "Bản đồ thực địa Yemen từ sau năm 2015 từng bị chia cắt thành ba mảnh: Houthi kiểm soát vùng núi phía bắc và bờ Biển Đỏ (nơi hơn 70% dân số sinh sống); Chính phủ được quốc tế công nhận (PLC) do Ả Rập Xê Út hậu thuẫn kiểm soát miền trung – đông (Marib, Hadhramaut); và Hội đồng Chuyển tiếp miền Nam (STC) do UAE hậu thuẫn kiểm soát Aden cùng đảo Socotra với mục tiêu khôi phục nhà nước Nam Yemen. Sau khi đánh chiếm Hadhramaut (12/2025), STC bị lực lượng do Ả Rập Xê Út hậu thuẫn đẩy lùi, mất Aden và tuyên bố giải thể (1/2026)."
       ],
       [
         "b",
@@ -1714,7 +1727,7 @@ export const C0 = {
     "pop": "~10 triệu",
     "area": "~22 nghìn km²",
     "ch": "c6",
-    "sum": "Trải dọc bờ Đông Địa Trung Hải trên một dải đất hẹp dài khoảng 420 km từ dãy núi Galilee ở phía bắc xuống sa mạc Negev hình tam giác chạm tới mũi vịnh Aqaba (Biển Đỏ) ở phía nam, Israel có diện tích chỉ tương đương một tỉnh nhỏ (~22.000 km²). Nằm ở điểm giao thoa lục địa Á – Phi – Âu thuộc vùng Levant lịch sử và là miền đất thánh thiêng liêng của cả ba tôn giáo độc thần (Do Thái giáo, Kitô giáo và Hồi giáo) xoay quanh thành phố Jerusalem, vùng đất này mang mật độ lịch sử và địa chính trị dày đặc bậc nhất hành tinh. Sau hàng thiên niên kỷ lưu lạc và thảm họa diệt chủng Holocaust tại châu Âu, Nhà nước Israel được tuyên bố thành lập vào tháng 5/1948 và đã tồn tại qua hàng loạt cuộc chiến tranh sinh tồn với các nước láng giềng Ả Rập (1948, 1956, 1967, 1973).\n\nBị ám ảnh bởi việc thiếu chiều sâu chiến lược trên bộ, học thuyết an ninh của Israel luôn dựa trên ba trụ cột: duy trì ưu thế quân sự – công nghệ vượt trội tuyệt đối tại Trung Đông, liên minh chiến lược không thể tách rời với Mỹ và kiểm soát các điểm cao địa hình xung quanh. Cuộc tấn công ngày 7/10/2023 của Hamas từ Dải Gaza đã châm ngòi cho cuộc chiến đa mặt trận dài nhất và khốc liệt nhất trong lịch sử Israel kéo dài sang giai đoạn 2024–2026: từ chiến dịch quân sự tại Gaza, giao tranh và đánh gục bộ chỉ huy Hezbollah ở Lebanon, mở rộng vùng đệm tại Syria sau khi chế độ Assad sụp đổ (12/2024), cho tới các đợt không kích – đấu tên lửa trực tiếp với Iran. Dù nền kinh tế \"Quốc gia Khởi nghiệp\" có sức chống chịu cao, Israel đang đối mặt với gánh nặng chi phí chiến tranh kỷ lục, sự phân cực chính trị nội bộ và áp lực ngoại giao quốc tế chưa từng có.",
+    "sum": "Trải dọc bờ Đông Địa Trung Hải trên một dải đất hẹp dài khoảng 420 km từ dãy núi Galilee ở phía bắc xuống sa mạc Negev hình tam giác chạm tới mũi vịnh Aqaba (Biển Đỏ) ở phía nam, Israel có diện tích chỉ tương đương một tỉnh nhỏ (~22.000 km²). Nằm ở điểm giao thoa lục địa Á – Phi – Âu thuộc vùng Levant lịch sử và là miền đất thánh thiêng liêng của cả ba tôn giáo độc thần (Do Thái giáo, Kitô giáo và Hồi giáo) xoay quanh thành phố Jerusalem, vùng đất này mang mật độ lịch sử và địa chính trị dày đặc bậc nhất hành tinh. Sau hàng thiên niên kỷ lưu lạc và thảm họa diệt chủng Holocaust tại châu Âu, Nhà nước Israel được tuyên bố thành lập vào tháng 5/1948 và đã tồn tại qua hàng loạt cuộc chiến tranh sinh tồn với các nước láng giềng Ả Rập (1948, 1956, 1967, 1973).\n\nBị ám ảnh bởi việc thiếu chiều sâu chiến lược trên bộ, học thuyết an ninh của Israel luôn dựa trên ba trụ cột: duy trì ưu thế quân sự – công nghệ vượt trội tuyệt đối tại Trung Đông, liên minh chiến lược không thể tách rời với Mỹ và kiểm soát các điểm cao địa hình xung quanh. Cuộc tấn công ngày 7/10/2023 của Hamas từ Dải Gaza đã châm ngòi cho cuộc chiến đa mặt trận dài nhất và khốc liệt nhất trong lịch sử Israel kéo dài sang giai đoạn 2024–2026: từ chiến dịch quân sự tại Gaza (ngừng bắn mong manh từ 10/10/2025), giao tranh với Hezbollah ở Lebanon (bùng phát trở lại từ 3/2026), mở rộng vùng đệm tại Syria sau khi chế độ Assad sụp đổ (12/2024), cho tới \"Chiến tranh 12 ngày\" với Iran (6/2025) và cuộc chiến cùng Mỹ chống Iran từ 2/2026. Dù nền kinh tế \"Quốc gia Khởi nghiệp\" có sức chống chịu cao, Israel đang đối mặt với gánh nặng chi phí chiến tranh kỷ lục, sự phân cực chính trị nội bộ và áp lực ngoại giao quốc tế chưa từng có; cuộc bầu cử Knesset ngày 27/10/2026 không mang lại đa số rõ ràng cho phe nào.",
     "t": [
       [
         "b",
@@ -1729,12 +1742,12 @@ export const C0 = {
       [
         "b",
         "Khí hậu bán khô hạn; sông Jordan nhỏ và cạn dần",
-        "Con sông duy nhất có ý nghĩa là sông Jordan chảy dọc thung lũng đứt gãy từ chân núi Hermon qua hồ nước ngọt Galilee (Kinneret) rồi đổ vào Biển Chết — điểm trũng thấp nhất trên bề mặt lục địa Trái Đất (-430 m dưới mực nước biển). Do khí hậu khô hạn và việc khai thác nước ở thượng nguồn suốt nhiều thập kỷ, đoạn hạ lưu sông Jordan nay chỉ còn là một dòng chảy nhỏ và diện tích Biển Chết đang thu hẹp hơn 1 mét mỗi năm."
+        "Con sông duy nhất có ý nghĩa là sông Jordan chảy dọc thung lũng đứt gãy từ chân núi Hermon qua hồ nước ngọt Galilee (Kinneret) rồi đổ vào Biển Chết — điểm trũng thấp nhất trên bề mặt lục địa Trái Đất (hơn 430 m dưới mực nước biển). Do khí hậu khô hạn và việc khai thác nước ở thượng nguồn suốt nhiều thập kỷ, đoạn hạ lưu sông Jordan nay chỉ còn là một dòng chảy nhỏ và mực nước Biển Chết đang hạ hơn 1 mét mỗi năm."
       ],
       [
         "b",
         "Xung đột kéo dài với người Palestine (Gaza, Bờ Tây), Hezbollah (Lebanon) và Iran",
-        "Mặc dù đã ký hiệp ước hòa bình bền vững với Ai Cập (1979), Jordan (1994) và bình thường hóa quan hệ với UAE, Bahrain, Maroc qua Hiệp định Abraham (2020), các biên giới còn lại của Israel luôn trong tình trạng chiến sự nóng bỏng. Sau biến cố ngày 7/10/2023 và chuỗi chiến dịch quân sự năm 2024–2025 làm suy yếu nặng nề Hamas ở Gaza, Hezbollah ở nam Lebanon và phá hủy kho vũ khí của Syria hậu Assad (tháng 12/2024), Israel đã thiết lập lại vành đai đệm quân sự dọc cả ba mặt trận này."
+        "Mặc dù đã ký hiệp ước hòa bình bền vững với Ai Cập (1979), Jordan (1994) và bình thường hóa quan hệ với UAE, Bahrain, Maroc qua Hiệp định Abraham (2020), các biên giới còn lại của Israel luôn trong tình trạng chiến sự nóng bỏng. Sau biến cố ngày 7/10/2023 và chuỗi chiến dịch quân sự năm 2024–2025 làm suy yếu nặng nề Hamas ở Gaza, Hezbollah ở nam Lebanon và phá hủy kho vũ khí của Syria hậu Assad (tháng 12/2024), Israel đã thiết lập lại vành đai đệm quân sự dọc cả ba mặt trận này; đến cuối năm 2026, quân Israel vẫn kiểm soát hơn một nửa Dải Gaza sau lệnh ngừng bắn 10/2025 và chiếm đóng một phần miền nam Lebanon sau cuộc chiến năm 2026."
       ],
       [
         "g",
@@ -1753,10 +1766,10 @@ export const C0 = {
   },
   "Palestine": {
     "cap": "Đông Jerusalem (tuyên bố) / Ramallah (hành chính)",
-    "pop": "~5,5 triệu",
+    "pop": "~5,3 triệu",
     "area": "6,02 nghìn km²",
     "ch": "c6",
-    "sum": "Lãnh thổ Palestine bao gồm hai vùng đất hoàn toàn tách biệt nhau về mặt địa lý với tổng diện tích khoảng 6.020 km²: vùng đồi núi Bờ Tây (West Bank, rộng ~5.655 km², bao gồm Đông Jerusalem) nằm giữa Israel và sông Jordan, cùng Dải Gaza (rộng ~365 km²) là một dải đất phẳng ven bờ Địa Trung Hải giáp Israel và bán đảo Sinai của Ai Cập. Tọa lạc tại khu vực trung tâm của vùng đất thánh lịch sử từ sông Jordan tới Địa Trung Hải, nơi có các đô thị cổ kính hàng nghìn năm tuổi như Jerusalem, Bethlehem, Hebron, Jericho và Gaza, vùng đất này là tâm điểm của cuộc xung đột lãnh thổ dai dẳng nhất thời hiện đại. Sau Nghị quyết phân chia Palestine số 181 của Liên Hợp Quốc (1947) và cuộc chiến năm 1948, Bờ Tây từng do Jordan quản lý còn Gaza do Ai Cập quản lý trước khi cả hai vùng lãnh thổ này bị quân đội Israel chiếm đóng trong cuộc Chiến tranh Sáu ngày tháng 6/1967.\n\nTheo Hiệp định Oslo năm 1993, Chính quyền Dân tộc Palestine (PA) đặt trụ sở hành chính tại Ramallah được thành lập, song từ năm 2007 nội bộ Palestine bị chia rẽ sâu sắc khi phong trào Fatah quản lý các đô thị ở Bờ Tây còn phong trào Hồi giáo Hamas nắm quyền kiểm soát Dải Gaza. Kể từ sau cuộc tấn công ngày 7/10/2023 của Hamas vào Israel, chiến dịch quân sự toàn diện của Israel trong suốt giai đoạn 2023–2025 đã san phẳng phần lớn đô thị và hạ tầng tại Dải Gaza, làm hơn 45.000 người thiệt mạng và gần như toàn bộ 2,2 triệu người dân Gaza phải di tản, trong khi bạo lực và việc mở rộng khu định cư tại Bờ Tây cũng leo thang kỷ lục. Bước sang năm 2025–2026, dù đã được gần 150 quốc gia thành viên LHQ (bao gồm thêm Tây Ban Nha, Ireland, Na Uy năm 2024) chính thức công nhận là Nhà nước Palestine, việc tái thiết Gaza và hiện thực hóa giải pháp hai nhà nước có chủ quyền độc lập vẫn đứng trước muôn vàn trở ngại.",
+    "sum": "Lãnh thổ Palestine bao gồm hai vùng đất hoàn toàn tách biệt nhau về mặt địa lý với tổng diện tích khoảng 6.020 km²: vùng đồi núi Bờ Tây (West Bank, rộng ~5.655 km², bao gồm Đông Jerusalem) nằm giữa Israel và sông Jordan, cùng Dải Gaza (rộng ~365 km²) là một dải đất phẳng ven bờ Địa Trung Hải giáp Israel và bán đảo Sinai của Ai Cập. Tọa lạc tại khu vực trung tâm của vùng đất thánh lịch sử từ sông Jordan tới Địa Trung Hải, nơi có các đô thị cổ kính hàng nghìn năm tuổi như Jerusalem, Bethlehem, Hebron, Jericho và Gaza, vùng đất này là tâm điểm của cuộc xung đột lãnh thổ dai dẳng nhất thời hiện đại. Sau Nghị quyết phân chia Palestine số 181 của Liên Hợp Quốc (1947) và cuộc chiến năm 1948, Bờ Tây từng do Jordan quản lý còn Gaza do Ai Cập quản lý trước khi cả hai vùng lãnh thổ này bị quân đội Israel chiếm đóng trong cuộc Chiến tranh Sáu ngày tháng 6/1967.\n\nTheo Hiệp định Oslo năm 1993, Chính quyền Dân tộc Palestine (PA) đặt trụ sở hành chính tại Ramallah được thành lập, song từ năm 2007 nội bộ Palestine bị chia rẽ sâu sắc khi phong trào Fatah quản lý các đô thị ở Bờ Tây còn phong trào Hồi giáo Hamas nắm quyền kiểm soát Dải Gaza. Kể từ sau cuộc tấn công ngày 7/10/2023 của Hamas vào Israel, chiến dịch quân sự toàn diện của Israel trong suốt giai đoạn 2023–2025 đã san phẳng phần lớn đô thị và hạ tầng tại Dải Gaza, làm hơn 74.000 người thiệt mạng (theo Bộ Y tế Gaza, tính đến cuối năm 2026) và gần như toàn bộ 2,2 triệu người dân Gaza phải di tản, trong khi bạo lực và việc mở rộng khu định cư tại Bờ Tây cũng leo thang kỷ lục. Lệnh ngừng bắn theo kế hoạch của Mỹ có hiệu lực từ 10/10/2025, nhưng quân Israel vẫn kiểm soát hơn một nửa Dải Gaza. Dù đã được 157/193 quốc gia thành viên LHQ công nhận (thêm Tây Ban Nha, Ireland, Na Uy năm 2024; Anh, Pháp, Canada, Úc năm 2025), việc tái thiết Gaza và hiện thực hóa giải pháp hai nhà nước có chủ quyền độc lập vẫn đứng trước muôn vàn trở ngại.",
     "t": [
       [
         "b",
@@ -1776,7 +1789,7 @@ export const C0 = {
       [
         "b",
         "Đường Xanh (1949) và bức tường an ninh của Israel bao quanh",
-        "Ranh giới của Palestine được định hình bởi \"Đường Xanh\" (ranh giới đình chiến năm 1949) nhưng trên thực địa bị bao vây bởi hệ thống tường bê tông – hàng rào an ninh dài hơn 700 km của Israel tại Bờ Tây cùng hàng rào quân sự quanh Gaza và cửa khẩu Rafah giáp Ai Cập. Sau cuộc chiến 2023–2025 làm hủy hoại hơn 70% công trình xây dựng tại Gaza và việc quân đội Israel kiểm soát hành lang Philadelphi dọc biên giới Ai Cập cùng hành lang Netzarim chia đôi Gaza, câu hỏi về mô hình quản trị hậu chiến và chủ quyền biên giới vẫn hoàn toàn bế tắc."
+        "Ranh giới của Palestine được định hình bởi \"Đường Xanh\" (ranh giới đình chiến năm 1949) nhưng trên thực địa bị bao vây bởi hệ thống tường bê tông – hàng rào an ninh dài hơn 700 km của Israel tại Bờ Tây cùng hàng rào quân sự quanh Gaza và cửa khẩu Rafah giáp Ai Cập. Cuộc chiến 2023–2025 làm hư hại hoặc phá hủy hơn 70% công trình tại Gaza; sau lệnh ngừng bắn 10/2025, quân Israel lùi về \"Đường Vàng\" nhưng vẫn kiểm soát hơn một nửa dải đất (gồm hành lang Philadelphi dọc biên giới Ai Cập), trong khi Hội đồng Hòa bình và Lực lượng Ổn định Quốc tế do HĐBA LHQ bảo trợ triển khai chậm, khiến mô hình quản trị hậu chiến và chủ quyền biên giới vẫn bế tắc."
       ],
       [
         "b",
@@ -1794,7 +1807,7 @@ export const C0 = {
     "cap": "Amman",
     "pop": "~11,5 triệu",
     "area": "89,3 nghìn km²",
-    "sum": "Nằm ở bờ đông sông Jordan trên một cao nguyên đá vôi chuyển tiếp sang sa mạc Ả Rập khô cằn (chiếm 80% diện tích), Vương quốc Hashemite Jordan được bao quanh bởi Syria ở phía bắc, Iraq ở phía đông, Ả Rập Xê Út ở phía nam và Israel cùng Bờ Tây ở phía tây. Sở hữu thung lũng đứt gãy Jordan trũng sâu nhất lục địa (chứa Biển Chết) cùng kỳ quan thành cổ Petra khắc vào đá đỏ của vương quốc Nabataea cổ đại, vùng đất này từng là huyết mạch thương mại hương trầm nối bán đảo Ả Rập với Địa Trung Hải. Nhà nước Jordan hiện đại ra đời năm 1921 khi người Anh trao phần đất phía đông sông Jordan (Transjordan) cho vương triều Hashemite — dòng dõi trực hệ của Nhà tiên tri Muhammad vốn xuất thân từ Mecca — và giành độc lập hoàn toàn năm 1946.\n\nGiữa một khu vực luôn rực lửa chiến tranh, Jordan dưới sự trị vì khéo léo của Vua Abdullah II nổi bật như một \"ốc đảo ổn định\" và vùng đệm chiến lược không thể thay thế, nơi đã cưu mang hàng triệu người tị nạn Palestine, Iraq và Syria qua nhiều thế hệ. Trong giai đoạn 2024–2026, Amman phải đi trên dây cực kỳ căng thẳng: vừa duy trì Hiệp ước Hòa bình năm 1994 với Israel và liên minh quân sự sống còn với Mỹ (từng hỗ trợ bắn hạ UAV/tên lửa bay qua không phận năm 2024), vừa phải xoa dịu làn sóng phẫn nộ dữ dội của công chúng trong nước (vốn có hơn 50% dân số gốc Palestine) trước cuộc chiến tại Gaza. Thách thức sinh tồn lớn nhất của vương quốc là tình trạng khan hiếm nước ngọt đứng đầu thế giới và nền kinh tế nghèo tài nguyên năng lượng.",
+    "sum": "Nằm ở bờ đông sông Jordan trên một cao nguyên đá vôi chuyển tiếp sang sa mạc Ả Rập khô cằn (chiếm 80% diện tích), Vương quốc Hashemite Jordan được bao quanh bởi Syria ở phía bắc, Iraq ở phía đông, Ả Rập Xê Út ở phía nam và Israel cùng Bờ Tây ở phía tây. Sở hữu thung lũng đứt gãy Jordan trũng sâu nhất lục địa (chứa Biển Chết) cùng kỳ quan thành cổ Petra khắc vào đá đỏ của vương quốc Nabataea cổ đại, vùng đất này từng là huyết mạch thương mại hương trầm nối bán đảo Ả Rập với Địa Trung Hải. Nhà nước Jordan hiện đại ra đời năm 1921 khi người Anh trao phần đất phía đông sông Jordan (Transjordan) cho vương triều Hashemite — dòng dõi trực hệ của Nhà tiên tri Muhammad vốn xuất thân từ Mecca — và giành độc lập hoàn toàn năm 1946.\n\nGiữa một khu vực luôn rực lửa chiến tranh, Jordan dưới sự trị vì khéo léo của Vua Abdullah II nổi bật như một \"ốc đảo ổn định\" và vùng đệm chiến lược không thể thay thế, nơi đã cưu mang hàng triệu người tị nạn Palestine, Iraq và Syria qua nhiều thế hệ. Trong giai đoạn 2024–2026, Amman phải đi trên dây cực kỳ căng thẳng: vừa duy trì Hiệp ước Hòa bình năm 1994 với Israel và liên minh quân sự sống còn với Mỹ (đánh chặn UAV, tên lửa Iran bay qua không phận năm 2024 và trong cuộc chiến năm 2026), vừa phải xoa dịu làn sóng phẫn nộ dữ dội của công chúng trong nước (vốn có hơn 50% dân số gốc Palestine) trước cuộc chiến tại Gaza. Thách thức sinh tồn lớn nhất của vương quốc là tình trạng khan hiếm nước ngọt đứng đầu thế giới và nền kinh tế nghèo tài nguyên năng lượng.",
     "t": [
       [
         "m",
@@ -1829,9 +1842,9 @@ export const C0 = {
   },
   "Lebanon": {
     "cap": "Beirut",
-    "pop": "~5,4 triệu",
+    "pop": "~5,8 triệu",
     "area": "10,45 nghìn km²",
-    "sum": "Nằm dọc bờ Đông Địa Trung Hải trên một dải đất nhỏ hẹp chỉ rộng 10.452 km², Lebanon được định hình bởi hai dãy núi chạy song song từ bắc xuống nam là dãy núi Lebanon sát biển và dãy Đối Lebanon (Anti-Lebanon) dọc biên giới Syria, kẹp ở giữa là thung lũng Bekaa trù phú. Là quê hương của nền văn minh hàng hải Phoenicia cổ đại — những người đã phát minh ra bảng chữ cái và lập nên các thương cảng Byblos, Sidon, Tyre cách đây hơn 3.000 năm — vùng núi tuyết tùng này từ lâu đã là nơi trú ẩn của các cộng đồng tôn giáo thiểu số khắp Trung Đông. Nhà nước Đại Lebanon hiện đại được người Pháp tách ra từ lãnh thổ Syria năm 1920 và giành độc lập năm 1943 với \"Hiệp ước Quốc gia\" chia sẻ quyền lực theo giáo phái: Tổng thống phải là người Công giáo Maronite, Thủ tướng là người Hồi giáo Sunni và Chủ tịch Quốc hội là người Hồi giáo Shia.\n\nCơ chế phân chia giáo phái cứng nhắc giữa 18 cộng đồng tôn giáo được công nhận đã biến Lebanon thành chiến trường ủy nhiệm của khu vực, dẫn tới cuộc nội chiến đẫm máu (1975–1990) và sự trỗi dậy của lực lượng vũ trang Hezbollah do Iran hậu thuẫn như một \"nhà nước trong nhà nước\". Từ năm 2019, Lebanon rơi vào cuộc sụp đổ tài chính – ngân hàng tồi tệ nhất thời bình làm đồng nội tệ mất 98% giá trị, tiếp nối bởi vụ nổ cảng Beirut (2020) và cuộc chiến khốc liệt giữa Israel – Hezbollah năm 2023–2024 khiến miền nam, thung lũng Bekaa bị tàn phá và thủ lĩnh Hassan Nasrallah thiệt mạng. Bước sang đầu năm 2025–2026, sự suy yếu của Hezbollah cùng sự sụp đổ của chế độ Assad ở Syria đã giúp Lebanon chấm dứt hơn 2 năm trống ngôi Tổng thống khi bầu Tư lệnh quân đội Joseph Aoun làm Tổng thống và ông Nawaf Salam làm Thủ tướng, mở ra cơ hội lịch sử để khôi phục chủ quyền nhà nước và tái thiết kinh tế.",
+    "sum": "Nằm dọc bờ Đông Địa Trung Hải trên một dải đất nhỏ hẹp chỉ rộng 10.452 km², Lebanon được định hình bởi hai dãy núi chạy song song từ bắc xuống nam là dãy núi Lebanon sát biển và dãy Đối Lebanon (Anti-Lebanon) dọc biên giới Syria, kẹp ở giữa là thung lũng Bekaa trù phú. Là quê hương của nền văn minh hàng hải Phoenicia cổ đại — những người đã phát minh ra bảng chữ cái và lập nên các thương cảng Byblos, Sidon, Tyre cách đây hơn 3.000 năm — vùng núi tuyết tùng này từ lâu đã là nơi trú ẩn của các cộng đồng tôn giáo thiểu số khắp Trung Đông. Nhà nước Đại Lebanon hiện đại được người Pháp tách ra từ lãnh thổ Syria năm 1920 và giành độc lập năm 1943 với \"Hiệp ước Quốc gia\" chia sẻ quyền lực theo giáo phái: Tổng thống phải là người Công giáo Maronite, Thủ tướng là người Hồi giáo Sunni và Chủ tịch Quốc hội là người Hồi giáo Shia.\n\nCơ chế phân chia giáo phái cứng nhắc giữa 18 cộng đồng tôn giáo được công nhận đã biến Lebanon thành chiến trường ủy nhiệm của khu vực, dẫn tới cuộc nội chiến đẫm máu (1975–1990) và sự trỗi dậy của lực lượng vũ trang Hezbollah do Iran hậu thuẫn như một \"nhà nước trong nhà nước\". Từ năm 2019, Lebanon rơi vào cuộc sụp đổ tài chính – ngân hàng tồi tệ nhất thời bình làm đồng nội tệ mất 98% giá trị, tiếp nối bởi vụ nổ cảng Beirut (2020) và cuộc chiến khốc liệt giữa Israel – Hezbollah năm 2023–2024 khiến miền nam, thung lũng Bekaa bị tàn phá và thủ lĩnh Hassan Nasrallah thiệt mạng. Đầu năm 2025, sự suy yếu của Hezbollah cùng sự sụp đổ của chế độ Assad ở Syria đã giúp Lebanon chấm dứt hơn 2 năm trống ngôi Tổng thống khi bầu Tư lệnh quân đội Joseph Aoun làm Tổng thống và ông Nawaf Salam làm Thủ tướng. Tuy nhiên, từ ngày 2/3/2026, Hezbollah tấn công Israel để đáp trả cuộc chiến Mỹ – Israel chống Iran; Israel mở chiến dịch không kích và tiến công trên bộ vào miền nam Lebanon (hơn 4.000 người thiệt mạng, hơn 1 triệu người phải di tản). Dù có khuôn khổ ngừng bắn tháng 6/2026, quân Israel vẫn chiếm đóng một phần miền nam và bầu cử Quốc hội bị hoãn tới năm 2028.",
     "t": [
       [
         "m",
@@ -1841,22 +1854,22 @@ export const C0 = {
       [
         "g",
         "Dải bờ biển Địa Trung Hải với truyền thống thương thuyền từ thời Phoenicia cổ đại",
-        "Với 225 km bờ biển Địa Trung Hải và vị trí cửa ngõ tự nhiên vào nội địa Syria – thế giới Ả Rập, cảng Beirut từng là thương cảng và trung tâm tài chính sầm uất nhất vùng Levant. Tuy nhiên, vụ nổ kho hóa chất amoni nitrat kinh hoàng ngày 4/8/2020 đã san phẳng một phần cảng Beirut và khu trung tâm thủ đô, gây thiệt hại hàng chục tỷ USD mà đến nay vẫn chưa thể phục hồi hoàn toàn."
+        "Với 225 km bờ biển Địa Trung Hải và vị trí cửa ngõ tự nhiên vào nội địa Syria – thế giới Ả Rập, cảng Beirut từng là thương cảng và trung tâm tài chính sầm uất nhất vùng Levant. Tuy nhiên, vụ nổ kho hóa chất amoni nitrat kinh hoàng ngày 4/8/2020 đã san phẳng một phần cảng Beirut và khu trung tâm thủ đô, gây thiệt hại hàng tỷ USD mà đến nay vẫn chưa thể phục hồi hoàn toàn."
       ],
       [
         "m",
         "Sông Litani ở miền nam và sông Orontes chảy sang Syria",
-        "Sông Litani dài 140 km chảy hoàn toàn trong lãnh thổ Lebanon (từ thung lũng Bekaa đổ ra Địa Trung Hải ở phía bắc thành phố Tyre) và sông Orontes chảy ngược về phía bắc sang Syria là hai nguồn nước chính. Trong địa chính trị, dòng sông Litani mang ý nghĩa quân sự đặc biệt: theo Nghị quyết 1701 của HĐBA LHQ (năm 2006 và được tái khẳng định trong thỏa thuận ngừng bắn tháng 11/2024), Hezbollah buộc phải rút toàn bộ lực lượng và vũ khí hạng nặng lên phía bắc sông Litani để nhường vùng nam sông cho Quân đội chính quy Lebanon (LAF) và lực lượng LHQ (UNIFIL)."
+        "Sông Litani dài 140 km chảy hoàn toàn trong lãnh thổ Lebanon (từ thung lũng Bekaa đổ ra Địa Trung Hải ở phía bắc thành phố Tyre) và sông Orontes chảy ngược về phía bắc sang Syria là hai nguồn nước chính. Trong địa chính trị, dòng sông Litani mang ý nghĩa quân sự đặc biệt: theo Nghị quyết 1701 của HĐBA LHQ (năm 2006 và được tái khẳng định trong thỏa thuận ngừng bắn tháng 11/2024), Hezbollah buộc phải rút toàn bộ lực lượng và vũ khí hạng nặng lên phía bắc sông Litani để nhường vùng nam sông cho Quân đội chính quy Lebanon (LAF) và lực lượng LHQ (UNIFIL). Trong cuộc chiến năm 2026, Israel phá các cây cầu chính trên sông Litani và tuyên bố chiếm đóng tới bờ sông này."
       ],
       [
         "b",
-        "Kẹp giữa Syria và Israel; lực lượng Hezbollah kiểm soát vùng nam Lebanon",
+        "Kẹp giữa Syria và Israel; miền nam là chiến trường Israel – Hezbollah",
         "Lebanon chỉ có hai láng giềng trên bộ nhưng đều cực kỳ phức tạp: Syria bao bọc ở phía bắc và phía đông, còn Israel ở phía nam (cùng tranh chấp khu vực trang trại Shebaa). Sự kiện chế độ Assad ở Syria sụp đổ vào tháng 12/2024 đã cắt đứt tuyến đường bộ huyết mạch mà Iran dùng để vận chuyển vũ khí qua Syria cho Hezbollah suốt nhiều thập kỷ, làm thay đổi căn bản cán cân quyền lực tại biên giới Lebanon."
       ],
       [
         "g",
         "Một trong số ít quốc gia Trung Đông không có sa mạc và có tuyết trên núi cung cấp nước ngọt",
-        "Lebanon là quốc gia Ả Rập duy nhất hoàn toàn không có sa mạc và được thiên nhiên ưu đãi nguồn nước ngọt dồi dào từ tuyết tan trên đỉnh núi Lebanon cùng hàng nghìn mạch nước ngầm. Thế nhưng do khủng hoảng kinh tế làm lưới điện quốc gia sập nguồn (chỉ cấp điện 2–4 giờ/ngày) và hạ tầng đường ống rò rỉ tới 40%, người dân ở thủ đô Beirut vẫn thường xuyên phải mua nước chở bằng xe bồn tư nhân với giá đắt đỏ."
+        "Lebanon là quốc gia Ả Rập duy nhất hoàn toàn không có sa mạc và được thiên nhiên ưu đãi nguồn nước ngọt dồi dào từ tuyết tan trên đỉnh núi Lebanon cùng hàng nghìn mạch nước ngầm. Thế nhưng do khủng hoảng kinh tế làm lưới điện quốc gia sập nguồn (nhiều thời điểm chỉ cấp điện vài giờ mỗi ngày) và hạ tầng đường ống rò rỉ tới 40%, người dân ở thủ đô Beirut vẫn thường xuyên phải mua nước chở bằng xe bồn tư nhân với giá đắt đỏ."
       ]
     ],
     "hs": [
@@ -1870,7 +1883,7 @@ export const C0 = {
     "pop": "~24 triệu",
     "area": "185 nghìn km²",
     "ch": "c6",
-    "sum": "Nằm ở trung tâm vùng Lưỡi liềm Màu mỡ thuộc khu vực Levant, Syria có địa hình chuyển tiếp rõ rệt từ dải đồng bằng và dãy núi Ansariyah chạy dọc bờ Địa Trung Hải ở phía tây sang vùng thảo nguyên – sa mạc Syria ở miền trung và đồng bằng sông Euphrates ở phía đông bắc. Tọa lạc tại ngã tư giao thương nối Thổ Nhĩ Kỳ (châu Âu) với thế giới Ả Rập và nối Địa Trung Hải với Lưỡng Hà (Iraq), thủ đô Damascus của Syria là một trong những đô thị có người ở liên tục lâu đời nhất nhân loại và từng là kinh đô của Đế chế Hồi giáo Umayyad vĩ đại thế kỷ 7–8. Sau khi Đế chế Ottoman tan rã và trải qua thời kỳ Ủy trị của Pháp theo biên giới hiệp ước Sykes-Picot, Syria giành độc lập năm 1946 và từ năm 1970 nằm dưới sự cai trị sắt đá suốt 54 năm của gia tộc Hafez và Bashar al-Assad (thuộc cộng đồng thiểu số Alawite chỉ chiếm ~12% dân số).\n\nCuộc nổi dậy Mùa xuân Ả Rập năm 2011 đã biến thành cuộc nội chiến đa phương tàn khốc kéo dài hơn 13 năm với sự can dự của Nga, Iran, Hezbollah, Mỹ, Thổ Nhĩ Kỳ và Israel, cướp đi sinh mạng hơn 500.000 người và khiến hơn một nửa dân số (13 triệu người) phải rời bỏ nhà cửa. Bước ngoặt lịch sử chấn động diễn ra vào cuối tháng 11 và ngày 8/12/2024: khi các đồng minh Nga (bận chiến trường Ukraine), Iran và Hezbollah đều suy yếu, liên minh đối lập do lực lượng Hayat Tahrir al-Sham (HTS) dẫn đầu đã mở cuộc tổng tiến công chớp nhoáng từ Idlib đánh chiếm Aleppo, Hama, Homs và tiến vào Damascus chỉ trong 11 ngày, chấm dứt hơn nửa thế kỷ cầm quyền của nhà Assad. Bước sang giai đoạn 2025–2026 dưới chính phủ chuyển tiếp của Tổng thống lâm thời Ahmed al-Sharaa, Syria đang nỗ lực thống nhất các vùng lãnh thổ tự trị (như lực lượng người Kurd SDF ở đông bắc và người Druze ở miền nam), vận động phương Tây dỡ bỏ cấm vận và tái thiết đất nước đổ nát.",
+    "sum": "Nằm ở trung tâm vùng Lưỡi liềm Màu mỡ thuộc khu vực Levant, Syria có địa hình chuyển tiếp rõ rệt từ dải đồng bằng và dãy núi Ansariyah chạy dọc bờ Địa Trung Hải ở phía tây sang vùng thảo nguyên – sa mạc Syria ở miền trung và đồng bằng sông Euphrates ở phía đông bắc. Tọa lạc tại ngã tư giao thương nối Thổ Nhĩ Kỳ (châu Âu) với thế giới Ả Rập và nối Địa Trung Hải với Lưỡng Hà (Iraq), thủ đô Damascus của Syria là một trong những đô thị có người ở liên tục lâu đời nhất nhân loại và từng là kinh đô của Đế chế Hồi giáo Umayyad vĩ đại thế kỷ 7–8. Sau khi Đế chế Ottoman tan rã và trải qua thời kỳ Ủy trị của Pháp theo biên giới hiệp ước Sykes-Picot, Syria giành độc lập năm 1946 và từ năm 1970 nằm dưới sự cai trị sắt đá suốt 54 năm của gia tộc Hafez và Bashar al-Assad (thuộc cộng đồng thiểu số Alawite chỉ chiếm ~12% dân số).\n\nCuộc nổi dậy Mùa xuân Ả Rập năm 2011 đã biến thành cuộc nội chiến đa phương tàn khốc kéo dài hơn 13 năm với sự can dự của Nga, Iran, Hezbollah, Mỹ, Thổ Nhĩ Kỳ và Israel, cướp đi sinh mạng hơn 500.000 người và khiến hơn một nửa dân số (13 triệu người) phải rời bỏ nhà cửa. Bước ngoặt lịch sử chấn động diễn ra vào cuối tháng 11 và ngày 8/12/2024: khi các đồng minh Nga (bận chiến trường Ukraine), Iran và Hezbollah đều suy yếu, liên minh đối lập do lực lượng Hayat Tahrir al-Sham (HTS) dẫn đầu đã mở cuộc tổng tiến công chớp nhoáng từ Idlib đánh chiếm Aleppo, Hama, Homs và tiến vào Damascus chỉ trong 11 ngày, chấm dứt hơn nửa thế kỷ cầm quyền của nhà Assad. Giai đoạn 2025–2026, chính phủ chuyển tiếp của Tổng thống Ahmed al-Sharaa được Mỹ và phương Tây dỡ bỏ phần lớn cấm vận, giành lại miền đông bắc sau chiến dịch đánh lực lượng người Kurd SDF (1/2026), dẫn tới việc SDF giải thể và sáp nhập vào nhà nước (8/2026), nhưng vẫn đối mặt bạo lực giáo phái (vùng ven biển Alawite, người Druze ở Sweida), sự hiện diện quân sự của Israel, Thổ Nhĩ Kỳ và nhiệm vụ tái thiết đất nước đổ nát.",
     "t": [
       [
         "b",
@@ -1880,29 +1893,30 @@ export const C0 = {
       [
         "m",
         "Bờ Địa Trung Hải dài ~193 km với hai cảng Latakia và Tartus",
-        "Syria sở hữu khoảng 193 km bờ biển Địa Trung Hải với hai cảng nước ấm quan trọng là Latakia và Tartus. Suốt từ năm 1971 đến năm 2024, cảng Tartus và căn cứ không quân Hmeimim (gần Latakia) là điểm tựa hải – không quân chiến lược duy nhất của Nga tại Địa Trung Hải; sau khi chế độ Assad sụp đổ vào tháng 12/2024, Moskva đã phải rút phần lớn khí tài và đàm phán lại tương lai bấp bênh của các căn cứ này với chính quyền mới tại Damascus."
+        "Syria sở hữu khoảng 193 km bờ biển Địa Trung Hải với hai cảng nước ấm quan trọng là Latakia và Tartus. Cảng Tartus (từ năm 1971) và căn cứ không quân Hmeimim (từ năm 2015, gần Latakia) từng là điểm tựa quân sự duy nhất của Nga tại Địa Trung Hải; sau khi chế độ Assad sụp đổ (12/2024), Moskva rút phần lớn khí tài và đến tháng 8/2026 ký bản ghi nhớ với Damascus chuyển hai cơ sở này thành trung tâm huấn luyện chung Nga – Syria, trả các hạng mục dân sự về cho Syria quản lý."
       ],
       [
         "m",
         "Sông Euphrates chảy chéo qua miền đông bắc, nuôi dưỡng nông nghiệp và dầu mỏ",
-        "Dòng sông Euphrates hùng vĩ chảy chéo gần 700 km qua miền đông bắc Syria (cung cấp hơn 80% nguồn nước mặt của cả nước) cùng hồ chứa đập Tabqa (hồ Assad) là cái nôi của cả vùng vựa lúa mì lẫn các mỏ dầu khí tại Deir ez-Zor và Hasakah. Đợt hạn hán khắc nghiệt nhất trong 900 năm tại lưu vực này giai đoạn 2006–2010 từng đẩy 1,5 triệu nông dân Syria di cư vào các khu ổ chuột ven đô thị, trở thành ngòi nổ sinh thái châm ngòi cho cuộc khủng hoảng năm 2011."
+        "Dòng sông Euphrates hùng vĩ chảy chéo gần 700 km qua miền đông bắc Syria (cung cấp hơn 80% nguồn nước mặt của cả nước) cùng hồ chứa đập Tabqa (hồ Assad) là cái nôi của cả vùng vựa lúa mì lẫn các mỏ dầu khí tại Deir ez-Zor và Hasakah. Đợt hạn hán nghiêm trọng giai đoạn 2006–2010 (thuộc chuỗi hạn hán 1998–2012 mà NASA đánh giá là tồi tệ nhất vùng Levant trong khoảng 900 năm) từng đẩy 1,5 triệu nông dân Syria di cư vào các khu ổ chuột ven đô thị, trở thành ngòi nổ sinh thái châm ngòi cho cuộc khủng hoảng năm 2011."
       ],
       [
         "b",
-        "Đất nước bị phân mảnh thành nhiều vùng ảnh hưởng sau nội chiến; mất cao nguyên Golan (1967)",
-        "Sau hơn một thập kỷ nội chiến và biến cố tháng 12/2024, bản đồ chủ quyền biên giới của Syria đang trong quá trình tái định hình sâu sắc: chính quyền chuyển tiếp tại Damascus đã ký thỏa thuận lịch sử đầu năm 2025 để từng bước sáp nhập Lực lượng Dân chủ Syria (SDF do người Kurd lãnh đạo, kiểm soát 1/4 lãnh thổ phía đông sông Euphrates với sự hỗ trợ của ~2.000 lính Mỹ) vào nhà nước thống nhất. Trong khi đó, Thổ Nhĩ Kỳ có ảnh hưởng rất lớn ở dải biên giới phía bắc, còn quân đội Israel sau ngày 8/12/2024 đã tiến vào vùng đệm phi quân sự tại cao nguyên Golan và đỉnh núi chiến lược Hermon."
+        "Tái thống nhất sau nội chiến nhưng còn nhiều vùng ảnh hưởng; mất cao nguyên Golan (1967)",
+        "Sau hơn một thập kỷ nội chiến và biến cố tháng 12/2024, bản đồ chủ quyền biên giới của Syria đang trong quá trình tái định hình sâu sắc: sau khi thỏa thuận khung (3/2025) với Lực lượng Dân chủ Syria (SDF do người Kurd lãnh đạo) bế tắc, quân chính phủ mở chiến dịch tháng 1/2026 giành lại Raqqa, Deir ez-Zor cùng các mỏ dầu và cửa khẩu; SDF giải thể, sáp nhập vào nhà nước (8/2026), còn Mỹ rút toàn bộ binh sĩ khỏi Syria (hoàn tất khoảng 4/2026). Trong khi đó, Thổ Nhĩ Kỳ có ảnh hưởng rất lớn ở dải biên giới phía bắc, còn quân đội Israel sau ngày 8/12/2024 đã tiến vào vùng đệm phi quân sự tại cao nguyên Golan và đỉnh núi chiến lược Hermon."
       ],
       [
         "b",
         "Phụ thuộc nặng vào nguồn nước sông Euphrates bắt nguồn từ Thổ Nhĩ Kỳ",
-        "Syria chịu sự phụ thuộc sinh tử vào nguồn nước thượng nguồn của Thổ Nhĩ Kỳ khi sông Euphrates và các nhánh của nó bắt nguồn từ vùng núi Anatolia. Việc Ankara xây dựng chuỗi đập thủy điện GAP ở thượng nguồn cộng với việc Thổ Nhĩ Kỳ và các nhóm vũ trang kiểm soát trạm bơm nước Alouk ở biên giới đã khiến lưu lượng sông Euphrates chảy vào Syria nhiều thời điểm giảm hơn 50%, gây thiếu nước uống và mất điện thủy điện nghiêm trọng cho hàng triệu người."
+        "Syria chịu sự phụ thuộc sinh tử vào nguồn nước thượng nguồn của Thổ Nhĩ Kỳ khi sông Euphrates và các nhánh của nó bắt nguồn từ vùng núi Anatolia. Việc Ankara xây dựng chuỗi đập thủy điện GAP ở thượng nguồn cùng hạn hán đã khiến lưu lượng sông Euphrates chảy vào Syria nhiều thời điểm xuống dưới mức tối thiểu 500 m³/s theo nghị định thư năm 1987, làm sụt giảm mạnh thủy điện; riêng ở tỉnh Hasakah, trạm bơm nước ngầm Alouk (thuộc vùng do phe được Thổ Nhĩ Kỳ hậu thuẫn kiểm soát từ 2019) nhiều lần ngừng hoạt động, gây thiếu nước uống cho hàng trăm nghìn người."
       ]
     ],
     "hs": [
       "sykespicot",
       "golan",
       "euphrates",
-      "tigris"
+      "tigris",
+      "base_tartus"
     ]
   },
   "Turkey": {
@@ -1910,7 +1924,7 @@ export const C0 = {
     "pop": "~86 triệu",
     "area": "784 nghìn km²",
     "ch": "c1",
-    "sum": "Trải dài trên bán đảo Tiểu Á (Anatolia, chiếm 97% diện tích ở châu Á) và vùng Đông Thrace (3% diện tích ở châu Âu), Thổ Nhĩ Kỳ có cấu trúc như một cao nguyên núi cao hùng vĩ được bao bọc ở ba mặt bởi Biển Đen ở phía bắc, biển Aegea ở phía tây và Địa Trung Hải ở phía nam. Nắm giữ hai eo biển huyền thoại Bosphorus và Dardanelles — yết hầu hàng hải duy nhất nối Biển Đen với đại dương thế giới — đồng thời là ngã tư lục địa nối châu Âu với Trung Đông, Kavkaz và Trung Á, vùng đất này từng là trung tâm hơn 1.000 năm của Đế chế Đông La Mã (Byzantine) và 600 năm của Đế chế Hồi giáo Ottoman. Sau Thế chiến I, vị cha già dân tộc Mustafa Kemal Atatürk đã lãnh đạo cuộc Chiến tranh Độc lập, lập nên nước Cộng hòa Thổ Nhĩ Kỳ thế tục hiện đại vào năm 1923 với thủ đô đặt tại Ankara ở giữa cao nguyên Anatolia.\n\nDưới sự lãnh đạo hơn hai thập kỷ của Tổng thống Recep Tayyip Erdoğan, Thổ Nhĩ Kỳ từ một tiền đồn sườn đông nam của NATO trong Chiến tranh Lạnh đã chuyển mình thành một cường quốc tầm trung tự chủ, theo đuổi học thuyết \"Thế kỷ của Thổ Nhĩ Kỳ\" và vươn ảnh hưởng khắp Trung Đông, Bắc Phi, Sừng châu Phi và thế giới các dân tộc hệ Turk. Trong giai đoạn 2024–2026, vị thế địa chính trị của Ankara lên tới đỉnh cao: vừa giữ vai trò người gác cổng Biển Đen và trung gian giữa Nga – Ukraine, vừa trở thành người chiến thắng địa chiến lược lớn nhất tại Syria sau khi chế độ Assad sụp đổ cuối năm 2024, lại vừa đón nhận bước ngoặt lịch sử khi tổ chức vũ trang người Kurd PKK tuyên bố giải giáp vũ khí vào đầu năm 2025. Thách thức lớn nhất của đất nước 86 triệu dân hiện nay là kiềm chế lạm phát kinh tế kéo dài, rủi ro động đất và quản lý sự cạnh tranh phức tạp với Israel, Iran và Hy Lạp.",
+    "sum": "Trải dài trên bán đảo Tiểu Á (Anatolia, chiếm 97% diện tích ở châu Á) và vùng Đông Thrace (3% diện tích ở châu Âu), Thổ Nhĩ Kỳ có cấu trúc như một cao nguyên núi cao hùng vĩ được bao bọc ở ba mặt bởi Biển Đen ở phía bắc, biển Aegea ở phía tây và Địa Trung Hải ở phía nam. Nắm giữ hai eo biển huyền thoại Bosphorus và Dardanelles — yết hầu hàng hải duy nhất nối Biển Đen với đại dương thế giới — đồng thời là ngã tư lục địa nối châu Âu với Trung Đông, Kavkaz và Trung Á, vùng đất này từng là trung tâm hơn 1.000 năm của Đế chế Đông La Mã (Byzantine) và 600 năm của Đế chế Hồi giáo Ottoman. Sau Thế chiến I, vị cha già dân tộc Mustafa Kemal Atatürk đã lãnh đạo cuộc Chiến tranh Độc lập, lập nên nước Cộng hòa Thổ Nhĩ Kỳ thế tục hiện đại vào năm 1923 với thủ đô đặt tại Ankara ở giữa cao nguyên Anatolia.\n\nDưới sự lãnh đạo hơn hai thập kỷ của Tổng thống Recep Tayyip Erdoğan, Thổ Nhĩ Kỳ từ một tiền đồn sườn đông nam của NATO trong Chiến tranh Lạnh đã chuyển mình thành một cường quốc tầm trung tự chủ, theo đuổi học thuyết \"Thế kỷ của Thổ Nhĩ Kỳ\" và vươn ảnh hưởng khắp Trung Đông, Bắc Phi, Sừng châu Phi và thế giới các dân tộc hệ Turk. Trong giai đoạn 2024–2026, vị thế địa chính trị của Ankara lên tới đỉnh cao: vừa giữ vai trò người gác cổng Biển Đen và trung gian giữa Nga – Ukraine, vừa trở thành người chiến thắng địa chiến lược lớn nhất tại Syria sau khi chế độ Assad sụp đổ cuối năm 2024, lại vừa đón nhận bước ngoặt lịch sử khi tổ chức vũ trang người Kurd PKK, theo lời kêu gọi của thủ lĩnh Abdullah Öcalan (2/2025), tuyên bố giải thể và chấm dứt đấu tranh vũ trang (5/2025). Thách thức lớn nhất của đất nước 86 triệu dân hiện nay là kiềm chế lạm phát kinh tế kéo dài, rủi ro động đất và quản lý sự cạnh tranh phức tạp với Israel, Iran và Hy Lạp.",
     "t": [
       [
         "g",
@@ -1930,7 +1944,7 @@ export const C0 = {
       [
         "m",
         "Giáp 8 quốc gia ở 3 khu vực nóng nhất thế giới (Balkan, Kavkaz, Trung Đông)",
-        "Giáp tới 8 quốc gia trải dài qua 3 điểm nóng nhất thế giới (Hy Lạp, Bulgaria ở Balkan; Gruzia, Armenia, Azerbaijan ở Kavkaz; Iran, Iraq, Syria ở Trung Đông), biên giới của Thổ Nhĩ Kỳ chưa bao giờ yên ả. Ở phía tây là cuộc tranh chấp thềm lục địa và không phận với Hy Lạp trên biển Aegea; ở phía nam – đông nam, sự sụp đổ của chế độ Assad tại Syria (12/2024) và lời kêu gọi hạ vũ khí lịch sử của thủ lĩnh PKK Abdullah Öcalan (tháng 2/2025) giúp Ankara nắm ưu thế chiến lược chưa từng có và mở đường cho hàng triệu người tị nạn Syria hồi hương."
+        "Giáp tới 8 quốc gia trải dài qua 3 điểm nóng nhất thế giới (Hy Lạp, Bulgaria ở Balkan; Gruzia, Armenia, Azerbaijan ở Kavkaz; Iran, Iraq, Syria ở Trung Đông), biên giới của Thổ Nhĩ Kỳ chưa bao giờ yên ả. Ở phía tây là cuộc tranh chấp thềm lục địa và không phận với Hy Lạp trên biển Aegea; ở phía nam – đông nam, sự sụp đổ của chế độ Assad tại Syria (12/2024) và lời kêu gọi hạ vũ khí của thủ lĩnh PKK Abdullah Öcalan (2/2025), dẫn tới việc PKK tuyên bố giải thể (5/2025), giúp Ankara nắm ưu thế chiến lược chưa từng có và mở đường cho hàng triệu người tị nạn Syria hồi hương."
       ],
       [
         "g",
@@ -1942,14 +1956,16 @@ export const C0 = {
       "bosphorus",
       "tigris",
       "euphrates",
-      "caucasus"
+      "caucasus",
+      "blacksea",
+      "ataturkdam"
     ]
   },
   "Cyprus": {
     "cap": "Nicosia",
-    "pop": "~1,3 triệu (toàn đảo)",
+    "pop": "~1,36 triệu (toàn đảo)",
     "area": "9,25 nghìn km²",
-    "sum": "Là hòn đảo lớn thứ ba tại Địa Trung Hải (sau Sicily và Sardinia) với diện tích 9.251 km², Síp có cấu trúc địa hình gồm hai dãy núi Kyrenia ở phía bắc và Troodos ở phía tây nam kẹp lấy vùng đồng bằng trung tâm Mesaoria khô nắng ở giữa. Tọa lạc ở góc cực đông của Địa Trung Hải — cách bờ biển phía nam Thổ Nhĩ Kỳ chỉ khoảng 70 km, cách Syria và Lebanon 100 km và cách kênh đào Suez 380 km — hòn đảo này từ thời cổ đại đã được coi là \"chiếc tàu sân bay không thể chìm\" khống chế toàn bộ vùng Levant. Sau hàng thiên niên kỷ chịu sự cai trị của người Hy Lạp cổ đại, La Mã, Thập tự chinh, Venice, Đế chế Ottoman (1571–1878) và thực dân Anh, Cộng hòa Síp giành độc lập năm 1960 nhưng bị chia cắt sâu sắc từ năm 1974 sau cuộc đảo chính của phe dân tộc chủ nghĩa Hy Lạp và cuộc can thiệp quân sự của Thổ Nhĩ Kỳ.\n\nKể từ năm 1974 đến nay, hòn đảo bị chia đôi bởi \"Đường Xanh\" (vùng đệm do Liên Hợp Quốc giám sát chạy xuyên qua thủ đô Nicosia): Cộng hòa Síp được quốc tế công nhận (nơi người Síp gốc Hy Lạp sinh sống) kiểm soát 2/3 phía nam đảo, trong khi 1/3 phía bắc do người Síp gốc Thổ Nhĩ Kỳ kiểm soát. Là thành viên Liên minh châu Âu (từ 2004) và khu vực đồng Euro (từ 2008), Cộng hòa Síp trong giai đoạn 2024–2026 phát huy vai trò tiền đồn nhân đạo và hậu cần chiến lược của phương Tây tại Trung Đông (như mở hành lang hàng hải Amalthea viện trợ cho Gaza và làm trạm sơ tán công dân khỏi Lebanon, Israel), đồng thời xích lại gần Mỹ và NATO hơn bao giờ hết sau khi Mỹ dỡ bỏ hoàn toàn lệnh cấm vận vũ khí đối với Nicosia. Những bài toán chiến lược lớn nhất của Síp là bế tắc tái thống nhất đảo, khai thác các mỏ khí đốt ngoài khơi và tình trạng hạn hán thiếu nước ngọt gay gắt do biến đổi khí hậu.",
+    "sum": "Là hòn đảo lớn thứ ba tại Địa Trung Hải (sau Sicily và Sardinia) với diện tích 9.251 km², Síp có cấu trúc địa hình gồm hai dãy núi Kyrenia ở phía bắc và Troodos ở phía tây nam kẹp lấy vùng đồng bằng trung tâm Mesaoria khô nắng ở giữa. Tọa lạc ở góc cực đông của Địa Trung Hải — cách bờ biển phía nam Thổ Nhĩ Kỳ chỉ khoảng 70 km, cách Syria và Lebanon 100 km và cách kênh đào Suez 380 km — hòn đảo này từ thời cổ đại đã được coi là \"chiếc tàu sân bay không thể chìm\" khống chế toàn bộ vùng Levant. Sau hàng thiên niên kỷ chịu sự cai trị của người Hy Lạp cổ đại, La Mã, Thập tự chinh, Venice, Đế chế Ottoman (1571–1878) và thực dân Anh, Cộng hòa Síp giành độc lập năm 1960 nhưng bị chia cắt sâu sắc từ năm 1974 sau cuộc đảo chính của phe dân tộc chủ nghĩa Hy Lạp và cuộc can thiệp quân sự của Thổ Nhĩ Kỳ.\n\nKể từ năm 1974 đến nay, hòn đảo bị chia đôi bởi \"Đường Xanh\" (vùng đệm do Liên Hợp Quốc giám sát chạy xuyên qua thủ đô Nicosia): Cộng hòa Síp được quốc tế công nhận (nơi người Síp gốc Hy Lạp sinh sống) kiểm soát 2/3 phía nam đảo, trong khi 1/3 phía bắc do người Síp gốc Thổ Nhĩ Kỳ kiểm soát. Là thành viên Liên minh châu Âu (từ 2004) và khu vực đồng Euro (từ 2008), Cộng hòa Síp trong giai đoạn 2024–2026 phát huy vai trò tiền đồn nhân đạo và hậu cần chiến lược của phương Tây tại Trung Đông (như mở hành lang hàng hải Amalthea viện trợ cho Gaza và làm trạm sơ tán công dân khỏi Lebanon, Israel), đồng thời xích lại gần Mỹ và NATO hơn bao giờ hết sau khi Mỹ dỡ bỏ lệnh cấm vận vũ khí đối với Nicosia (từ năm 2022, gia hạn hằng năm). Những bài toán chiến lược lớn nhất của Síp là bế tắc tái thống nhất đảo, khai thác các mỏ khí đốt ngoài khơi và tình trạng hạn hán thiếu nước ngọt gay gắt do biến đổi khí hậu.",
     "t": [
       [
         "m",
@@ -1959,7 +1975,7 @@ export const C0 = {
       [
         "g",
         "Trạm trung chuyển hàng hải và căn cứ không quân chiến lược (Anh giữ 2 căn cứ có chủ quyền Akrotiri và Dhekelia)",
-        "Nằm ngay trên tuyến đường biển nối kênh đào Suez với châu Âu, cảng Limassol ở bờ nam đã vươn lên thành một trong những trung tâm quản lý đội tàu biển lớn nhất Liên minh châu Âu sau khi cảng Famagusta rơi vào vùng phía bắc năm 1974. Trong vùng đặc quyền kinh tế (EEZ) phía nam đảo, việc các tập đoàn Chevron, Eni và TotalEnergies phát hiện các mỏ khí đốt tự nhiên lớn ngoài khơi như Aphrodite, Cronos và Glaucus đang mở ra triển vọng kết nối xuất khẩu khí đốt sang các nhà máy hóa lỏng LNG tại Ai Cập vào giai đoạn 2026–2028."
+        "Nằm ngay trên tuyến đường biển nối kênh đào Suez với châu Âu, cảng Limassol ở bờ nam đã vươn lên thành một trong những trung tâm quản lý đội tàu biển lớn nhất Liên minh châu Âu sau khi cảng Famagusta rơi vào vùng phía bắc năm 1974. Trong vùng đặc quyền kinh tế (EEZ) phía nam đảo, việc các tập đoàn Chevron, Eni, TotalEnergies và ExxonMobil phát hiện các mỏ khí đốt tự nhiên lớn ngoài khơi như Aphrodite, Cronos và Glaucus đang mở ra triển vọng kết nối xuất khẩu khí đốt sang các nhà máy hóa lỏng LNG tại Ai Cập vào giai đoạn 2026–2028."
       ],
       [
         "b",
@@ -1969,7 +1985,7 @@ export const C0 = {
       [
         "b",
         "Thủ đô Nicosia là thủ đô bị chia cắt cuối cùng ở châu Âu",
-        "Đường giới tuyến ngừng bắn \"Green Line\" dài 180 km do lực lượng gìn giữ hòa bình LHQ (UNFICYP) tuần tra đã chia đôi đảo Síp và biến Nicosia thành thủ đô bị chia cắt cuối cùng trên thế giới. Dù Cộng hòa Síp đại diện cho toàn đảo gia nhập EU năm 2004, luật pháp EU hiện chỉ có hiệu lực ở phần phía nam, trong khi các cuộc đàm phán dưới sự bảo trợ của LHQ giữa mô hình \"liên bang hai khu vực, hai cộng đồng\" của phía Síp Hy Lạp và yêu sách \"hai nhà nước độc lập\" của phía Bắc Síp – Thổ Nhĩ Kỳ vẫn chưa tìm được tiếng nói chung."
+        "Đường giới tuyến ngừng bắn \"Green Line\" dài 180 km do lực lượng gìn giữ hòa bình LHQ (UNFICYP) tuần tra đã chia đôi đảo Síp và biến Nicosia thành thủ đô bị chia cắt cuối cùng trên thế giới. Dù Cộng hòa Síp đại diện cho toàn đảo gia nhập EU năm 2004, luật pháp EU hiện chỉ có hiệu lực ở phần phía nam, trong khi các cuộc đàm phán dưới sự bảo trợ của LHQ giữa mô hình \"liên bang hai khu vực, hai cộng đồng\" của phía Síp Hy Lạp và yêu sách \"hai nhà nước độc lập\" của phía Bắc Síp – Thổ Nhĩ Kỳ vẫn chưa tìm được tiếng nói chung, dù chiến thắng của ông Tufan Erhürman (ủng hộ giải pháp liên bang) trong cuộc bầu cử lãnh đạo người Síp gốc Thổ tháng 10/2025 đã nhen nhóm lại hy vọng."
       ],
       [
         "b",
@@ -1977,13 +1993,16 @@ export const C0 = {
         "Nằm ở một trong những điểm nóng ấm lên nhanh nhất do biến đổi khí hậu, Cộng hòa Síp thường xuyên hứng chịu các đợt hạn hán nhiều năm liền làm dung tích hơn 100 hồ chứa nước trên đảo tụt xuống mức báo động. Để đảm bảo nước sinh hoạt cho người dân và hàng triệu du khách, chính phủ phải phụ thuộc vào 5 nhà máy khử mặn nước biển lớn dọc bờ nam (như Dhekelia, Larnaca, Limassol) tiêu tốn lượng điện năng khổng lồ."
       ]
     ],
-    "hs": []
+    "hs": [
+      "base_akrotiri",
+      "mediterranean"
+    ]
   },
   "N. Cyprus": {
     "cap": "Bắc Nicosia",
     "pop": "~380 nghìn",
     "area": "3,35 nghìn km²",
-    "sum": "Chiếm khoảng một phần ba diện tích phía bắc và đông bắc của đảo Síp (3.355 km²), Bắc Síp (tên tự xưng là Cộng hòa Thổ Nhĩ Kỳ Bắc Síp – TRNC) bao gồm dãy núi đá vôi Kyrenia (Beşparmak) hẹp chạy dọc bờ biển phía bắc, một phần đồng bằng Mesaoria ở giữa và bán đảo Karpas vươn dài về phía Syria. Chỉ cách bờ biển tỉnh Mersin của Thổ Nhĩ Kỳ khoảng 65–70 km qua vùng biển Địa Trung Hải, vùng đất này có vị trí chiến lược bảo vệ sườn phía nam của bán đảo Tiểu Á và các cảng biển miền nam Thổ Nhĩ Kỳ. Thực thể này hình thành sau khi quân đội Thổ Nhĩ Kỳ đổ bộ lên đảo tháng 7/1974 để đáp trả cuộc đảo chính đòi sáp nhập Síp vào Hy Lạp (Enosis), dẫn tới cuộc trao đổi dân cư quy mô lớn giữa người Síp gốc Hy Lạp và người Síp gốc Thổ Nhĩ Kỳ trước khi Bắc Síp đơn phương tuyên bố độc lập vào tháng 11/1983.\n\nDo Hội đồng Bảo an Liên Hợp Quốc ra Nghị quyết 541 và 550 tuyên bố việc ly khai là bất hợp pháp, hiện nay trên toàn thế giới chỉ có duy nhất một quốc gia công nhận ngoại giao Bắc Síp là Thổ Nhĩ Kỳ — nước đang duy trì khoảng 35.000–40.000 binh sĩ đồn trú trên lãnh thổ này. Trong giai đoạn 2024–2026, dưới thời chính quyền Bắc Nicosia của ông Ersin Tatar và sự hậu thuẫn của Tổng thống Erdoğan, Bắc Síp từ bỏ mô hình đàm phán liên bang truyền thống để đòi công nhận \"hai nhà nước có chủ quyền bình đẳng\", đồng thời đạt bước tiến ngoại giao khi được kết nạp làm Quan sát viên của Tổ chức các Quốc gia hệ Turk (OTS). Tuy nhiên, sự cô lập quốc tế, lệnh cấm vận hàng hải – hàng không trực tiếp và việc sử dụng đồng Lira Thổ Nhĩ Kỳ mất giá vẫn khiến Bắc Síp phụ thuộc toàn diện vào Ankara.",
+    "sum": "Chiếm khoảng một phần ba diện tích phía bắc và đông bắc của đảo Síp (3.355 km²), Bắc Síp (tên tự xưng là Cộng hòa Thổ Nhĩ Kỳ Bắc Síp – TRNC) bao gồm dãy núi đá vôi Kyrenia (Beşparmak) hẹp chạy dọc bờ biển phía bắc, một phần đồng bằng Mesaoria ở giữa và bán đảo Karpas vươn dài về phía Syria. Chỉ cách bờ biển tỉnh Mersin của Thổ Nhĩ Kỳ khoảng 65–70 km qua vùng biển Địa Trung Hải, vùng đất này có vị trí chiến lược bảo vệ sườn phía nam của bán đảo Tiểu Á và các cảng biển miền nam Thổ Nhĩ Kỳ. Thực thể này hình thành sau khi quân đội Thổ Nhĩ Kỳ đổ bộ lên đảo tháng 7/1974 để đáp trả cuộc đảo chính đòi sáp nhập Síp vào Hy Lạp (Enosis), dẫn tới cuộc trao đổi dân cư quy mô lớn giữa người Síp gốc Hy Lạp và người Síp gốc Thổ Nhĩ Kỳ trước khi Bắc Síp đơn phương tuyên bố độc lập vào tháng 11/1983.\n\nDo Hội đồng Bảo an Liên Hợp Quốc ra Nghị quyết 541 và 550 tuyên bố việc ly khai là bất hợp pháp, hiện nay trên toàn thế giới chỉ có duy nhất một quốc gia công nhận ngoại giao Bắc Síp là Thổ Nhĩ Kỳ — nước đang duy trì khoảng 35.000–40.000 binh sĩ đồn trú trên lãnh thổ này. Dưới thời ông Ersin Tatar (2020–2025) với sự hậu thuẫn của Tổng thống Erdoğan, Bắc Síp từ bỏ mô hình đàm phán liên bang để đòi công nhận \"hai nhà nước có chủ quyền bình đẳng\" và được kết nạp làm Quan sát viên của Tổ chức các Quốc gia hệ Turk (OTS, 2022); tuy nhiên tháng 10/2025, cử tri đã bầu ông Tufan Erhürman, người ủng hộ nối lại đàm phán về giải pháp liên bang, làm lãnh đạo mới. Tuy nhiên, sự cô lập quốc tế, lệnh cấm vận hàng hải – hàng không trực tiếp và việc sử dụng đồng Lira Thổ Nhĩ Kỳ mất giá vẫn khiến Bắc Síp phụ thuộc toàn diện vào Ankara.",
     "t": [
       [
         "m",
@@ -2011,14 +2030,16 @@ export const C0 = {
         "Bắc Síp là một trường hợp độc nhất vô nhị về địa chính trị nguồn nước: từ năm 2015, Thổ Nhĩ Kỳ đã hoàn thành \"Dự án thế kỷ\" — một đường ống dẫn nước ngọt treo lơ lửng dưới mặt biển Địa Trung Hải ở độ sâu 250 m, dài 80 km nối từ đập Alaköprü (tỉnh Mersin, Thổ Nhĩ Kỳ) sang đập Geçitköy ở Bắc Síp. Đường ống ngầm xuyên biển này cung cấp 75 triệu m³ nước ngọt mỗi năm, giải quyết triệt để cơn khát nước sinh hoạt và tưới tiêu của Bắc Síp nhưng cũng gắn chặt sự sinh tồn của vùng đất này vào Ankara."
       ]
     ],
-    "hs": []
+    "hs": [
+      "mediterranean"
+    ]
   },
   "Russia": {
     "cap": "Moskva",
     "pop": "~144 triệu",
     "area": "17,1 triệu km²",
     "ch": "c1",
-    "sum": "Trải rộng qua 11 múi giờ trên diện tích 17,1 triệu km² (chiếm 1/8 diện tích đất nổi của Trái Đất), Liên bang Nga được chia bởi dãy núi Ural thấp thành hai phần: phần châu Âu ở phía tây (chiếm 23% diện tích nhưng tập trung gần 80% dân số cùng thủ đô Moskva) và vùng Siberia – Viễn Đông mênh mông lạnh giá ở phía châu Á. Dù là quốc gia rộng lớn nhất hành tinh và giàu tài nguyên bậc nhất thế giới, địa lý nước Nga lại ẩn chứa hai điểm yếu chiến lược kinh niên: sườn phía tây nằm trên Đồng bằng Bắc Âu phẳng lì không một ngọn núi che chắn, còn các bờ biển dài hàng vạn cây số đều bị đóng băng nhiều tháng trong năm hoặc bị khóa chặt sau các eo biển do NATO kiểm soát. Từ Công quốc Moskva nhỏ bé thế kỷ 14, để tự vệ trước các cuộc xâm lăng từ thảo nguyên phương Đông và đồng bằng phương Tây, các Sa hoàng Nga đã liên tục bành trướng ra cả bốn hướng suốt hàng thế kỷ nhằm tìm kiếm \"chiều sâu chiến lược\" và \"cảng nước ấm\", định hình nên Đế quốc Nga và Liên Xô trước khi trở thành Liên bang Nga năm 1991.\n\nNỗi ám ảnh địa chính trị về việc NATO mở rộng sát biên giới trên Đồng bằng Bắc Âu cùng khát vọng khôi phục không gian ảnh hưởng hậu Xô Viết dưới thời Tổng thống Vladimir Putin đã dẫn tới việc Nga sáp nhập bán đảo Crimea (2014) và phát động cuộc chiến dịch quân sự toàn diện vào Ukraine từ tháng 2/2022. Bước sang giai đoạn 2025–2026, cuộc chiến tiêu hao khốc liệt nhất châu Âu kể từ Thế chiến II và hơn 20.000 lệnh trừng phạt của phương Tây đã thúc đẩy Nga tái cấu trúc toàn diện: chuyển sang nền kinh tế thời chiến lấy công nghiệp quốc phòng làm trung tâm, xoay trục xuất khẩu dầu khí sang Trung Quốc và Ấn Độ, ký Hiệp ước đối tác chiến lược toàn diện với Triều Tiên và củng cố vai trò trong khối BRICS mở rộng. Tuy nhiên, về dài hạn, Moskva phải đối mặt với việc Phần Lan và Thụy Điển gia nhập NATO (biến biển Baltic thành \"hồ của NATO\"), sự suy giảm ảnh hưởng tại Syria và Nam Kavkaz, cùng cuộc khủng hoảng nhân khẩu học – thiếu hụt lao động trầm trọng.",
+    "sum": "Trải rộng qua 11 múi giờ trên diện tích 17,1 triệu km² (chiếm 1/8 diện tích đất nổi của Trái Đất), Liên bang Nga được chia bởi dãy núi Ural thấp thành hai phần: phần châu Âu ở phía tây (chiếm 23% diện tích nhưng tập trung gần 80% dân số cùng thủ đô Moskva) và vùng Siberia – Viễn Đông mênh mông lạnh giá ở phía châu Á. Dù là quốc gia rộng lớn nhất hành tinh và giàu tài nguyên bậc nhất thế giới, địa lý nước Nga lại ẩn chứa hai điểm yếu chiến lược kinh niên: sườn phía tây nằm trên Đồng bằng Bắc Âu phẳng lì không một ngọn núi che chắn, còn các bờ biển dài hàng vạn cây số đều bị đóng băng nhiều tháng trong năm hoặc bị khóa chặt sau các eo biển do NATO kiểm soát. Từ Công quốc Moskva nhỏ bé thế kỷ 14, để tự vệ trước các cuộc xâm lăng từ thảo nguyên phương Đông và đồng bằng phương Tây, các Sa hoàng Nga đã liên tục bành trướng ra cả bốn hướng suốt hàng thế kỷ nhằm tìm kiếm \"chiều sâu chiến lược\" và \"cảng nước ấm\", định hình nên Đế quốc Nga và Liên Xô trước khi trở thành Liên bang Nga năm 1991.\n\nNỗi ám ảnh địa chính trị về việc NATO mở rộng sát biên giới trên Đồng bằng Bắc Âu cùng khát vọng khôi phục không gian ảnh hưởng hậu Xô Viết dưới thời Tổng thống Vladimir Putin đã dẫn tới việc Nga sáp nhập bán đảo Crimea (2014) và phát động cuộc chiến dịch quân sự toàn diện vào Ukraine từ tháng 2/2022. Bước sang giai đoạn 2025–2026, cuộc chiến tiêu hao khốc liệt nhất châu Âu kể từ Thế chiến II và hơn 20.000 lệnh trừng phạt của phương Tây đã thúc đẩy Nga tái cấu trúc toàn diện: chuyển sang nền kinh tế thời chiến lấy công nghiệp quốc phòng làm trung tâm, xoay trục xuất khẩu dầu khí sang Trung Quốc và Ấn Độ, ký Hiệp ước đối tác chiến lược toàn diện với Triều Tiên và củng cố vai trò trong khối BRICS mở rộng. Tuy nhiên, về dài hạn, Moskva phải đối mặt với việc Phần Lan và Thụy Điển gia nhập NATO (biến biển Baltic thành \"hồ của NATO\"), sự suy giảm ảnh hưởng tại Syria và Nam Kavkaz, cùng cuộc khủng hoảng nhân khẩu học – thiếu hụt lao động trầm trọng. Đến tháng 11/2026, dù Mỹ thúc đẩy nhiều vòng đàm phán, chiến sự vẫn tiếp diễn và Nga kiểm soát khoảng 19% lãnh thổ Ukraine.",
     "t": [
       [
         "b",
@@ -2068,7 +2089,7 @@ export const C0 = {
     "pop": "~37 triệu (ước tính thời chiến)",
     "area": "604 nghìn km²",
     "ch": "c1",
-    "sum": "Với diện tích được quốc tế công nhận là 603.628 km², Ukraine là quốc gia có diện tích lớn nhất nằm hoàn toàn trong châu Âu, trải rộng trên vùng thảo nguyên bằng phẳng của Đồng bằng Đông Âu từ dãy núi Carpathian ở cực tây sang lưu vực sông Donets ở phía đông và vươn xuống bờ bắc Biển Đen cùng biển Azov. Được thiên nhiên ban tặng tầng đất đen (Chernozem) màu mỡ bậc nhất hành tinh và chia đôi bởi dòng sông Dnieper hùng vĩ chảy qua thủ đô Kyiv, mảnh đất này từng là cái nôi của nhà nước Kyivan Rus' thời Trung cổ (thế kỷ 9–13) trước khi trải qua nhiều thế kỷ bị giằng xé giữa Đại Công quốc Litva – Ba Lan, Đế chế Ottoman, Đế quốc Áo-Hung và Đế quốc Nga/Liên Xô. Cái tên \"Ukraina\" trong tiếng Slav cổ vốn mang nghĩa là \"Vùng biên cương\" — phản ánh định mệnh địa lý nằm ngay trên hành lang đồng bằng chiến lược nối thảo nguyên Á – Âu và nước Nga với phần còn lại của châu Âu.\n\nSau khi tuyên bố độc lập năm 1991 và từ bỏ kho vũ khí hạt nhân lớn thứ ba thế giới theo Bản ghi nhớ Budapest (1994), khát vọng thoát khỏi quỹ đạo Moskva để hội nhập phương Tây của Ukraine (qua Cách mạng Cam 2004 và Cách mạng Maidan 2014) đã vấp phải sự can thiệp quân sự của Nga: từ việc sáp nhập Crimea và xung đột Donbas năm 2014 đến cuộc chiến tranh toàn diện nổ ra ngày 24/2/2022. Bước sang giai đoạn 2025–2026, sau 4 năm chiến tranh tiêu hao khốc liệt nhất châu Âu kể từ năm 1945 (với khoảng 18–20% lãnh thổ ở miền đông và miền nam đang bị Nga kiểm soát), Ukraine đã chính thức mở đàm phán gia nhập Liên minh châu Âu (tháng 6/2024), tự chủ sản xuất hàng triệu thiết bị bay không người lái (UAV) và vũ khí tầm xa mỗi năm, đồng thời bước vào giai đoạn ngoại giao sinh tử xoay quanh các bảo đảm an ninh dài hạn và tái thiết hậu chiến. Thách thức sống còn của đất nước là sự suy kiệt nhân khẩu học (hơn 6 triệu người tị nạn ở nước ngoài), lưới điện bị tàn phá và bài toán bảo vệ chủ quyền trước ưu thế quân số của Nga.",
+    "sum": "Với diện tích được quốc tế công nhận là 603.628 km², Ukraine là quốc gia có diện tích lớn nhất nằm hoàn toàn trong châu Âu, trải rộng trên vùng thảo nguyên bằng phẳng của Đồng bằng Đông Âu từ dãy núi Carpathian ở cực tây sang lưu vực sông Donets ở phía đông và vươn xuống bờ bắc Biển Đen cùng biển Azov. Được thiên nhiên ban tặng tầng đất đen (Chernozem) màu mỡ bậc nhất hành tinh và chia đôi bởi dòng sông Dnieper hùng vĩ chảy qua thủ đô Kyiv, mảnh đất này từng là cái nôi của nhà nước Kyivan Rus' thời Trung cổ (thế kỷ 9–13) trước khi trải qua nhiều thế kỷ bị giằng xé giữa Đại Công quốc Litva – Ba Lan, Đế chế Ottoman, Đế quốc Áo-Hung và Đế quốc Nga/Liên Xô. Cái tên \"Ukraina\" trong tiếng Slav cổ vốn mang nghĩa là \"Vùng biên cương\" — phản ánh định mệnh địa lý nằm ngay trên hành lang đồng bằng chiến lược nối thảo nguyên Á – Âu và nước Nga với phần còn lại của châu Âu.\n\nSau khi tuyên bố độc lập năm 1991 và từ bỏ kho vũ khí hạt nhân lớn thứ ba thế giới theo Bản ghi nhớ Budapest (1994), khát vọng thoát khỏi quỹ đạo Moskva để hội nhập phương Tây của Ukraine (qua Cách mạng Cam 2004 và Cách mạng Maidan 2014) đã vấp phải sự can thiệp quân sự của Nga: từ việc sáp nhập Crimea và xung đột Donbas năm 2014 đến cuộc chiến tranh toàn diện nổ ra ngày 24/2/2022. Bước sang giai đoạn 2025–2026, sau 4 năm chiến tranh tiêu hao khốc liệt nhất châu Âu kể từ năm 1945 (với khoảng 19% lãnh thổ, tính cả Crimea, đang bị Nga kiểm soát tính đến cuối năm 2026), Ukraine đã chính thức mở đàm phán gia nhập Liên minh châu Âu (tháng 6/2024), tự chủ sản xuất hàng triệu thiết bị bay không người lái (UAV) và vũ khí tầm xa mỗi năm, đồng thời bước vào giai đoạn ngoại giao sinh tử xoay quanh các bảo đảm an ninh dài hạn và tái thiết hậu chiến (các vòng đàm phán do Mỹ trung gian vẫn chưa đạt được lệnh ngừng bắn tính đến 11/2026). Thách thức sống còn của đất nước là sự suy kiệt nhân khẩu học (hơn 6 triệu người tị nạn ở nước ngoài), lưới điện bị tàn phá và bài toán bảo vệ chủ quyền trước ưu thế quân số của Nga.",
     "t": [
       [
         "b",
@@ -2078,7 +2099,7 @@ export const C0 = {
       [
         "m",
         "Bờ Biển Đen với cụm cảng Odessa nhưng bị khống chế bởi bán đảo Crimea và eo Bosphorus",
-        "Ukraine sở hữu bờ Biển Đen và biển Azov giàu tiềm năng với cụm cảng nước sâu Greater Odesa (Odesa, Chornomorsk, Pivdennyi), nhưng bị khống chế bởi bán đảo Crimea — \"tàu sân bay không thể chìm\" nhô ra giữa Biển Đen mà Nga đã sáp nhập năm 2014. Sau khi Nga kiểm soát hoàn toàn biển Azov năm 2022 và rút khỏi Sáng kiến Ngũ cốc Biển Đen năm 2023, Ukraine đã sử dụng xuồng cảm tử không người lái (USV Magura, Sea Baby) và tên lửa đẩy lùi Hạm đội Biển Đen của Nga khỏi phía tây bán đảo Crimea, tự mở thành công \"Hành lang Hàng hải Ukraine\" chạy dọc bờ biển Romania – Bulgaria (thông qua eo biển Bosphorus của Thổ Nhĩ Kỳ) để đưa xuất khẩu ngũ cốc và quặng sắt trở lại mức trước chiến tranh."
+        "Ukraine sở hữu bờ Biển Đen và biển Azov giàu tiềm năng với cụm cảng nước sâu Greater Odesa (Odesa, Chornomorsk, Pivdennyi), nhưng bị khống chế bởi bán đảo Crimea — \"tàu sân bay không thể chìm\" nhô ra giữa Biển Đen mà Nga đã sáp nhập năm 2014. Sau khi Nga kiểm soát hoàn toàn biển Azov năm 2022 và rút khỏi Sáng kiến Ngũ cốc Biển Đen năm 2023, Ukraine đã sử dụng xuồng cảm tử không người lái (USV Magura, Sea Baby) và tên lửa đẩy lùi Hạm đội Biển Đen của Nga khỏi phía tây bán đảo Crimea, tự mở thành công \"Hành lang Hàng hải Ukraine\" chạy dọc bờ biển Romania – Bulgaria (thông qua eo biển Bosphorus của Thổ Nhĩ Kỳ) giúp xuất khẩu ngũ cốc và quặng sắt qua đường biển phục hồi gần mức trước chiến tranh."
       ],
       [
         "g",
@@ -2088,7 +2109,7 @@ export const C0 = {
       [
         "b",
         "Chiến tranh tiêu hao quy mô lớn với Nga từ tháng 2/2022 ở miền đông và miền nam",
-        "Với đường biên giới đất liền dài hơn 2.200 km giáp Nga ở phía đông – đông bắc và hơn 1.000 km giáp đồng minh của Nga là Belarus ở phía bắc (chỉ cách thủ đô Kyiv hơn 100 km qua vùng đầm lầy Chernobyl), Ukraine từng bị bao vây ở ba mặt khi chiến sự nổ ra năm 2022. Ở chiều ngược lại, biên giới phía tây giáp 4 nước thành viên EU/NATO (đặc biệt là Ba Lan và Romania) đã trở thành huyết mạch hậu cần sống còn để tiếp nhận vũ khí, nhiên liệu, kết nối lưới điện châu Âu (ENTSO-E) và xuất khẩu hàng hóa."
+        "Với đường biên giới đất liền dài gần 2.000 km giáp Nga ở phía đông – đông bắc và hơn 1.000 km giáp đồng minh của Nga là Belarus ở phía bắc (chỉ cách thủ đô Kyiv hơn 100 km qua vùng đầm lầy Chernobyl), Ukraine từng bị bao vây ở ba mặt khi chiến sự nổ ra năm 2022. Ở chiều ngược lại, biên giới phía tây giáp 4 nước thành viên EU/NATO (đặc biệt là Ba Lan và Romania) đã trở thành huyết mạch hậu cần sống còn để tiếp nhận vũ khí, nhiên liệu, kết nối lưới điện châu Âu (ENTSO-E) và xuất khẩu hàng hóa."
       ],
       [
         "m",
@@ -2110,7 +2131,7 @@ export const C0 = {
     "pop": "~9,1 triệu",
     "area": "208 nghìn km²",
     "ch": "c1",
-    "sum": "Nằm hoàn toàn không giáp biển ở khu vực Đông Âu trên diện tích 207.600 km², Belarus có địa hình đồng bằng thấp phẳng xen lẫn hàng nghìn hồ băng hà, rừng rậm nguyên sinh (như rừng Białowieża) và vùng đầm lầy Polesia (Pripyat) rộng lớn nhất châu Âu ở phía nam. Án ngữ ngay tại \"cổ họng\" của Đồng bằng Bắc Âu trên trục đường thẳng ngắn nhất nối Warsaw và Berlin tới thủ đô Moskva, mảnh đất này từ nhiều thế kỷ qua luôn là hành lang hành quân đẫm máu của mọi cuộc đại chiến giữa phương Tây và nước Nga. Từng thuộc Đại Công quốc Litva – Ba Lan rồi Đế quốc Nga và chịu sự tàn phá khủng khiếp nhất trong Thế chiến II (mất tới 1/4 dân số) cũng như thảm họa hạt nhân Chernobyl (1986), Belarus giành độc lập năm 1991 khi Liên Xô tan rã.\n\nKể từ năm 1994 đến nay (vừa tái đắc cử nhiệm kỳ thứ 7 vào tháng 1/2025), Tổng thống Alexander Lukashenko đã duy trì chế độ cầm quyền tập trung cao độ, giữ lại mô hình kinh tế quốc doanh kiểu Xô Viết và gắn kết chặt chẽ với Moskva trong khuôn khổ \"Nhà nước Liên minh Nga – Belarus\". Sau cuộc biểu tình năm 2020 bị trấn áp và việc cho phép quân đội Nga sử dụng lãnh thổ Belarus làm bàn đạp tiến đánh Kyiv đầu năm 2022, Minsk rơi vào thế bị phương Tây trừng phạt toàn diện và trở thành tiền đồn quân sự tiền phương của Nga — nơi Moskva triển khai vũ khí hạt nhân chiến thuật (từ 2023) và chuẩn bị bố trí tên lửa siêu vượt âm tầm trung Oreshnik (2025). Thách thức chiến lược lớn nhất của Belarus là sự phụ thuộc gần như tuyệt đối cả về an ninh, năng lượng lẫn thị trường xuất khẩu vào Điện Kremlin.",
+    "sum": "Nằm hoàn toàn không giáp biển ở khu vực Đông Âu trên diện tích 207.600 km², Belarus có địa hình đồng bằng thấp phẳng xen lẫn hàng nghìn hồ băng hà, rừng rậm nguyên sinh (như rừng Białowieża) và vùng đầm lầy Polesia (Pripyat) rộng lớn nhất châu Âu ở phía nam. Án ngữ ngay tại \"cổ họng\" của Đồng bằng Bắc Âu trên trục đường thẳng ngắn nhất nối Warsaw và Berlin tới thủ đô Moskva, mảnh đất này từ nhiều thế kỷ qua luôn là hành lang hành quân đẫm máu của mọi cuộc đại chiến giữa phương Tây và nước Nga. Từng thuộc Đại Công quốc Litva – Ba Lan rồi Đế quốc Nga và chịu sự tàn phá khủng khiếp nhất trong Thế chiến II (mất tới 1/4 dân số) cũng như thảm họa hạt nhân Chernobyl (1986), Belarus giành độc lập năm 1991 khi Liên Xô tan rã.\n\nKể từ năm 1994 đến nay (vừa tái đắc cử nhiệm kỳ thứ 7 vào tháng 1/2025), Tổng thống Alexander Lukashenko đã duy trì chế độ cầm quyền tập trung cao độ, giữ lại mô hình kinh tế quốc doanh kiểu Xô Viết và gắn kết chặt chẽ với Moskva trong khuôn khổ \"Nhà nước Liên minh Nga – Belarus\". Sau cuộc biểu tình năm 2020 bị trấn áp và việc cho phép quân đội Nga sử dụng lãnh thổ Belarus làm bàn đạp tiến đánh Kyiv đầu năm 2022, Minsk rơi vào thế bị phương Tây trừng phạt toàn diện và trở thành tiền đồn quân sự tiền phương của Nga — nơi Moskva triển khai vũ khí hạt nhân chiến thuật (từ 2023) và đưa hệ thống tên lửa tầm trung Oreshnik vào trực chiến (12/2025). Dù Mỹ nới một số lệnh trừng phạt (như với kali, 12/2025) để đổi lấy việc trả tự do cho tù chính trị, thách thức chiến lược lớn nhất của Belarus vẫn là sự phụ thuộc gần như tuyệt đối cả về an ninh, năng lượng lẫn thị trường xuất khẩu vào Điện Kremlin.",
     "t": [
       [
         "b",
@@ -2140,14 +2161,15 @@ export const C0 = {
     ],
     "hs": [
       "northplain",
-      "dnieper"
+      "dnieper",
+      "suwalki"
     ]
   },
   "Moldova": {
     "cap": "Chișinău",
-    "pop": "~2,5 triệu",
+    "pop": "~2,4 triệu",
     "area": "33,8 nghìn km²",
-    "sum": "Là một quốc gia nhỏ không giáp biển rộng 33.846 km² ở Đông Nam Âu, Cộng hòa Moldova nằm kẹp như một dải đất hình chùm nho giữa dòng sông Prut ở phía tây (giáp Romania thuộc EU/NATO) và sông Dniester ở phía đông (giáp Ukraine). Địa hình đất nước chủ yếu là những vùng đồi thấp lượn sóng êm đềm phủ lớp đất đen (Chernozem) màu mỡ bậc nhất châu Âu, nằm ngay trên hành lang địa chiến lược Bessarabia nối liền Đồng bằng Bắc Âu với đồng bằng hạ lưu sông Danube và bán đảo Balkan. Mang cội nguồn lịch sử, văn hóa và ngôn ngữ gắn liền với xứ Moldavia của người Romania, vùng đất Bessarabia này từng nhiều lần đổi chủ giữa Đế chế Ottoman, Đế quốc Nga (1812), Vương quốc Romania (1918) và bị sáp nhập vào Liên Xô năm 1940 theo Hiệp ước Molotov-Ribbentrop trước khi tuyên bố độc lập năm 1991.\n\nNgay từ khi độc lập, Moldova đã bị xé rách bởi cuộc xung đột ly khai năm 1992 tại Transnistria — dải đất hẹp dọc bờ đông sông Dniester nói tiếng Nga và có khoảng 1.500 binh sĩ Nga đồn trú suốt hơn ba thập kỷ qua. Dưới sự lãnh đạo của Tổng thống thân phương Tây Maia Sandu (người vừa tái đắc cử nhiệm kỳ hai vào tháng 11/2024 cùng cuộc trưng cầu dân ý hiến định mục tiêu gia nhập EU), Moldova đã chính thức mở đàm phán gia nhập Liên minh châu Âu vào tháng 6/2024. Bước sang đầu năm 2025–2026, khi việc trung chuyển khí đốt Nga qua Ukraine chấm dứt từ ngày 1/1/2025 làm tê liệt nhà máy điện ở Transnistria, Chișinău đã hoàn tất việc kết nối lưới điện và nhập khẩu năng lượng từ Romania/EU để thoát hẳn khỏi đòn bẩy năng lượng của Moskva, dù vẫn phải đối mặt với chiến tranh lai và sức ép can thiệp chính trị gay gắt.",
+    "sum": "Là một quốc gia nhỏ không giáp biển rộng 33.846 km² ở Đông Nam Âu, Cộng hòa Moldova nằm kẹp như một dải đất hình chùm nho giữa dòng sông Prut ở phía tây (giáp Romania thuộc EU/NATO) và sông Dniester ở phía đông (giáp Ukraine). Địa hình đất nước chủ yếu là những vùng đồi thấp lượn sóng êm đềm phủ lớp đất đen (Chernozem) màu mỡ bậc nhất châu Âu, nằm ngay trên hành lang địa chiến lược Bessarabia nối liền Đồng bằng Bắc Âu với đồng bằng hạ lưu sông Danube và bán đảo Balkan. Mang cội nguồn lịch sử, văn hóa và ngôn ngữ gắn liền với xứ Moldavia của người Romania, vùng đất Bessarabia này từng nhiều lần đổi chủ giữa Đế chế Ottoman, Đế quốc Nga (1812), Vương quốc Romania (1918) và bị sáp nhập vào Liên Xô năm 1940 theo Hiệp ước Molotov-Ribbentrop trước khi tuyên bố độc lập năm 1991.\n\nNgay từ khi độc lập, Moldova đã bị xé rách bởi cuộc xung đột ly khai năm 1992 tại Transnistria — dải đất hẹp dọc bờ đông sông Dniester nói tiếng Nga và có khoảng 1.500 binh sĩ Nga đồn trú suốt hơn ba thập kỷ qua. Dưới sự lãnh đạo của Tổng thống thân phương Tây Maia Sandu (tái đắc cử nhiệm kỳ hai vào tháng 11/2024, sau cuộc trưng cầu dân ý tháng 10/2024 đưa mục tiêu gia nhập EU vào hiến pháp), Moldova đã chính thức mở đàm phán gia nhập Liên minh châu Âu vào tháng 6/2024. Bước sang đầu năm 2025–2026, khi việc trung chuyển khí đốt Nga qua Ukraine chấm dứt từ ngày 1/1/2025 làm tê liệt nhà máy điện ở Transnistria, Chișinău đẩy nhanh việc kết nối lưới điện, khí đốt và nhập khẩu năng lượng từ Romania/EU để thoát khỏi đòn bẩy năng lượng của Moskva; đảng PAS của bà Sandu giữ được đa số tuyệt đối (55/101 ghế) trong cuộc bầu cử Quốc hội tháng 9/2025 bất chấp chiến tranh lai và can thiệp bầu cử từ Nga.",
     "t": [
       [
         "b",
@@ -2156,8 +2178,8 @@ export const C0 = {
       ],
       [
         "b",
-        "Không giáp biển trực tiếp (cách Biển Đen chỉ vài km do lãnh thổ Ukraine chắn ngang)",
-        "Mặc dù ở cực nam, lãnh thổ Moldova nằm cách bờ Biển Đen chưa đầy 2 km nhưng lại bị dải đất vùng Budjak của Ukraine chắn ngang hoàn toàn khiến đất nước không có bờ biển trực tiếp. Lối thoát hàng hải duy nhất của Moldova là đoạn bờ sông dài vỏn vẹn 430 mét tại ngã ba sông Prut đổ vào sông Danube ở cực nam, nơi đặt cảng sông – biển duy nhất Giurgiulești có thể đón tàu biển trọng tải tới 10.000 tấn."
+        "Không giáp biển (lãnh thổ Ukraine chắn giữa Moldova và Biển Đen)",
+        "Dù nằm rất gần vùng cửa sông Dniester đổ ra Biển Đen, Moldova bị dải đất vùng Budjak của Ukraine chắn ngang hoàn toàn nên không có bờ biển. Lối thoát hàng hải duy nhất của Moldova là đoạn bờ sông Danube dài chỉ vài trăm mét tại ngã ba sông Prut đổ vào sông Danube ở cực nam, nơi đặt cảng sông – biển duy nhất Giurgiulești có thể đón tàu biển trọng tải tới 10.000 tấn."
       ],
       [
         "g",
@@ -2175,7 +2197,9 @@ export const C0 = {
         "Cả hai con sông huyết mạch Dniester và Prut đều bắt nguồn từ dãy núi Carpathian trên lãnh thổ Ukraine rồi mới chảy qua Moldova, khiến hơn 80% nguồn nước mặt của nước này phụ thuộc vào thượng nguồn bên ngoài biên giới. Những năm gần đây, hạn hán mùa hè ngày càng gay gắt tại miền nam Moldova kết hợp với việc điều tiết các đập thủy điện Dniester ở thượng nguồn đòi hỏi sự phối hợp chặt chẽ giữa Chișinău và Kyiv."
       ]
     ],
-    "hs": []
+    "hs": [
+      "transnistria"
+    ]
   },
   "Poland": {
     "cap": "Warsaw",
@@ -2674,7 +2698,7 @@ export const C0 = {
   },
   "Andorra": {
     "cap": "Andorra la Vella",
-    "pop": "~85 nghìn",
+    "pop": "~82 nghìn",
     "area": "468 km²",
     "sum": "Ẩn mình trong thung lũng chữ Y trên sườn nam dãy Pyrenees ở độ cao trung bình gần 2.000 m, Công quốc Andorra rộng 468 km² nằm kẹp giữa Pháp và Tây Ban Nha. Khởi nguồn như một vùng đệm biên giới thời Hoàng đế Charlemagne và định hình thể chế từ Hiệp ước Paréage năm 1278, Andorra được che chở bởi những đỉnh núi cao gần 3.000 m. Nhờ địa hình hiểm trở và cơ chế bảo hộ kép giữa hai nước láng giềng lớn, công quốc đã giữ vững độc lập suốt hơn 7 thế kỷ mà không bị cuốn vào các cuộc chiến châu Âu.\n\nVề thể chế, Andorra là quốc gia duy nhất vận hành theo chế độ 'Đồng thân vương', trong đó Tổng thống Pháp và Giám mục vùng Urgell (Tây Ban Nha) cùng giữ vai trò nguyên thủ quốc gia. Bước sang 2025–2026, Andorra phát triển thịnh vượng nhờ đón hơn 8 triệu du khách trượt tuyết – mua sắm mỗi năm, ngân hàng tư nhân và mức thuế thu nhập tối đa chỉ 10%. Hiện nay, công quốc đang thúc đẩy Thỏa thuận Liên kết lịch sử với EU đồng thời giải quyết bài toán thiếu hụt nhà ở và biến đổi khí hậu mùa đông.",
     "t": [
@@ -2849,7 +2873,7 @@ export const C0 = {
   },
   "Malta": {
     "cap": "Valletta",
-    "pop": "~540 nghìn",
+    "pop": "~570 nghìn",
     "area": "316 km²",
     "sum": "Tọa lạc ngay điểm thắt trung tâm Địa Trung Hải—cách đảo Sicily 93 km về phía nam và cách bờ biển Tunisia 288 km về phía bắc—quần đảo đá vôi Malta nắm giữ yết hầu hàng hải nối Đông và Tây Địa Trung Hải. Nhờ các bến cảng nước sâu có thành lũy đá tự nhiên, nơi đây từng là pháo đài của Hiệp sĩ dòng Thánh John đánh bại Đế chế Ottoman năm 1565 và là căn cứ hải quân chủ lực của Đế quốc Anh. Trong Thế chiến II, người dân Malta kiên cường trụ vững trước hơn 3.000 cuộc không kích của phe Trục trước khi giành độc lập năm 1964.\n\nSau khi căn cứ quân sự Anh đóng cửa năm 1979, Malta ghi nhận quy chế trung lập quân sự trong hiến pháp năm 1980, gia nhập EU năm 2004 và Eurozone năm 2008. Bước sang 2025–2026, quốc đảo nhỏ nhất EU này đạt tốc độ tăng trưởng kinh tế cao nhất khối (~5%/năm) nhờ đội tàu đăng ký hàng hải số 1 châu Âu, du lịch, tài chính và ngành giải trí trực tuyến (iGaming). Thách thức sống còn của Malta là tình trạng khan hiếm nước ngọt tự nhiên bậc nhất thế giới, mật độ dân số quá tải và áp lực di cư vượt biển từ Bắc Phi.",
     "t": [
@@ -4125,7 +4149,7 @@ export const C0 = {
   },
   "Chad": {
     "cap": "N'Djamena",
-    "pop": "~19 triệu",
+    "pop": "~20,3 triệu",
     "area": "1,28 triệu km²",
     "sum": "Trải rộng 1,28 triệu km² ở vị trí xa biển nhất trên lục địa đen, Cộng hòa Chad thường được các nhà địa lý gọi là \"Trái tim chết của châu Phi\" và là chiếc cầu nối giữa Bắc Phi và Trung Phi. Địa hình đất nước trải dài qua ba dải khí hậu rõ rệt từ bắc xuống nam: miền bắc là sa mạc Sahara khô cằn được án ngữ bởi dãy núi lửa Tibesti cao hơn 3.400 m; miền trung là vùng bán hoang mạc Sahel (Batha, Ouaddaï); và miền nam là vùng đồng bằng thảo nguyên màu mỡ (\"Le Soudan\") được bồi đắp bởi sông Chari và Logone đổ vào hồ Chad. Kể từ khi giành độc lập từ Pháp năm 1960, sự phân chia Bắc – Nam giữa các bộ tộc chiến binh du mục Hồi giáo vùng sa mạc và cư dân nông nghiệp Cơ đốc giáo/bản địa ở miền nam đã định hình toàn bộ lịch sử chính trị đầy biến động của đất nước.\n\nDưới sự cầm quyền của gia tộc Déby từ năm 1990 — chuyển giao từ cố Tổng thống Idriss Déby (tử trận ngoài tiền tuyến năm 2021) sang con trai là Mahamat Idriss Déby (đắc cử Tổng thống tháng 5/2024) — Chad sở hữu một trong những quân đội thiện chiến nhất vùng sa mạc Sahel. Bị bao vây bốn phía bởi các cuộc xung đột từ Libya ở phía bắc, Boko Haram quanh hồ Chad ở phía tây, Cộng hòa Trung Phi ở phía nam và đặc biệt là cuộc nội chiến tàn khốc ở vùng Darfur của Sudan ở phía đông, Chad hiện đang gánh chịu hơn 1,2 triệu người tị nạn. Cuối năm 2024, N'Djamena đã bất ngờ chấm dứt hiệp ước hợp tác quốc phòng lịch sử với Pháp để đa dạng hóa quan hệ với UAE, Nga, Thổ Nhĩ Kỳ và Hungary giữa lúc nền kinh tế phụ thuộc nặng vào xuất khẩu dầu thô.",
     "t": [
@@ -4203,7 +4227,7 @@ export const C0 = {
   },
   "S. Sudan": {
     "cap": "Juba",
-    "pop": "~11,5 triệu",
+    "pop": "~11,9 triệu",
     "area": "644 nghìn km²",
     "sum": "Chính thức tuyên bố độc lập vào ngày 9/7/2011 sau hai cuộc nội chiến Bắc – Nam kéo dài tổng cộng gần bốn thập kỷ với chính quyền Khartoum, Nam Sudan là quốc gia có chủ quyền trẻ nhất thế giới. Nằm trọn trong lưu vực dòng sông Nile Trắng ở trung – đông châu Phi, trung tâm địa lý của đất nước là vùng đầm lầy khổng lồ Sudd — một trong những hệ sinh thái đất ngập nước nhiệt đới lớn nhất hành tinh, được bao quanh bởi các đồng cỏ thảo nguyên ngập nước theo mùa và rừng mưa nhiệt đới ở biên giới phía nam giáp Uganda, CHDC Congo. Chính bức tường đầm lầy Sudd chằng chịt lau sậy và bèo lục bình này từng chặn đứng các đoàn thám hiểm thời Hoàng đế La Mã Nero cũng như ngăn cản quá trình Ả Rập hóa và Hồi giáo hóa từ miền bắc tràn sâu xuống hạ Sahara.\n\nChỉ hai năm sau ngày độc lập, cấu trúc nhà nước non trẻ và sự chia rẽ sắc tộc giữa hai cộng đồng lớn nhất là người Dinka (gắn với Tổng thống Salva Kiir) và người Nuer (gắn với Phó Tổng thống thứ nhất Riek Machar) đã đẩy Nam Sudan vào cuộc nội chiến đẫm máu (2013–2018) cướp đi sinh mạng của khoảng 400.000 người. Dù thỏa thuận hòa bình năm 2018 đã lập ra chính phủ chuyển tiếp, cuộc bầu cử tổng thống đầu tiên tiếp tục bị lùi sang tháng 12/2026 giữa lúc bạo lực sắc tộc và căng thẳng chính trị tại Juba tái bùng phát năm 2025. Nghiêm trọng hơn, nghịch lý địa chính trị chí mạng của Nam Sudan nằm ở chỗ 90% ngân sách quốc gia phụ thuộc vào dầu mỏ, nhưng đường ống xuất khẩu duy nhất lại phải chạy xuyên qua lãnh thổ miền bắc Sudan đang chìm trong khói lửa nội chiến.",
     "t": [
@@ -4240,7 +4264,7 @@ export const C0 = {
   },
   "Eritrea": {
     "cap": "Asmara",
-    "pop": "~3,7 triệu",
+    "pop": "~3,5 triệu",
     "area": "118 nghìn km²",
     "sum": "Nằm dọc bờ tây nam Biển Đỏ ngay phía trên eo biển chiến lược Bab el-Mandeb, Eritrea sở hữu cấu trúc địa lý tương phản gay gắt giữa vùng cao nguyên trung tâm mát mẻ (nơi đặt thủ đô Asmara ở độ cao 2.325 m) và dải đồng bằng ven biển Danakil khô nóng bậc nhất hành tinh. Từng là thuộc địa của Ý từ năm 1890 (để lại di sản kiến trúc Hiện đại đầu thế kỷ 20 được UNESCO vinh danh tại Asmara) trước khi bị sáp nhập vào Ethiopia năm 1962, người dân Eritrea đã tiến hành cuộc chiến tranh du kích bền bỉ suốt 30 năm để giành độc lập chính thức vào năm 1993. Sự ra đời của quốc gia Eritrea đã tước đi toàn bộ đường bờ biển của Ethiopia, biến người láng giềng khổng lồ thành quốc gia không giáp biển đông dân nhất thế giới.\n\nDưới sự cai trị tuyệt đối của Tổng thống Isaias Afwerki và đảng PFDJ duy nhất từ năm 1993 đến nay, Eritrea thường được mệnh danh là \"Triều Tiên của châu Phi\" vì chưa từng tổ chức bầu cử quốc gia, đóng cửa báo chí tư nhân và áp dụng chế độ nghĩa vụ quân sự – lao động quốc gia vô thời hạn khiến hàng trăm nghìn thanh niên vượt biên. Sau cuộc chiến tranh biên giới đẫm máu với Ethiopia (1998–2000) và thỏa thuận hòa bình lịch sử năm 2018, quân đội Eritrea đã can dự sâu vào cuộc chiến vùng Tigray (2020–2022). Bước sang giai đoạn 2024–2026, quan hệ giữa Asmara và Addis Ababa lại rơi vào trạng thái căng thẳng lạnh giá khi Ethiopia ráo riết đòi tìm kiếm lối mở trực tiếp ra Biển Đỏ.",
     "t": [
@@ -4603,7 +4627,7 @@ export const C0 = {
   },
   "Madagascar": {
     "cap": "Antananarivo",
-    "pop": "~31 triệu",
+    "pop": "~32 triệu",
     "area": "587 nghìn km²",
     "sum": "Nằm ngoài khơi bờ đông nam châu Phi qua eo biển Mozambique rộng hơn 400 km, Madagascar là hòn đảo lớn thứ tư trên thế giới (587.041 km² — lớn hơn cả nước Pháp). Do đã tách khỏi siêu lục địa Gondwana từ 160 triệu năm trước và tách khỏi tiểu lục địa Ấn Độ từ 88 triệu năm trước, hòn đảo này tiến hóa trong sự cô lập hoàn toàn như một \"lục địa thứ tám\" thu nhỏ, nơi tới 90% các loài động thực vật — như vượn cáo (lemur) và cây bao báp khổng lồ — không thể tìm thấy ở bất kỳ nơi nào khác trên Trái Đất. Điều kỳ thú nhất về lịch sử con người nơi đây là những cư dân đầu tiên vượt biển đến định cư vào đầu Công nguyên lại không phải từ châu Phi ở ngay bên cạnh, mà là những thủy thủ Nam Đảo (Austronesian) chèo thuyền bầu từ đảo Borneo (Đông Nam Á) vượt hơn 6.000 km Ấn Độ Dương, sau đó hòa huyết với người Bantu Đông Phi để tạo nên dân tộc và ngôn ngữ Malagasy thống nhất dưới Vương quốc Merina trước khi Pháp đô hộ (1896–1960).\n\nĐịa hình hòn đảo được chia làm ba dải chạy dọc từ bắc xuống nam: dải bờ biển phía đông hẹp mưa nhiều và rừng nhiệt đới; vùng cao nguyên trung tâm mát mẻ (nơi đặt thủ đô Antananarivo ở độ cao 1.280 m với những cánh đồng lúa nước bậc thang kiểu Đông Nam Á); và vùng đồng bằng phía tây cùng cực nam bán hoang mạc khô cằn. Trong kỷ nguyên hiện đại, vị trí án ngữ toàn bộ sườn đông kênh đào Mozambique biến Madagascar thành điểm nút hàng hải quan trọng trên tuyến siêu tàu chở dầu và tàu hàng đi vòng qua mũi Hảo Vọng (đặc biệt khi Biển Đỏ bất ổn giai đoạn 2024–2026). Tuy nhiên, những cuộc khủng hoảng chính trị chu kỳ sau độc lập, hạ tầng đường bộ xuống cấp và các siêu bão nhiệt đới Ấn Độ Dương tàn phá hàng năm khiến hơn 75% trong số 31 triệu người dân đảo quốc giàu tài nguyên này vẫn sống trong cảnh nghèo khó.",
     "t": [
@@ -4675,7 +4699,7 @@ export const C0 = {
   },
   "Mauritius": {
     "cap": "Port Louis",
-    "pop": "~1,3 triệu",
+    "pop": "~1,25 triệu",
     "area": "2,04 nghìn km²",
     "sum": "Nằm biệt lập giữa vùng biển Tây Nam Ấn Độ Dương, cách đảo Madagascar khoảng 900 km về phía đông, Mauritius là quốc đảo núi lửa thuộc quần đảo Mascarene được bao bọc bởi vòng đai rạn san hô ngầm và cao nguyên trung tâm xanh mướt. Không có cư dân bản địa cho tới khi người Hà Lan, người Pháp và sau đó là Đế quốc Anh lần lượt chiếm đóng từ thế kỷ 17 đến thế kỷ 19, hòn đảo từng là trung tâm đồn điền mía đường được xây dựng bởi mồ hôi của nô lệ châu Phi và lao động giao kèo từ Ấn Độ. Khi giành độc lập năm 1968, nhà kinh tế học đoạt giải Nobel James Meade từng bi quan dự báo Mauritius sẽ thất bại vì bùng nổ dân số, xung đột sắc tộc và nền kinh tế độc canh chỉ biết trồng mía.\n\nThế nhưng Mauritius đã viết nên câu chuyện kỳ tích rực rỡ nhất châu Phi khi kết hợp nền dân chủ nghị viện đa sắc tộc ổn định (Ấn – Phi – Hoa – Pháp) với chiến lược chuyển dịch kinh tế qua 4 nấc thang: từ mía đường sang dệt may xuất khẩu, du lịch nghỉ dưỡng hạng sang, trung tâm tài chính quốc tế và công nghệ số. Tháng 10/2024, Mauritius đạt thắng lợi ngoại giao lịch sử khi Vương quốc Anh ký thỏa thuận công nhận chủ quyền của nước này đối với quần đảo Chagos (trong khi vẫn duy trì quyền thuê căn cứ quân sự Mỹ – Anh tại đảo Diego Garcia trong 99 năm), mở rộng vùng đặc quyền kinh tế biển lên hơn 2,3 triệu km². Dưới chính phủ của Thủ tướng Navin Ramgoolam đắc cử cuối năm 2024, quốc đảo tiếp tục giữ vai trò cầu nối đầu tư chiến lược giữa Ấn Độ với châu Phi, đồng thời đối mặt với thách thức già hóa dân số và nước biển dâng.",
     "t": [
@@ -5060,7 +5084,7 @@ export const C0 = {
   },
   "Togo": {
     "cap": "Lomé",
-    "pop": "~9,3 triệu",
+    "pop": "~8,4 triệu",
     "area": "56,8 nghìn km²",
     "sum": "Trải dài 550 km từ bờ vịnh Guinea lên vùng thảo nguyên giáp Burkina Faso nhưng chiều ngang chỉ rộng từ 50 đến 115 km (với bờ biển vỏn vẹn 56 km), Cộng hòa Togo là một hành lang đất đai hẹp chạy dọc dãy núi Togo chéo từ tây nam lên đông bắc. Nguyên là thuộc địa 'kiểu mẫu' Togoland của Đế quốc Đức từ năm 1884, lãnh thổ này bị quân Đồng minh chia đôi sau Thế chiến I: phần phía tây sáp nhập vào Ghana thuộc Anh, còn phần phía đông giao cho Pháp ủy trị và trở thành nước Cộng hòa Togo độc lập vào năm 1960. Chỉ 3 năm sau ngày độc lập, Tổng thống đầu tiên Sylvanus Olympio bị ám sát trong cuộc đảo chính quân sự đầu tiên ở châu Phi hạ Sahara (năm 1963), mở đường cho Tướng Gnassingbé Eyadéma lên nắm quyền từ năm 1967.\n\nVới việc ông Faure Gnassingbé kế nhiệm cha mình từ năm 2005 và việc Togo thông qua hiến pháp mới năm 2024–2025 chuyển sang chế độ đại nghị (trong đó ông Faure giữ chức Chủ tịch Hội đồng Bộ trưởng đầy quyền lực), gia tộc Gnassingbé đã tạo nên triều đại chính trị cầm quyền liên tục lâu nhất ở châu Phi hiện đại. Bất chấp diện tích nhỏ hẹp, Togo đã biến vị trí địa lý của mình thành trung tâm hàng hải và tài chính của cả Tây Phi nhờ sở hữu cảng nước sâu tự nhiên Lomé (đón được tàu container siêu trọng) và đặt trụ sở tập đoàn ngân hàng liên Phi Ecobank cùng Ngân hàng Đầu tư Tây Phi (BIDC). Trong khi khu vực cảng biển và khai thác quặng phosphate ở miền Nam phát triển sôi động, vùng cực bắc Savanes của Togo từ năm 2022–2025 lại phải hứng chịu các cuộc tấn công đẫm máu qua biên giới từ các nhóm phiến quân Hồi giáo có căn cứ tại Burkina Faso.",
     "t": [
@@ -5130,7 +5154,7 @@ export const C0 = {
   },
   "Cabo Verde": {
     "cap": "Praia",
-    "pop": "~600 nghìn",
+    "pop": "~525 nghìn",
     "area": "4,03 nghìn km²",
     "sum": "Nằm giữa Trung Đại Tây Dương cách mũi cực tây Dakar của Senegal khoảng 600 km, Cộng hòa Cabo Verde (Mũi Xanh) là một quần đảo hình móng ngựa gồm 10 đảo núi lửa (9 đảo có người ở), chia thành nhóm đảo đón gió Barlavento ở phía bắc và nhóm đảo khuất gió Sotavento ở phía nam. Hoàn toàn không có người sinh sống khi các nhà hàng hải Bồ Đào Nha khám phá ra vào năm 1456, quần đảo nhanh chóng trở thành trạm trung chuyển tàu buôn và nô lệ đầu tiên giữa châu Âu, châu Phi và châu Mỹ, hình thành nên dân tộc và ngôn ngữ Crioulo lai ghép Âu – Phi cùng dòng nhạc Morna da diết được UNESCO vinh danh. Do nằm trên cùng vĩ tuyến khí hậu với dải bán hoang mạc Sahel trên đất liền, Cabo Verde từng trải qua những trận hạn hán và nạn đói khủng khiếp trong thế kỷ 18–20 khiến hàng trăm nghìn người phải di cư sang Mỹ (bang Massachusetts) và châu Âu trước khi giành độc lập năm 1975.\n\nKhi mới độc lập cùng Guinea-Bissau dưới ngọn cờ của đảng PAIGC do Amílcar Cabral sáng lập, nhiều chuyên gia từng coi Cabo Verde là một quốc gia 'không thể tồn tại' vì không có nước ngọt, không có dầu mỏ hay khoáng sản và phải nhập khẩu hơn 80% lương thực. Thế nhưng nhờ xây dựng nền dân chủ nghị viện đa đảng trong sạch, pháp quyền vững chắc và đầu tư vào con người, Cabo Verde đã vươn lên nhóm quốc gia có thu nhập trung bình với GDP bình quân đầu người (~4.800 USD danh nghĩa; >11.000 USD PPP) và chỉ số quản trị tốt bậc nhất châu Phi. Ngày nay, quần đảo sống thịnh vượng nhờ hơn 85% nước sinh hoạt được sản xuất từ các nhà máy khử mặn nước biển hiện đại, ngành du lịch biển đảo quanh năm đón hơn 1 triệu du khách châu Âu (trên hai đảo Sal và Boa Vista) và dòng kiều hối ổn định từ cộng đồng hải ngoại đông gấp rưỡi dân số trong nước.",
     "t": [
@@ -5200,7 +5224,7 @@ export const C0 = {
   },
   "Central African Rep.": {
     "cap": "Bangui",
-    "pop": "~5,8 triệu",
+    "pop": "~5,3 triệu",
     "area": "623 nghìn km²",
     "sum": "Nằm đúng trung tâm địa lý của lục địa châu Phi, Cộng hòa Trung Phi (CAR) là một cao nguyên thảo nguyên gợn sóng và rừng mưa nhiệt đới ở cực nam, nằm vắt ngang gờ phân thủy tự nhiên giữa lưu vực sông Congo và lưu vực hồ Chad. Từng bị tàn phá bởi các cuộc vây bắt nô lệ suốt nhiều thế kỷ và bị bóc lột tàn bạo dưới chế độ nhượng địa cao su – ngà voi của thực dân Pháp (mang tên xứ Oubangui-Chari), đất nước giành độc lập năm 1960 nhưng mất đi lãnh tụ khai quốc Barthélemy Boganda trong một vụ tai nạn máy bay bí ẩn ngay trước ngày lập quốc. Lịch sử hậu độc lập của CAR trượt dài qua các cuộc đảo chính, khét tiếng nhất là chế độ độc tài của Jean-Bédel Bokassa (người tự xưng Hoàng đế Trung Phi năm 1976–1979), tiếp nối bằng cuộc nội chiến tôn giáo – sắc tộc bùng phát từ năm 2012–2013 giữa liên minh Séléka (đa số Hồi giáo ở miền đông bắc) và lực lượng Anti-balaka.\n\nMắc kẹt trong 'bẫy địa lý' kinh điển khi không có biển, chỉ có chưa đầy 1.000 km đường trải nhựa trên diện tích rộng gần gấp đôi Việt Nam và bị vây quanh bởi các nước láng giềng đầy bất ổn (Sudan, Nam Sudan, Chad, CHDC Congo), CAR luôn nằm ở nhóm cuối bảng Chỉ số Phát triển Con người (HDI) toàn cầu dù lòng đất đầy kim cương, vàng và uranium. Từ năm 2018 đến giai đoạn 2025–2026, chính quyền của Tổng thống Faustin-Archange Touadéra đã trở thành tâm điểm địa chính trị khi dựa vào lực lượng quân sự tư nhân Nga (Wagner/Quân đoàn châu Phi) cùng quân đội Rwanda và phái bộ LHQ (MINUSCA) để bảo vệ thủ đô Bangui, đổi lấy quyền khai thác các mỏ vàng (Ndassima), kim cương và gỗ quý. Bài toán sống còn của Bangui hiện nay là khôi phục quyền quản trị nhà nước tại các tỉnh biên giới xa xôi và đưa nguồn thu khoáng sản từ chợ đen về lại ngân sách quốc gia.",
     "t": [
@@ -5234,7 +5258,7 @@ export const C0 = {
   },
   "Eq. Guinea": {
     "cap": "Malabo (đang chuyển về Ciudad de la Paz)",
-    "pop": "~1,8 triệu",
+    "pop": "~1,9 triệu",
     "area": "28,1 nghìn km²",
     "sum": "Là quốc gia có chủ quyền duy nhất ở châu Phi hạ Sahara sử dụng tiếng Tây Ban Nha làm ngôn ngữ chính thức, Guinea Xích Đạo có cấu trúc địa lý chia cắt kỳ lạ: phần đất liền Río Muni rộng lớn hơn nằm kẹp giữa Cameroon và Gabon trên lục địa, trong khi thủ đô lịch sử Malabo cùng trung tâm công nghiệp dầu khí lại nằm trên đảo núi lửa Bioko ngoài khơi Cameroon (cùng đảo nhỏ Annobón ở tít phía nam Xích đạo). Từng được Bồ Đào Nha nhượng lại cho Tây Ban Nha theo Hiệp ước El Pardo năm 1778 để làm trạm trung chuyển hàng hải và đồn điền ca cao trên đảo Fernando Po (nay là Bioko), đất nước giành độc lập vào năm 1968. Ngay sau khi lập quốc, Guinea Xích Đạo rơi vào 11 năm cai trị kinh hoàng của nhà độc tài Francisco Macías Nguema (khiến 1/3 dân số thiệt mạng hoặc phải lưu vong) trước khi ông bị chính người cháu ruột là Teodoro Obiang Nguema Mbasogo lật đổ vào năm 1979.\n\nCầm quyền liên tục hơn 46 năm từ năm 1979 tới nay (cùng con trai là Phó Tổng thống Teodoro 'Teodorín' Nguema Obiang Mangue), Tổng thống Obiang là nguyên thủ quốc gia không phải hoàng gia tại vị lâu nhất thế giới hiện đại. Việc các tập đoàn dầu khí Mỹ (ExxonMobil, Marathon Oil) phát hiện những mỏ dầu thô và khí đốt khổng lồ ngoài khơi vịnh Guinea vào giữa thập niên 1990 đã biến quốc gia nghèo khó này thành thành viên OPEC được mệnh danh là 'Kuwait của châu Phi', với GDP bình quân đầu người cao hàng đầu lục địa nhưng đi kèm sự chênh lệch giàu nghèo sâu sắc. Hiện nay, chính phủ đang dồn lực chuyển thủ đô hành chính từ đảo Malabo về thành phố mới quy hoạch giữa rừng rậm đất liền là Ciudad de la Paz (Oyala), đồng thời đối mặt với sự sụt giảm sản lượng của các mỏ dầu già cỗi và sự cạnh tranh Mỹ – Trung quanh cảng nước sâu Bata.",
     "t": [
@@ -5636,7 +5660,7 @@ export const C0 = {
   },
   "Botswana": {
     "cap": "Gaborone",
-    "pop": "~2,7 triệu",
+    "pop": "~2,5 triệu",
     "area": "582 nghìn km²",
     "sum": "Nằm sâu trong nội lục miền Nam châu Phi với khoảng 70% diện tích lãnh thổ được bao phủ bởi vùng bán hoang mạc cát Kalahari bằng phẳng, Cộng hòa Botswana sở hữu một kỳ quan địa lý độc nhất vô nhị ở phía tây bắc: châu thổ sông Okavango — nơi dòng sông lớn chảy từ cao nguyên Angola không đổ ra biển mà tỏa thành một ốc đảo đầm lầy ngập nước rộng tới 15.000 km² ngay giữa lòng sa mạc khô cằn. Vào năm 1895, trước nguy cơ vùng đất của người Tswana bị sáp nhập vào Công ty Nam Phi thuộc Anh của Cecil Rhodes hoặc các nước cộng hòa của người Boer, ba vị tù trưởng thông thái (Khama III, Sebele I và Bathoen I) đã trực tiếp đi tàu thủy sang tận London thuyết phục Nữ hoàng Victoria giữ nguyên quy chế Xứ bảo hộ Bechuanaland cho tới ngày giành độc lập hòa bình năm 1966. Khi lập quốc năm 1966 dưới sự dẫn dắt của Tổng thống Seretse Khama, Botswana là một trong 10 nước nghèo và tuyệt vọng nhất hành tinh: không có biển, hạn hán triền miên, cả nước chỉ có vẻn vẹn 12 km đường trải nhựa và 22 người tốt nghiệp đại học.\n\nThế nhưng ngay sau khi phát hiện các mỏ kim cương lộ thiên khổng lồ tại Orapa (1967) và Jwaneng ('mỏ kim cương giàu nhất thế giới'), thay vì rơi vào tham nhũng hay nội chiến như nhiều quốc gia châu Phi khác, chính phủ Botswana đã thiết lập liên doanh 50/50 Debswana với tập đoàn De Beers và đưa toàn bộ nguồn thu kim cương vào quỹ phát triển giáo dục, y tế, hạ tầng và Quỹ đầu tư quốc gia Pula. Nhờ nền tảng pháp quyền trong sạch (luôn nằm trong nhóm ít tham nhũng nhất châu Phi), Botswana đã trở thành quốc gia có thu nhập trung bình cao (~20.200 USD PPP) và là nền dân chủ đa đảng liên tục lâu đời nhất lục địa châu Phi — vừa chứng kiến cuộc chuyển giao quyền lực lịch sử qua bầu cử hòa bình vào tháng 10/2024 khi Tổng thống Duma Boko và phe đối lập UDC chấm dứt 58 năm cầm quyền liên tiếp của đảng BDP. Bước sang năm 2025–2026, sau khi ký thỏa thuận lịch sử mới kéo dài 10 năm với De Beers để giữ lại tới 30–40% lượng kim cương thô cho ngành cắt mài nội địa tại thủ đô Gaborone, thách thức chiến lược sống còn của Botswana là đa dạng hóa kinh tế trước sự cạnh tranh gay gắt từ kim cương nhân tạo nuôi cấy trong phòng thí nghiệm.",
     "t": [
@@ -6205,7 +6229,7 @@ export const C0 = {
   },
   "Cuba": {
     "cap": "Havana",
-    "pop": "~10 triệu",
+    "pop": "~11 triệu",
     "area": "110 nghìn km²",
     "ch": "c3",
     "sum": "Vươn dài 1.250 km như hình một con cá sấu khổng lồ nằm chắn ngang lối vào Vịnh Mexico, Cuba là quốc đảo lớn nhất vùng biển Caribbean và chỉ cách mũi Key West của bang Florida (Mỹ) đúng 150 km. Vị trí địa chiến lược độc tôn giúp hòn đảo khóa chặt cả hai lối thoát hàng hải duy nhất của Vịnh Mexico và cửa sông Mississippi: Eo biển Florida ở phía bắc và Kênh Yucatán ở phía tây. Từng là thuộc địa giàu có bậc nhất và là pháo đài cuối cùng của Đế chế Tây Ban Nha tại Tân Thế giới cho tới cuộc Chiến tranh Mỹ – Tây Ban Nha năm 1898, Cuba trải qua nửa thế kỷ chịu ảnh hưởng sâu sắc của Washington trước khi cuộc Cách mạng năm 1959 do Fidel Castro lãnh đạo lật đổ chế độ Batista, thiết lập nhà nước xã hội chủ nghĩa đầu tiên ở Tây Bán cầu và dẫn tới Cuộc khủng hoảng Tên lửa Cuba tháng 10/1962 đưa nhân loại tới sát bờ vực chiến tranh hạt nhân.\n\nSuốt hơn sáu thập kỷ chịu lệnh cấm vận kinh tế toàn diện dài nhất lịch sử hiện đại từ Hoa Kỳ, Cuba vẫn xây dựng được hệ thống y tế phổ cập, công nghệ sinh học tự chủ và truyền thống \"ngoại giao bác sĩ\" có ảnh hưởng lớn tại Mỹ Latinh và châu Phi. Tuy nhiên, bước vào giai đoạn 2024–2026, sự sụt giảm nguồn cung dầu thô giá rẻ từ Venezuela kết hợp với hệ quả sau đại dịch và các lệnh trừng phạt tài chính đã đẩy đảo quốc vào cuộc khủng hoảng kinh tế – năng lượng trầm trọng nhất kể từ sau khi Liên Xô tan rã năm 1991. Tình trạng mất điện diện rộng trên lưới điện quốc gia, lạm phát phi mã và làn sóng di cư của hơn một triệu người dân trong vài năm qua đang đặt chính quyền La Habana trước áp lực cải cách kinh tế sống còn.",
@@ -6423,7 +6447,7 @@ export const C0 = {
   },
   "Trinidad and Tobago": {
     "cap": "Port of Spain",
-    "pop": "~1,5 triệu",
+    "pop": "~1,37 triệu",
     "area": "5,13 nghìn km²",
     "sum": "Nằm ở cực nam của vòng cung đảo Tiểu Antilles, Cộng hòa Trinidad và Tobago là một quốc gia hai đảo nằm ngay trên thềm lục địa Nam Mỹ — nơi mũi đất tây nam của đảo Trinidad chỉ cách bờ biển châu thổ sông Orinoco của Venezuela đúng 11 km qua eo biển hẹp Boca del Serpiente. Nhờ cấu tạo địa chất vốn là phần kéo dài của dãy núi Andes và bồn địa dầu khí Đông Venezuela tách ra từ đất liền, đảo Trinidad ngồi trên trữ lượng khí tự nhiên và dầu mỏ khổng lồ, hoàn toàn khác biệt với phần còn lại của vùng biển Caribbean vốn chỉ dựa vào du lịch hay nông nghiệp. Được Christopher Columbus đặt tên vào năm 1498 và trải qua gần ba thế kỷ thuộc Tây Ban Nha trước khi về tay Vương quốc Anh năm 1797 (kết hợp hai đảo thành một thuộc địa năm 1889), đất nước giành độc lập năm 1962 và trở thành nước cộng hòa vào năm 1976.\n\nSự giao thoa lịch sử giữa nô lệ gốc Phi được giải phóng và những người lao động hợp đồng đến từ Ấn Độ vào thế kỷ 19 đã hun đúc nên một xã hội đa sắc tộc giàu bản sắc (gồm ~35% người gốc Ấn và ~34% người gốc Phi) — cái nôi khai sinh ra lễ hội hóa trang Carnival rực rỡ, âm nhạc Calypso, Soca và nhạc cụ trống thép (steelpan) duy nhất được phát minh trong thế kỷ 20. Bước vào giai đoạn 2025–2026, Trinidad và Tobago giữ vững vị thế là trung tâm công nghiệp nặng, hóa dầu và ngân hàng tài chính số một của Cộng đồng Caribbean (CARICOM), đồng thời nằm trong nhóm các nhà xuất khẩu amoniac, methanol và khí tự nhiên hóa lỏng (LNG) hàng đầu thế giới. Bài toán chiến lược lớn nhất của Port of Spain hiện nay là bù đắp sự suy giảm sản lượng tại các mỏ khí đốt lâu năm thông qua khai thác vùng biển sâu và đàm phán khai thác các mỏ khí đốt xuyên biên giới với Venezuela.",
     "t": [
@@ -6531,7 +6555,7 @@ export const C0 = {
   },
   "St. Vin. and Gren.": {
     "cap": "Kingstown",
-    "pop": "~104 nghìn",
+    "pop": "~101 nghìn",
     "area": "389 km²",
     "sum": "Nằm trong chuỗi đảo Windward giữa Saint Lucia ở phía bắc và Grenada ở phía nam, Saint Vincent và Grenadines là một quốc gia quần đảo gồm hòn đảo chính núi lửa Saint Vincent (chiếm gần 90% diện tích) nối tiếp bởi chuỗi 32 hòn đảo và cồn đá san hô nhỏ tuyệt đẹp mang tên Grenadines trải dài hơn 60 km về phía nam. Đảo chính Saint Vincent được thống trị bởi ngọn núi lửa đang hoạt động La Soufrière cao 1.234 m — nơi người bản địa Garifuna (Black Caribs, hậu duệ hòa huyết giữa người bản địa Kalinago và nô lệ châu Phi thoát nạn đắm tàu) từng chiến đấu ngoan cường chống lại thực dân Anh suốt thế kỷ 18 trước khi bị trục xuất sang bờ biển Trung Mỹ năm 1797. Giành độc lập từ Vương quốc Anh vào năm 1979, quốc đảo này mang vẻ đẹp đối lập kỳ thú giữa những sườn núi lửa đất đen hùng vĩ ở đảo chính và những thiên đường du thuyền cát trắng siêu sang trên các đảo tư nhân Mustique, Canouan thuộc quần đảo Grenadines.\n\nTrên bàn cờ ngoại giao quốc tế, dù chỉ có hơn 104.000 dân và diện tích 389 km², Saint Vincent và Grenadines đã lập kỷ lục thế giới vào nhiệm kỳ 2020–2021 khi trở thành quốc gia nhỏ nhất trong lịch sử từng trúng cử ghế Ủy viên không thường trực Hội đồng Bảo an Liên Hợp Quốc. Dưới sự lãnh đạo lâu năm của Thủ tướng Ralph Gonsalves, Kingstown vừa theo đuổi đường lối đối ngoại độc lập tích cực trong khối CARICOM, CELAC, vừa kiên định duy trì quan hệ ngoại giao chính thức với Đài Loan suốt từ năm 1981 đến nay. Bước vào giai đoạn 2025–2026, nền kinh tế quần đảo đang thể hiện sức bật đáng kinh ngạc sau khi liên tiếp vượt qua hai thảm họa thiên nhiên lịch sử: vụ phun trào núi lửa La Soufrière tháng 4/2021 và siêu bão Beryl cấp 4–5 quét qua quần đảo Grenadines tháng 7/2024.",
     "t": [
@@ -6639,7 +6663,7 @@ export const C0 = {
   },
   "Dominica": {
     "cap": "Roseau",
-    "pop": "~73 nghìn",
+    "pop": "~66 nghìn",
     "area": "751 km²",
     "sum": "Nằm chính giữa hai vùng lãnh thổ hải ngoại của Pháp là Guadeloupe (ở phía bắc) và Martinique (ở phía nam), Thịnh vượng chung Dominica được mệnh danh là \"Hòn đảo Thiên nhiên của vùng Caribbean\" (Nature Island of the Caribbean). Đây là hòn đảo núi lửa trẻ nhất, có địa hình núi non dựng đứng cao nhất (đỉnh Morne Diablotins cao 1.447 m) và được bao phủ bởi những cánh rừng mưa nhiệt đới nguyên sinh rậm rạp nhất trong toàn bộ chuỗi đảo Tiểu Antilles. Được Christopher Columbus đặt tên vào một ngày Chủ nhật (Domenica) tháng 11/1493, địa hình vách núi hiểm trở của hòn đảo đã giúp người bản địa Kalinago (Carib) đánh bật mọi nỗ lực chinh phục của châu Âu suốt hơn hai thế kỷ, buộc Anh và Pháp phải ký Hiệp ước Aix-la-Chapelle năm 1748 công nhận đảo là vùng trung lập thuộc về người bản địa trước khi Anh kiểm soát hoàn toàn và trao trả độc lập vào năm 1978.\n\nNhờ di sản lịch sử đó, Dominica ngày nay là hòn đảo duy nhất ở vùng Đông Caribbean còn bảo tồn Lãnh thổ Kalinago (Kalinago Territory rộng 15 km²) nơi khoảng 3.000 hậu duệ người bản địa tiền Columbus vẫn sinh sống tự quản, đồng thời là một nước cộng hòa nghị viện thuộc Khối thịnh vượng chung (có Tổng thống riêng ngay từ khi độc lập năm 1978). Sau khi siêu bão Maria cấp 5 đổ bộ trực tiếp vào tháng 9/2017 tàn phá 90% công trình trên đảo và gây thiệt hại kỷ lục tương đương 226% GDP, Thủ tướng Roosevelt Skerrit đã tuyên bố sứ mệnh biến Dominica thành \"quốc gia chống chịu khí hậu đầu tiên trên thế giới\". Bước sang giai đoạn 2025–2026, Dominica đang sử dụng hiệu quả nguồn vốn từ chương trình Đầu tư lấy Quốc tịch (CBI) để xây dựng nhà ở chống bão miễn phí cho người dân, hoàn thiện nhà máy điện địa nhiệt núi lửa và xây dựng Sân bay Quốc tế mới mở đường bay thẳng tới Bắc Mỹ và châu Âu.",
     "t": [
@@ -6819,7 +6843,7 @@ export const C0 = {
   },
   "St-Martin": {
     "cap": "Marigot",
-    "pop": "~32 nghìn",
+    "pop": "~26 nghìn",
     "area": "53 km²",
     "sum": "Bao phủ phần phía bắc rộng 53 km² (chiếm 60% diện tích của hòn đảo Saint Martin), Cộng đồng hải ngoại Saint-Martin (Collectivité de Saint-Martin) là một vùng lãnh thổ thuộc chủ quyền của Cộng hòa Pháp ở vùng Đông Bắc Caribbean. Theo Hiệp ước núi Concordia ký năm 1648, sau khi quân Tây Ban Nha rút khỏi đảo, người Pháp và người Hà Lan đã chia đôi hòn đảo có người ở nhỏ nhất thế giới này để cùng sinh sống hòa thuận suốt gần bốn thế kỷ (tương truyền ranh giới được xác định bằng cuộc đi bộ từ hai đầu đảo của một người Pháp uống rượu vang và một người Hà Lan uống rượu gin). Từng được quản lý như một xã thuộc tỉnh hải ngoại Guadeloupe của Pháp suốt nhiều thập kỷ, sau cuộc trưng cầu dân ý năm 2003, đến năm 2007 Saint-Martin đã chính thức tách ra thành một Cộng đồng hải ngoại tự chủ (COM) trực thuộc Paris.\n\nKhác với người láng giềng đảo kế bên là Saint-Barthélemy đã rút khỏi EU, Saint-Martin vẫn giữ quy chế là một \"Vùng cực ngoại vi\" (Région ultrapériphérique — RUP) thuộc Liên minh châu Âu (EU) và sử dụng đồng Euro làm đồng tiền chính thức ngay giữa lòng vùng biển Caribbean. Nếu như nửa phía nam thuộc Hà Lan (Sint Maarten) sôi động với cảng siêu tàu biển, sân bay phản lực lớn và các sòng bạc rực ánh đèn neon, thì nửa phía bắc thuộc Pháp (Saint-Martin) lại quyến rũ du khách bằng vẻ đẹp thanh bình của những ngọn đồi xanh, bãi biển hoang sơ Orient Bay và thủ phủ ẩm thực cao cấp Pháp – Creole tại làng chài Grand Case. Bước sang giai đoạn 2025–2026, Saint-Martin đã phục hồi các khu nghỉ dưỡng boutique cao cấp và bến du thuyền tại thủ phủ Marigot sau siêu bão Irma, đồng thời hưởng lợi từ nguồn quỹ kết cấu hạ tầng của cả Chính phủ Pháp lẫn Liên minh châu Âu.",
     "t": [
@@ -7491,7 +7515,7 @@ export const C0 = {
   },
   "Solomon Is.": {
     "cap": "Honiara",
-    "pop": "~750 nghìn",
+    "pop": "~820 nghìn",
     "area": "28,9 nghìn km²",
     "sum": "Trải dài hơn 1.400 km theo một chuỗi đảo kép núi rừng nhiệt đới ở phía đông Papua New Guinea, Quần đảo Solomon gồm 6 hòn đảo lớn (Guadalcanal, Malaita, New Georgia, Santa Isabel, Choiseul, Makira) và hơn 900 đảo nhỏ nằm án ngữ ngay trên hành lang biển Đông Bắc dẫn vào nước Úc. Được nhà hàng hải Tây Ban Nha Álvaro de Mendaña đặt tên theo Vua Solomon trong Kinh Thánh vào năm 1568 vì tin rằng nơi đây chứa kho vàng huyền thoại, quần đảo Melanesia này trở thành lãnh thổ bảo hộ của Anh năm 1893 trước khi giành độc lập năm 1978. Trong Thế chiến II (1942–1943), hòn đảo chính Guadalcanal và vùng biển xung quanh (mang biệt danh \"Eo biển Đáy Sắt\" – Ironbottom Sound vì hàng chục tàu chiến và hàng trăm máy bay của cả Mỹ lẫn Nhật bị bắn chìm dưới đáy biển) chính là chiến trường bước ngoặt chặn đứng đà bành trướng của Đế quốc Nhật Bản tại Thái Bình Dương.\n\nSau khi độc lập, sự chênh lệch phát triển và tranh chấp đất đai giữa cư dân đảo đông dân nhất Malaita với người bản địa trên đảo thủ đô Guadalcanal từng đẩy đất nước vào cuộc xung đột sắc tộc (\"Thời kỳ Căng thẳng\" 1998–2003), buộc Phái bộ Hỗ trợ Khu vực do Australia dẫn đầu (RAMSI) phải can thiệp gìn giữ hòa bình suốt 14 năm (2003–2017). Bước sang thập kỷ 2020, Quần đảo Solomon bất ngờ tạo ra một cơn địa chấn địa chính trị toàn khu vực khi cắt đứt quan hệ ngoại giao với Đài Loan để chuyển sang Bắc Kinh (2019) và ký Hiệp ước An ninh song phương với Trung Quốc vào năm 2022. Bước đi này đã khiến Mỹ (vội vã mở lại Đại sứ quán tại Honiara sau 30 năm đóng cửa) và Australia chạy đua viện trợ hạ tầng, trong khi nền kinh tế quốc đảo đang phải tìm lối thoát khi nguồn gỗ rừng tự nhiên xuất khẩu dần cạn kiệt.",
     "t": [
@@ -7559,7 +7583,7 @@ export const C0 = {
   },
   "Samoa": {
     "cap": "Apia",
-    "pop": "~225 nghìn",
+    "pop": "~218 nghìn",
     "area": "2,84 nghìn km²",
     "sum": "Nằm ở trung tâm vùng Nam Thái Bình Dương và được tôn vinh là \"Trái tim văn hóa của Polynesia\" (Cái nôi định cư truyền thống từ hơn 3.000 năm trước), Nhà nước Độc lập Samoa gồm hai hòn đảo núi lửa lớn là Upolu (nơi đặt thủ đô Apia và tập trung 75% dân số) và Savai'i (một trong những hòn đảo lớn nhất vùng Polynesia), cùng 8 đảo nhỏ xung quanh. Cuối thế kỷ 19, quần đảo Samoa bị chia cắt bởi cuộc cạnh tranh giữa ba cường quốc phương Tây: Đế quốc Đức thôn tính phần phía tây (tức quốc gia Samoa ngày nay) còn Hoa Kỳ lấy phần phía đông (Samoa thuộc Mỹ), trước khi quân đội New Zealand đổ bộ chiếm đóng Samoa thuộc Đức ngay khi Thế chiến I bùng nổ năm 1914. Năm 1962, dưới tên gọi Tây Samoa (đổi tên thành Samoa năm 1997), đất nước 225.000 dân này đã đi vào lịch sử khi trở thành quốc đảo Thái Bình Dương đầu tiên giành lại độc lập hoàn toàn.\n\nXã hội và thể chế chính trị của Samoa là sự kết hợp hài hòa hiếm có giữa nền dân chủ nghị viện kiểu Westminster và hệ thống văn hóa truyền thống \"Fa'a Samoa\" (Lối sống Samoa), nơi các thủ lĩnh gia tộc được bầu chọn (Matai) quản lý hơn 80% đất đai cộng đồng và giữ ghế đại biểu trong Quốc hội. Năm 2011, Samoa từng gây tiếng vang toàn cầu khi quyết định \"nhảy qua thời gian\" từ phía đông sang phía tây Đường Đổi Ngày Quốc tế (xóa bỏ hoàn toàn ngày 30/12/2011 khỏi lịch sử dân tộc) để có cùng ngày làm việc với hai đối tác kinh tế lớn nhất là New Zealand và Australia! Bước sang giai đoạn 2024–2026, dưới sự lãnh đạo của nữ Thủ tướng đầu tiên Fiame Naomi Mata'afa, Samoa vừa nâng cao vị thế quốc tế khi đăng cai thành công Hội nghị Thượng đỉnh Khối Thịnh vượng chung (CHOGM) tháng 10/2024 (hội nghị đầu tiên tổ chức tại một quốc đảo Thái Bình Dương), vừa dựa vào nguồn kiều hối khổng lồ (~28% GDP) và du lịch sinh thái để phát triển bền vững.",
     "t": [
@@ -7695,7 +7719,7 @@ export const C0 = {
   },
   "Marshall Is.": {
     "cap": "Majuro",
-    "pop": "~42 nghìn",
+    "pop": "~38 nghìn",
     "area": "181 km²",
     "sum": "Tọa lạc ở vùng biển trung tâm Thái Bình Dương ngay phía bắc đường Xích đạo (nằm giữa Hawaii và Philippines), Cộng hòa Quần đảo Marshall bao gồm 29 đảo san hô vòng (atoll) và 5 hòn đảo đơn độc xếp thành hai chuỗi chạy song song nhau là chuỗi Ratak (\"Mặt trời mọc\" ở phía đông) và chuỗi Ralik (\"Mặt trời lặn\" ở phía tây). Từ hàng nghìn năm trước, các thủy thủ bản địa Marshall đã nổi tiếng khắp nhân loại với nghệ thuật hàng hải thiên tài khi chế tạo ra các \"bản đồ thanh tre và vỏ ốc\" (stick charts) mô phỏng sự khúc xạ của sóng biển khi va vào các đảo san hô để chèo thuyền vượt đại dương mà không cần la bàn. Sau khi thoát khỏi ách chiếm đóng của Nhật Bản trong Thế chiến II (với các trận đánh ác liệt tại Kwajalein và Majuro năm 1944), giữa thời kỳ Chiến tranh Lạnh từ năm 1946 đến 1958, Hoa Kỳ đã sử dụng hai đảo san hô Bikini và Enewetak tại đây làm bãi thử nghiệm hạt nhân, kích nổ tổng cộng 67 quả bom nguyên tử và bom nhiệt hạch (bao gồm vụ thử bom khinh khí Castle Bravo năm 1954 mạnh gấp 1.000 lần quả bom Hiroshima).\n\nGiành độc lập năm 1986 trong khuôn khổ Hiệp ước Liên kết Tự do (COFA) với Hoa Kỳ (vừa được gia hạn thêm 20 năm vào tháng 3/2024 với gói ngân sách 2,3 tỷ USD), Quần đảo Marshall giữ vị trí quân sự – vũ trụ tối quan trọng đối với nước Mỹ. Đảo san hô vòng Kwajalein của nước này là nơi đặt Căn cứ Phòng thủ Tên lửa Đạn đạo Ronald Reagan (RTS) — bãi thử duy nhất trên thế giới nơi quân đội Mỹ bắn các tên lửa đạn đạo liên lục địa (ICBM) từ căn cứ Vandenberg (California) vượt 7.700 km qua Thái Bình Dương tới đầm phá Kwajalein để thử nghiệm hệ thống radar theo dõi không gian và tên lửa đánh chặn! Bước sang giai đoạn 2025–2026, quốc đảo chỉ 42.000 dân này vừa là một trong 4 nước ở Thái Bình Dương kiên định giữ quan hệ ngoại giao với Đài Loan, vừa sở hữu đội tàu biển quốc tế đăng ký cờ lớn thứ ba thế giới (sau Panama và Liberia), nhưng lại đang phải chiến đấu từng ngày trước nguy cơ nước biển dâng xóa sổ lãnh thổ.",
     "t": [
@@ -7763,7 +7787,7 @@ export const C0 = {
   },
   "Nauru": {
     "cap": "Yaren (trung tâm hành chính, không có thủ đô chính thức)",
-    "pop": "~12,8 nghìn",
+    "pop": "~12 nghìn",
     "area": "21 km²",
     "sum": "Nằm đơn độc ở vùng biển trung tâm Thái Bình Dương ngay phía nam đường Xích đạo (cách đảo gần nhất là đảo Banaba của Kiribati khoảng 300 km), Cộng hòa Nauru là quốc đảo độc lập nhỏ nhất trên thế giới và là nước cộng hòa nhỏ nhất hành tinh với tổng diện tích chỉ vỏn vẹn 21 km² (nhỏ hơn cả một quận nội thành hay một sân bay quốc tế lớn, có thể lái xe chạy một vòng quanh cả đất nước chỉ trong 25–30 phút!). Trong hàng triệu năm, phân của hàng triệu con chim biển tích tụ trên đỉnh đảo san hô nâng cao này đã hóa thạch thành lớp quặng photphat (nguyên liệu làm phân bón nông nghiệp) có độ tinh khiết cao nhất trên Trái Đất. Bị Đức, Nhật Bản rồi liên doanh Úc – Anh – New Zealand khai thác lộ thiên suốt thế kỷ 20, sau khi giành độc lập năm 1968 và quốc hữu hóa mỏ photphat, vào thập niên 1970 Nauru (~12.800 dân) từng trở thành quốc gia có thu nhập bình quân đầu người cao nhất thế giới (vượt cả các vương quốc dầu mỏ Ả Rập), nơi chính phủ miễn mọi loại thuế và người dân thuê chuyên cơ bay đi mua sắm khắp châu Á – Úc.\n\nThế nhưng, Nauru đã trở thành bài học kinh điển đau xót nhất lịch sử địa kinh tế nhân loại về \"lời nguyền tài nguyên\": đến cuối thập niên 1990, khi trữ lượng photphat nguyên sinh cạn kiệt và quỹ đầu tư quốc gia bị thất thoát hàng tỷ USD vì đầu tư bất động sản sai lầm, đất nước rơi vào cảnh khánh kiệt tài chính trong khi 80% diện tích trung tâm đảo (vùng Topside) đã bị đào rỗng thành một cánh đồng cột đá vôi răng cưa hoang hóa không thể trồng trọt hay sinh sống! Bước sang thế kỷ 21, để duy trì ngân sách nhà nước, Nauru đã phải dựa vào khoản tiền hàng trăm triệu AUD mỗi năm từ Chính phủ Australia để vận hành Trung tâm Xử lý Khu vực (RPC — trại lưu giữ những người xin tị nạn vượt biển trái phép vào Úc) cùng tiền bán giấy phép đánh bắt cá ngừ. Trong giai đoạn 2024–2026, Nauru một lần nữa thu hút sự chú ý toàn cầu khi đột ngột cắt đứt quan hệ ngoại giao với Đài Loan để chuyển sang Trung Quốc vào tháng 1/2024, đồng thời tiên phong bảo trợ cho tập đoàn The Metals Company (NORI) nộp đơn xin khai thác thương mại các nốt đa kim dưới đáy biển sâu đầu tiên trên thế giới.",
     "t": [
@@ -7899,7 +7923,7 @@ export const C0 = {
   },
   "N. Mariana Is.": {
     "cap": "Saipan",
-    "pop": "~47 nghìn",
+    "pop": "~44 nghìn",
     "area": "464 km²",
     "sum": "Trải dài hơn 700 km theo một vòng cung hướng bắc – nam ngay phía bắc đảo Guam (nằm dọc theo sườn phía tây của Vực biển Mariana sâu nhất hành tinh), Khối Thịnh vượng chung Quần đảo Bắc Mariana (CNMI) thuộc Hoa Kỳ bao gồm 14 hòn đảo nhiệt đới (trong đó 99% trong tổng số ~47.000 dân sống tập trung trên ba hòn đảo đá vôi – núi lửa ở phía nam là Saipan, Tinian và Rota). Cùng là quê hương của người bản địa Chamorro (và người Carolinian) với đảo Guam láng giềng, nhưng năm 1899 Tây Ban Nha sau khi nhượng Guam cho Mỹ đã bán phần còn lại của quần đảo Mariana ở phía bắc cho Đế quốc Đức, trước khi Nhật Bản chiếm lấy từ năm 1914 và biến nơi đây thành các đồn điền mía đường cùng pháo đài quân sự tiền tiêu. Mùa hè năm 1944, trận đổ bộ đánh chiếm đảo Saipan và Tinian của Thủy quân lục chiến Mỹ đã phá vỡ vành đai phòng thủ tuyệt đối của Nhật Bản, và chính từ cụm đường băng khổng lồ North Field trên đảo Tinian, ngày 6 và 9/8/1945 hai chiếc pháo đài bay B-29 của Mỹ (Enola Gay và Bockscar) đã cất cánh mang theo hai quả bom nguyên tử thả xuống Hiroshima và Nagasaki chấm dứt Thế chiến II!\n\nSau ba thập kỷ nằm dưới sự quản thác của Liên Hợp Quốc do Mỹ điều hành sau chiến tranh, năm 1975 người dân Quần đảo Bắc Mariana đã bỏ phiếu trưng cầu dân ý (với tỷ lệ 78,8% tán thành) chọn không tách ra độc lập mà gia nhập liên minh chính trị vĩnh viễn dưới quy chế \"Thịnh vượng chung thuộc Hoa Kỳ\" (tương tự Puerto Rico, người dân có quốc tịch Mỹ và dùng đồng USD). Bước sang giai đoạn 2024–2026, khi ngành du lịch sòng bạc và nghỉ dưỡng từng dựa vào khách Trung Quốc tại Saipan suy giảm mạnh sau đại dịch và việc siết thị thực, giá trị địa chiến lược quân sự của quần đảo một lần nữa trỗi dậy mạnh mẽ. Công binh Không quân Mỹ đang phát quang rừng rậm để khôi phục lại hoàn toàn 4 đường băng lịch sử dài 2.600 m của sân bay North Field trên đảo Tinian cùng cảng Tinian, biến Bắc Mariana thành căn cứ phân tán tác chiến linh hoạt (Agile Combat Employment) bảo vệ cho căn cứ đảo Guam ngay sát bên cạnh.",
     "t": [
@@ -7933,7 +7957,7 @@ export const C0 = {
   },
   "American Samoa": {
     "cap": "Pago Pago",
-    "pop": "~45 nghìn",
+    "pop": "~47 nghìn",
     "area": "199 km²",
     "sum": "Tọa lạc ở trung tâm vùng Nam Thái Bình Dương (nằm ngay phía đông của quốc gia độc lập Samoa nhưng ở phía bên kia Đường Đổi Ngày Quốc tế), Samoa thuộc Mỹ là lãnh thổ có người ở duy nhất của Hoa Kỳ nằm ở Nam Bán cầu, bao gồm 5 hòn đảo núi lửa hiểm trở (Tutuila, Aunu'u và nhóm đảo Manu'a) cùng 2 đảo san hô vòng (Swains và Rose Atoll) với tổng diện tích đất liền 199 km². Viên ngọc địa chiến lược vô giá của quần đảo này chính là Vịnh cảng Pago Pago trên đảo chính Tutuila — một miệng núi lửa cổ đã tắt bị nước biển tràn vào tạo thành cảng nước sâu tự nhiên kín gió bão hoàn hảo nhất ở toàn bộ Nam Thái Bình Dương. Chính vì khao khát sở hữu cảng Pago Pago làm trạm tiếp than và căn cứ hải quân trên tuyến đường biển nối San Francisco tới Sydney, năm 1899 Hoa Kỳ đã ký Hiệp ước Tam cường phân chia quần đảo Samoa với Đức và Anh, rồi thông qua các Bản Chứng thư Nhượng quyền (1900 và 1904) của các thủ lĩnh bản địa Samoa để đưa vùng đất này dưới lá cờ Mỹ.\n\nĐiểm độc đáo nhất về mặt thể chế của Samoa thuộc Mỹ là quy chế pháp lý của ~45.000 cư dân tại đây: người sinh ra trên đảo mang quy chế \"Công dân Quốc gia Hoa Kỳ\" (U.S. Nationals — được mang hộ chiếu Mỹ, tự do sinh sống và làm việc vô thời hạn trên khắp nước Mỹ nhưng không tự động có quyền công dân đầy đủ trừ khi làm thủ tục nhập tịch). Sở dĩ chính quyền và các thủ lĩnh truyền thống của Samoa thuộc Mỹ ra sức bảo vệ quy chế đặc biệt này trước các tòa án liên bang Mỹ là vì họ lo ngại nếu áp dụng toàn bộ Hiến pháp Mỹ, điều khoản bình đẳng sắc tộc sẽ vô hiệu hóa đạo luật truyền thống \"Fa'a Samoa\" vốn bắt buộc 90% đất đai trên đảo chỉ được thuộc quyền sở hữu của người có ít nhất 50% dòng máu bản địa Samoa! Dù vậy, lòng yêu nước Mỹ tại đây lại cao bậc nhất liên bang khi thanh niên Samoa thuộc Mỹ luôn dẫn đầu toàn bộ 50 bang và lãnh thổ Hoa Kỳ về tỷ lệ tình nguyện gia nhập Quân đội Mỹ tính theo đầu người, trong khi kinh tế đảo dựa vào nhà máy đóng hộp cá ngừ StarKist khổng lồ.",
     "t": [
@@ -7967,7 +7991,7 @@ export const C0 = {
   },
   "U.S. Virgin Is.": {
     "cap": "Charlotte Amalie",
-    "pop": "~87 nghìn",
+    "pop": "~104 nghìn",
     "area": "346 km²",
     "sum": "Nằm ở rìa phía đông của quần đảo Đại Antilles (chỉ cách đảo Puerto Rico khoảng 64 km về phía đông và nằm ngay sát Quần đảo Virgin thuộc Anh), Quần đảo Virgin thuộc Mỹ (USVI) bao gồm 3 hòn đảo chính là Saint Croix, Saint Thomas (nơi đặt thủ phủ Charlotte Amalie) và Saint John, cùng khoảng 50 đảo đá nhỏ xung quanh với tổng diện tích 346 km². Đảo St. Thomas và St. John ở phía bắc là các đỉnh đồi núi lửa dốc đứng có nhiều vịnh biển nước sâu tuyệt đẹp (hơn 60% diện tích đảo St. John được bảo tồn làm Vườn Quốc gia Hoa Kỳ nhờ gia đình tỷ phú Rockefeller hiến tặng đất năm 1956), trong khi đảo lớn nhất St. Croix nằm tách biệt 65 km về phía nam lại có địa hình bằng phẳng hơn, từng phủ kín các đồn điền mía đường. Được Christopher Columbus đặt tên trong chuyến hải trình thứ hai năm 1493 và trở thành thuộc địa Tây Ấn thuộc Đan Mạch suốt hơn 250 năm (nơi sản xuất đường mía và rượu rum bằng sức lao động nô lệ châu Phi cho tới cuộc nổi dậy giành tự do năm 1848), năm 1917 giữa lúc Thế chiến I đang diễn ra ác liệt, Hoa Kỳ đã quyết định chi 25 triệu USD bằng vàng ròng (tương đương gần 300 USD cho mỗi mẫu đất!) để mua lại quần đảo này từ Đan Mạch nhằm ngăn chặn Đế quốc Đức thôn tính và biến cảng St. Thomas thành căn cứ tàu ngầm U-boat khống chế lối vào Kênh đào Panama vừa mới khánh thành!\n\nNgày nay, với quy chế là một lãnh thổ có tổ chức nhưng chưa hợp nhất của Hoa Kỳ (hơn 87.000 cư dân mang quốc tịch Mỹ đầy đủ từ năm 1927 và sử dụng đồng USD), Quần đảo Virgin thuộc Mỹ là nơi duy nhất dưới lá cờ Hoa Kỳ mà các phương tiện giao thông vẫn chạy bên trái đường (theo truyền thống hàng hải và thuộc địa trước kia)! Về mặt địa chiến lược và kinh tế giai đoạn 2025–2026, quần đảo này vừa giữ vai trò tiền đồn bảo vệ sườn phía đông của Puerto Rico và canh giữ Eo biển Anegada (tuyến hàng hải chính từ Đại Tây Dương tiến vào biển Caribbean), vừa là một trong những điểm dừng tàu du lịch biển (cruise ships) và thiên đường mua sắm miễn thuế nhộn nhịp nhất Tây Bán cầu. Bên cạnh du lịch nghỉ dưỡng cao cấp, ngân sách lãnh thổ còn hưởng lợi đặc biệt từ cơ chế \"hoàn thuế rượu rum\" của Liên bang Mỹ đối với các nhà máy chưng cất rượu rum Cruzan và Captain Morgan khổng lồ trên đảo St. Croix, dù vẫn phải đối mặt với rủi ro siêu bão Đại Tây Dương (như hai siêu bão cấp 5 Irma và Maria cùng đổ bộ chỉ cách nhau 2 tuần vào tháng 9/2017).",
     "t": [
@@ -8039,7 +8063,7 @@ export const C0 = {
   },
   "Cayman Is.": {
     "cap": "George Town",
-    "pop": "~88 nghìn",
+    "pop": "~74,5 nghìn",
     "area": "264 km²",
     "sum": "Quần đảo Cayman gồm ba hòn đảo đá vôi san hô thấp phẳng (Grand Cayman, Cayman Brac và Little Cayman) tọa lạc ở vùng biển Tây Caribbean, nằm cách Cuba khoảng 240 km về phía nam và cách Jamaica 270 km về phía tây bắc. Được Columbus ghi nhận vào năm 1503 với tên gọi \"Las Tortugas\" nhờ vô số rùa biển sinh sống, quần đảo chính thức thuộc về Vương quốc Anh theo Hiệp ước Madrid năm 1670 và từng được quản lý chung với Jamaica cho đến khi tách ra thành lãnh thổ riêng năm 1962. Theo truyền thuyết lịch sử từ vụ giải cứu đoàn tàu đắm \"Wreck of the Ten Sail\" năm 1794, Vua George III đã ban đặc ân miễn thuế vĩnh viễn cho cư dân trên đảo.\n\nChính sách hoàn toàn không đánh thuế trực thu kết hợp với hệ thống pháp lý Thông luật Anh minh bạch đã biến quần đảo rộng 264 km² này thành trung tâm quỹ đầu cơ (hedge fund) số một hành tinh và trung tâm ngân hàng quốc tế lớn thứ 5 thế giới. Bước sang giai đoạn 2025–2026, sau khi được FATF đưa ra khỏi \"danh sách xám\" về giám sát tài chính, Cayman tiếp tục quản lý hơn 70% tổng số quỹ phòng hộ toàn cầu với khối tài sản ròng vượt mức 8.000 tỷ USD. Đồng thời, nhờ mức GDP bình quân đầu người xấp xỉ 100.000 USD, nơi đây còn là thiên đường nghỉ dưỡng và đăng ký siêu du thuyền hàng đầu Tây Bán cầu.",
     "t": [
@@ -8575,7 +8599,7 @@ export const C0 = {
   },
   "New Caledonia": {
     "cap": "Nouméa",
-    "pop": "~270 nghìn",
+    "pop": "~293 nghìn",
     "area": "18,6 nghìn km²",
     "sum": "New Caledonia (Tân Thế Giới / Nouvelle-Calédonie) là một Cộng đồng hải ngoại có quy chế đặc biệt thuộc Pháp nằm ở vùng biển Melanesia thuộc Tây Nam Thái Bình Dương, cách bờ biển phía đông nước Úc khoảng 1.200 km và cách New Zealand khoảng 1.500 km. Tách ra từ siêu lục địa cổ Gondwana cách đây 80 triệu năm, lãnh thổ rộng 18.575 km² này gồm đảo chính Grande Terre dài 400 km, quần đảo Loyalty, đảo Thông (Isle of Pines) và được bao bọc toàn bộ bởi rạn san hô đầm phá khép kín lớn nhất thế giới (dài 1.500 km, được UNESCO công nhận là Di sản Thiên nhiên Thế giới). Được thuyền trưởng James Cook đặt tên năm 1774 (vì những rặng núi thông trên đảo gợi nhớ tới vùng Scotland/Caledonia) và bị Pháp sáp nhập năm 1853 làm thuộc địa hình sự rồi trung tâm khai mỏ, quần đảo này nắm giữ khoảng 10–20% tổng trữ lượng quặng niken của toàn hành tinh.\n\nBước sang giai đoạn 2024–2026, New Caledonia trở thành tâm điểm địa chính trị của cả khu vực Ấn Độ Dương – Thái Bình Dương khi mâu thuẫn lịch sử giữa người bản địa Kanak (~41% dân số, ủng hộ độc lập) và cộng đồng người gốc Âu cùng dân nhập cư (ủng hộ ở lại Pháp) bùng phát thành làn sóng bạo động nghiêm trọng vào tháng 5/2024 tại thủ phủ Nouméa sau một dự luật cải cách cử tri của Paris. Cú sốc chính trị này diễn ra đúng lúc ngành công nghiệp luyện niken trên đảo lâm vào khủng hoảng nặng nề trước sự cạnh tranh từ nguồn niken giá rẻ của Indonesia. Để vãn hồi hòa bình và tái thiết kinh tế, vào năm 2025–2026, Chính phủ Pháp và các phe phái tại New Caledonia đã thúc đẩy lộ trình thỏa thuận thể chế mới (hướng tới quy chế tự chủ sâu rộng trong lòng Cộng hòa Pháp) nhằm giữ vững mắt xích chiến lược số một của phương Tây ở Tây Nam Thái Bình Dương.",
     "t": [
