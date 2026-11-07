@@ -1,0 +1,28 @@
+{
+  "name": "Địa cầu địa chính trị · wanngo",
+  "short_name": "Địa cầu 3D",
+  "description": "Quả địa cầu địa chính trị & kinh tế tương tác 3D theo phong cách Tim Marshall",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1422",
+  "theme_color": "#0B1422",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

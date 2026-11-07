@@ -23,6 +23,9 @@ import {
   ADMIN1_EN,
   ECON_TIERS,
   ECON,
+  RANK_METRICS,
+  RANK_DATA,
+  rankValColor,
   AFR,
   NAT,
   MEM,
@@ -55,19 +58,153 @@ const splitM = m => m.coordinates.map(c => ({ type: 'LineString', coordinates: c
 
 const DETACHED_ADM1 = new Set(['US-HI', 'US-AK', 'RU-KGD', 'CN-HI', 'AU-TAS']);
 
+const SPHERE_GEO = { type: 'Sphere' };
+const GRAT_GEO = d3.geoGraticule10();
+const makeParallelCoords = lat => d3.range(-180, 181, 2).map(x => [x, lat]);
+const REF_GEOS = {
+  eq: { type: 'LineString', coordinates: makeParallelCoords(0) },
+  trop: { type: 'MultiLineString', coordinates: REF.trop.lats.map(makeParallelCoords) },
+  polar: { type: 'MultiLineString', coordinates: REF.polar.lats.map(makeParallelCoords) },
+  pm: { type: 'LineString', coordinates: d3.range(-90, 91, 2).map(y => [0, y]) }
+};
+const TZ_BANDS_GEO = {
+  type: 'MultiPolygon',
+  coordinates: d3.range(-11, 12, 2).map(off => {
+    const lon0 = off * 15 - 7.5;
+    const lon1 = off * 15 + 7.5;
+    return [[
+      ...d3.range(-75, 81, 5).map(y => [lon0, y]),
+      ...d3.range(80, -76, -5).map(y => [lon1, y]),
+      [lon0, -75]
+    ]];
+  })
+};
+const TZ_MERIDIANS_GEO = {
+  type: 'MultiLineString',
+  coordinates: d3.range(-11, 13).map(off => {
+    const lonB = off * 15 - 7.5;
+    return d3.range(-75, 81, 3).map(y => [lonB, y]);
+  })
+};
+const TZ_IDL_GEO = {
+  type: 'LineString',
+  coordinates: d3.range(-75, 81, 3).map(y => [180, y])
+};
+
+// Astronomical Subsolar Point & Day/Night Terminator (cached per minute)
+let _solarMinKey = -1;
+let _solarCache = null;
+export function getSolarGeos(nowMs = Date.now()) {
+  const minKey = Math.floor(nowMs / 60000);
+  if (_solarMinKey === minKey && _solarCache) return _solarCache;
+  _solarMinKey = minKey;
+  // Days since J2000.0 (2000-01-01T12:00:00Z)
+  const d = (nowMs - 946728000000) / 86400000;
+  const L = (((280.460 + 0.9856474 * d) % 360) + 360) % 360;
+  const gDeg = (((357.528 + 0.9856003 * d) % 360) + 360) % 360;
+  const g = (gDeg * Math.PI) / 180;
+  const lambda = ((L + 1.915 * Math.sin(g) + 0.020 * Math.sin(2 * g)) * Math.PI) / 180;
+  const eps = ((23.439 - 0.0000004 * d) * Math.PI) / 180;
+  const sunLat = (Math.asin(Math.sin(eps) * Math.sin(lambda)) * 180) / Math.PI;
+  const y = Math.tan(eps / 2) ** 2;
+  const Lrad = (L * Math.PI) / 180;
+  const eqMin =
+    4 *
+    (180 / Math.PI) *
+    (y * Math.sin(2 * Lrad) - 2 * 0.01671 * Math.sin(g) + 4 * 0.01671 * y * Math.sin(g) * Math.cos(2 * Lrad));
+  const utcHours = (((nowMs / 3600000) % 24) + 24) % 24;
+  const sunLon = ((((12 - utcHours - eqMin / 60) * 15) % 360) + 540) % 360 - 180;
+  const antiLon = sunLon > 0 ? sunLon - 180 : sunLon + 180;
+  const antiLat = -sunLat;
+  const antiPt = [antiLon, antiLat];
+  const sunPt = [sunLon, sunLat];
+  _solarCache = {
+    sunPt,
+    antiPt,
+    night90: d3.geoCircle().center(antiPt).radius(90).precision(2)(),
+    night82: d3.geoCircle().center(antiPt).radius(82).precision(2)(),
+    night72: d3.geoCircle().center(antiPt).radius(72).precision(2)()
+  };
+  return _solarCache;
+}
+
+const COUNTRY_SEARCH_ALIASES = {
+  Czechia: 'Cộng hòa Séc CH Séc Czech Republic Tiệp Khắc',
+  'United States of America': 'Mỹ USA US Hợp chúng quốc Hoa Kỳ United States',
+  'United Kingdom': 'Anh UK Britain Great Britain England',
+  'South Korea': 'Nam Hàn Đại Hàn Dân Quốc ROK Korea',
+  'North Korea': 'Bắc Hàn CHDCND Triều Tiên DPRK',
+  Netherlands: 'Hoà Lan Holland',
+  Germany: 'CHLB Đức',
+  Russia: 'Liên bang Nga Liên Xô USSR',
+  China: 'CHND Trung Hoa Trung Cộng PRC',
+  Myanmar: 'Miến Điện Burma',
+  Thailand: 'Xiêm Siam',
+  Cambodia: 'Cao Miên Kampuchea',
+  eSwatini: 'Swaziland',
+  Macedonia: 'North Macedonia',
+  'Timor-Leste': 'Đông Timor East Timor',
+  "Côte d'Ivoire": 'Ivory Coast',
+  'Cabo Verde': 'Cape Verde',
+  Vatican: 'Toà Thánh Holy See',
+  'United Arab Emirates': 'Các Tiểu vương quốc Ả Rập Thống nhất Emirates',
+  Belarus: 'Bạch Nga'
+};
+
 function enrichFeatures(features) {
   features.forEach(f => {
     f.isCountry = true;
     f.bb = d3.geoBounds(f);
-    f.parts = (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates).map(c => ({
+    const parts = (f.geometry.type === 'Polygon' ? [f.geometry.coordinates] : f.geometry.coordinates).map(c => ({
       type: 'Polygon',
       coordinates: c
     }));
+    f.parts = parts;
     f.en = f.properties.name;
     f.vi = vi(f.en);
     f.rg = (NAMES[f.en] || [, 'territory'])[1];
     f.cen = d3.geoCentroid(f);
     f.ar = d3.geoArea(f);
+    if (parts.length === 1) {
+      f.mainPart = parts[0];
+      f.mainAr = f.ar;
+      f.mainCen = f.cen;
+      f.subCens = [];
+    } else {
+      let bestPart = parts[0], bestAr = -1;
+      const subCens = [];
+      for (const pt of parts) {
+        const a = d3.geoArea(pt);
+        if (a > bestAr) {
+          bestAr = a;
+          bestPart = pt;
+        }
+        if (a > 0.0005) subCens.push(d3.geoCentroid(pt));
+      }
+      f.mainPart = bestPart;
+      f.mainAr = bestAr;
+      f.mainCen = d3.geoCentroid(bestPart);
+      f.subCens = subCens;
+    }
+    if (f.mainAr > 0.004) {
+      const ring = f.mainPart.coordinates[0];
+      const mc = f.mainCen;
+      const quads = [[], [], [], []];
+      const step = Math.max(1, Math.floor(ring.length / 60));
+      for (let i = 0; i < ring.length; i += step) {
+        const p = ring[i];
+        let dl = p[0] - mc[0];
+        if (dl > 180) dl -= 360;
+        if (dl < -180) dl += 360;
+        const idx = (dl >= 0 ? 1 : 0) + (p[1] >= mc[1] ? 2 : 0);
+        quads[idx].push([mc[0] + dl * 0.45, mc[1] + (p[1] - mc[1]) * 0.45]);
+      }
+      for (const q of quads) {
+        if (q.length) {
+          f.subCens.push([((d3.mean(q, d => d[0]) + 540) % 360) - 180, d3.mean(q, d => d[1])]);
+        }
+      }
+    }
     let h = 0;
     for (const ch of f.en) h = (h * 31 + ch.charCodeAt(0)) % 997;
     f.j = ((h % 7) - 3) / 100;
@@ -199,6 +336,8 @@ export function rebuildSearchIndex() {
         f.vi +
           ' ' +
           f.en +
+          ' ' +
+          (COUNTRY_SEARCH_ALIASES[f.en] || '') +
           ' ' +
           ((C0[f.en] && C0[f.en].cap) || '') +
           ' ' +
@@ -383,55 +522,99 @@ export function resize() {
   Hh = innerHeight;
   cv.width = W * dpr;
   cv.height = Hh * dpr;
-  R0 = (Math.min(W, Hh) / 2) * 0.86;
+  R0 = (Math.min(W, Hh) / 2) * (W < 760 ? 0.90 : 0.86);
   proj.translate(center()).scale(R0 * k).clipExtent([[-20, -20], [W + 20, Hh + 20]]);
   st.dirty = true;
 }
 
 export function recenter() {
   const a = proj.translate(), b = center();
-  if (Math.abs(a[0] - b[0]) < 1 && Math.abs(a[1] - b[1]) < 1) return;
+  if (Math.abs(a[0] - b[0]) < 1 && Math.abs(a[1] - b[1]) < 1) {
+    proj.translate(b);
+    MAP.LC.key = '';
+    st.dirty = true;
+    return;
+  }
   const it = d3.interpolate(a, b);
-  d3.select({})
-    .transition()
+  d3.select(cv)
+    .transition('recenter')
     .duration(320)
     .ease(d3.easeCubicOut)
     .tween('c', () => t => {
       proj.translate(it(t));
+      MAP.LC.key = '';
       st.dirty = true;
     });
 }
 
+const _mixCache = new Map();
 function mix(hex, a) {
+  const k2 = hex + '|' + a;
+  let v = _mixCache.get(k2);
+  if (v !== undefined) return v;
   const c = d3.color(hex);
-  if (!c) return hex;
-  c.opacity = a;
-  return c + '';
+  v = c ? ((c.opacity = a), c + '') : hex;
+  _mixCache.set(k2, v);
+  return v;
+}
+
+let _lcThemeKey = '';
+const _lcBaseMap = new Map();
+const _lcRankMap = new Map();
+let _lcMutedLand = '';
+
+function syncLandColorCache() {
+  const tk = (C.dark ? '1|' : '0|') + C.land;
+  if (_lcThemeKey === tk) return;
+  _lcThemeKey = tk;
+  _lcBaseMap.clear();
+  _lcRankMap.clear();
+  const g = d3.hsl(C.land);
+  g.s *= 0.3;
+  _lcMutedLand = g + '';
 }
 
 function landColor(f) {
-  const base = d3.hsl(C.land);
-  base.l = Math.max(0, Math.min(1, base.l + f.j));
+  syncLandColorCache();
+  if (st.al && st.al.startsWith('__rank_')) {
+    const rkKey = st.al.slice(7, -2);
+    const metric = RANK_METRICS[rkKey];
+    if (metric) {
+      const ck = rkKey + '|' + f.en;
+      let col = _lcRankMap.get(ck);
+      if (col === undefined) {
+        const row = RANK_DATA[f.en];
+        const val = row ? row[metric.idx] : null;
+        const hex = rankValColor(val, metric);
+        col = hex ? mix(hex, C.dark ? 0.82 : 0.78) : _lcMutedLand;
+        _lcRankMap.set(ck, col);
+      }
+      return col;
+    }
+  }
   if (st.al === '__econ__') {
     const ec = ECON[f.en];
     const tInfo = ec && ECON_TIERS[ec.tier];
     if (tInfo) return mix(tInfo.c, C.dark ? 0.80 : 0.76);
-    const g = d3.hsl(C.land);
-    g.s *= 0.3;
-    return g + '';
+    return _lcMutedLand;
   }
   if (st.al) {
     const a = AL[st.al];
     if (a) {
       const m = (MEM[f.en] || []).find(x => x[0] === st.al);
       if (m) return m[1] ? a.c : mix(a.c, 0.42);
-      const g = d3.hsl(C.land);
-      g.s *= 0.3;
-      return g + '';
+      return _lcMutedLand;
     }
   }
   if (st.hl.has(f.en)) return C.dark ? '#7a5a1e' : '#F6D9A0';
-  return base + '';
+  let col = _lcBaseMap.get(f.en);
+  if (!col) {
+    const base = d3.hsl(C.land);
+    base.l = Math.max(0, Math.min(1, base.l + (f.j || 0)));
+    col = base + '';
+    _lcBaseMap.set(f.en, col);
+  }
+  return col;
 }
 
 // ---------- culling
@@ -482,80 +665,71 @@ export function inBB(f, ll) {
 function labelCands(cx, cy, r) {
   const F = MAP.F;
   const rot = proj.rotate();
-  const key = rot.map(v => v.toFixed(2)).join() + '|' + r.toFixed(1) + '|' + W + 'x' + Hh + '|' + ((st.sel && st.sel.en) || '');
+  const key =
+    rot.map(v => v.toFixed(2)).join() +
+    '|' +
+    cx.toFixed(1) +
+    ',' +
+    cy.toFixed(1) +
+    '|' +
+    k.toFixed(2) +
+    '|' +
+    r.toFixed(1) +
+    '|' +
+    W +
+    'x' +
+    Hh +
+    '|' +
+    st.lang +
+    '|' +
+    ((st.sel && st.sel.en) || '');
   if (MAP.LC.key === key) return MAP.LC.list;
   const center = proj.invert([cx, cy]);
+  const inView = p => p && p[0] > 8 && p[0] < W - 8 && p[1] > 8 && p[1] < Hh - 8;
   if (st.spin) {
-    const inV = p => p && p[0] > 8 && p[0] < W - 8 && p[1] > 8 && p[1] < Hh - 8;
-    return F.filter(f => f.ar * r * r > 1100 && d3.geoDistance(f.cen, center) < Math.PI / 2 - 0.05)
-      .map(f => ({ f, p: proj(f.cen) }))
-      .filter(o => inV(o.p))
-      .sort((a, b) => b.f.ar - a.f.ar);
+    return F.filter(f => (f.ar * k * k >= 0.0022 || f === st.sel) && d3.geoDistance(f.mainCen || f.cen, center) < Math.PI / 2 - 0.05)
+      .map(f => ({ f, p: proj(f.mainCen || f.cen), w: f.ar + (f === st.sel ? 1e6 : 0) }))
+      .filter(o => inView(o.p))
+      .sort((a, b) => b.w - a.w);
   }
-  const hits = new Map();
-  const step = Math.max(34, Math.min(56, Math.sqrt((W * Hh) / 420)));
-  const x0 = Math.max(0, cx - r), x1 = Math.min(W, cx + r), y0 = Math.max(0, cy - r), y1 = Math.min(Hh, cy + r);
-  let last = null;
-  for (let y = y0 + step / 2; y < y1; y += step) {
-    for (let x = x0 + step / 2; x < x1; x += step) {
-      if (Math.hypot(x - cx, y - cy) > r * 0.98) continue;
-      const ll = proj.invert([x, y]);
-      if (!ll) continue;
-      let f = last && inBB(last, ll) && d3.geoContains(last, ll) ? last : null;
-      if (!f) {
-        for (const g of F) {
-          if (g.rg === 'antarctic' && k < 2) continue;
-          if (inBB(g, ll) && d3.geoContains(g, ll)) {
-            f = g;
-            break;
+  const minScaledAr = k >= 2.8 ? 0 : k >= 1.85 ? 0.00018 : k >= 1.35 ? 0.00032 : 0.00055;
+  const maxAng = Math.PI / 2 - 0.04;
+  const list = [];
+  for (const f of F) {
+    if (f.rg === 'antarctic' && k < 2 && f !== st.sel) continue;
+    if (f !== st.sel && f !== st.hov) {
+      if (f.ar < 0.00004 && k < 2.8) continue;
+      if (f.rg === 'territory' && f.ar < 0.0002 && k < 2.6) continue;
+      if (f.ar * k * k < minScaledAr) continue;
+    }
+    const mc = f.mainCen || f.cen;
+    let p = null;
+    if (d3.geoDistance(mc, center) < maxAng) {
+      const q = proj(mc);
+      if (inView(q)) p = q;
+    }
+    if (!p && f.subCens && f.subCens.length) {
+      let bestD = 1e9;
+      for (const sc of f.subCens) {
+        const d = d3.geoDistance(sc, center);
+        if (d < maxAng - 0.02 && d < bestD) {
+          const q = proj(sc);
+          if (inView(q)) {
+            bestD = d;
+            p = q;
           }
         }
       }
-      if (f) {
-        last = f;
-        let e = hits.get(f);
-        if (!e) {
-          e = { f, pts: [] };
-          hits.set(f, e);
-        }
-        e.pts.push([x, y]);
-      }
     }
+    if (!p) continue;
+    list.push({ f, p, w: f.ar + (f === st.sel ? 1e6 : 0) });
   }
-  const inView = p => p && p[0] > 8 && p[0] < W - 8 && p[1] > 8 && p[1] < Hh - 8;
-  const list = [];
-  hits.forEach(e => {
-    const f = e.f;
-    let p = null;
-    if (d3.geoDistance(f.cen, center) < Math.PI / 2 - 0.05) {
-      const q = proj(f.cen);
-      if (inView(q) && e.pts.length > 2) p = q;
-    }
-    if (!p) {
-      const m = [d3.mean(e.pts, d => d[0]), d3.mean(e.pts, d => d[1])];
-      p = e.pts.reduce((a, b) => (Math.hypot(b[0] - m[0], b[1] - m[1]) < Math.hypot(a[0] - m[0], a[1] - m[1]) ? b : a));
-    }
-    list.push({ f, p, w: e.pts.length + (f === st.sel ? 1e6 : 0) });
-  });
-  F.forEach(f => {
-    if (hits.has(f)) return;
-    if (d3.geoDistance(f.cen, center) > Math.PI / 2 - 0.05) return;
-    const q = proj(f.cen);
-    if (!inView(q)) return;
-    const tiny = f.ar * r * r < 120;
-    if (f.ar * r * r < 500 && f !== st.sel && k < 2.2) return;
-    list.push({ f, p: tiny ? [q[0], q[1] - 10] : q, w: 0.5 + (f === st.sel ? 1e6 : 0) });
-  });
   list.sort((a, b) => b.w - a.w);
   MAP.LC = { key, list };
   return list;
 }
 
 // ---------- render
-function sphere() {
-  return { type: 'Sphere' };
-}
-
 function drawRegPoly(x, y, rad, sides, rotRad = -Math.PI / 2) {
   for (let i = 0; i < sides; i++) {
     const a = rotRad + (i * 2 * Math.PI) / sides;
@@ -569,7 +743,7 @@ function drawRegPoly(x, y, rad, sides, rotRad = -Math.PI / 2) {
 
 export function render(now) {
   if (!MAP.F.length) return;
-  const lowres = st.moving;
+  const lowres = st.moving || (st.spin && k < 1.5);
   updView();
   proj.precision(k > 4 ? 1.2 : k > 2 ? 0.8 : 0.5);
   const feats = lowres ? MAP.F110 : MAP.F;
@@ -592,12 +766,12 @@ export function render(now) {
   g.addColorStop(1, C.ocean2);
   ctx.fillStyle = g;
   ctx.beginPath();
-  pathC(sphere());
+  pathC(SPHERE_GEO);
   ctx.fill();
 
   if (st.ref.grat) {
     ctx.beginPath();
-    pathC(d3.geoGraticule10());
+    pathC(GRAT_GEO);
     ctx.strokeStyle = C.grat;
     ctx.lineWidth = 0.6;
     ctx.stroke();
@@ -680,16 +854,12 @@ export function render(now) {
     });
   }
 
-  // 2) Land-clipped biomes (desert, forest, terrain, mountain footprints) so they never bleed into ocean/gulfs
-  if (st.on.desert || st.on.forest || st.on.terrain || st.on.mountain) {
+  // 2) Land-clipped biomes (desert, forest, terrain) so they never bleed into ocean/gulfs
+  if (st.on.desert || st.on.forest || st.on.terrain) {
     ctx.save();
     ctx.beginPath();
-    for (const f of feats) {
-      if (!cullOK(f)) continue;
-      if (lowres) pathC(f);
-      else {
-        for (const pt of f.parts) if (cullOK(pt)) pathC(pt);
-      }
+    for (const f of MAP.F110) {
+      if (cullOK(f)) pathC(f);
     }
     ctx.clip();
 
@@ -709,24 +879,33 @@ export function render(now) {
       }
     });
 
-    if (st.on.mountain) {
-      H.forEach(h => {
-        if (h.t !== 'mountain' || !h.polyGeo || !vh(h)) return;
-        ctx.beginPath();
-        pathC(h.polyGeo);
-        ctx.fillStyle = C.dark
-          ? mix('#9CA3AF', st.sel === h ? 0.26 : 0.11)
-          : mix('#6B7280', st.sel === h ? 0.22 : 0.10);
-        ctx.fill();
-        if (st.sel === h) {
-          ctx.strokeStyle = C.dark ? '#D1D5DB' : '#4B5563';
-          ctx.lineWidth = 1.2;
-          ctx.stroke();
-        }
-      });
-    }
-
     ctx.restore();
+  }
+
+  // 3) Mountain footprints (batched for fast rendering)
+  if (st.on.mountain) {
+    ctx.beginPath();
+    let selMtn = null;
+    for (const h of H) {
+      if (h.t !== 'mountain' || !h.polyGeo || !vh(h)) continue;
+      if (st.sel === h) {
+        selMtn = h;
+        continue;
+      }
+      pathC(h.polyGeo);
+    }
+    ctx.fillStyle = C.dark ? mix('#9CA3AF', 0.11) : mix('#6B7280', 0.10);
+    ctx.fill();
+
+    if (selMtn) {
+      ctx.beginPath();
+      pathC(selMtn.polyGeo);
+      ctx.fillStyle = C.dark ? mix('#9CA3AF', 0.26) : mix('#6B7280', 0.22);
+      ctx.fill();
+      ctx.strokeStyle = C.dark ? '#D1D5DB' : '#4B5563';
+      ctx.lineWidth = 1.2;
+      ctx.stroke();
+    }
   }
 
   // major lakes (MAP.LAKES)
@@ -826,49 +1005,83 @@ export function render(now) {
   });
 
   // reference lines
-  const refLine = (lat, c, dash) => {
+  const drawRefGeo = (geo, c, dash) => {
     ctx.beginPath();
-    pathC({ type: 'LineString', coordinates: d3.range(-180, 181, 2).map(x => [x, lat]) });
+    pathC(geo);
     ctx.setLineDash(dash || []);
     ctx.strokeStyle = c;
     ctx.lineWidth = 1.3;
     ctx.stroke();
     ctx.setLineDash([]);
   };
-  if (st.ref.eq) refLine(0, REF.eq.c);
-  if (st.ref.trop) REF.trop.lats.forEach(l => refLine(l, REF.trop.c, [6, 4]));
-  if (st.ref.polar) REF.polar.lats.forEach(l => refLine(l, REF.polar.c, [6, 4]));
-  if (st.ref.pm) {
+  if (st.ref.eq) drawRefGeo(REF_GEOS.eq, REF.eq.c);
+  if (st.ref.trop) drawRefGeo(REF_GEOS.trop, REF.trop.c, [6, 4]);
+  if (st.ref.polar) drawRefGeo(REF_GEOS.polar, REF.polar.c, [6, 4]);
+  if (st.ref.pm) drawRefGeo(REF_GEOS.pm, REF.pm.c);
+
+  // Real-time Solar Terminator & Day/Night shadow (st.ref.daynight)
+  if (st.ref.daynight) {
+    const sol = getSolarGeos();
     ctx.beginPath();
-    pathC({ type: 'LineString', coordinates: d3.range(-90, 91, 2).map(y => [0, y]) });
-    ctx.strokeStyle = REF.pm.c;
-    ctx.lineWidth = 1.3;
+    pathC(sol.night90);
+    ctx.fillStyle = C.dark ? 'rgba(2, 6, 18, 0.34)' : 'rgba(12, 24, 48, 0.16)';
+    ctx.fill();
+
+    ctx.beginPath();
+    pathC(sol.night82);
+    ctx.fillStyle = C.dark ? 'rgba(2, 6, 18, 0.24)' : 'rgba(12, 24, 48, 0.12)';
+    ctx.fill();
+
+    ctx.beginPath();
+    pathC(sol.night72);
+    ctx.fillStyle = C.dark ? 'rgba(2, 6, 18, 0.18)' : 'rgba(12, 24, 48, 0.10)';
+    ctx.fill();
+
+    // Solar Terminator twilight curve
+    ctx.beginPath();
+    pathC(sol.night90);
+    ctx.setLineDash([4, 3]);
+    ctx.strokeStyle = C.dark ? 'rgba(251, 191, 36, 0.55)' : 'rgba(217, 119, 6, 0.50)';
+    ctx.lineWidth = 1.25;
     ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Subsolar Sun marker (zenith point)
+    const centerCheck = proj.invert([cx, cy]);
+    if (centerCheck && d3.geoDistance(sol.sunPt, centerCheck) < Math.PI / 2 - 0.03) {
+      const sq = proj(sol.sunPt);
+      if (sq) {
+        const sg = ctx.createRadialGradient(sq[0], sq[1], 2, sq[0], sq[1], 16);
+        sg.addColorStop(0, 'rgba(251, 191, 36, 0.85)');
+        sg.addColorStop(0.45, 'rgba(245, 158, 11, 0.28)');
+        sg.addColorStop(1, 'rgba(245, 158, 11, 0)');
+        ctx.fillStyle = sg;
+        ctx.beginPath();
+        ctx.arc(sq[0], sq[1], 16, 0, 7);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(sq[0], sq[1], 4.2, 0, 7);
+        ctx.fillStyle = '#FBBF24';
+        ctx.fill();
+        ctx.lineWidth = 1.4;
+        ctx.strokeStyle = C.dark ? '#0A0E15' : '#FFFBEB';
+        ctx.stroke();
+      }
+    }
   }
 
   // timezone meridian lines & alternating bands (st.on.timezone)
   if (st.on.timezone) {
     // Subtle alternating band fills for even offsets
     ctx.beginPath();
-    for (let off = -11; off <= 11; off += 2) {
-      const lon0 = off * 15 - 7.5;
-      const lon1 = off * 15 + 7.5;
-      const ring = [
-        ...d3.range(-75, 81, 5).map(y => [lon0, y]),
-        ...d3.range(80, -76, -5).map(y => [lon1, y]),
-        [lon0, -75]
-      ];
-      pathC({ type: 'Polygon', coordinates: [ring] });
-    }
+    pathC(TZ_BANDS_GEO);
     ctx.fillStyle = C.dark ? 'rgba(56, 189, 248, 0.035)' : 'rgba(2, 132, 199, 0.035)';
     ctx.fill();
 
     // Boundary meridians (every 15° at ±7.5°)
     ctx.beginPath();
-    for (let off = -11; off <= 12; off++) {
-      const lonB = off * 15 - 7.5;
-      pathC({ type: 'LineString', coordinates: d3.range(-75, 81, 3).map(y => [lonB, y]) });
-    }
+    pathC(TZ_MERIDIANS_GEO);
     ctx.setLineDash([4, 4]);
     ctx.strokeStyle = C.dark ? 'rgba(56, 189, 248, 0.42)' : 'rgba(2, 132, 199, 0.38)';
     ctx.lineWidth = 1.0;
@@ -876,7 +1089,7 @@ export function render(now) {
 
     // International Date Line (180°)
     ctx.beginPath();
-    pathC({ type: 'LineString', coordinates: d3.range(-75, 81, 3).map(y => [180, y]) });
+    pathC(TZ_IDL_GEO);
     ctx.setLineDash([6, 3]);
     ctx.strokeStyle = C.dark ? 'rgba(251, 191, 36, 0.72)' : 'rgba(217, 119, 6, 0.70)';
     ctx.lineWidth = 1.4;
@@ -933,9 +1146,10 @@ export function render(now) {
       if (f.rg === 'antarctic') continue;
       const px = tinyPx(f);
       if (px >= 120) continue;
-      if (d3.geoDistance(f.cen, cen0) > Math.PI / 2 - 0.03) continue;
-      const q = proj(f.cen);
-      if (q[0] < 0 || q[0] > W || q[1] < 0 || q[1] > Hh) continue;
+      const mc = f.mainCen || f.cen;
+      if (d3.geoDistance(mc, cen0) > Math.PI / 2 - 0.03) continue;
+      const q = proj(mc);
+      if (!q || q[0] < 0 || q[0] > W || q[1] < 0 || q[1] > Hh) continue;
       ctx.beginPath();
       ctx.arc(q[0], q[1], f === sc || f === st.hov ? 4.2 : 2.9, 0, 7);
       ctx.fillStyle = f === sc ? C.accent : C.dark ? '#C9C4B8' : '#6B6455';
@@ -949,6 +1163,7 @@ export function render(now) {
   // collision-free label placement helper
   const centerPt = proj.invert([cx, cy]);
   const placed = [];
+  const iconBoxes = [];
   const placedNames = new Set();
   const baseKey = s =>
     norm(s)
@@ -956,26 +1171,34 @@ export function render(now) {
       .replace(/\b(tp\.?|thanh pho|tinh|quan dao|dao|vung|bang|dac khu)\b/g, '')
       .replace(/\s+/g, ' ')
       .trim();
+  const cleanMarkerLbl = s => s.replace(/\s*\(.*?\)\s*/g, '').trim() || s;
+  const compactCountryLbl = s => {
+    if (/^Cộng hòa\s+(.+)$/i.test(s)) return s.replace(/^Cộng hòa\s+/i, 'CH ');
+    if (/^Các Tiểu vương quốc Ả Rập Thống nhất$/i.test(s)) return 'UAE';
+    if (/^Bosnia và Herzegovina$/i.test(s)) return 'Bosnia & Herz.';
+    return null;
+  };
   const vis = p => d3.geoDistance(p, centerPt) < 1.45;
+  const overlapsAny = (box, list) =>
+    list.some(b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1]));
+  const inViewport = box => box[0] >= 2 && box[0] + box[2] <= W - 2 && box[1] >= 2 && box[1] + box[3] <= Hh - 2;
   const tryPlace = (box, nameKey) => {
     if (nameKey && placedNames.has(nameKey)) return false;
-    if (box[0] < 2 || box[0] + box[2] > W - 2 || box[1] < 2 || box[1] + box[3] > Hh - 2) return false;
-    if (placed.some(b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1])))
-      return false;
+    if (!inViewport(box)) return false;
+    if (overlapsAny(box, placed)) return false;
     placed.push(box);
     if (nameKey) placedNames.add(nameKey);
     return true;
   };
 
-  const pushIcon = (q, r2 = 4) => {
-    if (q) placed.push([q[0] - r2, q[1] - r2, r2 * 2, r2 * 2]);
+  const pushIconBox = (q, r2 = 3.5) => {
+    if (q) iconBoxes.push([q[0] - r2, q[1] - r2, r2 * 2, r2 * 2]);
   };
 
-  // 1. Capitals (st.on.capitals) — highest priority markers & labels
+  // 1. Draw point marker icons first (Capitals, Islands, Cities) & queue their text labels
+  //    so Country labels take placement priority over Capital/City text labels!
+  const capLabels = [];
   if (st.on.capitals) {
-    ctx.font = '600 10.5px "Be Vietnam Pro",system-ui,sans-serif';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
     for (const cap of CAPITALS) {
       const act = st.sel === cap || st.hov === cap;
       if (!act && (cap.rank === 1 ? k < 1.05 : cap.rank === 2 ? k < 1.55 : k < 2.2)) continue;
@@ -996,32 +1219,15 @@ export function render(now) {
       ctx.fillStyle = '#E8590C';
       ctx.fill();
 
+      pushIconBox(q, 3.5);
       if (act || (!lowres && (cap.rank === 1 ? k >= 1.35 : cap.rank === 2 ? k >= 1.85 : k >= 2.5))) {
-        const lbl = capName(cap);
-        const nk = baseKey(lbl);
-        const w = ctx.measureText(lbl).width + 6, hh = 13;
-        const box = [q[0] + 7, q[1] - hh / 2, w, hh];
-        if (act || tryPlace(box, nk)) {
-          if (act) {
-            placed.push(box);
-            if (nk) placedNames.add(nk);
-          }
-          ctx.lineWidth = 2.8;
-          ctx.strokeStyle = C['label-halo'];
-          ctx.strokeText(lbl, q[0] + 7, q[1]);
-          ctx.fillStyle = C.dark ? '#FDBA74' : '#C2410C';
-          ctx.fillText(lbl, q[0] + 7, q[1]);
-        }
+        capLabels.push({ q, act, raw: capName(cap) });
       }
-      pushIcon(q, 4);
     }
   }
 
-  // 2. Strategic Islands (st.on.islands)
+  const islLabels = [];
   if (st.on.islands) {
-    ctx.font = '500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
     for (const isl of ISLANDS) {
       const act = st.sel === isl || st.hov === isl;
       if (!act && (isl.rank === 1 ? k < 1.15 : k < 1.85)) continue;
@@ -1041,32 +1247,15 @@ export function render(now) {
       ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
       ctx.stroke();
 
+      pushIconBox(q, 3.5);
       if (act || (!lowres && (isl.rank === 1 ? k >= 1.5 : k >= 2.2))) {
-        const lbl = islName(isl);
-        const nk = baseKey(lbl);
-        const w = ctx.measureText(lbl).width + 6, hh = 13;
-        const box = [q[0] + 7, q[1] - hh / 2, w, hh];
-        if (act || tryPlace(box, nk)) {
-          if (act) {
-            placed.push(box);
-            if (nk) placedNames.add(nk);
-          }
-          ctx.lineWidth = 2.6;
-          ctx.strokeStyle = C['label-halo'];
-          ctx.strokeText(lbl, q[0] + 7, q[1]);
-          ctx.fillStyle = C.dark ? '#5EEAD4' : '#0F766E';
-          ctx.fillText(lbl, q[0] + 7, q[1]);
-        }
+        islLabels.push({ q, act, raw: islName(isl) });
       }
-      pushIcon(q, 4);
     }
   }
 
-  // 3. Strategic Cities & Ports (st.on.cities)
+  const cityLabels = [];
   if (st.on.cities) {
-    ctx.font = '500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
-    ctx.textAlign = 'left';
-    ctx.textBaseline = 'middle';
     for (const ct of CITIES) {
       const act = st.sel === ct || st.hov === ct;
       if (!act && (ct.rank === 1 ? k < 1.3 : k < 1.9)) continue;
@@ -1082,36 +1271,22 @@ export function render(now) {
       ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
       ctx.stroke();
 
+      pushIconBox(q, 3.2);
       if (act || (!lowres && (ct.rank === 1 ? k >= 1.65 : k >= 2.3))) {
-        const lbl = cityName(ct);
-        const nk = baseKey(lbl);
-        const w = ctx.measureText(lbl).width + 6, hh = 13;
-        const box = [q[0] + 7, q[1] - hh / 2, w, hh];
-        if (act || tryPlace(box, nk)) {
-          if (act) {
-            placed.push(box);
-            if (nk) placedNames.add(nk);
-          }
-          ctx.lineWidth = 2.6;
-          ctx.strokeStyle = C['label-halo'];
-          ctx.strokeText(lbl, q[0] + 7, q[1]);
-          ctx.fillStyle = C.dark ? '#93C5FD' : '#1D4ED8';
-          ctx.fillText(lbl, q[0] + 7, q[1]);
-        }
+        cityLabels.push({ q, act, raw: cityName(ct) });
       }
-      pushIcon(q, 3.5);
     }
   }
 
-  // 4. Reserve hotspot point icons
+  // Reserve hotspot point icons in iconBoxes
   H.forEach(h => {
     if (h.kind !== 'pt' || !vh(h)) return;
     const p = h.geo.coordinates;
     if (!vis(p) || d3.geoDistance(p, centerPt) > Math.PI / 2 - 0.02) return;
-    pushIcon(proj(p), 5);
+    pushIconBox(proj(p), 4.5);
   });
 
-  // 4b. Timezone AM/PM Clock Badges (st.on.timezone — placed before country/ocean labels so they never get blocked or overlap text)
+  // 2. Timezone AM/PM Clock Badges (st.on.timezone — placed before country/ocean labels so they never get blocked or overlap text)
   if (st.on.timezone) {
     const utcMin = Math.floor(Date.now() / 60000);
     const placedTz = [];
@@ -1127,12 +1302,7 @@ export function render(now) {
     };
     const tryPlaceTz = box => {
       if (box[0] < 4 || box[0] + box[2] > W - 4 || box[1] < 4 || box[1] + box[3] > Hh - 4) return false;
-      if (
-        placedTz.some(
-          b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1])
-        )
-      )
-        return false;
+      if (overlapsAny(box, placedTz)) return false;
       placedTz.push(box);
       placed.push(box);
       return true;
@@ -1246,41 +1416,174 @@ export function render(now) {
     }
   }
 
-  // 5. Country labels
+  // 3. Country labels — placed BEFORE Capital/Island/City text labels so country names never get starved
   if (st.ref.labels && !lowres) {
     ctx.font = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     const cand = labelCands(cx, cy, r);
-    for (const o of cand) {
-      const f = o.f, p = o.p;
-      const lbl = cName(f.en);
-      const nk = baseKey(lbl);
-      const w = ctx.measureText(lbl).width + 6, hh = 15;
-      let py = p[1];
-      let box = [p[0] - w / 2, py - hh / 2, w, hh];
-      if (!tryPlace(box, nk)) {
-        py = p[1] - 12;
-        box = [p[0] - w / 2, py - hh / 2, w, hh];
-        if (!tryPlace(box, nk)) continue;
+    const hh = 11.5;
+    const TIERS = [
+      [[0, 0]],
+      [[0, -8], [0, 8], [0, -13], [0, 13], [-11, -5], [11, -5], [-11, 5], [11, 5]],
+      [[0, -19], [0, 19], [-17, -9], [17, -9], [-17, 9], [17, 9]]
+    ];
+    const items = cand.map(o => {
+      const full = cName(o.f.en);
+      const short = compactCountryLbl(full);
+      const variants = short ? [full, short] : [full];
+      return {
+        f: o.f,
+        p: o.p,
+        ar: o.f === st.sel ? 1e9 : o.f.ar,
+        nk: baseKey(full),
+        variants: variants.map(txt => ({ txt, w: ctx.measureText(txt).width + 4 })),
+        done: false,
+        drawX: 0,
+        drawY: 0,
+        drawTxt: '',
+        box: null
+      };
+    });
+
+    // Multi-band + multi-tier placement: major countries place first, then medium (e.g. Czechia, Austria, Switzerland, Belgium), then small
+    for (const minBand of [0.006, 0.0009, 0]) {
+      for (const tier of TIERS) {
+        for (const it of items) {
+          if (it.done || it.ar < minBand) continue;
+          if (it.nk && placedNames.has(it.nk)) {
+            it.done = true;
+            continue;
+          }
+          for (const v of it.variants) {
+            let hit = false;
+            for (const [dx, dy] of tier) {
+              const px = it.p[0] + dx, py = it.p[1] + dy;
+              const box = [px - v.w / 2, py - hh / 2, v.w, hh];
+              if (tryPlace(box, it.nk)) {
+                it.done = true;
+                it.drawX = px;
+                it.drawY = py;
+                it.drawTxt = v.txt;
+                it.box = box;
+                hit = true;
+                break;
+              }
+            }
+            if (hit) break;
+          }
+        }
+      }
+    }
+
+    // If a placed country label sits directly on a visible marker dot, gently nudge it if a nearby slot is free
+    const NUDGES = [[0, -9], [0, 9], [0, -15], [0, 15], [-10, -6], [10, -6]];
+    for (const it of items) {
+      if (!it.done || !it.box) continue;
+      if (overlapsAny(it.box, iconBoxes)) {
+        const w = it.box[2];
+        for (const [nx, ny] of NUDGES) {
+          const px = it.drawX + nx, py = it.drawY + ny;
+          const nbox = [px - w / 2, py - hh / 2, w, hh];
+          if (! inViewport(nbox)) continue;
+          if (overlapsAny(nbox, iconBoxes)) continue;
+          const conflict = placed.some(
+            b =>
+              b !== it.box &&
+              !(nbox[0] > b[0] + b[2] || nbox[0] + nbox[2] < b[0] || nbox[1] > b[1] + b[3] || nbox[1] + nbox[3] < b[1])
+          );
+          if (!conflict) {
+            it.box[0] = nbox[0];
+            it.box[1] = nbox[1];
+            it.drawX = px;
+            it.drawY = py;
+            break;
+          }
+        }
       }
       ctx.lineWidth = 3;
       ctx.strokeStyle = C['label-halo'];
-      ctx.strokeText(lbl, p[0], py);
+      ctx.strokeText(it.drawTxt, it.drawX, it.drawY);
       ctx.fillStyle = C.label;
-      ctx.fillText(lbl, p[0], py);
+      ctx.fillText(it.drawTxt, it.drawX, it.drawY);
     }
   }
 
-  // 6. Admin-1 labels (when zoomed in, placed after point markers to avoid overlapping icons/capital names)
+  // Reserve all marker icon boxes now so Capital, Island, City, Admin-1, and Ocean labels never overlap marker dots
+  for (const ib of iconBoxes) placed.push(ib);
+
+  // Helper to place Capital, Island, and City labels with 4 candidate positions around the marker icon
+  const placeMarkerLabels = (list, font, fillColor, strokeW) => {
+    if (!list.length) return;
+    ctx.font = font;
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'middle';
+    const hh = 12.5;
+    for (const item of list) {
+      const { q, act, raw } = item;
+      const lbl = act ? raw : cleanMarkerLbl(raw);
+      const nk = baseKey(lbl);
+      const tw = ctx.measureText(lbl).width;
+      const w = tw + 4;
+      const cands = [
+        [q[0] + 6, q[1]],
+        [q[0] + 5, q[1] + 9.5],
+        [q[0] + 5, q[1] - 9.5],
+        [q[0] - 6 - tw, q[1]]
+      ];
+      let chosen = null;
+      if (act) {
+        chosen = cands[0];
+        placed.push([chosen[0] - 1, chosen[1] - hh / 2, w, hh]);
+        if (nk) placedNames.add(nk);
+      } else {
+        for (const [lx, ly] of cands) {
+          const box = [lx - 1, ly - hh / 2, w, hh];
+          if (tryPlace(box, nk)) {
+            chosen = [lx, ly];
+            break;
+          }
+        }
+      }
+      if (chosen) {
+        ctx.lineWidth = strokeW;
+        ctx.strokeStyle = C['label-halo'];
+        ctx.strokeText(lbl, chosen[0], chosen[1]);
+        ctx.fillStyle = fillColor;
+        ctx.fillText(lbl, chosen[0], chosen[1]);
+      }
+    }
+  };
+
+  // 4. Capital, Island & City text labels
+  placeMarkerLabels(
+    capLabels,
+    '600 10.5px "Be Vietnam Pro",system-ui,sans-serif',
+    C.dark ? '#FDBA74' : '#C2410C',
+    2.8
+  );
+  placeMarkerLabels(
+    islLabels,
+    '500 10.5px "Be Vietnam Pro",system-ui,sans-serif',
+    C.dark ? '#5EEAD4' : '#0F766E',
+    2.6
+  );
+  placeMarkerLabels(
+    cityLabels,
+    '500 10.5px "Be Vietnam Pro",system-ui,sans-serif',
+    C.dark ? '#93C5FD' : '#1D4ED8',
+    2.6
+  );
+
+  // 5. Admin-1 labels (when zoomed in, placed after country & point markers)
   if (st.on.admin1 && !lowres && k >= 2.0 && MAP.ADM1.length) {
     ctx.font = 'italic 500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     for (const f of MAP.ADM1) {
       const act = st.sel === f || st.hov === f;
-      const minPx = f.iso === 'VNM' ? 90 : 450;
-      if (!act && f.ar * r * r < minPx) continue;
+      const minAr = f.iso === 'VNM' ? 0.00025 : 0.0012;
+      if (!act && f.ar * k * k < minAr) continue;
       if (d3.geoDistance(f.cen, centerPt) > Math.PI / 2 - 0.04) continue;
       const p = proj(f.cen);
       if (!p) continue;
@@ -1309,7 +1612,7 @@ export function render(now) {
     }
   }
 
-  // 7. Ocean & Sea Labels (WATER_LABELS — default on with st.ref.labels)
+  // 6. Ocean & Sea Labels (WATER_LABELS — default on with st.ref.labels)
   if (st.ref.labels) {
     const enMode = isEn();
     ctx.textAlign = 'center';
@@ -1392,15 +1695,32 @@ export function render(now) {
       ctx.font = '600 11px "Be Vietnam Pro",system-ui,sans-serif';
       ctx.textAlign = 'left';
       ctx.textBaseline = 'middle';
-      const w = ctx.measureText(lbl).width + 6, hh = 14;
-      const box = [q[0] + 9, q[1] - hh / 2, w, hh];
-      if (act || tryPlace(box)) {
-        if (act) placed.push(box);
+      const tw = ctx.measureText(lbl).width;
+      const w = tw + 6, hh = 14;
+      const cands = [
+        [q[0] + 9, q[1]],
+        [q[0] + 8, q[1] + 10],
+        [q[0] + 8, q[1] - 10],
+        [q[0] - 9 - tw, q[1]]
+      ];
+      let chosen = null;
+      if (act) {
+        chosen = cands[0];
+        placed.push([chosen[0], chosen[1] - hh / 2, w, hh]);
+      } else {
+        for (const [lx, ly] of cands) {
+          if (tryPlace([lx, ly - hh / 2, w, hh])) {
+            chosen = [lx, ly];
+            break;
+          }
+        }
+      }
+      if (chosen) {
         ctx.lineWidth = 3;
         ctx.strokeStyle = C['label-halo'];
-        ctx.strokeText(lbl, q[0] + 10, q[1]);
+        ctx.strokeText(lbl, chosen[0] + 1, chosen[1]);
         ctx.fillStyle = C.dark ? d3.color(c).brighter(1.2) + '' : d3.color(c).darker(0.6) + '';
-        ctx.fillText(lbl, q[0] + 10, q[1]);
+        ctx.fillText(lbl, chosen[0] + 1, chosen[1]);
       }
     }
   });
@@ -1441,7 +1761,7 @@ export function render(now) {
   g.addColorStop(1, C.shade);
   ctx.fillStyle = g;
   ctx.beginPath();
-  pathC(sphere());
+  pathC(SPHERE_GEO);
   ctx.fill();
 }
 
@@ -1457,7 +1777,7 @@ export function loop(now) {
     proj.rotate([r[0] + 0.06, r[1], r[2]]);
     st.dirty = true;
   }
-  if (st.on.timezone && now - lastTzTick > 15000) {
+  if ((st.on.timezone || st.ref.daynight) && now - lastTzTick > 15000) {
     lastTzTick = now;
     st.dirty = true;
   }
@@ -1581,6 +1901,14 @@ export function hideHint() {
 }
 
 export function setK(nk, dur = 500) {
+  if (!dur) {
+    k = nk;
+    proj.scale(R0 * k);
+    MAP.LC.key = '';
+    st.dirty = true;
+    if (typeof SVGElement !== 'undefined') zoom.scaleTo(sel, nk);
+    return;
+  }
   sel.transition().duration(dur).call(zoom.scaleTo, nk);
 }
 
@@ -1671,8 +1999,9 @@ export function pick(mx, my) {
   if (k >= 1.4) {
     let bt = null, bdt = 9;
     for (const f of MAP.F) {
-      if (tinyPx(f) >= 120 || d3.geoDistance(f.cen, centerPt) > Math.PI / 2) continue;
-      const q = proj(f.cen);
+      const mc = f.mainCen || f.cen;
+      if (tinyPx(f) >= 120 || d3.geoDistance(mc, centerPt) > Math.PI / 2) continue;
+      const q = proj(mc);
       const d = Math.hypot(q[0] - mx, q[1] - my);
       if (d < bdt) {
         bdt = d;
@@ -1732,7 +2061,8 @@ export function flyTo(ll, nk, dur = 1100) {
 }
 
 export function fitK(f) {
-  const b = d3.geoBounds(f);
+  const geo = f && f.isCountry && f.mainPart && f.mainAr > f.ar * 0.75 && f.en !== 'Russia' ? f.mainPart : f;
+  const b = d3.geoBounds(geo);
   let span = Math.max(b[1][0] - b[0][0], b[1][1] - b[0][1]);
   if (b[1][0] < b[0][0]) span = Math.max(b[1][0] + 360 - b[0][0], b[1][1] - b[0][1]);
   span = Math.max(span, 3);

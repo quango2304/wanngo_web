@@ -1,4 +1,4 @@
-import { REGIONS } from '../data/regions.js';
+import { NAMES, REGIONS } from '../data/regions.js';
 import { C0, TOOLS } from '../data/countries.js';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
@@ -34,6 +34,10 @@ import {
   ECON_TIERS,
   ECON_SECTORS,
   ECON,
+  RANK_METRICS,
+  RANK_DATA,
+  rankValColor,
+  fmtRankVal,
   MEM,
   HS,
   BY,
@@ -45,6 +49,7 @@ import {
   on,
   ADMIN_LAYERS,
   DEFAULT_ON,
+  isMobileViewport,
   CAPITALS,
   CITIES,
   ISLANDS,
@@ -76,6 +81,52 @@ const PB = $('#pbody');
 const RTL_VI = { g: 'Thuận lợi', m: 'Lẫn lộn', b: 'Thử thách', n: '—' };
 const RTL_EN = { g: 'Favorable', m: 'Mixed', b: 'Challenging', n: '—' };
 const rtl = r => (isEn() ? RTL_EN[r] || '—' : RTL_VI[r] || '—');
+
+// Pre-compute sovereign country leaderboards & ranks for all 6 global metrics
+const NON_SOVEREIGN_SET = new Set([
+  'Åland',
+  'Faeroe Is.',
+  'Greenland',
+  'Puerto Rico',
+  'Curaçao',
+  'Aruba',
+  'Sint Maarten',
+  'Saint-Martin',
+  'St-Barthélemy',
+  'Cook Is.',
+  'Niue',
+  'W. Sahara',
+  'N. Cyprus',
+  'Somaliland'
+]);
+
+const RANK_LISTS = {};
+const COUNTRY_RANKS = {};
+
+Object.values(RANK_METRICS).forEach(m => {
+  const entries = [];
+  for (const [en, row] of Object.entries(RANK_DATA)) {
+    if (!row || row[m.idx] === null || row[m.idx] === undefined) continue;
+    const rg = (NAMES[en] || [, 'territory'])[1];
+    if (rg === 'territory' || rg === 'antarctic' || NON_SOVEREIGN_SET.has(en)) continue;
+    entries.push({ en, val: row[m.idx] });
+  }
+  entries.sort((a, b) => b.val - a.val);
+  const maxVal = entries.length ? entries[0].val : 1;
+  const minVal = entries.length ? entries[entries.length - 1].val : 0;
+  entries.forEach((item, idx) => {
+    item.rankDesc = idx + 1;
+    item.rankAsc = entries.length - idx;
+    if (!COUNTRY_RANKS[item.en]) COUNTRY_RANKS[item.en] = {};
+    COUNTRY_RANKS[item.en][m.key] = {
+      rank: idx + 1,
+      rankAsc: entries.length - idx,
+      total: entries.length,
+      val: item.val
+    };
+  });
+  RANK_LISTS[m.key] = { entries, maxVal, minVal, total: entries.length };
+});
 
 const QVIEWS = [
   { n: 'Việt Nam & Biển Đông', en: 'Vietnam & East Sea', ll: [108, 15], k: 2.3 },
@@ -203,12 +254,18 @@ export function openPanel(html) {
   PB.innerHTML = html;
   PB.scrollTop = 0;
   P.classList.add('show');
+  document.body.classList.add('panel-open');
+  if (isMobileViewport() && !$('#layers').classList.contains('hide')) {
+    $('#layers').classList.add('hide');
+    $('#layBtn').classList.remove('on');
+  }
   wire();
   recenter();
 }
 
 export function closePanel() {
   P.classList.remove('show');
+  document.body.classList.remove('panel-open');
   st.sel = null;
   activeView = null;
   st.dirty = true;
@@ -285,14 +342,36 @@ function econHTML(en) {
   const grNeg = String(ec.gr || '').trim().startsWith('-');
   const grCol = grPositive ? 'var(--g)' : grNeg ? 'var(--b)' : 'var(--ink)';
 
+  const rRow = RANK_DATA[en];
+  const rMeta = COUNTRY_RANKS[en] || {};
+  let rankGridHTML = '';
+  if (rRow && rRow[0] !== null) {
+    const badgeKeys = ['happiness', 'pollution', 'hdi', 'life'];
+    const cells = badgeKeys
+      .map(k2 => {
+        const m = RANK_METRICS[k2];
+        const v = rRow[m.idx];
+        if (v === null || v === undefined) return '';
+        const col = rankValColor(v, m) || 'var(--accent)';
+        const rk = rMeta[k2];
+        const rkBadge = rk ? `<span class="rk-num">#${rk.rank}</span>` : '';
+        return `<div class="rk-pill" data-rk="${k2}" data-back="${en}" title="${tr('Bấm để xem Bảng xếp hạng & Bản đồ nhiệt thế giới', 'Click to view World Leaderboard & Heatmap')}">
+          <div class="rk-pill-top"><span>${enMode ? m.short_en : m.short_vi}</span>${rkBadge}</div>
+          <div class="rk-pill-val"><i style="background:${col}"></i><b>${fmtRankVal(v, m, enMode)}</b></div>
+        </div>`;
+      })
+      .join('');
+    rankGridHTML = `<div class="rk-sec-hd"><span>${tr('CHỈ SỐ & XẾP HẠNG THẾ GIỚI', 'GLOBAL INDICATORS & RANKINGS')}</span><small>${tr('bấm để mở bảng xếp hạng', 'click for leaderboard')}</small></div><div class="rk-grid">${cells}</div>`;
+  }
+
   return `<div class="econ-box">
     <div class="econ-hd">
       <span>${tr('KINH TẾ & PHÁT TRIỂN', 'ECONOMY & DEVELOPMENT')}</span>
       <span class="econ-tier" data-a="__econ__" title="${tr('Bấm để tô màu bản đồ thế giới theo phân nhóm kinh tế', 'Click to color globe by economic development tier')}" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${tierName}</span>
     </div>
     <div class="econ-grid">
-      <div class="econ-stat"><small>${tr('Quy mô GDP (danh nghĩa)', 'Nominal GDP')}</small><b>${gdp}</b></div>
-      <div class="econ-stat"><small>${tr('Thu nhập bình quân / năm', 'GDP per Capita')}</small><b>${pc}</b></div>
+      <div class="econ-stat rk-click" data-rk="gdp" data-back="${en}" title="${tr('Bấm để xem Bảng xếp hạng Quy mô GDP thế giới', 'Click to view World Nominal GDP Ranking')}"><small>${tr('Quy mô GDP (danh nghĩa)', 'Nominal GDP')} ↗</small><b>${gdp}</b></div>
+      <div class="econ-stat rk-click" data-rk="income" data-back="${en}" title="${tr('Bấm để xem Bảng xếp hạng Thu nhập bình quân thế giới', 'Click to view World GDP per Capita Ranking')}"><small>${tr('Thu nhập bình quân / năm', 'GDP per Capita')} ↗</small><b>${pc}</b></div>
     </div>
     <div class="econ-chart">
       <svg class="econ-pie" viewBox="0 0 42 42" aria-label="${tr('Cơ cấu GDP', 'GDP Composition')}">
@@ -307,6 +386,7 @@ function econHTML(en) {
     </div>
     <div class="econ-main"><b>${tr('Ngành mũi nhọn:', 'Key Industries:')}</b> ${main}</div>
     ${note ? `<div class="econ-note">${note}</div>` : ''}
+    ${rankGridHTML}
   </div>`;
 }
 
@@ -341,12 +421,23 @@ function compareHTML(en1, en2) {
 
   const ec1 = ECON[en1], ec2 = ECON[en2];
   if (ec1 || ec2) {
-    const fmtEc = ec => {
+    const fmtEc = (ec, enCode) => {
       if (!ec) return '—';
       const tInfo = ECON_TIERS[ec.tier] || ECON_TIERS.dev;
-      return `<div style="margin-bottom:4px"><span class="econ-tier" data-a="__econ__" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${enMode ? tInfo.en : tInfo.vi}</span></div><div><small style="color:var(--muted)">GDP:</small> <b>${enMode ? ec.gdp_en : ec.gdp_vi}</b></div><div><small style="color:var(--muted)">${tr('Thu nhập/người:', 'Per capita:')}</small> ${enMode ? ec.pc_en : ec.pc_vi}</div><div><small style="color:var(--muted)">${tr('Tăng trưởng:', 'Growth:')}</small> <b>${ec.gr}</b></div>`;
+      const rRow = RANK_DATA[enCode];
+      const rk = COUNTRY_RANKS[enCode] || {};
+      const xtra =
+        rRow && rRow[0] !== null
+          ? `<div style="margin-top:4px;padding-top:4px;border-top:1px dashed var(--line);font-size:11.5px;display:grid;gap:2px">
+              <div><small style="color:var(--muted)">😊 ${tr('Hạnh phúc:', 'Happiness:')}</small> <b>${rRow[0].toFixed(2)}</b> ${rk.happiness ? `<small style="color:var(--faint)">(#${rk.happiness.rank})</small>` : ''}</div>
+              <div><small style="color:var(--muted)">🌫️ PM2.5:</small> <b>${rRow[2].toFixed(1)} µg/m³</b></div>
+              <div><small style="color:var(--muted)">🎓 HDI:</small> <b>${rRow[3].toFixed(3)}</b> ${rk.hdi ? `<small style="color:var(--faint)">(#${rk.hdi.rank})</small>` : ''}</div>
+              <div><small style="color:var(--muted)">❤️ ${tr('Tuổi thọ:', 'Life Exp:')}</small> <b>${rRow[4].toFixed(1)} ${tr('năm', 'yrs')}</b></div>
+            </div>`
+          : '';
+      return `<div style="margin-bottom:4px"><span class="econ-tier" data-a="__econ__" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${enMode ? tInfo.en : tInfo.vi}</span></div><div><small style="color:var(--muted)">GDP:</small> <b>${enMode ? ec.gdp_en : ec.gdp_vi}</b></div><div><small style="color:var(--muted)">${tr('Thu nhập/người:', 'Per capita:')}</small> ${enMode ? ec.pc_en : ec.pc_vi}</div><div><small style="color:var(--muted)">${tr('Tăng trưởng:', 'Growth:')}</small> <b>${ec.gr}</b></div>${xtra}`;
     };
-    s += `<div class="cmp-t"><div class="cmp-t-hd">📊 ${tr('KINH TẾ & PHÁT TRIỂN', 'ECONOMY & DEVELOPMENT')}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col">${fmtEc(ec1)}</div><div class="cmp-col">${fmtEc(ec2)}</div></div></div>`;
+    s += `<div class="cmp-t"><div class="cmp-t-hd">📊 ${tr('KINH TẾ & CHỈ SỐ PHÁT TRIỂN', 'ECONOMY & DEVELOPMENT INDICATORS')}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col">${fmtEc(ec1, en1)}</div><div class="cmp-col">${fmtEc(ec2, en2)}</div></div></div>`;
   }
 
   if (d1 && d2) {
@@ -616,6 +707,108 @@ function hotHTML(h) {
   return s;
 }
 
+function rankingHTML(metricKey = 'happiness', dir = 'desc', qFilter = '', backCountry = null) {
+  const m = RANK_METRICS[metricKey] || RANK_METRICS.happiness;
+  activeView = { type: 'rank', metricKey: m.key, dir, qFilter, backCountry };
+  const enMode = isEn();
+  const rList = RANK_LISTS[m.key];
+  const entries = rList ? (dir === 'asc' ? [...rList.entries].reverse() : rList.entries) : [];
+
+  const tabs = Object.values(RANK_METRICS)
+    .map(
+      mt =>
+        `<button type="button" class="rk-tab${mt.key === m.key ? ' on' : ''}" data-rk-tab="${mt.key}">${
+          enMode ? mt.short_en : mt.short_vi
+        }</button>`
+    )
+    .join('');
+
+  let s = '';
+  if (backCountry && BY[backCountry]) {
+    s += `<div style="margin-bottom:8px"><button class="btn" data-c="${backCountry}">← ${tr('Quay lại', 'Back to')} ${cName(backCountry)}</button></div>`;
+  }
+  s += `<div class="kick">📊 ${tr('BẢNG XẾP HẠNG & BẢN ĐỒ NHIỆT THẾ GIỚI', 'WORLD RANKINGS & CHOROPLETH HEATMAP')}</div>`;
+  s += `<h1>${enMode ? m.en : m.vi}</h1>`;
+  s += `<div class="rk-src">${tr('Đơn vị:', 'Unit:')} <b>${enMode ? m.unit_en : m.unit_vi}</b> · ${enMode ? m.src_en : m.src_vi}</div>`;
+  s += `<div class="rk-tabs">${tabs}</div>`;
+
+  // Vietnam spotlight card
+  const vnInfo = COUNTRY_RANKS['Vietnam'] && COUNTRY_RANKS['Vietnam'][m.key];
+  if (vnInfo) {
+    const vnCol = rankValColor(vnInfo.val, m) || 'var(--accent)';
+    const vnRankNum = m.key === 'pollution' && dir === 'asc' ? vnInfo.rankAsc : vnInfo.rank;
+    s += `<div class="rk-vn" data-rk-fly="Vietnam" title="${tr('Bấm để xoay quả địa cầu về Việt Nam', 'Click to fly to Vietnam')}">
+      <div class="rk-vn-l"><span class="rk-vn-flag">🇻🇳</span><div><b>${cName('Vietnam')}</b><small>${tr('Hạng', 'Rank')} #${vnRankNum} / ${vnInfo.total}</small></div></div>
+      <div class="rk-vn-r"><i style="background:${vnCol}"></i><b>${fmtRankVal(vnInfo.val, m, enMode)}</b></div>
+    </div>`;
+  }
+
+  const descLbl =
+    m.key === 'pollution'
+      ? tr('Ô nhiễm nhất ↓', 'Most Polluted ↓')
+      : tr('Cao nhất ↓', 'Highest First ↓');
+  const ascLbl =
+    m.key === 'pollution'
+      ? tr('Không khí sạch nhất ↑', 'Cleanest Air ↑')
+      : tr('Thấp nhất ↑', 'Lowest First ↑');
+
+  s += `<div class="rk-bar">
+    <div class="rk-dir-grp">
+      <button type="button" class="rk-dir${dir === 'desc' ? ' on' : ''}" data-rk-dir="desc">${descLbl}</button>
+      <button type="button" class="rk-dir${dir === 'asc' ? ' on' : ''}" data-rk-dir="asc">${ascLbl}</button>
+    </div>
+    <input type="search" id="rkSearch" class="rk-search" placeholder="${tr('Lọc tên nước...', 'Filter country...')}" value="${qFilter.replace(/"/g, '&quot;')}" autocomplete="off">
+  </div>`;
+
+  const qNorm = norm(qFilter.trim());
+  const filtered = qNorm
+    ? entries.filter(item => norm(cName(item.en) + ' ' + item.en).includes(qNorm))
+    : entries;
+
+  const calcBarPct = val => {
+    if (!rList) return 50;
+    if (m.logScale) {
+      const lMin = Math.log(Math.max(1e-2, rList.minVal));
+      const lMax = Math.log(Math.max(1, rList.maxVal));
+      return Math.max(6, Math.min(100, Math.round(((Math.log(Math.max(1e-2, val)) - lMin) / (lMax - lMin || 1)) * 100)));
+    }
+    return Math.max(6, Math.min(100, Math.round(((val - rList.minVal) / (rList.maxVal - rList.minVal || 1)) * 100)));
+  };
+
+  s += `<div class="rk-list" id="rkList">`;
+  if (!filtered.length) {
+    s += `<div class="rk-empty">${tr('Không tìm thấy quốc gia phù hợp.', 'No matching country found.')}</div>`;
+  } else {
+    filtered.forEach(item => {
+      const rkNum = dir === 'asc' ? item.rankAsc : item.rankDesc;
+      const col = rankValColor(item.val, m) || 'var(--accent)';
+      const pct = calcBarPct(item.val);
+      const isSel = st.sel && st.sel.isCountry && st.sel.en === item.en;
+      const isVN = item.en === 'Vietnam';
+      const medal = rkNum === 1 ? '🥇' : rkNum === 2 ? '🥈' : rkNum === 3 ? '🥉' : `#${rkNum}`;
+      s += `<div class="rk-row${isSel ? ' sel' : ''}${isVN ? ' vn' : ''}" data-rk-fly="${item.en}">
+        <span class="rk-pos${rkNum <= 3 ? ' top3' : ''}">${medal}</span>
+        <div class="rk-main">
+          <div class="rk-top-line">
+            <span class="rk-cname">${cName(item.en)}</span>
+            <span class="rk-val">${fmtRankVal(item.val, m, enMode)}</span>
+          </div>
+          <div class="rk-track"><i style="width:${pct}%;background:${col}"></i></div>
+        </div>
+        <button type="button" class="rk-info-btn" data-c="${item.en}" title="${tr('Xem hồ sơ quốc gia', 'View country profile')}">→</button>
+      </div>`;
+    });
+  }
+  s += `</div>`;
+  return s;
+}
+
+export function openRanking(metricKey = 'happiness', dir = 'desc', qFilter = '', backCountry = null) {
+  const m = RANK_METRICS[metricKey] || RANK_METRICS.happiness;
+  setAl(`__rank_${m.key}__`, false);
+  openPanel(rankingHTML(m.key, dir, qFilter, backCountry));
+}
+
 function wire() {
   PB.querySelectorAll('[data-h]').forEach(
     e =>
@@ -685,6 +878,56 @@ function wire() {
       })
   );
   PB.querySelectorAll('[data-a]').forEach(e => (e.onclick = () => setAl(e.dataset.a)));
+  PB.querySelectorAll('[data-rk]').forEach(
+    e =>
+      (e.onclick = () => {
+        openRanking(e.dataset.rk, 'desc', '', e.dataset.back || null);
+      })
+  );
+  PB.querySelectorAll('[data-rk-tab]').forEach(
+    e =>
+      (e.onclick = () => {
+        const back = activeView && activeView.backCountry ? activeView.backCountry : null;
+        const qVal = ($('#rkSearch') && $('#rkSearch').value) || '';
+        openRanking(e.dataset.rkTab, 'desc', qVal, back);
+      })
+  );
+  PB.querySelectorAll('[data-rk-dir]').forEach(
+    e =>
+      (e.onclick = () => {
+        if (!activeView || activeView.type !== 'rank') return;
+        const qVal = ($('#rkSearch') && $('#rkSearch').value) || '';
+        openPanel(rankingHTML(activeView.metricKey, e.dataset.rkDir, qVal, activeView.backCountry));
+      })
+  );
+  PB.querySelectorAll('[data-rk-fly]').forEach(
+    e =>
+      (e.onclick = ev => {
+        if (ev.target && ev.target.closest && ev.target.closest('[data-c]')) return;
+        const f = BY[e.dataset.rkFly];
+        if (!f) return;
+        st.sel = f;
+        st.dirty = true;
+        PB.querySelectorAll('.rk-row.sel').forEach(r => r.classList.remove('sel'));
+        if (e.classList.contains('rk-row')) e.classList.add('sel');
+        flyTo(f.mainCen || f.cen, Math.max(getK(), Math.min(3.5, fitK(f))));
+      })
+  );
+  const rkSearch = $('#rkSearch');
+  if (rkSearch && activeView && activeView.type === 'rank') {
+    rkSearch.oninput = () => {
+      const pos = rkSearch.selectionStart;
+      const val = rkSearch.value;
+      openPanel(rankingHTML(activeView.metricKey, activeView.dir, val, activeView.backCountry));
+      const inp = $('#rkSearch');
+      if (inp) {
+        inp.focus();
+        try {
+          inp.setSelectionRange(pos, pos);
+        } catch (err) {}
+      }
+    };
+  }
 
   const cmpSel = $('#cmpSel');
   if (cmpSel) {
@@ -725,7 +968,7 @@ export function select(o, fly) {
     if (fly) flyTo(o.cen, Math.max(2.2, fitK(o.geo)));
   } else if (o.isCountry) {
     openPanel(countryHTML(o, fly ? null : lastLL));
-    if (fly) flyTo(o.cen, fitK(o));
+    if (fly) flyTo(o.mainCen || o.cen, fitK(o));
   } else {
     openPanel(hotHTML(o));
     if (fly) {
@@ -797,21 +1040,68 @@ function populateAlSel() {
   if (!alSel) return;
   const enMode = isEn();
   const cur = st.al || '';
-  alSel.innerHTML = `<option value="">${tr('Không', 'None')}</option><option value="__econ__">📊 ${tr('Phân nhóm Kinh tế & Thu nhập (WB/IMF)', 'Economic Development Tiers (WB/IMF)')}</option>`;
+  const rkOpts = Object.values(RANK_METRICS)
+    .map(
+      m =>
+        `<option value="__rank_${m.key}__">${enMode ? m.short_en : m.short_vi} · ${
+          enMode ? m.en : m.vi
+        }</option>`
+    )
+    .join('');
+
+  alSel.innerHTML = `<option value="">${tr('Không (Mặc định)', 'None (Default)')}</option>
+    <optgroup label="${tr('📊 Bảng xếp hạng & Kinh tế Thế giới', '📊 World Rankings & Economy')}">
+      <option value="__econ__">📊 ${tr('Phân nhóm Kinh tế & Thu nhập (WB/IMF)', 'Economic Development Tiers (WB/IMF)')}</option>
+      ${rkOpts}
+    </optgroup>
+    <optgroup label="${tr('🛡️ Khối Liên minh & Địa chính trị', '🛡️ Geopolitical Blocs & Alliances')}" id="alGrpBlocs"></optgroup>`;
+
+  const grpBlocs = alSel.querySelector('#alGrpBlocs') || alSel;
   Object.entries(AL).forEach(([key, a]) => {
     const aInfo = enMode && AL_EN[key] ? AL_EN[key] : a;
     const o = document.createElement('option');
     o.value = key;
     o.textContent = aInfo.n + ' · ' + aInfo.f.split(' · ')[0];
-    alSel.appendChild(o);
+    grpBlocs.appendChild(o);
   });
   alSel.value = cur;
+
+  const rankChips = $('#rankChips');
+  if (rankChips) {
+    rankChips.innerHTML = Object.values(RANK_METRICS)
+      .map(m => {
+        const kVal = `__rank_${m.key}__`;
+        return `<span class="chip${cur === kVal ? ' on' : ''}" data-rk-chip="${m.key}">${
+          enMode ? m.short_en : m.short_vi
+        }</span>`;
+      })
+      .join('');
+    rankChips.querySelectorAll('[data-rk-chip]').forEach(
+      el =>
+        (el.onclick = () => {
+          const mKey = el.dataset.rkChip;
+          const targetAl = `__rank_${mKey}__`;
+          if (st.al === targetAl && P.classList.contains('show') && activeView && activeView.type === 'rank') {
+            setAl('');
+            closePanel();
+          } else {
+            openRanking(mKey, 'desc', '', null);
+          }
+        })
+    );
+  }
 }
 
-export function setAl(key) {
+export function setAl(key, openLeaderboard = false) {
   const alSel = $('#alSel');
   st.al = key || '';
   if (alSel) alSel.value = st.al;
+  const rankChips = $('#rankChips');
+  if (rankChips) {
+    rankChips.querySelectorAll('[data-rk-chip]').forEach(el => {
+      el.classList.toggle('on', st.al === `__rank_${el.dataset.rkChip}__`);
+    });
+  }
   savePrefs();
   st.dirty = true;
   const lg = $('#legend');
@@ -820,6 +1110,31 @@ export function setAl(key) {
     return;
   }
   const enMode = isEn();
+  if (st.al.startsWith('__rank_')) {
+    const rkKey = st.al.slice(7, -2);
+    const m = RANK_METRICS[rkKey];
+    if (!m) {
+      lg.classList.remove('show');
+      return;
+    }
+    const gradCols = m.stops.map(s => s[1]).join(', ');
+    const minLbl = fmtRankVal(m.stops[0][0], m, enMode);
+    const maxLbl = fmtRankVal(m.stops[m.stops.length - 1][0], m, enMode);
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${
+      enMode ? m.short_en + ' · ' + m.en : m.short_vi + ' · ' + m.vi
+    }</b><div style="display:flex;gap:10px"><button class="lnk" id="alOpenRk" style="padding:0">${tr(
+      'Bảng xếp hạng ↗',
+      'Leaderboard ↗'
+    )}</button><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div></div>
+    <div style="color:var(--muted);font-size:11.5px;margin-top:2px">${enMode ? m.src_en : m.src_vi}</div>
+    <div class="rk-leg-bar" style="background:linear-gradient(90deg, ${gradCols})"></div>
+    <div class="rk-leg-ends"><span>${minLbl}</span><span>${maxLbl}</span></div>`;
+    lg.classList.add('show');
+    $('#alX').onclick = () => setAl('');
+    $('#alOpenRk').onclick = () => openRanking(rkKey);
+    if (openLeaderboard) openPanel(rankingHTML(rkKey));
+    return;
+  }
   if (st.al === '__econ__') {
     const tiers = Object.values(ECON_TIERS)
       .map(t => `<span><span class="sq" style="background:${t.c}"></span>${enMode ? t.en : t.vi}</span>`)
@@ -846,7 +1161,19 @@ function tipLabel(h) {
   if (h.kind === 'city') return `${cityName(h)}<small>${tr('đô thị / cảng', 'city / port')} · ${cName(h.country)}</small>`;
   if (h.kind === 'isl') return `${islName(h)}<small>${tr('đảo / vùng', 'island / zone')} · ${cName(h.country)}</small>`;
   if (h.kind === 'lake') return `${lakeName(h)}<small>${tr('hồ / biển nội địa', 'lake / inland sea')}</small>`;
-  if (h.isCountry) return `${cName(h.en)}<small>${tr('quốc gia', 'country')}</small>`;
+  if (h.isCountry) {
+    if (st.al && st.al.startsWith('__rank_')) {
+      const rkKey = st.al.slice(7, -2);
+      const m = RANK_METRICS[rkKey];
+      const row = RANK_DATA[h.en];
+      if (m && row && row[m.idx] !== null && row[m.idx] !== undefined) {
+        const rk = COUNTRY_RANKS[h.en] && COUNTRY_RANKS[h.en][rkKey];
+        const rkStr = rk ? ` (#${rk.rank})` : '';
+        return `${cName(h.en)}<small>${isEn() ? m.short_en : m.short_vi}: ${fmtRankVal(row[m.idx], m, isEn())}${rkStr}</small>`;
+      }
+    }
+    return `${cName(h.en)}<small>${tr('quốc gia', 'country')}</small>`;
+  }
   return `${hName(h)}<small>${(layName(h.t) || tr('điểm nóng', 'hotspot')).toLowerCase()}</small>`;
 }
 
@@ -873,7 +1200,8 @@ export function applyLang() {
   if ($('#grpAdmin')) $('#grpAdmin').textContent = tr('Hành chính, Đô thị & Đảo', 'Admin, Cities & Islands');
   if ($('#grpNat')) $('#grpNat').textContent = tr('Địa lý Tự nhiên', 'Physical Geography');
   if ($('#grpInfra')) $('#grpInfra').textContent = tr('Hạ tầng, Quân sự & Tài nguyên', 'Infra, Military & Resources');
-  if ($('#lhAl')) $('#lhAl').textContent = tr('TÔ MÀU THEO KHỐI / KINH TẾ', 'COLOR BY BLOC / ECONOMY');
+  if ($('#lhAl')) $('#lhAl').textContent = tr('TÔ MÀU THEO KHỐI / XẾP HẠNG', 'COLOR BY BLOC / RANKINGS');
+  if ($('#lhRk')) $('#lhRk').textContent = tr('BẢNG XẾP HẠNG THẾ GIỚI (HEATMAP)', 'WORLD RANKINGS (HEATMAP)');
   if ($('#lhQv')) $('#lhQv').textContent = tr('GÓC NHÌN NHANH', 'QUICK VIEWS');
   if ($('#lhRef')) $('#lhRef').textContent = tr('ĐƯỜNG THAM CHIẾU', 'REFERENCE LINES');
   if ($('#hint'))
@@ -917,6 +1245,8 @@ export function applyLang() {
 
   if (P.classList.contains('show') && activeView) {
     if (activeView.type === 'cmp') openPanel(compareHTML(activeView.en1, activeView.en2));
+    else if (activeView.type === 'rank')
+      openPanel(rankingHTML(activeView.metricKey, activeView.dir, activeView.qFilter, activeView.backCountry));
     else if (activeView.type === 'country') openPanel(countryHTML(activeView.f, activeView.ll));
     else if (activeView.type === 'adm1') openPanel(adm1HTML(activeView.f));
     else if (activeView.type === 'urban') openPanel(urbanIslandHTML(activeView.o));
@@ -927,27 +1257,32 @@ export function applyLang() {
 export function initUI() {
   $('#pclose').onclick = () => closePanel();
 
-  let hovT = 0;
+  let hovRaf = 0;
+  let lastMoveEvt = null;
   cv.addEventListener('pointermove', e => {
-    if (st.drag) return;
-    const now = performance.now();
-    if (now - hovT < 40) return;
-    hovT = now;
-    const h = pick(e.clientX, e.clientY);
-    if (h !== st.hov) {
-      st.hov = h;
-      st.dirty = true;
-    }
-    cv.classList.toggle('hot', !!h);
-    const tip = $('#tip');
-    if (h) {
-      tip.innerHTML = tipLabel(h);
-      tip.style.display = 'block';
-      tip.style.left = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8) + 'px';
-      tip.style.top = e.clientY + 14 + 'px';
-    } else {
-      tip.style.display = 'none';
-    }
+    if (e.pointerType === 'touch' || st.drag || st.moving) return;
+    lastMoveEvt = e;
+    if (hovRaf) return;
+    hovRaf = requestAnimationFrame(() => {
+      hovRaf = 0;
+      if (!lastMoveEvt || st.drag || st.moving) return;
+      const mx = lastMoveEvt.clientX, my = lastMoveEvt.clientY;
+      const h = pick(mx, my);
+      if (h !== st.hov) {
+        st.hov = h;
+        st.dirty = true;
+      }
+      cv.classList.toggle('hot', !!h);
+      const tip = $('#tip');
+      if (h) {
+        tip.innerHTML = tipLabel(h);
+        tip.style.display = 'block';
+        tip.style.left = Math.min(mx + 14, innerWidth - tip.offsetWidth - 8) + 'px';
+        tip.style.top = Math.min(my + 14, innerHeight - tip.offsetHeight - 8) + 'px';
+      } else {
+        tip.style.display = 'none';
+      }
+    });
   });
 
   cv.addEventListener('pointerleave', () => {
@@ -973,13 +1308,15 @@ export function initUI() {
   });
 
   const alSel = $('#alSel');
-  alSel.onchange = () => setAl(alSel.value);
+  alSel.onchange = () => {
+    const v = alSel.value;
+    setAl(v, !!(v && v.startsWith('__rank_')));
+  };
 
   const lyDef = $('#lyDef');
   if (lyDef) {
     lyDef.onclick = () => {
-      Object.assign(st.on, DEFAULT_ON);
-      st.on.ice = true;
+      Object.assign(st.on, DEFAULT_ON, { capitals: !isMobileViewport(), ice: true });
       savePrefs();
       buildLayers();
       st.dirty = true;
@@ -999,6 +1336,9 @@ export function initUI() {
     $('#layers').classList.toggle('hide');
     const isHidden = $('#layers').classList.contains('hide');
     $('#layBtn').classList.toggle('on', !isHidden);
+    if (!isHidden && isMobileViewport() && P.classList.contains('show')) {
+      closePanel();
+    }
     st.drawerHide = isHidden;
     savePrefs();
   };

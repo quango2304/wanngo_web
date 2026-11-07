@@ -7,9 +7,15 @@
   <title>Địa cầu địa chính trị · wanngo</title>
   <meta name="description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 241 quốc gia & vùng lãnh thổ, 5 công cụ địa chính trị, eo biển nút thắt, chuỗi đảo, căn cứ quân sự, tài nguyên lõi, thủ đô và tỉnh thành.">
   <link rel="canonical" href="https://geo.wanngo.com/">
+  <meta name="theme-color" content="#0B1422">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="manifest" href="site.webmanifest">
   <meta property="og:title" content="Địa cầu địa chính trị · wanngo">
-  <meta property="og:description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 241 quốc gia, 238 điểm nóng chiến lược, thủ đô, đô thị cảng, đảo chiến lược và tỉnh thành.">
+  <meta property="og:description" content="Quả địa cầu địa chính trị tương tác 3D theo phong cách Tim Marshall: 241 quốc gia, 238 điểm nóng chiến lược, bảng xếp hạng kinh tế - hạnh phúc - môi trường, thủ đô và tỉnh thành.">
   <meta property="og:url" content="https://geo.wanngo.com/">
+  <meta property="og:image" content="https://geo.wanngo.com/icon-512.png">
   <script>try{const t=localStorage.getItem('geo-theme');if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,8 +61,10 @@
       <summary><span id="grpInfra">Hạ tầng, Quân sự &amp; Tài nguyên</span><small id="cntInfra"></small></summary>
       <div id="lyInfra" class="litems"></div>
     </details>
-    <div class="lh" id="lhAl">TÔ MÀU THEO KHỐI / KINH TẾ</div>
+    <div class="lh" id="lhAl">TÔ MÀU THEO KHỐI / XẾP HẠNG</div>
     <select id="alSel" aria-label="Tô màu theo liên minh"><option value="">Không</option></select>
+    <div class="lh" id="lhRk">BẢNG XẾP HẠNG THẾ GIỚI (HEATMAP)</div>
+    <div class="chips" id="rankChips"></div>
     <div class="lh" id="lhQv">GÓC NHÌN NHANH</div>
     <div class="chips" id="qviews"></div>
     <div class="lh" id="lhRef">ĐƯỜNG THAM CHIẾU</div>

@@ -49,7 +49,7 @@ export const AL_EN = {
   vncsp: {"n":"Vietnam's CSP Partners","f":"Comprehensive Strategic Partners · 14 nations","tx":"Vietnam's highest diplomatic tier: China (2008), Russia (2012), India (2016), South Korea (2022), the US and Japan (2023), Australia, France, and Malaysia (2024), New Zealand, Indonesia, Singapore, Thailand, and the United Kingdom (2025). Vietnam is one of the very few nations holding Comprehensive Strategic Partnerships with all five permanent members of the UN Security Council—a hallmark of its \"bamboo diplomacy.\""},
 };
 
-export const REF_EN = {"eq":{"n":"Equator"},"trop":{"n":"Tropics"},"polar":{"n":"Polar Circles"},"pm":{"n":"Prime Meridian"},"grat":{"n":"Graticule"},"labels":{"n":"Country Labels"}};
+export const REF_EN = {"eq":{"n":"Equator"},"trop":{"n":"Tropics"},"polar":{"n":"Polar Circles"},"pm":{"n":"Prime Meridian"},"grat":{"n":"Graticule"},"labels":{"n":"Country Labels"},"daynight":{"n":"☀️🌙 Day & Night"}};
 
 export const RELC_EN = {"islam":"Islam","christ":"Christianity","cath":"Catholicism","prot":"Protestantism","orth":"Eastern Orthodoxy","budd":"Buddhism","hindu":"Hinduism","jew":"Judaism","sikh":"Sikhism","shinto":"Shinto","folk":"Folk / Indigenous","none":"Unaffiliated","other":"Other"};
 

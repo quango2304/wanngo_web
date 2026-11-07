@@ -38,5 +38,6 @@ trop:{n:"Chí tuyến",lats:[23.44,-23.44],c:"#EF9F27"},
 polar:{n:"Vòng cực",lats:[66.56,-66.56],c:"#378ADD"},
 pm:{n:"Kinh tuyến gốc",lon:0,c:"#7F77DD"},
 grat:{n:"Lưới tọa độ"},
-labels:{n:"Tên nước"}
+labels:{n:"Tên nước"},
+daynight:{n:"☀️🌙 Ngày & Đêm",c:"#F59E0B"}
 };

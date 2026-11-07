@@ -6,6 +6,7 @@ import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../
 import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js';
 import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js';
 import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js';
 
 export {
   CAPITALS,
@@ -29,8 +30,55 @@ export {
   ADMIN1_EN,
   ECON_TIERS,
   ECON_SECTORS,
-  ECON
+  ECON,
+  RANK_METRICS,
+  RANK_DATA
 };
+
+export function rankValColor(val, metric) {
+  if (val === null || val === undefined || !metric || !metric.stops) return null;
+  const stops = metric.stops;
+  if (val <= stops[0][0]) return stops[0][1];
+  if (val >= stops[stops.length - 1][0]) return stops[stops.length - 1][1];
+  for (let i = 0; i < stops.length - 1; i++) {
+    const [v0, c0] = stops[i];
+    const [v1, c1] = stops[i + 1];
+    if (val >= v0 && val <= v1) {
+      const t = metric.logScale
+        ? (Math.log(Math.max(1e-4, val)) - Math.log(Math.max(1e-4, v0))) /
+          (Math.log(Math.max(1e-4, v1)) - Math.log(Math.max(1e-4, v0)))
+        : (val - v0) / (v1 - v0 || 1);
+      return d3.interpolateRgb(c0, c1)(Math.max(0, Math.min(1, t)));
+    }
+  }
+  return stops[stops.length - 1][1];
+}
+
+export function fmtRankVal(val, metric, enMode = false) {
+  if (val === null || val === undefined || !metric) return '—';
+  const loc = enMode ? 'en-US' : 'vi-VN';
+  if (metric.key === 'income') {
+    return '$' + Math.round(val).toLocaleString(loc);
+  }
+  if (metric.key === 'gdp') {
+    if (val >= 1000) {
+      const trVal = (val / 1000).toLocaleString(loc, { maximumFractionDigits: 2 });
+      return enMode ? `$${trVal}T` : `$${trVal} nghìn tỷ`;
+    }
+    const bVal = val >= 10 ? Math.round(val).toLocaleString(loc) : val.toLocaleString(loc, { maximumFractionDigits: 2 });
+    return enMode ? `$${bVal}B` : `$${bVal} tỷ`;
+  }
+  if (metric.key === 'pollution') {
+    return val.toFixed(1) + ' µg/m³';
+  }
+  if (metric.key === 'life') {
+    return val.toFixed(1) + (enMode ? ' yrs' : ' năm');
+  }
+  if (metric.key === 'hdi') {
+    return val.toFixed(3);
+  }
+  return val.toFixed(metric.decimals ?? 2);
+}
 
 export const $ = s => document.querySelector(s);
 export const norm = s => (s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'd').toLowerCase();
@@ -165,6 +213,8 @@ export const MAP = {
   LC: { key: '', list: [] }
 };
 
+export const isMobileViewport = () => typeof window !== 'undefined' && window.innerWidth < 760;
+
 export const DEFAULT_ON = {
   // hot
   strait: false,
@@ -186,7 +236,7 @@ export const DEFAULT_ON = {
   forest: false,
   ice: true, // always visible on base globe
   // admin
-  capitals: true,
+  capitals: !isMobileViewport(),
   islands: false,
   cities: false,
   admin1: false,
@@ -199,10 +249,12 @@ export const DEFAULT_REF = {
   polar: false,
   pm: false,
   grat: true,
-  labels: true
+  labels: true,
+  daynight: false
 };
 
-const PREFS_KEY = 'geo-prefs-v2';
+const PREFS_KEY = 'geo-prefs-v3';
+const LEGACY_PREFS_KEY = 'geo-prefs-v2';
 
 export const st = {
   lang: 'vi',
@@ -238,24 +290,40 @@ export const lakeName = lk =>
 export function loadPrefs() {
   try {
     const raw = localStorage.getItem(PREFS_KEY);
-    if (!raw) return;
-    const p = JSON.parse(raw);
-    if (p && typeof p === 'object') {
-      if (p.lang === 'en' || p.lang === 'vi') st.lang = p.lang;
-      if (p.on && typeof p.on === 'object') {
-        Object.keys(DEFAULT_ON).forEach(k => {
-          if (typeof p.on[k] === 'boolean') st.on[k] = p.on[k];
-        });
+    if (raw) {
+      const p = JSON.parse(raw);
+      if (p && typeof p === 'object') {
+        if (p.lang === 'en' || p.lang === 'vi') st.lang = p.lang;
+        if (p.on && typeof p.on === 'object') {
+          Object.keys(DEFAULT_ON).forEach(k => {
+            if (typeof p.on[k] === 'boolean') st.on[k] = p.on[k];
+          });
+        }
+        st.on.ice = true;
+        if (p.ref && typeof p.ref === 'object') {
+          Object.keys(DEFAULT_REF).forEach(k => {
+            if (typeof p.ref[k] === 'boolean') st.ref[k] = p.ref[k];
+          });
+        }
+        if (typeof p.al === 'string') st.al = p.al;
+        if (typeof p.spin === 'boolean') st.spin = p.spin;
+        if (typeof p.drawerHide === 'boolean') st.drawerHide = p.drawerHide;
       }
-      st.on.ice = true;
-      if (p.ref && typeof p.ref === 'object') {
-        Object.keys(DEFAULT_REF).forEach(k => {
-          if (typeof p.ref[k] === 'boolean') st.ref[k] = p.ref[k];
-        });
+      return;
+    }
+    const legacyRaw = localStorage.getItem(LEGACY_PREFS_KEY);
+    if (legacyRaw) {
+      const p = JSON.parse(legacyRaw);
+      if (p && typeof p === 'object') {
+        if (p.lang === 'en' || p.lang === 'vi') st.lang = p.lang;
+        if (p.ref && typeof p.ref === 'object') {
+          Object.keys(DEFAULT_REF).forEach(k => {
+            if (typeof p.ref[k] === 'boolean') st.ref[k] = p.ref[k];
+          });
+        }
+        if (typeof p.al === 'string') st.al = p.al;
+        if (typeof p.spin === 'boolean') st.spin = p.spin;
       }
-      if (typeof p.al === 'string') st.al = p.al;
-      if (typeof p.spin === 'boolean') st.spin = p.spin;
-      if (typeof p.drawerHide === 'boolean') st.drawerHide = p.drawerHide;
     }
   } catch (e) {}
 }
