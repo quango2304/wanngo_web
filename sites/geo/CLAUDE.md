@@ -30,6 +30,7 @@ sites/geo/
   wrangler.jsonc        Worker config (assets only, 404 page, custom domain geo.wanngo.com)
   scripts/              data build scripts (run by hand, not deployed)
     build_rankings.py   rebuilds RANK_DATA from primary sources
+    check.mjs           pre-deploy checks (run before every deploy)
     country_aliases.json  dataset country name -> ISO3 (used by the script)
   public/               everything deployed
     index.html, 404.html, style.css, _headers, favicon*, site.webmanifest
@@ -83,6 +84,14 @@ sites/geo/
 
 - Local: `npm ci` at the repo root, then `npm run dev:geo` (http://localhost:8791).
 - Syntax check: `node --check public/js/*.js`.
+- **Test before every deploy (mandatory, never skip):**
+  1. `node sites/geo/scripts/check.mjs` (syntax of all js, every ranking metric has VI/EN text, year, source and https link,
+     enough data values, one consistent `?v=`). Must print `OK`.
+  2. `npm run dev:geo`, open http://localhost:8791 in a browser, hard-reload, and click through what you changed plus the
+     basics: globe loads and rotates, open a country card, open each ranking tab, switch VI/EN and dark/light, resize to a
+     phone width. No console errors, no `undefined`, no blank panels.
+  3. Only then commit and deploy. If you cannot run step 2, say so and do not deploy without the owner's OK.
+  Add a check to `scripts/check.mjs` whenever a bug slips through.
 - Deploy: `npm run deploy:geo` from the repo root (owner must ask; the tag workflow `geo-vX.Y.Z` fails until the
   Cloudflare secrets are set on the repo). Commit straight on `main`. Never push a tag unless the owner asks.
 - After a deploy, hard-reload and open the changed dialog or layer to confirm it renders.
@@ -93,4 +102,4 @@ sites/geo/
 2. VI and EN both updated; no `undefined` or empty labels; long text does not overflow on mobile.
 3. Dark and light themes checked; contrast and tap targets fine.
 4. No frame-rate regression on the globe; no new heavy dependencies.
-5. `?v=` bumped; `node --check` passes; committed; deployed only when asked.
+5. `?v=` bumped; `scripts/check.mjs` prints OK and the local browser test passed; committed; deployed only when asked.
