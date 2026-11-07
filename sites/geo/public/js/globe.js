@@ -43,7 +43,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js';
+} from './state.js?v=20261107';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');

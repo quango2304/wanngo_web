@@ -59,7 +59,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js';
+} from './state.js?v=20261107';
 import {
   cv,
   proj,
@@ -75,7 +75,7 @@ import {
   stopSpin,
   inBB,
   rebuildSearchIndex
-} from './globe.js';
+} from './globe.js?v=20261107';
 
 const P = $('#panel');
 const PB = $('#pbody');
