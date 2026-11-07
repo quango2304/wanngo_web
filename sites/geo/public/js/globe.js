@@ -741,10 +741,21 @@ function drawRegPoly(x, y, rad, sides, rotRad = -Math.PI / 2) {
   ctx.closePath();
 }
 
+const FRAME_BUDGET_MS = 14;
+let hiCost = 0;
+let slowFrames = 0;
+let lastLowres = false;
+
 export function render(now) {
   if (!MAP.F.length) return;
-  const lowres = st.moving || (st.spin && k < 1.5);
   updView();
+  // Coarse map only while moving at low zoom (zoomed in, culling keeps detail cheap),
+  // and only if detailed frames proved too slow (adaptive budget, retry a probe frame periodically).
+  let probe = false;
+  if (st.moving && hiCost > FRAME_BUDGET_MS && ++slowFrames % 45 === 0) probe = true;
+  const slowDev = st.moving && hiCost > FRAME_BUDGET_MS && !probe;
+  const lowres = (slowDev && k < 2.5) || (st.spin && k < 1.5);
+  lastLowres = lowres;
   proj.precision(k > 4 ? 1.2 : k > 2 ? 0.8 : 0.5);
   const feats = lowres ? MAP.F110 : MAP.F;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -1806,7 +1817,12 @@ export function loop(now) {
     st.dirty = true;
   }
   if (st.dirty || needsAnim()) {
+    const t0 = performance.now();
     render(now);
+    if (!lastLowres) {
+      const dt = performance.now() - t0;
+      hiCost = hiCost ? hiCost * 0.7 + dt * 0.3 : dt;
+    }
     st.dirty = false;
   }
   if (st.moving && now - st.lastMove > 160) {
