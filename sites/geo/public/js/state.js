@@ -2,11 +2,11 @@ import { NAMES } from '../data/regions.js';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL } from '../data/alliances.js';
 import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108b';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108d';
 import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js';
 import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108b';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108b';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108d';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108d';
 
 export {
   CAPITALS,
@@ -90,7 +90,7 @@ export const ADMIN_LAYERS = {
   islands:  { n: 'Đảo & Vùng chiến lược', en: 'Strategic Islands & Zones', c: '#0D9488', grp: 'admin' },
   cities:   { n: 'Đô thị & Cảng lớn', en: 'Major Cities & Ports', c: '#2563EB', grp: 'admin' },
   admin1:   { n: 'Bang / Tỉnh thành (zoom)', en: 'States / Provinces (zoom)', c: '#7C3AED', grp: 'admin' },
-  timezone: { n: 'Múi giờ quốc tế (AM/PM)', en: 'World Timezones (AM/PM)', c: '#0EA5E9', grp: 'admin' }
+  timezone: { n: 'Múi giờ quốc tế (24 giờ)', en: 'World Timezones (24h)', c: '#0EA5E9', grp: 'admin' }
 };
 
 export const WATER_LABELS = [
