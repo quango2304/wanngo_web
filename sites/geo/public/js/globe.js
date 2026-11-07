@@ -1,8 +1,8 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0 } from '../data/countries.js?v=20261108e';
+import { C0 } from '../data/countries.js?v=20261108f';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL, REF } from '../data/alliances.js';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108e';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108f';
 import {
   $,
   norm,
@@ -44,7 +44,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108e';
+} from './state.js?v=20261108f';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -1432,6 +1432,8 @@ export function render(now) {
   });
 
   // 2. Timezone 24-hour Clock Badges (st.on.timezone — placed before country/ocean labels so they never get blocked or overlap text)
+  // countries whose name is already written in a placed timezone badge: their plain country label is skipped
+  const tzNamed = new Set();
   if (st.on.timezone) {
     const utcMin = Math.floor(Date.now() / 60000);
     const placedTz = [];
@@ -1525,18 +1527,20 @@ export function render(now) {
     }
 
     if (k >= 1.45) {
-      // half / quarter-hour zones: one badge per zone, offset only (UTC+8 for Xinjiang is already the UTC+8 badge)
+      const isEn = st.lang === 'en';
       const specials = [
-        { pt: [79.0, 22.0], off: 5.5, sub: 'UTC+5:30' },
-        { pt: [53.5, 32.5], off: 3.5, sub: 'UTC+3:30' },
-        { pt: [66.0, 33.8], off: 4.5, sub: 'UTC+4:30' },
-        { pt: [96.5, 20.5], off: 6.5, sub: 'UTC+6:30' },
-        { pt: [84.0, 28.2], off: 5.75, sub: 'UTC+5:45' },
-        { pt: [134.5, -25.0], off: 9.5, sub: 'UTC+9:30' }
+        { pt: [79.0, 22.0], off: 5.5, sub: isEn ? 'India · UTC+5:30' : 'Ấn Độ · UTC+5:30', c: 'India' },
+        { pt: [53.5, 32.5], off: 3.5, sub: 'Iran · UTC+3:30', c: 'Iran' },
+        { pt: [66.0, 33.8], off: 4.5, sub: 'Afghanistan · UTC+4:30', c: 'Afghanistan' },
+        { pt: [96.5, 20.5], off: 6.5, sub: 'Myanmar · UTC+6:30', c: 'Myanmar' },
+        { pt: [84.0, 28.2], off: 5.75, sub: 'Nepal · UTC+5:45', c: 'Nepal' },
+        { pt: [134.5, -25.0], off: 9.5, sub: isEn ? 'Central AU · UTC+9:30' : 'Trung Úc · UTC+9:30' },
+        { pt: [86.0, 41.5], off: 8.0, sub: isEn ? 'Xinjiang (Beijing) · UTC+8' : 'Tân Cương (giờ BK) · UTC+8' }
       ];
       for (const sp of specials) {
         const { time, isDay } = fmtTz(sp.off);
-        drawTzBadge([sp.pt, [sp.pt[0], sp.pt[1] - 5], [sp.pt[0], sp.pt[1] + 5]], time, sp.sub, isDay);
+        const ok = drawTzBadge([sp.pt, [sp.pt[0], sp.pt[1] - 5], [sp.pt[0], sp.pt[1] + 5]], time, sp.sub, isDay);
+        if (ok && sp.c) tzNamed.add(sp.c);
       }
     }
   }
@@ -1592,7 +1596,7 @@ export function render(now) {
       [[0, -8], [0, 8], [0, -13], [0, 13], [-11, -5], [11, -5], [-11, 5], [11, 5]],
       [[0, -19], [0, 19], [-17, -9], [17, -9], [-17, 9], [17, 9]]
     ];
-    const items = cand.map(o => {
+    const items = cand.filter(o => o.f === st.sel || !tzNamed.has(o.f.en)).map(o => {
       const full = cName(o.f.en);
       const short = compactCountryLbl(full);
       const variants = short ? [full, short] : [full];

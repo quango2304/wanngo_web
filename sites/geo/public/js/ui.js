@@ -1,5 +1,5 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0, TOOLS } from '../data/countries.js?v=20261108e';
+import { C0, TOOLS } from '../data/countries.js?v=20261108f';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
 import { iconSvg } from './icons.js';
@@ -59,7 +59,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108e';
+} from './state.js?v=20261108f';
 import {
   cv,
   proj,
@@ -77,7 +77,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108e';
+} from './globe.js?v=20261108f';
 import {
   CONT,
   AMERICAS,
@@ -94,7 +94,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108e';
+} from '../data/continents.js?v=20261108f';
 
 const P = $('#panel');
 const PB = $('#pbody');
