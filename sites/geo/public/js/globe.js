@@ -990,6 +990,30 @@ export function render(now) {
     ctx.strokeStyle = st.al ? (C.dark ? '#fff' : '#1F1E1B') : C.accent;
     ctx.lineWidth = st.al ? 2.2 : 1.6;
     ctx.stroke();
+
+    // tiny countries (Monaco, Liechtenstein...) are invisible at globe scale: draw a pulsing ring marker
+    try {
+      const ll = sc.mainCen || sc.cen;
+      const b = d3.geoPath(proj).bounds(sc);
+      const sz = Math.max(b[1][0] - b[0][0], b[1][1] - b[0][1]);
+      const p = ll && proj(ll);
+      const vis = p && d3.geoDistance(ll, [-proj.rotate()[0], -proj.rotate()[1]]) < Math.PI / 2;
+      if (vis && isFinite(sz) && sz < 28) {
+        const pulse = (Date.now() % 1400) / 1400;
+        const r = Math.max(10, sz / 2 + 8);
+        ctx.beginPath();
+        ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
+        ctx.strokeStyle = C.dark ? '#fff' : '#1F1E1B';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(p[0], p[1], r + pulse * 12, 0, Math.PI * 2);
+        ctx.strokeStyle = C.dark ? `rgba(255,255,255,${0.7 * (1 - pulse)})` : `rgba(31,30,27,${0.7 * (1 - pulse)})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+        st.dirty = true;
+      }
+    } catch (e) {}
   }
 
   // hotspot poly outlines
