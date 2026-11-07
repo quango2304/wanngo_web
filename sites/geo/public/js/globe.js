@@ -1,8 +1,8 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0 } from '../data/countries.js?v=20261108';
+import { C0 } from '../data/countries.js?v=20261108b';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL, REF } from '../data/alliances.js';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108b';
 import {
   $,
   norm,
@@ -44,7 +44,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108';
+} from './state.js?v=20261108b';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -835,6 +835,8 @@ export function render(now) {
   const slowDev = st.moving && hiCost > FRAME_BUDGET_MS && !probe;
   const lowres = (slowDev && k < 2.5) || (st.spin && k < 1.5);
   lastLowres = lowres;
+  // Labels and markers stay hidden on probe frames too, so a one-off detailed frame mid-drag doesn't flash text.
+  const noText = lowres || (probe && k < 2.5);
   proj.precision(k > 4 ? 1.2 : k > 2 ? 0.8 : 0.5);
   const feats = lowres ? MAP.F110 : MAP.F;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
@@ -1283,7 +1285,7 @@ export function render(now) {
   });
 
   // dots for tiny countries
-  if (!lowres && k >= 1.4) {
+  if (!noText && k >= 1.4) {
     const cen0 = proj.invert(proj.translate());
     for (const f of MAP.F) {
       if (f.rg === 'antarctic') continue;
@@ -1363,7 +1365,7 @@ export function render(now) {
       ctx.fill();
 
       pushIconBox(q, 3.5);
-      if (act || (!lowres && (cap.rank === 1 ? k >= 1.35 : cap.rank === 2 ? k >= 1.85 : k >= 2.5))) {
+      if (act || (!noText && (cap.rank === 1 ? k >= 1.35 : cap.rank === 2 ? k >= 1.85 : k >= 2.5))) {
         capLabels.push({ q, act, raw: capName(cap) });
       }
     }
@@ -1391,7 +1393,7 @@ export function render(now) {
       ctx.stroke();
 
       pushIconBox(q, 3.5);
-      if (act || (!lowres && (isl.rank === 1 ? k >= 1.5 : k >= 2.2))) {
+      if (act || (!noText && (isl.rank === 1 ? k >= 1.5 : k >= 2.2))) {
         islLabels.push({ q, act, raw: islName(isl) });
       }
     }
@@ -1415,7 +1417,7 @@ export function render(now) {
       ctx.stroke();
 
       pushIconBox(q, 3.2);
-      if (act || (!lowres && (ct.rank === 1 ? k >= 1.65 : k >= 2.3))) {
+      if (act || (!noText && (ct.rank === 1 ? k >= 1.65 : k >= 2.3))) {
         cityLabels.push({ q, act, raw: cityName(ct) });
       }
     }
@@ -1581,7 +1583,7 @@ export function render(now) {
   }
 
   // 3. Country labels — placed BEFORE Capital/Island/City text labels so country names never get starved
-  if (st.ref.labels && !lowres) {
+  if (st.ref.labels && !noText) {
     ctx.font = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -1740,7 +1742,7 @@ export function render(now) {
   );
 
   // 5. Admin-1 labels (when zoomed in, placed after country & point markers)
-  if (st.on.admin1 && !lowres && k >= 2.0 && MAP.ADM1.length) {
+  if (st.on.admin1 && !noText && k >= 2.0 && MAP.ADM1.length) {
     ctx.font = 'italic 500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
@@ -1785,9 +1787,9 @@ export function render(now) {
       if (w.rank === 1) {
         if (k > 3.2) continue;
       } else if (w.rank === 2) {
-        if (lowres || k < 1.15) continue;
+        if (noText || k < 1.15) continue;
       } else {
-        if (lowres || k < 1.65) continue;
+        if (noText || k < 1.65) continue;
       }
       if (d3.geoDistance(w.pt, centerPt) > Math.PI / 2 - 0.08) continue;
       const q = proj(w.pt);
@@ -1854,7 +1856,7 @@ export function render(now) {
     ctx.lineWidth = 1.8;
     ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
     ctx.stroke();
-    if (act || (!lowres && k >= 2.2)) {
+    if (act || (!noText && k >= 2.2)) {
       const lbl = hName(h);
       ctx.font = '600 11px "Be Vietnam Pro",system-ui,sans-serif';
       ctx.textAlign = 'left';
@@ -1954,7 +1956,8 @@ export function loop(now) {
     }
     st.dirty = false;
   }
-  if (st.moving && now - st.lastMove > 160) {
+  // Still holding the pointer (paused mid-drag) counts as moving, so labels don't pop in and out.
+  if (st.moving && !st.drag && now - st.lastMove > 160) {
     st.moving = false;
     st.dirty = true;
   }

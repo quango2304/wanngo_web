@@ -1,5 +1,5 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0, TOOLS } from '../data/countries.js?v=20261108';
+import { C0, TOOLS } from '../data/countries.js?v=20261108b';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
 import { iconSvg } from './icons.js';
@@ -59,7 +59,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108';
+} from './state.js?v=20261108b';
 import {
   cv,
   proj,
@@ -77,7 +77,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108';
+} from './globe.js?v=20261108b';
 import {
   CONT,
   AMERICAS,
@@ -94,7 +94,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108';
+} from '../data/continents.js?v=20261108b';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -602,29 +602,6 @@ function contHTML(o) {
   if (card.pop) s += `<p class="note">${enMode ? POP_NOTE.en : POP_NOTE.vi}</p>`;
   s += `<p class="note">${enMode ? BOUNDARY_NOTE.en : BOUNDARY_NOTE.vi}</p>`;
   return s;
-}
-
-function renderContLegend() {
-  const lg = $('#contLeg');
-  if (!lg) return;
-  if (!st.on.continents) {
-    lg.classList.remove('show');
-    return;
-  }
-  const item = k2 => `<button type="button" class="cl-it" data-cont="${k2}"><i class="cdot" style="${contVars(k2)}"></i>${contLbl(k2)}</button>`;
-  lg.innerHTML = `<div class="cl-hd"><b>${tr('Châu lục', 'Continents')}</b><button class="lnk" id="contX" type="button" style="padding:0">${tr('Tắt', 'Off')}</button></div>
-    <div class="cl-row">${['asia', 'europe', 'africa'].map(item).join('')}</div>
-    <div class="cl-row"><span class="cl-grp">${contLbl('americas')}:</span>${['nam', 'sam'].map(item).join('')}</div>
-    <div class="cl-row">${['oceania', 'antarctica'].map(item).join('')}<span class="cl-it cl-dash"><i></i>${tr('Ranh giới trên đất liền', 'Land boundary')}</span></div>`;
-  lg.setAttribute('aria-label', tr('Châu lục', 'Continents'));
-  lg.classList.add('show');
-  lg.querySelectorAll('[data-cont]').forEach(e => (e.onclick = () => select(CONT_OBJS[e.dataset.cont], true)));
-  $('#contX').onclick = () => {
-    st.on.continents = false;
-    savePrefs();
-    buildLayers();
-    st.dirty = true;
-  };
 }
 
 function countryHTML(f, ll) {
@@ -1208,7 +1185,6 @@ export function buildLayers() {
         st.dirty = true;
       })
   );
-  renderContLegend();
 
   $('#refs').innerHTML = Object.entries(REF)
     .map(([key, r]) => {
