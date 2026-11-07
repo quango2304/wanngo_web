@@ -1,23 +1,23 @@
 // Macroeconomic & Development Profiles for 241 Countries & Territories (Bilingual VI / EN)
 export const ECON_TIERS = {
   "adv": {
-    "vi": "Kinh tế phát triển · Thu nhập cao",
-    "en": "Advanced · High-Income",
+    "vi": "Thu nhập cao",
+    "en": "High income",
     "c": "#10B981"
   },
   "emg": {
-    "vi": "Đang phát triển · Thu nhập TB cao",
-    "en": "Emerging · Upper-Middle Income",
+    "vi": "Thu nhập trung bình cao",
+    "en": "Upper-middle income",
     "c": "#0EA5E9"
   },
   "dev": {
-    "vi": "Đang phát triển · Thu nhập TB thấp",
-    "en": "Developing · Lower-Middle Income",
+    "vi": "Thu nhập trung bình thấp",
+    "en": "Lower-middle income",
     "c": "#F59E0B"
   },
   "low": {
-    "vi": "Kém phát triển · Thu nhập thấp",
-    "en": "Least Developed · Low-Income",
+    "vi": "Thu nhập thấp",
+    "en": "Low income",
     "c": "#EF4444"
   }
 };

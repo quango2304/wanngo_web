@@ -1,5 +1,5 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0, TOOLS } from '../data/countries.js?v=20261108f';
+import { C0, TOOLS } from '../data/countries.js?v=20261108g';
 import { RELC, REL } from '../data/religions.js';
 import { LAYERS, UPDATED, H } from '../data/hotspots.js';
 import { iconSvg } from './icons.js';
@@ -59,7 +59,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108f';
+} from './state.js?v=20261108g';
 import {
   cv,
   proj,
@@ -77,7 +77,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108f';
+} from './globe.js?v=20261108g';
 import {
   CONT,
   AMERICAS,
@@ -94,7 +94,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108f';
+} from '../data/continents.js?v=20261108g';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -1309,7 +1309,7 @@ export function setAl(key, openLeaderboard = false) {
     const tiers = Object.values(ECON_TIERS)
       .map(t => `<span><span class="sq" style="background:${t.c}"></span>${enMode ? t.en : t.vi}</span>`)
       .join('');
-    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${tr('Phân nhóm Kinh tế Thế giới', 'Global Economic Development Tiers')}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${tr('Theo ngưỡng GNI bình quân đầu người & phân loại IMF / Ngân hàng Thế giới (2024–2025)', 'By GNI per capita thresholds & IMF / World Bank classification (2024–2025)')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${tiers}</div>`;
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${tr('Phân nhóm Kinh tế Thế giới', 'Global Economic Development Tiers')}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${tr('Theo phân loại thu nhập của Ngân hàng Thế giới (GNI/người, cập nhật 1/7/2026); số liệu GDP: WDI 2024', 'By World Bank income classification (GNI per capita, updated 1 Jul 2026); GDP figures: WDI 2024')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${tiers}</div>`;
     lg.classList.add('show');
     $('#alX').onclick = () => setAl('');
     return;
