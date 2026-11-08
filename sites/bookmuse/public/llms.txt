@@ -6,7 +6,7 @@ Bookmuse is free, with no ads and no in-app purchases, and an account is optiona
 
 ## Books and library
 
-- Opens DRM-free EPUB, PDF, Kindle (MOBI, AZW3), FB2, TXT and Markdown. Books from stores that add DRM can't be opened.
+- Opens DRM-free EPUB, PDF, Kindle (MOBI, AZW3), FB2, TXT and Markdown, plus HTML notes (opened as they are). Books from stores that add DRM can't be opened.
 - Adds books from Files, other apps, Google Drive, Dropbox, Project Gutenberg, ManyBooks and OPDS servers such as Calibre, Komga, Kavita and Stump.
 - Library with folders, sorting and filters. Books on the device have no limit.
 
@@ -39,6 +39,7 @@ Bookmuse is free, with no ads and no in-app purchases, and an account is optiona
 ## Readers and sharing
 
 - A Feed for posts about books, with ratings, quotes, comments, likes and follows.
+- Clubs: small, members-only book clubs inside the Feed, joined by invite or link.
 - Share a book by link, and make quote images with a QR code.
 - Reading stats with a daily goal, streaks and charts, plus widgets and Shortcuts.
 
