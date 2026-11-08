@@ -2246,7 +2246,7 @@ export const C0 = {
     "pop": "~37 triệu",
     "area": "313 nghìn km²",
     "ch": "c1",
-    "sum": "Trải rộng trên diện tích 312.696 km² ở khu vực Trung Âu, Ba Lan có địa hình nghiêng dần từ bức tường núi Sudetes và Carpathian (dãy Tatra) ở biên giới phía nam xuống vùng đồng bằng rộng lớn hoàn toàn bằng phẳng và vươn tới bờ biển Baltic dài 500 km ở phía bắc. Nằm ngay tại điểm thắt nút hẹp nhất (~500 km) của Đồng bằng Bắc Âu kẹp giữa hai cường quốc lịch sử là Đức ở phía tây và Nga ở phía đông, vị trí của Ba Lan là ngã tư chiến lược quyết định vận mệnh của toàn bộ lục địa châu Âu. Từng là một đại cường quốc ở thế kỷ 16–17 dưới thời Thịnh vượng chung Ba Lan – Litva trải dài từ biển Baltic tới sát Biển Đen, nhưng do thiếu biên giới tự nhiên bảo vệ ở hai sườn Đông – Tây, Ba Lan đã 3 lần bị các đế chế láng giềng xâu xé và xóa tên hoàn toàn khỏi bản đồ thế giới (năm 1795 và một lần nữa bởi Hiệp ước Hitler – Stalin năm 1939), trước khi toàn bộ lãnh thổ bị dịch chuyển ~200 km về phía tây năm 1945.\n\nKể từ khi lật đổ chế độ cộng sản năm 1989 (phong trào Công đoàn Đoàn kết), gia nhập NATO (1999) và Liên minh châu Âu (2004), Ba Lan đã tạo nên kỳ tích tăng trưởng kinh tế liên tục suốt hơn ba thập kỷ và giữ bản sắc Công giáo – dân tộc kiên cường. Bước sang giai đoạn 2024–2026 dưới chính phủ của Thủ tướng Donald Tusk (trong cơ chế chia sẻ quyền lực với Tổng thống bảo thủ), Warsaw đã khôi phục quan hệ nồng ấm với Brussels, giải ngân hàng chục tỷ Euro quỹ EU và vươn lên thành trụ cột quân sự số một ở sườn đông NATO. Với mức chi tiêu quốc phòng đạt kỷ lục ~4,7% GDP vào năm 2025 (cao nhất trong toàn khối NATO), Ba Lan đang xây dựng lực lượng lục quân mạnh nhất châu Âu thuộc EU và triển khai công sự \"Lá chắn phía Đông\" dọc biên giới Nga – Belarus, đồng thời đối mặt thách thức già hóa dân số và chuyển đổi năng lượng khỏi than đá.",
+    "sum": "Trải rộng trên diện tích 312.696 km² ở khu vực Trung Âu, Ba Lan có địa hình nghiêng dần từ bức tường núi Sudetes và Carpathian (dãy Tatra) ở biên giới phía nam xuống vùng đồng bằng rộng lớn hoàn toàn bằng phẳng và vươn tới bờ biển Baltic dài 500 km ở phía bắc. Nằm ngay tại điểm thắt nút hẹp nhất (~500 km) của Đồng bằng Bắc Âu kẹp giữa hai cường quốc lịch sử là Đức ở phía tây và Nga ở phía đông, vị trí của Ba Lan là ngã tư chiến lược quyết định vận mệnh của toàn bộ lục địa châu Âu. Từng là một đại cường quốc ở thế kỷ 16–17 dưới thời Thịnh vượng chung Ba Lan – Litva trải dài từ biển Baltic tới sát Biển Đen, nhưng do thiếu biên giới tự nhiên bảo vệ ở hai sườn Đông – Tây, Ba Lan đã 3 lần bị các đế chế láng giềng xâu xé và xóa tên hoàn toàn khỏi bản đồ thế giới (năm 1795 và một lần nữa bởi Hiệp ước Hitler – Stalin năm 1939), trước khi toàn bộ lãnh thổ bị dịch chuyển ~200 km về phía tây năm 1945.\n\nKể từ khi lật đổ chế độ cộng sản năm 1989 (phong trào Công đoàn Đoàn kết), gia nhập NATO (1999) và Liên minh châu Âu (2004), Ba Lan đã tạo nên kỳ tích tăng trưởng kinh tế liên tục suốt hơn ba thập kỷ và giữ bản sắc Công giáo – dân tộc kiên cường. Bước sang giai đoạn 2025–2026 dưới chính phủ của Thủ tướng Donald Tusk (trong cơ chế chia sẻ quyền lực với Tổng thống bảo thủ Karol Nawrocki, người đắc cử vào tháng 6/2025 kế nhiệm ông Andrzej Duda), Warsaw đã khôi phục quan hệ nồng ấm với Brussels, giải ngân hàng chục tỷ Euro quỹ EU và vươn lên thành trụ cột quân sự số một ở sườn đông NATO. Với mức chi tiêu quốc phòng đạt kỷ lục ~4,7% GDP vào năm 2025 (cao nhất trong toàn khối NATO), Ba Lan đang xây dựng lực lượng lục quân mạnh nhất châu Âu thuộc EU và triển khai công sự \"Lá chắn phía Đông\" dọc biên giới Nga – Belarus, đồng thời đối mặt thách thức già hóa dân số và chuyển đổi năng lượng khỏi than đá.",
     "t": [
       [
         "b",
@@ -2276,7 +2276,9 @@ export const C0 = {
     ],
     "hs": [
       "northplain",
-      "oderneisse"
+      "oderneisse",
+      "suwalki",
+      "carpathians"
     ]
   },
   "Germany": {
@@ -2357,7 +2359,8 @@ export const C0 = {
       "rhine",
       "alps",
       "dover",
-      "northplain"
+      "northplain",
+      "pyrenees"
     ]
   },
   "United Kingdom": {
@@ -2510,7 +2513,8 @@ export const C0 = {
     "hs": [
       "rhine",
       "northplain",
-      "r_suez"
+      "r_suez",
+      "res_asml"
     ]
   },
   "Luxembourg": {
@@ -2695,7 +2699,8 @@ export const C0 = {
     ],
     "hs": [
       "gibraltar",
-      "tordesillas"
+      "tordesillas",
+      "pyrenees"
     ]
   },
   "Portugal": {
@@ -2768,7 +2773,9 @@ export const C0 = {
         "Nhờ lượng tuyết dày trên đỉnh Pyrenees tan chảy quanh năm và các hồ băng núi cao, Andorra hoàn toàn tự chủ về nguồn nước ngọt sạch cho cư dân lẫn hàng triệu du khách. Nhà máy thủy điện hồ Engolasters cũng tận dụng độ dốc núi để cung cấp một phần điện năng nội địa bên cạnh nguồn điện nhập khẩu từ Pháp và Tây Ban Nha."
       ]
     ],
-    "hs": []
+    "hs": [
+      "pyrenees"
+    ]
   },
   "Italy": {
     "cap": "Rome",
@@ -2804,7 +2811,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "alps"
+      "alps",
+      "mediterranean"
     ]
   },
   "Vatican": {
@@ -2944,7 +2952,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "r_suez"
+      "r_suez",
+      "mediterranean"
     ]
   },
   "Denmark": {
@@ -3058,7 +3067,8 @@ export const C0 = {
       "nsr",
       "skagerrak",
       "arctic",
-      "arcticice"
+      "arcticice",
+      "taiga"
     ]
   },
   "Sweden": {
@@ -3094,7 +3104,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "skagerrak"
+      "skagerrak",
+      "taiga"
     ]
   },
   "Finland": {
@@ -3129,7 +3140,9 @@ export const C0 = {
         "Với 188.000 hồ nước chiếm 10% diện tích lãnh thổ và nguồn nước ngầm băng tích dồi dào, Phần Lan nằm trong nhóm quốc gia có chất lượng và trữ lượng nước ngọt tự nhiên sạch nhất hành tinh. Đất nước hoàn toàn tự chủ 100% tài nguyên nước cho cả sinh hoạt, lâm nghiệp lẫn sản xuất thủy điện."
       ]
     ],
-    "hs": []
+    "hs": [
+      "taiga"
+    ]
   },
   "Åland": {
     "cap": "Mariehamn",
@@ -3278,7 +3291,7 @@ export const C0 = {
     "cap": "Vilnius",
     "pop": "~2,88 triệu",
     "area": "65,3 nghìn km²",
-    "sum": "Là quốc gia cực nam và lớn nhất trong ba nước vùng Baltic, Litva trải dài trên vùng đồng bằng và đồi hồ băng tích ở rìa đông bắc Đồng bằng Bắc Âu, có 90 km bờ biển mở ra biển Baltic. Vào thế kỷ 14–16, Đại công quốc Litva từng là đế chế hùng mạnh trải dài từ biển Baltic tới Biển Đen và sau đó liên kết với Ba Lan lập nên Liên bang Ba Lan – Litva trước khi bị Nga hoàng thôn tính năm 1795. Tháng 3/1990, Litva là nước cộng hòa đầu tiên tuyên bố khôi phục độc lập khỏi Liên Xô, mở đường gia nhập EU và NATO năm 2004.\n\nNgày nay, Litva nằm tại điểm nhạy cảm bậc nhất của NATO khi bị kẹp giữa Belarus (cách thủ đô Vilnius chưa đầy 35 km) và vùng lãnh thổ tách rời Kaliningrad của Nga ở phía tây nam. Bước sang 2025–2026, Litva tiếp nhận Lữ đoàn thiết giáp 45 của Đức đồn trú thường trực, hoàn tất tách khỏi lưới điện BRELL của Nga tháng 2/2025 và nâng chi tiêu quốc phòng lên 3,5–4% GDP. Đồng thời, đất nước dẫn đầu kinh tế vùng Baltic nhờ hệ sinh thái Fintech, công nghệ laser và tự chủ năng lượng LNG.",
+    "sum": "Là quốc gia cực nam và lớn nhất trong ba nước vùng Baltic, Litva trải dài trên vùng đồng bằng và đồi hồ băng tích ở rìa đông bắc Đồng bằng Bắc Âu, có 90 km bờ biển mở ra biển Baltic. Vào thế kỷ 14–16, Đại công quốc Litva từng là đế chế hùng mạnh trải dài từ biển Baltic tới Biển Đen và sau đó liên kết với Ba Lan lập nên Liên bang Ba Lan – Litva trước khi bị Nga hoàng thôn tính năm 1795. Tháng 3/1990, Litva là nước cộng hòa đầu tiên tuyên bố khôi phục độc lập khỏi Liên Xô, mở đường gia nhập EU, NATO năm 2004 và Eurozone năm 2015.\n\nNgày nay, Litva nằm tại điểm nhạy cảm bậc nhất của NATO khi bị kẹp giữa Belarus (cách thủ đô Vilnius chưa đầy 35 km) và vùng lãnh thổ tách rời Kaliningrad của Nga ở phía tây nam. Bước sang 2025–2026, Litva tiếp nhận Lữ đoàn thiết giáp 45 của Đức đồn trú thường trực, hoàn tất tách khỏi lưới điện BRELL của Nga tháng 2/2025 và nâng chi tiêu quốc phòng lên 3,5–4% GDP. Đồng thời, đất nước dẫn đầu kinh tế vùng Baltic nhờ hệ sinh thái Fintech, công nghệ laser và tự chủ năng lượng LNG.",
     "t": [
       [
         "b",
@@ -3307,14 +3320,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "northplain"
+      "northplain",
+      "suwalki"
     ]
   },
   "Czechia": {
     "cap": "Prague",
     "pop": "~10,9 triệu",
     "area": "78,9 nghìn km²",
-    "sum": "Nằm ngay trung tâm địa lý của châu Âu, Cộng hòa Séc có cấu trúc như một lòng chảo hình thoi (vùng Bohemia và Moravia) được bao bọc bốn phía bởi các dãy núi tự nhiên. Bức tường núi Sudetes, núi Quặng và rừng Bohemia đã tạo thành pháo đài địa lý giúp vương quốc Bohemia của người Slav bảo tồn bản sắc riêng suốt hơn một thiên niên kỷ giữa thế giới nói tiếng Đức. Từ thế kỷ 14 khi Praha là kinh đô Đế chế La Mã Thần thánh, vùng đất này đã trở thành công xưởng chế tạo máy và vũ khí hàng đầu của Đế quốc Áo – Hung.\n\nSau Cách mạng Nhung năm 1989 và cuộc 'Ly hôn Nhung' năm 1993 tách Tiệp Khắc thành Séc và Slovakia trong hòa bình, Praha nhanh chóng gia nhập NATO (1999) và EU (2004). Bước sang 2025–2026, Séc có tỷ trọng công nghiệp cao và tỷ lệ thất nghiệp thấp nhất EU (~2,7%), đồng thời khởi xướng 'Sáng kiến Đạn dược Séc' viện trợ cho Ukraine và chấm dứt hoàn toàn sự phụ thuộc vào dầu mỏ Nga. Thách thức lớn của đất nước là chuyển đổi ngành ô tô sang xe điện và khắc phục thiếu hụt lao động.",
+    "sum": "Nằm ngay trung tâm địa lý của châu Âu, Cộng hòa Séc có cấu trúc như một lòng chảo hình thoi (vùng Bohemia và Moravia) được bao bọc bốn phía bởi các dãy núi tự nhiên. Bức tường núi Sudetes, núi Quặng và rừng Bohemia đã tạo thành pháo đài địa lý giúp vương quốc Bohemia của người Slav bảo tồn bản sắc riêng suốt hơn một thiên niên kỷ giữa thế giới nói tiếng Đức. Từ thế kỷ 14 khi Praha là kinh đô Đế chế La Mã Thần thánh, vùng đất này đã trở thành công xưởng chế tạo máy và vũ khí hàng đầu của Đế quốc Áo – Hung.\n\nSau Cách mạng Nhung năm 1989 và cuộc 'Ly hôn Nhung' năm 1993 tách Tiệp Khắc thành Séc và Slovakia trong hòa bình, Praha nhanh chóng gia nhập NATO (1999) và EU (2004). Bước sang 2025–2026, sau cuộc tổng tuyển cử tháng 10/2025 đưa ông Andrej Babiš (đảng ANO) trở lại ghế Thủ tướng, Séc duy trì tỷ trọng công nghiệp cao và tỷ lệ thất nghiệp thấp nhất EU (~2,7%), đồng thời hoàn thành mở rộng đường ống TAL-PLUS chấm dứt hoàn toàn sự phụ thuộc vào dầu mỏ Nga. Thách thức lớn của đất nước là chuyển đổi ngành ô tô sang xe điện và khắc phục thiếu hụt lao động.",
     "t": [
       [
         "g",
@@ -3343,7 +3357,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "oderneisse"
+      "oderneisse",
+      "carpathians"
     ]
   },
   "Slovakia": {
@@ -3379,14 +3394,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "danube"
+      "danube",
+      "carpathians"
     ]
   },
   "Hungary": {
     "cap": "Budapest",
     "pop": "~9,6 triệu",
     "area": "93 nghìn km²",
-    "sum": "Nằm trọn trong lòng chảo bồn địa Pannonian ở Trung Âu và chia đôi bởi sông Danube cùng sông Tisza, Hungary là đại đồng bằng phẳng lì từng thu hút các bộ tộc du mục Magyar từ thảo nguyên Á – Âu đến định cư cuối thế kỷ 9. Được Vua Thánh Stephen I lập nên năm 1000, biên giới lịch sử của Vương quốc Hungary từng vươn rộng tới đỉnh vòng cung núi Carpathian và bờ biển Adriatic suốt gần một thiên niên kỷ. Tuy nhiên, Hiệp ước Trianon năm 1920 sau Thế chiến I đã cắt mất 71% diện tích, 2/3 dân số, toàn bộ vành đai núi phòng thủ tự nhiên lẫn lối ra biển của Hungary.\n\nBiến cố năm 1920 cùng ngôn ngữ Magyar thuộc ngữ hệ Uralic biệt lập đã định hình sâu sắc tư duy bảo vệ chủ quyền dân tộc của Budapest. Bước sang 2025–2026, dù thuộc cả NATO và EU, chính phủ Hungary theo đuổi học thuyết 'Kết nối Đông – Tây': vừa giữ hợp tác năng lượng với Nga, vừa biến đất nước thành trung tâm sản xuất xe sang của Đức kết hợp với các siêu nhà máy pin và xe điện lớn nhất châu Âu của Trung Quốc (CATL, BYD). Thách thức lớn của nước này là lạm phát và việc bị EU đóng băng quỹ ngân sách.",
+    "sum": "Nằm trọn trong lòng chảo bồn địa Pannonian ở Trung Âu và chia đôi bởi sông Danube cùng sông Tisza, Hungary là đại đồng bằng phẳng lì từng thu hút các bộ tộc du mục Magyar từ thảo nguyên Á – Âu đến định cư cuối thế kỷ 9. Được Vua Thánh Stephen I lập nên năm 1000, biên giới lịch sử của Vương quốc Hungary từng vươn rộng tới đỉnh vòng cung núi Carpathian và bờ biển Adriatic suốt gần một thiên niên kỷ. Tuy nhiên, Hiệp ước Trianon năm 1920 sau Thế chiến I đã cắt mất 71% diện tích, 2/3 dân số, toàn bộ vành đai núi phòng thủ tự nhiên lẫn lối ra biển của Hungary.\n\nBiến cố năm 1920 cùng ngôn ngữ Magyar thuộc ngữ hệ Uralic biệt lập đã định hình sâu sắc tư duy bảo vệ chủ quyền dân tộc của Budapest. Bước sang 2025–2026, cuộc tổng tuyển cử lịch sử ngày 12/4/2026 đã mang lại chiến thắng vang dội cho Đảng Tisza của ông Péter Magyar, chấm dứt 16 năm cầm quyền của Thủ tướng Viktor Orbán. Chính phủ mới mở ra bước ngoặt tái gắn kết sâu sắc với EU nhằm giải phóng các quỹ bị đóng băng, trong khi tiếp tục quản lý các đại dự án nhà máy pin và xe điện của Trung Quốc (CATL, BYD) kết hợp với các hãng xe Đức. Thách thức lớn của Hungary là khắc phục thâm hụt ngân sách và lạm phát.",
     "t": [
       [
         "b",
@@ -3415,7 +3431,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "danube"
+      "danube",
+      "carpathians"
     ]
   },
   "Slovenia": {
@@ -3557,7 +3574,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "danube"
+      "danube",
+      "pipe_turkstream"
     ]
   },
   "Montenegro": {
@@ -3730,14 +3748,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "bosphorus"
+      "bosphorus",
+      "mediterranean"
     ]
   },
   "Bulgaria": {
     "cap": "Sofia",
     "pop": "~6,4 triệu",
     "area": "111 nghìn km²",
-    "sum": "Nằm ở phía đông bán đảo Balkan, Bulgaria có địa hình cân xứng với dãy núi Balkan (Stara Planina) chạy vắt ngang từ tây sang đông, chia đất nước thành đồng bằng sông Danube ở phía bắc và đồng bằng Thrace ở phía nam trước khi mở ra Biển Đen. Được thành lập từ năm 681, Đế chế Bulgaria thời Trung cổ từng là cường quốc đối trọng với Byzantine và là cái nôi khai sinh bảng chữ cái Cyrillic dùng khắp thế giới Slav. Vị trí kiểm soát các đèo núi dẫn xuống Istanbul từng biến lãnh thổ này thành chiến trường quyết định trong chiến tranh Nga – Thổ (1877–1878).\n\nSau thời kỳ Chiến tranh Lạnh, Bulgaria đã gia nhập NATO (2004), EU (2007) và chính thức hoàn tất gia nhập không gian Schengen cả trên bộ vào tháng 1/2025. Giữ vai trò sườn đông nam chiến lược của phương Tây trên Biển Đen, quốc gia này sở hữu hai cảng lớn Varna, Burgas cùng nền công nghiệp quốc phòng sản xuất đạn pháo quy mô lớn. Tuy vậy, Sofia đang phải đối mặt với tình trạng phân mảnh chính trị qua nhiều cuộc bầu cử liên tiếp và tốc độ suy giảm dân số nhanh bậc nhất châu Âu.",
+    "sum": "Nằm ở phía đông bán đảo Balkan, Bulgaria có địa hình cân xứng với dãy núi Balkan (Stara Planina) chạy vắt ngang từ tây sang đông, chia đất nước thành đồng bằng sông Danube ở phía bắc và đồng bằng Thrace ở phía nam trước khi mở ra Biển Đen. Được thành lập từ năm 681, Đế chế Bulgaria thời Trung cổ từng là cường quốc đối trọng với Byzantine và là cái nôi khai sinh bảng chữ cái Cyrillic dùng khắp thế giới Slav. Vị trí kiểm soát các đèo núi dẫn xuống Istanbul từng biến lãnh thổ này thành chiến trường quyết định trong chiến tranh Nga – Thổ (1877–1878).\n\nSau thời kỳ Chiến tranh Lạnh, Bulgaria đã gia nhập NATO (2004), EU (2007), chính thức hoàn tất gia nhập không gian Schengen cả trên bộ vào tháng 1/2025 và trở thành thành viên thứ 21 của khu vực đồng Euro (Eurozone) vào ngày 1/1/2026. Giữ vai trò sườn đông nam chiến lược của phương Tây trên Biển Đen, quốc gia này sở hữu hai cảng lớn Varna, Burgas cùng nền công nghiệp quốc phòng sản xuất đạn pháo quy mô lớn. Tuy vậy, Sofia đang phải đối mặt với tình trạng phân mảnh chính trị qua nhiều cuộc bầu cử liên tiếp và tốc độ suy giảm dân số nhanh bậc nhất châu Âu.",
     "t": [
       [
         "g",
@@ -3756,8 +3775,8 @@ export const C0 = {
       ],
       [
         "g",
-        "Gia nhập NATO (2004), EU (2007) và hoàn tất gia nhập không gian Schengen vào tháng 1/2025",
-        "Việc hoàn tất gia nhập biên giới đường bộ Schengen vào tháng 1/2025 đã giúp hàng hóa Bulgaria lưu thông thông suốt qua Romania và Hy Lạp vào thị trường EU. Tuy nhiên, dân số nước này đã giảm từ gần 9 triệu năm 1989 xuống còn ~6,4 triệu người hiện nay do tỷ lệ sinh thấp và di cư."
+        "Gia nhập NATO (2004), EU (2007), Schengen (1/2025) và Eurozone (thành viên thứ 21 ngày 1/1/2026)",
+        "Việc hoàn tất gia nhập biên giới đường bộ Schengen vào tháng 1/2025 cùng sự kiện chính thức gia nhập khu vực đồng Euro (Eurozone) với tư cách thành viên thứ 21 vào ngày 1/1/2026 đã giúp hàng hóa và dòng vốn Bulgaria lưu thông thông suốt qua Romania và Hy Lạp vào thị trường chung EU. Tuy nhiên, dân số nước này đã giảm từ gần 9 triệu năm 1989 xuống còn ~6,4 triệu người hiện nay do tỷ lệ sinh thấp và di cư."
       ],
       [
         "g",
@@ -3767,14 +3786,15 @@ export const C0 = {
     ],
     "hs": [
       "danube",
-      "bosphorus"
+      "bosphorus",
+      "blacksea"
     ]
   },
   "Romania": {
     "cap": "Bucharest",
     "pop": "~19 triệu",
     "area": "238 nghìn km²",
-    "sum": "Là quốc gia lớn nhất Đông Nam Âu cả về diện tích lẫn dân số, Romania có vòng cung dãy núi Carpathian uốn lượn ngay giữa lòng đất nước, bao bọc lấy cao nguyên Transylvania như một tòa thành tự nhiên. Hình thành từ cội nguồn Dacia cổ đại được La Mã hóa — biến tiếng Romania thành một \"ốc đảo ngôn ngữ Latinh\" giữa vùng Đông Âu Slav — nhà nước hiện đại ra đời qua sự hợp nhất lịch sử của Wallachia, Moldavia và Transylvania vào năm 1859 và 1918. Ở phía đông nam, nước này nắm giữ hơn 1.000 km hạ lưu và toàn bộ vùng châu thổ sông Danube đổ ra Biển Đen.\n\nKể từ khi cuộc chiến Nga – Ukraine bùng nổ sát biên giới, Romania đã trở thành trụ cột phòng thủ không thể thay thế trên sườn đông nam của NATO với hệ thống lá chắn tên lửa Deveselu và đại căn cứ không quân Mihail Kogălniceanu. Cảng biển nước sâu Constanța không chỉ lớn nhất Biển Đen mà còn là phao cứu sinh xuất khẩu ngũ cốc cho Ukraine. Với việc gia nhập hoàn toàn khối Schengen vào tháng 1/2025 và chuẩn bị khai thác siêu mỏ khí đốt Neptun Deep vào năm 2027, Romania đang vươn lên thành cường quốc công nghiệp – năng lượng của khu vực bất chấp áp lực thâm hụt ngân sách.",
+    "sum": "Là quốc gia lớn nhất Đông Nam Âu cả về diện tích lẫn dân số, Romania có vòng cung dãy núi Carpathian uốn lượn ngay giữa lòng đất nước, bao bọc lấy cao nguyên Transylvania như một tòa thành tự nhiên. Hình thành từ cội nguồn Dacia cổ đại được La Mã hóa — biến tiếng Romania thành một \"ốc đảo ngôn ngữ Latinh\" giữa vùng Đông Âu Slav — nhà nước hiện đại ra đời qua sự hợp nhất lịch sử của Wallachia, Moldavia và Transylvania vào năm 1859 và 1918. Ở phía đông nam, nước này nắm giữ hơn 1.000 km hạ lưu và toàn bộ vùng châu thổ sông Danube đổ ra Biển Đen.\n\nKể từ khi cuộc chiến Nga – Ukraine bùng nổ sát biên giới, Romania đã trở thành trụ cột phòng thủ không thể thay thế trên sườn đông nam của NATO với hệ thống lá chắn tên lửa Deveselu và đại căn cứ không quân Mihail Kogălniceanu. Cảng biển nước sâu Constanța không chỉ lớn nhất Biển Đen mà còn là phao cứu sinh xuất khẩu ngũ cốc cho Ukraine. Với việc ông Nicușor Dan đắc cử Tổng thống trong cuộc bầu cử tháng 5/2025 (kế nhiệm ông Klaus Iohannis), gia nhập hoàn toàn khối Schengen vào tháng 1/2025 và chuẩn bị khai thác siêu mỏ khí đốt Neptun Deep vào năm 2027, Romania đang củng cố quỹ đạo thân phương Tây và vươn lên thành cường quốc công nghiệp – năng lượng của khu vực bất chấp áp lực thâm hụt ngân sách.",
     "t": [
       [
         "g",
@@ -3805,7 +3825,9 @@ export const C0 = {
     "hs": [
       "danube",
       "bosphorus",
-      "crimea"
+      "crimea",
+      "blacksea",
+      "carpathians"
     ]
   },
   "Egypt": {
