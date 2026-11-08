@@ -32,6 +32,7 @@ SOUNDS=(
   "switch|0.5|false|a crisp loud click of a wall light switch being flipped, plastic toggle, close recording"
   "tvon|1|false|an old television turning on, soft electric whump and static"
   "chair|1|false|an office chair rolling a short distance on a wooden floor"
+  "ahh|1.2|false|a young man's satisfied refreshed 'aaah' sigh right after a big gulp of a cold drink, one short exhale, close recording, no music"
 )
 
 want=("$@")

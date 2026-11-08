@@ -365,7 +365,7 @@
   // starts on the first tap or key press, and the speaker button in the bar mutes it.
   // --------------------------------------------------------------------------
   const CLIPS = ['key1', 'key2', 'key3', 'meow', 'purr', 'game', 'win', 'lose', 'day', 'night', 'ac', 'snore',
-    'coffee', 'steps', 'switch', 'tvon', 'chair'];
+    'coffee', 'steps', 'switch', 'tvon', 'chair', 'ahh'];
   const LOOP_RATE = { steps: 1.2 };
   const clips = {};
   const loops = {};
@@ -1017,12 +1017,18 @@
     const n = sprites.sip ? sprites.sip.width / SHEETS.sip[1] : 0;
     if (dev.state !== 'pause') return; // called away while it brewed
     dev.wait = (still || !n ? 0 : n / 6) + 1.2;
-    if (still || !n) return sayDev('ahh.');
+    if (still || !n) return refreshed();
     cup.on = true;
     play(cup, 'sip', seq(0, n - 1), 6, false, () => {
       cup.on = false;
-      sayDev('ahh.');
+      refreshed();
     });
+  }
+
+  // The sigh after a good gulp
+  function refreshed() {
+    sayDev('ahh.');
+    fx('ahh', 0.8, 0.95 + Math.random() * 0.1);
   }
 
   // The coffee machine makes one cup at a time, into the mug in its slot: the light goes
