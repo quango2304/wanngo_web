@@ -1,4 +1,4 @@
-import { $, MAP, st, HS, BY, readTheme, CAPITALS, CITIES, ISLANDS, ADM1_BY_ID, CAP_BY_ID, CITY_BY_ID, ISL_BY_ID, LAKE_BY_ID } from './state.js?v=20261109c';
+import { $, MAP, st, HS, BY, readTheme, CAPITALS, CITIES, ISLANDS, ADM1_BY_ID, CAP_BY_ID, CITY_BY_ID, ISL_BY_ID, LAKE_BY_ID } from './state.js?v=20261109d';
 import {
   ctx,
   proj,
@@ -15,8 +15,8 @@ import {
   updView,
   hideHint,
   pick
-} from './globe.js?v=20261109c';
-import { initUI, select, setAl, applyHash } from './ui.js?v=20261109c';
+} from './globe.js?v=20261109d';
+import { initUI, select, setAl, applyHash } from './ui.js?v=20261109d';
 
 async function boot() {
   readTheme();
@@ -52,7 +52,7 @@ async function boot() {
     })
     .catch(() => {});
 
-  fetch('assets/map/seas.json?v=20261109c', { priority: 'low' })
+  fetch('assets/map/seas.json?v=20261109d', { priority: 'low' })
     .then(r => r.json())
     .then(seas => {
       upgradeSeasData(seas);

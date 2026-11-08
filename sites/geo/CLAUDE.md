@@ -119,6 +119,20 @@ sites/geo/
   Refresh a story by re-checking its facts and moving `asof`; `scripts/check.mjs` fails on missing VI/EN, dates, https
   sources, bad indexes, or a layer, hotspot or country name that does not exist.
 
+### How an explainer is written (the owner's direction)
+
+- The story must make the reader understand the deep cause, not list facts. It opens with the whole argument (a first
+  step with `chain`: five links tagged `need` → `blocked` → `move` → `counter` → `outlook`), and every later step carries
+  a `tag` showing which link it supports. See `data/thesis_biendong.js` (applied by `withThesis()` in `stories.js`).
+- Open with a question the reader already has ("Vì sao Bắc Kinh quyết giữ Biển Đông?"), then "stand where they stand".
+- Each link: a bold `head` that reads like a headline and chains with the others when read alone ("Trung Quốc sống nhờ
+  đường biển." → "Nhưng lối nào ra biển cũng phải qua cửa hẹp." → "Vì thế…" → "Nhưng đó cũng là biển của người khác." →
+  "Hai nỗi sợ, một vùng biển."), then one to three short sentences with a concrete picture.
+- Step titles are claims that move the story ("Đường chín đoạn: Bắc Kinh vẽ, tòa trọng tài bác"), not topic labels.
+- Plain Vietnamese: short sentences, everyday words, one idea per sentence, no translated phrasing. One striking number
+  per link at most; the rest go in `facts`. Say "this is how analysts explain it" once at the top instead of in every
+  sentence, but keep each side's own words attributed ("Bắc Kinh thì nói…").
+
 ## Conventions
 
 - Plain ES modules, no build step, no framework. Keep it that way unless the owner asks.

@@ -3,45 +3,50 @@
 export const THESIS = {
   tags: ['need', 'counter', 'move', 'move', 'counter', 'outlook'],
   step: {
-    title: { vi: 'Vì sao Biển Đông là chuyện sống còn với Bắc Kinh', en: 'Why the East Sea is a matter of survival for Beijing' },
+    title: { vi: 'Vì sao Bắc Kinh quyết giữ Biển Đông?', en: 'Why is Beijing so set on the East Sea?' },
     text: {
-      vi: 'Hãy nhìn tấm bản đồ từ phía Bắc Kinh. Dưới đây là chuỗi lập luận mà nhiều nhà phân tích dùng để giải thích vì sao Biển Đông không chỉ là chuyện cá và dầu. Đây là lập luận của họ, không phải điều Bắc Kinh tự nói; các bước sau đưa dữ kiện cho từng mắt xích và lời của từng bên.',
-      en: 'Look at the map from Beijing’s side. Below is the chain of argument many analysts use to explain why the East Sea is not only about fish and oil. It is their argument, not something Beijing says about itself; the next steps give the facts for each link and each side’s own words.'
+      vi: 'Dù bị các nước xung quanh phản đối, dù có phán quyết quốc tế, Bắc Kinh vẫn không lùi ở Biển Đông. Vì sao? Thử đứng ở Bắc Kinh nhìn ra biển. Năm ý dưới đây là cách các nhà phân tích địa chính trị (như Tim Marshall) giải thích; các bước sau đưa dữ kiện cho từng ý.',
+      en: 'Despite protests from its neighbours and an international ruling, Beijing does not back down in the East Sea. Why? Stand in Beijing and look out to sea. The five points below are how geopolitical analysts (such as Tim Marshall) explain it; the next steps give the facts for each point.'
     },
     chain: [
       {
         tag: 'need',
+        head: { vi: 'Trung Quốc sống nhờ đường biển.', en: 'China lives off the sea lanes.' },
         text: {
-          vi: 'Trung Quốc sống nhờ thương mại và năng lượng chở bằng đường biển. Theo CSIS, năm 2024 mỗi eo Malacca và eo Đài Loan có hơn 2,4 nghìn tỷ USD hàng hóa đi qua. Đường ra đại dương phải luôn thông.',
-          en: 'China lives on trade and energy moved by sea. According to CSIS, in 2024 the Malacca and Taiwan straits each handled over $2.4 trillion of goods. The way out to the ocean has to stay open.'
+          vi: 'Hàng hóa đi ra, dầu khí đi vào, phần lớn bằng tàu. Riêng qua eo Malacca, năm 2024 có gần 963 tỷ USD hàng hóa của Trung Quốc (CSIS). Đường biển nghẽn thì nền kinh tế nghẹt.',
+          en: 'Goods go out and oil and gas come in, mostly by ship. Through the Strait of Malacca alone, nearly $963 billion of China’s trade passed in 2024 (CSIS). Block the sea lanes and the economy chokes.'
         }
       },
       {
         tag: 'blocked',
+        head: { vi: 'Nhưng lối nào ra biển cũng phải qua “cửa hẹp”.', en: 'But every way out runs through a narrow door.' },
         text: {
-          vi: 'Theo các nhà phân tích như Tim Marshall và báo cáo của CRS, phía đông Trung Quốc là chuỗi đảo thứ nhất (Nhật, Đài Loan, Philippines), nằm trong mạng đồng minh của Mỹ; phía nam là eo Malacca. Trong chiến tranh, các cửa này có thể bị khóa. CSIS (2026) lưu ý: Trung Quốc phụ thuộc eo Đài Loan nhiều hơn Malacca, và tàu có thể đi vòng, chậm và tốn kém hơn.',
-          en: 'According to analysts such as Tim Marshall and CRS reports, China’s east is the First Island Chain (Japan, Taiwan, the Philippines), tied into the US alliance network; to the south lies the Strait of Malacca. In a war these exits could be closed. CSIS (2026) adds that China depends more on the Taiwan Strait than on Malacca, and ships can sail around, slower and at a cost.'
+          vi: 'Phía đông là một vòng cung đảo: Nhật Bản và Philippines là đồng minh của Mỹ, Đài Loan mua vũ khí của Mỹ. Phía nam là eo Malacca, chỗ hẹp nhất chỉ khoảng 3 km. Các nhà phân tích nói: nếu có chiến tranh, những cửa này có thể bị khóa.',
+          en: 'To the east lies an arc of islands: Japan and the Philippines are US allies, and Taiwan buys US weapons. To the south is the Strait of Malacca, only about 3 km wide at its narrowest. Analysts say that in a war these doors could be shut.'
         }
       },
       {
         tag: 'move',
+        head: { vi: 'Vì thế Biển Đông thành vùng biển phải nắm.', en: 'So the East Sea becomes the sea to hold.' },
         text: {
-          vi: 'Biển Đông nằm giữa các cửa ấy, là vùng biển gần nhất Bắc Kinh có thể nắm. Theo lập luận này, Bắc Kinh coi việc kiểm soát nó, hoặc ít nhất không để ai khác kiểm soát, là thiết yếu: đường chín đoạn, đảo nhân tạo, đường băng. Bắc Kinh nói khác: sách trắng quốc phòng 2019 nói Trung Quốc bảo vệ an ninh đường biển và tự do hàng hải cho mọi nước, và xây dựng trên các đảo là thực thi chủ quyền.',
-          en: 'The East Sea lies between those exits and is the nearest sea Beijing can hold. On this argument Beijing sees controlling it, or at least denying others control, as essential: the nine-dash line, artificial islands, airstrips. Beijing puts it differently: its 2019 defence white paper says China safeguards the security of sea lanes and freedom of navigation for all countries, and that building on the islands is an exercise of sovereignty.'
+          vi: 'Nó nằm ngay trước cửa nhà Trung Quốc, giữa các lối ra. Theo các nhà phân tích, Bắc Kinh muốn nắm nó, hoặc ít nhất không để ai khác nắm: vẽ đường chín đoạn, đắp đảo nhân tạo, xây đường băng. Bắc Kinh thì nói họ chỉ bảo vệ chủ quyền và tự do hàng hải cho mọi nước.',
+          en: 'It sits right at China’s front door, between the exits. Analysts say Beijing wants to hold it, or at least keep anyone else from holding it: drawing the nine-dash line, building artificial islands and airstrips. Beijing says it is only protecting its sovereignty and freedom of navigation for all.'
         }
       },
       {
         tag: 'counter',
+        head: { vi: 'Nhưng đó cũng là biển của người khác.', en: 'But it is also other people’s sea.' },
         text: {
-          vi: 'Mỹ và đồng minh coi đó là mối đe dọa với tự do hàng hải. Việt Nam, Philippines, Malaysia, Indonesia cần chính vùng biển này để đánh cá và khai thác dầu khí, và lo bị ép. Việt Nam nói UNCLOS 1982 là cơ sở pháp lý duy nhất. Phán quyết năm 2016 kết luận đường chín đoạn không có cơ sở pháp lý; Trung Quốc không chấp nhận phán quyết.',
-          en: 'The US and its allies see it as a threat to freedom of navigation. Vietnam, the Philippines, Malaysia and Indonesia need this same sea for fishing and for oil and gas, and fear being squeezed. Vietnam says UNCLOS 1982 is the sole legal basis. The 2016 award concluded that the nine-dash line has no legal basis; China does not accept the award.'
+          vi: 'Việt Nam, Philippines, Malaysia, Indonesia sống nhờ chính vùng biển này: cá, dầu, khí. Luật biển quốc tế (UNCLOS) chia biển theo khoảng cách từ bờ, không theo lịch sử hay sức mạnh. Năm 2016, tòa trọng tài kết luận đường chín đoạn không có cơ sở pháp lý; Bắc Kinh bác phán quyết. Mỹ thì lo một cường quốc nắm cả tuyến hàng hải bận rộn bậc nhất thế giới.',
+          en: 'Vietnam, the Philippines, Malaysia and Indonesia live off this same sea: fish, oil, gas. The law of the sea (UNCLOS) divides the sea by distance from the coast, not by history or strength. In 2016 a tribunal concluded the nine-dash line has no legal basis; Beijing rejects the ruling. The US worries about one power holding one of the world’s busiest shipping routes.'
         }
       },
       {
         tag: 'outlook',
+        head: { vi: 'Hai nỗi sợ, một vùng biển.', en: 'Two fears, one sea.' },
         text: {
-          vi: 'Mỗi bên nhìn cùng một tấm bản đồ bằng nỗi sợ riêng: Bắc Kinh sợ bị nhốt ở các cửa ra; Mỹ và các nước ven biển sợ một cường quốc nắm cả vùng biển. Luật biển là thước đo chung, nhưng vì Bắc Kinh không chấp nhận phán quyết nên khoảng cách còn đó. Vì thế chuyện này không tự hết.',
-          en: 'Each side looks at the same map through its own fear: Beijing fears being shut in at its exits; the US and the coastal states fear one power holding the whole sea. The law of the sea is the common yardstick, but because Beijing does not accept the award the gap remains. That is why this does not go away by itself.'
+          vi: 'Bắc Kinh sợ bị nhốt. Các nước xung quanh sợ bị lấn. Với cả hai phía, đây là chuyện an ninh chứ không chỉ là chuyện cá hay dầu, nên căng thẳng khó tự hết.',
+          en: 'Beijing fears being shut in. Its neighbours fear being pushed out. For both, this is about security, not just fish or oil, so the tension does not easily fade.'
         }
       }
     ],

@@ -34,7 +34,7 @@ export const BIENDONG = {
   ],
   steps: [
     {
-      title: { vi: 'Con đường biển của thế giới', en: "The world's sea highway" },
+      title: { vi: 'Biển này là xa lộ của châu Á', en: 'This sea is Asia’s highway' },
       text: {
         vi: 'Biển Đông là vùng biển nửa kín giữa Đông Nam Á và Đông Á. Phía tây nam, nó nối Ấn Độ Dương qua eo Malacca; phía bắc, thông ra biển Hoa Đông và Thái Bình Dương qua eo Đài Loan và eo Luzon. Vì vậy một phần rất lớn thương mại và năng lượng của Đông Á đi qua đây.',
         en: 'The East Sea (South China Sea) is a semi-enclosed sea between Southeast and East Asia. To the southwest the Strait of Malacca links it to the Indian Ocean; to the north the Taiwan and Luzon straits open to the East China Sea and the Pacific. That is why so much of East Asia’s trade and energy passes through it.'
@@ -66,7 +66,7 @@ export const BIENDONG = {
       src: [0, 1]
     },
     {
-      title: { vi: 'Bảy bờ biển, một bộ luật chung', en: 'Seven coasts, one rulebook' },
+      title: { vi: 'Bảy nước cùng sống quanh một vùng biển', en: 'Seven countries share one sea' },
       text: {
         vi: 'Quanh Biển Đông có Việt Nam, Trung Quốc, Đài Loan, Philippines, Malaysia, Brunei và Indonesia. Theo Công ước Liên Hợp Quốc về Luật Biển 1982 (UNCLOS), mỗi quốc gia ven biển có vùng đặc quyền kinh tế (EEZ) tối đa 200 hải lý (khoảng 370 km) tính từ đường cơ sở. Biển Đông có nhiều chỗ hẹp hơn 400 hải lý, nên các vùng này chồng lấn lên nhau.',
         en: 'Vietnam, China, Taiwan, the Philippines, Malaysia, Brunei and Indonesia all border the sea. Under the UN Convention on the Law of the Sea (UNCLOS, 1982), a coastal state can claim an exclusive economic zone (EEZ) up to 200 nautical miles (about 370 km) from its baselines. The sea is narrower than 400 nautical miles in many places, so these zones overlap.'
@@ -110,7 +110,7 @@ export const BIENDONG = {
       src: [3, 4]
     },
     {
-      title: { vi: 'Đường chín đoạn và phán quyết 2016', en: 'The nine-dash line and the 2016 ruling' },
+      title: { vi: 'Đường chín đoạn: Bắc Kinh vẽ, tòa trọng tài bác', en: 'The nine-dash line: drawn by Beijing, rejected by the tribunal' },
       text: {
         vi: 'Trung Quốc vẽ trên bản đồ một đường gồm các đoạn gạch, gọi là “đường chín đoạn”, bao quanh phần lớn Biển Đông. Ngày 12/7/2016, Tòa Trọng tài lập theo Phụ lục VII của UNCLOS, trong vụ Philippines kiện Trung Quốc, kết luận không có cơ sở pháp lý để Trung Quốc đòi “quyền lịch sử” đối với tài nguyên trong vùng biển nằm trong đường này. Phán quyết không phân xử chủ quyền đối với các đảo.',
         en: 'China draws a line of dashes on its maps, the “nine-dash line”, around most of the sea. On 12 July 2016 an arbitral tribunal set up under Annex VII of UNCLOS, in the case brought by the Philippines against China, concluded there was no legal basis for China to claim historic rights to resources within the sea areas inside that line. The ruling did not decide who owns the islands.'
@@ -138,7 +138,7 @@ export const BIENDONG = {
       src: [5, 6, 2]
     },
     {
-      title: { vi: 'Hoàng Sa và Trường Sa', en: 'The Paracels and the Spratlys' },
+      title: { vi: 'Hoàng Sa, Trường Sa: cuộc đua giữ đảo, đắp đảo', en: 'Paracels and Spratlys: the race to hold and build islands' },
       text: {
         vi: 'Hoàng Sa ở phía bắc Biển Đông; Trung Quốc hiện kiểm soát quần đảo này, còn Việt Nam khẳng định chủ quyền dựa trên chứng cứ lịch sử và cơ sở pháp lý. Trường Sa ở phía nam gồm rất nhiều đảo, đá, bãi ngầm do nhiều bên đóng giữ. Nhiều bên đã bồi đắp, xây dựng trên các thực thể mình giữ; Trung Quốc có ba đường băng ở Chữ Thập, Xu Bi và Vành Khăn.',
         en: 'The Paracels (Hoàng Sa) lie in the north; China controls the group, while Vietnam asserts sovereignty on historical evidence and a legal basis. The Spratlys (Trường Sa) in the south are many islands, reefs and banks held by several states. Several of them have built up the features they hold; China has airstrips at Fiery Cross, Subi and Mischief reefs.'
@@ -183,7 +183,7 @@ export const BIENDONG = {
       src: [7, 9, 8]
     },
     {
-      title: { vi: 'Những điểm nóng đã ghi nhận', en: 'Recorded flashpoints' },
+      title: { vi: 'Va chạm nhỏ, cộng lại thành chuyện lớn', en: 'Small clashes that add up' },
       text: {
         vi: 'Va chạm tập trung quanh các bãi cạn nơi tàu hải cảnh, tàu cá và tàu tiếp tế gặp nhau. Dưới đây chỉ là các sự việc có ngày tháng rõ ràng; mỗi bên kể lại khác nhau, và các phát biểu của phía Trung Quốc không phải lúc nào cũng được kiểm chứng độc lập.',
         en: 'Friction clusters around shoals where coast guard, fishing and resupply vessels meet. Below are only incidents with clear dates; each side tells them differently, and Chinese statements could not always be independently verified.'
@@ -215,7 +215,7 @@ export const BIENDONG = {
       src: [13, 10, 14, 12, 8]
     },
     {
-      title: { vi: 'Bộ quy tắc ứng xử (COC)', en: 'The Code of Conduct (COC)' },
+      title: { vi: 'Luật chơi chung vẫn chưa có', en: 'Still no common rulebook' },
       text: {
         vi: 'ASEAN và Trung Quốc đàm phán một Bộ quy tắc ứng xử ở Biển Đông từ năm 2013, sau Tuyên bố DOC không ràng buộc năm 2002. Mục tiêu đặt ra là hoàn tất trong năm 2026. Đến ngày 8/11/2026 chưa thấy báo cáo nào cho biết COC đã được ký; phạm vi địa lý, tính ràng buộc pháp lý và việc thi hành vẫn là các điểm chưa thống nhất.',
         en: 'ASEAN and China have negotiated a Code of Conduct for the sea since 2013, after the non-binding 2002 Declaration (DOC). The stated target is to finish in 2026. As of 8 Nov 2026 no report says the COC has been signed; its geographic scope, legal status and enforcement remain unresolved.'

@@ -1,21 +1,21 @@
 // Explainers ("Góc nhìn"): step-by-step geography stories, one file each. Order = order in the list.
 // withCore() merges the strategic-logic text (data/core_<id>.js) into a story: step.core, extra sources, a closing line.
-import { HORMUZ } from './story_hormuz.js?v=20261109c';
-import { UKRAINE } from './story_ukraine.js?v=20261109c';
-import { REDSEA } from './story_redsea.js?v=20261109c';
-import { TAIWAN } from './story_taiwan.js?v=20261109c';
-import { BIENDONG } from './story_biendong.js?v=20261109c';
-import { CHINA } from './story_china.js?v=20261109c';
-import { USA } from './story_usa.js?v=20261109c';
-import { ARCTIC } from './story_arctic.js?v=20261109c';
-import { INDOPAK } from './story_indopak.js?v=20261109c';
-import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109c';
-import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109c';
-import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109c';
-import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109c';
-import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109c';
-import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109c';
-import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109c';
+import { HORMUZ } from './story_hormuz.js?v=20261109d';
+import { UKRAINE } from './story_ukraine.js?v=20261109d';
+import { REDSEA } from './story_redsea.js?v=20261109d';
+import { TAIWAN } from './story_taiwan.js?v=20261109d';
+import { BIENDONG } from './story_biendong.js?v=20261109d';
+import { CHINA } from './story_china.js?v=20261109d';
+import { USA } from './story_usa.js?v=20261109d';
+import { ARCTIC } from './story_arctic.js?v=20261109d';
+import { INDOPAK } from './story_indopak.js?v=20261109d';
+import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109d';
+import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109d';
+import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109d';
+import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109d';
+import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109d';
+import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109d';
+import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109d';
 
 function withCore(story, c) {
   const off = story.sources.length;
