@@ -136,7 +136,7 @@
   const SPOTS = {
     // In the tall room he stands on the table's right and the sip clip plays mirrored;
     // either way the mug in the clip lands on the mug on the table
-    coffee: { group: 'coffee', x: 190, y: 242, tall: [94, 288], line: 'refill time' },
+    coffee: { group: 'coffee', x: 190, y: 242, tall: [44, 288], line: 'refill time' },
     window: { group: 'bed', x: 340, y: 252, tall: [150, 340], line: 'look at that sky' },
     game: { group: 'bag', x: 445, y: 266 },
     mat: { group: 'mat', x: 110, y: 250 },
@@ -188,7 +188,7 @@
     { id: 'keyboard', sprite: 'keyboard', group: 'desk', x: 104, y: 159, base: 226.3 },
     { id: 'table', sprite: 'table', group: 'coffee', x: 198, y: 191, base: 226 },
     { id: 'coffee', sprite: 'coffee', group: 'coffee', x: 200, y: 152, base: 226.1 },
-    { id: 'mug', sprite: 'mug', group: 'coffee', x: 232, y: 182, base: 226.1 },
+    { id: 'mug', sprite: 'mug', group: 'coffee', x: 207, y: 177, base: 226.15 }, // in the machine's cup slot
     { id: 'bed', sprite: 'bed', group: 'bed', x: 256, y: 146, base: 232 },
     { id: 'console', sprite: 'console', group: 'tv', x: 412, y: 177, base: 226 },
     { id: 'shelf', sprite: 'shelf', group: 'shelf', x: 478, y: 104, base: 226 },
@@ -260,7 +260,7 @@
     { id: 'snake', label: 'snake plant', group: 'snake', x: 40, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
     { id: 'monitor', label: 'monitor', group: 'desk', x: 86, y: 96, w: 80, h: 70, act: () => peekScreen() },
     { id: 'tower', label: 'PC', group: 'desk', x: 168, y: 107, w: 28, h: 58, say: 'louder than the cat' },
-    { id: 'mug', label: 'mug', group: 'coffee', x: 232, y: 182, w: 14, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
+    { id: 'mug', label: 'mug', group: 'coffee', x: 207, y: 177, w: 14, h: 11, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
     { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
     { id: 'bed', label: 'bed', group: 'bed', x: 256, y: 146, w: 151, h: 86, act: () => invite(nap, 'not yet. one more commit.') },
     { id: 'tv', label: 'TV', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: () => toggleTV() },
@@ -778,8 +778,8 @@
     // The bed with him climbing in, drawn in place of the bed: from standing at its head
     // (frame 0, his feet on SPOTS.bed) to asleep under the blanket (the bedSleep sprite)
     bedIn: ['dev-bed', 208, 156],
-    // Standing at the coffee table (his feet 26px in, 142px down) with the mug beside him
-    sip: ['dev-sip', 92, 148]
+    // Standing by the coffee machine (his feet 26px in, 142px down), the mug in its slot
+    sip: ['dev-sip-machine', 92, 148]
   };
   // How far the cat's body has moved on in each pounce frame
   const POUNCE_SHIFT = [0, 1, 4, 4, 5, 16, 29, 43, 44];
@@ -1001,9 +1001,9 @@
         if (spot === SPOTS.window) return play(dev, 'rear', [0], 1, true); // back to us, looking out
         play(dev, 'stand', [8], 1, true);
         if (spot === SPOTS.coffee) {
-          fx('coffee', 0.7);
           dev.flip = L.tall;
-          sip();
+          dev.wait = BREW_TIME + 4;
+          startBrew(sip);
         }
       });
     });
@@ -1015,10 +1015,79 @@
 
   function sip() {
     const n = sprites.sip ? sprites.sip.width / SHEETS.sip[1] : 0;
-    if (still || !n) return;
+    if (dev.state !== 'pause') return; // called away while it brewed
+    dev.wait = (still || !n ? 0 : n / 6) + 1.2;
+    if (still || !n) return sayDev('ahh.');
     cup.on = true;
-    play(cup, 'sip', seq(0, n - 1), 6, false, () => { cup.on = false; });
-    dev.wait = Math.max(dev.wait, n / 6 + 0.8);
+    play(cup, 'sip', seq(0, n - 1), 6, false, () => {
+      cup.on = false;
+      sayDev('ahh.');
+    });
+  }
+
+  // The coffee machine makes one cup at a time, into the mug in its slot: the light goes
+  // amber, coffee drips from the spout and steam comes off the top, as long as the
+  // brewing sound lasts. Then the light goes green and the mug has coffee in it.
+  const BREW_TIME = 3.6;
+  const brew = { on: false, t: 0, full: false, steam: 0, then: null };
+
+  function startBrew(then) {
+    brew.on = true;
+    brew.t = 0;
+    brew.full = false;
+    brew.then = then;
+    fx('coffee', 0.7);
+  }
+
+  function stepBrew(dt) {
+    brew.steam = Math.max(0, brew.steam - dt);
+    if (!brew.on) return;
+    brew.t += dt;
+    if (brew.t < BREW_TIME) return;
+    brew.on = false;
+    brew.full = true;
+    brew.steam = 5;
+    const then = brew.then;
+    brew.then = null;
+    if (then) then();
+  }
+
+  // x, y: the machine sprite's place in the room
+  function drawBrewer(x, y) {
+    const px = ox + x;
+    const py = oy + y;
+    // The pot is gone: a dark cup slot with a spout at the top
+    ctx.fillStyle = '#26242E';
+    ctx.fillRect(px + 7, py + 19, 13, 17);
+    ctx.fillStyle = '#16151B';
+    ctx.fillRect(px + 7, py + 19, 13, 1);
+    ctx.fillStyle = '#8A8E98';
+    ctx.fillRect(px + 12, py + 19, 3, 1);
+    ctx.fillRect(px + 13, py + 20, 1, 1);
+    // Status light: amber while brewing, green when the cup is ready
+    if (brew.on || brew.full) {
+      ctx.fillStyle = brew.on ? (Math.floor(brew.t * 3) % 2 ? '#FFB347' : '#C77A1E') : '#6BE08A';
+      ctx.fillRect(px + 3, py + 5, 1, 1);
+    }
+    if (still) return;
+    if (brew.on) {
+      // A thin stream from the spout, with drops running down it
+      ctx.fillStyle = '#5A3422';
+      ctx.fillRect(px + 13, py + 21, 1, 4);
+      ctx.fillStyle = '#8A5A3A';
+      ctx.fillRect(px + 13, py + 21 + Math.floor(brew.t * 12) % 4, 1, 1);
+    }
+    // Steam off the top while it brews, thinning out after
+    const k = brew.on ? 1 : brew.steam / 5;
+    if (k <= 0) return;
+    const t = performance.now() / 1000;
+    ctx.fillStyle = '#FFFBEF';
+    for (let i = 0; i < 3; i++) {
+      const f = (t * 0.7 + i / 3) % 1;
+      ctx.globalAlpha = 0.8 * (1 - f) * k;
+      ctx.fillRect(px + 9 + i * 4 + Math.round(Math.sin(f * 6 + i) * 1.5), py - 1 - Math.round(f * 12), 1, 2);
+    }
+    ctx.globalAlpha = 1;
   }
 
   // Climbing into bed and out again is one clip, played forward or back
@@ -1246,6 +1315,11 @@
     if (name === 'bed' && tuck.on) return frame('bedIn', tuck.frames[tuck.i], x - 56, y - 54, false);
     if (name === 'mug' && cup.on) return;
     sprite(name, x, y);
+    if (name === 'coffee') drawBrewer(x, y);
+    if (name === 'mug' && brew.full) {
+      ctx.fillStyle = '#5A3422'; // coffee at the rim
+      ctx.fillRect(ox + x + 2, oy + y + 1, 8, 1);
+    }
     if (name === 'monitor') drawTerm(ox + x, oy + y);
     if (name === 'bed' && dev.bed > 0) {
       ctx.globalAlpha = dev.bed;
@@ -2334,6 +2408,7 @@
     updateCat(dt);
     stepChair(dt);
     stepTerm(dt);
+    stepBrew(dt);
     drawRoom();
     drawClock();
     drawDepth();
