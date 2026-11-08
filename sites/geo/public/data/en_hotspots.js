@@ -18,7 +18,7 @@ export const LAYERS_EN = {
   ice: 'Polar Ice'
 };
 
-export const UPDATED_EN = '2025 (verified data)';
+export const UPDATED_EN = 'Nov 2026 (verified data)';
 
 export const H_EN = {
   malacca: {
@@ -499,11 +499,11 @@ export const H_EN = {
   },
   pipe_petroline: {
     n: 'Saudi East–West Pipeline (Petroline: Abqaiq–Yanbu)',
-    tx: 'A ~1,200 km crude oil pipeline cutting straight across the Arabian Peninsula from the Abqaiq processing hub (near Saudi Arabia’s Persian Gulf oil fields) to the Red Sea port of Yanbu, with an expanded capacity of 5–7 million barrels/day. It serves as Riyadh’s vital strategic insurance policy, enabling Saudi Arabia to continue exporting crude toward Europe and global markets even if the Strait of Hormuz were closed.'
+    tx: 'A ~1,200 km crude oil pipeline cutting straight across the Arabian Peninsula from the Abqaiq processing hub (near Saudi Arabia’s Persian Gulf oil fields) to the Red Sea port of Yanbu, with an expanded capacity of 5–7 million barrels/day. It proved its vital strategic value as Riyadh’s primary lifeline, maintaining crude exports toward Europe and global markets amidst the closure and blockade of the Strait of Hormuz during the 2026 war.'
   },
   pipe_habshan: {
     n: 'Habshan–Fujairah Oil Pipeline (ADCOP – UAE Hormuz Bypass)',
-    tx: 'A ~370 km strategic pipeline (capacity ~1.5–1.8 million barrels/day, inaugurated in 2012) linking Abu Dhabi’s onshore Habshan oil fields across the Hajar Mountains directly to the export terminal of Fujairah on the Gulf of Oman (Indian Ocean). Thanks to this pipeline, the UAE can export more than half of its crude oil production without routing tankers through the Strait of Hormuz chokepoint.'
+    tx: 'A ~370 km strategic pipeline (capacity ~1.5–1.8 million barrels/day, inaugurated in 2012) linking Abu Dhabi’s onshore Habshan oil fields across the Hajar Mountains directly to the export terminal of Fujairah on the Gulf of Oman (Indian Ocean). Thanks to this pipeline, the UAE can export roughly half of its crude oil exports without routing tankers through the Strait of Hormuz—an essential bypass when the strait was blocked during the 2026 war.'
   },
   field_ghawar: {
     n: 'Ghawar Supergiant Oil Field & Abqaiq Processing Hub (Saudi Arabia)',
@@ -523,11 +523,11 @@ export const H_EN = {
   },
   field_bachho: {
     n: 'Cuu Long & Nam Con Son Basins (Bach Ho, Lan Tay & Ca Voi Xanh Fields – Vietnam)',
-    tx: 'Vietnam’s premier offshore hydrocarbon basins on the southern and central continental shelf. The Bach Ho (White Tiger) field in the Cuu Long Basin (~145 km off Vung Tau) gained global geological fame in 1986–1988 for discovering prolific oil reserves inside fractured granite basement rock, contributing over 200 million tonnes of crude to Vietnam’s Doi Moi economic transformation; meanwhile, the Nam Con Son Basin (Lan Tay, Lan Do, Hai Thach–Moc Tinh), Malay–Tho Chu Basin (Block B–O Mon), and Song Hong Basin (Ca Voi Xanh / Blue Whale) underpin national energy security while affirming Vietnam’s sovereign rights across its EEZ and continental shelf in the South China Sea.'
+    tx: 'Vietnam’s premier offshore hydrocarbon basins on the southern and central continental shelf. The Bach Ho (White Tiger) field in the Cuu Long Basin (~145 km off Vung Tau) gained global geological fame in 1986–1988 for discovering prolific oil reserves inside fractured granite basement rock, contributing over 200 million tonnes of crude to Vietnam’s Doi Moi economic transformation; meanwhile, the Nam Con Son Basin (Lan Tay, Lan Do, Hai Thach–Moc Tinh), Malay–Tho Chu Basin (Block B–O Mon), and Song Hong Basin (Ca Voi Xanh / Blue Whale) underpin national energy security while affirming Vietnam’s sovereign rights across its EEZ and continental shelf in the East Sea (South China Sea).'
   },
   gerd: {
     n: 'Grand Ethiopian Renaissance Dam (GERD – Blue Nile)',
-    tx: 'Africa’s largest hydroelectric power plant (~5.15 GW design capacity, 74 billion m³ reservoir), built on the Blue Nile in Ethiopia’s Benishangul-Gumuz region just ~15 km from the Sudanese border. Because the Blue Nile flowing off the Ethiopian Highlands supplies ~85% of the Nile water reaching Egypt, Addis Ababa views the dam as a vital engine of electrification and poverty reduction, whereas Cairo regards unilateral filling and operation of the mega-dam as an existential threat to the water security of over 110 million Egyptians.'
+    tx: 'Africa’s largest hydroelectric power plant (~5.15 GW design capacity, 74 billion m³ reservoir, officially inaugurated in September 2025), built on the Blue Nile in Ethiopia’s Benishangul-Gumuz region just ~15 km from the Sudanese border. Because the Blue Nile flowing off the Ethiopian Highlands supplies ~85% of the Nile water reaching Egypt, Addis Ababa views the dam as a vital engine of electrification and poverty reduction, whereas Cairo regards unilateral filling and operation of the mega-dam as an existential threat to the water security of over 110 million Egyptians.'
   },
   threegorges: {
     n: 'Three Gorges Dam (Yangtze River – China)',
@@ -539,7 +539,7 @@ export const H_EN = {
   },
   medogdam: {
     n: 'Medog Mega-Hydropower Project (Yarlung Tsangpo / Brahmaputra Great Bend)',
-    tx: 'China’s planned super-hydropower complex in Medog County, Tibet, sited at the "Great Bend" around Mount Namcha Barwa—where the Yarlung Tsangpo plunges through the world’s deepest canyon (dropping more than 2,000 m over just 50 km) before entering India’s Arunachal Pradesh and Assam states as the Brahmaputra River and flowing into Bangladesh. With a projected capacity of 60,000 MW (nearly triple the Three Gorges Dam, approved by Beijing in late 2024), the project has sparked deep geopolitical alarm in New Delhi and Dhaka over downstream water security and seismic flash-flood risks.'
+    tx: 'China’s planned super-hydropower complex in Medog County, Tibet, sited at the "Great Bend" around Mount Namcha Barwa—where the Yarlung Tsangpo plunges through the world’s deepest canyon (dropping more than 2,000 m over just 50 km) before entering India’s Arunachal Pradesh and Assam states as the Brahmaputra River and flowing into Bangladesh. With a projected capacity of 60,000 MW (nearly triple the Three Gorges Dam, where construction officially commenced in July 2025 following late-2024 authorization), the project has sparked deep geopolitical alarm in New Delhi and Dhaka over downstream water security and seismic flash-flood risks.'
   },
   ataturkdam: {
     n: 'Ataturk Dam & Southeastern Anatolia Project (GAP – Turkey)',
@@ -679,7 +679,7 @@ export const H_EN = {
   },
   mekong: {
     n: 'Mekong River (Lancang – Cuu Long)',
-    tx: 'Flowing ~4,900 km from the Tibetan Plateau through six nations (China, Myanmar, Laos, Thailand, Cambodia, and Vietnam) before emptying into the South China Sea. Although it sustains over 65 million people and supports the world’s largest inland freshwater fishery (powered by the unique seasonal flow reversal of Cambodia’s Tonle Sap lake), the Mekong is broken by the Khone Phapheng Falls in southern Laos and numerous rapids, preventing ocean-going vessels from sailing from Vietnam’s coast up to Yunnan; today the river’s ecological security faces mounting stress from dozens of upstream hydropower dams.'
+    tx: 'Flowing ~4,900 km from the Tibetan Plateau through six nations (China, Myanmar, Laos, Thailand, Cambodia, and Vietnam) before emptying into the East Sea (South China Sea). Although it sustains over 65 million people and supports the world’s largest inland freshwater fishery (powered by the unique seasonal flow reversal of Cambodia’s Tonle Sap lake), the Mekong is broken by the Khone Phapheng Falls in southern Laos and numerous rapids, preventing ocean-going vessels from sailing from Vietnam’s coast up to Yunnan; today the river’s ecological security faces mounting stress from dozens of upstream hydropower dams.'
   },
   songhong: {
     n: 'Red River (Yuan River – Song Hong)',
@@ -855,7 +855,7 @@ export const H_EN = {
   },
   truongson: {
     n: 'Annamite Range (Truong Son Mountains)',
-    tx: 'A ~1,100 km mountain range running along the border of Vietnam, Laos, and northeastern Cambodia, forming the geographic spine that shields Vietnam’s western flank and separates the Mekong River basin to the west from Vietnam’s narrow central coastal plains bordering the South China Sea to the east (where rocky spurs jutting into the sea create strategic passes such as Ngang Pass, Hai Van Pass, and Ca Pass). During the Vietnam War, the dense jungle canopy and karst terrain of the Annamite Range sheltered the legendary Truong Son / Ho Chi Minh Trail logistics network.'
+    tx: 'A ~1,100 km mountain range running along the border of Vietnam, Laos, and northeastern Cambodia, forming the geographic spine that shields Vietnam’s western flank and separates the Mekong River basin to the west from Vietnam’s narrow central coastal plains bordering the East Sea (South China Sea) to the east (where rocky spurs jutting into the sea create strategic passes such as Ngang Pass, Hai Van Pass, and Ca Pass). During the Vietnam War, the dense jungle canopy and karst terrain of the Annamite Range sheltered the legendary Truong Son / Ho Chi Minh Trail logistics network.'
   },
   rockies: {
     n: 'Rocky Mountains (Western Spine of North America)',
@@ -971,7 +971,7 @@ export const H_EN = {
   },
   antarctica: {
     n: 'Antarctic Continental Ice Sheet',
-    tx: 'Earth’s fifth-largest continent (~14.2 million km²) surrounding the South Pole, buried beneath an ice sheet averaging 2.16 km in thickness (and nearly 4.8 km at its deepest), holding ~90% of the world’s ice and ~70% of its fresh water. Under the Antarctic Treaty System (signed in 1959, now comprising 57 parties) and the 1991 Madrid Protocol, all overlapping territorial claims (by the UK, France, Norway, Australia, New Zealand, Argentina, and Chile) are held in abeyance, and the continent is strictly demilitarized and closed to nuclear testing and commercial mineral mining.'
+    tx: 'Earth’s fifth-largest continent (~14.2 million km²) surrounding the South Pole, buried beneath an ice sheet averaging 2.16 km in thickness (and nearly 4.8 km at its deepest), holding ~90% of the world’s ice and ~70% of its fresh water. Under the Antarctic Treaty System (signed in 1959, now comprising 58 parties) and the 1991 Madrid Protocol, all overlapping territorial claims (by the UK, France, Norway, Australia, New Zealand, Argentina, and Chile) are held in abeyance, and the continent is strictly demilitarized and closed to nuclear testing and commercial mineral mining.'
   }
 };
 

@@ -25,7 +25,7 @@ export const C0 = {
       [
         "g",
         "Biên giới núi, sông tự nhiên; cải cách 34 tỉnh thành (2025)",
-        "Biên giới đất liền dài hơn 4.500 km tựa vào núi sông tự nhiên đã phân giới ổn định. Năm 2025, việc tinh gọn từ 63 xuống 34 tỉnh, thành phố giúp xóa bỏ manh mún địa giới, kết nối trực tiếp Tây Nguyên và trung du với cảng biển."
+        "Biên giới đất liền dài hơn 4.500 km tựa vào núi sông tự nhiên, đã phân giới cắm mốc xong với Trung Quốc và Lào, với Campuchia khoảng 84%. Từ 1/7/2025, việc tinh gọn từ 63 xuống 34 tỉnh, thành phố và bỏ cấp huyện (chính quyền địa phương hai cấp) giúp xóa bỏ manh mún địa giới, kết nối trực tiếp Tây Nguyên và trung du với cảng biển."
       ],
       [
         "b",
@@ -60,7 +60,7 @@ export const C0 = {
       [
         "b",
         "Chuỗi đảo thứ nhất chắn cửa, phụ thuộc eo Malacca",
-        "Lối ra Thái Bình Dương của Trung Quốc bị 'Chuỗi đảo thứ nhất' khóa chặt, trong khi 80% dầu nhập khẩu phải đi qua eo Malacca. Để phá thế vây hãm, Bắc Kinh mở rộng hải quân nước xanh, xây đảo nhân tạo ở Biển Đông và mở hành lang Vành đai – Con đường."
+        "Lối ra Thái Bình Dương của Trung Quốc bị 'Chuỗi đảo thứ nhất' khóa chặt, trong khi khoảng 80% dầu nhập khẩu (ước tính) phải đi qua eo Malacca. Để phá thế vây hãm, Bắc Kinh mở rộng hải quân nước xanh, xây đảo nhân tạo ở Biển Đông và mở hành lang Vành đai – Con đường."
       ],
       [
         "g",
@@ -75,7 +75,7 @@ export const C0 = {
       [
         "g",
         "Tây Tạng là tháp nước châu Á",
-        "Kiểm soát cao nguyên Tây Tạng giúp Trung Quốc nắm giữ 'Tháp nước châu Á', nơi bắt nguồn của sông Mê Kông, Brahmaputra, Salween và Indus. Việc xây dựng các siêu đập thủy điện thượng nguồn tạo cho Bắc Kinh đòn bẩy địa chính trị lớn đối với các nước hạ lưu."
+        "Kiểm soát cao nguyên Tây Tạng giúp Trung Quốc nắm giữ 'Tháp nước châu Á', nơi bắt nguồn của sông Mê Kông, Brahmaputra, Salween và Indus. Các siêu đập thủy điện thượng nguồn (như dự án Medog trên sông Yarlung Tsangpo – Brahmaputra, khởi công tháng 7/2025) tạo cho Bắc Kinh đòn bẩy địa chính trị lớn đối với các nước hạ lưu."
       ]
     ],
     "hs": [
@@ -88,7 +88,9 @@ export const C0 = {
       "yangtze",
       "huanghe",
       "mekong",
-      "conf_taiwan"
+      "conf_taiwan",
+      "medogdam",
+      "threegorges"
     ]
   },
   "Hong Kong": {
@@ -204,7 +206,9 @@ export const C0 = {
       "firstchain",
       "conf_taiwan",
       "ryukyu",
-      "senkaku"
+      "senkaku",
+      "luzon",
+      "res_tsmc"
     ]
   },
   "Japan": {
@@ -212,7 +216,7 @@ export const C0 = {
     "pop": "~124 triệu",
     "area": "378 nghìn km²",
     "ch": "c8",
-    "sum": "Trải dài hơn 3.000 km theo hình cánh cung bên sườn đông châu Á, quần đảo Nhật Bản gồm bốn đảo chính (Honshu, Hokkaido, Kyushu, Shikoku) và hơn 14.000 đảo nhỏ trên 'Vành đai lửa Thái Bình Dương'. Núi lửa và đồi núi chiếm tới 75% diện tích khiến đất nước mang 'chiếc bụng rỗng' nghèo tài nguyên, buộc 124 triệu dân dồn vào các đồng bằng ven biển hẹp chỉ chiếm ~12% diện tích. Nhờ đại dương che chở khỏi ngoại xâm suốt nhiều thế kỷ, Nhật Bản đã giữ vững bản sắc riêng rồi thực hiện cuộc Minh Trị Duy Tân (1868) để hóa rồng thành cường quốc công nghiệp đầu tiên ở châu Á.\n\nSau Thế chiến II, Nhật Bản tái thiết thần kỳ dưới Hiến pháp Hòa bình và liên minh Mỹ – Nhật, vươn lên thành nền kinh tế lớn thứ tư thế giới với trình độ công nghệ bậc thầy. Do phải nhập khẩu gần 90% năng lượng qua tuyến hàng hải từ Trung Đông qua eo Malacca và Biển Đông, an ninh tại eo biển Đài Loan là vấn đề sống còn của Tokyo. Giai đoạn 2025–2026, Nhật Bản tăng gấp đôi chi tiêu quốc phòng lên 2% GDP và phục hưng ngành bán dẫn trong khi đối mặt khủng hoảng già hóa dân số nặng nề nhất thế giới.",
+    "sum": "Trải dài hơn 3.000 km theo hình cánh cung bên sườn đông châu Á, quần đảo Nhật Bản gồm bốn đảo chính (Honshu, Hokkaido, Kyushu, Shikoku) và hơn 14.000 đảo nhỏ trên 'Vành đai lửa Thái Bình Dương'. Núi lửa và đồi núi chiếm tới 75% diện tích khiến đất nước mang 'chiếc bụng rỗng' nghèo tài nguyên, buộc 124 triệu dân dồn vào các đồng bằng ven biển hẹp; đất canh tác chỉ chiếm ~11% diện tích. Nhờ đại dương che chở khỏi ngoại xâm suốt nhiều thế kỷ, Nhật Bản đã giữ vững bản sắc riêng rồi thực hiện cuộc Minh Trị Duy Tân (1868) để hóa rồng thành cường quốc công nghiệp đầu tiên ở châu Á.\n\nSau Thế chiến II, Nhật Bản tái thiết thần kỳ dưới Hiến pháp Hòa bình và liên minh Mỹ – Nhật, từng là nền kinh tế lớn thứ hai thế giới (1968–2010), nay đứng thứ tư (2024), với trình độ công nghệ bậc thầy. Do phải nhập khẩu gần 90% năng lượng qua tuyến hàng hải từ Trung Đông qua eo Malacca và Biển Đông, an ninh tại eo biển Đài Loan là vấn đề sống còn của Tokyo. Giai đoạn 2025–2026, chính phủ Thủ tướng Takaichi Sanae (nhậm chức 10/2025) đưa chi tiêu quốc phòng đạt 2% GDP ngay trong tài khóa 2025, sớm hai năm so với kế hoạch, đồng thời phục hưng ngành bán dẫn trong khi đối mặt khủng hoảng già hóa dân số nặng nề nhất thế giới.",
     "t": [
       [
         "g",
@@ -247,7 +251,9 @@ export const C0 = {
       "dokdo",
       "ryukyu",
       "r_gulf_asia",
-      "firstchain"
+      "firstchain",
+      "base_okinawa",
+      "base_yokosuka"
     ]
   },
   "South Korea": {
@@ -255,7 +261,7 @@ export const C0 = {
     "pop": "~51,7 triệu",
     "area": "100 nghìn km²",
     "ch": "c8",
-    "sum": "Nằm ở nửa nam bán đảo Triều Tiên nhô ra từ Đông Bắc Á, Hàn Quốc tọa lạc ngay giao điểm chiến lược giữa ba cường quốc Trung Quốc, Nga và Nhật Bản. Người Hàn thường ví vị thế của mình như 'con tôm giữa những con cá voi', với 70% diện tích là đồi núi (dãy Taebaek) còn dân cư dồn về đồng bằng phía tây và nam. Sau nhiều thế kỷ thống nhất dưới triều Joseon và thời kỳ thuộc Nhật (1910–1945), bán đảo bị chia cắt dọc vĩ tuyến 38 và trải qua Chiến tranh Triều Tiên (1950–1953) tàn khốc.\n\nDo biên giới đất liền duy nhất bị khóa chặt bởi Khu phi quân sự (DMZ), Hàn Quốc vận hành như một quốc đảo thương mại hướng hoàn toàn ra đại dương. Từ đống tro tàn chiến tranh, 'Kỳ tích sông Hán' đã biến nước này thành nền dân chủ năng động, cường quốc chip nhớ – đóng tàu – quốc phòng và trung tâm văn hóa K-Wave. Giai đoạn 2025–2026, bên cạnh mối đe dọa hạt nhân từ Triều Tiên sát vách Seoul, thách thức sinh tồn lớn nhất của Hàn Quốc là tỷ lệ sinh thấp nhất thế giới (~0,75).",
+    "sum": "Nằm ở nửa nam bán đảo Triều Tiên nhô ra từ Đông Bắc Á, Hàn Quốc tọa lạc ngay giao điểm chiến lược giữa ba cường quốc Trung Quốc, Nga và Nhật Bản. Người Hàn thường ví vị thế của mình như 'con tôm giữa những con cá voi', với 70% diện tích là đồi núi (dãy Taebaek) còn dân cư dồn về đồng bằng phía tây và nam. Sau nhiều thế kỷ thống nhất dưới triều Joseon và thời kỳ thuộc Nhật (1910–1945), bán đảo bị chia cắt dọc vĩ tuyến 38 và trải qua Chiến tranh Triều Tiên (1950–1953) tàn khốc.\n\nDo biên giới đất liền duy nhất bị khóa chặt bởi Khu phi quân sự (DMZ), Hàn Quốc vận hành như một quốc đảo thương mại hướng hoàn toàn ra đại dương. Từ đống tro tàn chiến tranh, 'Kỳ tích sông Hán' đã biến nước này thành nền dân chủ năng động, cường quốc chip nhớ – đóng tàu – quốc phòng và trung tâm văn hóa K-Wave. Sau cuộc khủng hoảng thiết quân luật 12/2024 và bầu cử sớm, Tổng thống Lee Jae-myung nhậm chức tháng 6/2025. Bên cạnh mối đe dọa hạt nhân từ Triều Tiên sát vách Seoul, thách thức sinh tồn lớn nhất của Hàn Quốc là tổng tỷ suất sinh thấp nhất thế giới (0,72 năm 2023, nhích lên 0,80 năm 2025).",
     "t": [
       [
         "b",
@@ -287,7 +293,8 @@ export const C0 = {
       "dmz38",
       "tsushima",
       "dokdo",
-      "r_gulf_asia"
+      "r_gulf_asia",
+      "base_humphreys"
     ]
   },
   "North Korea": {
@@ -295,7 +302,7 @@ export const C0 = {
     "pop": "~26 triệu",
     "area": "121 nghìn km²",
     "ch": "c8",
-    "sum": "Chiếm nửa bắc bán đảo Triều Tiên, Triều Tiên có tới 80% diện tích là núi cao và cao nguyên đá lạnh giá, nổi bật là núi thiêng Trường Bạch (Paektu) và dãy Rangrim. Do khí hậu khắc nghiệt và đất canh tác chỉ chiếm ~17% diện tích, phần lớn dân cư tập trung ở đồng bằng ven biển phía tây quanh thủ đô Bình Nhưỡng. Từ sau cuộc chia cắt năm 1945 và Chiến tranh Triều Tiên (1950–1953), Bắc Kinh luôn coi Triều Tiên là vùng đệm chiến lược 'môi hở răng lạnh' ngăn quân Mỹ áp sát sông Áp Lục.\n\nDưới sự cầm quyền ba thế hệ của gia tộc họ Kim theo học thuyết Tự lực (Juche) và Tiên quân, đây là nhà nước khép kín và quân sự hóa cao nhất thế giới. Bất chấp cấm vận quốc tế, Bình Nhưỡng đã sở hữu vũ khí hạt nhân và tên lửa liên lục địa (ICBM) làm lá chắn bảo vệ chế độ. Giai đoạn 2024–2026, Triều Tiên ký hiệp ước phòng thủ chung với Nga, đổi đạn pháo và binh sĩ lấy dầu mỏ, lương thực và công nghệ quân sự từ Moskva.",
+    "sum": "Chiếm nửa bắc bán đảo Triều Tiên, Triều Tiên có tới 80% diện tích là núi cao và cao nguyên đá lạnh giá, nổi bật là núi thiêng Trường Bạch (Paektu) và dãy Rangrim. Do khí hậu khắc nghiệt và đất canh tác chỉ chiếm ~19% diện tích, phần lớn dân cư tập trung ở đồng bằng ven biển phía tây quanh thủ đô Bình Nhưỡng. Từ sau cuộc chia cắt năm 1945 và Chiến tranh Triều Tiên (1950–1953), Bắc Kinh luôn coi Triều Tiên là vùng đệm chiến lược 'môi hở răng lạnh' ngăn quân Mỹ áp sát sông Áp Lục.\n\nDưới sự cầm quyền ba thế hệ của gia tộc họ Kim theo học thuyết Tự lực (Juche) và Tiên quân, đây là nhà nước khép kín và quân sự hóa cao nhất thế giới. Bất chấp cấm vận quốc tế, Bình Nhưỡng đã sở hữu vũ khí hạt nhân và tên lửa liên lục địa (ICBM) làm lá chắn bảo vệ chế độ. Giai đoạn 2024–2026, Triều Tiên ký hiệp ước phòng thủ chung với Nga, đổi đạn pháo và binh sĩ lấy dầu mỏ, lương thực và công nghệ quân sự từ Moskva.",
     "t": [
       [
         "m",
@@ -341,7 +348,7 @@ export const C0 = {
       [
         "b",
         "Không giáp biển, phụ thuộc cảng Thiên Tân (Trung Quốc)",
-        "Cách biển gần nhất ~700 km, Mông Cổ phụ thuộc hoàn toàn vào cảng Thiên Tân (Trung Quốc) và Vladivostok (Nga). Mọi lô hàng than đá, quặng đồng xuất khẩu đều phải đi qua đường sắt xuyên Mông Cổ."
+        "Cách biển gần nhất ~700 km, Mông Cổ phụ thuộc hoàn toàn vào cảng Thiên Tân (Trung Quốc) và Vladivostok (Nga). Than đá và tinh quặng đồng xuất khẩu chủ yếu sang Trung Quốc bằng xe tải và đường sắt qua các cửa khẩu phía nam."
       ],
       [
         "b",
@@ -367,7 +374,7 @@ export const C0 = {
     "cap": "Manila",
     "pop": "~114 triệu",
     "area": "300 nghìn km²",
-    "sum": "Gồm hơn 7.600 hòn đảo núi lửa ở Tây Thái Bình Dương, Philippines là quốc gia quần đảo khép kín cánh nam 'Chuỗi đảo thứ nhất' đối diện Biển Đông. Địa hình đồi núi chia cắt giữa ba cụm đảo Luzon, Visayas và Mindanao, đồng thời hứng chịu trung bình 20 cơn bão nhiệt đới mỗi năm. Hơn ba thế kỷ thuộc Tây Ban Nha và gần nửa thế kỷ dưới quyền quản trị của Mỹ (1898–1946) đã biến nơi đây thành quốc gia Công giáo lớn nhất châu Á.\n\nXã hội Philippines nổi bật với dân số trẻ 114 triệu người, thôngạo tiếng Anh và nền dân chủ sôi động gắn kết với phương Tây. Là đồng minh hiệp ước của Mỹ từ năm 1951, Manila đứng ở tuyến đầu trong cuộc đối đầu pháp lý và thực địa tại bãi cạn Scarborough và Trường Sa. Giai đoạn 2025–2026, Philippines mở rộng căn cứ quân sự chung (EDCA) với Mỹ và hợp tác với Nhật Bản, đồng thời đầu tư hạ tầng kết nối các đảo.",
+    "sum": "Gồm hơn 7.600 hòn đảo núi lửa ở Tây Thái Bình Dương, Philippines là quốc gia quần đảo khép kín cánh nam 'Chuỗi đảo thứ nhất' đối diện Biển Đông. Địa hình đồi núi chia cắt giữa ba cụm đảo Luzon, Visayas và Mindanao, đồng thời hứng chịu trung bình 20 cơn bão nhiệt đới mỗi năm. Hơn ba thế kỷ thuộc Tây Ban Nha và gần nửa thế kỷ dưới quyền quản trị của Mỹ (1898–1946) đã biến nơi đây thành quốc gia Công giáo lớn nhất châu Á.\n\nXã hội Philippines nổi bật với dân số trẻ 114 triệu người, thông thạo tiếng Anh và nền dân chủ sôi động gắn kết với phương Tây. Là đồng minh hiệp ước của Mỹ từ năm 1951, Manila đứng ở tuyến đầu trong cuộc đối đầu pháp lý và thực địa tại bãi cạn Scarborough và Trường Sa. Năm 2026, Philippines giữ vai trò Chủ tịch ASEAN; Manila tiếp tục cho quân Mỹ tiếp cận các căn cứ theo hiệp định EDCA và thắt chặt quốc phòng với Nhật Bản (Hiệp định Tiếp cận Đối ứng RAA có hiệu lực từ 11/9/2025).",
     "t": [
       [
         "m",
@@ -399,7 +406,8 @@ export const C0 = {
       "biendong",
       "scarborough",
       "truongsa",
-      "firstchain"
+      "firstchain",
+      "luzon"
     ]
   },
   "Indonesia": {
@@ -416,7 +424,7 @@ export const C0 = {
       [
         "g",
         "Kiểm soát eo Malacca, eo Sunda và eo Lombok",
-        "Indonesia kiểm soát đồng thời eo Malacca cùng hai lối đi thay thế duy nhất cho tàu chở dầu siêu trọng và tàu ngầm là eo Sunda và eo Lombok – Makassar. Mọi tàu biển đi giữa Ấn Độ Dương và Biển Đông đều phải qua vùng biển Indonesia."
+        "Indonesia kiểm soát đồng thời eo Malacca cùng hai lối đi thay thế duy nhất cho tàu chở dầu siêu trọng và tàu ngầm là eo Sunda và eo Lombok – Makassar. Hầu hết tàu biển đi giữa Ấn Độ Dương và Biển Đông đều phải qua các eo biển nằm trong hoặc giáp vùng biển Indonesia."
       ],
       [
         "m",
@@ -436,7 +444,10 @@ export const C0 = {
     ],
     "hs": [
       "malacca",
+      "sunda",
+      "lombok",
       "biendong",
+      "res_sulawesi_nickel",
       "seaforest"
     ]
   },
@@ -493,7 +504,7 @@ export const C0 = {
       [
         "g",
         "Ngồi ngay điểm hẹp nhất (2,8 km) nối Ấn Độ Dương – Thái Bình Dương",
-        "Ngồi ngay phễu hàng hải nơi 130.000 lượt tàu đi qua mỗi năm giữa Ấn Độ Dương và Biển Đông, Singapore là cảng trung chuyển container lớn thứ hai thế giới và trạm tiếp dầu tàu biển số một toàn cầu. Siêu cảng tự động Tuas đang nâng công suất lên 65 triệu TEU/năm."
+        "Ngồi ngay phễu hàng hải bận rộn bậc nhất thế giới giữa Ấn Độ Dương và Biển Đông, Singapore là cảng container lớn thứ hai thế giới (sau Thượng Hải), cảng trung chuyển lớn nhất và trạm tiếp nhiên liệu tàu biển số một toàn cầu. Siêu cảng tự động Tuas đang nâng công suất lên 65 triệu TEU/năm."
       ],
       [
         "b",
@@ -508,11 +519,12 @@ export const C0 = {
       [
         "b",
         "Thiếu nước ngọt tự nhiên, phải nhập từ bang Johor (Malaysia)",
-        "Từng phụ thuộc nặng vào nguồn nước thô nhập khẩu từ bang Johor (Malaysia) theo hiệp định đến năm 2061, Singapore đã phát triển 'Bốn vòi nước quốc gia'. Nhờ công nghệ tái chế nước thải (NEWater) và khử mặn nước biển, đảo quốc đã đáp ứng trên 70% nhu cầu nước."
+        "Từng phụ thuộc nặng vào nguồn nước thô nhập khẩu từ bang Johor (Malaysia) theo hiệp định đến năm 2061, Singapore đã phát triển 'Bốn vòi nước quốc gia'. Nhờ công nghệ tái chế nước thải (NEWater) và khử mặn nước biển, đảo quốc có thể đáp ứng tới khoảng 70% nhu cầu nước hiện nay (NEWater tới 40%, khử mặn tới 30%)."
       ]
     ],
     "hs": [
-      "malacca"
+      "malacca",
+      "base_changi"
     ]
   },
   "Brunei": {
@@ -557,7 +569,7 @@ export const C0 = {
     "cap": "Dili",
     "pop": "~1,4 triệu",
     "area": "14,9 nghìn km²",
-    "sum": "Chiếm nửa đông đảo Timor cùng vùng lõm Oecusse nằm trong phần Tây Timor thuộc Indonesia, Timor-Leste là quốc gia núi đá vôi rộng gần 15.000 km² giữa Indonesia và Úc. Dãy núi Ramelau cao gần 3.000 m chạy dọc sống lưng đảo từng che chở cho chiến khu du kích nhưng lại chia cắt nặng nề giao thông nội địa. Sau hơn bốn thế kỷ thuộc Bồ Đào Nha và 24 năm bị Indonesia chiếm đóng (1975–1999), Timor-Leste chính thức giành độc lập năm 2002.\n\nLà quốc gia Công giáo thứ hai ở Đông Nam Á (cùng Philippines), Timor-Leste đã xây dựng được nền dân chủ đa đảng hòa bình và tự do báo chí đáng ghi nhận. Nền kinh tế sử dụng đồng USD sống dựa vào Quỹ Dầu mỏ Quốc gia (~16–18 tỷ USD), trong khi mỏ khí Bayu-Undan đã cạn kiệt từ năm 2023. Giai đoạn 2025–2026, nước này hoàn tất lộ trình trở thành thành viên thứ 11 của ASEAN và đàm phán khai thác siêu mỏ khí Greater Sunrise ở biển Timor.",
+    "sum": "Chiếm nửa đông đảo Timor cùng vùng lõm Oecusse nằm trong phần Tây Timor thuộc Indonesia, Timor-Leste là quốc gia núi đá vôi rộng gần 15.000 km² giữa Indonesia và Úc. Dãy núi Ramelau cao gần 3.000 m chạy dọc sống lưng đảo từng che chở cho chiến khu du kích nhưng lại chia cắt nặng nề giao thông nội địa. Sau hơn bốn thế kỷ thuộc Bồ Đào Nha và 24 năm bị Indonesia chiếm đóng (1975–1999), Timor-Leste chính thức giành độc lập năm 2002.\n\nLà quốc gia Công giáo thứ hai ở Đông Nam Á (cùng Philippines), Timor-Leste đã xây dựng được nền dân chủ đa đảng hòa bình và tự do báo chí đáng ghi nhận. Nền kinh tế sử dụng đồng USD sống dựa vào Quỹ Dầu mỏ Quốc gia (~16–18 tỷ USD), trong khi mỏ khí Bayu-Undan đã ngừng khai thác thương mại tháng 6/2025. Ngày 26/10/2025, nước này chính thức trở thành thành viên thứ 11 của ASEAN, đồng thời tiếp tục đàm phán khai thác siêu mỏ khí Greater Sunrise ở biển Timor.",
     "t": [
       [
         "m",
@@ -591,7 +603,7 @@ export const C0 = {
     "cap": "Bangkok",
     "pop": "~71,7 triệu",
     "area": "513 nghìn km²",
-    "sum": "Nằm ở trung tâm bán đảo Đông Dương, lãnh thổ Thái Lan có vùng lõi là đồng bằng sông Chao Phraya trù phú, cao nguyên Khorat (Isan) ở phía đông bắc, núi cao phía bắc và bán đảo Mã Lai vươn dài ở phía nam. Vị trí ấy giúp Thái Lan sở hữu hai mặt tiền biển là vịnh Thái Lan và biển Andaman (Ấn Độ Dương), ngăn cách bởi eo đất Kra nơi hẹp nhất chỉ rộng 44 km. Thời thực dân thế kỷ 19, Vương quốc Xiêm dưới triều Chakri là nước duy nhất ở Đông Nam Á giữ được độc lập nhờ cải cách hiện đại hóa và làm vùng đệm giữa Anh và Pháp.\n\nXã hội Thái Lan gắn với ba trụ cột 'Dân tộc – Phật giáo – Quốc vương', dù chính trường thường chứng kiến sự giằng co giữa giới bảo hoàng – quân đội với các lực lượng cải cách trẻ. Nhờ 'ngoại giao cây sậy' linh hoạt giữa Mỹ và Trung Quốc, Thái Lan đã vươn lên thành nền kinh tế lớn thứ hai ASEAN và trung tâm sản xuất ô tô ('Detroit của châu Á'). Giai đoạn 2025–2026, Bangkok xúc tiến dự án 'Cầu đất liền' (Landbridge) nối tắt hai đại dương nhưng đối mặt tăng trưởng chậm lại, nợ hộ gia đình cao và già hóa dân số.",
+    "sum": "Nằm ở trung tâm bán đảo Đông Dương, lãnh thổ Thái Lan có vùng lõi là đồng bằng sông Chao Phraya trù phú, cao nguyên Khorat (Isan) ở phía đông bắc, núi cao phía bắc và bán đảo Mã Lai vươn dài ở phía nam. Vị trí ấy giúp Thái Lan sở hữu hai mặt tiền biển là vịnh Thái Lan và biển Andaman (Ấn Độ Dương), ngăn cách bởi eo đất Kra nơi hẹp nhất chỉ rộng 44 km. Thời thực dân thế kỷ 19, Vương quốc Xiêm dưới triều Chakri là nước duy nhất ở Đông Nam Á giữ được độc lập nhờ cải cách hiện đại hóa và làm vùng đệm giữa Anh và Pháp.\n\nXã hội Thái Lan gắn với ba trụ cột 'Dân tộc – Phật giáo – Quốc vương', dù chính trường thường chứng kiến sự giằng co giữa giới bảo hoàng – quân đội với các lực lượng cải cách trẻ. Nhờ 'ngoại giao cây sậy' linh hoạt giữa Mỹ và Trung Quốc, Thái Lan đã vươn lên thành một trong ba nền kinh tế lớn nhất ASEAN (thứ ba năm 2024, sau Indonesia và Singapore) và trung tâm sản xuất ô tô ('Detroit của châu Á'). Giai đoạn 2025–2026, chính trường biến động (Thủ tướng Paetongtarn Shinawatra bị Tòa Hiến pháp phế truất 8/2025; ông Anutin Charnvirakul lên thay và được bầu lại sau tổng tuyển cử 2/2026), xung đột biên giới với Campuchia bùng phát (7/2025 và 12/2025), trong khi kinh tế tăng trưởng chậm, nợ hộ gia đình cao và dân số già hóa nhanh.",
     "t": [
       [
         "g",
@@ -611,7 +623,7 @@ export const C0 = {
       [
         "m",
         "Giáp 4 nước; có bất ổn ly khai ở 3 tỉnh cực nam giáp Malaysia",
-        "Giáp 4 nước (Myanmar, Lào, Campuchia, Malaysia), Thái Lan đang chịu áp lực dòng người tị nạn và giao tranh tràn qua đường biên giới dài 2.400 km với Myanmar. Ở cực nam, ba tỉnh Pattani, Yala và Narathiwat có đa số dân Mã Lai Hồi giáo vẫn còn bất ổn ly khai âm ỉ."
+        "Giáp 4 nước (Myanmar, Lào, Campuchia, Malaysia), Thái Lan đang chịu áp lực dòng người tị nạn và giao tranh tràn qua đường biên giới dài 2.400 km với Myanmar. Năm 2025, tranh chấp biên giới với Campuchia bùng thành giao tranh (7/2025 và 12/2025), tạm lắng sau lệnh ngừng bắn 27/12/2025. Ở cực nam, ba tỉnh Pattani, Yala và Narathiwat có đa số dân Mã Lai Hồi giáo vẫn còn bất ổn ly khai âm ỉ."
       ],
       [
         "m",
@@ -621,14 +633,16 @@ export const C0 = {
     ],
     "hs": [
       "mekong",
-      "malacca"
+      "chaophraya",
+      "malacca",
+      "conf_myanmar"
     ]
   },
   "Myanmar": {
     "cap": "Naypyidaw",
     "pop": "~54 triệu",
     "area": "677 nghìn km²",
-    "sum": "Lãnh thổ Myanmar định hình quanh thung lũng sông Irrawaddy ở trung tâm của người đa số Bamar, bao bọc bởi vành đai núi cao hình móng ngựa của các sắc tộc thiểu số ở ba phía. Nằm ở bản lề nối Nam Á với Đông Nam Á và mở ra vịnh Bengal cùng biển Andaman, đây là hành lang ngắn nhất giúp vùng tây nam Trung Quốc thông ra Ấn Độ Dương. Từ các vương triều Pagan, Toungoo đến thời thuộc Anh (kết thúc năm 1948), sự chia rẽ giữa vùng lõi đồng bằng và vùng biên giới núi non đã dẫn tới cuộc xung đột sắc tộc dài nhất thế giới.\n\nSau một thập kỷ mở cửa ngắn ngủi (2011–2020), cuộc chính biến quân sự tháng 2/2021 đẩy đất nước 54 triệu dân vào nội chiến toàn diện giữa chính quyền quân sự và liên minh các lực lượng vũ trang sắc tộc. Từ sau Chiến dịch 1027 (2023–2026), quân đội trung ương mất quyền kiểm soát phần lớn vùng biên giới giáp Trung Quốc, Ấn Độ, Bangladesh và Thái Lan. Thách thức sống còn của Myanmar là ngăn chặn sự phân rã lãnh thổ, giải quyết khủng hoảng nhân đạo và vực dậy nền kinh tế kiệt quệ.",
+    "sum": "Lãnh thổ Myanmar định hình quanh thung lũng sông Irrawaddy ở trung tâm của người đa số Bamar, bao bọc bởi vành đai núi cao hình móng ngựa của các sắc tộc thiểu số ở ba phía. Nằm ở bản lề nối Nam Á với Đông Nam Á và mở ra vịnh Bengal cùng biển Andaman, đây là hành lang ngắn nhất giúp vùng tây nam Trung Quốc thông ra Ấn Độ Dương. Từ các vương triều Pagan, Toungoo, Konbaung đến thời thuộc Anh (kết thúc năm 1948), sự chia rẽ giữa vùng lõi đồng bằng và vùng biên giới núi non đã dẫn tới cuộc xung đột sắc tộc dài nhất thế giới.\n\nSau một thập kỷ mở cửa ngắn ngủi (2011–2020), cuộc chính biến quân sự tháng 2/2021 đẩy đất nước 54 triệu dân vào nội chiến toàn diện giữa chính quyền quân sự và liên minh các lực lượng vũ trang sắc tộc. Từ sau Chiến dịch 1027 (khởi phát 10/2023), quân đội mất quyền kiểm soát nhiều vùng biên giới giáp Trung Quốc, Ấn Độ, Bangladesh và Thái Lan, dù đã giành lại một số thị trấn năm 2025 khi Trung Quốc gây sức ép lên các nhóm vũ trang. Sau cuộc bầu cử do chính quyền quân sự tổ chức (12/2025–1/2026) bị phương Tây và phe đối lập bác bỏ, Thống tướng Min Aung Hlaing được quốc hội mới bầu làm Tổng thống (4/2026). Thách thức sống còn của Myanmar là ngăn chặn sự phân rã lãnh thổ, giải quyết khủng hoảng nhân đạo và vực dậy nền kinh tế kiệt quệ.",
     "t": [
       [
         "m",
@@ -658,6 +672,9 @@ export const C0 = {
     ],
     "hs": [
       "conf_myanmar",
+      "irrawaddy",
+      "salween",
+      "pipe_myanmar",
       "mekong"
     ]
   },
@@ -665,7 +682,7 @@ export const C0 = {
     "cap": "Viêng Chăn",
     "pop": "~7,7 triệu",
     "area": "237 nghìn km²",
-    "sum": "Là quốc gia duy nhất không giáp biển ở Đông Nam Á, Lào có 80% diện tích là núi cao hiểm trở phía bắc và dãy Trường Sơn phía đông, chỉ có dải đồng bằng hẹp ven sông Mê Kông. Kẹp giữa năm láng giềng lớn hơn là Trung Quốc, Việt Nam, Thái Lan, Campuchia và Myanmar, Lào đóng vai trò vùng đệm nội lục ở trung tâm bán đảo Đông Dương. Từ Vương quốc Lan Xang ('Triệu Voi') thế kỷ 14 qua thời Pháp thuộc và chiến tranh Đông Dương, nước Cộng hòa Dân chủ Nhân dân Lào được thành lập vào năm 1975.\n\nXã hội Lào mang đậm văn hóa Phật giáo Nam tông hiền hòa của người Lào Lùm cùng các tộc người vùng cao, vận hành dưới sự lãnh đạo của Đảng Nhân dân Cách mạng Lào. Để thoát thế cô lập, Viêng Chăn nỗ lực chuyển từ 'không giáp biển' thành 'kết nối đất liền' qua đường sắt Lào – Trung (2021) và xây đập thủy điện làm 'cục pin của Đông Nam Á'. Giai đoạn 2025–2026, Lào vừa gắn kết đặc biệt với Việt Nam (qua cảng Vũng Áng) và hợp tác sâu với Trung Quốc, vừa phải xử lý nợ công ngoại tệ cao và lạm phát đồng Kip.",
+    "sum": "Là quốc gia duy nhất không giáp biển ở Đông Nam Á, Lào có 80% diện tích là núi cao hiểm trở phía bắc và dãy Trường Sơn phía đông, chỉ có dải đồng bằng hẹp ven sông Mê Kông. Kẹp giữa năm láng giềng lớn hơn là Trung Quốc, Việt Nam, Thái Lan, Campuchia và Myanmar, Lào đóng vai trò vùng đệm nội lục ở trung tâm bán đảo Đông Dương. Từ Vương quốc Lan Xang ('Triệu Voi') thế kỷ 14 qua thời Pháp thuộc và chiến tranh Đông Dương, nước Cộng hòa Dân chủ Nhân dân Lào được thành lập vào năm 1975.\n\nXã hội Lào mang đậm văn hóa Phật giáo Nam tông hiền hòa của người Lào Lùm cùng các tộc người vùng cao, vận hành dưới sự lãnh đạo của Đảng Nhân dân Cách mạng Lào. Để thoát thế cô lập, Viêng Chăn nỗ lực chuyển từ 'không giáp biển' thành 'kết nối đất liền' qua đường sắt Lào – Trung (2021) và xây đập thủy điện làm 'cục pin của Đông Nam Á'. Giai đoạn 2025–2026, Lào vừa gắn kết đặc biệt với Việt Nam (qua cảng Vũng Áng) và hợp tác sâu với Trung Quốc, vừa phải xử lý nợ công ngoại tệ cao, dù lạm phát đã hạ nhiệt và đồng Kip ổn định hơn từ năm 2025.",
     "t": [
       [
         "m",
@@ -695,6 +712,7 @@ export const C0 = {
     ],
     "hs": [
       "mekong",
+      "mekongdams",
       "truongson"
     ]
   },
@@ -722,7 +740,7 @@ export const C0 = {
       [
         "m",
         "Lịch sử từng là vùng tranh chấp ảnh hưởng giữa Xiêm và Đại Việt",
-        "Kẹp giữa Thái Lan ở phía tây và Việt Nam ở phía đông với hơn 2.500 km biên giới, Phnôm Pênh thường dựa vào đối tác lớn bên ngoài như Trung Quốc để tạo thế cân bằng. Campuchia và Việt Nam đã hoàn thành phân giới cắm mốc khoảng 84% đường biên giới đất liền."
+        "Kẹp giữa Thái Lan ở phía tây và Việt Nam ở phía đông với hơn 2.500 km biên giới, Phnôm Pênh thường dựa vào đối tác lớn bên ngoài như Trung Quốc để tạo thế cân bằng. Campuchia và Việt Nam đã hoàn thành phân giới cắm mốc khoảng 84% đường biên giới đất liền. Năm 2025, tranh chấp biên giới với Thái Lan bùng thành giao tranh (7/2025 và 12/2025), tạm lắng sau lệnh ngừng bắn 27/12/2025."
       ],
       [
         "b",
@@ -731,7 +749,10 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "mekong"
+      "mekong",
+      "mekongdams",
+      "funantecho",
+      "base_ream"
     ]
   },
   "India": {
@@ -739,7 +760,7 @@ export const C0 = {
     "pop": "~1,45 tỷ",
     "area": "3,29 triệu km²",
     "ch": "c7",
-    "sum": "Chiếm phần lớn tiểu lục địa Nam Á, Ấn Độ nằm trong một pháo đài địa lý tự nhiên: bức tường đá Himalaya chắn phía bắc, sa mạc Thar ở phía tây và Ấn Độ Dương bao bọc hai sườn bán đảo. Dưới chân Himalaya là đồng bằng Ấn – Hằng màu mỡ bậc nhất thế giới, cái nôi nuôi dưỡng hàng trăm triệu người từ thời văn minh sông Ấn cách đây hơn 4.000 năm. Trải qua các đế chế Maurya, Gupta, Mughal tới thời thuộc Anh (British Raj), cuộc Chia cắt tiểu lục địa đẫm máu năm 1947 đã tách vùng đất này thành Ấn Độ và Pakistan.\n\nVượt Trung Quốc để trở thành nước đông dân nhất thế giới (~1,45 tỷ người) và là nền dân chủ nghị viện lớn nhất hành tinh, xã hội Ấn Độ vô cùng đa dạng về ngôn ngữ, tôn giáo với đạo Hindu chiếm đa số. Dưới thời Thủ tướng Narendra Modi, New Delhi theo đuổi 'tự chủ chiến lược đa liên kết': vừa tham gia nhóm Bộ Tứ (Quad) với Mỹ, Nhật, Úc để đối trọng Trung Quốc, vừa giữ vai trò lớn trong BRICS và mua dầu, vũ khí từ Nga. Giai đoạn 2025–2026, Ấn Độ là nền kinh tế lớn tăng trưởng nhanh nhất thế giới (#5 toàn cầu) với thế mạnh dịch vụ CNTT và hạ tầng số UPI, nhưng đối mặt tranh chấp biên giới với cả Trung Quốc lẫn Pakistan và áp lực tạo việc làm công nghiệp.",
+    "sum": "Chiếm phần lớn tiểu lục địa Nam Á, Ấn Độ nằm trong một pháo đài địa lý tự nhiên: bức tường đá Himalaya chắn phía bắc, sa mạc Thar ở phía tây và Ấn Độ Dương bao bọc hai sườn bán đảo. Dưới chân Himalaya là đồng bằng Ấn – Hằng màu mỡ bậc nhất thế giới, cái nôi nuôi dưỡng hàng trăm triệu người từ thời văn minh sông Ấn cách đây hơn 4.000 năm. Trải qua các đế chế Maurya, Gupta, Mughal tới thời thuộc Anh (British Raj), cuộc Chia cắt tiểu lục địa đẫm máu năm 1947 đã tách vùng đất này thành Ấn Độ và Pakistan.\n\nVượt Trung Quốc để trở thành nước đông dân nhất thế giới (~1,45 tỷ người) và là nền dân chủ nghị viện lớn nhất hành tinh, xã hội Ấn Độ vô cùng đa dạng về ngôn ngữ, tôn giáo với đạo Hindu chiếm đa số. Dưới thời Thủ tướng Narendra Modi, New Delhi theo đuổi 'tự chủ chiến lược đa liên kết': vừa tham gia nhóm Bộ Tứ (Quad) với Mỹ, Nhật, Úc để đối trọng Trung Quốc, vừa giữ vai trò lớn trong BRICS và mua dầu, vũ khí từ Nga. Giai đoạn 2025–2026, Ấn Độ là nền kinh tế lớn tăng trưởng nhanh nhất thế giới (#5 toàn cầu năm 2024 theo World Bank) với thế mạnh dịch vụ CNTT và hạ tầng số UPI, nhưng đối mặt tranh chấp biên giới với cả Trung Quốc lẫn Pakistan (giao tranh 4 ngày với Pakistan tháng 5/2025) và áp lực tạo việc làm công nghiệp.",
     "t": [
       [
         "g",
@@ -749,7 +770,7 @@ export const C0 = {
       [
         "g",
         "Bán đảo nhô sâu vào trung tâm Ấn Độ Dương",
-        "Bán đảo Ấn Độ với hơn 7.500 km bờ biển nhô thẳng ra trung tâm Ấn Độ Dương, khống chế các tuyến tàu chở dầu từ vùng Vịnh sang Đông Á. Đặc biệt, quần đảo Andaman và Nicobar của Ấn Độ nằm cách cửa tây eo biển Malacca chỉ ~150 km, đóng vai trò tiền đồn hàng hải chiến lược."
+        "Bán đảo Ấn Độ với khoảng 11.100 km bờ biển (theo số đo lại chính thức mới; trước đây 7.516,6 km) nhô thẳng ra trung tâm Ấn Độ Dương, khống chế các tuyến tàu chở dầu từ vùng Vịnh sang Đông Á. Đặc biệt, quần đảo Andaman và Nicobar của Ấn Độ nằm cách cửa tây eo biển Malacca chỉ ~150 km, đóng vai trò tiền đồn hàng hải chiến lược."
       ],
       [
         "g",
@@ -764,7 +785,7 @@ export const C0 = {
       [
         "m",
         "Thượng nguồn hệ sông Indus với Pakistan, nhưng hạ nguồn Brahmaputra từ Tây Tạng",
-        "Ấn Độ nằm ở vị thế vừa là thượng nguồn vừa là hạ nguồn của khu vực Nam Á. Nước này nắm nguồn các nhánh sông Indus chảy sang Pakistan, nhưng ở đông bắc lại nằm dưới hạ lưu sông Brahmaputra (Yarlung Tsangpo) bắt nguồn từ Tây Tạng do Trung Quốc kiểm soát."
+        "Ấn Độ nằm ở vị thế vừa là thượng nguồn vừa là hạ nguồn của khu vực Nam Á. Nước này nắm nguồn các nhánh sông Indus chảy sang Pakistan, nhưng ở đông bắc lại nằm dưới hạ lưu sông Brahmaputra (Yarlung Tsangpo) bắt nguồn từ Tây Tạng do Trung Quốc kiểm soát, nơi Bắc Kinh khởi công siêu đập Medog tháng 7/2025. Từ tháng 4/2025, Ấn Độ tuyên bố tạm đình chỉ (in abeyance) Hiệp ước Nước sông Indus 1960 với Pakistan."
       ]
     ],
     "hs": [
@@ -773,8 +794,10 @@ export const C0 = {
       "himalaya",
       "ganges",
       "indus",
+      "brahmaputra",
       "conf_kashmir",
       "tibet",
+      "medogdam",
       "thar"
     ]
   },
@@ -783,7 +806,7 @@ export const C0 = {
     "pop": "~251 triệu",
     "area": "~800 nghìn km²",
     "ch": "c7",
-    "sum": "Trải dài từ đỉnh núi Karakoram – Hindu Kush cao trên 8.000 m ở phía bắc xuống biển Ả Rập, Pakistan là dải đất hẹp kẹp giữa cao nguyên Iran – Afghanistan và đồng bằng Ấn Độ. Giữa vùng đất phần lớn là núi đá khô cằn (Balochistan) và sa mạc (Thar), sự sống của 251 triệu người (đông dân thứ 5 thế giới) bám chặt dọc một trục sông duy nhất là sông Indus. Ra đời từ cuộc Chia cắt Ấn Độ năm 1947 để lập quốc gia riêng cho người Hồi giáo (và tách phần Đông thành Bangladesh năm 1971), Pakistan luôn mang nỗi ám ảnh an ninh trước Ấn Độ.\n\nLà quốc gia Hồi giáo duy nhất sở hữu vũ khí hạt nhân, chính trường và an ninh của Pakistan chịu ảnh hưởng lớn của quân đội trong xã hội đa sắc tộc (Punjab, Pashtun, Sindh, Baloch). Về đối ngoại, Islamabad gắn kết 'mọi thời tiết' với Trung Quốc qua Hành lang Kinh tế Trung Quốc – Pakistan (CPEC nối Tân Cương ra cảng Gwadar), đồng thời dựa vào vốn vay từ vùng Vịnh và IMF. Giai đoạn 2025–2026, Pakistan phải thắt lưng buộc bụng theo gói cứu trợ IMF, đối phó phiến quân TTP dọc biên giới Afghanistan và ly khai ở Balochistan.",
+    "sum": "Trải dài từ đỉnh núi Karakoram – Hindu Kush cao trên 8.000 m ở phía bắc xuống biển Ả Rập, Pakistan là dải đất hẹp kẹp giữa cao nguyên Iran – Afghanistan và đồng bằng Ấn Độ. Giữa vùng đất phần lớn là núi đá khô cằn (Balochistan) và sa mạc (Thar), sự sống của 251 triệu người (đông dân thứ 5 thế giới) bám chặt dọc một trục sông duy nhất là sông Indus. Ra đời từ cuộc Chia cắt Ấn Độ năm 1947 để lập quốc gia riêng cho người Hồi giáo (và tách phần Đông thành Bangladesh năm 1971), Pakistan luôn mang nỗi ám ảnh an ninh trước Ấn Độ.\n\nLà quốc gia Hồi giáo duy nhất sở hữu vũ khí hạt nhân, chính trường và an ninh của Pakistan chịu ảnh hưởng lớn của quân đội trong xã hội đa sắc tộc (Punjab, Pashtun, Sindh, Baloch). Về đối ngoại, Islamabad gắn kết 'mọi thời tiết' với Trung Quốc qua Hành lang Kinh tế Trung Quốc – Pakistan (CPEC nối Tân Cương ra cảng Gwadar), đồng thời dựa vào vốn vay từ vùng Vịnh và IMF. Giai đoạn 2025–2026, Pakistan trải qua giao tranh 4 ngày với Ấn Độ (5/2025) và đụng độ biên giới với chính quyền Taliban (10/2025), đồng thời thắt lưng buộc bụng theo gói cứu trợ IMF, đối phó phiến quân TTP và ly khai ở Balochistan.",
     "t": [
       [
         "b",
@@ -793,7 +816,7 @@ export const C0 = {
       [
         "m",
         "Bờ biển Ả Rập với cảng Karachi và Gwadar",
-        "Bờ biển dài hơn 1.000 km trên biển Ả Rập nằm sát cửa vịnh Ba Tư, với cảng Karachi chiếm 90% hàng hải cả nước. Cảng nước sâu Gwadar ở Balochistan là điểm cuối của hành lang CPEC nối từ Tân Cương (Trung Quốc), nhưng dễ bị hải quân Ấn Độ phong tỏa khi có chiến sự."
+        "Bờ biển dài hơn 1.000 km trên biển Ả Rập nằm sát cửa vịnh Ba Tư, với hai cảng Karachi và Port Qasim xử lý phần lớn hàng hải cả nước. Cảng nước sâu Gwadar ở Balochistan là điểm cuối của hành lang CPEC nối từ Tân Cương (Trung Quốc), nhưng dễ bị hải quân Ấn Độ phong tỏa khi có chiến sự."
       ],
       [
         "g",
@@ -803,12 +826,12 @@ export const C0 = {
       [
         "b",
         "Biên giới căng thẳng ở cả hai phía: Đường Radcliffe và Đường Durand",
-        "Biên giới căng thẳng ở cả hai sườn: phía đông là đường Radcliffe (1947) và vùng tranh chấp Kashmir với Ấn Độ; phía tây là Đường Durand (1893) dài 2.640 km cắt đôi tộc người Pashtun mà không chính quyền Afghanistan nào công nhận. Từ năm 2021, tấn công vũ trang xuyên biên giới từ phía Afghanistan tăng vọt."
+        "Biên giới căng thẳng ở cả hai sườn: phía đông là đường Radcliffe (1947) và vùng tranh chấp Kashmir với Ấn Độ; phía tây là Đường Durand (1893) dài 2.640 km cắt đôi tộc người Pashtun mà không chính quyền Afghanistan nào công nhận. Từ năm 2021, tấn công vũ trang xuyên biên giới từ phía Afghanistan tăng vọt, dẫn tới giao tranh lớn giữa quân đội Pakistan và lực lượng Taliban tháng 10/2025."
       ],
       [
         "b",
         "Thượng nguồn sông Indus và các nhánh chính chảy qua Kashmir do Ấn Độ kiểm soát",
-        "Tử huyệt nguồn nước của Pakistan là thượng nguồn sông Indus và các nhánh chính đều chảy qua vùng Kashmir do Ấn Độ kiểm soát. Dù có Hiệp ước Nước sông Indus (1960), việc Ấn Độ xây đập thượng nguồn và đòi sửa đổi hiệp ước luôn đe dọa trực tiếp nền nông nghiệp Pakistan."
+        "Tử huyệt nguồn nước của Pakistan là thượng nguồn sông Indus và các nhánh chính đều chảy qua vùng Kashmir do Ấn Độ kiểm soát. Từ tháng 4/2025, Ấn Độ tuyên bố tạm đình chỉ (in abeyance) Hiệp ước Nước sông Indus (1960); Islamabad tuyên bố mọi hành động chặn hay chuyển dòng nước sẽ bị coi là hành động chiến tranh."
       ]
     ],
     "hs": [
@@ -818,6 +841,7 @@ export const C0 = {
       "indus",
       "conf_kashmir",
       "khyber",
+      "cpec",
       "thar"
     ]
   },
@@ -826,7 +850,7 @@ export const C0 = {
     "pop": "~174 triệu",
     "area": "148 nghìn km²",
     "ch": "c7",
-    "sum": "Nằm ở đỉnh vịnh Bengal, Bangladesh là đồng bằng châu thổ lớn nhất thế giới được tạo nên bởi sự hợp lưu của sông Hằng (Padma), sông Brahmaputra (Jamuna) và sông Meghna. Với 80% diện tích cao chưa tới 10 m so với mực nước biển và không có núi che chắn, vùng đất phù sa màu mỡ này gánh mật độ dân số khổng lồ (~174 triệu dân trên 148.000 km², ~1.200 người/km²). Sau khi vùng Bengal bị đường Radcliffe (1947) chia cắt thành Đông Pakistan, người dân nơi đây đã tiến hành Chiến tranh Giải phóng năm 1971 để lập nên nước Bangladesh độc lập.\n\nLà quốc gia có dân số Hồi giáo lớn thứ tư thế giới và gắn kết bởi văn hóa Bengal, tháng 8/2024 phong trào sinh viên đã lật đổ chính quyền 15 năm của Thủ tướng Sheikh Hasina, lập chính phủ lâm thời do ông Muhammad Yunus đứng đầu. Về kinh tế, Bangladesh tận dụng nguồn lao động giá rẻ dồi dào để trở thành công xưởng may mặc xuất khẩu lớn thứ hai thế giới (sau Trung Quốc). Giai đoạn 2025–2026, thách thức sống còn của Dhaka là ổn định chuyển giao dân chủ, cân bằng quan hệ với Ấn Độ (bao quanh 94% biên giới) và chống chịu nước biển dâng.",
+    "sum": "Nằm ở đỉnh vịnh Bengal, Bangladesh là đồng bằng châu thổ lớn nhất thế giới được tạo nên bởi sự hợp lưu của sông Hằng (Padma), sông Brahmaputra (Jamuna) và sông Meghna. Với 80% diện tích cao chưa tới 10 m so với mực nước biển và không có núi che chắn, vùng đất phù sa màu mỡ này gánh mật độ dân số khổng lồ (~174 triệu dân trên 148.000 km², ~1.200 người/km²). Sau khi vùng Bengal bị đường Radcliffe (1947) chia cắt thành Đông Pakistan, người dân nơi đây đã tiến hành Chiến tranh Giải phóng năm 1971 để lập nên nước Bangladesh độc lập.\n\nLà quốc gia có dân số Hồi giáo lớn thứ tư thế giới và gắn kết bởi văn hóa Bengal, tháng 8/2024 phong trào sinh viên đã lật đổ chính quyền 15 năm của Thủ tướng Sheikh Hasina, lập chính phủ lâm thời do ông Muhammad Yunus đứng đầu. Về kinh tế, Bangladesh tận dụng nguồn lao động giá rẻ dồi dào để trở thành công xưởng may mặc xuất khẩu lớn thứ hai thế giới (sau Trung Quốc). Trong cuộc bầu cử ngày 12/2/2026, Đảng BNP thắng áp đảo và ông Tarique Rahman trở thành Thủ tướng (17/2/2026); thách thức của Dhaka là củng cố dân chủ, cân bằng quan hệ với Ấn Độ (bao quanh 94% biên giới) và chống chịu nước biển dâng.",
     "t": [
       [
         "b",
@@ -856,7 +880,8 @@ export const C0 = {
     ],
     "hs": [
       "radcliffe",
-      "ganges"
+      "ganges",
+      "brahmaputra"
     ]
   },
   "Sri Lanka": {
@@ -900,7 +925,7 @@ export const C0 = {
     "cap": "Kathmandu",
     "pop": "~29,7 triệu",
     "area": "147 nghìn km²",
-    "sum": "Nằm vắt ngang sườn nam dãy Himalaya, Nepal có độ chênh địa hình dốc nhất hành tinh: từ đồng bằng Terai cao dưới 100 m ở phía nam vọt lên đỉnh Everest cao 8.848,86 m ở biên giới phía bắc chỉ trong hơn 100 km. Không giáp biển và bị kẹp giữa Tây Tạng (Trung Quốc) ở phía bắc với Ấn Độ ở ba phía nam, đông, tây, vị vua lập quốc thế kỷ 18 đã ví Nepal như 'củ khoai nằm giữa hai tảng đá khổng lồ'. Chưa từng bị thực dân Anh đô hộ hoàn toàn nhờ núi cao hiểm trở và các chiến binh Gurkha dũng mãnh, Nepal đã xóa bỏ chế độ quân chủ Hindu 240 năm vào năm 2008 để lập nước cộng hòa liên bang.\n\nXã hội Nepal (31 triệu dân) giao thoa giữa văn hóa Ấn – Arya ở vùng thấp và văn hóa Tạng – Miến trên vùng núi cao, nơi có vườn Lâm Tỳ Ni (Lumbini) — nơi Đức Phật đản sinh. Do bức tường Himalaya chắn phía bắc, nền kinh tế và đời sống của Nepal gắn chặt vào Ấn Độ qua đường biên giới mở và tỷ giá đồng tiền neo cố định. Giai đoạn 2025–2026, bên cạnh nguồn kiều hối nuôi sống các gia đình, Nepal đang đẩy mạnh xuất khẩu thủy điện Himalaya sang Ấn Độ và Bangladesh.",
+    "sum": "Nằm vắt ngang sườn nam dãy Himalaya, Nepal có độ chênh địa hình dốc nhất hành tinh: từ đồng bằng Terai cao dưới 100 m ở phía nam vọt lên đỉnh Everest cao 8.848,86 m ở biên giới phía bắc chỉ trong khoảng 150 km. Không giáp biển và bị kẹp giữa Tây Tạng (Trung Quốc) ở phía bắc với Ấn Độ ở ba phía nam, đông, tây, vị vua lập quốc thế kỷ 18 đã ví Nepal như 'củ khoai nằm giữa hai tảng đá khổng lồ'. Chưa từng bị thực dân Anh đô hộ hoàn toàn nhờ núi cao hiểm trở và các chiến binh Gurkha dũng mãnh, Nepal đã xóa bỏ chế độ quân chủ Hindu 240 năm vào năm 2008 để lập nước cộng hòa liên bang.\n\nXã hội Nepal (~29,7 triệu dân) giao thoa giữa văn hóa Ấn – Arya ở vùng thấp và văn hóa Tạng – Miến trên vùng núi cao, nơi có vườn Lâm Tỳ Ni (Lumbini) — nơi Đức Phật đản sinh. Do bức tường Himalaya chắn phía bắc, nền kinh tế và đời sống của Nepal gắn chặt vào Ấn Độ qua đường biên giới mở và tỷ giá đồng tiền neo cố định. Tháng 9/2025, làn sóng biểu tình do thế hệ Gen Z dẫn dắt buộc Thủ tướng K.P. Sharma Oli từ chức; trong cuộc bầu cử sớm ngày 5/3/2026, Đảng Rastriya Swatantra (RSP) giành đa số và cựu thị trưởng Kathmandu Balendra Shah trở thành Thủ tướng. Kinh tế vẫn dựa nhiều vào kiều hối, trong khi Nepal đẩy mạnh xuất khẩu thủy điện sang Ấn Độ và Bangladesh.",
     "t": [
       [
         "g",
@@ -925,7 +950,7 @@ export const C0 = {
       [
         "g",
         "Nắm giữ nguồn nước băng tan từ Himalaya chảy xuống Ấn Độ",
-        "Nằm trên sườn nam Himalaya, Nepal nắm thượng nguồn cung cấp ~45% lưu lượng nước mùa khô cho sông Hằng chảy vào Ấn Độ. Tuy nhiên, biến đổi khí hậu làm băng tan nhanh, gây nguy cơ lũ quét vỡ hồ băng (GLOF) tại các thung lũng."
+        "Nằm trên sườn nam Himalaya, Nepal nắm thượng nguồn cung cấp khoảng 40–45% tổng lưu lượng năm và tới ~70% lưu lượng mùa khô của sông Hằng. Tuy nhiên, biến đổi khí hậu làm băng tan nhanh, gây nguy cơ lũ quét vỡ hồ băng (GLOF) tại các thung lũng."
       ]
     ],
     "hs": [
@@ -947,7 +972,7 @@ export const C0 = {
       [
         "b",
         "Không giáp biển, giao thương hoàn toàn qua Ấn Độ",
-        "Không giáp biển, toàn bộ hàng xuất nhập khẩu của Bhutan đều phải quá cảnh qua lãnh thổ Ấn Độ để ra cảng Kolkata (~700 km). Bhutan là nước duy nhất ở khu vực chưa thiết lập quan hệ ngoại giao chính thức với Trung Quốc."
+        "Không giáp biển, gần như toàn bộ hàng xuất nhập khẩu của Bhutan đều phải quá cảnh qua lãnh thổ Ấn Độ để ra cảng Kolkata (~700 km). Bhutan là nước duy nhất ở khu vực chưa thiết lập quan hệ ngoại giao chính thức với Trung Quốc."
       ],
       [
         "m",
@@ -966,14 +991,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "himalaya"
+      "himalaya",
+      "brahmaputra"
     ]
   },
   "Maldives": {
     "cap": "Malé",
     "pop": "~520 nghìn",
     "area": "~300 km²",
-    "sum": "Trải dài 800 km theo hướng bắc – nam giữa Ấn Độ Dương ở phía tây nam Ấn Độ, Maldives gồm 26 cụm đảo san hô vòng (atoll) với khoảng 1.192 đảo nhỏ (khoảng 200 đảo có người ở). Chỉ có ~300 km² đất nổi nhưng vùng biển rộng gần 1 triệu km², đây là quốc gia thấp nhất thế giới với độ cao trung bình vỏn vẹn ~1,5 m trên mực nước biển. Nằm trên tuyến hàng hải cổ đại xuyên Ấn Độ Dương, cư dân quần đảo chuyển từ Phật giáo sang Hồi giáo Sunni vào thế kỷ 12 và từng là xứ bảo hộ của Anh trước khi độc lập năm 1965.\n\nXã hội Maldives (~520.000 dân) gắn kết bởi ngôn ngữ Dhivehi và đạo Hồi, với hơn 1/3 dân số sống nén chặt tại đảo thủ đô Malé và đảo nhân tạo Hulhumalé kế bên. Nhờ mô hình du lịch 'một hòn đảo – một khu nghỉ dưỡng' từ thập niên 1970, Maldives đạt thu nhập bình quân đầu người cao nhất Nam Á (~12.600 USD). Giai đoạn 2024–2026 dưới thời Tổng thống Mohamed Muizzu, Malé là tâm điểm cạnh tranh ảnh hưởng Ấn – Trung, đồng thời đối mặt áp lực nợ ngoại tệ cao và nguy cơ nước biển dâng nhấn chìm.",
+    "sum": "Trải dài 800 km theo hướng bắc – nam giữa Ấn Độ Dương ở phía tây nam Ấn Độ, Maldives gồm 26 cụm đảo san hô vòng (atoll) với khoảng 1.192 đảo nhỏ (khoảng 200 đảo có người ở). Chỉ có ~300 km² đất nổi nhưng vùng biển rộng gần 1 triệu km², đây là quốc gia thấp nhất thế giới với độ cao trung bình vỏn vẹn ~1,5 m trên mực nước biển. Nằm trên tuyến hàng hải cổ đại xuyên Ấn Độ Dương, cư dân quần đảo chuyển từ Phật giáo sang Hồi giáo Sunni vào thế kỷ 12 và từng là xứ bảo hộ của Anh trước khi độc lập năm 1965.\n\nXã hội Maldives (~520.000 dân) gắn kết bởi ngôn ngữ Dhivehi và đạo Hồi, với hơn 1/3 dân số sống nén chặt tại đảo thủ đô Malé và đảo nhân tạo Hulhumalé kế bên. Nhờ mô hình du lịch 'một hòn đảo – một khu nghỉ dưỡng' từ thập niên 1970, Maldives đạt thu nhập bình quân đầu người cao nhất Nam Á (~13.400 USD năm 2024). Giai đoạn 2024–2026 dưới thời Tổng thống Mohamed Muizzu, Malé là tâm điểm cạnh tranh ảnh hưởng Ấn – Trung, đồng thời đối mặt áp lực nợ ngoại tệ cao và nguy cơ nước biển dâng nhấn chìm.",
     "t": [
       [
         "m",
@@ -1010,7 +1036,7 @@ export const C0 = {
     "cap": "Kabul",
     "pop": "~42 triệu",
     "area": "653 nghìn km²",
-    "sum": "Nằm sâu trong nội lục Á – Âu tại ngã tư nối Trung Á, Nam Á và Trung Đông, Afghanistan (652.860 km²) bị chia cắt bởi khối núi Hindu Kush cao trên 7.000 m chạy từ đông bắc xuống tây nam. Địa hình núi đá hiểm trở tách đất nước thành những thung lũng biệt lập giữa đồng bằng phía bắc, cao nguyên trung tâm và sa mạc phía nam, khiến chính quyền trung ương ở Kabul rất khó kiểm soát các vùng bộ tộc. Từng là huyết mạch của Con đường Tơ lụa cổ đại, nơi đây trở thành 'Nghĩa địa của các đế chế' khi cả Anh (thế kỷ 19), Liên Xô (1979–1989) và Mỹ – NATO (2001–2021) đều phải rút quân.\n\nXã hội Afghanistan (~42 triệu dân) gồm đa sắc tộc Pashtun (~42%), Tajik, Hazara, Uzbek gắn kết bởi Hồi giáo và luật tục bộ tộc Pashtunwali. Từ khi Taliban tái chiếm Kabul tháng 8/2021 và áp đặt luật Sharia hà khắc (cấm phụ nữ học trung học, đại học và đi làm), chính quyền này vẫn bị cô lập ngoại giao và phong tỏa tài chính. Giai đoạn 2025–2026, bất chấp xung đột biên giới với Pakistan, Taliban tăng thu thuế nội địa, thu hút doanh nghiệp Trung Quốc khai mỏ và đào siêu kênh Qosh Tepa rút nước sông Amu Darya.",
+    "sum": "Nằm sâu trong nội lục Á – Âu tại ngã tư nối Trung Á, Nam Á và Trung Đông, Afghanistan (652.860 km²) bị chia cắt bởi khối núi Hindu Kush cao trên 7.000 m chạy từ đông bắc xuống tây nam. Địa hình núi đá hiểm trở tách đất nước thành những thung lũng biệt lập giữa đồng bằng phía bắc, cao nguyên trung tâm và sa mạc phía nam, khiến chính quyền trung ương ở Kabul rất khó kiểm soát các vùng bộ tộc. Từng là huyết mạch của Con đường Tơ lụa cổ đại, nơi đây trở thành 'Nghĩa địa của các đế chế' khi cả Anh (thế kỷ 19), Liên Xô (1979–1989) và Mỹ – NATO (2001–2021) đều phải rút quân.\n\nXã hội Afghanistan (~42 triệu dân) gồm đa sắc tộc Pashtun (~42%), Tajik, Hazara, Uzbek gắn kết bởi Hồi giáo và luật tục bộ tộc Pashtunwali. Từ khi Taliban tái chiếm Kabul tháng 8/2021 và áp đặt luật Sharia hà khắc (cấm phụ nữ học trung học, đại học và đi làm), chính quyền này vẫn bị phần lớn thế giới cô lập và phong tỏa tài chính (Nga là nước đầu tiên chính thức công nhận, tháng 7/2025). Giai đoạn 2025–2026, bất chấp giao tranh biên giới với Pakistan (10/2025), Taliban tăng thu thuế nội địa, thu hút doanh nghiệp Trung Quốc khai mỏ và đào siêu kênh Qosh Tepa rút nước sông Amu Darya.",
     "t": [
       [
         "g",
@@ -1040,7 +1066,9 @@ export const C0 = {
     ],
     "hs": [
       "durand",
-      "khyber"
+      "khyber",
+      "wakhan",
+      "amudarya"
     ]
   },
   "Siachen Glacier": {
@@ -1078,6 +1106,7 @@ export const C0 = {
     "hs": [
       "kashmir",
       "conf_kashmir",
+      "karakoram",
       "himalaya",
       "indus"
     ]
@@ -1115,7 +1144,9 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "tianshan"
+      "tianshan",
+      "res_kaz_uranium",
+      "syrdarya"
     ]
   },
   "Uzbekistan": {
@@ -1151,14 +1182,17 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "tianshan"
+      "tianshan",
+      "fergana",
+      "amudarya",
+      "syrdarya"
     ]
   },
   "Turkmenistan": {
     "cap": "Ashgabat",
     "pop": "~7,5 triệu",
     "area": "491 nghìn km²",
-    "sum": "Trải rộng 491.210 km² ở tây nam Trung Á giữa biển Caspi và sông Amu Darya, Turkmenistan có hơn 80% diện tích bị bao phủ bởi sa mạc cát đen Karakum khô hạn. Hầu hết dân cư (~7 triệu người) và thủ đô đá cẩm thạch trắng Ashgabat nằm thành dải hẹp dưới chân dãy núi Kopet Dag giáp Iran, sống nhờ dòng kênh đào nhân tạo Karakum dài nhất thế giới. Từng là quê hương của các bộ tộc kỵ binh Turkmen dọc ốc đảo cổ Merv và kháng cự quyết liệt trước Đế quốc Nga cuối thế kỷ 19, Turkmenistan thuộc Liên Xô trước khi độc lập năm 1991.\n\nTừ năm 1991, đất nước vận hành thể chế tổng thống tập quyền khép kín bậc nhất thế giới, chuyển giao quyền lực từ ông Gurbanguly Berdimuhamedow sang con trai là Tổng thống Serdar Berdimuhamedow vào năm 2022. Về đối ngoại, Ashgabat giữ quy chế 'Trung lập Vĩnh viễn' được Liên Hợp Quốc công nhận năm 1995, không tham gia bất kỳ liên minh quân sự hay kinh tế nào. Ngồi trên trữ lượng khí đốt lớn thứ tư thế giới (mỏ Galkynysh), thách thức của Turkmenistan giai đoạn 2025–2026 là quá phụ thuộc vào việc bán khí đốt cho Trung Quốc và nguy cơ thiếu nước sông Amu Darya.",
+    "sum": "Trải rộng 491.210 km² ở tây nam Trung Á giữa biển Caspi và sông Amu Darya, Turkmenistan có hơn 80% diện tích bị bao phủ bởi sa mạc cát đen Karakum khô hạn. Dân cư (~7,5 triệu người) tập trung ở các ốc đảo: dải chân núi Kopet Dag giáp Iran (nơi có thủ đô đá cẩm thạch trắng Ashgabat) và dọc sông Amu Darya, Murghab, sống nhờ kênh đào Karakum, một trong những kênh dẫn nước dài nhất thế giới. Từng là quê hương của các bộ tộc kỵ binh Turkmen dọc ốc đảo cổ Merv và kháng cự quyết liệt trước Đế quốc Nga cuối thế kỷ 19, Turkmenistan thuộc Liên Xô trước khi độc lập năm 1991.\n\nTừ năm 1991, đất nước vận hành thể chế tổng thống tập quyền khép kín bậc nhất thế giới, chuyển giao quyền lực từ ông Gurbanguly Berdimuhamedow sang con trai là Tổng thống Serdar Berdimuhamedow vào năm 2022. Về đối ngoại, Ashgabat giữ quy chế 'Trung lập Vĩnh viễn' được Liên Hợp Quốc công nhận năm 1995, không tham gia bất kỳ liên minh quân sự hay kinh tế nào. Ngồi trên trữ lượng khí đốt lớn thứ tư thế giới (mỏ Galkynysh), thách thức của Turkmenistan giai đoạn 2025–2026 là quá phụ thuộc vào việc bán khí đốt cho Trung Quốc và nguy cơ thiếu nước sông Amu Darya.",
     "t": [
       [
         "g",
@@ -1177,8 +1211,8 @@ export const C0 = {
       ],
       [
         "m",
-        "Biên giới dài hơn 800 km với Afghanistan và gần 1.000 km với Iran",
-        "Có hơn 800 km biên giới với Afghanistan và gần 1.000 km với Iran ở phía nam. Nhờ quy chế 'Trung lập Vĩnh viễn', Ashgabat duy trì quan hệ thực dụng với chính quyền Taliban tại Kabul để giữ yên biên giới và thúc đẩy dự án đường ống khí đốt TAPI."
+        "Biên giới dài hơn 800 km với Afghanistan và hơn 1.100 km với Iran",
+        "Có hơn 800 km biên giới với Afghanistan và hơn 1.100 km với Iran ở phía nam. Nhờ quy chế 'Trung lập Vĩnh viễn', Ashgabat duy trì quan hệ thực dụng với chính quyền Taliban tại Kabul để giữ yên biên giới và thúc đẩy dự án đường ống khí đốt TAPI."
       ],
       [
         "b",
@@ -1187,7 +1221,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "karakum"
+      "karakum",
+      "amudarya"
     ]
   },
   "Kyrgyzstan": {
@@ -1223,7 +1258,9 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "tianshan"
+      "tianshan",
+      "fergana",
+      "syrdarya"
     ]
   },
   "Tajikistan": {
@@ -1258,7 +1295,10 @@ export const C0 = {
         "Với hơn 14.000 sông băng bao gồm sông băng Fedchenko dài nhất thế giới ngoài vùng cực (77 km), Tajikistan kiểm soát hơn 55% tổng lượng nước mặt của lưu vực biển Aral. Quyền kiểm soát nguồn nước thượng nguồn giúp Dushanbe nắm vị thế chiến lược trước Uzbekistan và Turkmenistan, đồng thời thúc đẩy đường dây tải điện CASA-1000 xuất khẩu thủy điện mùa hè sang Pakistan."
       ]
     ],
-    "hs": []
+    "hs": [
+      "amudarya",
+      "wakhan"
+    ]
   },
   "Georgia": {
     "cap": "Tbilisi",

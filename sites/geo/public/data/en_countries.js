@@ -121,12 +121,12 @@ export const AL_EN = {
   "eu": {
     "n": "EU",
     "f": "European Union · 27 members",
-    "tx": "Began as the European Coal and Steel Community (1951) to bind France and Germany together after three wars. Now a supranational single market with 20 eurozone members; the UK left in 2020 (Brexit). Lighter shade: candidate countries negotiating accession."
+    "tx": "Began as the European Coal and Steel Community (1951) to bind France and Germany together after three wars. Now a supranational single market with 21 eurozone members (Bulgaria joined in 2026); the UK left in 2020 (Brexit). Lighter shade: candidate countries negotiating accession."
   },
   "asean": {
     "n": "ASEAN",
-    "f": "Association of Southeast Asian Nations · 1967 · 10 members + Timor-Leste",
-    "tx": "Regional bloc straddling the strategic Indo-Pacific sea lanes, operating on consensus, non-interference, and \"not taking sides\" between great powers. Lighter shade: Timor-Leste (admitted in principle as the 11th member) and Papua New Guinea (observer)."
+    "f": "Association of Southeast Asian Nations · 1967 · 11 members",
+    "tx": "Regional bloc straddling the strategic Indo-Pacific sea lanes, operating on consensus, non-interference, and \"not taking sides\" between great powers. Timor-Leste joined as the 11th full member in October 2025. Lighter shade: Papua New Guinea (observer)."
   },
   "brics": {
     "n": "BRICS+",
@@ -136,7 +136,7 @@ export const AL_EN = {
   "sco": {
     "n": "SCO",
     "f": "Shanghai Cooperation Organisation · 10 members",
-    "tx": "Led by China and Russia, focusing on Eurasian continental security and connectivity, with Central Asia serving as a shared buffer zone for both continental powers."
+    "tx": "Led by China and Russia, focusing on Eurasian continental security and connectivity, with Central Asia serving as a shared buffer zone for both continental powers. Belarus joined in July 2024 as the 10th full member."
   },
   "csto": {
     "n": "CSTO",
@@ -181,14 +181,15 @@ export const AL_EN = {
   "mercosur": {
     "n": "Mercosur",
     "f": "Southern Common Market",
-    "tx": "Argentina, Brazil, Paraguay, Uruguay, and Bolivia (full member since 2024), centered around the Paraná–Plata river basin. Lighter shade: Venezuela (suspended) and associate members."
+    "tx": "Argentina, Brazil, Paraguay, Uruguay, and Bolivia (full member since 2024), centered around the Paraná–Plata river basin. Lighter shade: Venezuela (suspended) and associate members (Panama joined as an associate member in Dec 2024)."
   },
   "vncsp": {
     "n": "Vietnam's CSP Partners",
-    "f": "Comprehensive Strategic Partners · 14 nations",
-    "tx": "Vietnam's highest diplomatic tier: China (2008), Russia (2012), India (2016), South Korea (2022), the US and Japan (2023), Australia, France, and Malaysia (2024), New Zealand, Indonesia, Singapore, Thailand, and the United Kingdom (2025). Vietnam is one of the very few nations holding Comprehensive Strategic Partnerships with all five permanent members of the UN Security Council—a hallmark of its \"bamboo diplomacy.\""
+    "f": "Comprehensive Strategic Partners · 15 nations + EU",
+    "tx": "Vietnam's highest diplomatic tier: China (2008), Russia (2012), India (2016), South Korea (2022), the US and Japan (2023), Australia, France, and Malaysia (2024), New Zealand, Indonesia, Singapore, Thailand, and the United Kingdom (2025), alongside the EU and Denmark (2026). Vietnam is one of the very few nations holding Comprehensive Strategic Partnerships with all five permanent members of the UN Security Council—a hallmark of its \"bamboo diplomacy.\""
   }
 };
+
 
 export const REF_EN = {"eq":{"n":"Equator"},"trop":{"n":"Tropics"},"polar":{"n":"Polar Circles"},"pm":{"n":"Prime Meridian"},"grat":{"n":"Graticule"},"labels":{"n":"Country Labels"},"daynight":{"n":"☀️🌙 Day & Night"}};
 
@@ -463,7 +464,7 @@ export const C0_EN = {
       [
         "g",
         "Natural mountain and river borders; 34-province reform (2025)",
-        "Over 4,500 km of mountain and river land borders have been forged over centuries. Internally, the historic 2025 consolidation from 63 down to 34 provinces and municipalities eliminates administrative fragmentation and links highland regions directly to seaports."
+        "Over 4,500 km of land borders follow mountains and rivers; demarcation is complete with China and Laos and about 84% done with Cambodia. Internally, the July 2025 reform, which merged 63 provinces and municipalities into 34 and abolished the district tier (two-level local government), reduces administrative fragmentation and links highland regions directly to seaports."
       ],
       [
         "b",
@@ -496,12 +497,12 @@ export const C0_EN = {
       [
         "m",
         "Borders 14 countries on land; Himalayan and maritime disputes",
-        "Sharing 22,100 km of land borders with 14 countries—tied with Russia for the most on Earth—stretches Chinese security across multiple fronts. Beijing faces an unresolved Himalayan border dispute with India alongside maritime flashpoints in the Taiwan Strait and South China Sea."
+        "Sharing 22,100 km of land borders with 14 countries—tied with Russia for the most on Earth—stretches Chinese security across multiple fronts. Beijing faces an unresolved Himalayan border dispute with India alongside maritime disputes in the South and East China Seas."
       ],
       [
         "g",
         "Tibet is the \"Water Tower of Asia\"",
-        "Commanding the Tibetan Plateau makes China the 'Water Tower of Asia,' holding the headwaters of the Mekong, Brahmaputra, Salween, and Indus rivers. Building giant upstream hydropower cascades gives Beijing potent hydrological leverage over nearly two billion people downstream."
+        "Commanding the Tibetan Plateau makes China the 'Water Tower of Asia,' holding the headwaters of the Mekong, Brahmaputra, Salween, and Indus rivers. Giant upstream hydropower cascades (such as the Medog project on the Yarlung Tsangpo–Brahmaputra, begun in July 2025) give Beijing potent hydrological leverage over nearly two billion people downstream."
       ]
     ]
   },
@@ -608,7 +609,7 @@ export const C0_EN = {
     "cap": "Tokyo",
     "pop": "~124M",
     "area": "378,000 km²",
-    "sum": "Stretching over 3,000 km in a volcanic arc off eastern Eurasia, Japan comprises four main islands—Honshu, Hokkaido, Kyushu, and Shikoku—and over 14,000 smaller islands along the Pacific Ring of Fire. Mountains cover three-quarters of the archipelago, leaving Japan with a resource-poor 'empty stomach' and crowding 124 million people into narrow coastal plains with barely 12% arable land. Protected for centuries by wide sea moats, Japan cultivated a distinct insular civilization before launching the 1868 Meiji Restoration to become Asia's first modern industrial power.\n\nRebuilt after World War II under a pacifist constitution and the US security alliance, Japan forged a high-trust society, precision manufacturing leadership, and the world's fourth-largest economy. Because nearly 90% of its energy travels by sea from the Middle East through the Strait of Malacca and the South China Sea, stability across the Taiwan Strait is an existential priority for Tokyo. In 2025–2026, Japan is doubling defense spending toward 2% of GDP and reviving advanced chipmaking while grappling with the world's most severe demographic aging.",
+    "sum": "Stretching over 3,000 km in a volcanic arc off eastern Eurasia, Japan comprises four main islands—Honshu, Hokkaido, Kyushu, and Shikoku—and over 14,000 smaller islands along the Pacific Ring of Fire. Mountains cover three-quarters of the archipelago, leaving Japan with a resource-poor 'empty stomach' and crowding 124 million people into narrow coastal plains with barely 11% arable land. Protected for centuries by wide sea moats, Japan cultivated a distinct insular civilization before launching the 1868 Meiji Restoration to become Asia's first modern industrial power.\n\nRebuilt after World War II under a pacifist constitution and the US security alliance, Japan forged a high-trust society, precision manufacturing leadership, and what was long the world's second-largest economy (1968–2010), now fourth (2024). Because nearly 90% of its energy travels by sea from the Middle East through the Strait of Malacca and the South China Sea, stability across the Taiwan Strait is an existential priority for Tokyo. In 2025–2026, the government of Prime Minister Sanae Takaichi (in office since October 2025) brought the 2%-of-GDP defense spending target forward to fiscal 2025, two years early, and is reviving advanced chipmaking while grappling with the world's most severe demographic aging.",
     "t": [
       [
         "g",
@@ -641,7 +642,7 @@ export const C0_EN = {
     "cap": "Seoul",
     "pop": "~51.7M",
     "area": "100,000 km²",
-    "sum": "Occupying the southern half of the Korean Peninsula in Northeast Asia, South Korea sits at the strategic crossroads between continental giants China and Russia and maritime Japan. Long describing its fate as 'a shrimp among whales,' the country is ~70% mountainous along the eastern Taebaek spine while population crowds into the western and southern coastal plains. After centuries of unity under the Joseon Dynasty and Japanese colonial rule (1910–1945), the peninsula was partitioned along the 38th parallel in 1945 and scarred by the 1950–1953 Korean War.\n\nBecause its sole land border is sealed shut by the heavily fortified Demilitarized Zone (DMZ), South Korea functions geopolitically as a maritime trading island. Through the 'Miracle on the Han River,' it rose from postwar poverty into a vibrant democracy, a global leader in memory chips, shipbuilding, and defense exports, and a K-Wave cultural powerhouse. In 2025–2026, beyond the nuclear threat from North Korea just north of Seoul, South Korea faces an existential demographic crisis driven by the world's lowest fertility rate (~0,75).",
+    "sum": "Occupying the southern half of the Korean Peninsula in Northeast Asia, South Korea sits at the strategic crossroads between continental giants China and Russia and maritime Japan. Long describing its fate as 'a shrimp among whales,' the country is ~70% mountainous along the eastern Taebaek spine while population crowds into the western and southern coastal plains. After centuries of unity under the Joseon Dynasty and Japanese colonial rule (1910–1945), the peninsula was partitioned along the 38th parallel in 1945 and scarred by the 1950–1953 Korean War.\n\nBecause its sole land border is sealed shut by the heavily fortified Demilitarized Zone (DMZ), South Korea functions geopolitically as a maritime trading island. Through the 'Miracle on the Han River,' it rose from postwar poverty into a vibrant democracy, a global leader in memory chips, shipbuilding, and defense exports, and a K-Wave cultural powerhouse. After the December 2024 martial-law crisis and a snap election, President Lee Jae-myung took office in June 2025. Beyond the nuclear threat from North Korea just north of Seoul, South Korea faces an existential demographic crisis driven by the world's lowest fertility rate (0.72 in 2023, edging up to 0.80 in 2025).",
     "t": [
       [
         "b",
@@ -674,7 +675,7 @@ export const C0_EN = {
     "cap": "Pyongyang",
     "pop": "~26M",
     "area": "121,000 km²",
-    "sum": "Occupying the northern half of the Korean Peninsula, North Korea is roughly 80% mountainous, anchored by sacred Mount Paektu in the north and the rugged Rangrim Range. Harsh winters and scarce arable land (~17%) crowd most of its 26 million people into the western coastal plains around Pyongyang facing the Yellow Sea. Since the 1945 partition and the 1950–1953 Korean War, Beijing has viewed North Korea as a vital strategic buffer ('lips protecting the teeth') keeping US forces away from the Yalu River.\n\nRuled for three generations by the Kim dynasty under the doctrines of Juche (self-reliance) and military-first politics, it remains the world's most isolated fortress state. Defying sweeping international sanctions, Pyongyang built an operational nuclear and ICBM arsenal to guarantee regime survival. In 2024–2026, North Korea forged a mutual defense treaty with Russia—supplying artillery shells and troops in exchange for Russian fuel, food, and military technology—while declaring South Korea its principal enemy.",
+    "sum": "Occupying the northern half of the Korean Peninsula, North Korea is roughly 80% mountainous, anchored by sacred Mount Paektu in the north and the rugged Rangrim Range. Harsh winters and scarce arable land (~19%) crowd most of its 26 million people into the western coastal plains around Pyongyang facing the Yellow Sea. Since the 1945 partition and the 1950–1953 Korean War, Beijing has viewed North Korea as a vital strategic buffer ('lips protecting the teeth') keeping US forces away from the Yalu River.\n\nRuled for three generations by the Kim dynasty under the doctrines of Juche (self-reliance) and military-first politics, it remains the world's most isolated fortress state. Defying sweeping international sanctions, Pyongyang built an operational nuclear and ICBM arsenal to guarantee regime survival. In 2024–2026, North Korea forged a mutual defense treaty with Russia—supplying artillery shells and troops in exchange for Russian fuel, food, and military technology—while declaring South Korea its principal enemy.",
     "t": [
       [
         "m",
@@ -717,7 +718,7 @@ export const C0_EN = {
       [
         "b",
         "Landlocked; reliant on China's Tianjin port",
-        "Roughly 700 km from the nearest coastline, landlocked Mongolia relies on China's Tianjin Port and Russia's Far Eastern ports for sea access. All coal and copper exports must transit the Trans-Mongolian Railway through Chinese or Russian territory."
+        "Roughly 700 km from the nearest coastline, landlocked Mongolia relies on China's Tianjin Port and Russia's Far Eastern ports for sea access. Coal and copper concentrate exports go mostly to China by truck and rail through southern border crossings."
       ],
       [
         "b",
@@ -740,7 +741,7 @@ export const C0_EN = {
     "cap": "Manila",
     "pop": "~114M",
     "area": "300,000 km²",
-    "sum": "Comprising over 7,600 volcanic islands in the Western Pacific, the Philippines anchors the southern flank of the First Island Chain along the eastern rim of the South China Sea. Its mountainous geography is divided across Luzon, the Visayas, and Mindanao while enduring an average of 20 tropical typhoons every year. Over three centuries of Spanish rule followed by nearly five decades of American administration (1898–1946) forged Asia's largest Catholic nation.\n\nModern Philippine society is defined by a young, English-proficient population of 114 million, vibrant democratic politics, and a vast global diaspora. As Washington's oldest treaty ally in Asia (1951), Manila stands on the front line of maritime disputes around Scarborough Shoal and the Spratly Islands. In 2025–2026, Manila has expanded US military access to northern Luzon bases overlooking Taiwan and deepened defense ties with Japan while upgrading inter-island infrastructure.",
+    "sum": "Comprising over 7,600 volcanic islands in the Western Pacific, the Philippines anchors the southern flank of the First Island Chain along the eastern rim of the South China Sea. Its mountainous geography is divided across Luzon, the Visayas, and Mindanao while enduring an average of 20 tropical typhoons every year. Over three centuries of Spanish rule followed by nearly five decades of American administration (1898–1946) forged Asia's largest Catholic nation.\n\nModern Philippine society is defined by a young, English-proficient population of 114 million, vibrant democratic politics, and a vast global diaspora. As Washington's oldest treaty ally in Asia (1951), Manila stands on the front line of maritime disputes around Scarborough Shoal and the Spratly Islands. Manila chairs ASEAN in 2026, keeps granting US forces access to bases under EDCA (including northern Luzon sites facing Taiwan), and has deepened defense ties with Japan through a Reciprocal Access Agreement in force since 11 September 2025.",
     "t": [
       [
         "m",
@@ -783,7 +784,7 @@ export const C0_EN = {
       [
         "g",
         "Commands the Malacca, Sunda, and Lombok Straits",
-        "Indonesia commands the Strait of Malacca alongside the only viable bypass routes for deep-draft supertankers and submarines: the Sunda and Lombok–Makassar Straits. Every vessel transiting between the Indian and Pacific Oceans must pass through Indonesian archipelagic waters."
+        "Indonesia commands the Strait of Malacca alongside the only viable bypass routes for deep-draft supertankers and submarines: the Sunda and Lombok–Makassar Straits. Most shipping between the Indian Ocean and the South China Sea must pass through straits within or bordering Indonesian waters."
       ],
       [
         "m",
@@ -844,12 +845,12 @@ export const C0_EN = {
       [
         "b",
         "Zero strategic depth (~50 km wide)",
-        "Measuring barely 50 km across with a highest hill of 164 meters, Singapore has zero strategic depth. To compensate, the city-state built a 'Poisonous Shrimp' deterrence doctrine backed by universal conscription and Southeast Asia's most advanced air force (F-35s) and navy."
+        "Measuring barely 50 km across with a highest hill of 164 meters, Singapore has zero strategic depth. To compensate, the city-state built a 'Poisonous Shrimp' deterrence doctrine backed by universal conscription and Southeast Asia's most advanced air force and navy."
       ],
       [
         "g",
         "Sits at the narrowest funnel (2.8 km) linking the Indian and Pacific Oceans",
-        "Sitting at the maritime funnel where 130,000 vessels transit annually between the Indian Ocean and South China Sea, Singapore is the world's second-busiest container transshipment port and top ship-refueling hub. Its automated Tuas Mega Port will boost capacity to 65 million TEUs."
+        "Sitting at one of the world's busiest maritime funnels between the Indian Ocean and South China Sea, Singapore is the world's second-busiest container port (after Shanghai), its largest transshipment hub, and its top ship-refueling hub. Its automated Tuas Mega Port will boost capacity to 65 million TEUs."
       ],
       [
         "b",
@@ -864,7 +865,7 @@ export const C0_EN = {
       [
         "b",
         "Historically water-scarce, importing water from Johor (Malaysia)",
-        "Long reliant on raw water piped from Johor, Malaysia under a treaty expiring in 2061, Singapore developed its 'Four National Taps' strategy. Advanced reclaimed water (NEWater) and seawater desalination now enable the island to meet over 70% of its water needs."
+        "Long reliant on raw water piped from Johor, Malaysia under a treaty expiring in 2061, Singapore developed its 'Four National Taps' strategy. Advanced reclaimed water (NEWater) and seawater desalination can now meet up to about 70% of current water demand (NEWater up to 40%, desalination up to 30%)."
       ]
     ]
   },
@@ -905,7 +906,7 @@ export const C0_EN = {
     "cap": "Dili",
     "pop": "~1.4M",
     "area": "14,900 km²",
-    "sum": "Occupying the eastern half of Timor Island plus the coastal exclave of Oecusse inside Indonesian West Timor, Timor-Leste is a rugged nation of 14,900 km² between Indonesia and Australia. The central Ramelau mountain spine, rising nearly 3,000 meters, sheltered guerrilla resistance fighters for decades but severely fragments internal roads and farming. After four centuries of Portuguese colonial rule and a brutal 1975–1999 Indonesian occupation, Timor-Leste achieved independence in 2002 as the twenty-first century's first new sovereign state.\n\nAlongside the Philippines, Timor-Leste is one of only two predominantly Catholic nations in Southeast Asia and maintains one of the region's freest democracies. Its US-dollarized economy relies overwhelmingly on drawdowns from its ~$16–18B sovereign Petroleum Fund after the legacy Bayu-Undan gas field ceased production in 2023. In 2025–2026, Dili's twin strategic priorities are completing its historic accession as ASEAN's 11th member and developing the vast Greater Sunrise gas field with Australia.",
+    "sum": "Occupying the eastern half of Timor Island plus the coastal exclave of Oecusse inside Indonesian West Timor, Timor-Leste is a rugged nation of 14,900 km² between Indonesia and Australia. The central Ramelau mountain spine, rising nearly 3,000 meters, sheltered guerrilla resistance fighters for decades but severely fragments internal roads and farming. After four centuries of Portuguese colonial rule and a brutal 1975–1999 Indonesian occupation, Timor-Leste achieved independence in 2002 as the twenty-first century's first new sovereign state.\n\nAlongside the Philippines, Timor-Leste is one of only two predominantly Catholic nations in Southeast Asia and maintains one of the region's freest democracies. Its US-dollarized economy relies overwhelmingly on drawdowns from its ~$16–18B sovereign Petroleum Fund after the legacy Bayu-Undan gas field ceased commercial production in June 2025. On 26 October 2025, Timor-Leste formally became ASEAN's 11th member; its other strategic priority is developing the vast Greater Sunrise gas field with Australia.",
     "t": [
       [
         "m",
@@ -938,7 +939,7 @@ export const C0_EN = {
     "cap": "Bangkok",
     "pop": "~71.7M",
     "area": "513,000 km²",
-    "sum": "Positioned at the heart of mainland Southeast Asia, Thailand encompasses the fertile Chao Phraya central plain, the northeastern Khorat Plateau (Isan), northern mountains, and a long southern peninsula. This geography grants two-ocean access to the Gulf of Thailand and the Andaman Sea on the Indian Ocean, separated at the narrow Kra Isthmus by just 44 km. During the nineteenth-century colonial era, the Kingdom of Siam under the Chakri Dynasty stood out as the only Southeast Asian nation to preserve independence through modernization and buffer diplomacy between Britain and France.\n\nThai society revolves around 'Nation, Religion (Theravada Buddhism), and Monarchy,' even as modern politics navigates tensions between the royalist-military establishment and reformist parties. Practicing flexible 'bamboo in the wind' diplomacy between Washington and Beijing, Thailand built ASEAN's second-largest economy and premier automotive manufacturing hub. In 2025–2026, Bangkok is promoting a southern 'Landbridge' port-and-rail corridor bypassing Malacca while confronting sluggish growth, high household debt, and rapid demographic aging.",
+    "sum": "Positioned at the heart of mainland Southeast Asia, Thailand encompasses the fertile Chao Phraya central plain, the northeastern Khorat Plateau (Isan), northern mountains, and a long southern peninsula. This geography grants two-ocean access to the Gulf of Thailand and the Andaman Sea on the Indian Ocean, separated at the narrow Kra Isthmus by just 44 km. During the nineteenth-century colonial era, the Kingdom of Siam under the Chakri Dynasty stood out as the only Southeast Asian nation to preserve independence through modernization and buffer diplomacy between Britain and France.\n\nThai society revolves around 'Nation, Religion (Theravada Buddhism), and Monarchy,' even as modern politics navigates tensions between the royalist-military establishment and reformist parties. Practicing flexible 'bamboo in the wind' diplomacy between Washington and Beijing, Thailand built one of ASEAN's three largest economies (third in 2024, after Indonesia and Singapore) and its premier automotive manufacturing hub. 2025–2026 brought political upheaval (the Constitutional Court removed PM Paetongtarn Shinawatra in August 2025; Anutin Charnvirakul replaced her and was re-elected after the February 2026 election) and deadly border clashes with Cambodia (July and December 2025), on top of sluggish growth, high household debt, and rapid aging.",
     "t": [
       [
         "g",
@@ -958,7 +959,7 @@ export const C0_EN = {
       [
         "m",
         "Borders four countries; separatist unrest in three southernmost provinces",
-        "Bordering Myanmar, Laos, Cambodia, and Malaysia, Thailand faces refugee flows and fighting spillovers along its 2,400 km frontier with war-torn Myanmar. In the deep south, a decades-old Malay-Muslim insurgency simmers in Pattani, Yala, and Narathiwat provinces."
+        "Bordering Myanmar, Laos, Cambodia, and Malaysia, Thailand faces refugee flows and fighting spillovers along its 2,400 km frontier with war-torn Myanmar. In 2025, the border dispute with Cambodia erupted into fighting (July and December 2025) before a ceasefire on 27 December 2025. In the deep south, a decades-old Malay-Muslim insurgency simmers in Pattani, Yala, and Narathiwat provinces."
       ],
       [
         "m",
@@ -971,7 +972,7 @@ export const C0_EN = {
     "cap": "Naypyidaw",
     "pop": "~54M",
     "area": "677,000 km²",
-    "sum": "Myanmar centers on the flat Irrawaddy River valley of the Bamar majority, encircled on three sides by a rugged horseshoe rim of mountains inhabited by ethnic minorities. Positioned between South and Southeast Asia with wide frontage on the Bay of Bengal and Andaman Sea, it offers landlocked southwestern China a direct overland shortcut to the Indian Ocean. From the ancient kingdoms of Bagan and Konbaung through British rule ending in 1948, the divide between the lowland core and highland frontiers has fueled the world's longest-running civil wars.\n\nAfter a brief democratic opening (2011–2020), the February 2021 military coup plunged the nation of 54 million into nationwide conflict between the junta and ethnic armed armies plus resistance forces. Following the sweeping 'Operation 1027' offensives across 2023–2026, the central military lost control of vast borderlands facing China, India, Bangladesh, and Thailand. Myanmar's existential challenge is preventing state collapse, addressing the Rohingya and internal displacement crisis, and reviving a shattered economy.",
+    "sum": "Myanmar centers on the flat Irrawaddy River valley of the Bamar majority, encircled on three sides by a rugged horseshoe rim of mountains inhabited by ethnic minorities. Positioned between South and Southeast Asia with wide frontage on the Bay of Bengal and Andaman Sea, it offers landlocked southwestern China a direct overland shortcut to the Indian Ocean. From the Bagan, Toungoo, and Konbaung kingdoms through British rule ending in 1948, the divide between the lowland core and highland frontiers has fueled the world's longest-running civil wars.\n\nAfter a brief democratic opening (2011–2020), the February 2021 military coup plunged the nation of 54 million into nationwide conflict between the junta and ethnic armed armies plus resistance forces. Since 'Operation 1027' began in October 2023, the military has lost control of large borderlands facing China, India, Bangladesh, and Thailand, though it retook some towns in 2025 as China pressed armed groups. After junta-run elections (December 2025–January 2026), rejected by Western governments and the opposition, the new parliament elected Senior General Min Aung Hlaing president in April 2026. Myanmar's existential challenge is preventing state collapse, addressing the Rohingya and internal displacement crisis, and reviving a shattered economy.",
     "t": [
       [
         "m",
@@ -1004,7 +1005,7 @@ export const C0_EN = {
     "cap": "Vientiane",
     "pop": "~7.7M",
     "area": "237,000 km²",
-    "sum": "As Southeast Asia's only landlocked nation, Laos is ~80% covered by rugged northern mountains and the eastern Truong Son Range, leaving only narrow floodplains along the Mekong River. Wedged between five larger neighbors—China, Vietnam, Thailand, Cambodia, and Myanmar—it has long functioned as an inland buffer at the heart of mainland Southeast Asia. Tracing its roots to the fourteenth-century Kingdom of Lan Xang, Laos endured French colonial rule and wartime devastation before establishing the Lao PDR in 1975.\n\nLao society blends lowland Theravada Buddhist traditions with diverse upland ethnic groups under the single-party rule of the Lao People's Revolutionary Party. To overcome geographic isolation, Vientiane seeks to turn the country from landlocked to land-linked via the Laos–China Railway (2021) while building hydropower dams as the Battery of Southeast Asia. In 2025–2026, Laos pairs its special alliance with Vietnam (accessing Vung Ang Port) and Chinese investment with urgent efforts to manage heavy external debt and Kip inflation.",
+    "sum": "As Southeast Asia's only landlocked nation, Laos is ~80% covered by rugged northern mountains and the eastern Truong Son Range, leaving only narrow floodplains along the Mekong River. Wedged between five larger neighbors—China, Vietnam, Thailand, Cambodia, and Myanmar—it has long functioned as an inland buffer at the heart of mainland Southeast Asia. Tracing its roots to the fourteenth-century Kingdom of Lan Xang, Laos endured French colonial rule and wartime devastation before establishing the Lao PDR in 1975.\n\nLao society blends lowland Theravada Buddhist traditions with diverse upland ethnic groups under the single-party rule of the Lao People's Revolutionary Party. To overcome geographic isolation, Vientiane seeks to turn the country from landlocked to land-linked via the Laos–China Railway (2021) while building hydropower dams as the Battery of Southeast Asia. In 2025–2026, Laos pairs its special alliance with Vietnam (accessing Vung Ang Port) and Chinese investment with efforts to manage heavy external debt, although inflation eased and the kip stabilized in 2025.",
     "t": [
       [
         "m",
@@ -1057,7 +1058,7 @@ export const C0_EN = {
       [
         "m",
         "Historically contested buffer between Siam and Dai Viet",
-        "Wedged between much larger Thailand and Vietnam along 2,500+ km of borders, Cambodia has historically sought external great-power backing—today from Beijing—to balance its neighbors. About 84% of its land border with Vietnam has been formally demarcated."
+        "Wedged between much larger Thailand and Vietnam along 2,500+ km of borders, Cambodia has historically sought external great-power backing—today from Beijing—to balance its neighbors. About 84% of its land border with Vietnam has been formally demarcated. In 2025, its border dispute with Thailand erupted into fighting (July and December 2025) before a ceasefire on 27 December 2025."
       ],
       [
         "b",
@@ -1070,7 +1071,7 @@ export const C0_EN = {
     "cap": "New Delhi",
     "pop": "~1.45B",
     "area": "3.29M km²",
-    "sum": "Dominating the South Asian subcontinent, India sits inside a natural fortress sealed to the north by the Himalayas, flanked by the Thar Desert, and jutting deep into the Indian Ocean. Below the Himalayas stretches the fertile Indo-Gangetic Plain, one of Earth's great demographic heartlands and the cradle of four millennia of civilization. Across the Maurya, Gupta, and Mughal Empires up to the British Raj, overland conquerors entered almost solely via the Khyber Pass until the 1947 Partition split British India into India and Pakistan.\n\nNow the world's most populous nation (~1.45 billion) and largest democracy, India encompasses immense linguistic and religious diversity anchored by a Hindu majority. Under Prime Minister Narendra Modi, New Delhi practices multi-aligned strategic autonomy—partnering with the US, Japan, and Australia in the Quad while leading in BRICS and maintaining oil and defense ties with Russia. In 2025–2026, India is the fastest-growing major economy (#5 globally), powered by IT services and its UPI digital stack, yet confronts a two-front border challenge with China and Pakistan.",
+    "sum": "Dominating the South Asian subcontinent, India sits inside a natural fortress sealed to the north by the Himalayas, flanked by the Thar Desert, and jutting deep into the Indian Ocean. Below the Himalayas stretches the fertile Indo-Gangetic Plain, one of Earth's great demographic heartlands and the cradle of four millennia of civilization. Across the Maurya, Gupta, and Mughal Empires up to the British Raj, most overland invaders came through northwestern passes such as the Khyber, until the 1947 Partition split British India into India and Pakistan.\n\nNow the world's most populous nation (~1.45 billion) and largest democracy, India encompasses immense linguistic and religious diversity anchored by a Hindu majority. Under Prime Minister Narendra Modi, New Delhi practices multi-aligned strategic autonomy—partnering with the US, Japan, and Australia in the Quad while leading in BRICS and maintaining oil and defense ties with Russia. In 2025–2026, India is the fastest-growing major economy (#5 globally in 2024, World Bank), powered by IT services and its UPI digital stack, yet confronts a two-front border challenge with China and Pakistan (a four-day armed clash with Pakistan in May 2025).",
     "t": [
       [
         "g",
@@ -1080,7 +1081,7 @@ export const C0_EN = {
       [
         "g",
         "Peninsula juts deep into the center of the Indian Ocean",
-        "Jutting deep into the Indian Ocean with 7,500+ km of coastline, peninsular India overlooks the main oil shipping lanes from the Persian Gulf to East Asia. Crucially, India's military command on the Andaman and Nicobar Islands sits just ~150 km from the western entrance to the Strait of Malacca."
+        "Jutting deep into the Indian Ocean with about 11,100 km of coastline (official re-measurement; formerly 7,516.6 km), peninsular India overlooks the main oil shipping lanes from the Persian Gulf to East Asia. Crucially, India's military command on the Andaman and Nicobar Islands sits just ~150 km from the western entrance to the Strait of Malacca."
       ],
       [
         "g",
@@ -1095,7 +1096,7 @@ export const C0_EN = {
       [
         "m",
         "Upstream on the Indus system with Pakistan, but downstream on the Brahmaputra from Tibet",
-        "India occupies a dual middle-riparian position in South Asia's water politics. It is upstream of Pakistan on the Indus system flowing through Kashmir, yet downstream of China on the Brahmaputra (Yarlung Tsangpo), where Beijing's planned mega-dam in Tibet raises serious concerns."
+        "India occupies a dual middle-riparian position in South Asia's water politics. It is upstream of Pakistan on the Indus system flowing through Kashmir, yet downstream of China on the Brahmaputra (Yarlung Tsangpo), where Beijing began building the Medog mega-dam in July 2025. Since April 2025, India has held the 1960 Indus Waters Treaty with Pakistan 'in abeyance.'"
       ]
     ]
   },
@@ -1103,7 +1104,7 @@ export const C0_EN = {
     "cap": "Islamabad",
     "pop": "~251M",
     "area": "~800,000 km²",
-    "sum": "Stretching from 8,000-meter peaks in the Karakoram and Hindu Kush down to the Arabian Sea, Pakistan forms a narrow corridor between the Iranian–Afghan plateau and the Indian plains. Across an otherwise arid landscape of Balochistan mountains and the Thar Desert, the survival of its 251 million citizens (fifth most populous globally) depends entirely on the Indus River. Born out of the bloody 1947 Partition of British India—and scarred by the 1971 secession of Bangladesh—Pakistan's strategic identity has been defined by rivalry with much larger India.\n\nAs the world's only nuclear-armed Muslim-majority state, Pakistan combines parliamentary politics with deep military influence across a society of Punjabis, Pashtuns, Sindhis, and Baloch. Geopolitically, Islamabad anchors an 'all-weather partnership' with Beijing centered on the $60B+ China–Pakistan Economic Corridor (CPEC) to Gwadar Port while relying on Gulf states and the IMF for financial survival. In 2025–2026, Pakistan faces tough IMF fiscal austerity, surging Pakistani Taliban (TTP) militant attacks from across the Afghan border, and extreme climate shocks.",
+    "sum": "Stretching from 8,000-meter peaks in the Karakoram and Hindu Kush down to the Arabian Sea, Pakistan forms a narrow corridor between the Iranian–Afghan plateau and the Indian plains. Across an otherwise arid landscape of Balochistan mountains and the Thar Desert, the survival of its 251 million citizens (fifth most populous globally) depends entirely on the Indus River. Born out of the bloody 1947 Partition of British India—and scarred by the 1971 secession of Bangladesh—Pakistan's strategic identity has been defined by rivalry with much larger India.\n\nAs the world's only nuclear-armed Muslim-majority state, Pakistan combines parliamentary politics with deep military influence across a society of Punjabis, Pashtuns, Sindhis, and Baloch. Geopolitically, Islamabad anchors an 'all-weather partnership' with Beijing centered on the $60B+ China–Pakistan Economic Corridor (CPEC) to Gwadar Port while relying on Gulf states and the IMF for financial survival. In 2025–2026, Pakistan fought a four-day clash with India (May 2025) and border battles with Taliban-ruled Afghanistan (October 2025), while facing IMF austerity, surging Pakistani Taliban (TTP) attacks, Baloch separatism, and extreme climate shocks.",
     "t": [
       [
         "b",
@@ -1123,12 +1124,12 @@ export const C0_EN = {
       [
         "b",
         "Volatile borders on both flanks: the Radcliffe Line and the Durand Line",
-        "Pakistan is squeezed between two volatile colonial borders: to the east lies the 1947 Radcliffe Line and disputed Kashmir with nuclear rival India. To the west runs the 2,640 km Durand Line (1893) splitting the Pashtun heartland, which Kabul has never recognized and where cross-border TTP militant attacks have surged."
+        "Pakistan is squeezed between two volatile colonial borders: to the east lies the 1947 Radcliffe Line and disputed Kashmir with nuclear rival India. To the west runs the 2,640 km Durand Line (1893) splitting the Pashtun heartland, which Kabul has never recognized and where surging cross-border TTP attacks led to heavy Pakistan–Taliban border fighting in October 2025."
       ],
       [
         "b",
         "Headwaters of the Indus and its main tributaries flow through Indian-controlled Kashmir",
-        "Pakistan's ultimate water vulnerability is that the Indus and its main tributaries flow through Indian-controlled Kashmir before entering Punjab. While the 1960 Indus Waters Treaty allocated the western rivers to Pakistan, upstream Indian dams and New Delhi's push to revise the treaty threaten its lifeline."
+        "Pakistan's ultimate water vulnerability is that the Indus and its main tributaries flow through Indian-controlled Kashmir before entering Punjab. The 1960 Indus Waters Treaty allocated the western rivers to Pakistan, but since April 2025 India has held the treaty 'in abeyance'; Islamabad has said any attempt to stop or divert its waters would be an act of war."
       ]
     ]
   },
@@ -1136,7 +1137,7 @@ export const C0_EN = {
     "cap": "Dhaka",
     "pop": "~174M",
     "area": "148,000 km²",
-    "sum": "Sitting at the apex of the Bay of Bengal, Bangladesh is the world's largest river delta plain, formed by the confluence of the Ganges (Padma), Brahmaputra (Jamuna), and Meghna rivers. With 80% of its flat floodplain lying under 10 meters above sea level and virtually no natural hills, this fertile delta sustains 174 million people inside 148,000 km² (~1,200 people/km²). Carved out of historic Bengal by the 1947 Radcliffe Line as East Pakistan, the Bengali nation fought the 1971 Liberation War to win independence.\n\nThe world's fourth-largest Muslim-majority country entered a historic political transition in August 2024 when a student-led uprising ousted Prime Minister Sheikh Hasina and installed an interim government led by Nobel laureate Muhammad Yunus. Economically, Bangladesh leveraged its vast low-cost labor pool to become the world's second-largest garment exporter after China. In 2025–2026, Dhaka's core challenges are restoring democratic stability, recalibrating tense ties with neighbor India (surrounding 94% of its land border), and surviving frontline exposure to rising seas.",
+    "sum": "Sitting at the apex of the Bay of Bengal, Bangladesh is the world's largest river delta plain, formed by the confluence of the Ganges (Padma), Brahmaputra (Jamuna), and Meghna rivers. With 80% of its flat floodplain lying under 10 meters above sea level and virtually no natural hills, this fertile delta sustains 174 million people inside 148,000 km² (~1,200 people/km²). Carved out of historic Bengal by the 1947 Radcliffe Line as East Pakistan, the Bengali nation fought the 1971 Liberation War to win independence.\n\nThe world's fourth-largest Muslim-majority country entered a historic political transition in August 2024 when a student-led uprising ousted Prime Minister Sheikh Hasina and installed an interim government led by Nobel laureate Muhammad Yunus. Economically, Bangladesh leveraged its vast low-cost labor pool to become the world's second-largest garment exporter after China. After the 12 February 2026 election, won in a landslide by the BNP, Tarique Rahman became prime minister (17 February 2026); Dhaka's core challenges are consolidating democracy, recalibrating tense ties with neighbor India (surrounding 94% of its land border), and surviving frontline exposure to rising seas.",
     "t": [
       [
         "b",
@@ -1151,7 +1152,7 @@ export const C0_EN = {
       [
         "g",
         "World's largest delta formed by the Ganges (Padma) and Brahmaputra (Jamuna)",
-        "The Ganges–Brahmaputra–Meghna delta deposits rich silt supporting triple-cropped rice and 174 million people. The price of this fertility is that seasonal monsoon floods routinely submerge up to a third of the country while shifting channels erode farmland."
+        "The Ganges–Brahmaputra–Meghna delta deposits rich silt supporting triple-cropped rice and 174 million people. The price of this fertility is that seasonal monsoon floods routinely submerge 20–30% of the country while shifting channels erode farmland."
       ],
       [
         "b",
@@ -1202,7 +1203,7 @@ export const C0_EN = {
     "cap": "Kathmandu",
     "pop": "~29.7M",
     "area": "147,000 km²",
-    "sum": "Draped across the southern slopes of the Himalayas, Nepal has the steepest elevation gradient on Earth—rising from the subtropical Terai plains below 100 meters in the south to the 8,848-meter summit of Mount Everest in barely 150 km. Landlocked between Chinese Tibet to the north and India to the south, east, and west, eighteenth-century founding monarch Prithvi Narayan Shah described his kingdom as a yam between two boulders. Never colonized by Britain thanks to its mountain terrain and famed Gurkha soldiers, Nepal abolished its 240-year-old Hindu monarchy in 2008 to become a federal democratic republic.\n\nHome to 31 million people, Nepali society blends Indo-Aryan lowland communities and Tibeto-Burman Himalayan peoples across the birthplace of the Buddha at Lumbini. Because the Himalayan wall makes northern overland links to China costly, Nepal's economy remains tightly bound to India through an open border and a fixed currency peg. In 2025–2026, while relying heavily on overseas worker remittances, Nepal is unlocking its Himalayan river potential by scaling up hydropower exports to India and Bangladesh.",
+    "sum": "Draped across the southern slopes of the Himalayas, Nepal has the steepest elevation gradient on Earth—rising from the subtropical Terai plains below 100 meters in the south to the 8,848-meter summit of Mount Everest in barely 150 km. Landlocked between Chinese Tibet to the north and India to the south, east, and west, eighteenth-century founding monarch Prithvi Narayan Shah described his kingdom as a yam between two boulders. Never colonized by Britain thanks to its mountain terrain and famed Gurkha soldiers, Nepal abolished its 240-year-old Hindu monarchy in 2008 to become a federal democratic republic.\n\nHome to ~29.7 million people, Nepali society blends Indo-Aryan lowland communities and Tibeto-Burman Himalayan peoples across the birthplace of the Buddha at Lumbini. Because the Himalayan wall makes northern overland links to China costly, Nepal's economy remains tightly bound to India through an open border and a fixed currency peg. In September 2025, Gen Z-led protests forced Prime Minister K.P. Sharma Oli to resign; in the snap election of 5 March 2026 the Rastriya Swatantra Party (RSP) won a majority and former Kathmandu mayor Balendra Shah became prime minister. The economy still leans heavily on remittances while Nepal scales up hydropower exports to India and Bangladesh.",
     "t": [
       [
         "g",
@@ -1227,7 +1228,7 @@ export const C0_EN = {
       [
         "g",
         "Holds the Himalayan glacier headwaters feeding northern India",
-        "Perched on the southern Himalayan watershed, Nepal holds the headwaters supplying ~45% of the Ganges River's dry-season flow into northern India. Yet rapid global warming is melting Himalayan glaciers fast, exposing Nepali valleys to deadly glacial lake outburst floods (GLOFs)."
+        "Perched on the southern Himalayan watershed, Nepal holds the headwaters supplying about 40–45% of the Ganges' annual flow and up to ~70% of its dry-season flow. Yet rapid global warming is melting Himalayan glaciers fast, exposing Nepali valleys to deadly glacial lake outburst floods (GLOFs)."
       ]
     ]
   },
@@ -1245,7 +1246,7 @@ export const C0_EN = {
       [
         "b",
         "Landlocked; all trade transits through India",
-        "Completely landlocked, Bhutan routes virtually all of its overseas trade through Indian territory to the port of Kolkata (~700 km away). Uniquely in Asia, the kingdom maintains no formal diplomatic relations with its northern neighbor China."
+        "Completely landlocked, Bhutan routes virtually all of its overseas trade through Indian territory to the port of Kolkata (~700 km away). Uniquely among China's neighbors, the kingdom maintains no formal diplomatic relations with its northern neighbor China."
       ],
       [
         "m",
@@ -1268,7 +1269,7 @@ export const C0_EN = {
     "cap": "Malé",
     "pop": "~520K",
     "area": "~300 km²",
-    "sum": "Stretching 800 km north to south across the central Indian Ocean southwest of India, the Maldives consists of 26 coral atolls encompassing 1,192 islets, of which roughly 200 are inhabited. With less than 300 km² of dry land scattered across nearly one million km² of ocean, it is the lowest-lying country on Earth at an average elevation of just 1.5 meters. Positioned along ancient Indian Ocean trade routes, the islands converted from Buddhism to Sunni Islam in the twelfth century and served as a British protectorate until independence in 1965.\n\nUnited by the Dhivehi language and Islam, over a third of the country's 520,000 citizens crowd onto the tiny capital island of Malé and adjacent reclaimed Hulhumalé. By pioneering the 'one-island, one-resort' luxury tourism model in the 1970s, the Maldives achieved South Asia's highest per-capita GDP (~$12,600). In 2024–2026 under President Mohamed Muizzu, Malé has navigated intense India–China geopolitical competition while confronting acute external debt pressures and the existential threat of rising sea levels.",
+    "sum": "Stretching 800 km north to south across the central Indian Ocean southwest of India, the Maldives consists of 26 coral atolls encompassing 1,192 islets, of which roughly 200 are inhabited. With less than 300 km² of dry land scattered across nearly one million km² of ocean, it is the lowest-lying country on Earth at an average elevation of just 1.5 meters. Positioned along ancient Indian Ocean trade routes, the islands converted from Buddhism to Sunni Islam in the twelfth century and served as a British protectorate until independence in 1965.\n\nUnited by the Dhivehi language and Islam, over a third of the country's 520,000 citizens crowd onto the tiny capital island of Malé and adjacent reclaimed Hulhumalé. By pioneering the 'one-island, one-resort' luxury tourism model in the 1970s, the Maldives achieved South Asia's highest per-capita GDP (~$13,400 in 2024). In 2024–2026 under President Mohamed Muizzu, Malé has navigated intense India–China geopolitical competition while confronting acute external debt pressures and the existential threat of rising sea levels.",
     "t": [
       [
         "m",
@@ -1301,12 +1302,12 @@ export const C0_EN = {
     "cap": "Kabul",
     "pop": "~42M",
     "area": "653,000 km²",
-    "sum": "Locked inside the Eurasian interior at the crossroads of Central Asia, South Asia, and the Middle East, Afghanistan (652,860 km²) is bisected by the towering 7,000-meter Hindu Kush mountain range. This rugged topography fractures the land into isolated valleys separating the northern plains, central highlands, and arid southern basins, historically defying centralized rule from Kabul. Once a Silk Road hub, Afghanistan earned its reputation as the 'Graveyard of Empires' after exhausting British imperial armies in the nineteenth century, the Soviet Union (1979–1989), and the US-led coalition (2001–2021).\n\nAfghan society (~42 million people) is a mosaic of Pashtuns (~42%), Tajiks, Hazaras, and Uzbeks shaped by deep Islamic traditions and tribal codes. Since returning to power in August 2021, the Taliban have enforced harsh edicts barring women from secondary education and most work, leaving the regime unrecognized and cut off from Western banking. In 2025–2026, despite border clashes with Pakistan, the Taliban have consolidated internal control, courted Chinese mining investment, and pushed ahead with the Qosh Tepa irrigation canal on the Amu Darya.",
+    "sum": "Locked inside the Eurasian interior at the crossroads of Central Asia, South Asia, and the Middle East, Afghanistan (652,860 km²) is bisected by the towering 7,000-meter Hindu Kush mountain range. This rugged topography fractures the land into isolated valleys separating the northern plains, central highlands, and arid southern basins, historically defying centralized rule from Kabul. Once a Silk Road hub, Afghanistan earned its reputation as the 'Graveyard of Empires' after exhausting British imperial armies in the nineteenth century, the Soviet Union (1979–1989), and the US-led coalition (2001–2021).\n\nAfghan society (~42 million people) is a mosaic of Pashtuns (~42%), Tajiks, Hazaras, and Uzbeks shaped by deep Islamic traditions and tribal codes. Since returning to power in August 2021, the Taliban have enforced harsh edicts barring women from secondary and university education and most work, leaving the regime largely isolated and cut off from Western banking (Russia became the first country to formally recognize it, in July 2025). In 2025–2026, despite deadly border fighting with Pakistan in October 2025, the Taliban have consolidated internal control, courted Chinese mining investment, and pushed ahead with the Qosh Tepa irrigation canal on the Amu Darya.",
     "t": [
       [
         "g",
         "The rugged Hindu Kush range slices the country in two",
-        "The rugged Hindu Kush and Pamir ranges cover nearly three-quarters of the land, pierced only by high passes like the Salang Tunnel (3,878 m) and Khyber Pass. This terrain favors guerrilla resistance while fracturing central administration."
+        "The rugged Hindu Kush and Pamir ranges cover nearly three-quarters of the land, pierced only by high passes like the Salang Pass (3,878 m) and Khyber Pass. This terrain favors guerrilla resistance while fracturing central administration."
       ],
       [
         "b",
@@ -1334,7 +1335,7 @@ export const C0_EN = {
     "cap": "Military base camp (Indian-administered)",
     "pop": "No civilians (~several thousand soldiers)",
     "area": "~700 km²",
-    "sum": "Perched between 5,400 and 6,700 meters in the eastern Karakoram Range of Kashmir, the 76 km Siachen Glacier is the longest glacier in the Karakoram and second-longest outside the polar regions. Shaped like a strategic wedge, it sits at the tri-junction separating Pakistani-administered Gilgit-Baltistan, Indian-administered Ladakh, and Chinese-controlled Aksai Chin and Shaksgam Valley. Because the 1972 Simla Agreement stopped demarcating the Line of Control at point NJ9842, India launched Operation Meghdoot in April 1984 to seize the glacier and the commanding Saltoro Ridge ahead of Pakistan.\n\nSince 1984, Siachen has stood as the world's highest, coldest, and costliest battlefield, devoid of civilians and garrisoned by thousands of Indian and Pakistani troops enduring -50°C blizzards. Although a ceasefire has largely held since 2003 (reaffirmed in 2021), avalanches and altitude sickness have claimed over 80% of the 2,500+ military lives lost on the glacier. In 2025–2026, both nations refuse to demilitarize the heights, with India upgrading high-altitude roads, fiber-optic links, and helipads to prevent any Pakistani–Chinese linkup.",
+    "sum": "Perched between 5,400 and 6,700 meters in the eastern Karakoram Range of Kashmir, the 76 km Siachen Glacier is the longest glacier in the Karakoram and second-longest outside the polar regions. Shaped like a strategic wedge, it sits at the tri-junction separating Pakistani-administered Gilgit-Baltistan, Indian-administered Ladakh, and Chinese-controlled Aksai Chin and Shaksgam Valley. Because the 1972 Simla Agreement stopped demarcating the Line of Control at point NJ9842, India launched Operation Meghdoot in April 1984 to seize the glacier and the commanding Saltoro Ridge ahead of Pakistan.\n\nSince 1984, Siachen has stood as the world's highest, coldest, and costliest battlefield, devoid of civilians and garrisoned by thousands of Indian and Pakistani troops enduring -50°C blizzards. Although a ceasefire has largely held since 2003 (reaffirmed in 2021), avalanches and altitude sickness, not combat, account for over 80% of military deaths on the glacier (common estimate). In 2025–2026, both nations refuse to demilitarize the heights, with India upgrading high-altitude roads, fiber-optic links, and helipads to prevent any Pakistani–Chinese linkup.",
     "t": [
       [
         "g",
@@ -1359,7 +1360,7 @@ export const C0_EN = {
       [
         "g",
         "Headwater glacial source of the Indus basin",
-        "Holding Siachen commands the Nubra–Shyok headwaters of the Indus and separates Pakistani and Chinese territory. Climate change is thinning the glacier and triggering deadly avalanches, such as the 2012 Gayari disaster that buried 140 Pakistani soldiers."
+        "Holding Siachen commands the Nubra–Shyok headwaters of the Indus and separates Pakistani and Chinese territory. Climate change is thinning the glacier and triggering deadly avalanches, such as the 2012 Gayari avalanche that buried about 140 people (129 soldiers and 11 civilians) at a Pakistani army base."
       ]
     ]
   },
@@ -1433,7 +1434,7 @@ export const C0_EN = {
     "cap": "Ashgabat",
     "pop": "~7.5M",
     "area": "491,000 km²",
-    "sum": "Stretching across 491,210 km² of southwestern Central Asia between the Caspian Sea and the Amu Darya river, Turkmenistan is over 80% covered by the arid Karakum ('Black Sand') Desert. Nearly the entire population (~7 million) and the white-marble capital of Ashgabat cluster along the foot of the southern Kopet Dag mountains bordering Iran, sustained by the man-made Karakum Canal. Home to nomadic Turkmen tribes and the ancient Silk Road oasis of Merv, the region resisted nineteenth-century Russian conquest before Soviet rule and independence in 1991.\n\nSince independence, Turkmenistan has remained one of the world's most isolated authoritarian states, passing leadership within the Berdimuhamedow family to President Serdar Berdimuhamedow in 2022. Internationally, Ashgabat adheres to a doctrine of 'Permanent Neutrality' recognized by the UN General Assembly in 1995, staying out of military or economic blocs. Sitting atop the world's fourth-largest natural gas reserves (led by the Galkynysh field), its core challenges in 2025–2026 are overwhelming gas-export dependence on China and severe downstream water loss on the Amu Darya.",
+    "sum": "Stretching across 491,210 km² of southwestern Central Asia between the Caspian Sea and the Amu Darya river, Turkmenistan is over 80% covered by the arid Karakum ('Black Sand') Desert. Its ~7.5 million people live mainly in oases, along the foot of the Kopet Dag mountains bordering Iran (home to the white-marble capital Ashgabat) and along the Amu Darya and Murghab rivers, sustained by the man-made Karakum Canal. Home to nomadic Turkmen tribes and the ancient Silk Road oasis of Merv, the region resisted nineteenth-century Russian conquest before Soviet rule and independence in 1991.\n\nSince independence, Turkmenistan has remained one of the world's most isolated authoritarian states, passing leadership within the Berdimuhamedow family to President Serdar Berdimuhamedow in 2022. Internationally, Ashgabat adheres to a doctrine of 'Permanent Neutrality' recognized by the UN General Assembly in 1995, staying out of military or economic blocs. Sitting atop the world's fourth-largest natural gas reserves (led by the Galkynysh field), its core challenges in 2025–2026 are overwhelming gas-export dependence on China and severe downstream water loss on the Amu Darya.",
     "t": [
       [
         "g",
@@ -1452,8 +1453,8 @@ export const C0_EN = {
       ],
       [
         "m",
-        "Over 800 km border with Afghanistan and nearly 1,000 km with Iran",
-        "Turkmenistan shares an 800 km border with Afghanistan and a ~1,000 km frontier with Iran to the south. Under its UN-recognized 'Permanent Neutrality,' Ashgabat maintains pragmatic ties with the Taliban in Kabul to keep its border quiet and advance the TAPI gas pipeline."
+        "Over 800 km border with Afghanistan and over 1,100 km with Iran",
+        "Turkmenistan shares an 800 km border with Afghanistan and a ~1,150 km frontier with Iran to the south. Under its UN-recognized 'Permanent Neutrality,' Ashgabat maintains pragmatic ties with the Taliban in Kabul to keep its border quiet and advance the TAPI gas pipeline."
       ],
       [
         "b",
@@ -1486,7 +1487,7 @@ export const C0_EN = {
       [
         "m",
         "Convoluted borders and exclaves in the Fergana Valley",
-        "Soviet-era cartography left jigsaw-puzzle borders and foreign exclaves like Sokh and Vorukh embedded inside Kyrgyz territory across the densely populated Fergana Valley. Following lethal border battles with Tajikistan in 2021–2022 that killed hundreds, Bishkek completed border treaties with Uzbekistan (2023) and Tajikistan (2025) to demarcate all 972 km of disputed frontier."
+        "Soviet-era cartography left jigsaw-puzzle borders and foreign exclaves like Sokh and Vorukh embedded inside Kyrgyz territory across the densely populated Fergana Valley. Following lethal border battles with Tajikistan in 2021–2022 that killed hundreds, Bishkek settled its borders with Uzbekistan (treaty in force 2023) and Tajikistan (March 2025 treaty covering the full 972 km frontier)."
       ],
       [
         "g",

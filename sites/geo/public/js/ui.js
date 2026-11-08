@@ -415,6 +415,7 @@ function econHTML(en) {
     </div>
     <div class="econ-main"><b>${tr('Ngành mũi nhọn:', 'Key Industries:')}</b> ${main}</div>
     ${note ? `<div class="econ-note">${note}</div>` : ''}
+    <div style="font-size:11px;color:var(--faint);margin-top:6px;text-align:right">${tr('Nguồn: World Bank WDI (2024) & thống kê chính thức', 'Source: World Bank WDI (2024) & official statistics')}</div>
     ${rankGridHTML}
   </div>`;
 }
@@ -630,7 +631,7 @@ function countryHTML(f, ll) {
   if (subTitle) s += `<div class="sub-h1">${subTitle}</div>`;
   s += contLineHTML(f);
   if (d) {
-    s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div>`;
+    s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div><div style="font-size:11px;color:var(--faint);margin:-10px 0 10px;text-align:right">${tr('Nguồn: World Bank WDI (2024) & thống kê chính thức', 'Source: World Bank WDI (2024) & official statistics')}</div>`;
     s += fmtSum(d.sum);
     s += econHTML(f.en);
     s += relHTML(f.en);
