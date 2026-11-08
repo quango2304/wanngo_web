@@ -354,6 +354,10 @@ svg.i {
   z-index: 4;
   max-height: calc(100vh - 150px);
   overflow: auto;
+  background: var(--card-solid);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  contain: layout paint style;
 }
 
 #layers.hide {
@@ -694,19 +698,25 @@ select {
   z-index: 6;
   display: flex;
   flex-direction: column;
-  transform: translateX(430px);
+  background: var(--card-solid);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  transform: translate3d(430px, 0, 0);
   transition: transform .28s ease;
+  will-change: transform;
+  contain: layout paint style;
   overflow: hidden;
 }
 
 #panel.show {
-  transform: none;
+  transform: translate3d(0, 0, 0);
 }
 
 #pbody {
   overflow: auto;
   padding: 18px 18px 24px;
   flex: 1;
+  contain: content;
 }
 
 #pclose {
@@ -1591,9 +1601,9 @@ details.adm-list[open] > summary {
     bottom: 8px;
     width: auto;
     height: 62vh;
-    transform: translateY(105%);
+    transform: translate3d(0, 105%, 0);
   }
-  #panel.show { transform: none; }
+  #panel.show { transform: translate3d(0, 0, 0); }
   #ctrl, #bl {
     transition: opacity .22s ease;
   }

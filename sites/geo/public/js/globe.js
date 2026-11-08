@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108i';
-import { C0 } from '../data/countries.js?v=20261108i';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108i';
-import { AL, REF } from '../data/alliances.js?v=20261108i';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108i';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108j';
+import { C0 } from '../data/countries.js?v=20261108j';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108j';
+import { AL, REF } from '../data/alliances.js?v=20261108j';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108j';
 import {
   $,
   norm,
@@ -46,7 +46,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108i';
+} from './state.js?v=20261108j';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -138,6 +138,7 @@ const DETACHED_ADM1 = new Set(['US-HI', 'US-AK', 'RU-KGD', 'CN-HI', 'AU-TAS']);
 
 const SPHERE_GEO = { type: 'Sphere' };
 const GRAT_GEO = d3.geoGraticule10();
+const GRAT_LINES = splitM(GRAT_GEO);
 const makeParallelCoords = lat => d3.range(-180, 181, 2).map(x => [x, lat]);
 const REF_GEOS = {
   eq: { type: 'LineString', coordinates: makeParallelCoords(0) },
@@ -582,6 +583,8 @@ export function upgradeAdmin1Data(admGeo) {
     f.cap = meta.cap || '';
     f.old = meta.old || f.properties.old || [];
     f.tx = meta.tx || '';
+    const coords = f.geometry.type === 'Polygon' ? f.geometry.coordinates : f.geometry.coordinates.flat();
+    f.lineGeo = { type: 'MultiLineString', coordinates: coords };
     delete f.cr;
     ADM1_BY_ID[f.id] = f;
   });
@@ -705,34 +708,107 @@ function landColor(f) {
 }
 
 // ---------- culling
+const DEG2RAD = Math.PI / 180;
+
 function prepCull(o, geo) {
   const c = d3.geoCentroid(geo);
   const pts = [];
+  let minX = 1, maxX = -1, minY = 1, maxY = -1, minZ = 1, maxZ = -1;
+  const add3D = p => {
+    const lam = p[0] * DEG2RAD, phi = p[1] * DEG2RAD, cp = Math.cos(phi);
+    const x = cp * Math.cos(lam), y = cp * Math.sin(lam), z = Math.sin(phi);
+    if (x < minX) minX = x;
+    if (x > maxX) maxX = x;
+    if (y < minY) minY = y;
+    if (y > maxY) maxY = y;
+    if (z < minZ) minZ = z;
+    if (z > maxZ) maxZ = z;
+  };
   (function walk(a) {
     if (!a) return;
-    if (typeof a[0] === 'number') pts.push(a);
-    else a.forEach(walk);
+    if (typeof a[0] === 'number') {
+      pts.push(a);
+      add3D(a);
+    } else {
+      for (let i = 0; i < a.length; i++) walk(a[i]);
+    }
   })(geo.coordinates || (geo.geometry && geo.geometry.coordinates) || []);
+  if (c && isFinite(c[0]) && isFinite(c[1])) add3D(c);
   const st2 = Math.max(1, Math.floor(pts.length / 400));
   let rad = 0;
   for (let i = 0; i < pts.length; i += st2) rad = Math.max(rad, d3.geoDistance(c, pts[i]));
   if (pts.length) rad = Math.max(rad, d3.geoDistance(c, pts[pts.length - 1]));
   o.cc = c;
   o.cr = rad + 0.03;
+  if (pts.length) {
+    o.mx = (minX + maxX) * 0.5;
+    o.my = (minY + maxY) * 0.5;
+    o.mz = (minZ + maxZ) * 0.5;
+    o.ex = (maxX - minX) * 0.5 + 0.025;
+    o.ey = (maxY - minY) * 0.5 + 0.025;
+    o.ez = (maxZ - minZ) * 0.5 + 0.025;
+  } else {
+    o.mx = 0;
+    o.my = 0;
+    o.mz = 0;
+    o.ex = 2;
+    o.ey = 2;
+    o.ez = 2;
+  }
 }
 
-const VIEW = { c: [0, 0], vr: Math.PI / 2 };
+const VIEW = {
+  c: [0, 0],
+  vr: Math.PI / 2,
+  fx: 1, fy: 0, fz: 0, afx: 1, afy: 0, afz: 0,
+  rx: 0, ry: 1, arx: 0, ary: 1,
+  dx: 0, dy: 0, dz: -1, adx: 0, ady: 0, adz: 1,
+  uMin: -2, uMax: 2, vMin: -2, vMax: 2
+};
 
 export function updView() {
-  const [cx, cy] = proj.translate(), r = proj.scale();
+  const [cx, cy] = proj.translate(), r = proj.scale() || 1;
+  const rot = proj.rotate();
+  const lamC = -rot[0] * DEG2RAD, phiC = -rot[1] * DEG2RAD;
+  const cosPhi = Math.cos(phiC), sinPhi = Math.sin(phiC);
+  const cosLam = Math.cos(lamC), sinLam = Math.sin(lamC);
   const d = Math.max(Math.hypot(cx, cy), Math.hypot(W - cx, cy), Math.hypot(cx, Hh - cy), Math.hypot(W - cx, Hh - cy));
-  VIEW.c = proj.invert([cx, cy]);
+  VIEW.c = [-rot[0], -rot[1]];
   VIEW.vr = Math.asin(Math.min(1, d / r));
+  VIEW.fx = cosPhi * cosLam;
+  VIEW.fy = cosPhi * sinLam;
+  VIEW.fz = sinPhi;
+  VIEW.afx = Math.abs(VIEW.fx);
+  VIEW.afy = Math.abs(VIEW.fy);
+  VIEW.afz = Math.abs(VIEW.fz);
+  VIEW.rx = -sinLam;
+  VIEW.ry = cosLam;
+  VIEW.arx = Math.abs(VIEW.rx);
+  VIEW.ary = Math.abs(VIEW.ry);
+  VIEW.dx = sinPhi * cosLam;
+  VIEW.dy = sinPhi * sinLam;
+  VIEW.dz = -cosPhi;
+  VIEW.adx = Math.abs(VIEW.dx);
+  VIEW.ady = Math.abs(VIEW.dy);
+  VIEW.adz = Math.abs(VIEW.dz);
+  VIEW.uMin = (-20 - cx) / r;
+  VIEW.uMax = (W + 20 - cx) / r;
+  VIEW.vMin = (-20 - cy) / r;
+  VIEW.vMax = (Hh + 20 - cy) / r;
 }
 
 export function cullOK(o) {
   if (o.cr === undefined) prepCull(o, o.polyGeo || o.geo || o);
-  return d3.geoDistance(VIEW.c, o.cc) - o.cr < VIEW.vr + 0.02;
+  const mx = o.mx, my = o.my, mz = o.mz;
+  const ex = o.ex, ey = o.ey, ez = o.ez;
+  if (VIEW.fx * mx + VIEW.fy * my + VIEW.fz * mz + VIEW.afx * ex + VIEW.afy * ey + VIEW.afz * ez < -0.02) return false;
+  const u = VIEW.rx * mx + VIEW.ry * my;
+  const eu = VIEW.arx * ex + VIEW.ary * ey;
+  if (u + eu < VIEW.uMin || u - eu > VIEW.uMax) return false;
+  const v = VIEW.dx * mx + VIEW.dy * my + VIEW.dz * mz;
+  const ev = VIEW.adx * ex + VIEW.ady * ey + VIEW.adz * ez;
+  if (v + ev < VIEW.vMin || v - ev > VIEW.vMax) return false;
+  return true;
 }
 
 export function vh(h) {
@@ -833,6 +909,71 @@ let hiCost = 0;
 let slowFrames = 0;
 let lastLowres = false;
 
+const _baseKeyCache = new Map();
+const _cleanLblCache = new Map();
+const _compactLblCache = new Map();
+const _twCache = new Map();
+
+function baseKey(s) {
+  let v = _baseKeyCache.get(s);
+  if (v !== undefined) return v;
+  v = norm(s)
+    .replace(/\(.*?\)/g, '')
+    .replace(/\b(tp\.?|thanh pho|tinh|quan dao|dao|vung|bang|dac khu)\b/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+  _baseKeyCache.set(s, v);
+  return v;
+}
+
+function cleanMarkerLbl(s) {
+  let v = _cleanLblCache.get(s);
+  if (v !== undefined) return v;
+  v = s.replace(/\s*\(.*?\)\s*/g, '').trim() || s;
+  _cleanLblCache.set(s, v);
+  return v;
+}
+
+function compactCountryLbl(s) {
+  let v = _compactLblCache.get(s);
+  if (v !== undefined) return v;
+  if (/^Cộng hòa\s+(.+)$/i.test(s)) v = s.replace(/^Cộng hòa\s+/i, 'CH ');
+  else if (/^Các Tiểu vương quốc Ả Rập Thống nhất$/i.test(s)) v = 'UAE';
+  else if (/^Bosnia và Herzegovina$/i.test(s)) v = 'Bosnia & Herz.';
+  else v = null;
+  _compactLblCache.set(s, v);
+  return v;
+}
+
+function measureW(font, txt) {
+  const k2 = font + '|' + txt;
+  let w = _twCache.get(k2);
+  if (w !== undefined) return w;
+  w = ctx.measureText(txt).width;
+  _twCache.set(k2, w);
+  return w;
+}
+
+function traceCountry(f, lowres) {
+  if (!f || !cullOK(f)) return false;
+  if (lowres || !f.parts) {
+    ctx.beginPath();
+    pathC(f);
+    return true;
+  }
+  let drawn = false;
+  for (const pt of f.parts) {
+    if (cullOK(pt)) {
+      if (!drawn) {
+        ctx.beginPath();
+        drawn = true;
+      }
+      pathC(pt);
+    }
+  }
+  return drawn;
+}
+
 export function render(now) {
   if (!MAP.F.length) return;
   updView();
@@ -845,7 +986,8 @@ export function render(now) {
   lastLowres = lowres;
   // Labels and markers stay hidden on probe frames too, so a one-off detailed frame mid-drag doesn't flash text.
   const noText = lowres || (probe && k < 2.5);
-  proj.precision(k > 4 ? 1.2 : k > 2 ? 0.8 : 0.5);
+  const coarsePrec = k > 4 ? 1.2 : k > 2 ? 0.8 : 0.5;
+  proj.precision(coarsePrec);
   const feats = lowres ? MAP.F110 : MAP.F;
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.clearRect(0, 0, W, Hh);
@@ -871,7 +1013,7 @@ export function render(now) {
 
   if (st.ref.grat) {
     ctx.beginPath();
-    pathC(GRAT_GEO);
+    for (const l of GRAT_LINES) if (cullOK(l)) pathC(l);
     ctx.strokeStyle = C.grat;
     ctx.lineWidth = 0.6;
     ctx.stroke();
@@ -887,28 +1029,23 @@ export function render(now) {
     ctx.fill();
   });
 
-  // land
+  // land (vertices in 50m/110m topojson are already dense; precision(0) avoids expensive recursive midpoint resampling)
+  proj.precision(0);
   for (const f of feats) {
-    if (!cullOK(f)) continue;
+    if (!traceCountry(f, lowres)) continue;
     const src = lowres ? BY[f.properties.name] || f : f;
-    ctx.beginPath();
-    if (lowres) pathC(f);
-    else {
-      for (const pt of f.parts) if (cullOK(pt)) pathC(pt);
-    }
     ctx.fillStyle = landColor(src.en ? src : { en: f.properties.name, j: 0 });
     ctx.fill();
   }
 
   // selected / hover country
   const sc = st.sel && st.sel.isCountry ? st.sel : null;
-  if (sc && !st.al) {
-    ctx.beginPath();
-    pathC(sc);
+  if (sc && !st.al && traceCountry(sc, lowres)) {
     ctx.fillStyle = mix(C.accent, C.dark ? 0.45 : 0.3);
     ctx.fill();
   }
 
+  proj.precision(coarsePrec);
   // land-type hotspot polygons (above land)
   H.forEach(h => {
     if (h.kind !== 'poly' || h.sea || NAT.has(h.t) || !vh(h)) return;
@@ -919,12 +1056,12 @@ export function render(now) {
     ctx.fill();
   });
 
-  if (st.hov && st.hov.isCountry && st.hov !== sc) {
-    ctx.beginPath();
-    pathC(st.hov);
+  proj.precision(0);
+  if (st.hov && st.hov.isCountry && st.hov !== sc && traceCountry(st.hov, lowres)) {
     ctx.fillStyle = C.dark ? 'rgba(255,255,255,.12)' : 'rgba(255,255,255,.45)';
     ctx.fill();
   }
+  proj.precision(coarsePrec);
 
   // nature fills (desert, forest, terrain, mountain clipped to land; ice over ocean+land)
   const natF = {
@@ -937,7 +1074,7 @@ export function render(now) {
   // 1) Ice features (can extend over sea ice)
   if (st.on.ice) {
     H.forEach(h => {
-      if (h.t !== 'ice' || h.kind !== 'poly' || !vh(h) || !cullOK(h)) return;
+      if (h.t !== 'ice' || h.kind !== 'poly' || !vh(h)) return;
       ctx.beginPath();
       pathC(h.geo);
       if (h.ringOnly) {
@@ -957,15 +1094,16 @@ export function render(now) {
   // 2) Land-clipped biomes (desert, forest, terrain) so they never bleed into ocean/gulfs
   if (st.on.desert || st.on.forest || st.on.terrain) {
     ctx.save();
+    proj.precision(0);
     ctx.beginPath();
     for (const f of MAP.F110) {
       if (cullOK(f)) pathC(f);
     }
     ctx.clip();
+    proj.precision(coarsePrec);
 
     H.forEach(h => {
       if (h.kind !== 'poly' || h.t === 'ice' || !NAT.has(h.t) || !vh(h)) return;
-      if (!cullOK(h)) return;
       const sN = natF[h.t];
       if (!sN) return;
       ctx.beginPath();
@@ -983,6 +1121,7 @@ export function render(now) {
   }
 
   // 3) Mountain footprints (batched for fast rendering)
+  proj.precision(0);
   if (st.on.mountain) {
     ctx.beginPath();
     let selMtn = null;
@@ -1043,7 +1182,7 @@ export function render(now) {
       ctx.beginPath();
       for (const f of MAP.ADM1) {
         if (!cullOK(f)) continue;
-        pathC(f);
+        pathC(f.lineGeo || f);
       }
       ctx.setLineDash([2, 2]);
       ctx.strokeStyle = C.dark ? 'rgba(210,215,230,0.28)' : 'rgba(70,65,55,0.28)';
@@ -1100,12 +1239,12 @@ export function render(now) {
     }
     ctx.setLineDash([6, 4]);
     ctx.beginPath();
-    for (const l of contSet.pc) pathC(l);
+    for (const l of contSet.pc) if (cullOK(l)) pathC(l);
     ctx.strokeStyle = contColor('nam');
     ctx.lineWidth = baseW + 0.4;
     ctx.stroke();
     ctx.beginPath();
-    for (const g2 of CONT_LINE_GEOS) pathC(g2);
+    for (const g2 of CONT_LINE_GEOS) if (cullOK(g2)) pathC(g2);
     ctx.strokeStyle = C.dark ? 'rgba(236,239,246,.85)' : 'rgba(38,38,46,.72)';
     ctx.lineWidth = baseW + 0.4;
     ctx.stroke();
@@ -1114,36 +1253,39 @@ export function render(now) {
   }
 
   if (sc) {
-    ctx.beginPath();
-    pathC(sc);
-    ctx.strokeStyle = st.al ? (C.dark ? '#fff' : '#1F1E1B') : C.accent;
-    ctx.lineWidth = st.al ? 2.2 : 1.6;
-    ctx.stroke();
+    if (traceCountry(sc, lowres)) {
+      ctx.strokeStyle = st.al ? (C.dark ? '#fff' : '#1F1E1B') : C.accent;
+      ctx.lineWidth = st.al ? 2.2 : 1.6;
+      ctx.stroke();
+    }
 
     // tiny countries (Monaco, Liechtenstein...) are invisible at globe scale: draw a pulsing ring marker
-    try {
-      const ll = sc.mainCen || sc.cen;
-      const b = d3.geoPath(proj).bounds(sc);
-      const sz = Math.max(b[1][0] - b[0][0], b[1][1] - b[0][1]);
-      const p = ll && proj(ll);
-      const vis = p && d3.geoDistance(ll, [-proj.rotate()[0], -proj.rotate()[1]]) < Math.PI / 2;
-      if (vis && isFinite(sz) && sz < 28) {
-        const pulse = (Date.now() % 1400) / 1400;
-        const r = Math.max(10, sz / 2 + 8);
-        ctx.beginPath();
-        ctx.arc(p[0], p[1], r, 0, Math.PI * 2);
-        ctx.strokeStyle = C.dark ? '#fff' : '#1F1E1B';
-        ctx.lineWidth = 2;
-        ctx.stroke();
-        ctx.beginPath();
-        ctx.arc(p[0], p[1], r + pulse * 12, 0, Math.PI * 2);
-        ctx.strokeStyle = C.dark ? `rgba(255,255,255,${0.7 * (1 - pulse)})` : `rgba(31,30,27,${0.7 * (1 - pulse)})`;
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-        st.dirty = true;
-      }
-    } catch (e) {}
+    if (tinyPx(sc) < 900) {
+      try {
+        const ll = sc.mainCen || sc.cen;
+        const b = d3.geoPath(proj).bounds(sc);
+        const sz = Math.max(b[1][0] - b[0][0], b[1][1] - b[0][1]);
+        const p = ll && proj(ll);
+        const vis = p && d3.geoDistance(ll, VIEW.c) < Math.PI / 2;
+        if (vis && isFinite(sz) && sz < 28) {
+          const pulse = (Date.now() % 1400) / 1400;
+          const r2 = Math.max(10, sz / 2 + 8);
+          ctx.beginPath();
+          ctx.arc(p[0], p[1], r2, 0, Math.PI * 2);
+          ctx.strokeStyle = C.dark ? '#fff' : '#1F1E1B';
+          ctx.lineWidth = 2;
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(p[0], p[1], r2 + pulse * 12, 0, Math.PI * 2);
+          ctx.strokeStyle = C.dark ? `rgba(255,255,255,${0.7 * (1 - pulse)})` : `rgba(31,30,27,${0.7 * (1 - pulse)})`;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+          st.dirty = true;
+        }
+      } catch (e) {}
+    }
   }
+  proj.precision(coarsePrec);
 
   // hotspot poly outlines
   H.forEach(h => {
@@ -1318,19 +1460,6 @@ export function render(now) {
   const placed = [];
   const iconBoxes = [];
   const placedNames = new Set();
-  const baseKey = s =>
-    norm(s)
-      .replace(/\(.*?\)/g, '')
-      .replace(/\b(tp\.?|thanh pho|tinh|quan dao|dao|vung|bang|dac khu)\b/g, '')
-      .replace(/\s+/g, ' ')
-      .trim();
-  const cleanMarkerLbl = s => s.replace(/\s*\(.*?\)\s*/g, '').trim() || s;
-  const compactCountryLbl = s => {
-    if (/^Cộng hòa\s+(.+)$/i.test(s)) return s.replace(/^Cộng hòa\s+/i, 'CH ');
-    if (/^Các Tiểu vương quốc Ả Rập Thống nhất$/i.test(s)) return 'UAE';
-    if (/^Bosnia và Herzegovina$/i.test(s)) return 'Bosnia & Herz.';
-    return null;
-  };
   const vis = p => d3.geoDistance(p, centerPt) < 1.45;
   const overlapsAny = (box, list) =>
     list.some(b => !(box[0] > b[0] + b[2] || box[0] + box[2] < b[0] || box[1] > b[1] + b[3] || box[1] + box[3] < b[1]));
@@ -1594,7 +1723,8 @@ export function render(now) {
 
   // 3. Country labels — placed BEFORE Capital/Island/City text labels so country names never get starved
   if (st.ref.labels && !noText) {
-    ctx.font = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
+    const cFont = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
+    ctx.font = cFont;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     const cand = labelCands(cx, cy, r);
@@ -1613,7 +1743,7 @@ export function render(now) {
         p: o.p,
         ar: o.f === st.sel ? 1e9 : o.f.ar,
         nk: baseKey(full),
-        variants: variants.map(txt => ({ txt, w: ctx.measureText(txt).width + 4 })),
+        variants: variants.map(txt => ({ txt, w: measureW(cFont, txt) + 4 })),
         done: false,
         drawX: 0,
         drawY: 0,
@@ -1699,7 +1829,7 @@ export function render(now) {
       const { q, act, raw } = item;
       const lbl = act ? raw : cleanMarkerLbl(raw);
       const nk = baseKey(lbl);
-      const tw = ctx.measureText(lbl).width;
+      const tw = measureW(font, lbl);
       const w = tw + 4;
       const cands = [
         [q[0] + 6, q[1]],
@@ -1753,7 +1883,8 @@ export function render(now) {
 
   // 5. Admin-1 labels (when zoomed in, placed after country & point markers)
   if (st.on.admin1 && !noText && k >= 2.0 && MAP.ADM1.length) {
-    ctx.font = 'italic 500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+    const aFont = 'italic 500 10.5px "Be Vietnam Pro",system-ui,sans-serif';
+    ctx.font = aFont;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     for (const f of MAP.ADM1) {
@@ -1766,7 +1897,7 @@ export function render(now) {
       const lbl = adm1Name(f);
       const nk = baseKey(lbl);
       if (nk && placedNames.has(nk) && !act) continue;
-      const w = ctx.measureText(lbl).width + 6, hh = 13;
+      const w = measureW(aFont, lbl) + 6, hh = 13;
       let py = p[1];
       let box = [p[0] - w / 2, py - hh / 2, w, hh];
       if (!act) {
@@ -1805,14 +1936,15 @@ export function render(now) {
       const q = proj(w.pt);
       if (!q) continue;
       const lbl = enMode ? w.en || w.n : w.n;
-      ctx.font =
+      const wFont =
         w.rank === 1
           ? 'italic 500 12.5px "Lora", Georgia, serif'
           : w.rank === 2
           ? 'italic 500 11.5px "Lora", Georgia, serif'
           : 'italic 500 10.5px "Lora", Georgia, serif';
+      ctx.font = wFont;
       const nk = w.rank === 1 ? 'ocean_' + norm(lbl) : baseKey(lbl);
-      const tw = ctx.measureText(lbl).width + 8, hh = w.rank === 1 ? 16 : 14;
+      const tw = measureW(wFont, lbl) + 8, hh = w.rank === 1 ? 16 : 14;
       const box = [q[0] - tw / 2, q[1] - hh / 2, tw, hh];
       if (!tryPlace(box, nk)) continue;
       ctx.lineWidth = 3;

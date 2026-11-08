@@ -1,4 +1,4 @@
-import { $, MAP, st, HS, BY, readTheme, CAPITALS, CITIES, ISLANDS, ADM1_BY_ID, CAP_BY_ID, CITY_BY_ID, ISL_BY_ID, LAKE_BY_ID } from './state.js?v=20261108i';
+import { $, MAP, st, HS, BY, readTheme, CAPITALS, CITIES, ISLANDS, ADM1_BY_ID, CAP_BY_ID, CITY_BY_ID, ISL_BY_ID, LAKE_BY_ID } from './state.js?v=20261108j';
 import {
   ctx,
   proj,
@@ -14,8 +14,8 @@ import {
   updView,
   hideHint,
   pick
-} from './globe.js?v=20261108i';
-import { initUI, select, setAl } from './ui.js?v=20261108i';
+} from './globe.js?v=20261108j';
+import { initUI, select, setAl } from './ui.js?v=20261108j';
 
 async function boot() {
   readTheme();
