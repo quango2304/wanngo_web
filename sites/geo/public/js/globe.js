@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108c';
-import { C0 } from '../data/countries.js?v=20261108c';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108c';
-import { AL, REF } from '../data/alliances.js?v=20261108c';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108c';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108d';
+import { C0 } from '../data/countries.js?v=20261108d';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108d';
+import { AL, REF } from '../data/alliances.js?v=20261108d';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108d';
 import {
   $,
   norm,
@@ -46,7 +46,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108c';
+} from './state.js?v=20261108d';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -1394,7 +1394,7 @@ export function render(now) {
 
   // mountain ranges: a row of upright "^" peaks along the ridge line (clearer than a dotted stroke)
   const drawMountainChevrons = (h, color, act) => {
-    const size = Math.min(12, 5 + k * 0.9);
+    const size = Math.min(9.5, 4 + k * 0.7);
     const step = size * 1.5;
     const half = size * 0.62;
     ctx.beginPath();
@@ -1421,7 +1421,7 @@ export function render(now) {
     ctx.lineCap = 'round';
     ctx.lineJoin = 'round';
     ctx.strokeStyle = color;
-    ctx.lineWidth = act ? 2.6 : 2;
+    ctx.lineWidth = act ? 2.3 : 1.7;
     ctx.stroke();
   };
 
@@ -1760,12 +1760,14 @@ export function render(now) {
 
   // 3. Country labels — placed BEFORE Capital/Island/City text labels so country names never get starved
   if (st.ref.labels && !noText) {
-    const cFont = '500 11.5px "Be Vietnam Pro",system-ui,sans-serif';
+    // a touch smaller in the globe overview (k<1.8), full size once zoomed in
+    const cfs = k < 1.8 ? 10.3 : k < 2.6 ? 10.9 : 11.5;
+    const cFont = `500 ${cfs}px "Be Vietnam Pro",system-ui,sans-serif`;
     ctx.font = cFont;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     const cand = labelCands(cx, cy, r);
-    const hh = 11.5;
+    const hh = cfs;
     const TIERS = [
       [[0, 0]],
       [[0, -8], [0, 8], [0, -13], [0, 13], [-11, -5], [11, -5], [-11, 5], [11, 5]],
@@ -1899,21 +1901,22 @@ export function render(now) {
   };
 
   // 4. Capital, Island & City text labels
+  const mfs = k < 1.8 ? 9.7 : k < 2.6 ? 10.1 : 10.5;
   placeMarkerLabels(
     capLabels,
-    '600 10.5px "Be Vietnam Pro",system-ui,sans-serif',
+    `600 ${mfs}px "Be Vietnam Pro",system-ui,sans-serif`,
     C.dark ? '#FDBA74' : '#C2410C',
     2.8
   );
   placeMarkerLabels(
     islLabels,
-    '500 10.5px "Be Vietnam Pro",system-ui,sans-serif',
+    `500 ${mfs}px "Be Vietnam Pro",system-ui,sans-serif`,
     C.dark ? '#5EEAD4' : '#0F766E',
     2.6
   );
   placeMarkerLabels(
     cityLabels,
-    '500 10.5px "Be Vietnam Pro",system-ui,sans-serif',
+    `500 ${mfs}px "Be Vietnam Pro",system-ui,sans-serif`,
     C.dark ? '#93C5FD' : '#1D4ED8',
     2.6
   );
