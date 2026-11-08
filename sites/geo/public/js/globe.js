@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108d';
-import { C0 } from '../data/countries.js?v=20261108d';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108d';
-import { AL, REF } from '../data/alliances.js?v=20261108d';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108d';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108e';
+import { C0 } from '../data/countries.js?v=20261108e';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108e';
+import { AL, REF } from '../data/alliances.js?v=20261108e';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108e';
 import {
   $,
   norm,
@@ -46,7 +46,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108d';
+} from './state.js?v=20261108e';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -2342,7 +2342,8 @@ export function pick(mx, my) {
         }
         const q = proj(p);
         if (prev) {
-          const d = segD(mx, my, prev, q);
+          // mountain ridges are drawn as a row of ^ peaks, so they get twice the reach of a plain line
+          const d = segD(mx, my, prev, q) * (h.t === 'mountain' || h.mtn ? 0.5 : 1);
           if (d < bd) {
             bd = d;
             best = h;
@@ -2353,6 +2354,14 @@ export function pick(mx, my) {
     });
   });
   if (best) return best;
+
+  // 3b. Mountain footprint (the shaded band under the ^ peaks) wins over the country beneath it
+  if (st.on.mountain) {
+    const mt = H.find(
+      h => h.t === 'mountain' && h.polyGeo && vh(h) && inBB(h, ll) && d3.geoContains(h.polyGeo, ll)
+    );
+    if (mt) return mt;
+  }
 
   // 4. Tiny Countries (k >= 1.4, within 9px)
   if (k >= 1.4) {
