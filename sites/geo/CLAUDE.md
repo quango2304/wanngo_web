@@ -107,7 +107,7 @@ sites/geo/
   to show even if their layer is off (`show`), countries to colour (`hl`, Natural Earth names), `dim` to mute the other
   land, shapes to draw (`line` with optional `flow`/`arrow`, `poly`, `circle` with `at` and `r` in km, `pt`, `label`;
   colour is `c`; a point label can take `side:'l'`, `dy`, `ox`), a colour `key`, and `src` = indexes into `sources`.
-- **`core` is required on every step** (the strategic logic, Tim Marshall style: what each actor needs, fears and can do, and why
+- **`core`** (older stories only; the new shape puts the reasoning in the step text) is the strategic logic, Tim Marshall style: what each actor needs, fears and can do, and why
   geography leaves it little choice). It is an interpretation, so it is attributed ("Moscow says…", "analysts argue…"), backed
   by a source for each stated position, gives the other side's view, and never repeats the facts. The card shows it as the
   paragraph right after the step text, with no box or label (the owner rejected a separate 'Cốt lõi' section).
@@ -124,14 +124,16 @@ sites/geo/
 
 ### How an explainer is written (the owner's direction)
 
-- The story must make the reader understand the deep cause, not list facts. It opens with the whole argument (a first
-  step with `chain`: five links tagged `need` → `blocked` → `move` → `counter` → `outlook`), and every later step carries
-  a `tag` showing which link it supports. See `data/thesis_biendong.js` (applied by `withThesis()` in `stories.js`).
-- Open with a question the reader already has ("Vì sao Bắc Kinh quyết giữ Biển Đông?"), then "stand where they stand".
-- Each link: a bold `head` that reads like a headline and chains with the others when read alone ("Trung Quốc sống nhờ
-  đường biển." → "Nhưng lối nào ra biển cũng phải qua cửa hẹp." → "Vì thế…" → "Nhưng đó cũng là biển của người khác." →
-  "Hai nỗi sợ, một vùng biển."), then one to three short sentences with a concrete picture.
-- Step titles are claims that move the story ("Đường chín đoạn: Bắc Kinh vẽ, tòa trọng tài bác"), not topic labels.
+- The story must make the reader understand the deep cause, not list facts. **The model is `story_biendong.js` and
+  `story_ukraine.js`** (approved shape, Nov 2026): a self-contained file, 7–8 short steps that teach one argument in
+  order, each tagged `need` → `blocked` → `move` → `counter` → `outlook`. No opener `chain`, no `core`, no merge layers.
+  The other stories still use `core_*.js` / `thesis_*.js` merged by `withCore()` / `withThesis()`; rewrite them into this
+  shape (the step list may change freely).
+- Step 1 opens with the question the reader already has ("Vì sao Bắc Kinh quyết giữ Biển Đông?") and answers its first
+  part; the last step comes back to it ("Bắc Kinh sợ bị nhốt, các nước xung quanh sợ mất biển").
+- Step titles read as a chain when read alone ("Trung Quốc sống nhờ đường biển" → "Nhưng lối ra biển nào cũng hẹp" →
+  "Vì thế Biển Đông là vùng biển phải nắm" → "Nước đi thứ nhất…" → "Nhưng đó cũng là biển nhà của nước khác" → …).
+- Each step: one idea, 3–5 short sentences, one map change that shows it, at most two `facts`. Vary the hand-offs.
 - Plain Vietnamese: short sentences, everyday words, one idea per sentence, no translated phrasing. One striking number
   per link at most; the rest go in `facts`. Say "this is how analysts explain it" once at the top instead of in every
   sentence, but keep each side's own words attributed ("Bắc Kinh thì nói…").

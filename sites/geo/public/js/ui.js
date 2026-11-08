@@ -1,10 +1,10 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261109i';
-import { C0, TOOLS } from '../data/countries.js?v=20261109i';
-import { RELC, REL } from '../data/religions.js?v=20261109i';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261109i';
-import { iconSvg } from './icons.js?v=20261109i';
-import { AL, REF } from '../data/alliances.js?v=20261109i';
-import { STORIES } from '../data/stories.js?v=20261109i';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261109k';
+import { C0, TOOLS } from '../data/countries.js?v=20261109k';
+import { RELC, REL } from '../data/religions.js?v=20261109k';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261109k';
+import { iconSvg } from './icons.js?v=20261109k';
+import { AL, REF } from '../data/alliances.js?v=20261109k';
+import { STORIES } from '../data/stories.js?v=20261109k';
 import {
   $,
   norm,
@@ -64,7 +64,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261109i';
+} from './state.js?v=20261109k';
 import {
   cv,
   proj,
@@ -83,7 +83,7 @@ import {
   CONT_OBJS,
   contName,
   buildStoryShapes
-} from './globe.js?v=20261109i';
+} from './globe.js?v=20261109k';
 import {
   CONT,
   AMERICAS,
@@ -100,7 +100,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261109i';
+} from '../data/continents.js?v=20261109k';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -1226,7 +1226,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261109i'), import('../data/sea_info.js?v=20261109i')])
+    Promise.all([import('../data/sea_story.js?v=20261109k'), import('../data/sea_info.js?v=20261109k')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 

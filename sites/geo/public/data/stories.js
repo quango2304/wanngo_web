@@ -1,29 +1,25 @@
 // Explainers ("Góc nhìn"): step-by-step geography stories, one file each. Order = order in the list.
 // withCore() merges the strategic-logic text (data/core_<id>.js) into a story: step.core, extra sources, a closing line.
-import { HORMUZ } from './story_hormuz.js?v=20261109i';
-import { UKRAINE } from './story_ukraine.js?v=20261109i';
-import { REDSEA } from './story_redsea.js?v=20261109i';
-import { TAIWAN } from './story_taiwan.js?v=20261109i';
-import { BIENDONG } from './story_biendong.js?v=20261109i';
-import { CHINA } from './story_china.js?v=20261109i';
-import { USA } from './story_usa.js?v=20261109i';
-import { ARCTIC } from './story_arctic.js?v=20261109i';
-import { INDOPAK } from './story_indopak.js?v=20261109i';
-import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109i';
-import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109i';
-import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109i';
-import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109i';
-import { THESIS as THESIS_CHINA } from './thesis_china.js?v=20261109i';
-import { THESIS as THESIS_ARCTIC } from './thesis_arctic.js?v=20261109i';
-import { THESIS as THESIS_REDSEA } from './thesis_redsea.js?v=20261109i';
-import { THESIS as THESIS_INDOPAK } from './thesis_indopak.js?v=20261109i';
-import { THESIS as THESIS_TAIWAN } from './thesis_taiwan.js?v=20261109i';
-import { THESIS as THESIS_USA } from './thesis_usa.js?v=20261109i';
-import { THESIS as THESIS_HORMUZ } from './thesis_hormuz.js?v=20261109i';
-import { THESIS as THESIS_UKRAINE } from './thesis_ukraine.js?v=20261109i';
-import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109i';
-import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109i';
-import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109i';
+import { HORMUZ } from './story_hormuz.js?v=20261109k';
+import { UKRAINE } from './story_ukraine.js?v=20261109k';
+import { REDSEA } from './story_redsea.js?v=20261109k';
+import { TAIWAN } from './story_taiwan.js?v=20261109k';
+import { BIENDONG } from './story_biendong.js?v=20261109k';
+import { CHINA } from './story_china.js?v=20261109k';
+import { USA } from './story_usa.js?v=20261109k';
+import { ARCTIC } from './story_arctic.js?v=20261109k';
+import { INDOPAK } from './story_indopak.js?v=20261109k';
+import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109k';
+import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109k';
+import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109k';
+import { THESIS as THESIS_CHINA } from './thesis_china.js?v=20261109k';
+import { THESIS as THESIS_ARCTIC } from './thesis_arctic.js?v=20261109k';
+import { THESIS as THESIS_REDSEA } from './thesis_redsea.js?v=20261109k';
+import { THESIS as THESIS_INDOPAK } from './thesis_indopak.js?v=20261109k';
+import { THESIS as THESIS_TAIWAN } from './thesis_taiwan.js?v=20261109k';
+import { THESIS as THESIS_USA } from './thesis_usa.js?v=20261109k';
+import { THESIS as THESIS_HORMUZ } from './thesis_hormuz.js?v=20261109k';
+import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109k';
 
 function withCore(story, c) {
   const off = story.sources.length;
@@ -62,4 +58,4 @@ function withVi(story, map) {
   return story;
 }
 
-export const STORIES = [withThesis(withVi(withCore(HORMUZ, CORE_HORMUZ), VI_HORMUZ), THESIS_HORMUZ), withThesis(withCore(UKRAINE, CORE_UKRAINE), THESIS_UKRAINE), withThesis(withCore(REDSEA, CORE_REDSEA), THESIS_REDSEA), withThesis(withCore(TAIWAN, CORE_TAIWAN), THESIS_TAIWAN), withThesis(withCore(BIENDONG, CORE_BIENDONG), THESIS_BIENDONG), withThesis(CHINA, THESIS_CHINA), withThesis(USA, THESIS_USA), withThesis(ARCTIC, THESIS_ARCTIC), withThesis(INDOPAK, THESIS_INDOPAK)];
+export const STORIES = [withThesis(withVi(withCore(HORMUZ, CORE_HORMUZ), VI_HORMUZ), THESIS_HORMUZ), UKRAINE, withThesis(withCore(REDSEA, CORE_REDSEA), THESIS_REDSEA), withThesis(withCore(TAIWAN, CORE_TAIWAN), THESIS_TAIWAN), BIENDONG, withThesis(CHINA, THESIS_CHINA), withThesis(USA, THESIS_USA), withThesis(ARCTIC, THESIS_ARCTIC), withThesis(INDOPAK, THESIS_INDOPAK)];
