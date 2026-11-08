@@ -20,7 +20,7 @@ export const CAPITALS_EN = {
   "cap_vietnam": {
     "n": "Hanoi",
     "pop": "~8.5M",
-    "tx": "Vietnam's thousand-year-old capital (Thang Long – Dong Do – Hanoi) sits at the apex of the Red River Delta, where northern Vietnam's inland waterways and overland trade arteries converge. Blessed with a \"coiled dragon, seated tiger\" geomantic setting—shielded by the Red River to the northeast and anchored by the Ba Vi and Tam Dao mountains to the west—it nevertheless lies only ~150 km from the Chinese border via the Lang Son and Lao Cai corridors, compelling Vietnam throughout history to pair frontier mountain defense with deep delta resilience."
+    "tx": "Vietnam's thousand-year-old capital (Thang Long – Dong Do – Hanoi) sits at the apex of the Red River Delta, where northern inland waterways and trade arteries converge. Following the landmark July 2025 administrative streamlining (reducing local governance to 34 provinces and municipalities), Hanoi anchors the nation as its political-administrative core and Northern Economic Zone locomotive, protected by a \"coiled dragon, seated tiger\" setting flanked by the Red River and Ba Vi–Tam Dao ranges just ~150 km from the northern frontier."
   },
   "cap_venezuela": {
     "n": "Caracas",
@@ -210,7 +210,7 @@ export const CAPITALS_EN = {
   "cap_timor_leste": {
     "n": "Dili",
     "pop": "~234K",
-    "tx": "Capital and political-administrative center of Timor-Leste (Dili). Southeast Asia's youngest nation (independent in 2002 and admitted in principle as ASEAN's 11th member), occupying the eastern half of Timor Island between Indonesia and Australia. Its rugged mountain interior sheltered decades of guerrilla resistance, while the Timor Sea to the south holds major oil and gas reserves (such as the Greater Sunrise field)."
+    "tx": "Capital and political-administrative center of Timor-Leste (Dili). Southeast Asia's youngest nation (independent in 2002 and officially admitted as ASEAN's 11th full member in October 2025), occupying the eastern half of Timor Island between Indonesia and Australia. Its rugged mountain interior sheltered decades of guerrilla resistance, while the Timor Sea to the south holds major oil and gas reserves (such as the Greater Sunrise field)."
   },
   "cap_thailand": {
     "n": "Bangkok",
@@ -235,7 +235,7 @@ export const CAPITALS_EN = {
   "cap_syria": {
     "n": "Damascus",
     "pop": "~2.5M",
-    "tx": "One of the world's oldest continuously inhabited cities, sustained by the Ghouta oasis fed by the Barada River descending from the Anti-Lebanon Mountains onto the edge of the Syrian Desert. While the Anti-Lebanon range shields its western flank toward Lebanon, Damascus sits only ~50 km from the Israeli-controlled Golan Heights."
+    "tx": "One of the world's oldest continuously inhabited cities, sustained by the Ghouta oasis fed by the Barada River descending from the Anti-Lebanon Mountains. Following the fall of the Assad regime in December 2024, Damascus became the seat of Syria's transitional government leading post-war institutional rebuilding and the 2026 integration of northern SDF forces into the state apparatus, though sitting just ~50 km from the Israeli-controlled Golan Heights leaves it exposed to regional strikes."
   },
   "cap_switzerland": {
     "n": "Bern",
@@ -265,7 +265,7 @@ export const CAPITALS_EN = {
   "cap_sudan": {
     "n": "Khartoum",
     "pop": "~6.3M (with Omdurman & Bahri)",
-    "tx": "Located right at \"Al-Mogran\"—the historic confluence where the White Nile (from Lake Victoria) and the Blue Nile (from the Ethiopian Highlands) merge before flowing north across the Sahara into Egypt. Divided by the three river branches into Khartoum, Omdurman, and Khartoum North (Bahri), this tri-city hub has been a fierce urban battleground in Sudan's civil war."
+    "tx": "Located at \"Al-Mogran\"—the historic confluence where the White Nile and Blue Nile merge before flowing north across the Sahara Desert into Egypt. The tripartite metropolis of Khartoum, Omdurman, and Bahri was heavily devastated during the civil war erupting in 2023, forcing the government to operate from Port Sudan on the Red Sea as its wartime administrative seat before the Sudanese Armed Forces (SAF) recaptured central government districts of Khartoum in March 2025."
   },
   "cap_sri_lanka": {
     "n": "Colombo (admin: Sri Jayawardenepura Kotte)",
@@ -405,7 +405,7 @@ export const CAPITALS_EN = {
   "cap_philippines": {
     "n": "Manila",
     "pop": "~14.9M (Metro Manila)",
-    "tx": "Commands the eastern shore of Manila Bay—one of Southeast Asia's finest sheltered natural harbors, guarded against the South China Sea by the Bataan Peninsula and Corregidor Island fortress, while connecting directly north to the fertile Central Luzon plain. Its position along the Pacific Ring of Fire and the western Pacific typhoon belt exposes the megacity to frequent natural disasters."
+    "tx": "Commands the eastern shore of Manila Bay—one of Southeast Asia's finest sheltered natural harbors, guarded against the East Sea (South China Sea / West Philippine Sea) by the Bataan Peninsula and Corregidor Island fortress, while connecting directly north to the fertile Central Luzon plain. Its position along the Pacific Ring of Fire and the western Pacific typhoon belt exposes the megacity to frequent natural disasters."
   },
   "cap_peru": {
     "n": "Lima",
@@ -630,7 +630,7 @@ export const CAPITALS_EN = {
   "cap_lebanon": {
     "n": "Beirut",
     "pop": "~2.4M",
-    "tx": "Perched on a rocky promontory jutting into the Eastern Mediterranean directly beneath the steep Mount Lebanon range. Connected via the Dahr al-Baidar mountain pass to the Bekaa Valley and Damascus, Beirut has long served as the premier seaport and banking gateway of the Levant."
+    "tx": "Perched on a rocky promontory jutting into the Eastern Mediterranean beneath the steep Mount Lebanon range, connected via the Dahr al-Baidar pass to the Bekaa Valley and Damascus. Long the premier seaport and banking gateway of the Levant, Beirut suffered severe destruction across its southern suburbs (Dahiyeh) during the 2024–2026 conflict, leaving the metropolis facing immense reconstruction and security challenges."
   },
   "cap_latvia": {
     "n": "Riga",
@@ -715,12 +715,12 @@ export const CAPITALS_EN = {
   "cap_iran": {
     "n": "Tehran",
     "pop": "~9.5M (metro ~16M)",
-    "tx": "Backed against the colossal natural wall of the Alborz Mountains (topped by 5,610 m Mount Damavand) to the north—blocking approaches from the Caspian Sea—and overlooking the Dasht-e Kavir desert to the south. This position places Tehran astride the strategic east–west corridor linking northwestern Azerbaijan (Tabriz) with Khorasan, though its enclosed basin topography and active fault lines expose the megacity to severe air pollution and major earthquake hazards."
+    "tx": "Backed against the Alborz Mountains (Mount Damavand, 5,610 m) to the north and overlooking the Dasht-e Kavir desert to the south. Tehran serves as the centralized command citadel of the Islamic Republic—overseeing the historic March 2026 succession of Supreme Leader Mojtaba Khamenei amid intense regional warfare; while heavily fortified subterranean facilities shield top leadership, its enclosed mountain basin topography and active seismic faults expose the megacity to severe pollution and earthquake risks."
   },
   "cap_indonesia": {
     "n": "Jakarta (transitioning to Nusantara)",
     "pop": "~11.4M (metro ~32M)",
-    "tx": "Situated on the northwest coast of Java facing the Java Sea near the Sunda Strait, Jakarta has served as the political and economic core since the Dutch colonial era (Batavia). However, excessive groundwater extraction on soft alluvial soil combined with sea-level rise has caused North Jakarta to sink faster than any other megacity on Earth (15–25 cm/year), prompting Indonesia to build its new planned capital Nusantara in East Kalimantan (Borneo)—free from earthquakes and tsunamis at the geographic center of the archipelago."
+    "tx": "Situated on the northwest coast of Java facing the Java Sea near the Sunda Strait, Jakarta has served as the political and economic core since the Dutch colonial era (Batavia). While rapid coastal subsidence prompted Indonesia to begin phased construction of its future planned capital Nusantara in East Kalimantan (Borneo), by law Jakarta remains the legal capital and seat of government until a definitive presidential decree formally transfers state functions."
   },
   "cap_india": {
     "n": "New Delhi",
@@ -875,7 +875,7 @@ export const CAPITALS_EN = {
   "cap_eq_guinea": {
     "n": "Ciudad de la Paz (formerly Malabo)",
     "pop": "~50K",
-    "tx": "A remarkable geopolitical anomaly: for decades, Equatorial Guinea's capital Malabo sat on offshore volcanic Bioko Island (near Cameroon), while most of its land area (Rio Muni) lay on the African mainland. The government is relocating the capital to the planned city of Ciudad de la Paz (Oyala) deep in the mainland rainforest to insulate the seat of power from seaborne attacks."
+    "tx": "A remarkable geopolitical anomaly: for decades, Equatorial Guinea's capital Malabo sat on offshore volcanic Bioko Island (near Cameroon), while most of its land area (Rio Muni) lay on the African mainland. In early 2026, the planned mainland city of Ciudad de la Paz (formerly Oyala) was officially decreed as the national capital replacing Malabo, insulating the seat of power from seaborne vulnerabilities."
   },
   "cap_el_salvador": {
     "n": "San Salvador",
@@ -1030,12 +1030,12 @@ export const CAPITALS_EN = {
   "cap_myanmar": {
     "n": "Naypyidaw",
     "pop": "~1.2M",
-    "tx": "In 2005, Myanmar's military junta abruptly relocated the capital from the coastal port of Yangon over 300 km inland to the central valley of Naypyidaw, wedged between the Bago Yoma range and the Shan Plateau. This strategic move was designed to insulate the regime from both seaborne amphibious intervention and urban protests in Yangon, while positioning the military closer to ethnic minority border states."
+    "tx": "In 2005, Myanmar's military junta relocated the capital from coastal Yangon over 300 km inland to Naypyidaw, wedged between the Bago Yoma range and Shan Plateau to guard against seaborne intervention and urban protests. However, this isolated fortress capital has come under unprecedented pressure during the nationwide civil war intensified by Operation 1027 (since late 2023), as ethnic armed coalitions seized control of extensive surrounding borderlands."
   },
   "cap_burundi": {
     "n": "Gitega (economic: Bujumbura)",
     "pop": "~332K",
-    "tx": "Capital and political-administrative center of Burundi (Gitega / Bujumbura). Rwanda's \"geographic twin\" in demographic makeup and rolling highland terrain, tucked at the northeastern head of deep Lake Tanganyika; landlocked and densely populated, it relies on overland and lake transit through Tanzania to the Indian Ocean port of Dar es Salaam."
+    "tx": "Capital and political-administrative center of Burundi (Gitega; economic capital: Bujumbura). Rwanda's \"geographic twin\" in demographic makeup and rolling highland terrain, which relocated its political seat from Bujumbura to central highland Gitega in 2019; landlocked and densely populated, it relies on overland and Lake Tanganyika transit through Tanzania to the port of Dar es Salaam."
   },
   "cap_burkina_faso": {
     "n": "Ouagadougou",
@@ -1050,7 +1050,7 @@ export const CAPITALS_EN = {
   "cap_brunei": {
     "n": "Bandar Seri Begawan",
     "pop": "~297K",
-    "tx": "Capital and political-administrative center of Brunei (Bandar Seri Begawan). A wealthy oil and LNG sultanate on the northern coast of Borneo facing the South China Sea, geographically split into two coastal enclaves by Malaysia's Sarawak state."
+    "tx": "Capital and political-administrative center of Brunei (Bandar Seri Begawan). A wealthy oil and LNG sultanate on the northern coast of Borneo facing the East Sea (South China Sea), geographically split into two coastal enclaves by Malaysia's Sarawak state."
   },
   "cap_brazil": {
     "n": "Brasilia",
@@ -1080,7 +1080,7 @@ export const CAPITALS_EN = {
   "cap_benin": {
     "n": "Porto-Novo (seat of gov. & economic: Cotonou)",
     "pop": "~762K",
-    "tx": "Capital and political-administrative center of Benin (Porto-Novo / Cotonou). Situated in the \"Dahomey Gap\" where dry savanna breaks through the West African rainforest belt to reach the Gulf of Guinea, creating a natural north–south trade corridor (and the terminus of the nearly 2,000 km Niger–Benin crude oil pipeline) linking coastal Cotonou to the Niger River basin."
+    "tx": "Capital and political-administrative center of Benin (constitutional capital: Porto-Novo; seat of government and economic hub: Cotonou). Situated in the \"Dahomey Gap\" where dry savanna breaks through the West African rainforest belt to reach the Gulf of Guinea, creating a natural north–south trade corridor (and the terminus of the nearly 2,000 km Niger–Benin crude oil pipeline) linking coastal Cotonou to the Niger River basin."
   },
   "cap_belize": {
     "n": "Belmopan (largest: Belize City)",
@@ -1203,22 +1203,22 @@ export const CITIES_EN = {
   "city_danang": {
     "n": "Da Nang",
     "pop": "~3.0M (post-merger)",
-    "tx": "The central metropolis of Central Vietnam, curving around sheltered Da Nang Bay behind the natural breakwater of the Son Tra Peninsula and Hai Van Pass. Serving as the eastern maritime terminus of the Greater Mekong Subregion's East–West Economic Corridor (EWEC) linking Myanmar, Thailand, and Laos to the South China Sea, its 2025 merger with Quang Nam expanded its industrial depth to the Chu Lai economic zone while administering the Paracel Islands."
+    "tx": "The central metropolis of Central Vietnam, curving around sheltered Da Nang Bay behind the natural breakwater of the Son Tra Peninsula and Hai Van Pass. Serving as the eastern maritime terminus of the Greater Mekong Subregion's East–West Economic Corridor (EWEC) linking Myanmar, Thailand, and Laos to the East Sea (South China Sea), its 2025 merger with Quang Nam expanded its industrial depth to the Chu Lai economic zone while administering the Paracel Islands."
   },
   "city_cantho": {
     "n": "Can Tho",
     "pop": "~3.2M (post-merger)",
-    "tx": "The central metropolis of the Mekong Delta on the southern bank of the Hau (Bassac) River. Following its 2025 merger with Hau Giang and Soc Trang provinces, Can Tho now reaches directly to the South China Sea coast at the planned Tran De deep-water seaport, enabling direct ocean export of agricultural and seafood products for the entire western Mekong Delta."
+    "tx": "The central metropolis of the Mekong Delta on the southern bank of the Hau (Bassac) River. Following its 2025 merger with Hau Giang and Soc Trang provinces, Can Tho now reaches directly to the East Sea (South China Sea) coast at the planned Tran De deep-water seaport, enabling direct ocean export of agricultural and seafood products for the entire western Mekong Delta."
   },
   "city_camranh": {
     "n": "Cam Ranh",
     "pop": "~150K",
-    "tx": "One of the world's three finest natural deep-water bays (alongside San Francisco and Rio de Janeiro), enclosed by two peninsulas with calm depths of 18–32 meters right near shore. Lying just one hour's steaming time from the busiest international shipping lanes of the South China Sea and representing the closest mainland point to the Spratly Islands, Cam Ranh is Southeast Asia's premier strategic naval chokepoint."
+    "tx": "One of the world's three finest natural deep-water bays (alongside San Francisco and Rio de Janeiro), enclosed by two peninsulas with calm depths of 18–32 meters right near shore. Lying just one hour's steaming time from the busiest international shipping lanes of the East Sea (South China Sea) and representing the closest mainland point to the Spratly Islands, Cam Ranh is Southeast Asia's premier strategic naval chokepoint."
   },
   "city_vungtau": {
     "n": "Vung Tau (Cai Mep – Thi Vai)",
     "pop": "~600K",
-    "tx": "Positioned on the Vung Tau Peninsula commanding the maritime approaches to the Saigon–Long Tau river channel and the Cai Mep–Thi Vai deep-water port complex (one of the few Southeast Asian ports capable of handling 200,000+ DWT mother ships). It also serves as the central onshore logistics base for Vietnam's offshore oil and gas production in the Cuu Long and Nam Con Son basins."
+    "tx": "Positioned on the Vung Tau Peninsula commanding the maritime approaches to the Saigon–Long Tau river channel and the Cai Mep–Thi Vai deep-water port complex (part of expanded Ho Chi Minh City following the 2025 Ba Ria–Vung Tau merger; one of the few Southeast Asian ports capable of handling 200,000+ DWT mother ships). It also serves as the central onshore logistics base for Vietnam's offshore oil and gas production in the Cuu Long and Nam Con Son basins."
   },
   "city_shanghai": {
     "n": "Shanghai",
@@ -1233,7 +1233,7 @@ export const CITIES_EN = {
   "city_guangzhou": {
     "n": "Guangzhou",
     "pop": "~18.8M",
-    "tx": "Capital of Guangdong Province situated at the apex of the Pearl River Delta (where the West, North, and East rivers converge). For over two millennia—from the ancient Maritime Silk Road to the Qing Dynasty's \"Thirteen Factories\" monopoly—Guangzhou (Canton) has stood as China's premier southern commercial gateway facing the South China Sea."
+    "tx": "Capital of Guangdong Province situated at the apex of the Pearl River Delta (where the West, North, and East rivers converge). For over two millennia—from the ancient Maritime Silk Road to the Qing Dynasty's \"Thirteen Factories\" monopoly—Guangzhou (Canton) has stood as China's premier southern commercial gateway facing the East Sea (South China Sea)."
   },
   "city_hongkong": {
     "n": "Hong Kong",
@@ -1273,7 +1273,7 @@ export const CITIES_EN = {
   "city_sanya": {
     "n": "Sanya",
     "pop": "~1.1M",
-    "tx": "Located at the southernmost tip of Hainan Island facing directly onto the deep-water basin of the South China Sea. Alongside its tropical resort bays, Yalong Bay (Yulin Naval Base) at Sanya is the PLA Navy's most sensitive nuclear ballistic missile submarine (SSBN) and aircraft carrier base, where submarines can dive almost immediately into ocean depths exceeding 1,000 meters."
+    "tx": "Located at the southernmost tip of Hainan Island facing directly onto the deep-water basin of the East Sea (South China Sea). Alongside its tropical resort bays, Yalong Bay (Yulin Naval Base) at Sanya is the PLA Navy's most sensitive nuclear ballistic missile submarine (SSBN) and aircraft carrier base, where submarines can dive almost immediately into ocean depths exceeding 1,000 meters."
   },
   "city_kaohsiung": {
     "n": "Kaohsiung",
@@ -1403,7 +1403,7 @@ export const CITIES_EN = {
   "city_bandarabbas": {
     "n": "Bandar Abbas",
     "pop": "~680K",
-    "tx": "Commands the northern shore of the narrowest bend of the Strait of Hormuz (directly opposite Oman and the UAE), shielded seaward by Qeshm and Hormuz islands. Bandar Abbas serves simultaneously as Iran's largest commercial port (handling ~85% of its container traffic) and the main headquarters of both the regular Iranian Navy and the IRGC Navy guarding the world's oil jugular."
+    "tx": "Commands the northern shore of the narrowest bend of the Strait of Hormuz (directly opposite Oman and the UAE), shielded seaward by Qeshm and Hormuz islands. Bandar Abbas serves simultaneously as Iran's largest commercial port (handling ~85% of its container traffic) and the main headquarters of both the regular Iranian Navy and the IRGC Navy guarding the world's oil jugular; its naval installations suffered major strikes during the 2026 war."
   },
   "city_chabahar": {
     "n": "Chabahar",
@@ -1463,7 +1463,7 @@ export const CITIES_EN = {
   "city_sevastopol": {
     "n": "Sevastopol",
     "pop": "~550K",
-    "tx": "A natural deep-water naval fortress at the southwestern tip of the Crimean Peninsula jutting into the center of the Black Sea. From Empress Catherine the Great (1783), the Crimean War (1853–1856), and World War II to Russia's 2014 annexation of Crimea and the ongoing Russia–Ukraine war, Sevastopol has been the pivotal base of the Black Sea Fleet projecting power toward the Mediterranean."
+    "tx": "A natural deep-water naval fortress at the southwestern tip of the Crimean Peninsula jutting into the center of the Black Sea. From Empress Catherine the Great (1783), the Crimean War (1853–1856), and World War II to Russia's 2014 annexation of Crimea, Sevastopol served as the vital base of the Black Sea Fleet; however, relentless Ukrainian drone and cruise missile attacks forced Russia to evacuate virtually all major naval surface combatants eastward to Novorossiysk."
   },
   "city_novorossiysk": {
     "n": "Novorossiysk",
@@ -1823,31 +1823,31 @@ export const ISLANDS_EN = {
     "n": "Tho Chu Archipelago",
     "pop": "14 km²",
     "area": "14 km²",
-    "tx": "Vietnam's southwesternmost outpost archipelago in the Gulf of Thailand (~100 km southwest of Phu Quoc), hosting basepoint A1—the starting marker of Vietnam's continental territorial sea baseline."
+    "tx": "Vietnam's southwesternmost outpost archipelago in the Gulf of Thailand (part of An Giang Province following the 2025 Kien Giang merger, ~100 km southwest of Phu Quoc), hosting basepoint A1—the starting marker of Vietnam's continental territorial sea baseline."
   },
   "isl_hoangsa": {
     "n": "Paracel Islands (Hoang Sa)",
     "pop": "~15,000 km² (sea area)",
     "area": "~15,000 km² (sea area)",
-    "tx": "A coral archipelago comprising the Amphitrite and Crescent groups in the northern South China Sea, lying at the same latitude as Da Nang–Quang Ngai directly astride vital international shipping lanes. Historically under Vietnamese sovereignty (administered under Da Nang City), the archipelago was seized in its entirety by China by military force in January 1974, with Beijing constructing a major air and naval base on Woody Island (Phu Lam)."
+    "tx": "A coral archipelago comprising the Amphitrite and Crescent groups in the northern East Sea (South China Sea), lying at the same latitude as Da Nang–Quang Ngai directly astride vital international shipping lanes. Historically under Vietnamese sovereignty (administered under Da Nang City), the archipelago was seized in its entirety by China by military force in January 1974, with Beijing constructing a major air and naval base on Woody Island (Phu Lam)."
   },
   "isl_truongsa": {
     "n": "Spratly Islands (Truong Sa)",
     "pop": "~160,000 km² (sea area)",
     "area": "~160,000 km² (sea area)",
-    "tx": "An expansive archipelago of over 100 islands, cays, reefs, and shoals across the southern South China Sea (administered under Vietnam's Khanh Hoa Province). Positioned at the maritime crossroads linking the Strait of Malacca with Northeast Asia atop hydrocarbon-rich continental shelf basins, the Spratlys represent the region's most complex sovereignty dispute (5 states, 6 claimants), where China has dredged and militarized 7 reefs into massive artificial island fortresses."
+    "tx": "An expansive archipelago of over 100 islands, cays, reefs, and shoals across the southern East Sea (South China Sea) (administered under Vietnam's Khanh Hoa Province). Positioned at the maritime crossroads linking the Strait of Malacca with Northeast Asia atop hydrocarbon-rich continental shelf basins, the Spratlys represent the region's most complex sovereignty dispute (5 states, 6 claimants), where China has dredged and militarized 7 reefs into massive artificial island fortresses."
   },
   "isl_hainan": {
     "n": "Hainan Island",
     "pop": "33,920 km²",
     "area": "33,920 km²",
-    "tx": "A large tropical island at China's southern tip, separated from the Leizhou Peninsula by the 20 km-wide Qiongzhou Strait and forming the eastern wall of the Gulf of Tonkin. Designated by Beijing as an island-wide Free Trade Port, Hainan simultaneously serves as China's #1 military springboard into the South China Sea, hosting the Yulin nuclear ballistic missile submarine base at Sanya and the Wenchang Spacecraft Launch Site."
+    "tx": "A large tropical island at China's southern tip, separated from the Leizhou Peninsula by the 20 km-wide Qiongzhou Strait and forming the eastern wall of the Gulf of Tonkin. Designated by Beijing as an island-wide Free Trade Port, Hainan simultaneously serves as China's #1 military springboard into the East Sea (South China Sea), hosting the Yulin nuclear ballistic missile submarine base at Sanya and the Wenchang Spacecraft Launch Site."
   },
   "isl_natuna": {
     "n": "Natuna Islands",
     "pop": "2,001 km²",
     "area": "2,001 km²",
-    "tx": "Indonesia's northernmost island group jutting into the southern South China Sea between the Malay Peninsula and Borneo. Indonesia's North Natuna Exclusive Economic Zone contains the giant East Natuna natural gas field but is encroached upon by China's unlawful \"nine-dash line\" claim, prompting Jakarta to reinforce naval and air bases on Great Natuna Island."
+    "tx": "Indonesia's northernmost island group jutting into the southern East Sea (South China Sea) between the Malay Peninsula and Borneo. Indonesia's North Natuna Exclusive Economic Zone contains the giant East Natuna natural gas field but is encroached upon by China's unlawful \"nine-dash line\" claim, prompting Jakarta to reinforce naval and air bases on Great Natuna Island."
   },
   "isl_hongkong": {
     "n": "Hong Kong Island (and Lantau)",
@@ -1865,7 +1865,7 @@ export const ISLANDS_EN = {
     "n": "Taiwan Island",
     "pop": "35,808 km²",
     "area": "35,808 km²",
-    "tx": "Once described by General Douglas MacArthur as an \"unsinkable aircraft carrier,\" Taiwan sits at the exact midpoint of the First Island Chain ~130 km off China's Fujian coast, locking the maritime gates between the East China Sea and South China Sea while controlling direct access for Chinese nuclear submarines to the deep open waters of the Philippine Sea."
+    "tx": "Once described by General Douglas MacArthur as an \"unsinkable aircraft carrier,\" Taiwan sits at the midpoint of the First Island Chain ~130 km off Fujian, locking the gates between the East China Sea, the East Sea (South China Sea), and the Pacific. The island also anchors the global technology supply chain through its 'Silicon Shield', producing over 90% of the world's most advanced logic chips."
   },
   "isl_kinmen": {
     "n": "Kinmen Islands (Quemoy)",
@@ -1961,7 +1961,7 @@ export const ISLANDS_EN = {
     "n": "Luzon",
     "pop": "109,965 km²",
     "area": "109,965 km²",
-    "tx": "The largest and most populous island of the Philippines (home to capital Manila and Subic Bay). Northern Luzon faces Taiwan across the Luzon Strait (Bashi Channel), where US forces have gained rotational access to forward Philippine military bases under the Enhanced Defense Cooperation Agreement (EDCA) overlooking both the South China Sea and the Taiwan Strait."
+    "tx": "The largest and most populous island of the Philippines (home to capital Manila and Subic Bay). Northern Luzon faces Taiwan across the Luzon Strait (Bashi Channel), where US forces have gained rotational access to forward Philippine military bases under the Enhanced Defense Cooperation Agreement (EDCA) overlooking both the East Sea (South China Sea) and the Taiwan Strait."
   },
   "isl_mindanao": {
     "n": "Mindanao",
@@ -1973,7 +1973,7 @@ export const ISLANDS_EN = {
     "n": "Palawan",
     "pop": "12,189 km²",
     "area": "12,189 km²",
-    "tx": "A long, narrow island stretching southwest from the Philippines toward northern Borneo, forming the eastern rim of the South China Sea and serving as the Philippine Navy's primary forward logistics springboard (Oyster Bay / Ulugan Bay) facing the disputed Spratly Islands."
+    "tx": "A long, narrow island stretching southwest from the Philippines toward northern Borneo, forming the eastern rim of the East Sea (South China Sea) and serving as the Philippine Navy's primary forward logistics springboard (Oyster Bay / Ulugan Bay) facing the disputed Spratly Islands."
   },
   "isl_borneo": {
     "n": "Borneo (Kalimantan)",
@@ -2051,7 +2051,7 @@ export const ISLANDS_EN = {
     "n": "New Caledonia",
     "pop": "18,575 km²",
     "area": "18,575 km²",
-    "tx": "A special overseas collectivity of France in the Southwest Pacific (~1,200 km east of Australia), endowing France with a 1.4 million km² Exclusive Economic Zone, a permanent military base at Noumea, and roughly 10–20% of the world's strategic nickel reserves."
+    "tx": "A special overseas collectivity of France in the Southwest Pacific (~1,200 km east of Australia), endowing France with a 1.4 million km² Exclusive Economic Zone, a military base at Noumea, and roughly 10–20% of the world's strategic nickel reserves. Following severe civil unrest in 2024, the July 2025 Bougival Accord proposed an unprecedented framework establishing an autonomous 'state within the French Republic' to succeed the 1998 Noumea Accord, though implementation remains deeply contested."
   },
   "isl_andaman": {
     "n": "Andaman and Nicobar Islands",
@@ -2075,19 +2075,19 @@ export const ISLANDS_EN = {
     "n": "Diego Garcia (Chagos Archipelago)",
     "pop": "30 km²",
     "area": "30 km²",
-    "tx": "The largest coral atoll of the Chagos Archipelago at the exact geographic center of the Indian Ocean (safely outside the equatorial cyclone belt). Hosts one of the most important joint US–UK overseas naval and strategic bomber bases in the world, pre-positioning military supply ships and supporting B-2 and B-52 operations across the Middle East and Indo-Pacific."
+    "tx": "The largest coral atoll of the Chagos Archipelago at the exact geographic center of the Indian Ocean. Under the landmark treaty signed on 22 May 2025, the UK formally recognized Mauritian sovereignty over the archipelago while leasing back Diego Garcia for 99 years, securing continued US–UK operation of its strategic naval and air base hosting prepositioning squadrons and B-2/B-52 bombers."
   },
   "isl_socotra": {
     "n": "Socotra Island",
     "pop": "3,796 km²",
     "area": "3,796 km²",
-    "tx": "An island archipelago under Yemeni sovereignty yet lying geographically closer to the Horn of Africa (Somalia) than to the Arabian Peninsula, standing sentinel right at the Indian Ocean entrance to the Gulf of Aden and the Bab el-Mandeb strait. Famous for its alien-looking endemic flora (dragon's blood trees), Socotra has seen strategic military and intelligence deployments by the UAE and Saudi Arabia."
+    "tx": "An island archipelago under Yemeni sovereignty yet lying geographically closer to the Horn of Africa (Somalia) than to the Arabian Peninsula, standing sentinel right at the Indian Ocean entrance to the Gulf of Aden and the Bab el-Mandeb strait. Famous for its alien-looking endemic flora (dragon's blood trees), following the dissolution of the Southern Transitional Council (STC) in January 2026, Socotra's maritime security posture has been reaffirmed under the Saudi-led coalition and Yemen's recognized government."
   },
   "isl_hormuz_qeshm": {
     "n": "Qeshm & Hormuz Islands",
     "pop": "1,491 km² (Qeshm)",
     "area": "1,491 km² (Qeshm)",
-    "tx": "Two strategic Iranian islands commanding the narrowest curve of the Strait of Hormuz (through which ~20% of global petroleum and LNG passes). The 135 km-long Qeshm Island running parallel to the Iranian coast—together with Hormuz, Larak, and Abu Musa islands—forms an interlocking bastion of Iranian coastal anti-ship missiles, fast-attack craft, and midget submarines overlooking every oil tanker transit."
+    "tx": "Two strategic Iranian islands commanding the narrowest curve of the Strait of Hormuz (through which ~20% of global petroleum and LNG passes). The 135 km-long Qeshm Island running parallel to the Iranian coast—together with Hormuz, Larak, and Abu Musa islands—forms the IRGC's underground anti-ship missile, naval mining, and fast-boat bastion. During the 2026 Iran War, these islands were the focal point of fighting as Iran shut the strait, drawing intense US–Israeli strikes and an enduring naval blockade."
   },
   "isl_bahrain": {
     "n": "Bahrain Island",
@@ -2159,7 +2159,7 @@ export const ISLANDS_EN = {
     "n": "Gotland",
     "pop": "3,184 km²",
     "area": "3,184 km²",
-    "tx": "Sweden's largest island, sitting at the exact geographic center of the Baltic Sea (~300 km north of Kaliningrad and ~150 km west of Latvia). Military strategists call Gotland a \"giant unsinkable aircraft carrier in the Baltic\": whichever force deploys long-range air defense and anti-ship missile batteries on Gotland commands the sea and air approaches to the Baltic states, Finland, Sweden, and Poland."
+    "tx": "Sweden's largest island, sitting at the exact geographic center of the Baltic Sea (~300 km north of Kaliningrad and ~150 km west of Latvia). Military strategists call Gotland a \"giant unsinkable aircraft carrier in the Baltic\": following Sweden's accession to NATO in 2024, Gotland has been remilitarized with advanced air-defense and anti-ship missile units, cementing NATO's control over the Baltic Sea approaches."
   },
   "isl_aland": {
     "n": "Aland Islands",
@@ -2183,13 +2183,13 @@ export const ISLANDS_EN = {
     "n": "Snake Island (Zmiinyi)",
     "pop": "0.17 km²",
     "area": "0.17 km²",
-    "tx": "A tiny Ukrainian rocky islet in the northwestern Black Sea lying ~35 km off the Danube River Delta. Though less than 20 hectares in size, Snake Island commands the maritime approaches to the port of Odesa and the Danube mouths bordering NATO member Romania, making it a fiercely contested strategic symbol from the opening day of the 2022 Russia–Ukraine war."
+    "tx": "A tiny Ukrainian rocky islet in the northwestern Black Sea lying ~35 km off the Danube River Delta. Though less than 20 hectares in size, Snake Island commands shipping routes to Odesa and the Danube mouths bordering NATO member Romania. Occupied by Russia in early 2022, its recapture by Ukraine in June 2022 proved pivotal in securing the western Black Sea maritime corridor for agricultural exports."
   },
   "isl_crimea": {
     "n": "Crimean Peninsula",
     "pop": "27,000 km²",
     "area": "27,000 km²",
-    "tx": "A diamond-shaped peninsula functioning like an island fortress jutting into the center of the Black Sea (connected to mainland Ukraine only by the 5–7 km-wide Perekop Isthmus and linked to Russia's Kuban region via the 19 km Kerch Bridge). Together with the deep-water naval base at Sevastopol, Crimea is the geostrategic key to dominating the Black Sea and Sea of Azov; annexed by Russia in 2014."
+    "tx": "A diamond-shaped peninsula functioning like an island fortress jutting into the center of the Black Sea (connected to mainland Ukraine only by the 5–7 km-wide Perekop Isthmus and linked to Russia's Kuban region via the 19 km Kerch Bridge). Annexed by Russia in 2014, Crimea and Sevastopol long dominated the Black Sea, but Ukrainian long-range missile and naval drone strikes have damaged the Kerch Bridge and forced the Black Sea Fleet to relocate its main combatants eastward to Novorossiysk."
   },
   "isl_cyprus": {
     "n": "Cyprus",
@@ -2261,7 +2261,7 @@ export const ISLANDS_EN = {
     "n": "Greenland",
     "pop": "2,166,086 km²",
     "area": "2,166,086 km²",
-    "tx": "The world's largest non-continental island, geographically part of North America while an autonomous territory of the Kingdom of Denmark, with over 80% of its surface buried under an ice sheet up to 3 km thick. As Arctic ice melt opens polar shipping routes and exposes vast rare-earth and uranium deposits, Greenland has become a premier strategic prize—hosting the US Pituffik Space Base (formerly Thule) in the far northwest for early-warning ballistic missile detection and anchoring the western flank of the GIUK gap."
+    "tx": "The world's largest non-continental island, geographically part of North America while an autonomous territory of the Kingdom of Denmark, with over 80% of its surface buried under an ice sheet up to 3 km thick. As Arctic ice melt opens polar shipping routes and exposes vast rare-earth and uranium deposits, Greenland is a premier strategic prize: a September 2026 trilateral US–Denmark–Greenland security pact expanded defense cooperation and modernized Pituffik Space Base (formerly Thule) for ballistic missile tracking while securing the western GIUK gap."
   },
   "isl_canary": {
     "n": "Canary Islands",
