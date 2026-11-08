@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108o';
-import { C0, TOOLS } from '../data/countries.js?v=20261108o';
-import { RELC, REL } from '../data/religions.js?v=20261108o';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108o';
-import { iconSvg } from './icons.js?v=20261108o';
-import { AL, REF } from '../data/alliances.js?v=20261108o';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108p';
+import { C0, TOOLS } from '../data/countries.js?v=20261108p';
+import { RELC, REL } from '../data/religions.js?v=20261108p';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108p';
+import { iconSvg } from './icons.js?v=20261108p';
+import { AL, REF } from '../data/alliances.js?v=20261108p';
 import {
   $,
   norm,
@@ -63,7 +63,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261108o';
+} from './state.js?v=20261108p';
 import {
   cv,
   proj,
@@ -81,7 +81,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108o';
+} from './globe.js?v=20261108p';
 import {
   CONT,
   AMERICAS,
@@ -98,7 +98,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108o';
+} from '../data/continents.js?v=20261108p';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -1086,7 +1086,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261108o'), import('../data/sea_info.js?v=20261108o')])
+    Promise.all([import('../data/sea_story.js?v=20261108p'), import('../data/sea_info.js?v=20261108p')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 
@@ -2197,6 +2197,7 @@ export function initUI() {
   const hideDrawer = isMobileViewport() ? true : typeof st.drawerHide === 'boolean' ? st.drawerHide : false;
   $('#layers').classList.toggle('hide', hideDrawer);
   $('#layBtn').classList.toggle('on', !hideDrawer);
+  resize(); // main.js sized the globe while the sheet was still open: centre it again now that it is closed
 
   applyLang();
 }
