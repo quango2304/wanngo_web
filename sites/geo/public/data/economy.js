@@ -1569,7 +1569,7 @@ export const ECON = {
       47,
       22
     ],
-    "main_vi": "Công nghiệp quốc phòng & đạn dược, khai khoáng (than анtracit, sắt, magie, đất hiếm), luyện kim, dệt may gia công, thủy sản",
+    "main_vi": "Công nghiệp quốc phòng & đạn dược, khai khoáng (than antracit, sắt, magie, đất hiếm), luyện kim, dệt may gia công, thủy sản",
     "main_en": "Defense & munitions manufacturing, mining (anthracite coal, iron ore, magnesite, rare earths), metallurgy, textiles, fisheries",
     "note_vi": "Triều Tiên duy trì nền kinh tế kế hoạch hóa tập trung theo thuyết Tự lực (Juche), dồn nguồn lực cho vũ khí hạt nhân, tên lửa và hơn 1,2 triệu quân thường trực. Dù giàu trữ lượng than antracit, sắt, magie và đất hiếm, lệnh cấm vận quốc tế khiến nước này phụ thuộc ~90% ngoại thương vào Trung Quốc. Từ năm 2023–2026, việc xuất khẩu đạn pháo, tên lửa và cử lực lượng sang Nga đã mang về nguồn dầu mỏ, lương thực và ngoại tệ quan trọng.",
     "note_en": "North Korea runs a tightly controlled command economy under its Juche doctrine, prioritizing nuclear weapons, ballistic missiles, and a 1.2-million-strong military. Despite rich deposits of anthracite coal, iron ore, and rare earths, UN sanctions leave it reliant on China for ~90% of external trade. In 2023–2026, large-scale munitions exports and troop deployments to Russia have provided a vital influx of Russian oil, grain, and technology."
