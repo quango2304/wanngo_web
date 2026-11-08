@@ -201,7 +201,7 @@ const LAKE_META = {
   tana: {
     area: '3.060 km²',
     rel: ['Ethiopia'],
-    tx: 'Hồ lớn nhất Ethiopia nằm trên cao nguyên Amhara ở độ cao 1.788 m — chính là nơi phát nguyên của dòng sông Nile Xanh (cung cấp tới 85% lượng nước lũ hàng năm cho sông Nile tại Ai Cập và nuôi đập thủy điện Đại Phục Hưng GERD).'
+    tx: 'Hồ lớn nhất Ethiopia nằm trên cao nguyên Amhara ở độ cao 1.788 m — chính là nơi phát nguyên của dòng sông Nile Xanh (cung cấp tới 85% lượng nước lũ hàng năm cho sông Nile tại Ai Cập và nuôi đập thủy điện Đại Phục Hưng GERD được khánh thành tháng 9/2025).'
   },
   deadsea: {
     area: '~605 km²',

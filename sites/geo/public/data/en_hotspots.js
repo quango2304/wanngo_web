@@ -23,11 +23,11 @@ export const UPDATED_EN = 'Nov 2026 (verified data)';
 export const H_EN = {
   malacca: {
     n: 'Strait of Malacca',
-    tx: 'A strategic maritime chokepoint linking the Indian Ocean with the South China Sea and the Pacific; stretching ~800 km in length, its narrowest point at the Phillips Channel in the Singapore Strait is just ~2.8 km wide. Roughly 25–30% of global seaborne trade and nearly 80% of China’s crude oil imports—along with the vast majority of Japan’s and South Korea’s energy supplies—transit these waters (~90,000 vessels annually). Beijing refers to its vulnerability to a naval blockade here as the "Malacca Dilemma."'
+    tx: 'A strategic maritime chokepoint linking the Indian Ocean with the East Sea (South China Sea) and the Pacific; stretching ~800 km in length, its narrowest point at the Phillips Channel in the Singapore Strait is just ~2.8 km wide. Roughly 25–30% of global seaborne trade and nearly 80% of China’s crude oil imports—along with the vast majority of Japan’s and South Korea’s energy supplies—transit these waters (~90,000 vessels annually). Beijing refers to its vulnerability to a naval blockade here as the "Malacca Dilemma."'
   },
   hormuz: {
     n: 'Strait of Hormuz',
-    tx: 'The sole maritime outlet of the Persian Gulf into the Gulf of Oman and the Indian Ocean; while ~33 km wide at its narrowest point, the actual traffic separation lanes for supertankers are only ~3 km wide in each direction. An average of 20–21 million barrels of oil per day (~20% of global petroleum consumption) and roughly one-fifth of global liquefied natural gas (LNG, primarily from Qatar) pass through here, with over 80% bound for Asian markets. Iran controls the northern coast and the islands of Abu Musa and the Tunbs, routinely leveraging the threat of closing Hormuz as a strategic deterrent.'
+    tx: 'The sole maritime outlet of the Persian Gulf into the Gulf of Oman and the Indian Ocean; while ~33 km wide at its narrowest point, the actual traffic separation lanes for supertankers are only ~3 km wide in each direction. An average of 20–21 million barrels of oil per day (~20% of global petroleum consumption) and roughly one-fifth of global liquefied natural gas (LNG, primarily from Qatar) pass through here, with over 80% bound for Asian markets. Iran controls the northern coast and the islands of Abu Musa and the Tunbs; during the 2026 war, Iran closed the strait, prompting international convoy operations and an ongoing US naval blockade off its approaches.'
   },
   babelmandeb: {
     n: 'Bab el-Mandeb Strait',
@@ -87,7 +87,7 @@ export const H_EN = {
   },
   sunda: {
     n: 'Sunda Strait',
-    tx: 'Situated between the major Indonesian islands of Sumatra and Java, narrowing to ~24 km at its tightest point (with the famed Krakatoa volcano in its midst). It is one of Indonesia’s three main archipelagic sea lanes linking the Indian Ocean with the South China Sea and Java Sea; however, because its eastern approaches are shallow (~20 m) with strong currents, ultra-large crude carriers and submarines typically detour through the deeper Lombok Strait.'
+    tx: 'Situated between the major Indonesian islands of Sumatra and Java, narrowing to ~24 km at its tightest point (with the famed Krakatoa volcano in its midst). It is one of Indonesia’s three main archipelagic sea lanes linking the Indian Ocean with the East Sea (South China Sea) and Java Sea; however, because its eastern approaches are shallow (~20 m) with strong currents, ultra-large crude carriers and submarines typically detour through the deeper Lombok Strait.'
   },
   lombok: {
     n: 'Lombok & Makassar Straits',
@@ -95,7 +95,7 @@ export const H_EN = {
   },
   luzon: {
     n: 'Luzon Strait (Bashi Channel)',
-    tx: 'A ~250 km expanse of water between the southern tip of Taiwan and Luzon Island in the Philippines, subdivided into the Bashi, Balintang, and Babuyan Channels (home to the Batanes Islands). It serves as the vital deep-water gateway for Chinese nuclear submarines and aircraft carrier strike groups departing the South China Sea (Yulin base on Hainan) to break through the First Island Chain into the Western Pacific, while also hosting East Asia’s densest concentration of undersea fiber-optic cables.'
+    tx: 'A ~250 km expanse of water between the southern tip of Taiwan and Luzon Island in the Philippines, subdivided into the Bashi, Balintang, and Babuyan Channels (home to the Batanes Islands). It serves as the vital deep-water gateway for Chinese nuclear submarines and aircraft carrier strike groups departing the East Sea (South China Sea, Yulin base on Hainan) to break through the First Island Chain into the Western Pacific, while also hosting East Asia’s densest concentration of undersea fiber-optic cables.'
   },
   magellan: {
     n: 'Strait of Magellan & Drake Passage (Cape Horn)',
@@ -119,11 +119,11 @@ export const H_EN = {
   },
   r_suez: {
     n: 'Asia–Europe Maritime Route via Suez Canal',
-    tx: 'The planet’s busiest container and cargo shipping artery, linking the manufacturing powerhouses of East Asia (Shanghai, Shenzhen, Busan, Singapore) with Europe’s major ports (Rotterdam, Hamburg, Piraeus). Vessels on this route must thread five consecutive geopolitical chokepoints: the South China Sea, the Strait of Malacca, the Bab el-Mandeb Strait, the Suez Canal, and the Strait of Gibraltar (plus the Strait of Dover).'
+    tx: 'The planet’s busiest container and cargo shipping artery, linking the manufacturing powerhouses of East Asia (Shanghai, Shenzhen, Busan, Singapore) with Europe’s major ports (Rotterdam, Hamburg, Piraeus). Vessels on this route must thread five consecutive geopolitical chokepoints: the East Sea (South China Sea), the Strait of Malacca, the Bab el-Mandeb Strait, the Suez Canal, and the Strait of Gibraltar (plus the Strait of Dover).'
   },
   r_gulf_asia: {
     n: 'Persian Gulf–East Asia Energy Lifeline',
-    tx: 'The "energy jugular" of East Asia’s industrial economies: carrying crude oil and LNG from Saudi Arabia, the UAE, Qatar, Iraq, and Iran through the Strait of Hormuz, across the Indian Ocean, through the Strait of Malacca, and up the South China Sea (hugging Vietnam’s continental shelf) to supply China, Japan, South Korea, and Taiwan.'
+    tx: 'The "energy jugular" of East Asia’s industrial economies: carrying crude oil and LNG from Saudi Arabia, the UAE, Qatar, Iraq, and Iran through the Strait of Hormuz, across the Indian Ocean, through the Strait of Malacca, and up the East Sea (South China Sea, hugging Vietnam’s continental shelf) to supply China, Japan, South Korea, and Taiwan.'
   },
   r_transpac: {
     n: 'Trans-Pacific Maritime Route',
@@ -155,19 +155,19 @@ export const H_EN = {
   },
   ninedash: {
     n: 'Nine-Dash Line ("U-Shaped Line")',
-    tx: 'China’s unilateral demarcation claim encompassing roughly 80–90% of the South China Sea, cutting deep into the Exclusive Economic Zones (EEZs) and continental shelves of Vietnam, the Philippines, Malaysia, Brunei, and Indonesia. In July 2016, an Arbitral Tribunal constituted under Annex VII of the UN Convention on the Law of the Sea (UNCLOS 1982) in a case brought by the Philippines ruled that China’s claim to "historic rights" within the nine-dash line has no legal basis under international law; Vietnam and the international community firmly reject this claim.'
+    tx: 'China’s unilateral demarcation claim encompassing roughly 80–90% of the East Sea (South China Sea), cutting deep into the Exclusive Economic Zones (EEZs) and continental shelves of Vietnam, the Philippines, Malaysia, Brunei, and Indonesia. In July 2016, an Arbitral Tribunal constituted under Annex VII of the UN Convention on the Law of the Sea (UNCLOS 1982) in a case brought by the Philippines ruled that China’s claim to "historic rights" within the nine-dash line has no legal basis under international law; Vietnam and the international community firmly reject this claim.'
   },
   hoangsa: {
     n: 'Paracel Islands (Hoang Sa)',
-    tx: 'A coral archipelago comprising the Amphitrite and Crescent groups in the northern South China Sea, commanding international shipping lanes and the entrance to the Gulf of Tonkin. China seized the eastern group by force in 1956 and occupied the entire archipelago after a naval battle with South Vietnamese forces in January 1974, subsequently constructing a major military base on Woody Island (Phu Lam). Vietnam possesses comprehensive historical and legal evidence affirming its continuous sovereignty over the islands since at least the 17th century (via the Hoang Sa and Bac Hai flotillas).'
+    tx: 'A coral archipelago comprising the Amphitrite and Crescent groups in the northern East Sea (South China Sea), commanding international shipping lanes and the entrance to the Gulf of Tonkin. China seized the eastern group by force in 1956 and occupied the entire archipelago after a naval battle with South Vietnamese forces in January 1974, subsequently constructing a major military base on Woody Island (Phu Lam). Vietnam possesses comprehensive historical and legal evidence affirming its continuous sovereignty over the islands since at least the 17th century (via the Hoang Sa and Bac Hai flotillas).'
   },
   truongsa: {
     n: 'Spratly Islands (Truong Sa)',
-    tx: 'A vast archipelago in the southern South China Sea comprising over 100 islets, reefs, banks, and atolls, representing the world’s most complex multi-claimant territorial dispute involving Vietnam, China, Taiwan, the Philippines, Malaysia, and Brunei. Vietnam currently exercises sovereignty over the largest number of features; between 2013 and 2016, China conducted massive dredging to turn seven reefs (including Fiery Cross, Subi, and Mischief Reefs) into artificial military bases equipped with 3,000 m runways, deep-water harbors, and missile systems.'
+    tx: 'A vast archipelago in the southern East Sea (South China Sea) comprising over 100 islets, reefs, banks, and atolls, representing the world’s most complex multi-claimant territorial dispute involving Vietnam, China, Taiwan, the Philippines, Malaysia, and Brunei. Vietnam currently exercises sovereignty over the largest number of features; between 2013 and 2016, China conducted massive dredging to turn seven reefs (including Fiery Cross, Subi, and Mischief Reefs) into artificial military bases equipped with 3,000 m runways, deep-water harbors, and missile systems.'
   },
   scarborough: {
     n: 'Scarborough Shoal (Huangyan / Bajo de Masinloc)',
-    tx: 'A triangle-shaped coral atoll located just ~220 km west of Luzon Island in the Philippines (well within the Philippines’ 200-nautical-mile EEZ) but ~850 km from China’s Hainan Island. China seized de facto control of the shoal following a tense 2012 maritime standoff with the Philippines. Were Beijing to militarize Scarborough Shoal, it would complete a "strategic triangle" across the South China Sea (alongside the Paracels and Spratlys) right on the doorstep of US-accessible bases in Luzon.'
+    tx: 'A triangle-shaped coral atoll located just ~220 km west of Luzon Island in the Philippines (well within the Philippines’ 200-nautical-mile EEZ) but ~850 km from China’s Hainan Island. China seized de facto control of the shoal following a tense 2012 maritime standoff with the Philippines. Were Beijing to militarize Scarborough Shoal, it would complete a "strategic triangle" across the East Sea (South China Sea, alongside the Paracels and Spratlys) right on the doorstep of US-accessible bases in Luzon.'
   },
   senkaku: {
     n: 'Senkaku / Diaoyu Islands',
@@ -195,7 +195,7 @@ export const H_EN = {
   },
   westbank: {
     n: 'West Bank, East Jerusalem & Gaza Strip',
-    tx: 'The Palestinian territories defined by the 1949 Armistice Demarcation Line (Green Line) and occupied by Israel during the 1967 Six-Day War. The West Bank forms a strategic mountain ridge overlooking Israel’s narrow coastal plain (which was only ~15 km wide at its narrowest pre-1967 point); today over 500,000 Israeli settlers live in the West Bank and more than 200,000 in East Jerusalem alongside ~3 million Palestinians, making the creation of a territorially contiguous Palestinian state extraordinarily complex.'
+    tx: 'The Palestinian territories defined by the 1949 Armistice Demarcation Line (Green Line) and occupied by Israel during the 1967 Six-Day War. The West Bank forms a strategic mountain ridge overlooking Israel’s narrow coastal plain (which was only ~15 km wide at its narrowest pre-1967 point); today over 500,000 Israeli settlers live in the West Bank and more than 200,000 in East Jerusalem alongside ~3 million Palestinians, making the creation of a territorially contiguous Palestinian state extraordinarily complex, with the Gaza Strip physically isolated and fragmented under post-ceasefire Israeli military control along the Yellow Line.'
   },
   caribbean: {
     n: 'Caribbean Sea – America’s "Strategic Inner Sea"',
@@ -263,27 +263,27 @@ export const H_EN = {
   },
   conf_ukraine: {
     n: 'Russia–Ukraine War',
-    tx: 'The largest conventional land war in Europe since World War II, which escalated into a full-scale invasion on February 24, 2022, following Russia’s 2014 annexation of Crimea and the war in the Donbas. The active front line stretches over 1,000 km across eastern and southern Ukraine (Luhansk, Donetsk, Zaporizhzhia, Kherson), characterized by high-intensity artillery attrition, fortified trench lines, long-range missile strikes, and dense FPV drone warfare. The conflict has fundamentally reshaped European security architecture (prompting Finland and Sweden to join NATO) as well as global energy and food markets.'
+    tx: 'The largest conventional land war in Europe since World War II, which escalated into a full-scale invasion on February 24, 2022, following Russia’s 2014 annexation of Crimea and the war in the Donbas. Russia currently controls roughly 19% of Ukrainian territory; the active front line stretches over 1,000 km across the east and south (Luhansk, Donetsk, Zaporizhzhia, Kherson), characterized by grueling attrition warfare with artillery, trenches, long-range missile strikes, and dense FPV drone combat. The conflict has fundamentally reshaped European security architecture (prompting Finland and Sweden to join NATO) as well as global energy and food markets.'
   },
   conf_iran: {
     n: 'Iran–Israel–US Confrontation & Nuclear Standoff',
-    tx: 'The central geopolitical fault line of the Middle East, pitting the Islamic Republic of Iran (and its regional "Axis of Resistance" network including Hezbollah in Lebanon, Hamas in Gaza, the Houthis in Yemen, and Shiite militias in Iraq and Syria) against Israel and the United States. After decades of proxy warfare and covert operations targeting Tehran’s uranium enrichment and ballistic missile programs, 2024–2025 marked a historic watershed as Iran and Israel launched direct ballistic missile barrages and airstrikes against each other’s territory for the first time.'
+    tx: 'The central geopolitical fault line of the Middle East, pitting the Islamic Republic of Iran (and its regional "Axis of Resistance" network including Hezbollah in Lebanon, Hamas in Gaza, the Houthis in Yemen, and Shiite militias in Iraq and Syria) against Israel and the United States. After decades of proxy warfare and covert operations targeting Tehran’s uranium enrichment and ballistic missile programs, following direct strikes in 2024–2025 and the June 2025 Twelve-Day War, the 2026 Iran War saw major US–Israeli air campaigns kill Supreme Leader Ali Khamenei (succeeded by Mojtaba Khamenei); Iran struck back and closed the Strait of Hormuz before an April ceasefire and the June 2026 Islamabad Memorandum, though a US naval blockade around Hormuz continues.'
   },
   conf_gaza: {
     n: 'Gaza Strip War (Israel–Hamas)',
-    tx: 'Triggered on October 7, 2023, by a Hamas-led cross-border assault from the Gaza Strip into southern Israel (~1,200 killed and ~250 hostages taken), which prompted an unprecedented large-scale aerial and ground offensive by the Israel Defense Forces (IDF). Intense urban combat across the densely populated coastal enclave (just 365 km² home to over 2.1 million people) has devastated infrastructure, caused tens of thousands of casualties, created a severe humanitarian crisis, and ignited domino-effect escalations across the Middle East.'
+    tx: 'Triggered on October 7, 2023, by a Hamas-led cross-border assault from the Gaza Strip into southern Israel (~1,200 killed and ~250 hostages taken), which prompted an unprecedented large-scale aerial and ground offensive by the Israel Defense Forces (IDF). Intense urban combat across the densely populated coastal enclave (just 365 km² home to over 2.1 million people) has devastated infrastructure, killed over 74,000 Palestinians (MoH, late 2026), and created a catastrophic humanitarian disaster. Despite an October 2025 ceasefire, Israel maintains military control over more than 50% of the Gaza Strip along the fortified Yellow Line.'
   },
   conf_lebanon: {
     n: 'Israel–Hezbollah Border Conflict (Lebanon)',
-    tx: 'The front along the Israel–Lebanon "Blue Line" erupted in October 2023 when the Iranian-backed militant group Hezbollah began cross-border rocket and artillery strikes in support of Hamas in Gaza. In late 2024, the conflict escalated into a major Israeli air campaign and ground incursion into southern Lebanon—killing Hezbollah leader Hassan Nasrallah and much of the group’s senior command—before the sides reached a ceasefire framework based on UN Security Council Resolution 1701 (requiring armed forces to withdraw north of the Litani River).'
+    tx: 'The front along the Israel–Lebanon "Blue Line" erupted in October 2023 when the Iranian-backed militant group Hezbollah began cross-border rocket and artillery strikes in support of Hamas in Gaza. In late 2024, the conflict escalated into a major Israeli air campaign and ground incursion into southern Lebanon—killing Hezbollah leader Hassan Nasrallah. In March 2026, the 2026 Lebanon War erupted with an Israeli ground offensive into southern Lebanon; despite a June 2026 ceasefire framework, Israeli forces continue to occupy sections of the southern border zone and Lebanese national elections have been postponed to 2028.'
   },
   conf_redsea: {
     n: 'Red Sea Security Crisis & Yemeni Civil War',
-    tx: 'Yemen’s civil war since 2014 enabled the Iranian-backed Houthi movement (Ansar Allah) to seize the capital Sanaa, the northern highlands, and the Red Sea port of Hodeidah. Beginning in November 2023, the Houthis deployed anti-ship missiles, aerial drones, and uncrewed surface vessels to attack hundreds of commercial ships transiting the Bab el-Mandeb Strait, defying retaliatory airstrikes by US–UK coalitions and Israel and causing container traffic through the Suez Canal to plummet.'
+    tx: 'Yemen’s civil war enabled the Houthi movement (Ansar Allah) to control Sanaa and the port of Hodeidah; in the south, the secessionist Southern Transitional Council (STC) was dissolved in January 2026. Since late 2023, the Houthis have sustained missile, drone, and uncrewed surface vessel attacks against commercial shipping transiting the Bab el-Mandeb Strait despite retaliatory strikes by US–UK coalitions and Israel, causing container traffic through the Suez Canal to plummet.'
   },
   conf_sudan: {
     n: 'Sudanese Civil War',
-    tx: 'Erupted in April 2023 between the Sudanese Armed Forces (SAF, led by General Abdel Fattah al-Burhan and operating from Port Sudan on the Red Sea) and the paramilitary Rapid Support Forces (RSF, commanded by General Hemedti and controlling much of Darfur). The conflict has devastated the capital region of Khartoum–Omdurman, triggered ethnic massacres in Darfur, and displaced over 11–12 million people, creating the world’s largest ongoing displacement and hunger crisis.'
+    tx: 'Erupted in April 2023 between the Sudanese Armed Forces (SAF, led by General Abdel Fattah al-Burhan and operating from Port Sudan on the Red Sea) and the paramilitary Rapid Support Forces (RSF, commanded by General Hemedti and controlling much of Darfur). The conflict has devastated the capital region of Khartoum–Omdurman, triggered ethnic massacres in Darfur, and displaced over 13–14 million people (including more than 4.6 million refugees abroad), creating the world’s largest ongoing displacement and hunger crisis.'
   },
   conf_myanmar: {
     n: 'Multi-Front Civil War in Myanmar',
@@ -299,7 +299,7 @@ export const H_EN = {
   },
   conf_kashmir: {
     n: 'India–Pakistan Flashpoint in Kashmir',
-    tx: 'One of the most dangerous militarized frontiers on Earth, where nuclear-armed rivals India and Pakistan face off along the ~740 km Line of Control (LoC). After three major wars (1947, 1965, 1971), the Kargil conflict (1999), the Balakot airstrike crisis (2019), and New Delhi’s revocation of Jammu & Kashmir’s special autonomous status under Article 370 (August 2019), militant attacks and cross-border artillery duels periodically push both nations toward military crisis and strain the 1960 Indus Waters Treaty.'
+    tx: 'One of the most dangerous militarized frontiers on Earth, where nuclear-armed rivals India and Pakistan face off along the ~740 km Line of Control (LoC). After three major wars (1947, 1965, 1971), the Kargil conflict (1999), the Balakot airstrike crisis (2019), and New Delhi’s revocation of Jammu & Kashmir’s special autonomous status under Article 370 (August 2019), following the April 2025 Pahalgam attack, India suspended the 1960 Indus Waters Treaty for the first time; sharp border clashes and retaliatory strikes in May 2025 were halted only by a fragile ceasefire, leaving the historic water treaty frozen indefinitely.'
   },
   conf_taiwan: {
     n: 'Taiwan Strait Military Flashpoint',
@@ -323,7 +323,7 @@ export const H_EN = {
   },
   v17: {
     n: '17th Parallel – Ben Hai River (1954–1975)',
-    tx: 'The provisional military demarcation line established by the July 1954 Geneva Accords along the Ben Hai River (Hien Luong Bridge, Quang Tri province) near the 17th parallel, dividing North and South Vietnam for 21 years until national reunification in 1975. In historical geography, this narrow waist of central Vietnam (~50 km from the Annamite Range to the South China Sea) around Quang Binh and Quang Tri marks where the country’s natural terrain constricts most tightly, having served repeatedly as a frontier of division in centuries past (such as Ngang Pass between Dai Viet and Champa, or the Gianh River during the Trinh–Nguyen division).'
+    tx: 'The provisional military demarcation line established by the July 1954 Geneva Accords along the Ben Hai River (Hien Luong Bridge, Quang Tri province) near the 17th parallel, dividing North and South Vietnam for 21 years until national reunification in 1975. In historical geography, this narrow waist of central Vietnam (~50 km from the Annamite Range to the East Sea (South China Sea)) around Quang Binh and Quang Tri marks where the country’s natural terrain constricts most tightly, having served repeatedly as a frontier of division in centuries past (such as Ngang Pass between Dai Viet and Champa, or the Gianh River during the Trinh–Nguyen division).'
   },
   africalines: {
     n: 'Colonial "Ruler-Drawn" Borders in Africa',
@@ -383,7 +383,7 @@ export const H_EN = {
   },
   base_aludeid: {
     n: 'Al Udeid Air Base (Qatar – US)',
-    tx: 'Located in the desert southwest of Doha, Qatar, Al Udeid is the largest US air base in the Middle East, featuring a 3,750 m runway and hosting roughly 10,000 personnel. It serves as the forward headquarters of US Central Command (CENTCOM) and its Combined Air Operations Center, orchestrating US and coalition airpower, reconnaissance, and aerial refueling missions from Egypt across the Persian Gulf to Central Asia.'
+    tx: 'Located in the desert southwest of Doha, Qatar, Al Udeid is the largest US air base in the Middle East, featuring a 3,750 m runway and hosting roughly 10,000 personnel. It serves as the forward headquarters of US Central Command (CENTCOM) and its Combined Air Operations Center, orchestrating US and coalition air operations from Egypt across the Persian Gulf to Central Asia; the base was targeted by Iranian missile strikes during the June 2025 Twelve-Day War and served as a central operational command hub during the 2026 conflicts.'
   },
   base_bahrain: {
     n: 'NSA Bahrain Naval Base (US 5th Fleet)',
@@ -419,11 +419,11 @@ export const H_EN = {
   },
   base_darwin: {
     n: 'Northern Australia Base Cluster (Darwin & RAAF Tindal – Australia / US / AUKUS)',
-    tx: 'A strategic deep-water port and air base complex (RAAF Darwin and RAAF Tindal) in Australia’s Northern Territory facing the Timor Sea, the Indonesian archipelago, and the South China Sea. It hosts rotational deployments of US Marines and upgraded facilities for US B-52 strategic bombers, while pairing with HMAS Stirling (near Perth) to form the southern strategic rear of the AUKUS alliance.'
+    tx: 'A strategic deep-water port and air base complex (RAAF Darwin and RAAF Tindal) in Australia’s Northern Territory facing the Timor Sea, the Indonesian archipelago, and the East Sea (South China Sea). It hosts rotational deployments of US Marines and upgraded facilities for US B-52 strategic bombers, while pairing with HMAS Stirling (near Perth) to form the southern strategic rear of the AUKUS alliance.'
   },
   base_subic: {
     n: 'Subic Bay, Clark & Northern Luzon EDCA Bases (Philippines)',
-    tx: 'Subic Bay and Clark Air Base formed the largest US overseas military complex during the Cold War before US forces withdrew in 1992. Faced with mounting pressure in the South China Sea (Scarborough Shoal lies just ~240 km west of Subic) and across the Taiwan Strait, the Philippines has reactivated naval facilities at Subic and expanded the Enhanced Defense Cooperation Agreement (EDCA, 2023), granting US forces rotational access to nine strategic sites stretching from Balabac Island (near the Spratlys) up to Cagayan and Batanes (bordering the Bashi Channel).'
+    tx: 'Subic Bay and Clark Air Base formed the largest US overseas military complex during the Cold War before US forces withdrew in 1992. Faced with mounting pressure in the East Sea (South China Sea, where Scarborough Shoal lies ~240 km west of Subic) and across the Taiwan Strait, the Philippines has reactivated naval facilities at Subic and expanded the Enhanced Defense Cooperation Agreement (EDCA, 2023), granting US forces rotational access to nine strategic sites stretching from Balabac Island (near the Spratlys) up to Cagayan and Batanes (bordering the Bashi Channel).'
   },
   base_changi: {
     n: 'Changi Naval Base (Singapore – Sentinel of the Malacca Strait)',
@@ -451,19 +451,19 @@ export const H_EN = {
   },
   base_tartus: {
     n: 'Tartus Naval Base & Khmeimim Air Base (Syria – Russia)',
-    tx: 'Established by the Soviet Union in 1971 on Syria’s Mediterranean coast, Tartus—paired since 2015 with nearby Khmeimim Air Base in Latakia—has served as Russia’s sole warm-water naval and logistics foothold in the Mediterranean and a key staging point for Russian operations into Africa. The sudden collapse of President Bashar al-Assad’s government in December 2024 has placed the long-term future of both strategic bases under unprecedented uncertainty.'
+    tx: 'Established by the Soviet Union in 1971 on Syria’s Mediterranean coast, Tartus—paired since 2015 with nearby Khmeimim Air Base in Latakia—has served as Russia’s sole warm-water naval and logistics foothold in the Mediterranean and a key staging point for Russian operations into Africa. Following the collapse of the Assad regime in late 2024, an August 2026 Russia–Syria Memorandum of Understanding transitioned Tartus and Khmeimim into joint training and logistics facilities under the transitional authorities.'
   },
   base_yulin: {
     n: 'Yulin Nuclear Submarine Base (Sanya, Hainan Island – China)',
-    tx: 'Located at the southern tip of Hainan Island under the PLA Southern Theater Command Navy, the Yulin naval complex features cavern entrances bored directly into coastal mountains that allow nuclear-powered ballistic missile submarines (Type 094 and Type 096 SSBNs) to submerge and deploy away from reconnaissance satellites, alongside deep-water piers for aircraft carriers like the Shandong and Fujian. It is the cornerstone of Beijing’s strategy to turn the South China Sea into a protected "bastion" for its sea-based nuclear deterrent.'
+    tx: 'Located at the southern tip of Hainan Island under the PLA Southern Theater Command Navy, the Yulin naval complex features cavern entrances bored directly into coastal mountains that allow nuclear-powered ballistic missile submarines (Type 094 and Type 096 SSBNs) to submerge and deploy away from reconnaissance satellites, alongside deep-water piers for aircraft carriers like the Shandong and Fujian. It is the cornerstone of Beijing’s strategy to turn the East Sea (South China Sea) into a protected "bastion" for its sea-based nuclear deterrent.'
   },
   base_ream: {
     n: 'Ream Naval Base (Sihanoukville, Cambodia)',
-    tx: 'A Cambodian naval installation on the Gulf of Thailand located in close proximity to Vietnam’s Phu Quoc Island and the southwestern approaches to the South China Sea. Between 2022 and 2025, the base underwent a major Chinese-funded expansion adding a >300 m deep-water pier, drydock, and support facilities (hosting rotational PLA Navy corvettes), drawing intense scrutiny from Vietnam, ASEAN, and the United States over the shifting security balance in the Gulf of Thailand.'
+    tx: 'A Cambodian naval installation on the Gulf of Thailand located in close proximity to Vietnam’s Phu Quoc Island and the southwestern approaches to the East Sea (South China Sea). Between 2022 and 2025, the base underwent a major Chinese-funded expansion adding a >300 m deep-water pier, drydock, and support facilities (hosting rotational PLA Navy corvettes), drawing intense scrutiny from Vietnam, ASEAN, and the United States over the shifting security balance in the Gulf of Thailand.'
   },
   base_camranh: {
     n: 'Cam Ranh International Port & Naval Base (Khanh Hoa, Vietnam)',
-    tx: 'One of the world’s three finest natural deep-water bays (18–32 m deep, sheltered year-round by the Cam Ranh Peninsula and Binh Ba Island), positioned at the geographic midpoint of Vietnam’s coastline just one hour’s steaming from the South China Sea’s primary international shipping lane. Historically a staging point for the Russian Imperial Fleet (1905) and a major US and later Soviet/Russian base (1979–2002), it now serves as the premier base of the Vietnam People’s Navy’s 4th Regional Command (home to Submarine Brigade 189 operating Kilo-class submarines) and hosts foreign warships at Cam Ranh International Port under Vietnam’s "Four No’s" defense policy.'
+    tx: 'One of the world’s three finest natural deep-water bays (18–32 m deep, sheltered year-round by the Cam Ranh Peninsula and Binh Ba Island), positioned at the geographic midpoint of Vietnam’s coastline just one hour’s steaming from the East Sea (South China Sea)’s primary international shipping lane. Historically a staging point for the Russian Imperial Fleet (1905) and a major US and later Soviet/Russian base (1979–2002), it now serves as the premier base of the Vietnam People’s Navy’s 4th Regional Command (home to Submarine Brigade 189 operating Kilo-class submarines) and hosts foreign warships at Cam Ranh International Port under Vietnam’s "Four No’s" defense policy.'
   },
   pipe_pos1: {
     n: 'Power of Siberia Gas Pipeline (PoS-1 & Proposed PoS-2)',
@@ -1028,7 +1028,7 @@ export const LAKE_META_EN = {
     n: 'Lake Tana',
     area: '3,060 km²',
     rel: ['Ethiopia'],
-    tx: 'Ethiopia’s largest lake, perched at 1,788 m in the Amhara highlands—famous as the source of the Blue Nile, which supplies up to 85% of the annual floodwaters reaching Egypt and feeds the Grand Ethiopian Renaissance Dam (GERD).'
+    tx: 'Ethiopia’s largest lake, perched at 1,788 m in the Amhara highlands—famous as the source of the Blue Nile, which supplies up to 85% of the annual floodwaters reaching Egypt and feeds the Grand Ethiopian Renaissance Dam (GERD, officially inaugurated in September 2025).'
   },
   deadsea: {
     n: 'Dead Sea',
@@ -1268,7 +1268,7 @@ export const LAKE_META_EN = {
     n: 'Lake Kivu',
     area: '2,700 km²',
     rel: ['Dem. Rep. Congo', 'Rwanda'],
-    tx: 'An African Great Lake in the Albertine Rift along the volatile DR Congo–Rwanda border (beside the city of Goma); its deep waters hold vast quantities of dissolved methane and carbon dioxide, and its shores sit at the epicenter of eastern Congo’s armed conflicts.'
+    tx: 'An African Great Lake in the Albertine Rift along the volatile DR Congo–Rwanda border (beside the city of Goma); its deep waters hold vast quantities of dissolved methane and carbon dioxide, and its northern shore at Goma sits at the epicenter of eastern Congo’s armed conflict and M23 rebel offensives.'
   },
   edward: {
     n: 'Lake Edward',
@@ -1340,7 +1340,7 @@ export const LAKE_META_EN = {
     n: 'Lake Sevan',
     area: '1,242 km²',
     rel: ['Armenia'],
-    tx: 'The largest lake in Armenia and the Caucasus region, a high-altitude alpine freshwater lake (sitting at 1,900 m) that holds roughly 80% of landlocked Armenia’s strategic water reserves.'
+    tx: 'The largest lake in Armenia and the Caucasus region, a high-altitude alpine freshwater lake (sitting at 1,900 m) that holds most of landlocked Armenia’s surface freshwater reserves.'
   },
   tuz: {
     n: 'Lake Tuz',
