@@ -11,8 +11,8 @@ export const TAIWAN = {
   sub: { vi: 'Dải nước hẹp, bức tường đảo và con chip', en: 'A narrow strait, a wall of islands and the chip' },
   asof: '2026-11-08',
   status: {
-    vi: 'Đến ngày 8/11/2026, Trung Quốc chưa công bố cuộc tập trận lớn nào quanh Đài Loan trong năm nay; lần gần nhất là “Justice Mission 2025” vào cuối tháng 12/2025. Tuy nhiên, theo ông Joseph Wu (Hội đồng An ninh Quốc gia Đài Loan), hơn 100 tàu hải quân và hải cảnh Trung Quốc đang hoạt động ở Tây Thái Bình Dương, và hai viện nghiên cứu Mỹ (AEI và ISW) đánh giá đó có thể là một cuộc diễn tập “cô lập Đài Loan” không công bố. Đây là nhận định của giới phân tích, chưa được Bắc Kinh xác nhận; Bắc Kinh gọi các hoạt động hải quân là huấn luyện thường kỳ. Gói vũ khí khoảng 14 tỷ USD của Mỹ cho Đài Loan vẫn chưa được thông qua. Tình hình có thể đã thay đổi sau ngày này.',
-    en: 'As of 8 Nov 2026 China has announced no large drill around Taiwan this year; the last was “Justice Mission 2025” in late December 2025. However, according to Joseph Wu (Taiwan’s National Security Council), more than 100 Chinese navy and coast guard ships are operating in the western Pacific, and two US research groups (AEI and ISW) assess that this may be an unannounced “isolation of Taiwan” rehearsal. That is an analysts’ view that Beijing has not confirmed; Beijing calls its naval activity routine training. A roughly $14 billion US arms package for Taiwan is still not approved. The situation may have changed after this date.'
+    vi: 'Đến ngày 8/11/2026, Trung Quốc chưa công bố cuộc tập trận lớn nào quanh Đài Loan trong năm nay; lần gần nhất là “Justice Mission 2025” vào cuối tháng 12/2025. Tuy nhiên, theo ông Joseph Wu (Hội đồng An ninh Quốc gia Đài Loan), hơn 100 tàu hải quân và hải cảnh Trung Quốc đang hoạt động ở Tây Thái Bình Dương, và hai viện nghiên cứu Mỹ (AEI và ISW) đánh giá đó có thể là một cuộc diễn tập “cô lập Đài Loan” không công bố. Đây là nhận định của giới phân tích, chưa được Bắc Kinh xác nhận; Gói vũ khí khoảng 14 tỷ USD của Mỹ cho Đài Loan vẫn chưa được thông qua. Tình hình có thể đã thay đổi sau ngày này.',
+    en: 'As of 8 Nov 2026 China has announced no large drill around Taiwan this year; the last was “Justice Mission 2025” in late December 2025. However, according to Joseph Wu (Taiwan’s National Security Council), more than 100 Chinese navy and coast guard ships are operating in the western Pacific, and two US research groups (AEI and ISW) assess that this may be an unannounced “isolation of Taiwan” rehearsal. That is an analysts’ view that Beijing has not confirmed; A roughly $14 billion US arms package for Taiwan is still not approved. The situation may have changed after this date.'
   },
   statusSrc: [13, 14, 15, 16],
   sources: [
@@ -224,8 +224,8 @@ export const TAIWAN = {
           en: '29 Sep 2026: the roughly $14 billion arms package “is stalled”; Taiwan’s defence minister said talks with the US continue (AP). 12–17 Oct: China held live-fire artillery drills in five no-sail areas; the nearest East China Sea zone was 159 nautical miles from Taiwan (Taipei Times).'
         },
         {
-          vi: 'Tháng 11/2026, theo ông Joseph Wu, hơn 100 tàu hải quân và hải cảnh Trung Quốc hoạt động ở Tây Thái Bình Dương; AEI và ISW đánh giá đó có thể là một cuộc diễn tập “cô lập Đài Loan” không công bố. Đây là nhận định của giới phân tích; Bắc Kinh gọi đó là huấn luyện thường kỳ (Taipei Times, 8/11/2026).',
-          en: 'In November 2026, according to Joseph Wu, more than 100 Chinese navy and coast guard ships were operating in the western Pacific; AEI and ISW assess it may be an unannounced “isolation of Taiwan” rehearsal. That is the analysts’ view; Beijing calls it routine training (Taipei Times, 8 Nov 2026).'
+          vi: 'Tháng 11/2026, theo ông Joseph Wu, hơn 100 tàu hải quân và hải cảnh Trung Quốc hoạt động ở Tây Thái Bình Dương; AEI và ISW đánh giá đó có thể là một cuộc diễn tập “cô lập Đài Loan” không công bố. Đây là nhận định của giới phân tích (Taipei Times, 8/11/2026).',
+          en: 'In November 2026, according to Joseph Wu, more than 100 Chinese navy and coast guard ships were operating in the western Pacific; AEI and ISW assess it may be an unannounced “isolation of Taiwan” rehearsal. That is the analysts’ view (Taipei Times, 8 Nov 2026).'
         }
       ],
       ll: [124, 23.5],

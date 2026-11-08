@@ -110,6 +110,7 @@ if (all.size > 1) bad(`inconsistent ?v= values: ${[...all]}`);
     (d.steps || []).forEach((s, n) => {
       const x = `${w} step ${n + 1}`;
       if (!both(s.title) || !both(s.text)) bad(`${x}: title/text need vi and en`);
+      if (!both(s.core)) bad(`${x}: core (the strategic logic) needs vi and en`);
       (s.facts || []).forEach((f) => { if (!both(f)) bad(`${x}: a fact needs vi and en`); });
       (s.key || []).forEach((k) => { if (!both(k) || !/^#[0-9A-Fa-f]{6}$/.test(k.c || '')) bad(`${x}: key needs vi, en and colour`); });
       if (!ll(s.ll) || !(s.k >= 1 && s.k <= 16)) bad(`${x}: ll or k`);

@@ -2036,3 +2036,17 @@ body:has(#legend.show) #hint { opacity: 0 !important; }
   #panel[data-snap="peek"] .sthd .kick { display: none; }
   #panel[data-snap="peek"] .sthd h1 { margin-bottom: 4px; }
 }
+
+.stcore {
+  margin: 14px 0 0;
+  padding: 11px 13px;
+  border: 1px solid var(--line2);
+  border-left: 4px solid #C2410C;
+  border-radius: 10px;
+  background: var(--chip);
+}
+.stcore b { display: block; font-size: 11.5px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #C2410C; }
+:root[data-theme="dark"] .stcore b { color: #FB923C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stcore b { color: #FB923C; } }
+.stcore p { margin: 5px 0 0; font-size: 14px; line-height: 1.6; }
+.stcore small { display: block; margin-top: 6px; font-size: 11.5px; color: var(--faint); }

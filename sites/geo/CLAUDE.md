@@ -99,11 +99,15 @@ sites/geo/
 
 - The Views tab lists step-by-step geography stories (Hormuz, Ukraine, Red Sea, Taiwan, East Sea). A story is a file
   `data/story_<id>.js` exporting `{id, icon, c, title, sub, asof, status, statusSrc, sources[], steps[]}`; every text is
-  `{vi, en}`. A step is `{title, text, facts[], ll, k, layers[], show[], refs[], hl{}, dim, draw[], key[], src[]}`:
+  `{vi, en}`. A step is `{title, text, core, facts[], ll, k, layers[], show[], refs[], hl{}, dim, draw[], key[], src[]}`:
   camera (`ll` centre, `k` zoom), the layers to switch on (everything else is off, so the map stays clean), hotspot ids
   to show even if their layer is off (`show`), countries to colour (`hl`, Natural Earth names), `dim` to mute the other
   land, shapes to draw (`line` with optional `flow`/`arrow`, `poly`, `circle` with `at` and `r` in km, `pt`, `label`;
   colour is `c`; a point label can take `side:'l'`, `dy`, `ox`), a colour `key`, and `src` = indexes into `sources`.
+- **`core` is required on every step** (the strategic logic, Tim Marshall style: what each actor needs, fears and can do, and why
+  geography leaves it little choice). It is an interpretation, so it is attributed ("Moscow says…", "analysts argue…"), backed
+  by a source for each stated position, gives the other side's view, and never repeats the facts. The card shows it in a
+  box labelled as a geopolitical reading, not a fact.
 - The engine is `startStory` / `goStep` / `endStory` in `js/ui.js` (the step card has a sticky header with Back/Next and
   step dots) and `buildStoryShapes` / `drawStory` in `js/globe.js`. While a story runs `st.story` holds its scene and the
   reader's layers are snapshotted and restored on close; `savePrefs` does nothing meanwhile. The link is

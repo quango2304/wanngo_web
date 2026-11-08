@@ -164,8 +164,8 @@ export const REDSEA = {
       },
       facts: [
         {
-          vi: '20/7/2026: Houthi tuyên bố phong tỏa đường biển với Ả Rập Xê Út. 11/8: tàu Tihamah (của Ai Cập) bị đánh gần đảo Perim; Bộ Giao thông Yemen cho biết 4 thủy thủ chết (France 24, CNBC). 24/8: Houthi nói đã tấn công tàu chở dầu Amzan ngoài khơi Yanbu (Al Jazeera).',
-          en: '20 Jul 2026: the Houthis declared a naval blockade of Saudi Arabia. 11 Aug: the Egyptian-owned Tihamah was hit near Perim; Yemen’s transport ministry said 4 crew were killed (France 24, CNBC). 24 Aug: the Houthis said they attacked the tanker Amzan off Yanbu (Al Jazeera).'
+          vi: '20/7/2026: Houthi tuyên bố phong tỏa đường biển với Ả Rập Xê Út. 11/8: tàu Tihamah (của Ai Cập) bị đánh gần đảo Perim; Bộ Giao thông Yemen cho biết 4 thủy thủ chết, và theo lực lượng cứu hộ ít nhất 6 người chết gồm cả 2 người của lực lượng cứu hộ (France 24, CNBC). 24/8: Houthi nói đã tấn công tàu chở dầu Amzan ngoài khơi Yanbu (Al Jazeera).',
+          en: '20 Jul 2026: the Houthis declared a naval blockade of Saudi Arabia. 11 Aug: the Egyptian-owned Tihamah was hit near Perim; Yemen’s transport ministry said 4 crew were killed, and at least 6 people died including 2 rescue-force members (France 24, CNBC). 24 Aug: the Houthis said they attacked the tanker Amzan off Yanbu (Al Jazeera).'
         },
         {
           vi: 'Tháng 9/2026: Houthi tiến dọc bờ biển phía tây Yemen và tuyên bố đóng eo biển với tàu liên quan tới Ả Rập Xê Út (Al Jazeera, PBS, 10–13/9). Từ 5/10 chính phủ Yemen nói đã giành lại một phần. Các bên tranh cãi ai giữ Mokha, Dhubab và Perim.',
