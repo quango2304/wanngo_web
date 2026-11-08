@@ -72,6 +72,8 @@
     }
   ];
 
+  const rnd = (n) => Math.floor(Math.random() * n);
+
   const CODING_THOUGHTS = [
     'hm… one more bug',
     'shipping a tiny fix…',
@@ -265,8 +267,8 @@
     { id: 'mug', label: 'mug', group: 'coffee', x: 207, y: 177, w: 14, h: 11, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
     { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
     { id: 'bed', label: 'bed', group: 'bed', x: 256, y: 146, w: 151, h: 86, act: () => invite(nap, 'not yet. one more commit.') },
-    { id: 'tv', label: 'TV', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: () => toggleTV() },
-    { id: 'console', label: 'game console', group: 'tv', x: 412, y: 177, w: 68, h: 49, say: 'research. for work.' },
+    { id: 'tv', label: 'TV: play', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: () => openArcade() },
+    { id: 'console', label: 'game console: play', group: 'tv', x: 412, y: 177, w: 68, h: 49, act: () => openArcade() },
     { id: 'bag', label: 'beanbag', group: 'bag', x: 418, y: 222, w: 54, h: 40, act: () => invite(playGames, 'best seat in the house') },
     { id: 'mat', label: 'exercise mat', group: 'mat', x: 64, y: 238, w: 108, h: 26, act: () => invite(doPushUps, 'I use this. sometimes.') },
     { id: 'monstera', label: 'monstera', group: 'monstera', x: 530, y: 181, w: 42, h: 59, say: 'she gets the best light' },
@@ -572,16 +574,8 @@
 
   const lampsSet = {};
   let acOn = null;
-  let tvSet = false;
 
-  const tvOn = () => tvSet || dev.state === 'play';
-
-  function toggleTV() {
-    tvSet = !tvSet;
-    fx(tvSet ? 'tvon' : 'switch', 0.8);
-    if (dev.state === 'play') return sayDev('hey! I was winning');
-    sayDev(tvSet ? 'don’t spoil the ending' : 'back to work, both of us');
-  }
+  const tvOn = () => dev.state === 'play' || arcade.open;
 
   function lampOn(id) {
     if (id === 'tv') return tvOn();
@@ -724,7 +718,7 @@
     // The flap game on the TV
     if (tvOn()) {
       const [sx, sy] = at('tv', SCREEN.x, SCREEN.y);
-      drawTvGame(ox + sx, oy + sy, t);
+      drawGame(ctx, arcade.open ? arcade.game : tvg, ox + sx, oy + sy, t);
     }
 
     // Air conditioner
@@ -1646,7 +1640,8 @@
   });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    if (laser.held) dropLaser();
+    if (arcade.open) closeArcade();
+    else if (laser.held) dropLaser();
     else if (!closeBtn.hidden) closeBox();
   });
 
@@ -1680,9 +1675,11 @@
   // --------------------------------------------------------------------------
   // THE TV GAME
   // --------------------------------------------------------------------------
-  // A little flap game on the 49x28 screen: a red bug flutters through the gaps between
-  // stacks of blocks. He plays it from the beanbag and gets most gaps, but now and then
-  // he misjudges one; the crashes and every fifth point are what he reacts to.
+  // A little flap game for the 49x28 screen: a red bug flutters through the gaps between
+  // stacks of blocks. He plays it from the beanbag, gets most gaps and misjudges about one
+  // in eight; his crashes and every fifth point are what he reacts to. Clicking the TV or
+  // the console opens it big for the visitor to play (tap, click or space to flap), and
+  // the TV in the room shows their game while they play.
   const BUG_X = 10;
   const COL_W = 5;
   const GAP = 11;
@@ -1691,119 +1688,251 @@
   const BLOCKS = ['#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0'];
   const DIGITS = ['111101101101111', '010110010010111', '111001111100111', '111001111001111', '101101111001001',
     '111100111001111', '111100111101111', '111001001001001', '111101111101111', '111101111001111'];
-  const tvg = { y: 10, vy: 0, cols: [], score: 0, dead: 0, flapT: 0, nextCol: 0 };
 
-  function newColumn(x) {
-    tvg.nextCol++;
-    // One column in eight he misjudges: he aims a few pixels off and clips it
-    return { x, gap: 3 + rnd(GROUND - GAP - 5), color: BLOCKS[tvg.nextCol % BLOCKS.length], slip: Math.random() < 0.13, passed: false };
+  // auto: he plays it. A visitor gets a gap one pixel wider and a start screen.
+  function newGame(auto) {
+    const g = { auto, gap: auto ? GAP : GAP + 1, y: 10, vy: 0, cols: [], score: 0, dead: 0, flapT: 0, made: 0 };
+    resetGame(g);
+    return g;
   }
 
-  function tvReset() {
-    tvg.y = 10;
-    tvg.vy = 0;
-    tvg.score = 0;
-    tvg.dead = 0;
-    tvg.cols = [newColumn(42), newColumn(42 + COL_EVERY), newColumn(42 + COL_EVERY * 2)];
+  function newColumn(g, x) {
+    g.made++;
+    return {
+      x,
+      gap: 3 + rnd(GROUND - g.gap - 5),
+      color: BLOCKS[g.made % BLOCKS.length],
+      slip: g.auto && Math.random() < 0.13, // the gaps he misjudges: he aims a few pixels low
+      passed: false
+    };
   }
 
-  function tvCrash() {
-    tvg.dead = 0.9;
-    if (dev.state !== 'play') return;
-    sayDev(CRASH_LINES[rnd(CRASH_LINES.length)]);
-    fx('lose', 0.45);
+  function resetGame(g) {
+    g.y = 10;
+    g.vy = 0;
+    g.score = 0;
+    g.dead = 0;
+    g.over = false;
+    g.ready = !g.auto;
+    g.cols = [newColumn(g, 42), newColumn(g, 42 + COL_EVERY), newColumn(g, 42 + COL_EVERY * 2)];
   }
 
-  function stepTvGame(dt) {
-    if (!tvOn() || still) return;
-    if (!tvg.cols.length) tvReset();
-    if (tvg.dead > 0) {
-      tvg.dead -= dt;
-      if (tvg.dead <= 0) tvReset();
+  function flapBug(g) {
+    g.vy = -30;
+    g.flapT = 0;
+  }
+
+  function stepGame(g, dt) {
+    if (g.dead > 0) {
+      g.dead -= dt;
+      if (g.dead <= 0) {
+        if (g.auto) resetGame(g);
+        else g.over = true;
+      }
       return;
     }
-    tvg.flapT += dt;
-    // The player: flap when the bug sinks below the middle of the gap ahead
-    const next = tvg.cols.find((c) => c.x + COL_W >= BUG_X - 1);
-    const aim = next ? next.gap + GAP / 2 + (next.slip ? 5 : 0) : GROUND / 2;
-    if (tvg.vy > -4 && tvg.y + 1.5 > aim) {
-      tvg.vy = -30;
-      tvg.flapT = 0;
+    if (g.over) return;
+    if (g.ready) {
+      g.y = 10 + Math.sin(performance.now() / 250) * 1.5; // hovering, waiting for the first tap
+      return;
     }
-    tvg.vy += 95 * dt;
-    tvg.y = Math.max(0, tvg.y + tvg.vy * dt);
-    tvg.cols.forEach((c) => {
+    g.flapT += dt;
+    if (g.auto) {
+      const next = g.cols.find((c) => c.x + COL_W >= BUG_X - 1);
+      const aim = next ? next.gap + g.gap / 2 + (next.slip ? 5 : 0) : GROUND / 2;
+      if (g.vy > -4 && g.y + 1.5 > aim) flapBug(g);
+    }
+    g.vy += 95 * dt;
+    g.y = Math.max(0, g.y + g.vy * dt);
+    g.cols.forEach((c) => {
       c.x -= 17 * dt;
       if (!c.passed && c.x + COL_W < BUG_X) {
         c.passed = true;
-        tvg.score++;
-        if (tvg.score % 5 === 0 && dev.state === 'play') {
-          sayDev(SCORE_LINES[rnd(SCORE_LINES.length)]);
-          fx('win', 0.45);
-        }
+        g.score++;
+        onPoint(g);
       }
     });
-    if (tvg.cols[0].x < -COL_W) {
-      tvg.cols.shift();
-      tvg.cols.push(newColumn(tvg.cols[tvg.cols.length - 1].x + COL_EVERY));
+    if (g.cols[0].x < -COL_W) {
+      g.cols.shift();
+      g.cols.push(newColumn(g, g.cols[g.cols.length - 1].x + COL_EVERY));
     }
-    // Hit the ground, or a block
-    const by = Math.round(tvg.y);
-    const hit = tvg.cols.some((c) => c.x < BUG_X + 3 && c.x + COL_W > BUG_X && (by < c.gap || by + 3 > c.gap + GAP));
-    if (by + 3 >= GROUND || hit) tvCrash();
+    const by = Math.round(g.y);
+    const hit = g.cols.some((c) => c.x < BUG_X + 3 && c.x + COL_W > BUG_X && (by < c.gap || by + 3 > c.gap + g.gap));
+    if (by + 3 >= GROUND || hit) {
+      g.dead = 0.9;
+      onCrash(g);
+    }
   }
 
-  function tvDigits(n, x, y) {
+  function onPoint(g) {
+    if (!g.auto) {
+      tone(880, 1320, 0, 0.08, 'square', 0.025);
+      syncArcade();
+      return;
+    }
+    if (g.score % 5 === 0 && dev.state === 'play') {
+      sayDev(SCORE_LINES[rnd(SCORE_LINES.length)]);
+      fx('win', 0.45);
+    }
+  }
+
+  function onCrash(g) {
+    if (g.auto) {
+      if (dev.state !== 'play') return;
+      sayDev(CRASH_LINES[rnd(CRASH_LINES.length)]);
+      fx('lose', 0.45);
+      return;
+    }
+    const record = g.score > arcade.best;
+    if (record) {
+      arcade.best = g.score;
+      remember('room-flap-best', g.score);
+    }
+    fx(record && g.score > 2 ? 'win' : 'lose', 0.5);
+    arcade.record = record && g.score > 2;
+    syncArcade();
+    // He has opinions, now and then
+    const now = performance.now();
+    if (dev.state === 'sleep' || now - arcade.saidAt < 7000 || Math.random() < 0.4) return;
+    arcade.saidAt = now;
+    if (arcade.record) sayDev(g.score > 15 ? 'ok, that’s just showing off' : 'new record? not bad');
+    else if (g.score < 2) sayDev('harder than it looks, right?');
+    else sayDev(['so close', 'the third gap gets everyone', 'one more go?'][rnd(3)]);
+  }
+
+  function tvDigits(c, n, x, y) {
     String(n).split('').forEach((d, i) => {
       const bits = DIGITS[+d];
-      for (let k = 0; k < 15; k++) if (bits[k] === '1') ctx.fillRect(x + i * 4 + (k % 3), y + Math.floor(k / 3), 1, 1);
+      for (let k = 0; k < 15; k++) if (bits[k] === '1') c.fillRect(x + i * 4 + (k % 3), y + Math.floor(k / 3), 1, 1);
     });
   }
 
-  // px, py: the screen's top-left on the canvas
-  function drawTvGame(px, py, t) {
-    if (!tvg.cols.length) tvReset();
-    ctx.save();
-    ctx.beginPath();
-    ctx.rect(px, py, SCREEN.w, SCREEN.h);
-    ctx.clip();
+  // c: the context to draw on; px, py: the screen's top-left there
+  function drawGame(c, g, px, py, t) {
+    c.save();
+    c.beginPath();
+    c.rect(px, py, SCREEN.w, SCREEN.h);
+    c.clip();
     // Dusk sky with a few stars, and the ground
-    ctx.fillStyle = tvg.dead > 0.75 ? '#FFFBEF' : '#2E3366';
-    ctx.fillRect(px, py, SCREEN.w, SCREEN.h);
-    ctx.fillStyle = '#C9C5E8';
+    c.fillStyle = g.dead > 0.75 ? '#FFFBEF' : '#2E3366';
+    c.fillRect(px, py, SCREEN.w, SCREEN.h);
+    c.fillStyle = '#C9C5E8';
     [[6, 3], [19, 6], [33, 2], [44, 8], [27, 11]].forEach(([x, y], i) => {
-      if (still || Math.sin(t * 2 + i * 1.7) > -0.6) ctx.fillRect(px + x, py + y, 1, 1);
+      if (still || Math.sin(t * 2 + i * 1.7) > -0.6) c.fillRect(px + x, py + y, 1, 1);
     });
-    ctx.fillStyle = '#5B4B8A';
-    ctx.fillRect(px, py + GROUND, SCREEN.w, 3);
-    ctx.fillStyle = '#7E6DB0';
-    ctx.fillRect(px, py + GROUND, SCREEN.w, 1);
+    c.fillStyle = '#5B4B8A';
+    c.fillRect(px, py + GROUND, SCREEN.w, 3);
+    c.fillStyle = '#7E6DB0';
+    c.fillRect(px, py + GROUND, SCREEN.w, 1);
     // Stacks of blocks with a gap to fly through
-    tvg.cols.forEach((c) => {
-      const x = px + Math.round(c.x);
-      [[0, c.gap], [c.gap + GAP, GROUND - c.gap - GAP]].forEach(([y, h]) => {
+    g.cols.forEach((col) => {
+      const x = px + Math.round(col.x);
+      [[0, col.gap], [col.gap + g.gap, GROUND - col.gap - g.gap]].forEach(([y, h]) => {
         if (h <= 0) return;
-        ctx.fillStyle = c.color;
-        ctx.fillRect(x, py + y, COL_W, h);
-        ctx.fillStyle = 'rgba(43,42,48,0.35)';
-        for (let k = y + 3; k < y + h; k += 4) ctx.fillRect(x, py + k, COL_W, 1);
-        ctx.fillRect(x + COL_W - 1, py + y, 1, h);
+        c.fillStyle = col.color;
+        c.fillRect(x, py + y, COL_W, h);
+        c.fillStyle = 'rgba(43,42,48,0.35)';
+        for (let k = y + 3; k < y + h; k += 4) c.fillRect(x, py + k, COL_W, 1);
+        c.fillRect(x + COL_W - 1, py + y, 1, h);
       });
     });
-    // The bug: red shell, dark head, wings beating while it flaps
-    const by = py + Math.round(tvg.y);
-    ctx.fillStyle = '#E8474C';
-    ctx.fillRect(px + BUG_X, by, 3, 3);
-    ctx.fillStyle = '#2B2A30';
-    ctx.fillRect(px + BUG_X + 3, by + 1, 1, 1);
-    ctx.fillRect(px + BUG_X + 1, by + 1, 1, 1);
-    ctx.fillStyle = '#FFFBEF';
-    const up = tvg.dead <= 0 && tvg.flapT < 0.15;
-    ctx.fillRect(px + BUG_X, by + (up ? -1 : 3), 2, 1);
+    // The bug: red shell, dark head and spot, wings beating while it flaps
+    const by = py + Math.round(g.y);
+    c.fillStyle = '#E8474C';
+    c.fillRect(px + BUG_X, by, 3, 3);
+    c.fillStyle = '#2B2A30';
+    c.fillRect(px + BUG_X + 3, by + 1, 1, 1);
+    c.fillRect(px + BUG_X + 1, by + 1, 1, 1);
+    c.fillStyle = '#FFFBEF';
+    const up = g.ready ? Math.sin(t * 18) > 0 : g.dead <= 0 && g.flapT < 0.15;
+    c.fillRect(px + BUG_X, by + (up ? -1 : 3), 2, 1);
     // Score
-    ctx.fillStyle = '#FFFBEF';
-    tvDigits(tvg.score, px + SCREEN.w / 2 - String(tvg.score).length * 2, py + 2);
-    ctx.restore();
+    c.fillStyle = '#FFFBEF';
+    tvDigits(c, g.score, px + Math.floor(SCREEN.w / 2) - String(g.score).length * 2 + 1, py + 2);
+    c.restore();
+  }
+
+  // Him on the beanbag
+  const tvg = newGame(true);
+
+  // The visitor's game, opened big from the TV or the console
+  const arcade = { open: false, game: newGame(false), best: 0, record: false, saidAt: 0 };
+  try { arcade.best = Number(localStorage.getItem('room-flap-best')) || 0; } catch (e) { /* private window */ }
+  const arcadeEl = document.getElementById('arcade');
+  const arcadeScreen = document.getElementById('arcade-screen');
+  const actx = arcadeScreen.getContext('2d');
+  const arcadeLine = document.getElementById('arcade-line');
+
+  function sizeArcade() {
+    const k = Math.max(3, Math.min(Math.floor((innerWidth - 72) / SCREEN.w), Math.floor((innerHeight * 0.62) / SCREEN.h), 16));
+    arcadeScreen.style.width = SCREEN.w * k + 'px';
+    arcadeScreen.style.height = SCREEN.h * k + 'px';
+  }
+
+  function syncArcade() {
+    const g = arcade.game;
+    const best = arcade.best ? ` · best ${arcade.best}` : '';
+    if (g.ready) arcadeLine.textContent = 'tap, click or press space to flap' + best;
+    else if (g.over || g.dead > 0) arcadeLine.textContent = (arcade.record ? `new best: ${g.score}!` : `${g.score} ${g.score === 1 ? 'gap' : 'gaps'}${best}`) + ' · tap to go again';
+    else arcadeLine.textContent = `${g.score}${best}`;
+  }
+
+  function openArcade() {
+    if (arcade.open) return;
+    arcade.open = true;
+    resetGame(arcade.game);
+    arcade.record = false;
+    sizeArcade();
+    syncArcade();
+    arcadeEl.hidden = false;
+    fx('tvon', 0.6);
+    if (dev.state === 'play') sayDev('ok, your turn');
+    else if (dev.state !== 'sleep') sayDev('go on, beat my score');
+  }
+
+  function closeArcade() {
+    if (!arcade.open) return;
+    arcade.open = false;
+    arcadeEl.hidden = true;
+  }
+
+  function arcadeFlap() {
+    const g = arcade.game;
+    if (g.dead > 0) return;
+    if (g.over) {
+      resetGame(g);
+      arcade.record = false;
+      syncArcade();
+      return;
+    }
+    if (g.ready) {
+      g.ready = false;
+      syncArcade();
+    }
+    flapBug(g);
+    tone(520, 780, 0, 0.06, 'square', 0.02);
+  }
+
+  arcadeScreen.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    arcadeFlap();
+  });
+  arcadeEl.addEventListener('pointerdown', (e) => { if (e.target === arcadeEl) closeArcade(); });
+  document.getElementById('arcade-close').addEventListener('click', closeArcade);
+  addEventListener('resize', () => { if (arcade.open) sizeArcade(); });
+  addEventListener('keydown', (e) => {
+    if (!arcade.open) return;
+    if (e.key === ' ' || e.key === 'ArrowUp' || e.key === 'w') {
+      e.preventDefault();
+      if (!e.repeat) arcadeFlap();
+    }
+  });
+
+  function stepTvGame(dt) {
+    if (arcade.open) {
+      stepGame(arcade.game, dt);
+      drawGame(actx, arcade.game, 0, 0, performance.now() / 1000);
+    } else if (tvOn() && !still) stepGame(tvg, dt);
   }
 
   // --------------------------------------------------------------------------
@@ -1830,7 +1959,6 @@
     busy: ['shh, it’s thinking', 'it’s fixing my bugs. I wrote them.', 'reading its diff… looks fine?', 'it writes the tests. I write the bugs.'],
     idle: ['my turn to type', 'what should we build next?']
   };
-  const rnd = (n) => Math.floor(Math.random() * n);
   const term = { lines: [], input: [], typed: 0, goal: 30, working: false, thinking: false, steps: [], wait: 0, idle: 0, clock: 0 };
 
   function words(c, total) {

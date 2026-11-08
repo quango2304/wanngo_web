@@ -424,6 +424,45 @@ button {
   display: none;
 }
 
+/* The TV game, opened big */
+.arcade {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(43, 42, 48, 0.45);
+  touch-action: none;
+}
+
+.arcade[hidden] {
+  display: none;
+}
+
+.arcade-box {
+  position: relative;
+  max-width: 100%;
+  padding: 12px 16px 14px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--ink);
+}
+
+.arcade-screen {
+  display: block;
+  margin-top: 10px;
+  border: 3px solid var(--ink);
+  image-rendering: pixelated;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.arcade-line {
+  margin: 8px 0 0;
+  font-size: 17px;
+}
+
 .say {
   position: absolute;
   padding: 3px 8px;

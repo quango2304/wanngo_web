@@ -71,6 +71,16 @@
     </section>
 
     <button class="toy" id="toy" type="button" hidden></button>
+
+    <div class="arcade" id="arcade" role="dialog" aria-label="Bug flap, the game on the TV" hidden>
+      <div class="arcade-box">
+        <button class="close" id="arcade-close" type="button" aria-label="Close">×</button>
+        <p class="kind">On the TV</p>
+        <h2 class="h2">Bug flap</h2>
+        <canvas class="arcade-screen" id="arcade-screen" width="49" height="28"></canvas>
+        <p class="arcade-line" id="arcade-line" aria-live="polite"></p>
+      </div>
+    </div>
   </div>
 
   <!-- The same content as plain links, for readers without the room -->
