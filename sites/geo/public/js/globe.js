@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108k';
-import { C0 } from '../data/countries.js?v=20261108k';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108k';
-import { AL, REF } from '../data/alliances.js?v=20261108k';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108k';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108bk';
+import { C0 } from '../data/countries.js?v=20261108bk';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108bk';
+import { AL, REF } from '../data/alliances.js?v=20261108bk';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108bk';
 import {
   $,
   norm,
@@ -46,7 +46,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108k';
+} from './state.js?v=20261108bk';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -1392,11 +1392,48 @@ export function render(now) {
     ctx.setLineDash([]);
   }
 
+  // mountain ranges: a row of upright "^" peaks along the ridge line (clearer than a dotted stroke)
+  const drawMountainChevrons = (h, color, act) => {
+    const size = Math.min(12, 5 + k * 0.9);
+    const step = size * 1.5;
+    const half = size * 0.62;
+    ctx.beginPath();
+    let n = 0;
+    for (const l of h.dense) {
+      let acc = step / 2, prev = null;
+      for (let i = 0; i < l.length; i++) {
+        const ll = l[i];
+        if (d3.geoDistance(ll, VIEW.c) > Math.PI / 2 - 0.02) { prev = null; continue; }
+        const q = proj(ll);
+        if (!q) { prev = null; continue; }
+        if (prev) acc += Math.hypot(q[0] - prev[0], q[1] - prev[1]);
+        prev = q;
+        if (acc < step) continue;
+        acc = 0;
+        if (q[0] < -20 || q[0] > W + 20 || q[1] < -20 || q[1] > Hh + 20) continue;
+        const sz = size * (0.8 + 0.4 * (((n++ * 7) % 5) / 4)); // slight height variation so it reads as a ridge
+        const hf = half * (sz / size);
+        ctx.moveTo(q[0] - hf, q[1] + sz * 0.45);
+        ctx.lineTo(q[0], q[1] - sz * 0.55);
+        ctx.lineTo(q[0] + hf, q[1] + sz * 0.45);
+      }
+    }
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    ctx.strokeStyle = color;
+    ctx.lineWidth = act ? 2.6 : 2;
+    ctx.stroke();
+  };
+
   // hotspot lines
   H.forEach(h => {
     if (h.kind !== 'line' || !vh(h)) return;
     const c = hc(h);
     const act = st.sel === h || st.hov === h;
+    if (h.t === 'mountain' || h.mtn) {
+      drawMountainChevrons(h, act ? c : mix(c, 0.9), act);
+      return;
+    }
     ctx.beginPath();
     pathC(h.geo);
     ctx.lineCap = 'round';

@@ -961,10 +961,6 @@ export const H_EN = {
     n: 'Arctic Sea Ice – September Summer Minimum',
     tx: 'The extent of floating pack ice on the Arctic Ocean at its annual late-summer minimum in September: averaging just ~4.2–4.5 million km² in recent years, a decline of nearly 50% in area and significant thinning compared to the 1980s average (~7.5 million km²). The retreat of summer ice away from the Siberian coast has opened the Northern Sea Route (NSR) to summer-autumn cargo and LNG shipping, while simultaneously stripping away the permanent "wall of ice" that historically shielded Russia’s northern coastline from foreign navies.'
   },
-  arcticwinter: {
-    n: 'Arctic Sea Ice – March Winter Maximum',
-    tx: 'The dashed boundary illustrates the maximum annual extent of Northern Hemisphere sea ice at the end of winter in March (~14.5–15 million km²). In winter, sea ice locks up the entire Arctic coastline of Russia, Canada, and Alaska, fills Hudson Bay and the Bering Sea, and extends down into the Sea of Okhotsk and the Gulf of Finland (St. Petersburg)—visually demonstrating Russia’s classic 500-year geopolitical predicament: the quest for year-round, ice-free warm-water ports with unimpeded access to the open ocean.'
-  },
   greenlandice: {
     n: 'Greenland Continental Ice Sheet',
     tx: 'The second-largest land ice mass on Earth (after Antarctica), blanketing roughly 80% of Greenland (~1.71 million km²) to an average thickness of ~1.5 km and over 3 km at its deepest point. Driven by Arctic amplification of global warming, the Greenland ice sheet has lost an average of roughly 220-270 billion tonnes of ice per year since the early 2000s (about 129 billion tonnes in 2025); if the entire sheet were to melt over future centuries, global sea levels would rise by ~7.4 meters.'
