@@ -276,7 +276,7 @@
     THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 20, h: 20, act: () => openCard(i) });
   });
   // Last, so it sits above the monitor's button
-  THINGS.push({ id: 'laser', label: 'laser pointer', group: 'desk', x: 146, y: 154, w: 20, h: 12, act: () => pickLaser() });
+  THINGS.push({ id: 'laser', label: 'laser pointer', group: 'desk', x: 143, y: 151, w: 26, h: 17, act: () => pickLaser() });
 
   // --------------------------------------------------------------------------
   // 3. PAGE
@@ -1289,9 +1289,10 @@
     const n = performance.now();
     cat.pets = n - cat.petAt < 8000 ? cat.pets + 1 : 0;
     cat.petAt = n;
-    if (!laserUsed && !cat.hinted && dev.state !== 'sleep') {
+    // Nobody has found the laser yet: the first pat on the cat hands it over
+    if (!laserUsed && !cat.hinted) {
       cat.hinted = true;
-      setTimeout(() => { if (!laserUsed) sayDev('psst. my laser pointer’s on the desk'); }, 1600);
+      setTimeout(() => { if (!laserUsed) pickLaser(true); }, 1400);
     }
     addHeart(cat.x + 28 + (cat.flip ? -6 : 6), cat.y + 8);
     purrUntil = n + 3200;
@@ -1761,7 +1762,7 @@
     toyBtn.textContent = catches ? `caught ${catches} · put it down` : 'point at the floor · put it down';
   }
 
-  function pickLaser() {
+  function pickLaser(handed) {
     laser.held = true;
     laser.on = false;
     gameEl.classList.add('lasering');
@@ -1772,7 +1773,8 @@
       laserUsed = true;
       remember('room-laser', '1');
     }
-    if (dev.state !== 'sleep') sayDev(catches ? 'he’s been waiting for this' : 'careful. he gets intense.');
+    if (handed) sayDev(dev.state === 'sleep' ? 'zzz… laser… on the desk…' : 'here, try my laser pointer. point at the floor.');
+    else if (dev.state !== 'sleep') sayDev(catches ? 'he’s been waiting for this' : 'careful. he gets intense.');
   }
 
   function dropLaser() {
