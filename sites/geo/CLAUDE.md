@@ -47,8 +47,10 @@ sites/geo/
 
 ## Rankings and heatmap (`data/rankings.js`)
 
-- `RANK_METRICS` describes each metric (name, unit, `src_*`, `data_*` year, `desc_*` methodology, `link`, color `stops`,
-  `higherBetter`, `idx` into the row array). `RANK_DATA` maps the English country name to
+- `RANK_METRICS` describes each metric (name, unit, `src_*`, `data_*` year, `desc_*` methodology, `link`, `stops`,
+  `higherBetter`, `idx` into the row array). The heatmap colours come from `RANK_RAMP` in `js/state.js` (one orange
+  scale, colour-blind safe: darker = higher in light theme, brighter = higher in dark); a metric's `stops` only set
+  where each step of that scale sits (their colour values are no longer used). `RANK_DATA` maps the English country name to
   `[happiness, income, pm25, hdi, lifeExp, gdpBillionUSD]`. `null` = no data.
 - The rankings dialog (`rankingHTML` in `ui.js`) shows: unit and source, **"Tiêu chí đánh giá"** (methodology),
   **"Dữ liệu"** (year/period), and a **source link**. Any new metric must provide all of these in VI and EN.
@@ -80,6 +82,17 @@ sites/geo/
 - Continent cards: area from Encyclopædia Britannica (approximate), population from UN WPP 2024 (1 July 2024, medium
   variant) by UN M49 region with a note on how M49 differs from the map; UN member counts are computed (193, checked by
   `scripts/check.mjs`; Tuvalu has no polygon and is added via `UN_EXTRA`).
+
+## UI structure
+
+- Layers panel has three tabs (Layers / Color by / Views); every colouring is a chip in "Color by". On desktop a card
+  folds the layers panel away (`.fold`) and `center()` in `globe.js` centres the globe in the free space between panels.
+- On phones (< 760 px) the card and the layers panel are bottom sheets with a drag handle (peek / half / full).
+- The URL hash keeps the view: `#c=<country>` (Natural Earth name), `adm1=`, `cap=`, `city=`, `isl=`, `lake=`, `h=`,
+  `cont=`, `sea=`, `rank=<metric>`, `c=…&vs=…` (comparison), plus `color=<metric | government | income-group | bloc>`.
+  `applyHash()` in `ui.js` opens it; keep these keys stable, links are shared.
+- English shows full country names from `EN_NAME` in `state.js` (map data keys stay the Natural Earth short names);
+  globe labels may use `EN_SHORT`.
 
 ## Conventions
 

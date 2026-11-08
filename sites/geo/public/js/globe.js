@@ -621,6 +621,7 @@ export function upgradeAdmin1Data(admGeo) {
   MAP.ADM1 = admGeo.features;
   rebuildSearchIndex();
   st.dirty = true;
+  dispatchEvent(new Event('geo:admin1')); // an open country card adds its provinces list
 }
 
 // ---------- viewport & theme helpers

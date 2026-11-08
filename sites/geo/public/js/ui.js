@@ -1753,13 +1753,13 @@ export function applyLang() {
   if ($('#grpNat')) $('#grpNat').textContent = tr('Địa lý Tự nhiên', 'Physical Geography');
   if ($('#grpInfra')) $('#grpInfra').textContent = tr('Hạ tầng, Quân sự & Tài nguyên', 'Infra, Military & Resources');
   if ($('#tabLy')) $('#tabLy').textContent = tr('Lớp', 'Layers');
-  if ($('#tabCo')) $('#tabCo').firstChild.textContent = tr('Tô màu', 'Colour by');
+  if ($('#tabCo')) $('#tabCo').firstChild.textContent = tr('Tô màu', 'Color by');
   if ($('#tabVw')) $('#tabVw').textContent = tr('Góc nhìn', 'Views');
   if ($('#layers .ltabs')) $('#layers .ltabs').setAttribute('aria-label', tr('Lớp bản đồ', 'Map layers'));
   if ($('#lhRk')) $('#lhRk').textContent = tr('BẢNG XẾP HẠNG THẾ GIỚI', 'WORLD RANKINGS');
   if ($('#lhSys')) $('#lhSys').textContent = tr('KINH TẾ & THỂ CHẾ', 'ECONOMY & GOVERNMENT');
   if ($('#lhBloc')) $('#lhBloc').textContent = tr('KHỐI & LIÊN MINH', 'BLOCS & ALLIANCES');
-  if ($('#coOff')) $('#coOff').textContent = tr('Tắt tô màu', 'Turn colouring off');
+  if ($('#coOff')) $('#coOff').textContent = tr('Tắt tô màu', 'Turn coloring off');
   if ($('#lhQv')) $('#lhQv').textContent = tr('GÓC NHÌN NHANH', 'QUICK VIEWS');
   if ($('#lhRef')) $('#lhRef').textContent = tr('ĐƯỜNG THAM CHIẾU', 'REFERENCE LINES');
   if ($('#hint'))
@@ -1912,6 +1912,13 @@ export function initUI() {
   $('#pclose').onclick = () => closePanel();
   $('#pshare').onclick = () => copyLink($('#pshare'));
   addEventListener('popstate', () => applyHash());
+  // provinces load in the background: a country card opened before that (e.g. from a shared link) gets them now
+  addEventListener('geo:admin1', () => {
+    if (!P.classList.contains('show') || !activeView || activeView.type !== 'country') return;
+    const top = PB.scrollTop;
+    openPanel(countryHTML(activeView.f, activeView.ll));
+    PB.scrollTop = top;
+  });
   initSheets();
 
   let hovRaf = 0;
