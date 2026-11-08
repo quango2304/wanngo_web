@@ -122,7 +122,8 @@
   const LIGHTS = [
     { id: 'desk', group: 'desk', x: 97, y: 128, r: 78, c: '255,206,130' },
     { id: 'lantern', group: 'lantern', x: 438, y: 46, r: 100, c: '255,224,170' },
-    { id: 'tv', group: 'tv', x: 445, y: 140, r: 64, c: '150,190,255' }
+    { id: 'tv', group: 'tv', x: 445, y: 140, r: 64, c: '150,190,255' },
+    { id: 'screen', group: 'desk', x: 126, y: 126, r: 52, c: '160,180,255' }
   ];
   const STRING = [[288, 40], [300, 40], [326, 40], [336, 40], [353, 40], [371, 39]];
   const BULB_COLORS = ['#FFD36B', '#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0', '#F4A9B8'];
@@ -255,7 +256,7 @@
     { id: 'succs', label: 'little succulents', group: 'succs', x: 12, y: 44, w: 67, h: 36, say: 'the only ones I never forget' },
     { id: 'fig', label: 'fig tree', group: 'fig', x: 4, y: 85, w: 62, h: 110, say: 'taller than my last app' },
     { id: 'snake', label: 'snake plant', group: 'snake', x: 40, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
-    { id: 'monitor', label: 'monitor', group: 'desk', x: 86, y: 96, w: 80, h: 70, say: 'no peeking, it’s full of bugs' },
+    { id: 'monitor', label: 'monitor', group: 'desk', x: 86, y: 96, w: 80, h: 70, act: () => peekScreen() },
     { id: 'tower', label: 'PC', group: 'desk', x: 168, y: 107, w: 28, h: 58, say: 'louder than the cat' },
     { id: 'mug', label: 'mug', group: 'coffee', x: 232, y: 182, w: 14, h: 12, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
     { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
@@ -274,6 +275,8 @@
   [[486, 118], [512, 118], [538, 118], [486, 147], [512, 147], [538, 147]].forEach((p, i) => {
     THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 20, h: 20, act: () => openCard(i) });
   });
+  // Last, so it sits above the monitor's button
+  THINGS.push({ id: 'laser', label: 'laser pointer', group: 'desk', x: 146, y: 154, w: 20, h: 12, act: () => pickLaser() });
 
   // --------------------------------------------------------------------------
   // 3. PAGE
@@ -574,6 +577,7 @@
 
   function lampOn(id) {
     if (id === 'tv') return tvOn();
+    if (id === 'screen') return true;
     if (id in lampsSet) return lampsSet[id];
     const d = darkness();
     if (d < 0.3) return false;
@@ -679,7 +683,7 @@
       ctx.save();
       ctx.globalCompositeOperation = 'lighter';
       LIGHTS.forEach((l) => {
-        if (l.id === 'tv' || !lampOn(l.id)) return;
+        if (l.id === 'tv' || l.id === 'screen' || !lampOn(l.id)) return;
         const [x, y] = at(l.group, l.x, l.y);
         ctx.fillStyle = `rgba(${l.c},0.1)`;
         ctx.beginPath();
@@ -763,8 +767,13 @@
     catFront: ['cat-front', 56, 56],
     catRear: ['cat-rear', 56, 56],
     catWalk: ['cat-walk', 56, 56],
-    catLie: ['cat-lie', 56, 56]
+    catLie: ['cat-lie', 56, 56],
+    // stand, crouch (1-4), leap (5-6), land (7), paws down (8); the cat starts 4px in and
+    // ends 43px further on, so it is drawn 4px left of the 56px cat and moved on after
+    catPounce: ['cat-pounce', 112, 56]
   };
+  // How far the cat's body has moved on in each pounce frame
+  const POUNCE_SHIFT = [0, 1, 4, 4, 5, 16, 29, 43, 44];
 
   const LOAD_LINES = [
     'watering the plants…',
@@ -891,6 +900,7 @@
     if (dev.typing && dev.keyIn <= 0 && !still) {
       dev.keyIn = 0.07 + Math.random() * 0.1;
       dev.i = KEY_FRAMES[Math.floor(Math.random() * KEY_FRAMES.length)];
+      typeKey();
       fx('key' + (1 + Math.floor(Math.random() * 3)), 0.3 + Math.random() * 0.2, 0.9 + Math.random() * 0.25);
     }
   }
@@ -1168,6 +1178,7 @@
     let name = r.sprite;
     if (name === 'console' && dev.state === 'play') name = 'consolePlain';
     sprite(name, x, y);
+    if (name === 'monitor') drawTerm(ox + x, oy + y);
     if (name === 'bed' && dev.bed > 0) {
       ctx.globalAlpha = dev.bed;
       sprite('bedSleep', x, y);
@@ -1180,7 +1191,8 @@
     const layers = [
       { base: at('desk', 0, 240 + chairOut()[1] * chair.t)[1], draw: drawChair },
       { base: devFeet(), draw: drawDev },
-      { base: catInBed() ? at('catbed', 0, 260)[1] : cat.y + 51, draw: drawCat }
+      { base: catInBed() ? at('catbed', 0, 260)[1] : cat.y + 51, draw: drawCat },
+      { base: at('desk', 0, 226.35)[1], draw: drawPointer }
     ];
     ROOM.forEach((r) => {
       if (r.base) layers.push({ base: at(r.group, 0, r.base)[1], draw: () => drawPiece(r) });
@@ -1205,7 +1217,7 @@
   // 7. THE CAT
   // --------------------------------------------------------------------------
   // cat.x / cat.y are the top-left of a 56x56 canvas, feet at y + 51
-  const cat = { state: 'idle', x: 0, y: 0, flip: false, wait: 6, pets: 0, petAt: 0 };
+  const cat = { state: 'idle', x: 0, y: 0, flip: false, wait: 6, pets: 0, petAt: 0, energy: 1, hop: 0, wig: 0, pinned: null, followAt: 0 };
 
   function settleCat() {
     if (darkness() > 0.7) {
@@ -1277,6 +1289,10 @@
     const n = performance.now();
     cat.pets = n - cat.petAt < 8000 ? cat.pets + 1 : 0;
     cat.petAt = n;
+    if (!laserUsed && !cat.hinted && dev.state !== 'sleep') {
+      cat.hinted = true;
+      setTimeout(() => { if (!laserUsed) sayDev('psst. my laser pointer’s on the desk'); }, 1600);
+    }
     addHeart(cat.x + 28 + (cat.flip ? -6 : 6), cat.y + 8);
     purrUntil = n + 3200;
     fx('meow', cat.state === 'asleep' ? 0.35 : 0.7, 0.95 + Math.random() * 0.2);
@@ -1303,9 +1319,31 @@
   }
 
   function updateCat(dt) {
+    // The red dot beats everything, except sleep: asleep, he only wakes for a dot close by
+    if (laser.held && laser.on && cat.state !== 'toy') {
+      const dozing = cat.state === 'asleep' || cat.state === 'lie';
+      if (!dozing || Math.hypot(laser.x - cat.x - 28, laser.y - cat.y - 40) < 60) startToy(dozing);
+    }
+    if (cat.state === 'toy') {
+      if (!laser.held || performance.now() - laser.seenAt > 1500) endToy();
+      else {
+        updateToy(dt);
+        stepClip(cat, dt);
+        return;
+      }
+    }
+    cat.energy = Math.min(1, cat.energy + dt * 0.02);
     if (cat.state === 'idle') {
       cat.wait -= dt;
-      if (cat.wait <= 0) roam();
+      const now = performance.now();
+      // His favourite visitor: he comes and sits by your pointer when it rests on the floor
+      if (isFriend() && !laser.held && aim.floor && now - aim.at > 1500 && now - cat.followAt > 15000 &&
+        Math.hypot(aim.x - cat.x - 28, aim.y - cat.y - 51) > 30) {
+        cat.followAt = now;
+        sayAt('mrrp', cat);
+        const side = aim.x > cat.x + 28 ? -16 : 16;
+        catWalkTo(catFeet([floorX(aim.x + side), clamp(aim.y, floorTop(), floorBottom())]), 50);
+      } else if (cat.wait <= 0) roam();
     }
     if (cat.state === 'walk') {
       const dx = cat.goal[0] - cat.x;
@@ -1335,6 +1373,9 @@
   }
 
   function drawCat() {
+    if (cat.sheet === 'catPounce') {
+      return frame('catPounce', cat.frames[cat.i], cat.x + (cat.flip ? -52 : -4) + cat.wig, cat.y + cat.hop, cat.flip);
+    }
     frame(cat.sheet, cat.frames[cat.i], cat.x, cat.y, cat.flip);
   }
 
@@ -1351,10 +1392,15 @@
   function sayAt(text, who) {
     sayEl.textContent = text;
     sayEl.hidden = false;
+    // While someone talks, the black hover labels stay out of the way of the bubble
+    hot.classList.add('quiet');
     sayFollow = who;
     placeSay();
     clearTimeout(sayTimer);
-    sayTimer = setTimeout(() => { sayEl.hidden = true; }, 2600 + text.length * 40);
+    sayTimer = setTimeout(() => {
+      sayEl.hidden = true;
+      hot.classList.remove('quiet');
+    }, 2600 + text.length * 40);
   }
 
   function placeSay() {
@@ -1433,8 +1479,15 @@
   }
 
   closeBtn.addEventListener('click', closeBox);
+  // A tap anywhere outside an open card closes it (a shelf item tapped reopens its own)
+  document.addEventListener('pointerdown', (e) => {
+    if (box.hidden || closeBtn.hidden || box.contains(e.target) || e.target.closest('.bar')) return;
+    closeBox();
+  });
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && !closeBtn.hidden) closeBox();
+    if (e.key !== 'Escape') return;
+    if (laser.held) dropLaser();
+    else if (!closeBtn.hidden) closeBox();
   });
 
   function syncSky() {
@@ -1465,7 +1518,626 @@
   }
 
   // --------------------------------------------------------------------------
-  // 9. LOOP
+  // 9. THE TERMINAL
+  // --------------------------------------------------------------------------
+  // A coding agent runs on the monitor. His key presses fill its prompt; when he stops
+  // for a breath it's sent, and the agent thinks, reads, edits and runs the tests. It keeps
+  // going while he's away, all night if it has to. Words are little blocks of colour.
+  const TERM = { x: 3, y: 6, w: 74, h: 47 }; // the glass inside the monitor sprite
+  const INK = {
+    bg: '#17161F', bar: '#25242F', me: '#F2EEE2', fg: '#C9C5B9', dim: '#6F6C80', edge: '#45434F',
+    star: '#E2875B', ok: '#6CCB7C', add: '#7BD88F', addBg: '#1D3527', del: '#E8747C', delBg: '#38202A'
+  };
+  // The spinner: a dot that grows into a star and back
+  const STAR = [
+    [[1, 1]],
+    [[1, 0], [0, 1], [1, 1], [2, 1], [1, 2]],
+    [[0, 0], [2, 0], [1, 1], [0, 2], [2, 2]],
+    [[0, 0], [1, 0], [2, 0], [0, 1], [1, 1], [2, 1], [0, 2], [1, 2], [2, 2]]
+  ];
+  const SPIN = [0, 1, 2, 3, 2, 1];
+  const TEXT = 62; // widest prompt, in pixels
+  const SCREEN_LINES = {
+    busy: ['shh, it’s thinking', 'it’s fixing my bugs. I wrote them.', 'reading its diff… looks fine?', 'it writes the tests. I write the bugs.'],
+    idle: ['my turn to type', 'what should we build next?']
+  };
+  const rnd = (n) => Math.floor(Math.random() * n);
+  const term = { lines: [], input: [], typed: 0, goal: 30, working: false, thinking: false, steps: [], wait: 0, idle: 0, clock: 0 };
+
+  function words(c, total) {
+    const out = [];
+    let used = 0;
+    while (total - used >= 2) {
+      const w = Math.min(2 + rnd(6), total - used);
+      out.push({ c, w });
+      used += w + 1;
+    }
+    return out;
+  }
+
+  const LINES = {
+    user: (n) => ({ bg: INK.bar, items: [{ g: 'gt', c: INK.dim }].concat(words(INK.me, n)) }),
+    text: () => ({ items: [{ g: 'dot', c: INK.me }].concat(words(INK.fg, 24 + rnd(38))) }),
+    tool: () => ({ items: [{ g: 'dot', c: INK.ok }, { c: INK.me, w: 6 + rnd(6) }].concat(words(INK.dim, 12 + rnd(26))) }),
+    out: () => ({ indent: 2, items: [{ g: 'el', c: INK.edge }].concat(words(INK.dim, 14 + rnd(30))) }),
+    add: () => ({ bg: INK.addBg, indent: 4, items: [{ c: INK.dim, w: 3 }].concat(words(INK.add, 12 + rnd(40))) }),
+    del: () => ({ bg: INK.delBg, indent: 4, items: [{ c: INK.dim, w: 3 }].concat(words(INK.del, 12 + rnd(34))) }),
+    pass: () => ({ indent: 2, items: [{ g: 'el', c: INK.edge }, { c: INK.ok, w: 5 }, { c: INK.ok, w: 7 }].concat(words(INK.dim, 10 + rnd(16))) })
+  };
+
+  // One turn of the agent: think, then a few reads and edits, then the tests
+  function plan() {
+    const s = [['think', 1 + Math.random() * 2], ['line', 'text']];
+    for (let n = 2 + rnd(3); n > 0; n--) {
+      const r = Math.random();
+      if (r < 0.4) s.push(['line', 'tool'], ['think', 0.5], ['line', 'out']);
+      else if (r < 0.8) {
+        s.push(['line', 'tool']);
+        for (let k = 2 + rnd(3); k > 0; k--) s.push(['line', Math.random() < 0.65 ? 'add' : 'del']);
+      } else s.push(['line', 'text']);
+      s.push(['think', 0.8 + Math.random() * 1.8]);
+    }
+    s.push(['line', 'tool'], ['think', 1.5], ['line', 'pass'], ['line', 'text']);
+    return s;
+  }
+
+  function pushLine(l) {
+    term.lines.push(l);
+    if (term.lines.length > 16) term.lines.shift();
+  }
+
+  function bootTerm() {
+    term.input = words(INK.me, TEXT);
+    ['user', 'text', 'tool', 'out', 'tool', 'add', 'add', 'del', 'add', 'tool', 'pass', 'text']
+      .forEach((k) => pushLine(k === 'user' ? LINES.user(40) : LINES[k]()));
+  }
+
+  function submit() {
+    pushLine(LINES.user(term.typed));
+    term.typed = 0;
+    term.goal = 18 + rnd(40);
+    term.input = words(INK.me, TEXT);
+    term.steps = plan();
+    term.working = true;
+    term.wait = 0.4;
+  }
+
+  // One key press from him at the desk
+  function typeKey() {
+    if (!term.working) term.typed = Math.min(TEXT, term.typed + 1 + rnd(2));
+  }
+
+  function stepTerm(dt) {
+    term.clock += dt;
+    if (still) return;
+    if (term.working) {
+      term.wait -= dt;
+      while (term.wait <= 0 && term.working) {
+        const s = term.steps.shift();
+        if (!s) {
+          term.working = false;
+          term.thinking = false;
+          term.idle = 0;
+        } else if (s[0] === 'think') {
+          term.thinking = true;
+          term.wait += s[1];
+        } else {
+          term.thinking = false;
+          pushLine(LINES[s[1]]());
+          term.wait += 0.2 + Math.random() * 0.4;
+        }
+      }
+      return;
+    }
+    term.idle += dt;
+    if (dev.state === 'code') {
+      if (!dev.typing && term.typed >= term.goal) submit();
+    } else if (term.idle > (dev.state === 'sleep' ? 14 : 5)) {
+      // Away from the desk it picks up the next thing in the queue by itself
+      term.typed = term.goal;
+      submit();
+    }
+  }
+
+  function termLine(l, px, py) {
+    if (l.bg) {
+      ctx.fillStyle = l.bg;
+      ctx.fillRect(px, py, TERM.w, 4);
+    }
+    const end = px + TERM.w - 2;
+    let x = px + 2 + (l.indent || 0);
+    for (const it of l.items) {
+      if (x >= end) break;
+      ctx.fillStyle = it.c;
+      if (it.g === 'gt') {
+        ctx.fillRect(x, py, 1, 1);
+        ctx.fillRect(x + 1, py + 1, 1, 1);
+        ctx.fillRect(x, py + 2, 1, 1);
+        x += 3;
+      } else if (it.g === 'dot') {
+        ctx.fillRect(x, py + 1, 2, 2);
+        x += 4;
+      } else if (it.g === 'el') {
+        ctx.fillRect(x, py, 1, 2);
+        ctx.fillRect(x + 1, py + 1, 2, 1);
+        x += 4;
+      } else {
+        ctx.fillRect(x, py + 1, Math.min(it.w, end - x), 2);
+        x += it.w + 1;
+      }
+    }
+  }
+
+  // mx, my: the monitor sprite's top-left on the canvas
+  function drawTerm(mx, my) {
+    const px = mx + TERM.x;
+    const py = my + TERM.y;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(px, py, TERM.w, TERM.h);
+    ctx.clip();
+    ctx.fillStyle = INK.bg;
+    ctx.fillRect(px, py, TERM.w, TERM.h);
+
+    // The prompt box along the bottom, with what he has typed so far
+    const by = py + TERM.h - 9;
+    ctx.fillStyle = INK.edge;
+    ctx.fillRect(px + 2, by, TERM.w - 4, 1);
+    ctx.fillRect(px + 2, by + 7, TERM.w - 4, 1);
+    ctx.fillRect(px + 1, by + 1, 1, 6);
+    ctx.fillRect(px + TERM.w - 2, by + 1, 1, 6);
+    termLine({ items: [{ g: 'gt', c: INK.dim }] }, px + 2, by + 2);
+    const start = px + 8;
+    const end = start + term.typed;
+    ctx.fillStyle = INK.me;
+    for (let i = 0, x = start; i < term.input.length && x < end; x += term.input[i].w + 1, i++) {
+      ctx.fillRect(x, by + 3, Math.min(term.input[i].w, end - x), 2);
+    }
+    if (!term.working && (still || term.clock % 1.1 < 0.6)) ctx.fillRect(end + 1, by + 2, 2, 4);
+
+    // The spinner while it works
+    let rows = by - 1 - py;
+    if (term.working) {
+      const sy = by - 5;
+      ctx.fillStyle = INK.star;
+      STAR[SPIN[Math.floor(term.clock * (term.thinking ? 8 : 4)) % SPIN.length]]
+        .forEach(([a, b]) => ctx.fillRect(px + 2 + a, sy + b, 1, 1));
+      ctx.fillRect(px + 7, sy + 1, 14, 2);
+      ctx.fillStyle = INK.dim;
+      ctx.fillRect(px + 23, sy + 1, 4, 2);
+      ctx.fillRect(px + 28, sy + 1, 9, 2);
+      rows -= 5;
+    }
+
+    // The log, newest at the bottom
+    const shown = term.lines.slice(-Math.floor((rows - 1) / 4));
+    shown.forEach((l, i) => termLine(l, px, py + rows - 1 - (shown.length - i) * 4));
+    ctx.restore();
+  }
+
+  function peekScreen() {
+    if (dev.state === 'sleep') return sayDev('zzz… ship it…');
+    const lines = term.working ? SCREEN_LINES.busy : SCREEN_LINES.idle;
+    sayDev(lines[rnd(lines.length)]);
+  }
+
+  // --------------------------------------------------------------------------
+  // 10. THE LASER POINTER
+  // --------------------------------------------------------------------------
+  // It lies on the desk. Pick it up and a red dot follows your mouse, or your finger while
+  // it's down. The cat stalks it, crouches, wiggles and pounces: hold still and he gets it,
+  // flick away and he misses. Catches are kept per visitor, and he warms up to you.
+  const POINTER = { x: 151, y: 161 }; // on the desk, in the wide room
+  const laser = { held: false, on: false, x: 0, y: 0, seenAt: 0, movedAt: 0, devFor: 0, devAt: 0 };
+  const aim = { x: 0, y: 0, at: 0, floor: false }; // where the visitor's pointer rests, laser or not
+  const gameEl = document.getElementById('game');
+  const toyBtn = document.getElementById('toy');
+  const CATCH_LINES = ['mrrp!', '!!', 'mrow', 'prrp'];
+  const DOT_ON_DEV = {
+    code: 'is that a laser? I’m on a deadline',
+    sleep: 'mm… turn off… the sun…',
+    play: 'you’re blocking the boss!',
+    push: 'don’t… distract… me…'
+  };
+  let catches = 0;
+  let laserUsed = false;
+  try {
+    catches = Number(localStorage.getItem('room-catches')) || 0;
+    laserUsed = localStorage.getItem('room-laser') === '1';
+  } catch (e) { /* private window */ }
+
+  function remember(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) { /* private window */ }
+  }
+
+  const isFriend = () => catches >= 10;
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  // Where the cat's feet can go: the open floor in front of the furniture
+  const floorTop = () => (L.tall ? 300 : 236);
+  const floorBottom = () => Math.max(floorTop() + 20, Math.min(canvas.height - oy - 4, L.h + 40));
+  const floorX = (x) => clamp(x, 14, L.w - 14);
+
+  function syncToy() {
+    toyBtn.textContent = catches ? `caught ${catches} · put it down` : 'point at the floor · put it down';
+  }
+
+  function pickLaser() {
+    laser.held = true;
+    laser.on = false;
+    gameEl.classList.add('lasering');
+    toyBtn.hidden = false;
+    syncToy();
+    fx('switch', 0.5, 1.6);
+    if (!laserUsed) {
+      laserUsed = true;
+      remember('room-laser', '1');
+    }
+    if (dev.state !== 'sleep') sayDev(catches ? 'he’s been waiting for this' : 'careful. he gets intense.');
+  }
+
+  function dropLaser() {
+    laser.held = false;
+    laser.on = false;
+    gameEl.classList.remove('lasering');
+    toyBtn.hidden = true;
+    fx('switch', 0.4, 1.4);
+  }
+
+  function onAim(e) {
+    const x = e.clientX / cssScale - ox;
+    const y = e.clientY / cssScale - oy;
+    const open = e.target === canvas || e.target === hot;
+    if (Math.hypot(x - aim.x, y - aim.y) > 3) aim.at = performance.now();
+    aim.x = x;
+    aim.y = y;
+    aim.floor = open && y > L.wall + 3;
+    if (!laser.held) return;
+    if (!open || (e.pointerType !== 'mouse' && e.type === 'pointermove' && !e.buttons)) {
+      laser.on = false;
+      return;
+    }
+    if (Math.hypot(x - laser.x, y - laser.y) > 1.5) laser.movedAt = performance.now();
+    laser.x = x;
+    laser.y = y;
+    laser.on = true;
+  }
+
+  gameEl.addEventListener('pointermove', onAim);
+  gameEl.addEventListener('pointerdown', onAim);
+  gameEl.addEventListener('pointerup', (e) => { if (e.pointerType !== 'mouse') laser.on = false; });
+  gameEl.addEventListener('pointercancel', () => { laser.on = false; });
+  gameEl.addEventListener('pointerleave', () => {
+    laser.on = false;
+    aim.floor = false;
+  });
+  toyBtn.addEventListener('click', dropLaser);
+
+  function updateLaser(dt) {
+    if (!laser.held || !laser.on) {
+      laser.devFor = 0;
+      return;
+    }
+    const now = performance.now();
+    laser.seenAt = now;
+    // Under his paws the dot is gone, until you slide it out. A dot he has caught is dead to
+    // him until it moves again, so holding still only wins once.
+    if (cat.pinned && Math.hypot(laser.x - cat.pinned[0], laser.y - cat.pinned[1]) > 12) cat.pinned = null;
+    if (cat.spent && Math.hypot(laser.x - cat.spent[0], laser.y - cat.spent[1]) > 20) cat.spent = null;
+    // A red dot on him gets noticed
+    const b = devBox();
+    const onDev = laser.x > b[0] && laser.x < b[0] + b[2] && laser.y > b[1] && laser.y < b[1] + b[3];
+    laser.devFor = onDev ? laser.devFor + dt : 0;
+    if (laser.devFor > 0.7 && now - laser.devAt > 8000) {
+      laser.devAt = now;
+      sayDev(DOT_ON_DEV[dev.state] || 'hey! the floor, not me');
+    }
+  }
+
+  function drawDot() {
+    if (!laser.held || !laser.on || cat.pinned) return;
+    const x = Math.round(ox + laser.x);
+    const y = Math.round(oy + laser.y);
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.fillStyle = 'rgba(255,40,40,0.28)';
+    ctx.beginPath();
+    ctx.arc(x + 0.5, y + 0.5, 4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    ctx.fillStyle = '#FF3838';
+    ctx.fillRect(x - 1, y - 1, 3, 3);
+    ctx.fillStyle = '#FFD2D2';
+    ctx.fillRect(x, y, 1, 1);
+  }
+
+  // The pointer itself, lying on the desk, with a glint until someone finds it
+  function drawPointer() {
+    if (laser.held) return;
+    const [x, y] = at('desk', POINTER.x, POINTER.y);
+    const px = ox + x;
+    const py = oy + y;
+    ctx.fillStyle = '#3B3A44';
+    ctx.fillRect(px, py, 8, 2);
+    ctx.fillStyle = '#7A7888';
+    ctx.fillRect(px + 1, py, 5, 1);
+    ctx.fillStyle = '#E2343C';
+    ctx.fillRect(px + 7, py, 1, 1);
+    if (!laserUsed && !still && (performance.now() / 1000) % 3 < 0.3) {
+      ctx.fillStyle = '#FFFBEF';
+      ctx.fillRect(px + 3, py - 4, 1, 3);
+      ctx.fillRect(px + 2, py - 3, 3, 1);
+    }
+  }
+
+  // Walk the cat toward a floor point; in the tall room it goes round by the aisle.
+  // Returns true on arrival.
+  function catStep(goal, speed, dt, creep) {
+    const feet = [cat.x + 28, cat.y + 51];
+    let to = goal;
+    if (L.tall) to = route(feet, goal).find((p) => Math.hypot(p[0] - feet[0], p[1] - feet[1]) > 2) || goal;
+    const dx = to[0] - feet[0];
+    const dy = to[1] - feet[1];
+    const left = Math.hypot(dx, dy);
+    if (left > 0.5) {
+      const step = Math.min(left, speed * dt);
+      cat.x += (dx / left) * step;
+      cat.y += (dy / left) * step;
+    }
+    let kind;
+    if (Math.abs(dy) > Math.abs(dx) * 1.2 && left > 6) kind = dy > 0 ? 'catFront' : 'catRear';
+    else {
+      kind = creep ? 'creep' : 'catWalk';
+      if (Math.abs(dx) > 0.5) cat.flip = dx < 0;
+    }
+    if (cat.kind !== kind) {
+      cat.kind = kind;
+      if (kind === 'creep') play(cat, 'catPounce', [1, 2, 3, 4, 3, 2], 7, true);
+      else if (kind === 'catWalk') play(cat, 'catWalk', seq(5, 8), 13, true);
+      else {
+        cat.flip = false;
+        play(cat, kind, seq(0, 7), 11, true);
+      }
+    }
+    return Math.hypot(goal[0] - cat.x - 28, goal[1] - cat.y - 51) < 2;
+  }
+
+  function catAlert(t) {
+    cat.toy = 'watch';
+    cat.t = t;
+    cat.kind = '';
+    play(cat, 'catWalk', [5], 1, true);
+  }
+
+  function startToy(dozing) {
+    cat.state = 'toy';
+    cat.hop = 0;
+    cat.wig = 0;
+    catAlert(dozing ? 0.9 : 0.25);
+    if (dozing) sayAt('mrrp?', cat);
+  }
+
+  function endToy() {
+    if (['leap', 'pin', 'miss'].includes(cat.toy)) landed();
+    const lying = ['tired', 'flop', 'getup'].includes(cat.toy);
+    cat.pinned = null;
+    cat.spent = null;
+    cat.hop = 0;
+    cat.wig = 0;
+    cat.toy = '';
+    cat.state = 'settle';
+    if (lying) play(cat, 'catLie', seq(8, 0), 9, false, catSit);
+    else play(cat, 'catWalk', seq(4, 0), 12, false, catSit);
+  }
+
+  // After a pounce the cat has moved on 43px inside its sheet; move the cat to match
+  function landed() {
+    cat.x = floorX(cat.x + 28 + (cat.flip ? -43 : 43)) - 28;
+    cat.hop = 0;
+  }
+
+  // From a crouch, spring at a point: the leap lands the front paws 60px ahead,
+  // nudged by up to 48px shorter or 28px longer to land on target
+  function leap(target, arc) {
+    const s = cat.flip ? -1 : 1;
+    const feet = [cat.x + 28, cat.y + 51];
+    cat.toy = 'leap';
+    cat.jump = {
+      t: 0,
+      sx: cat.x,
+      sy: cat.y,
+      cx: s * clamp(s * (target[0] - feet[0]) - 60, -48, 28),
+      cy: clamp(target[1] - feet[1], -12, 12),
+      arc
+    };
+    cat.energy -= 0.13;
+    play(cat, 'catPounce', [5, 6, 7, 8], 9.5, false);
+    tone(260, 720, 0, 0.12, 'triangle', 0.05);
+  }
+
+  function chatter() {
+    for (let i = 0; i < 4; i++) tone(1400, 1700, i * 0.09, 0.05, 'square', 0.015);
+  }
+
+  function caught() {
+    cat.toy = 'pin';
+    cat.t = 1.1;
+    cat.pinned = [laser.x, laser.y];
+    cat.spent = cat.pinned;
+    catches++;
+    remember('room-catches', catches);
+    syncToy();
+    addHeart(cat.x + 28 + (cat.flip ? -50 : 50), cat.y + 26);
+    fx('meow', 0.7, 1.25);
+    purrUntil = performance.now() + 2500;
+    const awake = dev.state !== 'sleep';
+    if (catches === 1) {
+      sayAt('!!', cat);
+      if (awake) setTimeout(() => sayDev('nice. now he’ll never let you leave.'), 1300);
+    } else if (catches === 5) {
+      cat.flopNext = true;
+      sayAt('mrrrrp!', cat);
+    } else if (catches === 10) {
+      if (awake) sayDev('ok, you’re his favourite now');
+      else sayAt('prrrrrrr', cat);
+    } else if (catches === 25) {
+      if (awake) sayDev('25?! he never catches that many for me');
+    } else sayAt(CATCH_LINES[rnd(CATCH_LINES.length)], cat);
+  }
+
+  function updateToy(dt) {
+    const now = performance.now();
+    const feet = [cat.x + 28, cat.y + 51];
+    // Low enough means on the floor, or the very bottom of something he can reach
+    const low = laser.y > floorTop() - 14;
+    const goal = [floorX(laser.x), low ? clamp(laser.y, floorTop(), floorBottom()) : floorTop()];
+    const dx = goal[0] - feet[0];
+    const dy = goal[1] - feet[1];
+    const zoomies = darkness() > 0.5 ? 1.35 : 1;
+    cat.t -= dt;
+
+    switch (cat.toy) {
+      case 'watch':
+        if (laser.on && Math.abs(dx) > 3) cat.flip = dx < 0;
+        if (cat.spent && cat.t < -2.5 && cat.sheet !== 'catIdle') play(cat, 'catIdle', seq(0, 8), 6, true);
+        if (cat.t <= 0 && laser.on && !still && !cat.spent) {
+          cat.toy = 'chase';
+          cat.kind = '';
+        }
+        break;
+
+      case 'chase': {
+        if (!laser.on || cat.spent) {
+          catAlert(0);
+          break;
+        }
+        if (low && Math.abs(dy) < 10 && Math.abs(dx) > 15 && Math.abs(dx) < 85 && cat.energy > 0) {
+          cat.flip = dx < 0;
+          cat.toy = 'crouch';
+          cat.t = 0.35 + Math.random() * 0.6;
+          cat.lock = goal;
+          play(cat, 'catPounce', [1, 2, 3], 10, false, () => play(cat, 'catPounce', [3, 4], 9, true));
+          break;
+        }
+        // Stand a leap short of the dot, or right under it when it's up on the wall
+        const face = Math.abs(dx) < 15 ? (cat.flip ? -1 : 1) : Math.sign(dx);
+        const spot = low ? [floorX(goal[0] - face * 55), goal[1]] : [goal[0], floorTop()];
+        const far = Math.hypot(spot[0] - feet[0], spot[1] - feet[1]) > 70;
+        if (catStep(spot, (far ? 95 : 38) * zoomies, dt, !far && low)) {
+          if (!low) {
+            cat.toy = 'stare';
+            cat.t = 0.4;
+            play(cat, 'catIdle', seq(0, 8), 6, true);
+          } else catAlert(0.5); // the dot is by a wall where he can't line up; sulk a moment
+        }
+        break;
+      }
+
+      case 'crouch':
+        if (!laser.on || Math.hypot(goal[0] - cat.lock[0], goal[1] - cat.lock[1]) > 24) {
+          cat.wig = 0;
+          cat.toy = 'chase';
+          cat.kind = '';
+          break;
+        }
+        cat.wig = still ? 0 : (Math.floor(now / 90) % 2) * (cat.flip ? 1 : -1);
+        if (cat.t > 0) break;
+        cat.wig = 0;
+        leap(goal, 0);
+        break;
+
+      case 'leap': {
+        const j = cat.jump;
+        j.t += dt;
+        const k = Math.min(1, j.t / 0.42);
+        cat.x = j.sx + j.cx * k;
+        cat.y = j.sy + j.cy * k;
+        cat.hop = -Math.round(Math.sin(k * Math.PI) * (4 + j.arc));
+        if (k < 1) break;
+        cat.hop = 0;
+        play(cat, 'catPounce', [8], 1, true);
+        const paws = cat.x + 28 + (cat.flip ? -60 : 60);
+        if (laser.on && low && !j.arc && Math.abs(paws - laser.x) < 10 && Math.abs(cat.y + 51 - goal[1]) < 9) caught();
+        else {
+          cat.toy = 'miss';
+          cat.t = 0.55;
+          if (j.arc) sayAt('so close', cat);
+          else if (Math.random() < 0.35) sayAt('?', cat);
+        }
+        break;
+      }
+
+      case 'pin':
+      case 'miss':
+        // Slid out from under his paws: he shakes it off quickly
+        if (cat.toy === 'pin' && !cat.pinned) cat.t = Math.min(cat.t, 0.15);
+        if (cat.t > 0) break;
+        landed();
+        cat.pinned = null;
+        if (cat.energy < 0.15) {
+          cat.toy = 'tired';
+          cat.t = 16;
+          sayAt('…so tired', cat);
+          play(cat, 'catLie', seq(0, 8), 8, false);
+        } else if (cat.flopNext) {
+          cat.flopNext = false;
+          cat.toy = 'flop';
+          cat.t = 3.5;
+          sayAt('prrrrrr', cat);
+          purrUntil = now + 3500;
+          play(cat, 'catLie', seq(0, 8), 9, false);
+        } else catAlert(0.35);
+        break;
+
+      case 'tired':
+      case 'flop':
+        if (cat.toy === 'flop' && !still && Math.random() < dt * 2.5) addHeart(cat.x + 28, cat.y + 20);
+        if (cat.t > 0) break;
+        if (cat.toy === 'tired') cat.energy = 0.8;
+        cat.toy = 'getup';
+        play(cat, 'catLie', seq(8, 0), 10, false, () => catAlert(0.2));
+        break;
+
+      case 'stare':
+        // The dot is up on the wall: sit under it and chatter at it
+        if (!laser.on) {
+          catAlert(0);
+          break;
+        }
+        cat.flip = laser.x < feet[0];
+        if (low || Math.abs(laser.x - feet[0]) > 30) {
+          cat.toy = 'chase';
+          cat.kind = '';
+          break;
+        }
+        if (cat.t <= 0) {
+          cat.t = 3 + Math.random() * 2;
+          sayAt(['ek ek ek', 'ekekek!', 'mrrrrr'][rnd(3)], cat);
+          chatter();
+        }
+        // Low on the wall and holding still: he tries to jump for it
+        if (laser.y > floorTop() - 70 && now - laser.movedAt > 1200 && cat.energy > 0.3 && Math.random() < dt * 0.8) {
+          leap([feet[0] + (cat.flip ? -20 : 20), feet[1]], 16);
+        }
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  // His favourite visitors get a hello when they come back
+  function greetFriend() {
+    if (!isFriend()) return;
+    setTimeout(() => {
+      if (cat.state !== 'idle') return;
+      sayAt('mrrp! (you’re back)', cat);
+      fx('meow', 0.6, 1.1);
+      addHeart(cat.x + 28, cat.y + 6);
+    }, 1800);
+  }
+
+  // --------------------------------------------------------------------------
+  // 11. LOOP
   // --------------------------------------------------------------------------
   // Wall and floor are plain paint, so they fit any screen shape
   function drawRoom() {
@@ -1510,7 +2182,11 @@
       ctx.ellipse(ox + x, oy + y, rx, ry, 0, 0, Math.PI * 2);
       ctx.fill();
     };
-    on(cat.x + 28, cat.y + 51, 15, 3);
+    if (cat.sheet === 'catPounce') {
+      // The body travels across the pounce sheet; the shadow follows it, smaller mid-air
+      const f = cat.frames[cat.i];
+      on(cat.x + 28 + (cat.flip ? -1 : 1) * POUNCE_SHIFT[f], cat.y + 51, f === 5 || f === 6 ? 11 : 15, 3);
+    } else on(cat.x + 28, cat.y + 51, 15, 3);
     if (['walk', 'front', 'rear', 'stand'].includes(dev.sheet)) on(dev.x + 58, dev.y + 146, 17, 3);
     if (dev.sheet === 'push') on(dev.x + 74, dev.y + 144, 56, 4);
   }
@@ -1538,13 +2214,16 @@
   function tick(now) {
     const dt = Math.min(0.1, (now - last) / 1000);
     last = now;
+    updateLaser(dt);
     updateDev(dt);
     updateCat(dt);
     stepChair(dt);
+    stepTerm(dt);
     drawRoom();
     drawClock();
     drawDepth();
     drawLight(now);
+    drawDot();
     drawZs(now);
     drawHearts(dt);
     drawFlash(dt);
@@ -1571,11 +2250,13 @@
   const assets = fonts.concat([load('kit', 'room-flat-f')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
+  bootTerm();
   Promise.all(assets.concat(atLeast)).then(() => {
     resize();
     settleForLayout();
     syncSky();
     syncNow();
+    greetFriend();
     requestAnimationFrame((t) => {
       last = t;
       tick(t);

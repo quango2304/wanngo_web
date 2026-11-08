@@ -210,6 +210,11 @@ button {
   }
 }
 
+/* A speech bubble is up: no hover labels on top of it */
+.hot.quiet button::after {
+  opacity: 0 !important;
+}
+
 .bar {
   position: absolute;
   top: 0;
@@ -366,6 +371,57 @@ button {
   font-size: 26px;
   line-height: 1.1;
   cursor: pointer;
+}
+
+/* Holding the laser pointer: the dot is the cursor, and the room stops taking clicks */
+.game.lasering,
+.game.lasering .room {
+  touch-action: none;
+}
+
+.game.lasering .room {
+  cursor: none;
+}
+
+.game.lasering .hot {
+  pointer-events: none;
+}
+
+.game.lasering .box {
+  display: none;
+}
+
+.toy {
+  position: absolute;
+  left: 50%;
+  bottom: max(14px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  padding: 6px 14px;
+  background: var(--paper);
+  border: 3px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 6px var(--ink);
+  font-size: 18px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.toy::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  background: #FF3838;
+  box-shadow: 0 0 6px #FF3838;
+  vertical-align: 1px;
+}
+
+.toy:hover {
+  background: #F3EAD3;
+}
+
+.toy[hidden] {
+  display: none;
 }
 
 .say {
