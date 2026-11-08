@@ -6016,7 +6016,7 @@ export const ADMIN1_META = {
     "vi": "Sơn La",
     "cap": "Sơn La",
     "old": [],
-    "tx": "Tỉnh có diện tích lớn thứ ba cả nước nằm ở trung tâm vùng Tây Bắc (giữ nguyên địa giới năm 2025), có đường biên giới dài 274 km với Lào ở phía nam và hai cao nguyên đá vôi Mộc Châu, Nà Sản trù phú. Trên dòng sông Đà chảy qua tỉnh đặt nhà máy thủy điện Sơn La (2.400 MW) — công trình thủy điện lớn nhất Đông Nam Á."
+    "tx": "Tỉnh có diện tích lớn nhất miền Bắc nằm ở trung tâm vùng Tây Bắc (giữ nguyên địa giới năm 2025), có đường biên giới dài 274 km với Lào ở phía nam và hai cao nguyên đá vôi Mộc Châu, Nà Sản trù phú. Trên dòng sông Đà chảy qua tỉnh đặt nhà máy thủy điện Sơn La (2.400 MW) — công trình thủy điện lớn nhất Đông Nam Á."
   },
   "VN-09": {
     "vi": "Lạng Sơn",
@@ -6118,7 +6118,7 @@ export const ADMIN1_META = {
     "old": [
       "Quảng Bình"
     ],
-    "tx": "Tỉnh hợp nhất năm 2025 giữa Quảng Bình và Quảng Trị (trung tâm hành chính đặt tại Đồng Hới), nằm tại khúc \"eo thắt hẹp nhất Việt Nam\" (nơi từ biên giới Lào ra Biển Đông chỉ rộng ~40–50 km). Từng là giới tuyến chia cắt đất nước tại sông Bến Hải – cầu Hiền Lương (vĩ tuyến 17) và Thành cổ Quảng Trị, tỉnh mới nắm giữ di sản Phong Nha – Kẻ Bàng, cảng nước sâu Mỹ Thủy, đảo Cồn Cỏ và ba hành lang đường bộ xuyên Trường Sơn sang Lào – Thái Lan (Quốc lộ 12A, 9)."
+    "tx": "Tỉnh hợp nhất năm 2025 giữa Quảng Bình và Quảng Trị (trung tâm hành chính đặt tại Đồng Hới), nằm tại khúc \"eo thắt hẹp nhất Việt Nam\" (nơi từ biên giới Lào ra Biển Đông chỉ rộng ~40–50 km). Từng là giới tuyến chia cắt đất nước tại sông Bến Hải – cầu Hiền Lương (vĩ tuyến 17) và Thành cổ Quảng Trị, tỉnh mới nắm giữ di sản Phong Nha – Kẻ Bàng, cảng nước sâu Mỹ Thủy, đảo Cồn Cỏ và ba hành lang đường bộ xuyên Trường Sơn sang Lào – Thái Lan (Quốc lộ 12A, 9, 15D)."
   },
   "VN-29": {
     "vi": "Quảng Ngãi",
@@ -6159,7 +6159,7 @@ export const ADMIN1_META = {
     "old": [
       "Phú Yên"
     ],
-    "tx": "Tỉnh hợp nhất năm 2025 giữa \"thủ phủ cà phê\" Đắk Lắk ở trung tâm Tây Nguyên và tỉnh duyên hải Phú Yên, kết nối cao nguyên Buôn Ma Thuột và biên giới Campuchia qua đèo Phượng Hoàng (Quốc lộ 29 / cao tốc Khánh Hòa – Buôn Ma Thuột) thẳng ra vịnh nước sâu Vũng Rô, mũi Điện (cực Đông trên đất liền đón ánh bình minh đầu tiên) và thành phố Tuy Hòa."
+    "tx": "Tỉnh hợp nhất năm 2025 giữa \"thủ phủ cà phê\" Đắk Lắk ở trung tâm Tây Nguyên và tỉnh duyên hải Phú Yên, kết nối cao nguyên Buôn Ma Thuột và biên giới Campuchia qua hành lang Quốc lộ 29 thẳng ra vịnh nước sâu Vũng Rô, mũi Điện (cực Đông trên đất liền đón ánh bình minh đầu tiên) và thành phố Tuy Hòa."
   },
   "VN-39": {
     "vi": "Đồng Nai",
@@ -6358,7 +6358,7 @@ export const ADMIN1_META = {
     "vi": "Vân Nam",
     "cap": "Côn Minh",
     "old": [],
-    "tx": "Cao nguyên ở cực tây nam Trung Quốc nơi ba con sông lớn (Dương Tử, Mê Kông/Lan Thương, Salween/Nộ Giang) chảy song song qua các hẻm núi sâu từ Tây Tạng xuống. Vân Nam giáp biên giới 3 nước Đông Nam Á là Việt Nam (Lào Cai, Hà Giang, Lai Châu, Điện Biên), Lào và Myanmar, đóng vai trò cầu nối đường bộ, đường sắt Côn Minh – Viêng Chăn – Hà Nội và đường ống dầu khí từ vịnh Bengal (Myanmar) về Trung Quốc để giảm phụ thuộc eo Malacca."
+    "tx": "Cao nguyên ở cực tây nam Trung Quốc nơi ba con sông lớn (Dương Tử, Mê Kông/Lan Thương, Salween/Nộ Giang) chảy song song qua các hẻm núi sâu từ Tây Tạng xuống. Vân Nam giáp biên giới 3 nước Đông Nam Á là Việt Nam (Lào Cai, Tuyên Quang/Hà Giang, Lai Châu, Điện Biên), Lào và Myanmar, đóng vai trò cầu nối đường bộ, đường sắt Côn Minh – Viêng Chăn – Hà Nội và đường ống dầu khí từ vịnh Bengal (Myanmar) về Trung Quốc để giảm phụ thuộc eo Malacca."
   },
   "CN-XZ": {
     "vi": "Khu tự trị Tây Tạng",
@@ -6968,7 +6968,7 @@ export const ADMIN1_META = {
   },
   "IN-LA": {
     "vi": "Ladakh",
-    "cap": "Leh",
+    "cap": "Leh / Kargil",
     "old": [],
     "tx": "Lãnh thổ liên bang trên cao nguyên núi đá lạnh giá cao trên 3.500 m (tách ra từ bang Jammu và Kashmir năm 2019), nơi dòng sông Ấn chảy từ Tây Tạng vào. Ladakh là điểm nóng quân sự nhạy cảm nhất lục địa châu Á: phía tây bắc giáp Pakistan (bao gồm sông băng Siachen cao 6.000 m), phía đông giáp vùng Aksai Chin (do Trung Quốc kiểm soát dọc Đường Kiểm soát Thực tế LAC — nơi xảy ra đụng độ tại thung lũng Galwan và hồ Pangong năm 2020)."
   },

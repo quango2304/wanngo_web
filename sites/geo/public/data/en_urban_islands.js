@@ -2441,7 +2441,7 @@ export const ADMIN1_EN = {
   "VN-05": {
     "n": "Son La",
     "cap": "Son La",
-    "tx": "Vietnam's third-largest province by area at the heart of the Northwest region (retaining its boundaries in the 2025 reform), sharing a 274 km southern border with Laos and featuring the fertile Moc Chau and Na San limestone plateaus. Along the Black (Da) River cutting through the province stands the 2,400 MW Son La Hydropower Plant—the largest hydroelectric dam in Southeast Asia."
+    "tx": "The largest province in northern Vietnam at the heart of the Northwest region (retaining its boundaries in the 2025 reform), sharing a 274 km southern border with Laos and featuring the fertile Moc Chau and Na San limestone plateaus. Along the Black (Da) River cutting through the province stands the 2,400 MW Son La Hydropower Plant—the largest hydroelectric dam in Southeast Asia."
   },
   "VN-09": {
     "n": "Lang Son",
@@ -2511,7 +2511,7 @@ export const ADMIN1_EN = {
   "VN-25": {
     "n": "Quang Tri",
     "cap": "Dong Hoi",
-    "tx": "Formed in 2025 by merging Quang Binh and Quang Tri provinces (with the administrative seat at Dong Hoi), occupying Vietnam's narrowest geographic waist (where the distance from the Lao border to the South China Sea narrows to just ~40–50 km). Once divided at the Ben Hai River / Hien Luong Bridge (17th Parallel), the unified province encompasses the UNESCO caves of Phong Nha–Ke Bang, the My Thuy deep-water port, Con Co Island, and three trans-Truong Son highway corridors into Laos and Thailand (National Routes 12A and 9)."
+    "tx": "Formed in 2025 by merging Quang Binh and Quang Tri provinces (with the administrative seat at Dong Hoi), occupying Vietnam's narrowest geographic waist (where the distance from the Lao border to the South China Sea narrows to just ~40–50 km). Once divided at the Ben Hai River / Hien Luong Bridge (17th Parallel), the unified province encompasses the UNESCO caves of Phong Nha–Ke Bang, the My Thuy deep-water port, Con Co Island, and three trans-Truong Son highway corridors into Laos and Thailand (National Routes 12A, 9, and 15D)."
   },
   "VN-29": {
     "n": "Quang Ngai",
@@ -2536,7 +2536,7 @@ export const ADMIN1_EN = {
   "VN-33": {
     "n": "Dak Lak",
     "cap": "Buon Ma Thuot",
-    "tx": "Formed in 2025 by uniting Vietnam's Central Highlands \"coffee capital\" of Dak Lak with coastal Phu Yen Province, linking the Buon Ma Thuot basalt plateau and Cambodian border across the Phuong Hoang Pass (National Route 29 / Khanh Hoa–Buon Ma Thuot Expressway) directly to sheltered deep-water Vung Ro Bay, Mui Dien (mainland Vietnam's easternmost point), and Tuy Hoa City."
+    "tx": "Formed in 2025 by uniting Vietnam's Central Highlands \"coffee capital\" of Dak Lak with coastal Phu Yen Province, linking the Buon Ma Thuot basalt plateau and Cambodian border along the National Route 29 corridor directly to sheltered deep-water Vung Ro Bay, Mui Dien (mainland Vietnam's easternmost point), and Tuy Hoa City."
   },
   "VN-39": {
     "n": "Dong Nai",
@@ -3200,7 +3200,7 @@ export const ADMIN1_EN = {
   },
   "IN-LA": {
     "n": "Ladakh",
-    "cap": "Leh",
+    "cap": "Leh / Kargil",
     "tx": "A high-altitude cold-desert Union Territory above 3,500 m elevation (separated from Jammu and Kashmir in 2019) bisected by the upper Indus River entering from Tibet. Ladakh is Asia's most sensitive tri-junction military flashpoint: confronting Pakistan to the northwest (including the 6,000 m Siachen Glacier—the world's highest battlefield) and Chinese-held Aksai Chin to the east along the Line of Actual Control (site of the 2020 Galwan Valley and Pangong Tso clashes)."
   },
   "IN-AR": {
