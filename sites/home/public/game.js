@@ -282,7 +282,7 @@
     THINGS.push({ id: 'item' + i, label: ITEMS[i].name, group: 'shelf', x: p[0], y: p[1], w: 20, h: 20, act: () => openCard(i) });
   });
   // Last, so it sits above the monitor's button
-  THINGS.push({ id: 'laser', label: 'laser pointer', group: 'desk', x: 143, y: 151, w: 26, h: 17, act: () => pickLaser() });
+  THINGS.push({ id: 'laser', label: 'laser pointer', group: 'desk', x: 148, y: 154, w: 22, h: 14, act: () => pickLaser() });
 
   // --------------------------------------------------------------------------
   // 3. PAGE
@@ -322,6 +322,10 @@
       });
       hot.appendChild(b);
       t.el = b;
+      if (t.id === 'laser') {
+        b.addEventListener('pointerenter', () => { laser.hovered = true; });
+        b.addEventListener('pointerleave', () => { laser.hovered = false; });
+      }
       if (t.id === 'dev') devHit = t;
       if (t.id === 'cat') catHit = t;
     });
@@ -2144,8 +2148,8 @@
   // It lies on the desk. Pick it up and a red dot follows your mouse, or your finger while
   // it's down. The cat stalks it, crouches, wiggles and pounces: hold still and he gets it,
   // flick away and he misses. Catches are kept per visitor, and he warms up to you.
-  const POINTER = { x: 151, y: 161 }; // on the desk, in the wide room
-  const laser = { held: false, on: false, x: 0, y: 0, px: 0, py: 0, vx: 0, vy: 0, seenAt: 0, movedAt: 0, devFor: 0, devAt: 0 };
+  const POINTER = { x: 151, y: 160 }; // on the desk, in the wide room
+  const laser = { held: false, on: false, hovered: false, x: 0, y: 0, px: 0, py: 0, vx: 0, vy: 0, seenAt: 0, movedAt: 0, devFor: 0, devAt: 0 };
   const aim = { x: 0, y: 0, at: 0, floor: false }; // where the visitor's pointer rests, laser or not
   const gameEl = document.getElementById('game');
   const toyBtn = document.getElementById('toy');
@@ -2282,22 +2286,92 @@
     ctx.fillRect(x, y, 1, 1);
   }
 
-  // The pointer itself, lying on the desk, with a glint until someone finds it
+  // The pointer itself, lying on the desk, with a glint and laser tip highlight
   function drawPointer() {
     if (laser.held) return;
     const [x, y] = at('desk', POINTER.x, POINTER.y);
     const px = ox + x;
     const py = oy + y;
-    ctx.fillStyle = '#3B3A44';
-    ctx.fillRect(px, py, 8, 2);
-    ctx.fillStyle = '#7A7888';
-    ctx.fillRect(px + 1, py, 5, 1);
-    ctx.fillStyle = '#E2343C';
-    ctx.fillRect(px + 7, py, 1, 1);
-    if (!laserUsed && !still && (performance.now() / 1000) % 3 < 0.3) {
-      ctx.fillStyle = '#FFFBEF';
-      ctx.fillRect(px + 3, py - 4, 1, 3);
-      ctx.fillRect(px + 2, py - 3, 3, 1);
+    const now = performance.now();
+
+    // Desk shadow underneath the pen body
+    ctx.fillStyle = 'rgba(26, 12, 8, 0.45)';
+    ctx.fillRect(px, py + 4, 15, 1);
+
+    // Silver pocket clip on top
+    ctx.fillStyle = '#D7DAE4';
+    ctx.fillRect(px + 2, py, 5, 1);
+    ctx.fillStyle = '#FFFFFF';
+    ctx.fillRect(px + 3, py, 1, 1);
+    ctx.fillStyle = '#8C8E9E';
+    ctx.fillRect(px + 6, py, 1, 1);
+
+    // Red tactile click button
+    ctx.fillStyle = '#FF7D82';
+    ctx.fillRect(px + 9, py, 1, 1);
+    ctx.fillStyle = '#E5353D';
+    ctx.fillRect(px + 10, py, 1, 1);
+
+    // Pen cylinder: top specular highlight row
+    ctx.fillStyle = '#4B4A58';
+    ctx.fillRect(px, py + 1, 1, 1);
+    ctx.fillStyle = '#7E7C8F';
+    ctx.fillRect(px + 1, py + 1, 10, 1);
+    ctx.fillStyle = '#F0C35A'; // brass collar
+    ctx.fillRect(px + 11, py + 1, 1, 1);
+    ctx.fillStyle = '#5A5868';
+    ctx.fillRect(px + 12, py + 1, 1, 1);
+    ctx.fillStyle = '#FFA0A0'; // red diode core
+    ctx.fillRect(px + 13, py + 1, 1, 1);
+    ctx.fillStyle = '#FF2D38';
+    ctx.fillRect(px + 14, py + 1, 1, 1);
+
+    // Pen cylinder: midtone body row
+    ctx.fillStyle = '#22212B';
+    ctx.fillRect(px, py + 2, 1, 1);
+    ctx.fillStyle = '#373543';
+    ctx.fillRect(px + 1, py + 2, 10, 1);
+    ctx.fillStyle = '#B88B2E';
+    ctx.fillRect(px + 11, py + 2, 1, 1);
+    ctx.fillStyle = '#2C2B35';
+    ctx.fillRect(px + 12, py + 2, 1, 1);
+    ctx.fillStyle = '#FF2D38';
+    ctx.fillRect(px + 13, py + 2, 2, 1);
+
+    // Pen cylinder: bottom shadow row
+    ctx.fillStyle = '#181720';
+    ctx.fillRect(px, py + 3, 11, 1);
+    ctx.fillStyle = '#6E4E10';
+    ctx.fillRect(px + 11, py + 3, 1, 1);
+    ctx.fillStyle = '#181720';
+    ctx.fillRect(px + 12, py + 3, 1, 1);
+
+    // Luminous red laser aperture emission & pulse
+    const pulse = Math.sin(now / 280);
+    const glowAlpha = laser.hovered ? 0.85 : (0.35 + 0.25 * pulse);
+    ctx.fillStyle = `rgba(255, 45, 55, ${glowAlpha})`;
+    ctx.fillRect(px + 15, py + 1, 1, 2);
+    ctx.fillStyle = `rgba(255, 60, 70, ${glowAlpha * 0.5})`;
+    ctx.fillRect(px + 16, py + 1, 1, 1);
+    ctx.fillRect(px + 15, py, 1, 1);
+    ctx.fillRect(px + 15, py + 3, 1, 1);
+
+    // Dynamic metallic glint / sparkle
+    if (!still) {
+      const glintPeriod = laserUsed ? 3.2 : 2.4;
+      const glintPhase = (now / 1000) % glintPeriod;
+      if (glintPhase < 0.4) {
+        const k = glintPhase / 0.4;
+        const gx = px + 4 + Math.floor(k * 7);
+        const gy = py;
+        ctx.fillStyle = '#FFFDF0';
+        ctx.fillRect(gx, gy, 1, 1);
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+        ctx.fillRect(gx - 1, gy, 1, 1);
+        ctx.fillRect(gx + 1, gy, 1, 1);
+        ctx.fillRect(gx, gy - 1, 1, 1);
+        ctx.fillRect(gx, gy + 1, 1, 1);
+      }
     }
   }
 
