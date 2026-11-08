@@ -90,7 +90,9 @@
     'fine, one more wave'
   ];
 
-  const GAME_LINES = ['one more level', 'no no no no', 'I meant to do that', 'this is research', 'save point!'];
+  // What he says at the TV game: when the bug crashes, and every five points
+  const CRASH_LINES = ['no no no no', 'I meant to do that', 'that was lag', 'ugh, one more'];
+  const SCORE_LINES = ['save point!', 'this is research', 'new record?', 'one more level'];
   const MUMBLES = ['zzz…', 'one more… commit…', 'mmf… not a bug…', 'zzz… feature…'];
   const CAT_LINES = ['mrrp', 'prrrr', 'mew', 'prrrrrr'];
 
@@ -719,23 +721,10 @@
       ctx.globalAlpha = 1;
     }
 
-    // A small game on the TV
+    // The flap game on the TV
     if (tvOn()) {
       const [sx, sy] = at('tv', SCREEN.x, SCREEN.y);
-      const px = ox + sx;
-      const py = oy + sy;
-      const scroll = still ? 0 : Math.floor(t * 18);
-      ctx.fillStyle = '#6FB7E8';
-      ctx.fillRect(px, py, SCREEN.w, SCREEN.h);
-      ctx.fillStyle = '#6DBE6A';
-      ctx.fillRect(px, py + SCREEN.h - 7, SCREEN.w, 7);
-      ctx.fillStyle = '#FFFBEF';
-      for (let i = 0; i < 3; i++) ctx.fillRect(px + (i * 19 + 40 - scroll % 60 + 60) % 50, py + 4 + i * 4, 7, 2);
-      ctx.fillStyle = '#8A5A36';
-      for (let i = 0; i < 2; i++) ctx.fillRect(px + (i * 26 + 48 - scroll % 50 + 50) % 50, py + SCREEN.h - 12, 4, 5);
-      const hop = still ? 0 : Math.abs(Math.sin(t * 5)) * 7;
-      ctx.fillStyle = '#E8647C';
-      ctx.fillRect(px + 12, py + SCREEN.h - 12 - Math.round(hop), 4, 5);
+      drawTvGame(ox + sx, oy + sy, t);
     }
 
     // Air conditioner
@@ -1257,13 +1246,6 @@
     }
     if (dev.state === 'play') {
       dev.wait -= dt;
-      dev.lineIn -= dt;
-      if (dev.lineIn <= 0) {
-        dev.lineIn = 6 + Math.random() * 3;
-        const line = Math.floor(Math.random() * GAME_LINES.length);
-        sayDev(GAME_LINES[line]);
-        fx(line === 1 || line === 2 ? 'lose' : 'win', 0.45);
-      }
       if (dev.wait <= 0) getUp(sitDown);
     }
     if (dev.state === 'push') updatePush(dt);
@@ -1693,6 +1675,135 @@
       down: 'back to the desk'
     }[dev.state] || 'coding';
     nowEl.textContent = clockLine(`{t} in Saigon, now: ${doing}`);
+  }
+
+  // --------------------------------------------------------------------------
+  // THE TV GAME
+  // --------------------------------------------------------------------------
+  // A little flap game on the 49x28 screen: a red bug flutters through the gaps between
+  // stacks of blocks. He plays it from the beanbag and gets most gaps, but now and then
+  // he misjudges one; the crashes and every fifth point are what he reacts to.
+  const BUG_X = 10;
+  const COL_W = 5;
+  const GAP = 11;
+  const COL_EVERY = 22;
+  const GROUND = SCREEN.h - 3;
+  const BLOCKS = ['#F4A9B8', '#9FE0B8', '#FFD36B', '#8FC8F0'];
+  const DIGITS = ['111101101101111', '010110010010111', '111001111100111', '111001111001111', '101101111001001',
+    '111100111001111', '111100111101111', '111001001001001', '111101111101111', '111101111001111'];
+  const tvg = { y: 10, vy: 0, cols: [], score: 0, dead: 0, flapT: 0, nextCol: 0 };
+
+  function newColumn(x) {
+    tvg.nextCol++;
+    // One column in eight he misjudges: he aims a few pixels off and clips it
+    return { x, gap: 3 + rnd(GROUND - GAP - 5), color: BLOCKS[tvg.nextCol % BLOCKS.length], slip: Math.random() < 0.13, passed: false };
+  }
+
+  function tvReset() {
+    tvg.y = 10;
+    tvg.vy = 0;
+    tvg.score = 0;
+    tvg.dead = 0;
+    tvg.cols = [newColumn(42), newColumn(42 + COL_EVERY), newColumn(42 + COL_EVERY * 2)];
+  }
+
+  function tvCrash() {
+    tvg.dead = 0.9;
+    if (dev.state !== 'play') return;
+    sayDev(CRASH_LINES[rnd(CRASH_LINES.length)]);
+    fx('lose', 0.45);
+  }
+
+  function stepTvGame(dt) {
+    if (!tvOn() || still) return;
+    if (!tvg.cols.length) tvReset();
+    if (tvg.dead > 0) {
+      tvg.dead -= dt;
+      if (tvg.dead <= 0) tvReset();
+      return;
+    }
+    tvg.flapT += dt;
+    // The player: flap when the bug sinks below the middle of the gap ahead
+    const next = tvg.cols.find((c) => c.x + COL_W >= BUG_X - 1);
+    const aim = next ? next.gap + GAP / 2 + (next.slip ? 5 : 0) : GROUND / 2;
+    if (tvg.vy > -4 && tvg.y + 1.5 > aim) {
+      tvg.vy = -30;
+      tvg.flapT = 0;
+    }
+    tvg.vy += 95 * dt;
+    tvg.y = Math.max(0, tvg.y + tvg.vy * dt);
+    tvg.cols.forEach((c) => {
+      c.x -= 17 * dt;
+      if (!c.passed && c.x + COL_W < BUG_X) {
+        c.passed = true;
+        tvg.score++;
+        if (tvg.score % 5 === 0 && dev.state === 'play') {
+          sayDev(SCORE_LINES[rnd(SCORE_LINES.length)]);
+          fx('win', 0.45);
+        }
+      }
+    });
+    if (tvg.cols[0].x < -COL_W) {
+      tvg.cols.shift();
+      tvg.cols.push(newColumn(tvg.cols[tvg.cols.length - 1].x + COL_EVERY));
+    }
+    // Hit the ground, or a block
+    const by = Math.round(tvg.y);
+    const hit = tvg.cols.some((c) => c.x < BUG_X + 3 && c.x + COL_W > BUG_X && (by < c.gap || by + 3 > c.gap + GAP));
+    if (by + 3 >= GROUND || hit) tvCrash();
+  }
+
+  function tvDigits(n, x, y) {
+    String(n).split('').forEach((d, i) => {
+      const bits = DIGITS[+d];
+      for (let k = 0; k < 15; k++) if (bits[k] === '1') ctx.fillRect(x + i * 4 + (k % 3), y + Math.floor(k / 3), 1, 1);
+    });
+  }
+
+  // px, py: the screen's top-left on the canvas
+  function drawTvGame(px, py, t) {
+    if (!tvg.cols.length) tvReset();
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(px, py, SCREEN.w, SCREEN.h);
+    ctx.clip();
+    // Dusk sky with a few stars, and the ground
+    ctx.fillStyle = tvg.dead > 0.75 ? '#FFFBEF' : '#2E3366';
+    ctx.fillRect(px, py, SCREEN.w, SCREEN.h);
+    ctx.fillStyle = '#C9C5E8';
+    [[6, 3], [19, 6], [33, 2], [44, 8], [27, 11]].forEach(([x, y], i) => {
+      if (still || Math.sin(t * 2 + i * 1.7) > -0.6) ctx.fillRect(px + x, py + y, 1, 1);
+    });
+    ctx.fillStyle = '#5B4B8A';
+    ctx.fillRect(px, py + GROUND, SCREEN.w, 3);
+    ctx.fillStyle = '#7E6DB0';
+    ctx.fillRect(px, py + GROUND, SCREEN.w, 1);
+    // Stacks of blocks with a gap to fly through
+    tvg.cols.forEach((c) => {
+      const x = px + Math.round(c.x);
+      [[0, c.gap], [c.gap + GAP, GROUND - c.gap - GAP]].forEach(([y, h]) => {
+        if (h <= 0) return;
+        ctx.fillStyle = c.color;
+        ctx.fillRect(x, py + y, COL_W, h);
+        ctx.fillStyle = 'rgba(43,42,48,0.35)';
+        for (let k = y + 3; k < y + h; k += 4) ctx.fillRect(x, py + k, COL_W, 1);
+        ctx.fillRect(x + COL_W - 1, py + y, 1, h);
+      });
+    });
+    // The bug: red shell, dark head, wings beating while it flaps
+    const by = py + Math.round(tvg.y);
+    ctx.fillStyle = '#E8474C';
+    ctx.fillRect(px + BUG_X, by, 3, 3);
+    ctx.fillStyle = '#2B2A30';
+    ctx.fillRect(px + BUG_X + 3, by + 1, 1, 1);
+    ctx.fillRect(px + BUG_X + 1, by + 1, 1, 1);
+    ctx.fillStyle = '#FFFBEF';
+    const up = tvg.dead <= 0 && tvg.flapT < 0.15;
+    ctx.fillRect(px + BUG_X, by + (up ? -1 : 3), 2, 1);
+    // Score
+    ctx.fillStyle = '#FFFBEF';
+    tvDigits(tvg.score, px + SCREEN.w / 2 - String(tvg.score).length * 2, py + 2);
+    ctx.restore();
   }
 
   // --------------------------------------------------------------------------
@@ -2444,6 +2555,7 @@
     stepChair(dt);
     stepTerm(dt);
     stepBrew(dt);
+    stepTvGame(dt);
     drawRoom();
     drawClock();
     drawDepth();
