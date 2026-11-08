@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108bk';
-import { C0 } from '../data/countries.js?v=20261108bk';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108bk';
-import { AL, REF } from '../data/alliances.js?v=20261108bk';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108bk';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108c';
+import { C0 } from '../data/countries.js?v=20261108c';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108c';
+import { AL, REF } from '../data/alliances.js?v=20261108c';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108c';
 import {
   $,
   norm,
@@ -46,7 +46,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108bk';
+} from './state.js?v=20261108c';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -1133,15 +1133,15 @@ export function render(now) {
       }
       pathC(h.polyGeo);
     }
-    ctx.fillStyle = C.dark ? mix('#9CA3AF', 0.11) : mix('#6B7280', 0.10);
+    ctx.fillStyle = C.dark ? mix('#B08A5E', 0.14) : mix('#8A6540', 0.12);
     ctx.fill();
 
     if (selMtn) {
       ctx.beginPath();
       pathC(selMtn.polyGeo);
-      ctx.fillStyle = C.dark ? mix('#9CA3AF', 0.26) : mix('#6B7280', 0.22);
+      ctx.fillStyle = C.dark ? mix('#B08A5E', 0.30) : mix('#8A6540', 0.24);
       ctx.fill();
-      ctx.strokeStyle = C.dark ? '#D1D5DB' : '#4B5563';
+      ctx.strokeStyle = C.dark ? '#D2A978' : '#6B4423';
       ctx.lineWidth = 1.2;
       ctx.stroke();
     }
@@ -1431,7 +1431,7 @@ export function render(now) {
     const c = hc(h);
     const act = st.sel === h || st.hov === h;
     if (h.t === 'mountain' || h.mtn) {
-      drawMountainChevrons(h, act ? c : mix(c, 0.9), act);
+      drawMountainChevrons(h, act ? (C.dark ? '#D2A978' : '#6B4423') : C.dark ? '#B08A5E' : '#8A6540', act);
       return;
     }
     ctx.beginPath();
