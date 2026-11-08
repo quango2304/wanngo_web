@@ -53,5 +53,14 @@ if (all.size > 1) bad(`inconsistent ?v= values: ${[...all]}`);
   for (const k of Object.keys(CONT)) if (!CONT_CARD[cardKey(k)]) bad(`no card for continent ${k}`);
 }
 
+// seas: every named water body in WATER_LABELS has an outline in seas.json (rebuild with scripts/build_seas.mjs)
+{
+  const st = readFileSync(path.join(pub, 'js/state.js'), 'utf8');
+  const block = st.slice(st.indexOf('export const WATER_LABELS'), st.indexOf('export const SEAS'));
+  const want = [...new Set([...block.matchAll(/en: '([^']+)'/g)].map((m) => m[1]))];
+  const seas = JSON.parse(readFileSync(path.join(pub, 'assets/map/seas.json'), 'utf8'));
+  for (const n of want) if (!seas[n] || !seas[n].g.length) bad(`no outline in seas.json for "${n}"`);
+}
+
 console.log(fail ? `${fail} problem(s)` : 'OK');
 process.exit(fail ? 1 : 0);

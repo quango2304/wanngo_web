@@ -1677,3 +1677,38 @@ details.adm-list[open] > summary {
   .rk-pill { min-height: 44px; }
   .rk-info-btn { width: 34px; height: 34px; }
 }
+
+/* little round "i" button that explains a term inline */
+.info-i {
+  display: inline-grid;
+  place-items: center;
+  width: 16px;
+  height: 16px;
+  margin-left: 6px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--line2);
+  background: var(--chip);
+  color: var(--muted);
+  font: italic 700 10px/1 Georgia, serif;
+  cursor: pointer;
+  vertical-align: middle;
+}
+.info-i:hover, .info-i[aria-expanded="true"] { border-color: var(--accent); color: var(--accent); }
+.econ-note {
+  margin: 0 0 10px;
+  padding: 9px 11px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  background: var(--card-solid);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: 9px;
+}
+.econ-note[hidden] { display: none; }
+.econ-note b { color: var(--ink); }
+.econ-note a { display: block; margin-top: 4px; color: var(--accent); text-decoration: none; }
+@media (pointer: coarse) {
+  .info-i { width: 26px; height: 26px; margin-left: 4px; font-size: 13px; }
+}

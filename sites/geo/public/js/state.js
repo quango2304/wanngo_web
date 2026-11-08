@@ -1,13 +1,13 @@
-import { NAMES } from '../data/regions.js?v=20261108h';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108h';
-import { AL } from '../data/alliances.js?v=20261108h';
-import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108h';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108h';
-import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108h';
-import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108h';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108h';
-import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108h';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108h';
+import { NAMES } from '../data/regions.js?v=20261108j';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108j';
+import { AL } from '../data/alliances.js?v=20261108j';
+import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108j';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108j';
+import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108j';
+import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108j';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108j';
+import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108j';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108j';
 
 export {
   CAPITALS,
@@ -162,6 +162,21 @@ export const WATER_LABELS = [
   { n: 'Biển Ross', en: 'Ross Sea', pt: [-175.0, -74.0], rank: 3 }
 ];
 
+// One object per named water body (the two SOUTHERN OCEAN labels share one). Outlines arrive later from seas.json.
+export const SEAS = [];
+export const SEA_BY_EN = {};
+WATER_LABELS.forEach(w => {
+  let s = SEA_BY_EN[w.en];
+  if (!s) {
+    const type =
+      w.rank === 1 ? 'ocean' : /^(Gulf|Golfo)/.test(w.en) ? 'gulf' : /(^Bay of|Bay$)/.test(w.en) ? 'bay' : /Channel/.test(w.en) ? 'channel' : 'sea';
+    s = SEA_BY_EN[w.en] = { kind: 'sea', isSea: true, n: w.n, en: w.en, rank: w.rank, type, pts: [], geo: null, bb: null, ar: 0 };
+    SEAS.push(s);
+  }
+  s.pts.push(w.pt);
+  w.sea = s;
+});
+
 export const CAP_BY_ID = {};
 export const CITY_BY_ID = {};
 export const ISL_BY_ID = {};
@@ -218,6 +233,8 @@ export const MAP = {
   CONT110: null,
   CONT50: null,
   CONT_HITS: [],
+  WATER_HITS: [], // drawn sea/ocean label boxes { box, o } (rebuilt each frame)
+  SEAS_BY_SIZE: [], // seas with outlines, smallest first (for tapping inside a sea)
   LC: { key: '', list: [] }
 };
 

@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108h';
-import { C0, TOOLS } from '../data/countries.js?v=20261108h';
-import { RELC, REL } from '../data/religions.js?v=20261108h';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108h';
-import { iconSvg } from './icons.js?v=20261108h';
-import { AL, REF } from '../data/alliances.js?v=20261108h';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108j';
+import { C0, TOOLS } from '../data/countries.js?v=20261108j';
+import { RELC, REL } from '../data/religions.js?v=20261108j';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108j';
+import { iconSvg } from './icons.js?v=20261108j';
+import { AL, REF } from '../data/alliances.js?v=20261108j';
 import {
   $,
   norm,
@@ -61,7 +61,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108h';
+} from './state.js?v=20261108j';
 import {
   cv,
   proj,
@@ -79,7 +79,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108h';
+} from './globe.js?v=20261108j';
 import {
   CONT,
   AMERICAS,
@@ -96,7 +96,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108h';
+} from '../data/continents.js?v=20261108j';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -402,8 +402,9 @@ function econHTML(en) {
     </div>
     <div class="econ-grid">
       <div class="econ-stat rk-click" data-rk="gdp" data-back="${en}" title="${tr('Bấm để xem Bảng xếp hạng Quy mô GDP thế giới', 'Click to view World Nominal GDP Ranking')}"><small>${tr('Quy mô GDP (danh nghĩa)', 'Nominal GDP')} ↗</small><b>${gdp}</b></div>
-      <div class="econ-stat rk-click" data-rk="income" data-back="${en}" title="${tr('Bấm để xem Bảng xếp hạng Thu nhập bình quân thế giới', 'Click to view World GDP per Capita Ranking')}"><small>${tr('Thu nhập bình quân / năm', 'GDP per Capita')} ↗</small><b>${pc}</b></div>
+      <div class="econ-stat rk-click" data-rk="income" data-back="${en}" title="${tr('Bấm để xem Bảng xếp hạng Thu nhập bình quân thế giới', 'Click to view World GDP per Capita Ranking')}"><small>${tr('Thu nhập bình quân / năm', 'GDP per Capita')} ↗${/PPP/.test(pc) ? `<button type="button" class="info-i" data-info="ppp" aria-expanded="false" aria-controls="pppNote" aria-label="${tr('PPP là gì?', 'What is PPP?')}" title="${tr('PPP là gì?', 'What is PPP?')}">i</button>` : ''}</small><b>${pc}</b></div>
     </div>
+    <div class="econ-note" id="pppNote" hidden><b>${tr('PPP là gì?', 'What is PPP?')}</b> ${tr('PPP (Purchasing Power Parity – sức mua tương đương) quy đổi thu nhập theo mặt bằng giá của từng nước thay vì tỷ giá thị trường. Cùng 1 USD, ở nước giá rẻ mua được nhiều hàng hóa và dịch vụ hơn, nên số PPP thường cao hơn số danh nghĩa ở các nước thu nhập thấp và trung bình. Dùng PPP để so mức sống thực; dùng số danh nghĩa (USD theo tỷ giá) để so quy mô theo tỷ giá.', "PPP (Purchasing Power Parity) converts income using each country's price levels instead of the market exchange rate. The same US dollar buys more goods and services where prices are low, so PPP figures are usually higher than nominal ones in low- and middle-income countries. Use PPP to compare real living standards; use the nominal figure (US dollars at market rates) to compare size at exchange rates.")} <a href="https://www.worldbank.org/en/programs/icp" target="_blank" rel="noopener noreferrer">${tr('Nguồn: Chương trình So sánh Quốc tế (ICP), Ngân hàng Thế giới ↗', 'Source: World Bank International Comparison Program (ICP) ↗')}</a></div>
     <div class="econ-chart">
       <svg class="econ-pie" viewBox="0 0 42 42" aria-label="${tr('Cơ cấu GDP', 'GDP Composition')}">
         <circle cx="21" cy="21" r="15.9155" fill="none" stroke="var(--line)" stroke-width="6.5"/>
@@ -873,6 +874,40 @@ function urbanIslandHTML(o) {
   return s;
 }
 
+const SEA_TYPE = {
+  ocean: ['ĐẠI DƯƠNG', 'OCEAN'],
+  sea: ['BIỂN', 'SEA'],
+  gulf: ['VỊNH', 'GULF'],
+  bay: ['VỊNH', 'BAY'],
+  channel: ['KÊNH / EO BIỂN', 'CHANNEL']
+};
+const seaTypeTxt = o => tr(...(SEA_TYPE[o.type] || SEA_TYPE.sea)).toLocaleLowerCase(isEn() ? 'en' : 'vi');
+// Ocean labels are stored in capitals on the map; the panel and tooltip show them in normal case.
+function seaTitle(o, en = isEn()) {
+  const s = (en ? o.en : o.n) || o.n;
+  const loc = en ? 'en' : 'vi';
+  if (s !== s.toLocaleUpperCase(loc)) return s;
+  return s.toLocaleLowerCase(loc).replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toLocaleUpperCase(loc));
+}
+
+function seaHTML(o) {
+  activeView = { type: 'sea', o };
+  const enMode = isEn();
+  let s = `<div class="kick">${tr(...(SEA_TYPE[o.type] || SEA_TYPE.sea))}</div><h1>${seaTitle(o)}</h1>`;
+  const other = seaTitle(o, !enMode);
+  if (other && other !== seaTitle(o)) s += `<div class="sub-h1">${other}</div>`;
+  // hotspots, routes and zones whose centre lies in this water body (computed from the site's own data)
+  const rel = o.geo && o.type !== 'ocean'
+    ? H.filter(h => {
+        const p = h.kind === 'pt' ? h.geo.coordinates : h.lab;
+        return p && d3.geoContains(o.geo, p);
+      })
+    : [];
+  if (rel.length) s += `<div class="sec">${tr('ĐIỂM NÓNG & TUYẾN TRÊN VÙNG BIỂN NÀY', 'HOTSPOTS & ROUTES IN THIS WATER')}</div><div class="chips">${rel.map(h => chipH(h.id)).join('')}</div>`;
+  else s += `<p class="note">${tr('Chưa có điểm nóng hay tuyến nào gắn với vùng biển này trong dữ liệu của trang.', 'No hotspot or route in the site data is attached to this water body yet.')}</p>`;
+  return s;
+}
+
 function hotHTML(h) {
   activeView = { type: 'hot', h };
   const L = LAYERS[h.t];
@@ -1079,6 +1114,17 @@ function wire() {
         openRanking(e.dataset.rk, 'desc', '', e.dataset.back || null);
       })
   );
+  // little "i" buttons: open or close the explanation under the stat (the stat card itself opens a ranking)
+  PB.querySelectorAll('[data-info]').forEach(
+    b =>
+      (b.onclick = ev => {
+        ev.stopPropagation();
+        const note = $('#pppNote');
+        if (!note) return;
+        note.hidden = !note.hidden;
+        b.setAttribute('aria-expanded', note.hidden ? 'false' : 'true');
+      })
+  );
   PB.querySelectorAll('[data-rk-tab]').forEach(
     e =>
       (e.onclick = () => {
@@ -1161,6 +1207,9 @@ export function select(o, fly) {
   } else if (o.kind === 'cap' || o.kind === 'city' || o.kind === 'isl') {
     openPanel(urbanIslandHTML(o));
     if (fly) flyTo(o.pt, Math.max(getK(), o.kind === 'isl' ? 3.8 : 4.2));
+  } else if (o.kind === 'sea') {
+    openPanel(seaHTML(o));
+    if (fly) flyTo(o.cen || o.pts[0], o.geo && o.type !== 'ocean' ? Math.max(1.4, Math.min(5, fitK(o.geo))) : 1.2);
   } else if (o.kind === 'lake') {
     openPanel(urbanIslandHTML(o));
     if (fly) flyTo(o.cen, Math.max(2.2, fitK(o.geo)));
@@ -1373,6 +1422,7 @@ function tipLabel(h) {
   if (h.kind === 'cap') return `${capName(h)}<small>${tr('thủ đô', 'capital')} · ${cName(h.country)}</small>`;
   if (h.kind === 'city') return `${cityName(h)}<small>${tr('đô thị / cảng', 'city / port')} · ${cName(h.country)}</small>`;
   if (h.kind === 'isl') return `${islName(h)}<small>${tr('đảo / vùng', 'island / zone')} · ${cName(h.country)}</small>`;
+  if (h.kind === 'sea') return `${seaTitle(h)}<small>${seaTypeTxt(h)} · ${tr('bấm để xem', 'click for details')}</small>`;
   if (h.kind === 'lake') return `${lakeName(h)}<small>${tr('hồ / biển nội địa', 'lake / inland sea')}</small>`;
   if (h.isCountry) {
     if (st.al && st.al.startsWith('__rank_')) {
@@ -1475,6 +1525,7 @@ export function applyLang() {
     else if (activeView.type === 'urban') openPanel(urbanIslandHTML(activeView.o));
     else if (activeView.type === 'hot') openPanel(hotHTML(activeView.h));
     else if (activeView.type === 'cont') openPanel(contHTML(activeView.o));
+    else if (activeView.type === 'sea') openPanel(seaHTML(activeView.o));
   }
 }
 

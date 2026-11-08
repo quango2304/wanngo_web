@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108h';
-import { C0 } from '../data/countries.js?v=20261108h';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108h';
-import { AL, REF } from '../data/alliances.js?v=20261108h';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108h';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108j';
+import { C0 } from '../data/countries.js?v=20261108j';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108j';
+import { AL, REF } from '../data/alliances.js?v=20261108j';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108j';
 import {
   $,
   norm,
@@ -43,10 +43,11 @@ import {
   CITIES,
   ISLANDS,
   WATER_LABELS,
+  SEAS,
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108h';
+} from './state.js?v=20261108j';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -566,6 +567,29 @@ export function upgradePhysicalData(phys) {
   st.dirty = true;
 }
 
+// Outlines for the named seas and gulfs (public/assets/map/seas.json, built by scripts/build_seas.mjs from Natural Earth).
+export function upgradeSeasData(j) {
+  if (!j) return;
+  for (const s of SEAS) {
+    const e = j[s.en];
+    if (!e || !e.g || !e.g.length) continue;
+    // d3 wants clockwise outer rings; GeoJSON is counter-clockwise. A ring wound the wrong way makes
+    // geoContains true almost everywhere, so test each polygon's area and flip it when it is "inside out".
+    const polys = e.g.map(rings => {
+      const rs = rings.map(r => r.slice());
+      if (d3.geoArea({ type: 'Polygon', coordinates: rs }) > 2 * Math.PI) rs.forEach(r => r.reverse());
+      return rs;
+    });
+    s.geo = { type: 'MultiPolygon', coordinates: polys };
+    s.bb = d3.geoBounds(s.geo);
+    s.ar = d3.geoArea(s.geo);
+    s.cen = d3.geoCentroid(s.geo);
+  }
+  // oceans stay label-only: tapping empty open water must still close the panel
+  MAP.SEAS_BY_SIZE = SEAS.filter(s => s.geo && s.type !== 'ocean').sort((a, b) => a.ar - b.ar);
+  st.dirty = true;
+}
+
 export function upgradeAdmin1Data(admGeo) {
   if (!admGeo || !Array.isArray(admGeo.features)) return;
   admGeo.features.forEach(f => {
@@ -1017,6 +1041,18 @@ export function render(now) {
     for (const l of GRAT_LINES) if (cullOK(l)) pathC(l);
     ctx.strokeStyle = C.grat;
     ctx.lineWidth = 0.6;
+    ctx.stroke();
+  }
+
+  // hovered / selected sea or gulf (under land, so the coast stays crisp)
+  const actSea = (st.sel && st.sel.kind === 'sea' && st.sel) || (st.hov && st.hov.kind === 'sea' && st.hov);
+  if (actSea && actSea.geo && actSea.type !== 'ocean' && cullOK(actSea)) {
+    ctx.beginPath();
+    pathC(actSea.geo);
+    ctx.fillStyle = mix(C.accent, st.sel === actSea ? 0.34 : 0.2);
+    ctx.fill();
+    ctx.strokeStyle = mix(C.accent, 0.75);
+    ctx.lineWidth = 1.3;
     ctx.stroke();
   }
 
@@ -1722,6 +1758,7 @@ export function render(now) {
 
   // 2b. Continent labels (zoomed out only); reserved before country labels so names never sit on top of them
   MAP.CONT_HITS = [];
+  MAP.WATER_HITS = [];
   if (st.on.continents && k < CONT_LABEL_MAX_K) {
     const alpha = k < 1.5 ? 1 : Math.max(0, (CONT_LABEL_MAX_K - k) / (CONT_LABEL_MAX_K - 1.5));
     const canSpace = 'letterSpacing' in ctx;
@@ -1988,11 +2025,16 @@ export function render(now) {
       const tw = measureW(wFont, lbl) + 8, hh = w.rank === 1 ? 16 : 14;
       const box = [q[0] - tw / 2, q[1] - hh / 2, tw, hh];
       if (!tryPlace(box, nk)) continue;
+      MAP.WATER_HITS.push({ box, o: w.sea });
+      const wAct = st.sel === w.sea || st.hov === w.sea;
       ctx.lineWidth = 3;
       ctx.strokeStyle = C.dark ? 'rgba(10, 22, 40, 0.72)' : 'rgba(205, 228, 246, 0.78)';
       ctx.strokeText(lbl, q[0], q[1]);
-      ctx.fillStyle =
-        w.rank === 1
+      ctx.fillStyle = wAct
+        ? C.dark
+          ? 'rgba(200, 228, 255, 0.98)'
+          : 'rgba(10, 60, 110, 0.95)'
+        : w.rank === 1
           ? C.dark
             ? 'rgba(135, 185, 238, 0.56)'
             : 'rgba(28, 86, 142, 0.52)'
@@ -2338,6 +2380,15 @@ export function pick(mx, my) {
   }
   if (best) return best;
 
+  // 2b. Drawn sea / ocean label text beats a ridge or route line running past it (a touch needs slack around the letters)
+  {
+    const pad = coarse ? 9 : 3;
+    for (const h of MAP.WATER_HITS) {
+      const b = h.box;
+      if (mx >= b[0] - pad && mx <= b[0] + b[2] + pad && my >= b[1] - pad && my <= b[1] + b[3] + pad) return h.o;
+    }
+  }
+
   // 3. Active Hotspot Lines
   bd = 7 * hs;
   H.forEach(h => {
@@ -2427,6 +2478,11 @@ export function pick(mx, my) {
         if (c2) return c2;
       }
     }
+  }
+
+  // Open water: a sea or gulf outline (smallest first, so the Gulf of Tonkin wins over the South China Sea)
+  for (const s of MAP.SEAS_BY_SIZE) {
+    if (inBB(s, ll) && d3.geoContains(s.geo, ll)) return s;
   }
   return null;
 }
