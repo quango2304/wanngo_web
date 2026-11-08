@@ -2050,3 +2050,29 @@ body:has(#legend.show) #hint { opacity: 0 !important; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .stcore b { color: #FB923C; } }
 .stcore p { margin: 5px 0 0; font-size: 14px; line-height: 1.6; }
 .stcore small { display: block; margin-top: 6px; font-size: 11.5px; color: var(--faint); }
+
+/* the argument a story builds: a tag on every step and, on the first step, the whole chain in plain words */
+.sttag { display: inline-block; margin: 0 0 3px; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; letter-spacing: .03em; background: var(--accent-bg); color: var(--accent); }
+.sttag.t-need { background: #FDE9D7; color: #9A3F0B; }
+.sttag.t-blocked { background: #FADBD8; color: #A32D2D; }
+.sttag.t-move { background: #DCE8F7; color: #1F5A99; }
+.sttag.t-counter { background: #E3F1E6; color: #25693A; }
+.sttag.t-outlook { background: #EDE7F6; color: #5B3E96; }
+:root[data-theme="dark"] .sttag.t-need { background: #4A2A12; color: #FDBA74; }
+:root[data-theme="dark"] .sttag.t-blocked { background: #4A1D1D; color: #FCA5A5; }
+:root[data-theme="dark"] .sttag.t-move { background: #1B3556; color: #93C5FD; }
+:root[data-theme="dark"] .sttag.t-counter { background: #1D3A26; color: #86EFAC; }
+:root[data-theme="dark"] .sttag.t-outlook { background: #33284F; color: #C4B5FD; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sttag.t-need { background: #4A2A12; color: #FDBA74; }
+  :root:not([data-theme="light"]) .sttag.t-blocked { background: #4A1D1D; color: #FCA5A5; }
+  :root:not([data-theme="light"]) .sttag.t-move { background: #1B3556; color: #93C5FD; }
+  :root:not([data-theme="light"]) .sttag.t-counter { background: #1D3A26; color: #86EFAC; }
+  :root:not([data-theme="light"]) .sttag.t-outlook { background: #33284F; color: #C4B5FD; }
+}
+.stchain { list-style: none; counter-reset: lk; margin: 12px 0 0; padding: 0; }
+.stchain li { counter-increment: lk; position: relative; margin: 0 0 8px; padding: 9px 12px 9px 40px; border: 1px solid var(--line); border-radius: 10px; background: var(--chip); font-size: 14px; line-height: 1.55; }
+.stchain li::before { content: counter(lk); position: absolute; left: 11px; top: 9px; width: 20px; height: 20px; border-radius: 50%; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; display: grid; place-items: center; }
+.stchain li b { display: block; font-size: 12px; margin-bottom: 2px; }
+.stchain li b.t-need { color: #B4530F; } .stchain li b.t-blocked { color: #B83232; } .stchain li b.t-move { color: #1F6DB5; } .stchain li b.t-counter { color: #2F7D46; } .stchain li b.t-outlook { color: #6B4DB0; }
+.stchain li span { display: block; }

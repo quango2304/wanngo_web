@@ -110,7 +110,9 @@ if (all.size > 1) bad(`inconsistent ?v= values: ${[...all]}`);
     (d.steps || []).forEach((s, n) => {
       const x = `${w} step ${n + 1}`;
       if (!both(s.title) || !both(s.text)) bad(`${x}: title/text need vi and en`);
-      if (!both(s.core)) bad(`${x}: core (the strategic logic) needs vi and en`);
+      if (!s.chain && !both(s.core)) bad(`${x}: core (the strategic logic) needs vi and en`);
+      if (s.tag && !['need', 'blocked', 'move', 'counter', 'outlook'].includes(s.tag)) bad(`${x}: unknown tag ${s.tag}`);
+      (s.chain || []).forEach((c) => { if (!['need', 'blocked', 'move', 'counter', 'outlook'].includes(c.tag) || !both(c.text)) bad(`${x}: chain item needs a tag and vi/en text`); });
       (s.facts || []).forEach((f) => { if (!both(f)) bad(`${x}: a fact needs vi and en`); });
       (s.key || []).forEach((k) => { if (!both(k) || !/^#[0-9A-Fa-f]{6}$/.test(k.c || '')) bad(`${x}: key needs vi, en and colour`); });
       if (!ll(s.ll) || !(s.k >= 1 && s.k <= 16)) bad(`${x}: ll or k`);

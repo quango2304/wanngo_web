@@ -1,10 +1,10 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261109b';
-import { C0, TOOLS } from '../data/countries.js?v=20261109b';
-import { RELC, REL } from '../data/religions.js?v=20261109b';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261109b';
-import { iconSvg } from './icons.js?v=20261109b';
-import { AL, REF } from '../data/alliances.js?v=20261109b';
-import { STORIES } from '../data/stories.js?v=20261109b';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261109c';
+import { C0, TOOLS } from '../data/countries.js?v=20261109c';
+import { RELC, REL } from '../data/religions.js?v=20261109c';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261109c';
+import { iconSvg } from './icons.js?v=20261109c';
+import { AL, REF } from '../data/alliances.js?v=20261109c';
+import { STORIES } from '../data/stories.js?v=20261109c';
 import {
   $,
   norm,
@@ -64,7 +64,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261109b';
+} from './state.js?v=20261109c';
 import {
   cv,
   proj,
@@ -83,7 +83,7 @@ import {
   CONT_OBJS,
   contName,
   buildStoryShapes
-} from './globe.js?v=20261109b';
+} from './globe.js?v=20261109c';
 import {
   CONT,
   AMERICAS,
@@ -100,7 +100,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261109b';
+} from '../data/continents.js?v=20261109c';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -251,13 +251,26 @@ function endStory() {
   st.dirty = true;
 }
 
+// the argument every story builds, in order: each step is tagged with the link of the argument it makes
+const STAG = {
+  need: ['Họ cần gì', 'What they need'],
+  blocked: ['Địa lý chặn ở đâu', 'Where geography blocks'],
+  move: ['Vì thế họ làm gì', 'So what they do'],
+  counter: ['Bên kia nghĩ gì', 'What the other side thinks'],
+  outlook: ['Còn lại gì', 'What follows']
+};
+const stagName = k => tr(STAG[k][0], STAG[k][1]);
+
 function storyHTML(def, i) {
   const step = def.steps[i], n = def.steps.length, last = i === n - 1;
   const dots = def.steps
     .map((_, j) => `<button type="button" class="stdot${j === i ? ' on' : j < i ? ' done' : ''}" data-sti="${j}" aria-label="${tr('Bước', 'Step')} ${j + 1}"${j === i ? ' aria-current="step"' : ''}></button>`)
     .join('');
-  let s = `<div class="sthd"><div class="kick"><span class="sq" style="background:${def.c}"></span><span class="stk">${tx(def.title)}</span></div><h1>${tx(step.title)}</h1><div class="stnav"><button type="button" class="btn" data-st="prev"${i ? '' : ' disabled'}>← ${tr('Trước', 'Back')}</button><span class="stdots">${dots}</span><button type="button" class="btn pri" data-st="next">${last ? tr('Xong', 'Done') + ' ✓' : tr('Tiếp', 'Next') + ' →'}</button></div></div>`;
+  let s = `<div class="sthd"><div class="kick"><span class="sq" style="background:${def.c}"></span><span class="stk">${tx(def.title)}</span></div>${step.tag && STAG[step.tag] ? `<span class="sttag t-${step.tag}">${stagName(step.tag)}</span>` : ''}<h1>${tx(step.title)}</h1><div class="stnav"><button type="button" class="btn" data-st="prev"${i ? '' : ' disabled'}>← ${tr('Trước', 'Back')}</button><span class="stdots">${dots}</span><button type="button" class="btn pri" data-st="next">${last ? tr('Xong', 'Done') + ' ✓' : tr('Tiếp', 'Next') + ' →'}</button></div></div>`;
   s += `<p class="txt">${tx(step.text)}</p>`;
+  // the whole argument in one view (first step): numbered links, each tagged, in plain words
+  if (step.chain && step.chain.length)
+    s += `<ol class="stchain">${step.chain.map(c => `<li><b class="t-${c.tag}">${stagName(c.tag)}</b><span>${tx(c.text)}</span></li>`).join('')}</ol>`;
   // the strategic logic (what each side needs and fears): an interpretation, labelled as such, kept apart from the facts
   if (step.core)
     s += `<div class="stcore"><b>${tr('Cốt lõi', 'The core')}</b><p>${tx(step.core)}</p><small>${tr('Cách lý giải địa chính trị, không phải dữ kiện; các bên có thể lập luận khác.', 'A geopolitical reading, not a fact; the parties may argue differently.')}</small></div>`;
@@ -1214,7 +1227,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261109b'), import('../data/sea_info.js?v=20261109b')])
+    Promise.all([import('../data/sea_story.js?v=20261109c'), import('../data/sea_info.js?v=20261109c')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 
