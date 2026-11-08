@@ -2036,7 +2036,7 @@
       cy: clamp(target[1] - feet[1], -14, 14),
       arc
     };
-    cat.energy -= 0.13;
+    cat.energy -= 0.035;
     play(cat, 'catPounce', [5, 6, 7, 8], 9.5, false);
     tone(260, 720, 0, 0.12, 'triangle', 0.05);
   }
@@ -2082,6 +2082,8 @@
     const dy = goal[1] - feet[1];
     const zoomies = darkness() > 0.5 ? 1.35 : 1;
     cat.t -= dt;
+    // He gets his breath back between leaps, so only a long, hard chase tires him out
+    if (cat.toy !== 'leap') cat.energy = Math.min(1, cat.energy + dt * 0.012);
 
     switch (cat.toy) {
       case 'watch':
@@ -2171,7 +2173,7 @@
         cat.pinned = null;
         if (cat.energy < 0.15) {
           cat.toy = 'tired';
-          cat.t = 16;
+          cat.t = 7;
           sayAt('…so tired', cat);
           play(cat, 'catLie', seq(0, 8), 8, false);
         } else if (cat.flopNext) {
@@ -2187,8 +2189,14 @@
       case 'tired':
       case 'flop':
         if (cat.toy === 'flop' && !still && Math.random() < dt * 2.5) addHeart(cat.x + 28, cat.y + 20);
+        // A short rest, and a dot wiggled right under his nose gets him up sooner
+        if (cat.toy === 'tired' && cat.t < 4.5 && laser.on && now - laser.movedAt < 200 &&
+          Math.hypot(laser.x - feet[0], laser.y - feet[1]) < 40) {
+          cat.t = 0;
+          sayAt('ok ok, one more', cat);
+        }
         if (cat.t > 0) break;
-        if (cat.toy === 'tired') cat.energy = 0.8;
+        if (cat.toy === 'tired') cat.energy = 1;
         cat.toy = 'getup';
         play(cat, 'catLie', seq(8, 0), 10, false, () => catAlert(0.2));
         break;
