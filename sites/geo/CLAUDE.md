@@ -41,6 +41,7 @@ sites/geo/
     js/icons.js         inline SVG icons
     data/*.js           content: regions, countries (+ en_*), religions, hotspots, alliances, economy,
                         urban_islands, rankings, continents
+    data/stories.js     the explainers in the Views tab (+ one data/story_<id>.js per story, VI and EN inline)
     assets/map/*.json   world-110m, world-50m, admin1-50m, physical-50m
     assets/vendor/d3-geo.min.js
 ```
@@ -85,7 +86,7 @@ sites/geo/
 
 ## UI structure
 
-- Layers panel has three tabs (Layers / Color by / Views); every colouring is a chip in "Color by". On desktop a card
+- Layers panel has three tabs (Layers / Color by / Views); every colouring is a chip in "Color by"; "Views" lists the explainers (below); the reference lines (equator, graticule, day and night…) sit at the end of the Layers tab. On desktop a card
   folds the layers panel away (`.fold`) and `center()` in `globe.js` centres the globe in the free space between panels.
 - On phones (< 760 px) the card and the layers panel are bottom sheets with a drag handle (peek / half / full).
 - The URL hash keeps the view: `#c=<country>` (Natural Earth name), `adm1=`, `cap=`, `city=`, `isl=`, `lake=`, `h=`,
@@ -93,6 +94,26 @@ sites/geo/
   `applyHash()` in `ui.js` opens it; keep these keys stable, links are shared.
 - English shows full country names from `EN_NAME` in `state.js` (map data keys stay the Natural Earth short names);
   globe labels may use `EN_SHORT`.
+
+## Explainers (Views tab, `data/stories.js`)
+
+- The Views tab lists step-by-step geography stories (Hormuz, Ukraine, Red Sea, Taiwan, East Sea). A story is a file
+  `data/story_<id>.js` exporting `{id, icon, c, title, sub, asof, status, statusSrc, sources[], steps[]}`; every text is
+  `{vi, en}`. A step is `{title, text, facts[], ll, k, layers[], show[], refs[], hl{}, dim, draw[], key[], src[]}`:
+  camera (`ll` centre, `k` zoom), the layers to switch on (everything else is off, so the map stays clean), hotspot ids
+  to show even if their layer is off (`show`), countries to colour (`hl`, Natural Earth names), `dim` to mute the other
+  land, shapes to draw (`line` with optional `flow`/`arrow`, `poly`, `circle` with `at` and `r` in km, `pt`, `label`;
+  colour is `c`; a point label can take `side:'l'`, `dy`, `ox`), a colour `key`, and `src` = indexes into `sources`.
+- The engine is `startStory` / `goStep` / `endStory` in `js/ui.js` (the step card has a sticky header with Back/Next and
+  step dots) and `buildStoryShapes` / `drawStory` in `js/globe.js`. While a story runs `st.story` holds its scene and the
+  reader's layers are snapshotted and restored on close; `savePrefs` does nothing meanwhile. The link is
+  `#story=<id>&s=<step>`. Opening any other card, the layers button or Esc ends the story.
+- **Rules for content** (Principle 1 applies in full): every number comes from a fetched primary or authoritative
+  source and is attributed in the text ("according to X", dated); contested facts say who claims what; `asof` is the date
+  the facts were checked and shows on the last step. Never draw a live situation (front line, blockade band, danger
+  zone, who holds a contested place): tell it in words with a date. Drawn shapes are illustrative and the card says so.
+  Refresh a story by re-checking its facts and moving `asof`; `scripts/check.mjs` fails on missing VI/EN, dates, https
+  sources, bad indexes, or a layer, hotspot or country name that does not exist.
 
 ## Conventions
 

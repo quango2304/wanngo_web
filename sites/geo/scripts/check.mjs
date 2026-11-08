@@ -80,5 +80,61 @@ if (all.size > 1) bad(`inconsistent ?v= values: ${[...all]}`);
   }
 }
 
+// explainers (data/stories.js): both languages, dated, sourced; every layer, hotspot, country and source a step names exists
+{
+  const { STORIES } = await import(pathToFileURL(path.join(pub, 'data/stories.js')));
+  const { LAYERS, H } = await import(pathToFileURL(path.join(pub, 'data/hotspots.js')));
+  const stateSrc = readFileSync(path.join(pub, 'js/state.js'), 'utf8');
+  const onBlock = stateSrc.slice(stateSrc.indexOf('export const DEFAULT_ON'), stateSrc.indexOf('export const DEFAULT_REF'));
+  const layerKeys = new Set([...Object.keys(LAYERS), ...[...onBlock.matchAll(/^\s+(\w+):/gm)].map((m) => m[1])]);
+  const refKeys = new Set(['eq', 'trop', 'polar', 'pm', 'grat', 'labels', 'daynight']);
+  const hotIds = new Set(H.map((h) => h.id));
+  const w50 = JSON.parse(readFileSync(path.join(pub, 'assets/map/world-50m.json'), 'utf8'));
+  const countries = new Set(w50.objects.countries.geometries.map((g) => g.properties.name));
+  const both = (o) => o && typeof o.vi === 'string' && o.vi.trim() && typeof o.en === 'string' && o.en.trim();
+  const ll = (p) => Array.isArray(p) && p.length === 2 && Math.abs(p[0]) <= 180 && Math.abs(p[1]) <= 90;
+  const ids = new Set();
+  for (const d of STORIES) {
+    const w = `story ${d.id}`;
+    if (!d.id || ids.has(d.id)) bad(`${w}: missing or duplicate id`);
+    ids.add(d.id);
+    if (!d.icon || !/^#[0-9A-Fa-f]{6}$/.test(d.c || '')) bad(`${w}: icon or colour`);
+    if (!both(d.title) || !both(d.sub) || !both(d.status)) bad(`${w}: title/sub/status need vi and en`);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(d.asof || '')) bad(`${w}: asof must be YYYY-MM-DD`);
+    if (!Array.isArray(d.sources) || !d.sources.length) bad(`${w}: no sources`);
+    (d.sources || []).forEach((s, i) => {
+      if (!s.n || !/^https:\/\//.test(s.url || '')) bad(`${w}: source ${i} needs a name and an https url`);
+    });
+    (d.statusSrc || []).forEach((i) => { if (!d.sources[i]) bad(`${w}: statusSrc ${i} is not a source`); });
+    if (!Array.isArray(d.steps) || d.steps.length < 3) bad(`${w}: needs at least 3 steps`);
+    (d.steps || []).forEach((s, n) => {
+      const x = `${w} step ${n + 1}`;
+      if (!both(s.title) || !both(s.text)) bad(`${x}: title/text need vi and en`);
+      (s.facts || []).forEach((f) => { if (!both(f)) bad(`${x}: a fact needs vi and en`); });
+      (s.key || []).forEach((k) => { if (!both(k) || !/^#[0-9A-Fa-f]{6}$/.test(k.c || '')) bad(`${x}: key needs vi, en and colour`); });
+      if (!ll(s.ll) || !(s.k >= 1 && s.k <= 16)) bad(`${x}: ll or k`);
+      if (!(s.src || []).length) bad(`${x}: no source`);
+      (s.src || []).forEach((i) => { if (!d.sources[i]) bad(`${x}: src ${i} is not a source`); });
+      (s.layers || []).forEach((k) => { if (!layerKeys.has(k)) bad(`${x}: unknown layer ${k}`); });
+      (s.refs || []).forEach((k) => { if (!refKeys.has(k)) bad(`${x}: unknown ref ${k}`); });
+      (s.show || []).forEach((k) => { if (!hotIds.has(k)) bad(`${x}: unknown hotspot ${k}`); });
+      for (const [c, col] of Object.entries(s.hl || {})) {
+        if (!countries.has(c)) bad(`${x}: unknown country ${c}`);
+        if (!/^#[0-9A-Fa-f]{6}$/.test(col)) bad(`${x}: colour for ${c}`);
+      }
+      (s.draw || []).forEach((g, j) => {
+        const y = `${x} draw ${j + 1}`;
+        if (!/^#[0-9A-Fa-f]{6}$/.test(g.c || '')) bad(`${y}: colour`);
+        if (g.label && !both(g.label)) bad(`${y}: label needs vi and en`);
+        if (g.k === 'line') { if ((g.pts || []).length < 2 || !g.pts.every(ll)) bad(`${y}: line points`); }
+        else if (g.k === 'poly') { if ((g.pts || []).length < 3 || !g.pts.every(ll)) bad(`${y}: poly points`); }
+        else if (g.k === 'circle') { if (!ll(g.at) || !(g.r > 0)) bad(`${y}: circle`); }
+        else if (g.k === 'pt' || g.k === 'label') { if (!ll(g.p)) bad(`${y}: point`); }
+        else bad(`${y}: unknown kind ${g.k}`);
+      });
+    });
+  }
+}
+
 console.log(fail ? `${fail} problem(s)` : 'OK');
 process.exit(fail ? 1 : 0);

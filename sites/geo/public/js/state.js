@@ -1,13 +1,13 @@
-import { NAMES } from '../data/regions.js?v=20261108q';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108q';
-import { AL } from '../data/alliances.js?v=20261108q';
-import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108q';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108q';
-import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108q';
-import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108q';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108q';
-import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108q';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108q';
+import { NAMES } from '../data/regions.js?v=20261108z';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108z';
+import { AL } from '../data/alliances.js?v=20261108z';
+import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108z';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108z';
+import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108z';
+import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108z';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108z';
+import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108z';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108z';
 
 export {
   CAPITALS,
@@ -314,6 +314,7 @@ export const st = {
   hov: null,
   hl: new Set(),
   tour: null,
+  story: null, // the explainer in progress (data/stories.js): it borrows the layers, see startStory() in ui.js
   spin: true,
   drawerHide: null,
   moving: false,
@@ -442,6 +443,7 @@ export function loadPrefs() {
 }
 
 export function savePrefs() {
+  if (st.story) return; // an explainer borrows the layers: its choices are not the reader's
   try {
     st.on.ice = true;
     localStorage.setItem(
@@ -474,7 +476,7 @@ export function readTheme() {
 }
 
 export function on(h) {
-  return !!(h && (h.t === 'ice' || st.on[h.t]));
+  return !!(h && (h.t === 'ice' || st.on[h.t] || (st.story && st.story.show.has(h.id))));
 }
 
 export function hc(h) {

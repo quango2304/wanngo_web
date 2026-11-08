@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108q';
-import { C0 } from '../data/countries.js?v=20261108q';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108q';
-import { AL, REF } from '../data/alliances.js?v=20261108q';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108q';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108z';
+import { C0 } from '../data/countries.js?v=20261108z';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108z';
+import { AL, REF } from '../data/alliances.js?v=20261108z';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108z';
 import {
   $,
   norm,
@@ -48,7 +48,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108q';
+} from './state.js?v=20261108z';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -635,7 +635,8 @@ function center() {
   if (mob) {
     const sheet = open ? panel : lay && !lay.classList.contains('hide') ? lay : null;
     if (!sheet) return [W / 2, Hh * 0.45];
-    const top = Hh - (sheet.offsetHeight || Hh * 0.5) - 8;
+    // the sheet's target height (it animates between sizes, so offsetHeight can still be the old one)
+    const top = Hh - (parseFloat(sheet.style.height) || sheet.offsetHeight || Hh * 0.5) - 8;
     return [W / 2, Math.max(70 + R0 * 0.35, (64 + top) / 2)];
   }
   let left = 0, right = W;
@@ -704,6 +705,11 @@ function syncLandColorCache() {
 
 function landColor(f) {
   syncLandColorCache();
+  if (st.story) {
+    const sc = st.story.hl[f.en];
+    if (sc) return mix(sc, C.dark ? 0.82 : 0.78);
+    if (st.story.dim) return _lcMutedLand;
+  }
   if (st.al && st.al.startsWith('__rank_')) {
     const rkKey = st.al.slice(7, -2);
     const metric = RANK_METRICS[rkKey];
@@ -1072,6 +1078,117 @@ function traceCountry(f, lowres) {
   return drawn;
 }
 
+// ---------- explainer overlays (data/stories.js): shapes drawn only while a step asks for them
+// shape kinds: line (great-circle polyline, optional flowing dashes and arrowhead), poly, circle ({at:[lon,lat], r:km}),
+// pt, label. Colour is `c` on every shape (a circle's centre is `at`). Geometry is built once per step by buildStoryShapes() and drawn here in two passes: 'under' (fills and
+// lines, below the markers) and 'over' (points and text).
+const KM_PER_DEG = 111.195;
+export function buildStoryShapes(list) {
+  return (list || []).map(s => {
+    const o = { ...s };
+    if (s.k === 'line') o.geo = { type: 'LineString', coordinates: s.pts };
+    else if (s.k === 'poly') o.geo = ring(s.pts);
+    else if (s.k === 'circle') o.geo = d3.geoCircle().center(s.at).radius(s.r / KM_PER_DEG).precision(2)();
+    if (s.k === 'line' && s.arrow) {
+      const n = s.pts.length;
+      const a = s.pts[n - 2], b = s.pts[n - 1];
+      o.tip = b;
+      o.back = d3.geoInterpolate(b, a)(Math.min(0.5, 0.5 / Math.max(0.5, d3.geoDistance(a, b) * 57.3)));
+    }
+    if (s.label) {
+      if (s.lp) o.lp = s.lp;
+      else if (s.k === 'line') o.lp = d3.geoInterpolate(s.pts[Math.floor((s.pts.length - 1) / 2)], s.pts[Math.ceil((s.pts.length - 1) / 2)])(0.5);
+      else if (s.k === 'poly') o.lp = d3.geoCentroid(o.geo);
+      else if (s.k === 'circle') o.lp = s.at;
+      else o.lp = s.p;
+    }
+    return o;
+  });
+}
+
+function drawStory(pass, now) {
+  const S = st.story;
+  if (!S || !S.shapes.length) return;
+  const seen = p => d3.geoDistance(p, VIEW.c) < Math.PI / 2 - 0.03;
+  for (const s of S.shapes) {
+    if (pass === 'under') {
+      if (s.k === 'poly' || s.k === 'circle') {
+        ctx.beginPath();
+        pathC(s.geo);
+        if (s.a) {
+          ctx.fillStyle = mix(s.c, s.a);
+          ctx.fill();
+        }
+        ctx.setLineDash(s.dash || []);
+        ctx.strokeStyle = mix(s.c, 0.95);
+        ctx.lineWidth = s.w || 1.6;
+        ctx.stroke();
+        ctx.setLineDash([]);
+      } else if (s.k === 'line') {
+        ctx.beginPath();
+        pathC(s.geo);
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.strokeStyle = C.dark ? 'rgba(8,12,20,.7)' : 'rgba(255,255,255,.85)';
+        ctx.lineWidth = (s.w || 2.6) + 2.4;
+        ctx.setLineDash([]);
+        ctx.stroke();
+        ctx.beginPath();
+        pathC(s.geo);
+        ctx.setLineDash(s.flow ? [9, 7] : s.dash || []);
+        if (s.flow) ctx.lineDashOffset = -((now / 45) % 16);
+        ctx.strokeStyle = s.c;
+        ctx.lineWidth = s.w || 2.6;
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.lineDashOffset = 0;
+        if (s.arrow && seen(s.tip) && seen(s.back)) {
+          const q = proj(s.tip), b = proj(s.back);
+          const ang = Math.atan2(q[1] - b[1], q[0] - b[0]);
+          const L = 11 + (s.w || 2.6);
+          ctx.beginPath();
+          ctx.moveTo(q[0], q[1]);
+          ctx.lineTo(q[0] - L * Math.cos(ang - 0.45), q[1] - L * Math.sin(ang - 0.45));
+          ctx.lineTo(q[0] - L * Math.cos(ang + 0.45), q[1] - L * Math.sin(ang + 0.45));
+          ctx.closePath();
+          ctx.fillStyle = s.c;
+          ctx.strokeStyle = C.dark ? 'rgba(8,12,20,.7)' : 'rgba(255,255,255,.85)';
+          ctx.lineWidth = 1.6;
+          ctx.stroke();
+          ctx.fill();
+        }
+      }
+    } else {
+      if (s.k === 'pt' && seen(s.p)) {
+        const q = proj(s.p);
+        ctx.beginPath();
+        ctx.arc(q[0], q[1], s.r || 5, 0, 7);
+        ctx.fillStyle = s.c;
+        ctx.fill();
+        ctx.lineWidth = 1.8;
+        ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
+        ctx.stroke();
+      }
+      if (s.label && s.lp && seen(s.lp)) {
+        const q = proj(s.lp);
+        const lbl = isEn() ? s.label.en || s.label.vi : s.label.vi;
+        ctx.font = '700 12px "Be Vietnam Pro",system-ui,sans-serif';
+        // a point's label sits to its right (side:'l' puts it on the left); dy and ox nudge it in pixels
+        const left = s.side === 'l';
+        ctx.textAlign = s.k === 'pt' ? (left ? 'right' : 'left') : 'center';
+        ctx.textBaseline = 'middle';
+        const dx = (s.k === 'pt' ? (left ? -1 : 1) * ((s.r || 5) + 5) : 0) + (s.ox || 0);
+        const dy = (s.k === 'pt' ? 0 : -9) + (s.dy || 0);
+        ctx.lineWidth = 3.5;
+        ctx.strokeStyle = C['label-halo'];
+        ctx.strokeText(lbl, q[0] + dx, q[1] + dy);
+        ctx.fillStyle = C.dark ? d3.color(s.c).brighter(1) + '' : d3.color(s.c).darker(0.7) + '';
+        ctx.fillText(lbl, q[0] + dx, q[1] + dy);
+      }
+    }
+  }
+}
+
 export function render(now) {
   if (!MAP.F.length) return;
   updView();
@@ -1431,6 +1548,8 @@ export function render(now) {
   if (st.ref.trop) drawRefGeo(REF_GEOS.trop, REF.trop.c, [6, 4]);
   if (st.ref.polar) drawRefGeo(REF_GEOS.polar, REF.polar.c, [6, 4]);
   if (st.ref.pm) drawRefGeo(REF_GEOS.pm, REF.pm.c);
+
+  drawStory('under', now);
 
   // Real-time Solar Terminator & Day/Night shadow (st.ref.daynight)
   if (st.ref.daynight) {
@@ -2229,6 +2348,8 @@ export function render(now) {
     ctx.fillText(lbl, q[0], q[1] - 10);
   });
 
+  drawStory('over', now);
+
   // shading
   g = ctx.createRadialGradient(cx - r * 0.3, cy - r * 0.35, r * 0.2, cx, cy, r * 1.02);
   g.addColorStop(0, 'rgba(255,255,255,' + (C.dark ? 0.04 : 0.1) + ')');
@@ -2243,7 +2364,7 @@ export function render(now) {
 let lastTzTick = 0;
 
 function needsAnim() {
-  return st.spin || st.on.conflict || st.on.route;
+  return st.spin || st.on.conflict || st.on.route || !!(st.story && st.story.anim);
 }
 
 export function loop(now) {

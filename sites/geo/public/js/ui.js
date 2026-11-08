@@ -1,9 +1,10 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108q';
-import { C0, TOOLS } from '../data/countries.js?v=20261108q';
-import { RELC, REL } from '../data/religions.js?v=20261108q';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108q';
-import { iconSvg } from './icons.js?v=20261108q';
-import { AL, REF } from '../data/alliances.js?v=20261108q';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108z';
+import { C0, TOOLS } from '../data/countries.js?v=20261108z';
+import { RELC, REL } from '../data/religions.js?v=20261108z';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108z';
+import { iconSvg } from './icons.js?v=20261108z';
+import { AL, REF } from '../data/alliances.js?v=20261108z';
+import { STORIES } from '../data/stories.js?v=20261108z';
 import {
   $,
   norm,
@@ -63,7 +64,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261108q';
+} from './state.js?v=20261108z';
 import {
   cv,
   proj,
@@ -80,8 +81,9 @@ import {
   inBB,
   rebuildSearchIndex,
   CONT_OBJS,
-  contName
-} from './globe.js?v=20261108q';
+  contName,
+  buildStoryShapes
+} from './globe.js?v=20261108z';
 import {
   CONT,
   AMERICAS,
@@ -98,7 +100,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108q';
+} from '../data/continents.js?v=20261108z';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -152,14 +154,126 @@ Object.values(RANK_METRICS).forEach(m => {
   RANK_LISTS[m.key] = { entries, maxVal, minVal, total: entries.length };
 });
 
-const QVIEWS = [
-  { n: 'Việt Nam & Biển Đông', en: 'Vietnam & East Sea', ll: [108, 15], k: 2.3 },
-  { n: 'Châu Âu & Nga', en: 'Europe & Russia', ll: [25, 52], k: 1.8 },
-  { n: 'Trung Đông', en: 'Middle East', ll: [46, 27], k: 2.2 },
-  { n: 'Đông Á', en: 'East Asia', ll: [122, 32], k: 1.9 },
-  { n: 'Bắc Mỹ', en: 'North America', ll: [-98, 38], k: 1.6 },
-  { n: 'Bắc Cực', en: 'The Arctic', ll: [0, 82], k: 1.6 }
-];
+// ---------- explainers ("Góc nhìn"): step-by-step geography stories from data/stories.js.
+// A story borrows the map: each step sets the layers, colours, shapes and camera it needs (everything else is switched
+// off so the picture stays clean) and shows its text in the card. The reader's own layers come back when it ends.
+const STORY_BY = Object.fromEntries(STORIES.map(d => [d.id, d]));
+const tx = o => (o ? (isEn() ? o.en || o.vi : o.vi) || '' : '');
+const storyDate = iso => {
+  const [y, m, d] = iso.split('-').map(Number);
+  return isEn()
+    ? new Date(Date.UTC(y, m - 1, d)).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
+    : `${d}/${m}/${y}`;
+};
+
+function startStory(id, i = 0) {
+  const def = STORY_BY[id];
+  if (!def) return;
+  if (!st.story) {
+    st.story = {
+      snap: { on: { ...st.on }, ref: { ...st.ref }, al: st.al },
+      def,
+      show: new Set(),
+      hl: {},
+      dim: false,
+      shapes: [],
+      anim: false
+    };
+    if (isMobileViewport()) {
+      P.dataset.snap = 'half';
+      P.style.height = SNAPS().half + 'px';
+    }
+  }
+  st.story.def = def;
+  goStep(Math.max(0, Math.min(def.steps.length - 1, i)), true);
+}
+
+function applyStep(step) {
+  const S = st.story;
+  Object.keys(st.on).forEach(k => (st.on[k] = false));
+  (step.layers || []).forEach(k => (st.on[k] = true));
+  st.on.ice = true;
+  Object.keys(st.ref).forEach(k => (st.ref[k] = false));
+  st.ref.labels = step.labels !== false;
+  (step.refs || []).forEach(k => (st.ref[k] = true));
+  if (st.al) {
+    st.al = '';
+    syncColorChips();
+    $('#legend').classList.remove('show');
+  }
+  S.show = new Set(step.show || []);
+  S.hl = step.hl || {};
+  S.dim = !!step.dim;
+  S.shapes = buildStoryShapes(step.draw);
+  S.anim = S.shapes.some(s => s.flow);
+  st.sel = null;
+  buildLayers();
+  st.dirty = true;
+}
+
+function goStep(i, fly = true) {
+  const def = st.story.def, step = def.steps[i];
+  activeView = { type: 'story', def, i };
+  applyStep(step);
+  openPanel(storyHTML(def, i));
+  wireStory();
+  if (fly && step.ll) flyTo(step.ll, step.k);
+}
+
+function stepBy(d) {
+  const v = activeView;
+  if (!st.story || !v || v.type !== 'story') return;
+  const j = v.i + d;
+  if (j >= v.def.steps.length) closePanel();
+  else if (j >= 0) {
+    goStep(j);
+    // the card is rebuilt each step: keep the keyboard on the button just used
+    const b = PB.querySelector(d > 0 ? '[data-st="next"]' : '[data-st="prev"]:not([disabled])') || PB.querySelector('[data-st="next"]');
+    if (b) b.focus({ preventScroll: true });
+  }
+}
+
+function wireStory() {
+  PB.querySelectorAll('[data-st]').forEach(b => (b.onclick = () => stepBy(b.dataset.st === 'next' ? 1 : -1)));
+  PB.querySelectorAll('[data-sti]').forEach(b => (b.onclick = () => goStep(+b.dataset.sti)));
+}
+
+function endStory() {
+  const S = st.story;
+  if (!S) return;
+  st.story = null;
+  Object.keys(st.on).forEach(k => delete st.on[k]);
+  Object.assign(st.on, S.snap.on);
+  Object.keys(st.ref).forEach(k => delete st.ref[k]);
+  Object.assign(st.ref, S.snap.ref);
+  buildLayers();
+  setAl(S.snap.al); // legend, colour chips and the link
+  st.dirty = true;
+}
+
+function storyHTML(def, i) {
+  const step = def.steps[i], n = def.steps.length, last = i === n - 1;
+  const dots = def.steps
+    .map((_, j) => `<button type="button" class="stdot${j === i ? ' on' : j < i ? ' done' : ''}" data-sti="${j}" aria-label="${tr('Bước', 'Step')} ${j + 1}"${j === i ? ' aria-current="step"' : ''}></button>`)
+    .join('');
+  let s = `<div class="sthd"><div class="kick"><span class="sq" style="background:${def.c}"></span><span class="stk">${tx(def.title)}</span></div><h1>${tx(step.title)}</h1><div class="stnav"><button type="button" class="btn" data-st="prev"${i ? '' : ' disabled'}>← ${tr('Trước', 'Back')}</button><span class="stdots">${dots}</span><button type="button" class="btn pri" data-st="next">${last ? tr('Xong', 'Done') + ' ✓' : tr('Tiếp', 'Next') + ' →'}</button></div></div>`;
+  s += `<p class="txt">${tx(step.text)}</p>`;
+  if (step.facts && step.facts.length) s += `<ul class="stfacts">${step.facts.map(f => `<li>${tx(f)}</li>`).join('')}</ul>`;
+  if (step.key && step.key.length)
+    s += `<div class="stkey">${step.key.map(k => `<span><span class="sq" style="background:${k.c}"></span>${tx(k)}</span>`).join('')}</div>`;
+  if (last && def.status)
+    s += `<div class="stnow"><b>${tr('Tình hình tới ngày', 'Situation as of')} ${storyDate(def.asof)}</b><p>${tx(def.status)}</p></div>`;
+  const srcIdx = [...new Set([...(step.src || []), ...(last ? def.statusSrc || [] : [])])];
+  if (srcIdx.length)
+    s += `<div class="stsrc">${tr('Nguồn', 'Sources')}: ${srcIdx
+      .map(j => def.sources[j])
+      .filter(Boolean)
+      .map(r => `<a href="${r.url}" target="_blank" rel="noopener">${r.n}</a>`)
+      .join(' · ')}</div>`;
+  if (step.draw && step.draw.length)
+    s += `<p class="note">${tr('Hình vẽ thêm trên bản đồ chỉ mang tính minh họa, không phải ranh giới chính thức.', 'Shapes added to the map are illustrative, not official boundaries.')}</p>`;
+  return s;
+}
 
 const LAKE_META = {
   caspian: {
@@ -293,6 +407,7 @@ function selHash() {
   if (v.type === 'cont') return 'cont=' + e(v.o.key);
   if (v.type === 'sea') return 'sea=' + e(v.o.en);
   if (v.type === 'rank') return 'rank=' + e(v.metricKey);
+  if (v.type === 'story') return 'story=' + e(v.def.id) + '&s=' + (v.i + 1);
   return '';
 }
 
@@ -300,7 +415,7 @@ let hashReady = false; // nothing is written until the link the page was opened 
 function writeHash() {
   if (applyingHash || !hashReady) return;
   const sel = selHash();
-  const col = AL_TO_HASH(st.al);
+  const col = st.story ? '' : AL_TO_HASH(st.al);
   const h = [sel, col && !(activeView && activeView.type === 'rank' && st.al === `__rank_${activeView.metricKey}__`) ? 'color=' + encodeURIComponent(col) : '']
     .filter(Boolean)
     .join('&');
@@ -338,6 +453,10 @@ export function applyHash(tries = 0) {
       flyTo(st.sel.mainCen || st.sel.cen, fitK(st.sel));
     } else if (p.get('rank') && RANK_METRICS[p.get('rank')]) {
       openRanking(p.get('rank'));
+    } else if (p.get('story') && STORY_BY[p.get('story')]) {
+      const idx = (parseInt(p.get('s'), 10) || 1) - 1;
+      if (st.story && st.story.def.id === p.get('story')) goStep(Math.max(0, Math.min(st.story.def.steps.length - 1, idx)));
+      else startStory(p.get('story'), idx);
     } else {
       if (p.get('c')) o = BY[p.get('c')];
       else if (p.get('cap')) o = CAP_BY_ID[p.get('cap')];
@@ -420,6 +539,8 @@ function setFold(on) {
 }
 
 export function openPanel(html) {
+  if (st.story && !(activeView && activeView.type === 'story')) endStory(); // any other card ends the explainer
+  PB.classList.toggle('story', !!(activeView && activeView.type === 'story')); // its step header sticks to the top
   PB.innerHTML = html;
   PB.scrollTop = 0;
   P.classList.add('show');
@@ -430,7 +551,8 @@ export function openPanel(html) {
       $('#layBtn').classList.remove('on');
       document.body.classList.remove('layers-open');
     }
-    if (!P.dataset.snap || P.dataset.snap === 'peek') {
+    // an explainer step keeps the sheet where the reader put it, so they can peek at the map between steps
+    if (!P.dataset.snap || (P.dataset.snap === 'peek' && !(activeView && activeView.type === 'story' && activeView.i > 0))) {
       P.dataset.snap = 'half';
       P.style.height = SNAPS().half + 'px';
     }
@@ -448,6 +570,7 @@ export function closePanel() {
   document.body.classList.remove('panel-open');
   st.sel = null;
   activeView = null;
+  endStory();
   st.dirty = true;
   if ($('#layers').classList.contains('fold')) setFold(false);
   keepLayers = false;
@@ -1086,7 +1209,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261108q'), import('../data/sea_info.js?v=20261108q')])
+    Promise.all([import('../data/sea_story.js?v=20261108z'), import('../data/sea_info.js?v=20261108z')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 
@@ -1762,7 +1885,7 @@ export function applyLang() {
   if ($('#lhSys')) $('#lhSys').textContent = tr('KINH TẾ & THỂ CHẾ', 'ECONOMY & GOVERNMENT');
   if ($('#lhBloc')) $('#lhBloc').textContent = tr('KHỐI & LIÊN MINH', 'BLOCS & ALLIANCES');
   if ($('#coOff')) $('#coOff').textContent = tr('Tắt tô màu', 'Turn coloring off');
-  if ($('#lhQv')) $('#lhQv').textContent = tr('GÓC NHÌN NHANH', 'QUICK VIEWS');
+  if ($('#lhQv')) $('#lhQv').textContent = tr('GIẢI THÍCH ĐỊA CHÍNH TRỊ', 'GEOPOLITICS EXPLAINED');
   if ($('#lhRef')) $('#lhRef').textContent = tr('ĐƯỜNG THAM CHIẾU', 'REFERENCE LINES');
   if ($('#hint'))
     $('#hint').textContent = tr(
@@ -1791,14 +1914,11 @@ export function applyLang() {
 
   const qviews = $('#qviews');
   if (qviews) {
-    qviews.innerHTML = QVIEWS.map((v, i) => `<span class="chip" data-qv="${i}">${enMode ? v.en : v.n}</span>`).join('');
-    qviews.querySelectorAll('.chip').forEach(
-      e =>
-        (e.onclick = () => {
-          const v = QVIEWS[+e.dataset.qv];
-          if (v) flyTo(v.ll, v.k);
-        })
-    );
+    qviews.innerHTML = STORIES.map(
+      d =>
+        `<button type="button" class="stcard" data-story="${d.id}"><span class="stico" style="background:${d.c}26">${d.icon}</span><span class="sttx"><b>${tx(d.title)}</b><small>${tx(d.sub)}</small></span><span class="stn">${d.steps.length} ${tr('bước', 'steps')}</span></button>`
+    ).join('');
+    qviews.querySelectorAll('[data-story]').forEach(e => (e.onclick = () => startStory(e.dataset.story)));
   }
 
   populateAlSel();
@@ -1818,13 +1938,14 @@ export function applyLang() {
     else if (activeView.type === 'hot') openPanel(hotHTML(activeView.h));
     else if (activeView.type === 'cont') openPanel(contHTML(activeView.o));
     else if (activeView.type === 'sea') openPanel(seaHTML(activeView.o));
+    else if (activeView.type === 'story') openPanel(storyHTML(activeView.def, activeView.i)), wireStory();
   }
 }
 
 // ---------- phone bottom sheets (card and layers): drag the handle to peek / half / full, drag down past peek to close
 const SNAPS = () => {
   const h = innerHeight;
-  return { peek: 150, half: Math.round(h * 0.56), full: h - 72 };
+  return { peek: 112, half: Math.round(h * 0.56), full: h - 72 };
 };
 function sheetEl(name) {
   return name === 'panel' ? P : $('#layers');
@@ -2024,6 +2145,7 @@ export function initUI() {
   }
 
   $('#layBtn').onclick = () => {
+    if (st.story) closePanel(); // the layers are the reader's again
     const lay = $('#layers');
     if (lay.classList.contains('fold')) {
       // folded behind an open card: bring it back beside the card
@@ -2189,6 +2311,11 @@ export function initUI() {
   });
   addEventListener('resize', resize);
   addEventListener('keydown', e => {
+    if ((e.key === 'ArrowRight' || e.key === 'ArrowLeft') && st.story && !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName) && !e.metaKey && !e.ctrlKey && !e.altKey) {
+      stepBy(e.key === 'ArrowRight' ? 1 : -1);
+      e.preventDefault();
+      return;
+    }
     if (e.key === 'Escape' && document.activeElement !== q) closePanel();
   });
 
