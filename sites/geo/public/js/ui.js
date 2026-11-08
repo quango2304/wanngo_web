@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js';
-import { C0, TOOLS } from '../data/countries.js?v=20261108h';
-import { RELC, REL } from '../data/religions.js';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js';
-import { iconSvg } from './icons.js';
-import { AL, REF } from '../data/alliances.js';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108i';
+import { C0, TOOLS } from '../data/countries.js?v=20261108i';
+import { RELC, REL } from '../data/religions.js?v=20261108i';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108i';
+import { iconSvg } from './icons.js?v=20261108i';
+import { AL, REF } from '../data/alliances.js?v=20261108i';
 import {
   $,
   norm,
@@ -35,6 +35,8 @@ import {
   ECON_TIERS,
   ECON_SECTORS,
   ECON,
+  REGIME_TYPES,
+  REGIMES,
   RANK_METRICS,
   RANK_DATA,
   rankValColor,
@@ -59,7 +61,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108h';
+} from './state.js?v=20261108i';
 import {
   cv,
   proj,
@@ -77,7 +79,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108h';
+} from './globe.js?v=20261108i';
 import {
   CONT,
   AMERICAS,
@@ -94,7 +96,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108h';
+} from '../data/continents.js?v=20261108i';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -420,6 +422,28 @@ function econHTML(en) {
   </div>`;
 }
 
+function regimeHTML(en) {
+  const rg = REGIMES[en];
+  if (!rg) return '';
+  const enMode = isEn();
+  const rInfo = REGIME_TYPES[rg.type] || REGIME_TYPES.pres;
+  const rName = enMode ? rInfo.en : rInfo.vi;
+  const hos = enMode ? rg.hos_en : rg.hos_vi;
+  const leg = enMode ? rg.leg_en : rg.leg_vi;
+  const elec = enMode ? rg.elec_en : rg.elec_vi;
+  const note = enMode ? rg.note_en : rg.note_vi;
+  return `<div class="econ-box">
+    <div class="econ-hd">
+      <span>${tr('THỂ CHẾ & BỘ MÁY NHÀ NƯỚC', 'GOVERNMENT & POLITICAL SYSTEM')}</span>
+      <span class="econ-tier" data-a="__regime__" title="${tr('Bấm để tô màu bản đồ thế giới theo thể chế nhà nước', 'Click to color globe by government system')}" style="background:${rInfo.c}20;color:${rInfo.c};border:1px solid ${rInfo.c}55"><i style="background:${rInfo.c}"></i>${rName}</span>
+    </div>
+    <div class="econ-main"><b>🏛️ ${tr('Nguyên thủ & Hành pháp:', 'Head of State & Executive:')}</b> ${hos}</div>
+    <div class="econ-main"><b>⚖️ ${tr('Cơ quan lập pháp:', 'Legislature:')}</b> ${leg}</div>
+    <div class="econ-main"><b>🗳️ ${tr('Bầu cử & Đa đảng:', 'Elections & Party System:')}</b> ${elec}</div>
+    ${note ? `<div class="econ-note">${note}</div>` : ''}
+  </div>`;
+}
+
 function relHTML(en) {
   const r = REL[en];
   if (!r) return '';
@@ -465,7 +489,12 @@ function compareHTML(en1, en2) {
               <div><small style="color:var(--muted)">❤️ ${tr('Tuổi thọ:', 'Life Exp:')}</small> <b>${rRow[4].toFixed(1)} ${tr('năm', 'yrs')}</b></div>
             </div>`
           : '';
-      return `<div style="margin-bottom:4px"><span class="econ-tier" data-a="__econ__" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${enMode ? tInfo.en : tInfo.vi}</span></div><div><small style="color:var(--muted)">GDP:</small> <b>${enMode ? ec.gdp_en : ec.gdp_vi}</b></div><div><small style="color:var(--muted)">${tr('Thu nhập/người:', 'Per capita:')}</small> ${enMode ? ec.pc_en : ec.pc_vi}</div><div><small style="color:var(--muted)">${tr('Tăng trưởng:', 'Growth:')}</small> <b>${ec.gr}</b></div>${xtra}`;
+      const rg = REGIMES[enCode];
+      const rInfo = rg && REGIME_TYPES[rg.type];
+      const rgBadge = rInfo
+        ? `<div style="margin-bottom:4px"><span class="econ-tier" data-a="__regime__" style="background:${rInfo.c}20;color:${rInfo.c};border:1px solid ${rInfo.c}55"><i style="background:${rInfo.c}"></i>${enMode ? rInfo.en : rInfo.vi}</span></div>`
+        : '';
+      return `${rgBadge}<div style="margin-bottom:4px"><span class="econ-tier" data-a="__econ__" style="background:${tInfo.c}20;color:${tInfo.c};border:1px solid ${tInfo.c}55"><i style="background:${tInfo.c}"></i>${enMode ? tInfo.en : tInfo.vi}</span></div><div><small style="color:var(--muted)">GDP:</small> <b>${enMode ? ec.gdp_en : ec.gdp_vi}</b></div><div><small style="color:var(--muted)">${tr('Thu nhập/người:', 'Per capita:')}</small> ${enMode ? ec.pc_en : ec.pc_vi}</div><div><small style="color:var(--muted)">${tr('Tăng trưởng:', 'Growth:')}</small> <b>${ec.gr}</b></div>${xtra}`;
     };
     s += `<div class="cmp-t"><div class="cmp-t-hd">📊 ${tr('KINH TẾ & CHỈ SỐ PHÁT TRIỂN', 'ECONOMY & DEVELOPMENT INDICATORS')}</div><div class="cmp-grid" style="margin:4px 0 0"><div class="cmp-col">${fmtEc(ec1, en1)}</div><div class="cmp-col">${fmtEc(ec2, en2)}</div></div></div>`;
   }
@@ -633,6 +662,7 @@ function countryHTML(f, ll) {
   if (d) {
     s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div><div style="font-size:11px;color:var(--faint);margin:-10px 0 10px;text-align:right">${tr('Nguồn: World Bank WDI (2024) & thống kê chính thức', 'Source: World Bank WDI (2024) & official statistics')}</div>`;
     s += fmtSum(d.sum);
+    s += regimeHTML(f.en);
     s += econHTML(f.en);
     s += relHTML(f.en);
     s += `<div class="sec" style="margin-top:14px">${tr('5 TRỤ CỘT ĐỊA CHÍNH TRỊ', '5 GEOPOLITICAL PILLARS')}</div>`;
@@ -673,6 +703,7 @@ function countryHTML(f, ll) {
     if (ids.length) s += `<div class="sec">${tr('ĐIỂM NÓNG LIÊN QUAN', 'RELATED HOTSPOTS')}</div><div class="chips">${ids.map(chipH).join('')}</div>`;
   } else {
     s += `<p class="txt">${rg[1]}</p>`;
+    s += regimeHTML(f.en);
     s += econHTML(f.en);
     if (relH.length) s += `<div class="sec">${tr('ĐIỂM NÓNG LIÊN QUAN', 'RELATED HOTSPOTS')}</div><div class="chips">${relH.map(chipH).join('')}</div>`;
   }
@@ -1222,6 +1253,7 @@ function populateAlSel() {
 
   alSel.innerHTML = `<option value="">${tr('Không (Mặc định)', 'None (Default)')}</option>
     <optgroup label="${tr('📊 Bảng xếp hạng & Kinh tế Thế giới', '📊 World Rankings & Economy')}">
+      <option value="__regime__">🏛️ ${tr('Thể chế & Bộ máy Nhà nước', 'Government & Political Systems')}</option>
       <option value="__econ__">📊 ${tr('Phân nhóm Kinh tế & Thu nhập (WB/IMF)', 'Economic Development Tiers (WB/IMF)')}</option>
       ${rkOpts}
     </optgroup>
@@ -1315,6 +1347,15 @@ export function setAl(key, openLeaderboard = false) {
     $('#alX').onclick = () => setAl('');
     return;
   }
+  if (st.al === '__regime__') {
+    const rTypes = Object.values(REGIME_TYPES)
+      .map(t => `<span><span class="sq" style="background:${t.c}"></span>${enMode ? t.en : t.vi}</span>`)
+      .join('');
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${tr('Thể chế & Bộ máy Nhà nước trên Thế giới', 'Global Government & Political Systems')}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${tr('Phân loại theo hình thức chính thể hiến định và cơ chế thực thi quyền lực hành pháp – lập pháp trên thực tế (2026)', 'Classified by constitutional form of state and practical executive–legislative power structure (2026)')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${rTypes}</div>`;
+    lg.classList.add('show');
+    $('#alX').onclick = () => setAl('');
+    return;
+  }
   const a = AL[st.al];
   if (!a) {
     lg.classList.remove('show');
@@ -1343,6 +1384,16 @@ function tipLabel(h) {
         const rkStr = rk ? ` (#${rk.rank})` : '';
         return `${cName(h.en)}<small>${isEn() ? m.short_en : m.short_vi}: ${fmtRankVal(row[m.idx], m, isEn())}${rkStr}</small>`;
       }
+    }
+    if (st.al === '__regime__') {
+      const rg = REGIMES[h.en];
+      const rInfo = rg && REGIME_TYPES[rg.type];
+      if (rInfo) return `${cName(h.en)}<small>${isEn() ? rInfo.en : rInfo.vi}</small>`;
+    }
+    if (st.al === '__econ__') {
+      const ec = ECON[h.en];
+      const tInfo = ec && ECON_TIERS[ec.tier];
+      if (tInfo) return `${cName(h.en)}<small>${isEn() ? tInfo.en : tInfo.vi}</small>`;
     }
     return `${cName(h.en)}<small>${tr('quốc gia', 'country')}</small>`;
   }

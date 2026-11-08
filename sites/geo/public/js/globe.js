@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js';
-import { C0 } from '../data/countries.js?v=20261108h';
-import { LAYERS, H } from '../data/hotspots.js';
-import { AL, REF } from '../data/alliances.js';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108h';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108i';
+import { C0 } from '../data/countries.js?v=20261108i';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108i';
+import { AL, REF } from '../data/alliances.js?v=20261108i';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108i';
 import {
   $,
   norm,
@@ -24,6 +24,8 @@ import {
   ADMIN1_EN,
   ECON_TIERS,
   ECON,
+  REGIME_TYPES,
+  REGIMES,
   RANK_METRICS,
   RANK_DATA,
   rankValColor,
@@ -44,7 +46,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108h';
+} from './state.js?v=20261108i';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -675,6 +677,12 @@ function landColor(f) {
     const ec = ECON[f.en];
     const tInfo = ec && ECON_TIERS[ec.tier];
     if (tInfo) return mix(tInfo.c, C.dark ? 0.80 : 0.76);
+    return _lcMutedLand;
+  }
+  if (st.al === '__regime__') {
+    const rg = REGIMES[f.en];
+    const rInfo = rg && REGIME_TYPES[rg.type];
+    if (rInfo) return mix(rInfo.c, C.dark ? 0.80 : 0.76);
     return _lcMutedLand;
   }
   if (st.al) {
