@@ -469,6 +469,8 @@
   });
 
   function tone(freq, to, start, length, type, volume) {
+    // Sound off, or not started yet: there is no audio context to play on
+    if (!audio || !wanted || audio.state !== 'running') return;
     const t0 = audio.currentTime + start;
     const osc = audio.createOscillator();
     const gain = audio.createGain();
@@ -2305,7 +2307,18 @@
   let last = 0;
   let slow = 0;
 
+  // The next frame is booked first, so a bug in one frame can never stop the room
   function tick(now) {
+    requestAnimationFrame(tick);
+    try {
+      frameOnce(now);
+    } catch (e) {
+      if (!tick.failed) console.error(e);
+      tick.failed = true;
+    }
+  }
+
+  function frameOnce(now) {
     const dt = Math.min(0.1, (now - last) / 1000);
     last = now;
     updateLaser(dt);
@@ -2333,7 +2346,6 @@
       syncSky();
       syncNow();
     }
-    requestAnimationFrame(tick);
   }
 
   makeButtons();
