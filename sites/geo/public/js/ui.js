@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108n';
-import { C0, TOOLS } from '../data/countries.js?v=20261108n';
-import { RELC, REL } from '../data/religions.js?v=20261108n';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108n';
-import { iconSvg } from './icons.js?v=20261108n';
-import { AL, REF } from '../data/alliances.js?v=20261108n';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108o';
+import { C0, TOOLS } from '../data/countries.js?v=20261108o';
+import { RELC, REL } from '../data/religions.js?v=20261108o';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108o';
+import { iconSvg } from './icons.js?v=20261108o';
+import { AL, REF } from '../data/alliances.js?v=20261108o';
 import {
   $,
   norm,
@@ -63,7 +63,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261108n';
+} from './state.js?v=20261108o';
 import {
   cv,
   proj,
@@ -81,7 +81,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108n';
+} from './globe.js?v=20261108o';
 import {
   CONT,
   AMERICAS,
@@ -98,7 +98,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108n';
+} from '../data/continents.js?v=20261108o';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -838,15 +838,21 @@ function countryHTML(f, ll) {
     s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div><div style="font-size:11px;color:var(--faint);margin:-10px 0 10px;text-align:right">${tr('Nguồn: World Bank WDI (2024) & thống kê chính thức', 'Source: World Bank WDI (2024) & official statistics')}</div>`;
     const gov = regimeHTML(f.en), eco = econHTML(f.en), rel = relHTML(f.en);
     const admN = MAP.ADM1.some(a => a.country === f.en);
-    const secs = [['s-key', tr('Điểm chính', 'Key points')], ['s-sum', tr('Tổng quan', 'Overview')]];
+    const secs = [['s-sum', tr('Tổng quan', 'Overview')]];
     if (gov) secs.push(['s-gov', tr('Thể chế', 'Government')]);
     if (eco) secs.push(['s-eco', tr('Kinh tế', 'Economy')]);
     if (rel) secs.push(['s-rel', tr('Tôn giáo', 'Religion')]);
+    secs.push(['s-key', tr('5 trụ cột', '5 pillars')]);
     if (admN) secs.push(['s-adm', tr('Tỉnh thành', 'Provinces')]);
     secs.push(['s-more', tr('Liên quan', 'Related')]);
     s += secNavHTML(secs);
-    // key points first: the 5 pillars' one-line takeaways (already in the data); details open per row
-    s += `<div class="sec" id="s-key" style="margin-top:4px">${tr('ĐIỂM CHÍNH · 5 TRỤ CỘT ĐỊA CHÍNH TRỊ', 'KEY POINTS · 5 GEOPOLITICAL PILLARS')}</div>`;
+    s += `<div class="sec" id="s-sum" style="margin-top:4px">${tr('TỔNG QUAN', 'OVERVIEW')}</div>`;
+    s += fmtSum(d.sum, true);
+    if (gov) s += `<div id="s-gov">${gov}</div>`;
+    if (eco) s += `<div id="s-eco">${eco}</div>`;
+    if (rel) s += `<div id="s-rel">${rel}</div>`;
+    // the 5 pillars: one-line takeaways, details open per row
+    s += `<div class="sec" id="s-key" style="margin-top:14px">${tr('5 TRỤ CỘT ĐỊA CHÍNH TRỊ', '5 GEOPOLITICAL PILLARS')}</div>`;
     s += `<div class="tools" id="tl">`;
     d.t.forEach((t, i) => {
       const r = t[1] ? t[0] : 'n';
@@ -856,11 +862,6 @@ function countryHTML(f, ll) {
         : `<div class="tool">${head}</div>`;
     });
     s += `</div>`;
-    s += `<div class="sec" id="s-sum">${tr('TỔNG QUAN', 'OVERVIEW')}</div>`;
-    s += fmtSum(d.sum, true);
-    if (gov) s += `<div id="s-gov">${gov}</div>`;
-    if (eco) s += `<div id="s-eco">${eco}</div>`;
-    if (rel) s += `<div id="s-rel">${rel}</div>`;
 
     // Comparison dropdown
     const opts = MAP.F.filter(x => x.en !== f.en)
@@ -1085,7 +1086,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261108n'), import('../data/sea_info.js?v=20261108n')])
+    Promise.all([import('../data/sea_story.js?v=20261108o'), import('../data/sea_info.js?v=20261108o')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 
