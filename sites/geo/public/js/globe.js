@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108l';
-import { C0 } from '../data/countries.js?v=20261108l';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108l';
-import { AL, REF } from '../data/alliances.js?v=20261108l';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108l';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108m';
+import { C0 } from '../data/countries.js?v=20261108m';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108m';
+import { AL, REF } from '../data/alliances.js?v=20261108m';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108m';
 import {
   $,
   norm,
@@ -10,6 +10,7 @@ import {
   isEn,
   tr,
   cName,
+  EN_SHORT,
   hName,
   layName,
   capName,
@@ -47,7 +48,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108l';
+} from './state.js?v=20261108m';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -251,6 +252,7 @@ function enrichFeatures(features) {
       f.mainAr = f.ar;
       f.mainCen = f.cen;
       f.subCens = [];
+      f.isleN = 0;
     } else {
       let bestPart = parts[0], bestAr = -1;
       const subCens = [];
@@ -266,6 +268,7 @@ function enrichFeatures(features) {
       f.mainAr = bestAr;
       f.mainCen = d3.geoCentroid(bestPart);
       f.subCens = subCens;
+      f.isleN = subCens.length; // the first isleN entries are centroids of separate parts (islands, exclaves)
     }
     if (f.mainAr > 0.004) {
       const ring = f.mainPart.coordinates[0];
@@ -621,10 +624,23 @@ export function upgradeAdmin1Data(admGeo) {
 }
 
 // ---------- viewport & theme helpers
+// Centre of the free area: between the layers panel (left) and the card (right) on desktop; above the bottom sheet
+// on phones. Uses the panels' resting sizes, not their animated positions.
 function center() {
   const mob = W < 760;
-  const open = document.getElementById('panel').classList.contains('show');
-  return [W / 2 - (open && !mob ? 200 : 0), mob ? (open ? Hh * 0.22 : Hh * 0.45) : Hh / 2];
+  const panel = document.getElementById('panel');
+  const lay = document.getElementById('layers');
+  const open = panel.classList.contains('show');
+  if (mob) {
+    const sheet = open ? panel : lay && !lay.classList.contains('hide') ? lay : null;
+    if (!sheet) return [W / 2, Hh * 0.45];
+    const top = Hh - (sheet.offsetHeight || Hh * 0.5) - 8;
+    return [W / 2, Math.max(70 + R0 * 0.35, (64 + top) / 2)];
+  }
+  let left = 0, right = W;
+  if (lay && !lay.classList.contains('hide') && !lay.classList.contains('fold') && lay.offsetWidth) left = 16 + lay.offsetWidth;
+  if (open) right = W - 16 - panel.offsetWidth;
+  return [(left + right) / 2, Hh / 2];
 }
 
 export function resize() {
@@ -852,6 +868,17 @@ export function inBB(f, ll) {
   return ll[0] >= b[0][0] - 0.5 || ll[0] <= b[1][0] + 0.5;
 }
 
+// the mainland's outer ring cut to ~200 points: enough to test "is this screen point inside the country" for a label
+function coarseMain(f) {
+  if (f.mainCoarse) return f.mainCoarse;
+  const ring = (f.mainPart || f).coordinates ? (f.mainPart || f).coordinates[0] : null;
+  if (!ring) return (f.mainCoarse = f.mainPart || f);
+  const step = Math.max(1, Math.ceil(ring.length / 200));
+  const pts = ring.filter((_, i) => i % step === 0);
+  pts.push(ring[0]);
+  return (f.mainCoarse = { type: 'Polygon', coordinates: [pts] });
+}
+
 function labelCands(cx, cy, r) {
   const F = MAP.F;
   const rot = proj.rotate();
@@ -872,9 +899,35 @@ function labelCands(cx, cy, r) {
     '|' +
     st.lang +
     '|' +
-    ((st.sel && st.sel.en) || '');
+    ((st.sel && st.sel.en) || '') +
+    (st.moving ? '|m' : '');
   if (MAP.LC.key === key) return MAP.LC.list;
   const center = proj.invert([cx, cy]);
+  // lon/lat box of the screen (null when the whole globe fits, then every near-side point is on screen anyway)
+  let viewBB = null;
+  {
+    const pts = [[0, 0], [W / 2, 0], [W, 0], [W, Hh / 2], [W, Hh], [W / 2, Hh], [0, Hh], [0, Hh / 2]].map(q =>
+      Math.hypot(q[0] - cx, q[1] - cy) < r * 0.999 ? proj.invert(q) : null
+    );
+    if (pts.every(Boolean)) {
+      const lats = pts.map(q => q[1]);
+      let lons = pts.map(q => q[0]);
+      const span = Math.max(...lons) - Math.min(...lons);
+      const wrap = span > 180;
+      if (wrap) lons = lons.map(x => (x < 0 ? x + 360 : x));
+      viewBB = { w: Math.min(...lons), e: Math.max(...lons), s: Math.min(...lats), n: Math.max(...lats), wrap };
+    }
+  }
+  const mainInView = f => {
+    if (!viewBB) return true;
+    const b = f.mainBB || (f.mainBB = d3.geoBounds(f.mainPart || f));
+    if (b[1][1] < viewBB.s || b[0][1] > viewBB.n) return false;
+    let w = b[0][0], e = b[1][0];
+    if (e < w) e += 360; // box crosses the antimeridian
+    const vw = viewBB.w, ve = viewBB.e;
+    const hit = (a0, a1) => a0 <= ve && a1 >= vw;
+    return hit(w, e) || hit(w + 360, e + 360) || hit(w - 360, e - 360);
+  };
   const inView = p => p && p[0] > 8 && p[0] < W - 8 && p[1] > 8 && p[1] < Hh - 8;
   if (st.spin) {
     return F.filter(f => (f.ar * k * k >= 0.0022 || f === st.sel) && d3.geoDistance(f.mainCen || f.cen, center) < Math.PI / 2 - 0.05)
@@ -899,17 +952,34 @@ function labelCands(cx, cy, r) {
       if (inView(q)) p = q;
     }
     if (!p && f.subCens && f.subCens.length) {
-      let bestD = 1e9;
-      for (const sc of f.subCens) {
-        const d = d3.geoDistance(sc, center);
-        if (d < maxAng - 0.02 && d < bestD) {
-          const q = proj(sc);
-          if (inView(q)) {
-            bestD = d;
-            p = q;
+      // points inside the mainland first, then (only if the mainland is out of view) an island or exclave, so a
+      // half-visible country is never named on its offshore island (China on Hainan when zoomed to Vietnam)
+      const nearest = (from, to) => {
+        let best = null, bestD = 1e9;
+        for (let i = from; i < to; i++) {
+          const sc = f.subCens[i];
+          const d = d3.geoDistance(sc, center);
+          if (d < maxAng - 0.02 && d < bestD) {
+            const q = proj(sc);
+            if (inView(q)) {
+              bestD = d;
+              best = q;
+            }
           }
         }
+        return best;
+      };
+      const isleN = f.isleN || 0;
+      p = nearest(isleN, f.subCens.length);
+      if (!p && !st.moving && f.mainAr > 0.004 && d3.geoDistance(mc, center) < maxAng) {
+        // mainland centre is on this side but off screen: try the screen edge point toward it (still frames only, so
+        // panning costs no more than before)
+        const q = proj(mc);
+        const ex = Math.max(40, Math.min(W - 40, q[0])), ey = Math.max(96, Math.min(Hh - 40, q[1])); // clear of the top bar
+        const ll = proj.invert([ex, ey]);
+        if (ll && d3.geoContains(coarseMain(f), ll)) p = [ex, ey];
       }
+      if (!p && isleN && !mainInView(f)) p = nearest(0, isleN);
     }
     if (!p) continue;
     list.push({ f, p, w: f.ar + (f === st.sel ? 1e6 : 0) });
@@ -967,7 +1037,7 @@ function compactCountryLbl(s) {
   if (/^Cộng hòa\s+(.+)$/i.test(s)) v = s.replace(/^Cộng hòa\s+/i, 'CH ');
   else if (/^Các Tiểu vương quốc Ả Rập Thống nhất$/i.test(s)) v = 'UAE';
   else if (/^Bosnia và Herzegovina$/i.test(s)) v = 'Bosnia & Herz.';
-  else v = null;
+  else v = EN_SHORT[s] || null;
   _compactLblCache.set(s, v);
   return v;
 }
@@ -1271,7 +1341,10 @@ export function render(now) {
   } else {
     // continent outlines (coastline per continent + dashed land boundaries between continents)
     const act = [st.hov, st.sel].filter(o => o && o.kind === 'cont');
-    const baseW = Math.min(2.4, 1.5 + k * 0.12);
+    // a heatmap or bloc colouring is the subject: fade the outlines so they don't fight its colours
+    const dimCont = !!st.al && !act.length;
+    const baseW = dimCont ? 1 : Math.min(2.4, 1.5 + k * 0.12);
+    if (dimCont) ctx.globalAlpha = 0.28;
     ctx.lineJoin = 'round';
     for (const key of CONT_KEYS) {
       ctx.beginPath();
@@ -1293,6 +1366,7 @@ export function render(now) {
     ctx.stroke();
     ctx.setLineDash([]);
     ctx.lineJoin = 'miter';
+    ctx.globalAlpha = 1;
   }
 
   if (sc) {
@@ -1474,7 +1548,9 @@ export function render(now) {
     const c = hc(h);
     const act = st.sel === h || st.hov === h;
     if (h.t === 'mountain' || h.mtn) {
+      if (st.al && !act) ctx.globalAlpha = 0.3; // faded under a heatmap or bloc colouring
       drawMountainChevrons(h, act ? (C.dark ? '#D2A978' : '#6B4423') : C.dark ? '#B08A5E' : '#8A6540', act);
+      ctx.globalAlpha = 1;
       return;
     }
     ctx.beginPath();

@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600&family=Lora:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   <link rel="preload" href="assets/map/world-110m.json" as="fetch" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261108l">
+  <link rel="stylesheet" href="style.css?v=20261108m">
 </head>
 <body>
   <div id="stage"><canvas id="cv" aria-label="Quả địa cầu tương tác"></canvas></div>
@@ -28,8 +28,8 @@
     <div id="brand" class="card"><b id="brandTitle">Địa cầu địa chính trị</b><span id="brandSub">theo phong cách Tim Marshall</span></div>
     <div id="search">
       <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" placeholder="Tìm quốc gia, tỉnh thành, thủ đô, đảo..." autocomplete="off">
-      <div id="sugg" class="card"></div>
+      <input id="q" role="combobox" aria-autocomplete="list" aria-controls="sugg" aria-label="Tìm kiếm" placeholder="Tìm quốc gia, tỉnh thành, thủ đô, đảo..." autocomplete="off">
+      <div id="sugg" class="card" role="listbox"></div>
     </div>
     <button class="ibtn" id="layBtn" aria-label="Lớp bản đồ" title="Lớp bản đồ">
       <svg class="i" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5z"/><path d="m3 13 9 5 9-5"/></svg>
@@ -43,37 +43,52 @@
     </a>
   </div>
   <div id="layers" class="card">
-    <div class="ltop">
-      <span id="lblLayers">LỚP BẢN ĐỒ</span>
-      <div class="lbtns">
-        <button class="lbtn" id="lyDef" type="button">Mặc định</button>
-        <button class="lbtn" id="lyOff" type="button">Tắt hết</button>
-      </div>
+    <div class="grab" data-sheet="layers" role="button" tabindex="0" aria-label="Kéo để đổi kích thước"><i></i></div>
+    <div class="ltabs" role="tablist" aria-label="Lớp bản đồ">
+      <button type="button" role="tab" class="ltab" id="tabLy" data-tab="layers" aria-controls="paneLy" aria-selected="true">Lớp</button>
+      <button type="button" role="tab" class="ltab" id="tabCo" data-tab="color" aria-controls="paneCo" aria-selected="false">Tô màu<i class="ltab-dot" aria-hidden="true"></i></button>
+      <button type="button" role="tab" class="ltab" id="tabVw" data-tab="views" aria-controls="paneVw" aria-selected="false">Góc nhìn</button>
     </div>
-    <details class="lgrp" open>
-      <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_hot"></svg><span id="grpHot">Điểm nóng &amp; Chiến lược</span></span><small id="cntHot"></small></summary>
-      <div id="lyHot" class="litems"></div>
-    </details>
-    <details class="lgrp" open>
-      <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_admin"></svg><span id="grpAdmin">Hành chính, Đô thị &amp; Đảo</span></span><small id="cntAdmin"></small></summary>
-      <div id="lyAdmin" class="litems"></div>
-    </details>
-    <details class="lgrp" open>
-      <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_nat"></svg><span id="grpNat">Địa lý Tự nhiên</span></span><small id="cntNat"></small></summary>
-      <div id="lyNat" class="litems"></div>
-    </details>
-    <details class="lgrp">
-      <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_infra"></svg><span id="grpInfra">Hạ tầng, Quân sự &amp; Tài nguyên</span></span><small id="cntInfra"></small></summary>
-      <div id="lyInfra" class="litems"></div>
-    </details>
-    <div class="lh" id="lhAl">TÔ MÀU THEO KHỐI / XẾP HẠNG</div>
-    <select id="alSel" aria-label="Tô màu theo liên minh"><option value="">Không</option></select>
-    <div class="lh" id="lhRk">BẢNG XẾP HẠNG THẾ GIỚI (HEATMAP)</div>
-    <div class="chips" id="rankChips"></div>
-    <div class="lh" id="lhQv">GÓC NHÌN NHANH</div>
-    <div class="chips" id="qviews"></div>
-    <div class="lh" id="lhRef">ĐƯỜNG THAM CHIẾU</div>
-    <div class="chips" id="refs"></div>
+    <div class="lpane" id="paneLy" role="tabpanel" aria-labelledby="tabLy" data-pane="layers">
+      <div class="ltop">
+        <span id="lblLayers">LỚP BẢN ĐỒ</span>
+        <div class="lbtns">
+          <button class="lbtn" id="lyDef" type="button">Mặc định</button>
+          <button class="lbtn" id="lyOff" type="button">Tắt hết</button>
+        </div>
+      </div>
+      <details class="lgrp" open>
+        <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_hot"></svg><span id="grpHot">Điểm nóng &amp; Chiến lược</span></span><small id="cntHot"></small></summary>
+        <div id="lyHot" class="litems"></div>
+      </details>
+      <details class="lgrp" open>
+        <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_admin"></svg><span id="grpAdmin">Hành chính, Đô thị &amp; Đảo</span></span><small id="cntAdmin"></small></summary>
+        <div id="lyAdmin" class="litems"></div>
+      </details>
+      <details class="lgrp" open>
+        <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_nat"></svg><span id="grpNat">Địa lý Tự nhiên</span></span><small id="cntNat"></small></summary>
+        <div id="lyNat" class="litems"></div>
+      </details>
+      <details class="lgrp">
+        <summary><span class="gname"><svg class="i" viewBox="0 0 24 24" data-g="g_infra"></svg><span id="grpInfra">Hạ tầng, Quân sự &amp; Tài nguyên</span></span><small id="cntInfra"></small></summary>
+        <div id="lyInfra" class="litems"></div>
+      </details>
+    </div>
+    <div class="lpane" id="paneCo" role="tabpanel" aria-labelledby="tabCo" data-pane="color" hidden>
+      <div class="lh" id="lhRk">BẢNG XẾP HẠNG THẾ GIỚI</div>
+      <div class="chips" id="rankChips"></div>
+      <div class="lh" id="lhSys">KINH TẾ &amp; THỂ CHẾ</div>
+      <div class="chips" id="sysChips"></div>
+      <div class="lh" id="lhBloc">KHỐI &amp; LIÊN MINH</div>
+      <div class="chips" id="blocChips"></div>
+      <button type="button" class="lbtn lco-off" id="coOff">Tắt tô màu</button>
+    </div>
+    <div class="lpane" id="paneVw" role="tabpanel" aria-labelledby="tabVw" data-pane="views" hidden>
+      <div class="lh" id="lhQv">GÓC NHÌN NHANH</div>
+      <div class="chips" id="qviews"></div>
+      <div class="lh" id="lhRef">ĐƯỜNG THAM CHIẾU</div>
+      <div class="chips" id="refs"></div>
+    </div>
   </div>
   <div id="bl">
     <div id="legend" class="card"></div>
@@ -86,12 +101,14 @@
     <button class="ibtn" id="theme" aria-label="Đổi giao diện sáng tối" title="Sáng / tối"><svg class="i" viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg></button>
   </div>
   <div id="panel" class="card">
+    <div class="grab" data-sheet="panel" role="button" tabindex="0" aria-label="Kéo để đổi kích thước"><i></i></div>
+    <button id="pshare" type="button" aria-label="Chép liên kết" title="Chép liên kết tới thẻ này"><svg class="i" viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1"/><path d="M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg><span aria-live="polite"></span></button>
     <button id="pclose" aria-label="Đóng"><svg class="i" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     <div id="pbody"></div>
   </div>
   <div id="tip"></div>
   <div id="hint">Kéo để xoay · cuộn để phóng to · bấm vào quốc gia, tỉnh thành, thủ đô hoặc điểm nóng</div>
   <script src="assets/vendor/d3-geo.min.js"></script>
-  <script type="module" src="js/main.js?v=20261108l"></script>
+  <script type="module" src="js/main.js?v=20261108m"></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108l';
-import { C0, TOOLS } from '../data/countries.js?v=20261108l';
-import { RELC, REL } from '../data/religions.js?v=20261108l';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108l';
-import { iconSvg } from './icons.js?v=20261108l';
-import { AL, REF } from '../data/alliances.js?v=20261108l';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108m';
+import { C0, TOOLS } from '../data/countries.js?v=20261108m';
+import { RELC, REL } from '../data/religions.js?v=20261108m';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108m';
+import { iconSvg } from './icons.js?v=20261108m';
+import { AL, REF } from '../data/alliances.js?v=20261108m';
 import {
   $,
   norm,
@@ -40,6 +40,7 @@ import {
   RANK_METRICS,
   RANK_DATA,
   rankValColor,
+  rankRamp,
   fmtRankVal,
   MEM,
   HS,
@@ -60,8 +61,9 @@ import {
   CITY_BY_ID,
   ISL_BY_ID,
   ADM1_BY_ID,
-  LAKE_BY_ID
-} from './state.js?v=20261108l';
+  LAKE_BY_ID,
+  SEA_BY_EN
+} from './state.js?v=20261108m';
 import {
   cv,
   proj,
@@ -79,7 +81,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108l';
+} from './globe.js?v=20261108m';
 import {
   CONT,
   AMERICAS,
@@ -96,7 +98,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108l';
+} from '../data/continents.js?v=20261108m';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -272,25 +274,184 @@ function fmtCoord(pt) {
 
 let activeView = null;
 
+// ---------- shareable links: the URL hash keeps the open card and the map colouring, e.g. #c=Vietnam&color=happiness
+const AL_TO_HASH = k => (!k ? '' : k.startsWith('__rank_') ? k.slice(7, -2) : k === '__econ__' ? 'income-group' : k === '__regime__' ? 'government' : k);
+const HASH_TO_AL = v =>
+  !v ? '' : RANK_METRICS[v] ? `__rank_${v}__` : v === 'income-group' ? '__econ__' : v === 'government' ? '__regime__' : AL[v] ? v : '';
+let applyingHash = false;
+let lastSelHash = '';
+
+function selHash() {
+  const v = activeView;
+  if (!v || !P.classList.contains('show')) return '';
+  const e = encodeURIComponent;
+  if (v.type === 'country') return 'c=' + e(v.f.en);
+  if (v.type === 'cmp') return 'c=' + e(v.en1) + '&vs=' + e(v.en2);
+  if (v.type === 'adm1') return 'adm1=' + e(v.f.id);
+  if (v.type === 'urban') return `${v.o.kind}=` + e(v.o.id);
+  if (v.type === 'hot') return 'h=' + e(v.h.id);
+  if (v.type === 'cont') return 'cont=' + e(v.o.key);
+  if (v.type === 'sea') return 'sea=' + e(v.o.en);
+  if (v.type === 'rank') return 'rank=' + e(v.metricKey);
+  return '';
+}
+
+let hashReady = false; // nothing is written until the link the page was opened with has been read
+function writeHash() {
+  if (applyingHash || !hashReady) return;
+  const sel = selHash();
+  const col = AL_TO_HASH(st.al);
+  const h = [sel, col && !(activeView && activeView.type === 'rank' && st.al === `__rank_${activeView.metricKey}__`) ? 'color=' + encodeURIComponent(col) : '']
+    .filter(Boolean)
+    .join('&');
+  const url = location.pathname + location.search + (h ? '#' + h : '');
+  if (url === location.pathname + location.search + location.hash) return;
+  try {
+    // a new place is a new history entry (Back returns to the last one); a colour change just updates the link
+    if (sel !== lastSelHash) history.pushState(null, '', url);
+    else history.replaceState(null, '', url);
+  } catch (e) {}
+  lastSelHash = sel;
+}
+
+const layerFor = { cap: 'capitals', city: 'cities', isl: 'islands', adm1: 'admin1', lake: 'river' };
+function ensureLayer(key) {
+  if (key && !st.on[key]) {
+    st.on[key] = true;
+    buildLayers();
+  }
+}
+
+// Open what the URL hash names. Provinces and lakes arrive with the background map files, so wait for them.
+export function applyHash(tries = 0) {
+  const p = new URLSearchParams(location.hash.slice(1));
+  applyingHash = true;
+  try {
+    if (tries === 0) {
+      const al = HASH_TO_AL(p.get('color') || '');
+      if (al !== st.al && (p.has('color') || location.hash)) setAl(al);
+    }
+    let o = null, waiting = false;
+    if (p.get('c') && p.get('vs') && BY[p.get('c')] && BY[p.get('vs')]) {
+      st.sel = BY[p.get('c')];
+      openPanel(compareHTML(p.get('c'), p.get('vs')));
+      flyTo(st.sel.mainCen || st.sel.cen, fitK(st.sel));
+    } else if (p.get('rank') && RANK_METRICS[p.get('rank')]) {
+      openRanking(p.get('rank'));
+    } else {
+      if (p.get('c')) o = BY[p.get('c')];
+      else if (p.get('cap')) o = CAP_BY_ID[p.get('cap')];
+      else if (p.get('city')) o = CITY_BY_ID[p.get('city')];
+      else if (p.get('isl')) o = ISL_BY_ID[p.get('isl')];
+      else if (p.get('h')) o = HS[p.get('h')];
+      else if (p.get('cont')) o = CONT_OBJS[p.get('cont')];
+      else if (p.get('sea')) o = SEA_BY_EN[p.get('sea')];
+      else if (p.get('adm1')) (o = ADM1_BY_ID[p.get('adm1')]), (waiting = !o);
+      else if (p.get('lake')) (o = LAKE_BY_ID[p.get('lake')]), (waiting = !o);
+      if (o) {
+        const kind = p.get('adm1') ? 'adm1' : o.kind;
+        ensureLayer(layerFor[kind] || (o.t && LAYERS[o.t] ? o.t : null));
+        if (o.kind === 'cont') ensureLayer('continents');
+        select(o, true);
+      } else if (waiting && tries < 40) {
+        setTimeout(() => applyHash(tries + 1), 500);
+      } else if (!location.hash.replace('#', '') || ![...p.keys()].some(k => k !== 'color')) {
+        if (P.classList.contains('show')) closePanel();
+      }
+    }
+  } finally {
+    applyingHash = false;
+  }
+  lastSelHash = selHash();
+  if (!hashReady && !(tries === 0 && (p.get('adm1') || p.get('lake')) && !P.classList.contains('show'))) {
+    hashReady = true;
+    writeHash();
+  }
+}
+
+async function copyLink(btn) {
+  const url = location.href;
+  let ok = false;
+  // phones: the system share sheet (copy, messages, notes…)
+  if (navigator.share && matchMedia('(pointer: coarse)').matches) {
+    try {
+      await navigator.share({ title: document.title, url });
+      return;
+    } catch (e) {
+      if (e && e.name === 'AbortError') return;
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    ok = true;
+  } catch (e) {
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    document.body.appendChild(ta);
+    ta.select();
+    try {
+      ok = document.execCommand('copy');
+    } catch (e2) {}
+    ta.remove();
+  }
+  if (!ok) {
+    // no clipboard access: show the link so it can be copied by hand
+    window.prompt(tr('Chép liên kết này:', 'Copy this link:'), url);
+    return;
+  }
+  const lbl = btn.querySelector('span');
+  btn.classList.toggle('done', ok);
+  lbl.textContent = ok ? tr('Đã chép', 'Copied') : tr('Không chép được', "Couldn't copy");
+  clearTimeout(btn._t);
+  btn._t = setTimeout(() => {
+    btn.classList.remove('done');
+    lbl.textContent = '';
+  }, 1800);
+}
+
+// On desktop a card folds the layers panel away (the layers button brings it back) so the globe has room; the
+// rankings leaderboard keeps it, since it is usually opened from the panel's own "Colour by" tab.
+let keepLayers = false; // the reader brought the layers back while a card is open: don't fold them again
+function setFold(on) {
+  const lay = $('#layers');
+  lay.classList.toggle('fold', on);
+  $('#layBtn').classList.toggle('on', !lay.classList.contains('hide') && !on);
+  $('#layBtn').classList.toggle('folded', on);
+}
+
 export function openPanel(html) {
   PB.innerHTML = html;
   PB.scrollTop = 0;
   P.classList.add('show');
   document.body.classList.add('panel-open');
-  if (isMobileViewport() && !$('#layers').classList.contains('hide')) {
-    $('#layers').classList.add('hide');
-    $('#layBtn').classList.remove('on');
+  if (isMobileViewport()) {
+    if (!$('#layers').classList.contains('hide')) {
+      $('#layers').classList.add('hide');
+      $('#layBtn').classList.remove('on');
+      document.body.classList.remove('layers-open');
+    }
+    if (!P.dataset.snap || P.dataset.snap === 'peek') {
+      P.dataset.snap = 'half';
+      P.style.height = SNAPS().half + 'px';
+    }
+  } else if (!$('#layers').classList.contains('hide')) {
+    setFold(!keepLayers && (!(activeView && activeView.type === 'rank') || $('#layers').classList.contains('fold')));
   }
   wire();
+  writeHash();
   recenter();
 }
 
 export function closePanel() {
+  const wasOpen = P.classList.contains('show');
   P.classList.remove('show');
   document.body.classList.remove('panel-open');
   st.sel = null;
   activeView = null;
   st.dirty = true;
+  if ($('#layers').classList.contains('fold')) setFold(false);
+  keepLayers = false;
+  if (wasOpen) writeHash();
   recenter();
 }
 
@@ -328,13 +489,26 @@ function C_(en) {
   return isEn() ? C0_EN[en] || C0[en] : C0[en];
 }
 
-function fmtSum(txt) {
+function fmtSum(txt, fold = false) {
   if (!txt) return '';
   const paras = String(txt)
     .split(/\n+/)
     .map(p => p.trim())
     .filter(Boolean);
-  return `<div class="sum">${paras.map(p => `<p>${p}</p>`).join('')}</div>`;
+  if (!fold || paras.length < 2) return `<div class="sum">${paras.map(p => `<p>${p}</p>`).join('')}</div>`;
+  // long essays: first paragraph, the rest behind "Read more"
+  return `<div class="sum folded" id="sumBox"><p>${paras[0]}</p><div class="sum-more" id="sumMore" hidden>${paras
+    .slice(1)
+    .map(p => `<p>${p}</p>`)
+    .join('')}</div><button type="button" class="sum-btn" id="sumBtn" aria-expanded="false" aria-controls="sumMore">${tr('Đọc tiếp ↓', 'Read more ↓')}</button></div>`;
+}
+
+// sticky row of jump chips at the top of a long card; sections are [id, label] pairs present in the card
+function secNavHTML(secs) {
+  if (secs.length < 3) return '';
+  return `<nav class="secnav" id="secNav" aria-label="${tr('Các phần của thẻ', 'Card sections')}">${secs
+    .map(([id, lbl]) => `<button type="button" class="secchip" data-sec="${id}">${lbl}</button>`)
+    .join('')}</nav>`;
 }
 
 function econHTML(en) {
@@ -662,17 +836,31 @@ function countryHTML(f, ll) {
   s += contLineHTML(f);
   if (d) {
     s += `<div class="stats"><div class="stat"><small>${tr('Thủ đô', 'Capital')}</small><div>${d.cap}</div></div><div class="stat"><small>${tr('Dân số', 'Population')}</small><div>${d.pop}</div></div><div class="stat"><small>${tr('Diện tích', 'Area')}</small><div>${d.area}</div></div></div><div style="font-size:11px;color:var(--faint);margin:-10px 0 10px;text-align:right">${tr('Nguồn: World Bank WDI (2024) & thống kê chính thức', 'Source: World Bank WDI (2024) & official statistics')}</div>`;
-    s += fmtSum(d.sum);
-    s += regimeHTML(f.en);
-    s += econHTML(f.en);
-    s += relHTML(f.en);
-    s += `<div class="sec" style="margin-top:14px">${tr('5 TRỤ CỘT ĐỊA CHÍNH TRỊ', '5 GEOPOLITICAL PILLARS')}</div>`;
+    const gov = regimeHTML(f.en), eco = econHTML(f.en), rel = relHTML(f.en);
+    const admN = MAP.ADM1.some(a => a.country === f.en);
+    const secs = [['s-key', tr('Điểm chính', 'Key points')], ['s-sum', tr('Tổng quan', 'Overview')]];
+    if (gov) secs.push(['s-gov', tr('Thể chế', 'Government')]);
+    if (eco) secs.push(['s-eco', tr('Kinh tế', 'Economy')]);
+    if (rel) secs.push(['s-rel', tr('Tôn giáo', 'Religion')]);
+    if (admN) secs.push(['s-adm', tr('Tỉnh thành', 'Provinces')]);
+    secs.push(['s-more', tr('Liên quan', 'Related')]);
+    s += secNavHTML(secs);
+    // key points first: the 5 pillars' one-line takeaways (already in the data); details open per row
+    s += `<div class="sec" id="s-key" style="margin-top:4px">${tr('ĐIỂM CHÍNH · 5 TRỤ CỘT ĐỊA CHÍNH TRỊ', 'KEY POINTS · 5 GEOPOLITICAL PILLARS')}</div>`;
     s += `<div class="tools" id="tl">`;
     d.t.forEach((t, i) => {
       const r = t[1] ? t[0] : 'n';
-      s += `<div class="tool"><div class="em">${['🛡️', '⚓', '🌊', '📏', '💧'][i]}</div><div><div class="nm">${toolsArr[i][0]}</div><div class="sh">${t[1] || tr('Không có điểm đáng chú ý', 'No notable feature')}</div></div><span class="rt ${r}">${rtl(r)}</span>${t[2] ? `<div class="dt">${t[2]}</div>` : ''}</div>`;
+      const head = `<div class="em">${['🛡️', '⚓', '🌊', '📏', '💧'][i]}</div><div><div class="nm">${toolsArr[i][0]}</div><div class="sh">${t[1] || tr('Không có điểm đáng chú ý', 'No notable feature')}</div></div><span class="rt ${r}">${rtl(r)}</span>`;
+      s += t[2]
+        ? `<details class="tool"><summary>${head}</summary><div class="dt">${t[2]}</div></details>`
+        : `<div class="tool">${head}</div>`;
     });
     s += `</div>`;
+    s += `<div class="sec" id="s-sum">${tr('TỔNG QUAN', 'OVERVIEW')}</div>`;
+    s += fmtSum(d.sum, true);
+    if (gov) s += `<div id="s-gov">${gov}</div>`;
+    if (eco) s += `<div id="s-eco">${eco}</div>`;
+    if (rel) s += `<div id="s-rel">${rel}</div>`;
 
     // Comparison dropdown
     const opts = MAP.F.filter(x => x.en !== f.en)
@@ -687,7 +875,7 @@ function countryHTML(f, ll) {
     );
     if (admList.length) {
       const isOpen = f.en === 'Vietnam' || f.en === 'United States of America' ? ' open' : '';
-      s += `<details class="adm-list"${isOpen}><summary><span>${tr('BANG / TỈNH THÀNH', 'STATES / PROVINCES')} (${admList.length})</span><small style="font-weight:400">${tr('bấm để mở', 'click to expand')}</small></summary><div class="chips">${admList.map(chipAdm1).join('')}</div></details>`;
+      s += `<details class="adm-list" id="s-adm"${isOpen}><summary><span>${tr('BANG / TỈNH THÀNH', 'STATES / PROVINCES')} (${admList.length})</span><small style="font-weight:400">${tr('bấm để mở', 'click to expand')}</small></summary><div class="chips">${admList.map(chipAdm1).join('')}</div></details>`;
     }
 
     // Capitals, Cities & Islands belonging to this country
@@ -696,6 +884,7 @@ function countryHTML(f, ll) {
       ...CITIES.filter(ct => ct.country === f.en),
       ...ISLANDS.filter(isl => isl.country === f.en)
     ];
+    s += `<div id="s-more"></div>`;
     if (uList.length) {
       s += `<div class="sec">${tr('ĐÔ THỊ, CẢNG & ĐẢO CHIẾN LƯỢC', 'STRATEGIC CITIES, PORTS & ISLANDS')}</div><div class="chips">${uList.map(chipUrban).join('')}</div>`;
     }
@@ -896,7 +1085,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261108l'), import('../data/sea_info.js?v=20261108l')])
+    Promise.all([import('../data/sea_story.js?v=20261108m'), import('../data/sea_info.js?v=20261108m')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 
@@ -1225,6 +1414,46 @@ function wire() {
     cmpSwap.onclick = () => openPanel(compareHTML(cmpSwap.dataset.c1, cmpSwap.dataset.c2));
   }
 
+  const sumBtn = $('#sumBtn');
+  if (sumBtn)
+    sumBtn.onclick = () => {
+      const more = $('#sumMore');
+      more.hidden = !more.hidden;
+      $('#sumBox').classList.toggle('folded', more.hidden);
+      sumBtn.setAttribute('aria-expanded', more.hidden ? 'false' : 'true');
+      sumBtn.textContent = more.hidden ? tr('Đọc tiếp ↓', 'Read more ↓') : tr('Thu gọn ↑', 'Show less ↑');
+    };
+  const nav = $('#secNav');
+  if (nav) {
+    const chips = [...nav.querySelectorAll('[data-sec]')];
+    const targets = chips.map(c => document.getElementById(c.dataset.sec));
+    chips.forEach((c, i) => {
+      c.onclick = () => {
+        const t = targets[i];
+        if (!t) return;
+        if (t.tagName === 'DETAILS') t.open = true;
+        PB.scrollTo({ top: t.offsetTop - nav.offsetHeight - 8, behavior: 'smooth' });
+      };
+    });
+    let navRaf = 0;
+    const mark = () => {
+      navRaf = 0;
+      const y = PB.scrollTop + nav.offsetHeight + 24;
+      let cur = 0;
+      targets.forEach((t, i) => {
+        if (t && t.offsetTop <= y) cur = i;
+      });
+      chips.forEach((c, i) => c.classList.toggle('on', i === cur));
+      const on = chips[cur];
+      if (on && (on.offsetLeft < nav.scrollLeft || on.offsetLeft + on.offsetWidth > nav.scrollLeft + nav.clientWidth))
+        nav.scrollLeft = on.offsetLeft - 8;
+    };
+    PB.onscroll = () => {
+      if (!navRaf) navRaf = requestAnimationFrame(mark);
+    };
+    mark();
+  } else PB.onscroll = null;
+
   const mb = $('#moreBtn');
   if (mb)
     mb.onclick = () => {
@@ -1330,75 +1559,64 @@ export function buildLayers() {
     );
 }
 
+// "Colour by" tab: one chip per colouring (rankings open their leaderboard; the rest toggle on and off)
 function populateAlSel() {
-  const alSel = $('#alSel');
-  if (!alSel) return;
   const enMode = isEn();
-  const cur = st.al || '';
-  const rkOpts = Object.values(RANK_METRICS)
-    .map(
-      m =>
-        `<option value="__rank_${m.key}__">${enMode ? m.short_en : m.short_vi} · ${
-          enMode ? m.en : m.vi
-        }</option>`
-    )
-    .join('');
-
-  alSel.innerHTML = `<option value="">${tr('Không (Mặc định)', 'None (Default)')}</option>
-    <optgroup label="${tr('📊 Bảng xếp hạng & Kinh tế Thế giới', '📊 World Rankings & Economy')}">
-      <option value="__regime__">🏛️ ${tr('Thể chế & Bộ máy Nhà nước', 'Government & Political Systems')}</option>
-      <option value="__econ__">📊 ${tr('Phân nhóm Kinh tế & Thu nhập (WB/IMF)', 'Economic Development Tiers (WB/IMF)')}</option>
-      ${rkOpts}
-    </optgroup>
-    <optgroup label="${tr('🛡️ Khối Liên minh & Địa chính trị', '🛡️ Geopolitical Blocs & Alliances')}" id="alGrpBlocs"></optgroup>`;
-
-  const grpBlocs = alSel.querySelector('#alGrpBlocs') || alSel;
-  Object.entries(AL).forEach(([key, a]) => {
-    const aInfo = enMode && AL_EN[key] ? AL_EN[key] : a;
-    const o = document.createElement('option');
-    o.value = key;
-    o.textContent = aInfo.n + ' · ' + aInfo.f.split(' · ')[0];
-    grpBlocs.appendChild(o);
-  });
-  alSel.value = cur;
-
   const rankChips = $('#rankChips');
   if (rankChips) {
     rankChips.innerHTML = Object.values(RANK_METRICS)
-      .map(m => {
-        const kVal = `__rank_${m.key}__`;
-        return `<span class="chip${cur === kVal ? ' on' : ''}" data-rk-chip="${m.key}">${
-          enMode ? m.short_en : m.short_vi
-        }</span>`;
+      .map(m => `<button type="button" class="chip" data-al="__rank_${m.key}__" data-rk-chip="${m.key}" title="${enMode ? m.en : m.vi}">${enMode ? m.short_en : m.short_vi}</button>`)
+      .join('');
+  }
+  const sysChips = $('#sysChips');
+  if (sysChips) {
+    sysChips.innerHTML =
+      `<button type="button" class="chip" data-al="__regime__">🏛️ ${tr('Thể chế nhà nước', 'Government system')}</button>` +
+      `<button type="button" class="chip" data-al="__econ__">📊 ${tr('Nhóm thu nhập (WB)', 'Income group (WB)')}</button>`;
+  }
+  const blocChips = $('#blocChips');
+  if (blocChips) {
+    blocChips.innerHTML = Object.entries(AL)
+      .map(([key, a]) => {
+        const aInfo = enMode && AL_EN[key] ? AL_EN[key] : a;
+        return `<button type="button" class="chip" data-al="${key}" title="${aInfo.f.split(' · ')[0].replace(/"/g, '&quot;')}"><span class="dot" style="background:${a.c}"></span>${aInfo.n}</button>`;
       })
       .join('');
-    rankChips.querySelectorAll('[data-rk-chip]').forEach(
-      el =>
-        (el.onclick = () => {
-          const mKey = el.dataset.rkChip;
-          const targetAl = `__rank_${mKey}__`;
-          if (st.al === targetAl && P.classList.contains('show') && activeView && activeView.type === 'rank') {
+  }
+  document.querySelectorAll('#paneCo [data-al]').forEach(
+    el =>
+      (el.onclick = () => {
+        const key = el.dataset.al;
+        if (el.dataset.rkChip) {
+          if (st.al === key && P.classList.contains('show') && activeView && activeView.type === 'rank') {
             setAl('');
             closePanel();
-          } else {
-            openRanking(mKey, 'desc', '', null);
-          }
-        })
-    );
-  }
+          } else openRanking(el.dataset.rkChip, 'desc', '', null);
+          return;
+        }
+        setAl(st.al === key ? '' : key);
+      })
+  );
+  syncColorChips();
+}
+
+function syncColorChips() {
+  document.querySelectorAll('#paneCo [data-al]').forEach(el => {
+    const on = st.al === el.dataset.al;
+    el.classList.toggle('on', on);
+    el.setAttribute('aria-pressed', on ? 'true' : 'false');
+  });
+  const off = $('#coOff');
+  if (off) off.hidden = !st.al;
+  const tab = $('#tabCo');
+  if (tab) tab.classList.toggle('has-on', !!st.al);
 }
 
 export function setAl(key, openLeaderboard = false) {
-  const alSel = $('#alSel');
   st.al = key || '';
-  if (alSel) alSel.value = st.al;
-  const rankChips = $('#rankChips');
-  if (rankChips) {
-    rankChips.querySelectorAll('[data-rk-chip]').forEach(el => {
-      el.classList.toggle('on', st.al === `__rank_${el.dataset.rkChip}__`);
-    });
-  }
+  syncColorChips();
   savePrefs();
+  writeHash();
   st.dirty = true;
   const lg = $('#legend');
   if (!st.al) {
@@ -1413,9 +1631,11 @@ export function setAl(key, openLeaderboard = false) {
       lg.classList.remove('show');
       return;
     }
-    const gradCols = m.stops.map(s => s[1]).join(', ');
+    const gradCols = rankRamp().join(', ');
     const minLbl = fmtRankVal(m.stops[0][0], m, enMode);
     const maxLbl = fmtRankVal(m.stops[m.stops.length - 1][0], m, enMode);
+    const higher = m.key === 'pollution' ? tr('ô nhiễm hơn', 'more polluted') : tr('cao hơn', 'higher');
+    const scaleNote = C.dark ? tr(`Sáng hơn = ${higher}`, `Brighter = ${higher}`) : tr(`Đậm hơn = ${higher}`, `Darker = ${higher}`);
     lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${
       enMode ? m.short_en + ' · ' + m.en : m.short_vi + ' · ' + m.vi
     }</b><div style="display:flex;gap:6px;flex-shrink:0"><button type="button" class="lnk" id="alOpenRk">${tr(
@@ -1424,7 +1644,8 @@ export function setAl(key, openLeaderboard = false) {
     )}</button><button type="button" class="lnk" id="alX">${tr('Tắt', 'Off')}</button></div></div>
     <div style="color:var(--muted);font-size:11.5px;margin-top:4px">${enMode ? m.src_en : m.src_vi}</div>
     <div class="rk-leg-bar" style="background:linear-gradient(90deg, ${gradCols})"></div>
-    <div class="rk-leg-ends"><span>${minLbl}</span><span>${maxLbl}</span></div>`;
+    <div class="rk-leg-ends"><span>${minLbl}</span><span>${maxLbl}</span></div>
+    <div class="rk-leg-note"><span>${scaleNote}</span><span><i class="rk-nodata"></i>${tr('Không có số liệu', 'No data')}</span></div>`;
     lg.classList.add('show');
     $('#alX').onclick = () => setAl('');
     $('#alOpenRk').onclick = () => openRanking(rkKey);
@@ -1500,7 +1721,11 @@ export function applyLang() {
   document.title = tr('Địa cầu địa chính trị · wanngo', 'Geopolitical Globe · wanngo');
   if ($('#brandTitle')) $('#brandTitle').textContent = tr('Địa cầu địa chính trị', 'Geopolitical Globe');
   if ($('#brandSub')) $('#brandSub').textContent = tr('theo phong cách Tim Marshall', 'inspired by Tim Marshall');
-  if ($('#q')) $('#q').placeholder = tr('Tìm quốc gia, tỉnh thành, thủ đô, đảo...', 'Search countries, states, capitals, islands...');
+  if ($('#q'))
+    $('#q').placeholder = isMobileViewport()
+      ? tr('Tìm kiếm…', 'Search…')
+      : tr('Tìm quốc gia, tỉnh thành, thủ đô, đảo...', 'Search countries, states, capitals, islands...');
+  document.querySelectorAll('.grab').forEach(g => g.setAttribute('aria-label', tr('Kéo để đổi kích thước', 'Drag to resize')));
   if ($('#layBtn')) {
     const lTxt = tr('Lớp bản đồ', 'Map layers');
     $('#layBtn').title = lTxt;
@@ -1527,8 +1752,14 @@ export function applyLang() {
   if ($('#grpAdmin')) $('#grpAdmin').textContent = tr('Hành chính, Đô thị & Đảo', 'Admin, Cities & Islands');
   if ($('#grpNat')) $('#grpNat').textContent = tr('Địa lý Tự nhiên', 'Physical Geography');
   if ($('#grpInfra')) $('#grpInfra').textContent = tr('Hạ tầng, Quân sự & Tài nguyên', 'Infra, Military & Resources');
-  if ($('#lhAl')) $('#lhAl').textContent = tr('TÔ MÀU THEO KHỐI / XẾP HẠNG', 'COLOR BY BLOC / RANKINGS');
-  if ($('#lhRk')) $('#lhRk').textContent = tr('BẢNG XẾP HẠNG THẾ GIỚI (HEATMAP)', 'WORLD RANKINGS (HEATMAP)');
+  if ($('#tabLy')) $('#tabLy').textContent = tr('Lớp', 'Layers');
+  if ($('#tabCo')) $('#tabCo').firstChild.textContent = tr('Tô màu', 'Colour by');
+  if ($('#tabVw')) $('#tabVw').textContent = tr('Góc nhìn', 'Views');
+  if ($('#layers .ltabs')) $('#layers .ltabs').setAttribute('aria-label', tr('Lớp bản đồ', 'Map layers'));
+  if ($('#lhRk')) $('#lhRk').textContent = tr('BẢNG XẾP HẠNG THẾ GIỚI', 'WORLD RANKINGS');
+  if ($('#lhSys')) $('#lhSys').textContent = tr('KINH TẾ & THỂ CHẾ', 'ECONOMY & GOVERNMENT');
+  if ($('#lhBloc')) $('#lhBloc').textContent = tr('KHỐI & LIÊN MINH', 'BLOCS & ALLIANCES');
+  if ($('#coOff')) $('#coOff').textContent = tr('Tắt tô màu', 'Turn colouring off');
   if ($('#lhQv')) $('#lhQv').textContent = tr('GÓC NHÌN NHANH', 'QUICK VIEWS');
   if ($('#lhRef')) $('#lhRef').textContent = tr('ĐƯỜNG THAM CHIẾU', 'REFERENCE LINES');
   if ($('#hint'))
@@ -1536,6 +1767,11 @@ export function applyLang() {
       'Kéo để xoay · cuộn để phóng to · bấm vào quốc gia, tỉnh thành, thủ đô hoặc điểm nóng',
       'Drag to rotate · scroll to zoom · click any country, state, capital, or hotspot'
     );
+  if ($('#pshare')) {
+    $('#pshare').title = tr('Chép liên kết tới thẻ này', 'Copy a link to this card');
+    $('#pshare').setAttribute('aria-label', tr('Chép liên kết', 'Copy link'));
+  }
+  if ($('#pclose')) $('#pclose').setAttribute('aria-label', tr('Đóng', 'Close'));
   if ($('#zin')) $('#zin').setAttribute('aria-label', tr('Phóng to', 'Zoom in'));
   if ($('#zout')) $('#zout').setAttribute('aria-label', tr('Thu nhỏ', 'Zoom out'));
   if ($('#home')) {
@@ -1583,8 +1819,100 @@ export function applyLang() {
   }
 }
 
+// ---------- phone bottom sheets (card and layers): drag the handle to peek / half / full, drag down past peek to close
+const SNAPS = () => {
+  const h = innerHeight;
+  return { peek: 150, half: Math.round(h * 0.56), full: h - 72 };
+};
+function sheetEl(name) {
+  return name === 'panel' ? P : $('#layers');
+}
+function setSheet(name, snap) {
+  const el = sheetEl(name);
+  const sn = SNAPS();
+  el.dataset.snap = snap;
+  el.style.height = sn[snap] + 'px';
+  recenter();
+}
+function closeSheet(name) {
+  if (name === 'panel') closePanel();
+  else {
+    $('#layers').classList.add('hide');
+    $('#layBtn').classList.remove('on');
+    st.drawerHide = true;
+    savePrefs();
+    document.body.classList.remove('layers-open');
+    recenter();
+  }
+}
+function initSheets() {
+  document.querySelectorAll('.grab').forEach(g => {
+    const name = g.dataset.sheet;
+    let y0 = 0, h0 = 0, dragging = false, moved = false;
+    g.addEventListener('pointerdown', e => {
+      if (!isMobileViewport()) return;
+      const el = sheetEl(name);
+      dragging = true;
+      moved = false;
+      y0 = e.clientY;
+      h0 = el.offsetHeight;
+      el.classList.add('dragging');
+      g.setPointerCapture(e.pointerId);
+      e.preventDefault();
+    });
+    g.addEventListener('pointermove', e => {
+      if (!dragging) return;
+      const dy = e.clientY - y0;
+      if (Math.abs(dy) > 4) moved = true;
+      sheetEl(name).style.height = Math.max(80, Math.min(innerHeight - 60, h0 - dy)) + 'px';
+    });
+    const end = e => {
+      if (!dragging) return;
+      dragging = false;
+      const el = sheetEl(name);
+      el.classList.remove('dragging');
+      const sn = SNAPS();
+      if (!moved) {
+        // a tap on the handle toggles between half and full
+        setSheet(name, el.dataset.snap === 'full' ? 'half' : 'full');
+        return;
+      }
+      const h = el.offsetHeight;
+      if (h < sn.peek - 50) {
+        el.style.height = '';
+        closeSheet(name);
+        return;
+      }
+      const best = Object.entries(sn).sort((a, b) => Math.abs(a[1] - h) - Math.abs(b[1] - h))[0][0];
+      setSheet(name, best);
+    };
+    g.addEventListener('pointerup', end);
+    g.addEventListener('pointercancel', end);
+    g.addEventListener('keydown', e => {
+      if (!isMobileViewport()) return;
+      const order = ['peek', 'half', 'full'];
+      const i = order.indexOf(sheetEl(name).dataset.snap || 'half');
+      if (e.key === 'ArrowUp') setSheet(name, order[Math.min(2, i + 1)]);
+      else if (e.key === 'ArrowDown') setSheet(name, order[Math.max(0, i - 1)]);
+      else if (e.key === 'Enter' || e.key === ' ') setSheet(name, order[i] === 'full' ? 'half' : 'full');
+      else return;
+      e.preventDefault();
+    });
+  });
+  addEventListener('resize', () => {
+    ['panel', 'layers'].forEach(n => {
+      const el = sheetEl(n);
+      if (!isMobileViewport()) el.style.height = '';
+      else if (el.dataset.snap) el.style.height = SNAPS()[el.dataset.snap] + 'px';
+    });
+  });
+}
+
 export function initUI() {
   $('#pclose').onclick = () => closePanel();
+  $('#pshare').onclick = () => copyLink($('#pshare'));
+  addEventListener('popstate', () => applyHash());
+  initSheets();
 
   let hovRaf = 0;
   let lastMoveEvt = null;
@@ -1636,11 +1964,36 @@ export function initUI() {
     else closePanel();
   });
 
-  const alSel = $('#alSel');
-  alSel.onchange = () => {
-    const v = alSel.value;
-    setAl(v, !!(v && v.startsWith('__rank_')));
+  if ($('#coOff')) $('#coOff').onclick = () => setAl('');
+  let curTab = 'layers';
+  try {
+    curTab = localStorage.getItem('geo-ltab') || 'layers';
+  } catch (e) {}
+  const showTab = name => {
+    if (!document.querySelector(`.ltab[data-tab="${name}"]`)) name = 'layers';
+    document.querySelectorAll('.ltab').forEach(t => {
+      const on = t.dataset.tab === name;
+      t.classList.toggle('on', on);
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+    });
+    document.querySelectorAll('.lpane').forEach(p => (p.hidden = p.dataset.pane !== name));
+    try {
+      localStorage.setItem('geo-ltab', name);
+    } catch (e) {}
   };
+  document.querySelectorAll('.ltab').forEach(t => {
+    t.onclick = () => showTab(t.dataset.tab);
+    t.onkeydown = e => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      const tabs = [...document.querySelectorAll('.ltab')];
+      const i = tabs.indexOf(t) + (e.key === 'ArrowRight' ? 1 : -1);
+      const nt = tabs[(i + tabs.length) % tabs.length];
+      showTab(nt.dataset.tab);
+      nt.focus();
+    };
+  });
+  showTab(curTab);
 
   const lyDef = $('#lyDef');
   if (lyDef) {
@@ -1662,14 +2015,28 @@ export function initUI() {
   }
 
   $('#layBtn').onclick = () => {
-    $('#layers').classList.toggle('hide');
-    const isHidden = $('#layers').classList.contains('hide');
+    const lay = $('#layers');
+    if (lay.classList.contains('fold')) {
+      // folded behind an open card: bring it back beside the card
+      setFold(false);
+      keepLayers = true;
+      recenter();
+      return;
+    }
+    lay.classList.toggle('hide');
+    const isHidden = lay.classList.contains('hide');
     $('#layBtn').classList.toggle('on', !isHidden);
-    if (!isHidden && isMobileViewport() && P.classList.contains('show')) {
-      closePanel();
+    if (isMobileViewport()) {
+      if (!isHidden && P.classList.contains('show')) closePanel();
+      if (!isHidden) {
+        lay.dataset.snap = 'half';
+        lay.style.height = SNAPS().half + 'px';
+      }
+      document.body.classList.toggle('layers-open', !isHidden);
     }
     st.drawerHide = isHidden;
     savePrefs();
+    recenter();
   };
 
   const langBtn = $('#langBtn');
@@ -1682,6 +2049,14 @@ export function initUI() {
   }
 
   // Search
+  const SG_GLOBE = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
+  const SG_ICON = { adm1: ['admin1', '#7C3AED'], cap: ['capitals', '#E8590C'], city: ['cities', '#2563EB'], isl: ['islands', '#0D9488'], lake: ['river', '#2E7CC0'] };
+  const sgIcon = x => {
+    if (x.t === 'c') return `<span class="sg-i" style="color:var(--accent)">${SG_GLOBE}</span>`;
+    if (x.t === 'h' && x.o && LAYERS[x.o.t]) return `<span class="sg-i" style="color:${LAYERS[x.o.t].c}">${iconSvg(x.o.t)}</span>`;
+    const ic = SG_ICON[x.t];
+    return ic ? `<span class="sg-i" style="color:${ic[1]}">${iconSvg(ic[0])}</span>` : '<span class="sg-i"></span>';
+  };
   const q = $('#q'), sg = $('#sugg');
   let act = 0, res = [], curQuery = '';
   const drawS = () => {
@@ -1697,7 +2072,7 @@ export function initUI() {
           const mOld = x.o.old.find(oldN => norm(oldN).includes(curQuery));
           if (mOld) sub = `${tr('Sáp nhập từ', 'Merged from')} ${mOld} · ${cName(x.o.country)}`;
         }
-        return `<div class="sg${i === act ? ' act' : ''}" data-i="${i}"><span>${x.n}</span><small>${sub}</small></div>`;
+        return `<div class="sg${i === act ? ' act' : ''}" data-i="${i}" role="option" aria-selected="${i === act}">${sgIcon(x)}<span class="sg-n">${x.n}</span><small>${sub}</small></div>`;
       })
       .join('');
     sg.classList.add('show');
@@ -1796,16 +2171,21 @@ export function initUI() {
       localStorage.setItem('geo-theme', document.documentElement.dataset.theme);
     } catch (e) {}
     readTheme();
+    if (st.al) setAl(st.al); // the heatmap legend has its own colours per theme
   };
 
-  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', readTheme);
+  matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    readTheme();
+    if (st.al) setAl(st.al);
+  });
   addEventListener('resize', resize);
   addEventListener('keydown', e => {
     if (e.key === 'Escape' && document.activeElement !== q) closePanel();
   });
 
   $('#spin').classList.toggle('on', !!st.spin);
-  const hideDrawer = typeof st.drawerHide === 'boolean' ? st.drawerHide : innerWidth < 760;
+  // phones always start with the layers sheet closed, so the globe is the first thing seen
+  const hideDrawer = isMobileViewport() ? true : typeof st.drawerHide === 'boolean' ? st.drawerHide : false;
   $('#layers').classList.toggle('hide', hideDrawer);
   $('#layBtn').classList.toggle('on', !hideDrawer);
 

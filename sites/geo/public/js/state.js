@@ -1,13 +1,13 @@
-import { NAMES } from '../data/regions.js?v=20261108l';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108l';
-import { AL } from '../data/alliances.js?v=20261108l';
-import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108l';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108l';
-import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108l';
-import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108l';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108l';
-import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108l';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108l';
+import { NAMES } from '../data/regions.js?v=20261108m';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108m';
+import { AL } from '../data/alliances.js?v=20261108m';
+import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108m';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108m';
+import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108m';
+import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108m';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108m';
+import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108m';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108m';
 
 export {
   CAPITALS,
@@ -38,23 +38,44 @@ export {
   RANK_DATA
 };
 
-export function rankValColor(val, metric) {
-  if (val === null || val === undefined || !metric || !metric.stops) return null;
+// Heatmap colours: one orange hue, so red-green colour-blind readers can read it and it never blends with the blue
+// ocean. Light theme: higher value = darker. Dark theme: higher value = brighter. The metric's stops only set where
+// each step of the scale sits; the stop colours in rankings.js are no longer used for the map.
+export const RANK_RAMP = {
+  light: ['#F7C48F', '#EE9A55', '#D9692A', '#A9481A', '#6E2C0E'],
+  dark: ['#8A3C14', '#B4521D', '#DE7834', '#F5AA66', '#FFDDB0']
+};
+const _rampFns = {};
+export function rankRamp() {
+  const mode = C.dark ? 'dark' : 'light';
+  return RANK_RAMP[mode];
+}
+function rampAt(t) {
+  const mode = C.dark ? 'dark' : 'light';
+  const fn = _rampFns[mode] || (_rampFns[mode] = d3.piecewise(d3.interpolateLab, RANK_RAMP[mode]));
+  return d3.color(fn(Math.max(0, Math.min(1, t)))).formatHex();
+}
+// 0..1 position of a value along the metric's stops (each gap between stops gets an equal share)
+export function rankPos(val, metric) {
   const stops = metric.stops;
-  if (val <= stops[0][0]) return stops[0][1];
-  if (val >= stops[stops.length - 1][0]) return stops[stops.length - 1][1];
-  for (let i = 0; i < stops.length - 1; i++) {
-    const [v0, c0] = stops[i];
-    const [v1, c1] = stops[i + 1];
+  const n = stops.length - 1;
+  if (val <= stops[0][0]) return 0;
+  if (val >= stops[n][0]) return 1;
+  for (let i = 0; i < n; i++) {
+    const v0 = stops[i][0], v1 = stops[i + 1][0];
     if (val >= v0 && val <= v1) {
       const t = metric.logScale
         ? (Math.log(Math.max(1e-4, val)) - Math.log(Math.max(1e-4, v0))) /
           (Math.log(Math.max(1e-4, v1)) - Math.log(Math.max(1e-4, v0)))
         : (val - v0) / (v1 - v0 || 1);
-      return d3.interpolateRgb(c0, c1)(Math.max(0, Math.min(1, t)));
+      return (i + Math.max(0, Math.min(1, t))) / n;
     }
   }
-  return stops[stops.length - 1][1];
+  return 1;
+}
+export function rankValColor(val, metric) {
+  if (val === null || val === undefined || !metric || !metric.stops) return null;
+  return rampAt(rankPos(val, metric));
 }
 
 export function fmtRankVal(val, metric, enMode = false) {
@@ -299,7 +320,71 @@ export const st = {
 
 export const isEn = () => st.lang === 'en';
 export const tr = (viStr, enStr) => (st.lang === 'en' ? enStr : viStr);
-export const cName = en => (st.lang === 'en' ? en : (NAMES[en] || [en])[0]);
+
+// The map data keys countries by Natural Earth short names ("Bosnia and Herz.", "Macedonia"). In English, show the
+// full current name instead; the globe labels keep a short form (EN_SHORT) where the full one is too long.
+export const EN_NAME = {
+  'Macedonia': 'North Macedonia',
+  'Bosnia and Herz.': 'Bosnia and Herzegovina',
+  'Dem. Rep. Congo': 'DR Congo',
+  'Congo': 'Republic of the Congo',
+  'eSwatini': 'Eswatini',
+  'Dominican Rep.': 'Dominican Republic',
+  'Central African Rep.': 'Central African Republic',
+  'S. Sudan': 'South Sudan',
+  'Eq. Guinea': 'Equatorial Guinea',
+  'Solomon Is.': 'Solomon Islands',
+  'Marshall Is.': 'Marshall Islands',
+  'N. Mariana Is.': 'Northern Mariana Islands',
+  'U.S. Virgin Is.': 'U.S. Virgin Islands',
+  'S. Geo. and the Is.': 'South Georgia and the South Sandwich Islands',
+  'Br. Indian Ocean Ter.': 'British Indian Ocean Territory',
+  'Pitcairn Is.': 'Pitcairn Islands',
+  'Falkland Is.': 'Falkland Islands',
+  'Cayman Is.': 'Cayman Islands',
+  'British Virgin Is.': 'British Virgin Islands',
+  'Turks and Caicos Is.': 'Turks and Caicos Islands',
+  'St. Vin. and Gren.': 'Saint Vincent and the Grenadines',
+  'St. Kitts and Nevis': 'Saint Kitts and Nevis',
+  'Cook Is.': 'Cook Islands',
+  'W. Sahara': 'Western Sahara',
+  'St. Pierre and Miquelon': 'Saint Pierre and Miquelon',
+  'Wallis and Futuna Is.': 'Wallis and Futuna',
+  'Fr. Polynesia': 'French Polynesia',
+  'Fr. S. Antarctic Lands': 'French Southern and Antarctic Lands',
+  'Faeroe Is.': 'Faroe Islands',
+  'N. Cyprus': 'Northern Cyprus',
+  'Indian Ocean Ter.': 'Australian Indian Ocean Territories',
+  'Heard I. and McDonald Is.': 'Heard Island and McDonald Islands',
+  'Ashmore and Cartier Is.': 'Ashmore and Cartier Islands',
+  'Antigua and Barb.': 'Antigua and Barbuda',
+  'St-Martin': 'Saint Martin',
+  'St-Barthélemy': 'Saint Barthélemy'
+};
+// full English name -> short form for crowded globe labels
+export const EN_SHORT = {
+  'North Macedonia': 'N. Macedonia',
+  'Bosnia and Herzegovina': 'Bosnia & Herz.',
+  'Republic of the Congo': 'Congo',
+  'Dominican Republic': 'Dominican Rep.',
+  'Central African Republic': 'Central African Rep.',
+  'Equatorial Guinea': 'Eq. Guinea',
+  'Solomon Islands': 'Solomon Is.',
+  'Marshall Islands': 'Marshall Is.',
+  'Northern Mariana Islands': 'N. Mariana Is.',
+  'U.S. Virgin Islands': 'U.S. Virgin Is.',
+  'South Georgia and the South Sandwich Islands': 'S. Georgia',
+  'British Indian Ocean Territory': 'Br. Indian Ocean Ter.',
+  'Falkland Islands': 'Falkland Is.',
+  'Turks and Caicos Islands': 'Turks & Caicos',
+  'Saint Vincent and the Grenadines': 'St. Vincent & Gren.',
+  'French Southern and Antarctic Lands': 'Fr. S. Antarctic Lands',
+  'Australian Indian Ocean Territories': 'Indian Ocean Ter.',
+  'Heard Island and McDonald Islands': 'Heard & McDonald Is.',
+  'Antigua and Barbuda': 'Antigua & Barbuda',
+  'United States of America': 'USA'
+};
+export const cName = en => (st.lang === 'en' ? EN_NAME[en] || en : (NAMES[en] || [en])[0]);
 export const hName = h => (st.lang === 'en' && H_EN[h.id] ? H_EN[h.id].n : h.n);
 export const hTx = h => (st.lang === 'en' && H_EN[h.id] ? H_EN[h.id].tx : h.tx);
 export const layName = k =>

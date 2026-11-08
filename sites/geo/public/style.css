@@ -351,6 +351,9 @@ svg.i {
   background: var(--chip);
 }
 
+.sg-i { display: inline-flex; flex: none; width: 18px; justify-content: center; }
+.sg-i svg.i { width: 15px; height: 15px; }
+.sg-n { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .sg small {
   color: var(--muted);
   font-size: 11.5px;
@@ -373,9 +376,70 @@ svg.i {
   contain: layout paint style;
 }
 
-#layers.hide {
+#layers.hide,
+#layers.fold {
   display: none;
 }
+
+/* layers panel folded behind a card: a dot on its button says it can come back */
+#layBtn.folded { position: relative; }
+#layBtn.folded::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.grab { display: none; }
+
+/* layers panel tabs */
+.ltabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  padding: 3px;
+  margin: 0 0 10px;
+  background: var(--chip);
+  border-radius: 10px;
+}
+.ltab {
+  position: relative;
+  border: 0;
+  background: transparent;
+  border-radius: 8px;
+  padding: 6px 4px;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+}
+.ltab:hover { color: var(--ink); }
+.ltab.on {
+  background: var(--card-solid);
+  color: var(--ink);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+}
+.ltab:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ltab-dot {
+  display: none;
+  position: absolute;
+  top: 5px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.ltab.has-on .ltab-dot { display: block; }
+.lpane[hidden] { display: none; }
+#paneCo .lh:first-child, #paneVw .lh:first-child { margin-top: 0; border-top: 0; padding-top: 0; }
+button.chip { font: inherit; font-size: 12.5px; color: inherit; }
+.lco-off { margin-top: 12px; width: 100%; padding: 6px 8px; font-size: 12px; }
+.lco-off[hidden] { display: none; }
 
 .ltop {
   display: flex;
@@ -747,6 +811,29 @@ select {
   z-index: 2;
 }
 
+#pshare {
+  position: absolute;
+  top: 12px;
+  right: 52px;
+  height: 32px;
+  min-width: 32px;
+  padding: 0 8px;
+  border-radius: 9px;
+  border: 0;
+  background: var(--chip);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 500;
+}
+#pshare span:empty { display: none; }
+#pshare.done { background: var(--g-bg); color: var(--g); }
+#pbody .kick { margin-right: 92px; }
+
 .kick {
   font-size: 11.5px;
   font-weight: 600;
@@ -762,7 +849,7 @@ select {
 h1 {
   font-size: 22px;
   font-weight: 600;
-  margin: 0 40px 6px 0;
+  margin: 0 84px 6px 0;
   line-height: 1.25;
 }
 
@@ -843,6 +930,69 @@ h1 {
 .tool:last-child {
   border-bottom: none;
 }
+
+/* a pillar with details opens in place */
+details.tool { display: block; padding: 0; }
+details.tool > summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 22px 1fr auto;
+  gap: 6px 8px;
+  align-items: start;
+  padding: 10px 6px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+details.tool > summary::-webkit-details-marker { display: none; }
+details.tool > summary:hover { background: var(--chip); }
+details.tool > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+details.tool > summary .rt::after { content: " ▾"; opacity: .6; }
+details.tool[open] > summary .rt::after { content: " ▴"; }
+details.tool > .dt { padding: 0 6px 10px 36px; margin: 0; }
+
+/* sticky jump chips at the top of long cards */
+.secnav {
+  position: sticky;
+  top: -18px;
+  z-index: 1;
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin: 0 -18px 8px;
+  padding: 8px 56px 8px 18px;
+  background: var(--card-solid);
+  border-bottom: 1px solid var(--line);
+}
+.secnav::-webkit-scrollbar { display: none; }
+.secchip {
+  flex: none;
+  border: 1px solid var(--line);
+  background: var(--chip);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 3px 10px;
+  font: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.secchip:hover { color: var(--ink); border-color: var(--line2); }
+.secchip.on { background: var(--accent-bg); color: var(--accent); border-color: transparent; }
+
+/* overview essay folded to its first paragraph */
+.sum-btn {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: 500 13px "Be Vietnam Pro", system-ui, sans-serif;
+  color: var(--accent);
+  cursor: pointer;
+}
+.sum-btn:hover { text-decoration: underline; }
+.sum-more p { margin: 10px 0 0; }
+.sum-more[hidden] { display: none; }
 
 .tool .em {
   font-size: 15px;
@@ -1552,6 +1702,23 @@ details.adm-list[open] > summary {
   border: 1px solid rgba(128, 128, 128, 0.2);
 }
 
+.rk-leg-note {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.rk-leg-note span { display: inline-flex; align-items: center; gap: 5px; }
+.rk-nodata {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  background: var(--land2);
+  border: 1px solid var(--line2);
+}
 .rk-leg-ends {
   display: flex;
   justify-content: space-between;
@@ -1593,6 +1760,9 @@ details.adm-list[open] > summary {
   white-space: nowrap;
 }
 
+/* the start hint would sit under a saved legend card */
+body:has(#legend.show) #hint { opacity: 0 !important; }
+
 @media (max-width: 760px) {
   #brand span { display: none; }
   #brand { display: none; }
@@ -1618,11 +1788,18 @@ details.adm-list[open] > summary {
   #layBtn, #langBtn, #bmBtn, #wgBtn {
     flex-shrink: 0;
   }
+  /* layers and card are bottom sheets with a drag handle */
   #layers {
-    top: 64px;
-    left: 12px;
-    width: calc(100vw - 24px);
-    max-height: calc(100dvh - 140px);
+    top: auto;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    width: auto;
+    height: 56dvh;
+    max-height: none;
+    padding-top: 0;
+    z-index: 6;
+    transition: height .22s ease;
   }
   #panel {
     top: auto;
@@ -1630,10 +1807,41 @@ details.adm-list[open] > summary {
     right: 8px;
     bottom: 8px;
     width: auto;
-    height: 62vh;
+    height: 56dvh;
     transform: translate3d(0, 105%, 0);
+    transition: transform .28s ease, height .22s ease;
   }
   #panel.show { transform: translate3d(0, 0, 0); }
+  #layers.dragging, #panel.dragging { transition: none; }
+  .grab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: none;
+    height: 22px;
+    cursor: grab;
+    touch-action: none;
+  }
+  .grab i {
+    width: 40px;
+    height: 5px;
+    border-radius: 3px;
+    background: var(--line2);
+  }
+  #layers .grab {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    margin: 0 -13px 4px;
+    background: var(--card-solid);
+  }
+  #pbody { padding-top: 4px; }
+  .secnav { top: -4px; }
+  body.layers-open #ctrl,
+  body.layers-open #bl {
+    opacity: 0;
+    pointer-events: none;
+  }
   #ctrl, #bl {
     transition: opacity .22s ease;
   }
@@ -1685,13 +1893,15 @@ details.adm-list[open] > summary {
 
 /* keep bottom-left legends clear of the open layers drawer on desktop */
 @media (min-width: 760px) {
-  #layers:not(.hide) ~ #bl { left: 304px; }
+  #layers:not(.hide):not(.fold) ~ #bl { left: 304px; }
 }
 
 /* Touch and pen: comfortable tap targets (about 44px, the usual minimum for a fingertip) */
 @media (pointer: coarse) {
+  #zin, #zout { display: none; } /* pinch zooms on touch screens */
   .ibtn { width: 44px; height: 44px; }
   #pclose { width: 40px; height: 40px; }
+  #pshare { height: 40px; min-width: 40px; right: 58px; }
   .btn, .pill, select { min-height: 44px; }
   .tg { min-height: 42px; padding: 6px 8px; }
   .tg .sw { width: 36px; height: 20px; border-radius: 11px; }
@@ -1706,6 +1916,8 @@ details.adm-list[open] > summary {
   .rk-row { min-height: 44px; }
   .rk-pill { min-height: 44px; }
   .rk-info-btn { width: 34px; height: 34px; }
+  .secchip { min-height: 34px; padding: 6px 12px; }
+  .sum-btn { min-height: 36px; }
 }
 
 /* little round "i" button that explains a term inline */
