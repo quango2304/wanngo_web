@@ -380,6 +380,10 @@ svg.i {
 #layers.fold {
   display: none;
 }
+/* phones start with the sheet closed; the script that closes it loads later, so keep it from flashing until then */
+html.boot-m #layers {
+  display: none;
+}
 
 /* layers panel folded behind a card: a dot on its button says it can come back */
 #layBtn.folded { position: relative; }
