@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108k';
-import { C0 } from '../data/countries.js?v=20261108k';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108k';
-import { AL, REF } from '../data/alliances.js?v=20261108k';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108k';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108l';
+import { C0 } from '../data/countries.js?v=20261108l';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108l';
+import { AL, REF } from '../data/alliances.js?v=20261108l';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108l';
 import {
   $,
   norm,
@@ -47,7 +47,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108k';
+} from './state.js?v=20261108l';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
@@ -581,9 +581,11 @@ export function upgradeSeasData(j) {
       return rs;
     });
     s.geo = { type: 'MultiPolygon', coordinates: polys };
+    s.wGeo = e.w && e.w.length ? { type: 'MultiLineString', coordinates: e.w } : null;
     s.bb = d3.geoBounds(s.geo);
     s.ar = d3.geoArea(s.geo);
     s.cen = d3.geoCentroid(s.geo);
+    s.cr = undefined;
   }
   // oceans stay label-only: tapping empty open water must still close the panel
   MAP.SEAS_BY_SIZE = SEAS.filter(s => s.geo && s.type !== 'ocean').sort((a, b) => a.ar - b.ar);
@@ -1044,16 +1046,20 @@ export function render(now) {
     ctx.stroke();
   }
 
-  // hovered / selected sea or gulf (under land, so the coast stays crisp)
+  // hovered / selected sea or gulf (under land, so the coast stays crisp; only open-water boundary arcs are stroked)
   const actSea = (st.sel && st.sel.kind === 'sea' && st.sel) || (st.hov && st.hov.kind === 'sea' && st.hov);
   if (actSea && actSea.geo && actSea.type !== 'ocean' && cullOK(actSea)) {
     ctx.beginPath();
     pathC(actSea.geo);
     ctx.fillStyle = mix(C.accent, st.sel === actSea ? 0.34 : 0.2);
     ctx.fill();
-    ctx.strokeStyle = mix(C.accent, 0.75);
-    ctx.lineWidth = 1.3;
-    ctx.stroke();
+    if (actSea.wGeo) {
+      ctx.beginPath();
+      pathC(actSea.wGeo);
+      ctx.strokeStyle = mix(C.accent, 0.75);
+      ctx.lineWidth = 1.3;
+      ctx.stroke();
+    }
   }
 
   // sea hotspot polygons (under land)
