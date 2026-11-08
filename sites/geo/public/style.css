@@ -1999,13 +1999,14 @@ body:has(#legend.show) #hint { opacity: 0 !important; }
 #pbody.story { padding-top: 0; }
 .sthd h1 { font-size: 18px; margin: 2px 84px 8px 0; }
 .stnav { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-.stnav .btn { height: 34px; padding: 0 12px; font-size: 13px; }
+.stnav .btn { height: 34px; padding: 0 12px; font-size: 13px; white-space: nowrap; flex: none; }
 .stnav .btn[disabled] { opacity: .4; cursor: default; }
-.stdots { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; }
-.stdot { position: relative; width: 22px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; }
-.stdot::after { content: ""; position: absolute; inset: 10px 7px; border-radius: 50%; background: var(--line2); }
+/* one row always: dots shrink (down to ~9px each) instead of wrapping when a story has many steps */
+.stdots { display: flex; flex: 1 1 auto; min-width: 0; justify-content: center; align-items: center; }
+.stdot { position: relative; flex: 0 1 22px; min-width: 9px; height: 28px; padding: 0; border: 0; background: none; cursor: pointer; }
+.stdot::after { content: ""; position: absolute; left: 50%; top: 50%; width: min(8px, 75%); aspect-ratio: 1; transform: translate(-50%, -50%); border-radius: 50%; background: var(--line2); }
 .stdot.done::after { background: var(--muted); }
-.stdot.on::after { inset: 8px 5px; background: var(--accent); }
+.stdot.on::after { width: min(12px, 100%); background: var(--accent); }
 .stfacts { margin: 10px 0 0; padding-left: 18px; font-size: 13.5px; line-height: 1.55; }
 .stfacts li { margin: 4px 0; }
 .stkey { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 12px; font-size: 12.5px; }

@@ -1,13 +1,13 @@
-import { NAMES } from '../data/regions.js?v=20261109p';
-import { LAYERS, H } from '../data/hotspots.js?v=20261109p';
-import { AL } from '../data/alliances.js?v=20261109p';
-import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261109p';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261109p';
-import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261109p';
-import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261109p';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261109p';
-import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261109p';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261109p';
+import { NAMES } from '../data/regions.js?v=20261109q';
+import { LAYERS, H } from '../data/hotspots.js?v=20261109q';
+import { AL } from '../data/alliances.js?v=20261109q';
+import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261109q';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261109q';
+import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261109q';
+import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261109q';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261109q';
+import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261109q';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261109q';
 
 export {
   CAPITALS,
