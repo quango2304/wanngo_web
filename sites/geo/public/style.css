@@ -236,6 +236,19 @@ button {
   height: 18px;
 }
 
+a.ibtn {
+  text-decoration: none;
+  color: inherit;
+}
+
+.ibtn img {
+  width: 20px;
+  height: 20px;
+  display: block;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
 svg.i {
   width: 16px;
   height: 16px;
@@ -609,7 +622,7 @@ select {
 
 #legend {
   padding: 10px 12px;
-  max-width: 340px;
+  max-width: 360px;
   font-size: 12.5px;
   display: none;
 }
@@ -1064,13 +1077,27 @@ h1 {
 }
 
 .lnk {
-  background: none;
-  border: 0;
-  color: var(--accent);
-  cursor: pointer;
-  padding: 4px 6px;
+  font: inherit;
+  font-size: 11.5px;
   font-weight: 500;
-  font-size: 13px;
+  padding: 4px 9px;
+  border-radius: 7px;
+  border: 1px solid var(--line2);
+  background: var(--chip);
+  color: var(--ink);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: border-color .15s, background .15s, color .15s;
+}
+
+.lnk:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-bg);
 }
 
 .sec {
@@ -1573,19 +1600,22 @@ details.adm-list[open] > summary {
     top: 12px;
     left: 12px;
     right: 12px;
-    gap: 8px;
+    max-width: calc(100vw - 24px);
+    gap: 6px;
     align-items: center;
   }
   #search {
-    flex: 1;
+    flex: 1 1 0;
     min-width: 0;
     width: auto;
   }
   #search input {
-    padding: 9px 12px 9px 32px;
+    min-width: 0;
+    width: 100%;
+    padding: 9px 8px 9px 30px;
     font-size: 13.5px;
   }
-  #layBtn, #langBtn {
+  #layBtn, #langBtn, #bmBtn, #wgBtn {
     flex-shrink: 0;
   }
   #layers {
@@ -1669,7 +1699,7 @@ details.adm-list[open] > summary {
   .tg.on .sw:after { transform: translateX(16px); }
   .sg { min-height: 44px; }
   .chip { min-height: 38px; padding: 6px 12px; }
-  .lbtn { min-height: 34px; padding: 4px 11px; font-size: 12px; }
+  .lbtn, .lnk { min-height: 34px; padding: 4px 11px; font-size: 12px; }
   details.lgrp > summary { min-height: 40px; padding: 8px 6px; }
   details.adm-list > summary { min-height: 40px; }
   .rk-tab, .rk-dir { min-height: 36px; padding: 7px 11px; }
@@ -1712,3 +1742,8 @@ details.adm-list[open] > summary {
 @media (pointer: coarse) {
   .info-i { width: 26px; height: 26px; margin-left: 4px; font-size: 13px; }
 }
+
+/* sea panel */
+.sea-p { margin: 0 0 12px; }
+.sea-src { font-size: 11.5px; color: var(--faint); margin: -4px 0 10px; }
+.sea-src a { color: var(--accent); text-decoration: none; }

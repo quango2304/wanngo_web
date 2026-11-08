@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108j';
-import { C0, TOOLS } from '../data/countries.js?v=20261108j';
-import { RELC, REL } from '../data/religions.js?v=20261108j';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108j';
-import { iconSvg } from './icons.js?v=20261108j';
-import { AL, REF } from '../data/alliances.js?v=20261108j';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108k';
+import { C0, TOOLS } from '../data/countries.js?v=20261108k';
+import { RELC, REL } from '../data/religions.js?v=20261108k';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108k';
+import { iconSvg } from './icons.js?v=20261108k';
+import { AL, REF } from '../data/alliances.js?v=20261108k';
 import {
   $,
   norm,
@@ -61,7 +61,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108j';
+} from './state.js?v=20261108k';
 import {
   cv,
   proj,
@@ -79,7 +79,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108j';
+} from './globe.js?v=20261108k';
 import {
   CONT,
   AMERICAS,
@@ -96,7 +96,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108j';
+} from '../data/continents.js?v=20261108k';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -890,12 +890,48 @@ function seaTitle(o, en = isEn()) {
   return s.toLocaleLowerCase(loc).replace(/(^|\s)(\S)/g, (m, a, b) => a + b.toLocaleUpperCase(loc));
 }
 
+// Sea essays and Wikipedia overviews are big, so they load the first time a sea panel opens (not at boot).
+let SEA_TEXT = null;
+let seaTextP = null;
+const loadSeaText = () =>
+  (seaTextP =
+    seaTextP ||
+    Promise.all([import('../data/sea_story.js?v=20261108k'), import('../data/sea_info.js?v=20261108k')])
+      .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
+      .catch(() => (SEA_TEXT = { story: {}, info: {} })));
+
+const escTxt = t => String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
 function seaHTML(o) {
   activeView = { type: 'sea', o };
   const enMode = isEn();
   let s = `<div class="kick">${tr(...(SEA_TYPE[o.type] || SEA_TYPE.sea))}</div><h1>${seaTitle(o)}</h1>`;
   const other = seaTitle(o, !enMode);
   if (other && other !== seaTitle(o)) s += `<div class="sub-h1">${other}</div>`;
+
+  if (!SEA_TEXT) {
+    loadSeaText().then(() => {
+      if (activeView && activeView.type === 'sea' && activeView.o === o && P.classList.contains('show')) {
+        const top = PB.scrollTop;
+        openPanel(seaHTML(o));
+        PB.scrollTop = top;
+      }
+    });
+    return s + `<p class="note">${tr('Đang tải…', 'Loading…')}</p>`;
+  }
+
+  const story = SEA_TEXT.story[o.en];
+  const info = SEA_TEXT.info[o.en];
+  const paras = story && (enMode ? story.en : story.vi);
+  if (paras && paras.length) {
+    s += `<div class="sec">${tr('VAI TRÒ ĐỊA LÝ, LỊCH SỬ & ĐỊA CHÍNH TRỊ', 'GEOGRAPHY, HISTORY & GEOPOLITICS')}</div>`;
+    s += paras.map(t => `<p class="txt sea-p">${escTxt(t)}</p>`).join('');
+    s += `<p class="note">${tr(
+      'Phần này là bài biên soạn tổng hợp từ kiến thức phổ thông về địa lý và lịch sử, không trích số liệu cụ thể. Số liệu và định nghĩa ranh giới xem phần Wikipedia bên dưới.',
+      'This section is a general-knowledge synthesis of geography and history and quotes no specific statistics. For figures and boundary definitions see the Wikipedia overview below.'
+    )}</p>`;
+  }
+
   // hotspots, routes and zones whose centre lies in this water body (computed from the site's own data)
   const rel = o.geo && o.type !== 'ocean'
     ? H.filter(h => {
@@ -904,7 +940,15 @@ function seaHTML(o) {
       })
     : [];
   if (rel.length) s += `<div class="sec">${tr('ĐIỂM NÓNG & TUYẾN TRÊN VÙNG BIỂN NÀY', 'HOTSPOTS & ROUTES IN THIS WATER')}</div><div class="chips">${rel.map(h => chipH(h.id)).join('')}</div>`;
-  else s += `<p class="note">${tr('Chưa có điểm nóng hay tuyến nào gắn với vùng biển này trong dữ liệu của trang.', 'No hotspot or route in the site data is attached to this water body yet.')}</p>`;
+
+  if (info) {
+    const src = (enMode ? info.en : info.vi) || info.en;
+    const viaEn = !enMode && !info.vi;
+    s += `<div class="sec">${tr('TỔNG QUAN (WIKIPEDIA)', 'OVERVIEW (WIKIPEDIA)')}</div>`;
+    if (info.whole) s += `<p class="note">${tr('Mô tả dưới đây nói về toàn bộ đại dương này, không chỉ phần bán cầu được chọn.', 'The text below describes the whole ocean, not only the selected half.')}</p>`;
+    s += `<p class="txt sea-p">${escTxt(src.text)}</p>`;
+    s += `<div class="sea-src">${tr('Nguồn', 'Source')}: <a href="${src.url}" target="_blank" rel="noopener noreferrer">Wikipedia · ${src.title} ↗</a> · CC BY-SA 4.0${viaEn ? ` · ${tr('(bản tiếng Anh)', '(English edition)')}` : ''}</div>`;
+  }
   return s;
 }
 
@@ -1372,13 +1416,13 @@ export function setAl(key, openLeaderboard = false) {
     const gradCols = m.stops.map(s => s[1]).join(', ');
     const minLbl = fmtRankVal(m.stops[0][0], m, enMode);
     const maxLbl = fmtRankVal(m.stops[m.stops.length - 1][0], m, enMode);
-    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${
       enMode ? m.short_en + ' · ' + m.en : m.short_vi + ' · ' + m.vi
-    }</b><div style="display:flex;gap:10px"><button class="lnk" id="alOpenRk" style="padding:0">${tr(
+    }</b><div style="display:flex;gap:6px;flex-shrink:0"><button type="button" class="lnk" id="alOpenRk">${tr(
       'Bảng xếp hạng ↗',
       'Leaderboard ↗'
-    )}</button><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div></div>
-    <div style="color:var(--muted);font-size:11.5px;margin-top:2px">${enMode ? m.src_en : m.src_vi}</div>
+    )}</button><button type="button" class="lnk" id="alX">${tr('Tắt', 'Off')}</button></div></div>
+    <div style="color:var(--muted);font-size:11.5px;margin-top:4px">${enMode ? m.src_en : m.src_vi}</div>
     <div class="rk-leg-bar" style="background:linear-gradient(90deg, ${gradCols})"></div>
     <div class="rk-leg-ends"><span>${minLbl}</span><span>${maxLbl}</span></div>`;
     lg.classList.add('show');
@@ -1391,7 +1435,7 @@ export function setAl(key, openLeaderboard = false) {
     const tiers = Object.values(ECON_TIERS)
       .map(t => `<span><span class="sq" style="background:${t.c}"></span>${enMode ? t.en : t.vi}</span>`)
       .join('');
-    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${tr('Phân nhóm Kinh tế Thế giới', 'Global Economic Development Tiers')}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${tr('Theo phân loại thu nhập của Ngân hàng Thế giới (GNI/người, cập nhật 1/7/2026); số liệu GDP: WDI 2024', 'By World Bank income classification (GNI per capita, updated 1 Jul 2026); GDP figures: WDI 2024')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${tiers}</div>`;
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${tr('Phân nhóm Kinh tế Thế giới', 'Global Economic Development Tiers')}</b><button type="button" class="lnk" id="alX">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px;margin-top:4px">${tr('Theo phân loại thu nhập của Ngân hàng Thế giới (GNI/người, cập nhật 1/7/2026); số liệu GDP: WDI 2024', 'By World Bank income classification (GNI per capita, updated 1 Jul 2026); GDP figures: WDI 2024')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${tiers}</div>`;
     lg.classList.add('show');
     $('#alX').onclick = () => setAl('');
     return;
@@ -1400,7 +1444,7 @@ export function setAl(key, openLeaderboard = false) {
     const rTypes = Object.values(REGIME_TYPES)
       .map(t => `<span><span class="sq" style="background:${t.c}"></span>${enMode ? t.en : t.vi}</span>`)
       .join('');
-    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${tr('Thể chế & Bộ máy Nhà nước trên Thế giới', 'Global Government & Political Systems')}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${tr('Phân loại theo hình thức chính thể hiến định và cơ chế thực thi quyền lực hành pháp – lập pháp trên thực tế (2026)', 'Classified by constitutional form of state and practical executive–legislative power structure (2026)')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${rTypes}</div>`;
+    lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${tr('Thể chế & Bộ máy Nhà nước trên Thế giới', 'Global Government & Political Systems')}</b><button type="button" class="lnk" id="alX">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px;margin-top:4px">${tr('Phân loại theo hình thức chính thể hiến định và cơ chế thực thi quyền lực hành pháp – lập pháp trên thực tế (2026)', 'Classified by constitutional form of state and practical executive–legislative power structure (2026)')}</div><div class="row" style="gap:8px 12px;margin-top:8px">${rTypes}</div>`;
     lg.classList.add('show');
     $('#alX').onclick = () => setAl('');
     return;
@@ -1411,7 +1455,7 @@ export function setAl(key, openLeaderboard = false) {
     return;
   }
   const aInfo = enMode && AL_EN[st.al] ? AL_EN[st.al] : a;
-  lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:baseline"><b>${aInfo.n}</b><button class="lnk" id="alX" style="padding:0">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px">${aInfo.f}</div><div style="margin-top:6px">${aInfo.tx}</div><div class="row"><span><span class="sq" style="background:${a.c}"></span>${tr('Thành viên', 'Member')}</span>${a.p.length ? `<span><span class="sq" style="background:${a.c};opacity:.42"></span>${tr('Đối tác / đặc biệt', 'Partner / observer')}</span>` : ''}</div>`;
+  lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${aInfo.n}</b><button type="button" class="lnk" id="alX">${tr('Tắt', 'Off')}</button></div><div style="color:var(--muted);font-size:12px;margin-top:4px">${aInfo.f}</div><div style="margin-top:6px">${aInfo.tx}</div><div class="row"><span><span class="sq" style="background:${a.c}"></span>${tr('Thành viên', 'Member')}</span>${a.p.length ? `<span><span class="sq" style="background:${a.c};opacity:.42"></span>${tr('Đối tác / đặc biệt', 'Partner / observer')}</span>` : ''}</div>`;
   lg.classList.add('show');
   $('#alX').onclick = () => setAl('');
 }
@@ -1465,6 +1509,16 @@ export function applyLang() {
   if ($('#langBtn')) {
     $('#langBtn').textContent = enMode ? 'EN' : 'VI';
     $('#langBtn').title = enMode ? 'Switch to Vietnamese (Tiếng Việt)' : 'Chuyển sang Tiếng Anh (English)';
+  }
+  if ($('#bmBtn')) {
+    const bmTxt = tr('Bookmuse — Bạn đọc sách cùng AI (bookmuse.wanngo.com)', 'Bookmuse — AI Reading Companion (bookmuse.wanngo.com)');
+    $('#bmBtn').title = bmTxt;
+    $('#bmBtn').setAttribute('aria-label', bmTxt);
+  }
+  if ($('#wgBtn')) {
+    const wgTxt = tr('wanngo — Trang chủ (wanngo.com)', 'wanngo — Home (wanngo.com)');
+    $('#wgBtn').title = wgTxt;
+    $('#wgBtn').setAttribute('aria-label', wgTxt);
   }
   if ($('#lblLayers')) $('#lblLayers').textContent = tr('LỚP BẢN ĐỒ', 'MAP LAYERS');
   if ($('#lyDef')) $('#lyDef').textContent = tr('Mặc định', 'Default');

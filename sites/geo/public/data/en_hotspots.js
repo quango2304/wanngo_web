@@ -678,8 +678,8 @@ export const H_EN = {
     tx: 'By far the largest river on Earth by water volume—discharging roughly 20% of all river freshwater entering the world’s oceans, more than five times the flow of the second-place Congo River—and stretching ~6,400–6,992 km in length. Its main channel is so deep and wide that ocean-going vessels can sail more than 1,500 km upstream to the jungle metropolis of Manaus; yet because its banks are flanked by seasonally flooded rainforest and nutrient-poor clay soils hostile to farming and road building, the Amazon basin could never become an economic heartland like the Mississippi basin.'
   },
   mekong: {
-    n: 'Mekong River (Lancang – Cuu Long)',
-    tx: 'Flowing ~4,900 km from the Tibetan Plateau through six nations (China, Myanmar, Laos, Thailand, Cambodia, and Vietnam) before emptying into the East Sea (South China Sea). Although it sustains over 65 million people and supports the world’s largest inland freshwater fishery (powered by the unique seasonal flow reversal of Cambodia’s Tonle Sap lake), the Mekong is broken by the Khone Phapheng Falls in southern Laos and numerous rapids, preventing ocean-going vessels from sailing from Vietnam’s coast up to Yunnan; today the river’s ecological security faces mounting stress from dozens of upstream hydropower dams.'
+    n: 'Mekong – Cuu Long River (Tien & Hau Rivers)',
+    tx: 'Flowing ~4,900 km from the Tibetan Plateau through six nations (China, Myanmar, Laos, Thailand, Cambodia, and Vietnam—where it splits into the Tien and Hau distributaries, collectively known as the Cuu Long River) before emptying into the East Sea (South China Sea). Although it sustains over 65 million people and supports the world’s largest inland freshwater fishery (powered by the unique seasonal flow reversal of Cambodia’s Tonle Sap lake), the Mekong is broken by the Khone Phapheng Falls in southern Laos and numerous rapids, preventing ocean-going vessels from sailing from Vietnam’s coast up to Yunnan; today the river’s ecological security faces mounting stress from dozens of upstream hydropower dams.'
   },
   songhong: {
     n: 'Red River (Yuan River – Song Hong)',

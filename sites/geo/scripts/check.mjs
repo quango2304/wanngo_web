@@ -53,13 +53,31 @@ if (all.size > 1) bad(`inconsistent ?v= values: ${[...all]}`);
   for (const k of Object.keys(CONT)) if (!CONT_CARD[cardKey(k)]) bad(`no card for continent ${k}`);
 }
 
-// seas: every named water body in WATER_LABELS has an outline in seas.json (rebuild with scripts/build_seas.mjs)
+// seas: every named water body in WATER_LABELS has an outline in seas.json, a story in sea_story.js, and Wikipedia info in sea_info.js
 {
   const st = readFileSync(path.join(pub, 'js/state.js'), 'utf8');
   const block = st.slice(st.indexOf('export const WATER_LABELS'), st.indexOf('export const SEAS'));
   const want = [...new Set([...block.matchAll(/en: '([^']+)'/g)].map((m) => m[1]))];
   const seas = JSON.parse(readFileSync(path.join(pub, 'assets/map/seas.json'), 'utf8'));
-  for (const n of want) if (!seas[n] || !seas[n].g.length) bad(`no outline in seas.json for "${n}"`);
+  const { SEA_STORY } = await import(pathToFileURL(path.join(pub, 'data/sea_story.js')));
+  const { SEA_INFO } = await import(pathToFileURL(path.join(pub, 'data/sea_info.js')));
+  for (const n of want) {
+    if (!seas[n] || !seas[n].g.length) bad(`no outline in seas.json for "${n}"`);
+    const stEntry = SEA_STORY[n];
+    if (!stEntry || !Array.isArray(stEntry.vi) || !stEntry.vi.length || stEntry.vi.some((p) => typeof p !== 'string' || !p.trim())) {
+      bad(`missing/empty SEA_STORY.vi for "${n}"`);
+    }
+    if (!stEntry || !Array.isArray(stEntry.en) || !stEntry.en.length || stEntry.en.some((p) => typeof p !== 'string' || !p.trim())) {
+      bad(`missing/empty SEA_STORY.en for "${n}"`);
+    }
+    const inf = SEA_INFO[n];
+    if (!inf || !inf.en || !inf.en.text || !/^https:\/\//.test(inf.en.url || '')) {
+      bad(`missing/invalid SEA_INFO.en for "${n}"`);
+    }
+    if (inf && inf.vi && (!inf.vi.text || !/^https:\/\//.test(inf.vi.url || ''))) {
+      bad(`invalid SEA_INFO.vi for "${n}"`);
+    }
+  }
 }
 
 console.log(fail ? `${fail} problem(s)` : 'OK');
