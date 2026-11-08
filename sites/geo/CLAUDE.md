@@ -13,7 +13,10 @@ An interactive 3D orthographic globe for studying geopolitics (Vietnamese first,
      ranking.
    - When you are not sure of a fact, verify it online (fetch the source) before writing it, or say plainly that it is
      unverified. Do not guess a year.
-   - Keep VI and EN content equivalent. Dates and names (e.g. 34 provinces of Vietnam since 2025) must be current.
+   - Keep VI and EN content equivalent.
+   - One editorial exception, the owner's decision (9 Nov 2026): the site states in its own voice that Hoàng Sa (Paracels)
+     and Trường Sa (Spratlys) belong to Vietnam. Who occupies what stays accurate (China has held all of Hoàng Sa since
+     1974; several parties hold features in Trường Sa), and other countries' claims are reported as their claims. Dates and names (e.g. 34 provinces of Vietnam since 2025) must be current.
 2. **Good UI/UX.** Dark and light themes both work; text is readable (contrast); touch targets are comfortable on mobile;
    dialogs/panels are scannable, with short labels and explanations where a number could be misread. Keyboard and
    screen-reader basics (labels, focus, `aria-*`) are kept. Check both Vietnamese and English strings for overflow.

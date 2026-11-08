@@ -1,21 +1,29 @@
 // Explainers ("Góc nhìn"): step-by-step geography stories, one file each. Order = order in the list.
 // withCore() merges the strategic-logic text (data/core_<id>.js) into a story: step.core, extra sources, a closing line.
-import { HORMUZ } from './story_hormuz.js?v=20261109d';
-import { UKRAINE } from './story_ukraine.js?v=20261109d';
-import { REDSEA } from './story_redsea.js?v=20261109d';
-import { TAIWAN } from './story_taiwan.js?v=20261109d';
-import { BIENDONG } from './story_biendong.js?v=20261109d';
-import { CHINA } from './story_china.js?v=20261109d';
-import { USA } from './story_usa.js?v=20261109d';
-import { ARCTIC } from './story_arctic.js?v=20261109d';
-import { INDOPAK } from './story_indopak.js?v=20261109d';
-import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109d';
-import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109d';
-import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109d';
-import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109d';
-import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109d';
-import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109d';
-import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109d';
+import { HORMUZ } from './story_hormuz.js?v=20261109e';
+import { UKRAINE } from './story_ukraine.js?v=20261109e';
+import { REDSEA } from './story_redsea.js?v=20261109e';
+import { TAIWAN } from './story_taiwan.js?v=20261109e';
+import { BIENDONG } from './story_biendong.js?v=20261109e';
+import { CHINA } from './story_china.js?v=20261109e';
+import { USA } from './story_usa.js?v=20261109e';
+import { ARCTIC } from './story_arctic.js?v=20261109e';
+import { INDOPAK } from './story_indopak.js?v=20261109e';
+import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109e';
+import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109e';
+import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109e';
+import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109e';
+import { THESIS as THESIS_CHINA } from './thesis_china.js?v=20261109e';
+import { THESIS as THESIS_ARCTIC } from './thesis_arctic.js?v=20261109e';
+import { THESIS as THESIS_REDSEA } from './thesis_redsea.js?v=20261109e';
+import { THESIS as THESIS_INDOPAK } from './thesis_indopak.js?v=20261109e';
+import { THESIS as THESIS_TAIWAN } from './thesis_taiwan.js?v=20261109e';
+import { THESIS as THESIS_USA } from './thesis_usa.js?v=20261109e';
+import { THESIS as THESIS_HORMUZ } from './thesis_hormuz.js?v=20261109e';
+import { THESIS as THESIS_UKRAINE } from './thesis_ukraine.js?v=20261109e';
+import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109e';
+import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109e';
+import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109e';
 
 function withCore(story, c) {
   const off = story.sources.length;
@@ -30,8 +38,15 @@ function withCore(story, c) {
 
 // withVi() replaces the `vi` text at each path ('steps.2.core', 'status', ...) with its natural-Vietnamese rewrite.
 // withThesis() tags each step with its link of the argument and puts the whole argument first.
+// `titles`, `texts` and `cores` (optional, same order as the story's own steps) replace those texts with the plain-
+// language rewrite written for the story's argument; facts, sources and map settings are untouched.
 function withThesis(story, t) {
-  story.steps.forEach((st, i) => { if (t.tags[i]) st.tag = t.tags[i]; });
+  story.steps.forEach((st, i) => {
+    if (t.tags && t.tags[i]) st.tag = t.tags[i];
+    if (t.titles && t.titles[i]) st.title = t.titles[i];
+    if (t.texts && t.texts[i]) st.text = t.texts[i];
+    if (t.cores && t.cores[i]) st.core = t.cores[i];
+  });
   story.steps.unshift(t.step);
   return story;
 }
@@ -45,4 +60,4 @@ function withVi(story, map) {
   return story;
 }
 
-export const STORIES = [withVi(withCore(HORMUZ, CORE_HORMUZ), VI_HORMUZ), withCore(UKRAINE, CORE_UKRAINE), withCore(REDSEA, CORE_REDSEA), withCore(TAIWAN, CORE_TAIWAN), withThesis(withCore(BIENDONG, CORE_BIENDONG), THESIS_BIENDONG), CHINA, USA, ARCTIC, INDOPAK];
+export const STORIES = [withThesis(withVi(withCore(HORMUZ, CORE_HORMUZ), VI_HORMUZ), THESIS_HORMUZ), withThesis(withCore(UKRAINE, CORE_UKRAINE), THESIS_UKRAINE), withThesis(withCore(REDSEA, CORE_REDSEA), THESIS_REDSEA), withThesis(withCore(TAIWAN, CORE_TAIWAN), THESIS_TAIWAN), withThesis(withCore(BIENDONG, CORE_BIENDONG), THESIS_BIENDONG), withThesis(CHINA, THESIS_CHINA), withThesis(USA, THESIS_USA), withThesis(ARCTIC, THESIS_ARCTIC), withThesis(INDOPAK, THESIS_INDOPAK)];
