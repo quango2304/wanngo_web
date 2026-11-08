@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108m';
-import { C0, TOOLS } from '../data/countries.js?v=20261108m';
-import { RELC, REL } from '../data/religions.js?v=20261108m';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108m';
-import { iconSvg } from './icons.js?v=20261108m';
-import { AL, REF } from '../data/alliances.js?v=20261108m';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108n';
+import { C0, TOOLS } from '../data/countries.js?v=20261108n';
+import { RELC, REL } from '../data/religions.js?v=20261108n';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108n';
+import { iconSvg } from './icons.js?v=20261108n';
+import { AL, REF } from '../data/alliances.js?v=20261108n';
 import {
   $,
   norm,
@@ -63,7 +63,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261108m';
+} from './state.js?v=20261108n';
 import {
   cv,
   proj,
@@ -81,7 +81,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108m';
+} from './globe.js?v=20261108n';
 import {
   CONT,
   AMERICAS,
@@ -98,7 +98,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108m';
+} from '../data/continents.js?v=20261108n';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -1085,7 +1085,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261108m'), import('../data/sea_info.js?v=20261108m')])
+    Promise.all([import('../data/sea_story.js?v=20261108n'), import('../data/sea_info.js?v=20261108n')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 
@@ -1631,10 +1631,11 @@ export function setAl(key, openLeaderboard = false) {
       lg.classList.remove('show');
       return;
     }
-    const gradCols = rankRamp().join(', ');
+    const lowerBetter = m.higherBetter === false;
+    const gradCols = (lowerBetter ? [...rankRamp()].reverse() : rankRamp()).join(', ');
     const minLbl = fmtRankVal(m.stops[0][0], m, enMode);
     const maxLbl = fmtRankVal(m.stops[m.stops.length - 1][0], m, enMode);
-    const higher = m.key === 'pollution' ? tr('ô nhiễm hơn', 'more polluted') : tr('cao hơn', 'higher');
+    const higher = lowerBetter ? tr('không khí sạch hơn', 'cleaner air') : tr('cao hơn', 'higher');
     const scaleNote = C.dark ? tr(`Sáng hơn = ${higher}`, `Brighter = ${higher}`) : tr(`Đậm hơn = ${higher}`, `Darker = ${higher}`);
     lg.innerHTML = `<div style="display:flex;justify-content:space-between;gap:8px;align-items:center"><b>${
       enMode ? m.short_en + ' · ' + m.en : m.short_vi + ' · ' + m.vi

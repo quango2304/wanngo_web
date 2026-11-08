@@ -49,7 +49,7 @@ sites/geo/
 
 - `RANK_METRICS` describes each metric (name, unit, `src_*`, `data_*` year, `desc_*` methodology, `link`, `stops`,
   `higherBetter`, `idx` into the row array). The heatmap colours come from `RANK_RAMP` in `js/state.js` (one orange
-  scale, colour-blind safe: darker = higher in light theme, brighter = higher in dark); a metric's `stops` only set
+  scale, colour-blind safe: darker = better in light theme, brighter = better in dark; for PM2.5, where lower is better, the scale is reversed); a metric's `stops` only set
   where each step of that scale sits (their colour values are no longer used). `RANK_DATA` maps the English country name to
   `[happiness, income, pm25, hdi, lifeExp, gdpBillionUSD]`. `null` = no data.
 - The rankings dialog (`rankingHTML` in `ui.js`) shows: unit and source, **"Tiêu chí đánh giá"** (methodology),

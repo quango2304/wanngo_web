@@ -1,13 +1,13 @@
-import { NAMES } from '../data/regions.js?v=20261108m';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108m';
-import { AL } from '../data/alliances.js?v=20261108m';
-import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108m';
-import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108m';
-import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108m';
-import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108m';
-import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108m';
-import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108m';
-import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108m';
+import { NAMES } from '../data/regions.js?v=20261108n';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108n';
+import { AL } from '../data/alliances.js?v=20261108n';
+import { CAPITALS, CITIES, ISLANDS, ADMIN1_META } from '../data/urban_islands.js?v=20261108n';
+import { TOOLS_EN, REGIONS_EN, AL_EN, REF_EN, RELC_EN, REL_EN, C0_EN } from '../data/en_countries.js?v=20261108n';
+import { LAYERS_EN, UPDATED_EN, H_EN, LAKE_META_EN } from '../data/en_hotspots.js?v=20261108n';
+import { CAPITALS_EN, CITIES_EN, ISLANDS_EN, ADMIN1_EN } from '../data/en_urban_islands.js?v=20261108n';
+import { ECON_TIERS, ECON_SECTORS, ECON } from '../data/economy.js?v=20261108n';
+import { REGIME_TYPES, REGIMES } from '../data/regimes.js?v=20261108n';
+import { RANK_METRICS, RANK_DATA } from '../data/rankings.js?v=20261108n';
 
 export {
   CAPITALS,
@@ -39,7 +39,7 @@ export {
 };
 
 // Heatmap colours: one orange hue, so red-green colour-blind readers can read it and it never blends with the blue
-// ocean. Light theme: higher value = darker. Dark theme: higher value = brighter. The metric's stops only set where
+// ocean. Light theme: better value = darker. Dark theme: better value = brighter (for most metrics better = higher). The metric's stops only set where
 // each step of the scale sits; the stop colours in rankings.js are no longer used for the map.
 export const RANK_RAMP = {
   light: ['#F7C48F', '#EE9A55', '#D9692A', '#A9481A', '#6E2C0E'],
@@ -73,9 +73,11 @@ export function rankPos(val, metric) {
   }
   return 1;
 }
+// Where lower is better (PM2.5), the scale runs the other way: cleaner air = darker (light) / brighter (dark).
 export function rankValColor(val, metric) {
   if (val === null || val === undefined || !metric || !metric.stops) return null;
-  return rampAt(rankPos(val, metric));
+  const t = rankPos(val, metric);
+  return rampAt(metric.higherBetter === false ? 1 - t : t);
 }
 
 export function fmtRankVal(val, metric, enMode = false) {
