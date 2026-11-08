@@ -27,7 +27,7 @@ export const H_EN = {
   },
   hormuz: {
     n: 'Strait of Hormuz',
-    tx: 'The sole maritime outlet of the Persian Gulf into the Gulf of Oman and the Indian Ocean; while ~33 km wide at its narrowest point, the actual traffic separation lanes for supertankers are only ~3 km wide in each direction. An average of 20–21 million barrels of oil per day (~20% of global petroleum consumption) and roughly one-fifth of global liquefied natural gas (LNG, primarily from Qatar) pass through here, with over 80% bound for Asian markets. Iran controls the northern coast and administers the islands of Abu Musa and the Tunbs (sovereignty over which is claimed by the UAE); during the 2026 war, Iran closed the strait, prompting international convoy operations and an ongoing US naval blockade off its approaches.'
+    tx: 'The sole maritime outlet of the Persian Gulf into the Gulf of Oman and the Indian Ocean. Its two shipping lanes, each about 2 nautical miles (~3.7 km) wide, lie inside Omani territorial waters. In 2024 an average of about 20 million barrels of oil a day (about one-fifth of global oil consumption) and about one-fifth of the world’s LNG (mostly from Qatar) passed through; over 80% went to Asia (EIA). Iran holds the northern shore and the islands of Abu Musa and the Tunbs (also claimed by the UAE). Since the 2026 war, Iran has restricted passage and the US has blockaded Iran’s ports.'
   },
   babelmandeb: {
     n: 'Bab el-Mandeb Strait',
@@ -59,11 +59,11 @@ export const H_EN = {
   },
   panama: {
     n: 'Panama Canal',
-    tx: 'Opened in 1914 (built by the United States and handed over to Panamanian sovereignty at the end of 1999 under the Torrijos–Carter Treaties), this ~82 km waterway links the Atlantic and Pacific Oceans via a system of locks that lift and lower vessels to artificial Gatún Lake (26 m above sea level). It shortens the New York–San Francisco voyage from ~22,500 km (around Cape Horn) to ~9,500 km and handles ~5–6% of global maritime trade. The 2023–2024 El Niño drought restricted fresh water for lock operations, while CK Hutchison\'s operation of the Balboa and Cristóbal ports at both ends of the canal was a focal point of US–China rivalry until Panama\'s Supreme Court ruled the concessions unconstitutional in January 2026 and the state took over the terminals in February 2026.'
+    tx: 'Opened in 1914 (built by the United States and handed over to Panamanian sovereignty at the end of 1999 under the Torrijos–Carter Treaties), this ~82 km waterway links the Atlantic and Pacific Oceans via a system of locks that lift and lower vessels to artificial Gatún Lake (26 m above sea level). It shortens the New York–San Francisco voyage from ~22,500 km (around Cape Horn) to ~9,500 km and carries nearly 3% of world maritime trade (S&P, quoted in the Panama Canal Authority’s 2025 report); about 69.9% of its cargo starts or ends in the United States. The 2023–2024 El Niño drought restricted fresh water for lock operations, while CK Hutchison\'s operation of the Balboa and Cristóbal ports at both ends of the canal was a focal point of US–China rivalry until Panama\'s Supreme Court ruled the concessions unconstitutional on 29 January 2026 and the state took over the terminals in February 2026.'
   },
   bering: {
     n: 'Bering Strait',
-    tx: 'Just ~85 km wide at its narrowest point between Russia’s Chukotka Peninsula and the US state of Alaska, with Russia’s Big Diomede Island and America’s Little Diomede Island separated by only ~3.8 km across the International Date Line in the middle. It is the sole maritime bottleneck connecting the Arctic Ocean with the Pacific—serving as the eastern gateway of the Northern Sea Route (NSR), which is growing increasingly vital as Arctic sea ice retreats.'
+    tx: 'About 82 km (just over 50 miles) wide at its narrowest point between Russia’s Chukotka Peninsula and the US state of Alaska, with Russia’s Big Diomede Island and America’s Little Diomede Island separated by only ~3.8 km across the International Date Line in the middle. It is the sole maritime bottleneck connecting the Arctic Ocean with the Pacific—serving as the eastern gateway of the Northern Sea Route (NSR), which is growing increasingly vital as Arctic sea ice retreats.'
   },
   taiwanstrait: {
     n: 'Taiwan Strait',
@@ -143,7 +143,7 @@ export const H_EN = {
   },
   nsr: {
     n: 'Northern Sea Route (Arctic NSR)',
-    tx: 'The Arctic shipping corridor running along Russia’s northern coast from Murmansk through the Bering Strait down to East Asia, cutting the Rotterdam–Yokohama distance by roughly 40% (~7,000 km) compared to the Suez Canal route. Although summer sea ice has shrunk dramatically since the 1980s, the route remains harsh and requires escort by Russia’s nuclear-powered icebreaker fleet; Moscow uses it to export Yamal LNG and Arctic crude oil to China.'
+    tx: 'The shipping route along Russia’s Arctic coast, from the Barents Sea to the Bering Strait, much shorter than the Europe–East Asia route via the Suez Canal. But the season is short, some stretches are too shallow for large ships, and ships often need Russian icebreaker escort. Most of the cargo on the route is Russia’s own oil and gas, such as Yamal LNG.'
   },
   nwp: {
     n: 'Northwest Passage (Arctic NWP)',
@@ -219,7 +219,7 @@ export const H_EN = {
   },
   arctic: {
     n: 'Arctic Ocean & the Lomonosov Ridge',
-    tx: 'The polar sea surrounding the North Pole, estimated by the USGS to hold roughly 13% of the world’s undiscovered oil and 30% of its undiscovered natural gas. The five Arctic littoral states (Russia, Canada, Denmark/Greenland, Norway, and the United States) are locked in intense competition to extend their continental shelf claims beyond 200 nautical miles under UNCLOS, particularly over the underwater Lomonosov Ridge spanning the central Arctic.'
+    tx: 'According to a US Geological Survey estimate (USGS, 2008), the area around the North Pole may hold about 13% of the world’s undiscovered oil and 30% of its undiscovered natural gas. The five Arctic Ocean coastal states (Russia, Canada, Denmark/Greenland, Norway and the United States) compete to extend their continental shelves beyond 200 nautical miles under UNCLOS, notably the overlapping Russian, Danish and Canadian claims to the underwater Lomonosov Ridge across the central Arctic.'
   },
   blacksea: {
     n: 'Black Sea',
@@ -267,7 +267,7 @@ export const H_EN = {
   },
   conf_iran: {
     n: 'Iran–Israel–US Confrontation & Nuclear Standoff',
-    tx: 'The central geopolitical fault line of the Middle East, pitting the Islamic Republic of Iran (and its regional "Axis of Resistance" network including Hezbollah in Lebanon, Hamas in Gaza, the Houthis in Yemen, and Shiite militias in Iraq and Syria) against Israel and the United States. After decades of proxy warfare and covert operations targeting Tehran’s uranium enrichment and ballistic missile programs, following direct strikes in 2024–2025 and the June 2025 Twelve-Day War, the 2026 Iran War saw major US–Israeli air campaigns kill Supreme Leader Ali Khamenei (succeeded by Mojtaba Khamenei); Iran struck back and closed the Strait of Hormuz before an April ceasefire and the June 2026 Islamabad Memorandum; the ceasefire collapsed on 8 July 2026 and fighting resumed in September, and as of early November the US naval blockade continues alongside limited US strikes around Hormuz while Qatar mediates.'
+    tx: 'The central geopolitical fault line of the Middle East, pitting the Islamic Republic of Iran (and its regional "Axis of Resistance" network including Hezbollah in Lebanon, Hamas in Gaza, the Houthis in Yemen, and Shiite militias in Iraq and Syria) against Israel and the United States. After decades of proxy warfare and covert operations targeting Tehran’s uranium enrichment and ballistic missile programs, following direct strikes in 2024–2025 and the June 2025 Twelve-Day War, the 2026 Iran War saw major US–Israeli air campaigns kill Supreme Leader Ali Khamenei (succeeded by Mojtaba Khamenei); Iran struck back and closed the Strait of Hormuz before an April ceasefire and a memorandum of understanding on 17 June 2026; the ceasefire collapsed on 8 July 2026 and strikes resumed in early September, and as of early November the US naval blockade continues alongside limited US strikes around Hormuz while Qatar mediates.'
   },
   conf_gaza: {
     n: 'Gaza Strip War (Israel–Hamas)',
@@ -303,7 +303,7 @@ export const H_EN = {
   },
   conf_taiwan: {
     n: 'Taiwan Strait Military Flashpoint',
-    tx: 'The centerpiece of US–China strategic competition in the Indo-Pacific. Beijing regards Taiwan as an inalienable province (Taipei rejects this; the island\'s status is disputed) and has not renounced the use of force for reunification, regularly staging large-scale encirclement and blockade exercises (such as Joint Sword) around the island and across the strait’s median line. Meanwhile, Taiwan occupies the central hinge of the First Island Chain and produces over 60% of the world’s semiconductors (and over 90% of ultra-advanced chips via TSMC), leading the United States (under the 1979 Taiwan Relations Act) and Japan to treat peace across the strait as a core national security interest.'
+    tx: 'The centerpiece of US–China strategic competition in the Indo-Pacific. Beijing regards Taiwan as an inalienable province (Taipei rejects this; the island\'s status is disputed) and has not renounced the use of force for reunification, regularly staging large exercises around the island (Joint Sword 2024, Strait Thunder-2025A in April 2025, Justice Mission 2025 in late December 2025, including port-blockade drills) and across the strait’s median line. Meanwhile, Taiwan occupies the central hinge of the First Island Chain and is home to TSMC, the world’s largest chip foundry (about 72.5% of the top ten foundries’ revenue in Q2 2026), leading the United States (under the 1979 Taiwan Relations Act) and Japan to treat peace across the strait as a core national security interest.'
   },
   sykespicot: {
     n: 'Sykes–Picot Agreement (1916): "A Line in the Sand"',
@@ -503,7 +503,7 @@ export const H_EN = {
   },
   pipe_habshan: {
     n: 'Habshan–Fujairah Oil Pipeline (ADCOP – UAE Hormuz Bypass)',
-    tx: 'A ~370 km strategic pipeline (capacity ~1.5–1.8 million barrels/day, inaugurated in 2012) linking Abu Dhabi’s onshore Habshan oil fields across the Hajar Mountains directly to the export terminal of Fujairah on the Gulf of Oman (Indian Ocean). Thanks to this pipeline, the UAE can export roughly half of its crude oil exports without routing tankers through the Strait of Hormuz—an essential bypass when the strait was blocked during the 2026 war.'
+    tx: 'A pipeline of about 360–380 km (capacity about 1.5–1.8 million barrels a day; sources differ) linking Abu Dhabi’s Habshan oil fields across the Hajar Mountains to the export terminal of Fujairah on the Gulf of Oman. It lets the UAE export part of its crude without sending tankers through the Strait of Hormuz, a bypass that mattered most when Hormuz was restricted during the 2026 war.'
   },
   field_ghawar: {
     n: 'Ghawar Supergiant Oil Field & Abqaiq Processing Hub (Saudi Arabia)',
@@ -515,7 +515,7 @@ export const H_EN = {
   },
   field_permian: {
     n: 'Permian Shale Basin (Texas & New Mexico – US)',
-    tx: 'The beating heart of America’s shale revolution powered by horizontal drilling and hydraulic fracturing (fracking): the Permian Basin of West Texas and southeastern New Mexico alone produces over 6 million barrels of oil per day—more than the entire output of any OPEC member except Saudi Arabia. The Permian boom transformed the United States from the world’s largest oil importer into its number-one crude oil producer (~13.2 million barrels/day) and largest LNG exporter, fundamentally altering Washington’s geopolitical calculus in the Middle East.'
+    tx: 'The heart of the shale oil revolution, driven by horizontal drilling and hydraulic fracturing (fracking). The Permian Basin of West Texas and southeastern New Mexico is the largest oil-producing region in the United States. In 2025 the US produced about 13.7 million barrels of crude a day and exported more oil and oil products than it imported; it also exports more LNG than Qatar (EIA).'
   },
   field_guyana: {
     n: 'Stabroek Offshore Oil Block (Guyana – South America)',
@@ -575,7 +575,7 @@ export const H_EN = {
   },
   res_tsmc: {
     n: 'TSMC Semiconductor Cluster: Hsinchu, Taichung, Tainan & Kaohsiung (Taiwan’s "Silicon Shield")',
-    tx: 'Strung along Taiwan’s western coastal plain (from Hsinchu Science Park south through Taichung, Tainan, and Kaohsiung) are the GigaFabs of TSMC—the foundry giant commanding over 60% of global contract chip manufacturing and more than 90% of the world’s most advanced logic semiconductors (3 nm and 2 nm nodes powering AI data centers, supercomputers for Nvidia, Apple, and AMD, and modern defense systems). This extraordinary concentration is known as Taiwan’s "Silicon Shield," as any military conflict halting these fabs would wipe trillions of dollars off global GDP.'
+    tx: 'Along Taiwan’s western coast (from Hsinchu Science Park south through Taichung, Tainan and Kaohsiung) stand TSMC’s chip foundries. In Q2 2026 TSMC took about 72.5% of the revenue of the world’s ten largest foundries (TrendForce); in Q3 2026, 79% of its wafer revenue came from 7 nm and smaller processes. A 2021 study (SIA/BCG, using data from around 2019) estimated that 92% of the world’s sub-10 nm chipmaking capacity was in Taiwan. This concentration is often called Taiwan’s “Silicon Shield”: a conflict that halted these fabs would hit the global chip supply chain hard.'
   },
   res_asml: {
     n: 'ASML Headquarters in Veldhoven (Netherlands – EUV Lithography Monopoly)',
@@ -735,7 +735,7 @@ export const H_EN = {
   },
   mississippi: {
     n: 'Mississippi–Missouri–Ohio River System',
-    tx: 'America’s "greatest geographic gift": the longest naturally navigable inland waterway network on Earth (over 25,000 km of navigable channels—more than the rest of the world combined), flowing gently across North America’s fertile agricultural heartland and converging on a single maritime outlet at the port of New Orleans on the Gulf of Mexico. Because waterborne transport is 10–15 times cheaper than overland haulage, the 1803 Louisiana Purchase from France for just $15 million sealed the United States’ destiny as a continental superpower.'
+    tx: 'The Mississippi–Missouri–Ohio system flows through North America’s richest farmland and reaches the Gulf of Mexico at New Orleans. The whole US inland waterway network is about 12,000 miles (~19,000 km) long with 219 locks; most locks and dams on the Mississippi were built in the 1930s. The US exports about a quarter of the grain it grows; in 2025 about 51% of grain export shipments left through Gulf ports, and barges carried 32 million tons of grain down the Mississippi to New Orleans (USDA). The 1803 Louisiana Purchase from France brought the whole basin under US control.'
   },
   colorado: {
     n: 'Colorado River (Southwestern North America)',
@@ -847,7 +847,7 @@ export const H_EN = {
   },
   zagros: {
     n: 'Zagros Mountains (Western Wall of the Iranian Fortress)',
-    tx: 'A ~1,600 km-long system of parallel folded mountain ridges (rising above 4,400 m) running down Iran’s entire western and southwestern frontier, from the Kurdish borderlands with Turkey and Iraq all the way to the Strait of Hormuz. The Zagros turn Iran into a virtually impregnable mountain fortress against mechanized ground invasions from the Mesopotamian plain or the Persian Gulf (as demonstrated when Saddam Hussein’s Iraqi forces were halted here during the 1980–1988 Iran–Iraq War), while allowing Tehran to conceal underground missile bases overlooking the Gulf.'
+    tx: 'A system of parallel folded mountain ridges running along Iran’s western and southwestern frontier, from the Kurdish borderlands with Turkey and Iraq down towards the Strait of Hormuz. The ranges form a natural wall between the Iranian plateau and the Mesopotamian plain and the Persian Gulf, making a ground advance into Iran from the west very hard.'
   },
   elburz: {
     n: 'Alborz / Elburz Mountains (Northern Wall of Tehran)',
@@ -959,7 +959,7 @@ export const H_EN = {
   },
   arcticice: {
     n: 'Arctic Sea Ice – September Summer Minimum',
-    tx: 'The extent of floating pack ice on the Arctic Ocean at its annual late-summer minimum in September: averaging just ~4.2–4.5 million km² in recent years, a decline of nearly 50% in area and significant thinning compared to the 1980s average (~7.5 million km²). The retreat of summer ice away from the Siberian coast has opened the Northern Sea Route (NSR) to summer-autumn cargo and LNG shipping, while simultaneously stripping away the permanent "wall of ice" that historically shielded Russia’s northern coastline from foreign navies.'
+    tx: 'The extent of Arctic sea ice at its yearly minimum in September. The 2026 minimum was about 4.6 million km², reached on 12 Sep 2026 (NASA/NSIDC); according to NSIDC, September ice is declining by about 11.6% per decade. As summer ice retreats from the Siberian coast it opens the Northern Sea Route to summer and autumn shipping, but it also thins the “wall of ice” that once shielded Russia’s northern coast.'
   },
   greenlandice: {
     n: 'Greenland Continental Ice Sheet',
