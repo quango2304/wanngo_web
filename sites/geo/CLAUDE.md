@@ -107,7 +107,7 @@ sites/geo/
   to show even if their layer is off (`show`), countries to colour (`hl`, Natural Earth names), `dim` to mute the other
   land, shapes to draw (`line` with optional `flow`/`arrow`, `poly`, `circle` with `at` and `r` in km, `pt`, `label`;
   colour is `c`; a point label can take `side:'l'`, `dy`, `ox`), a colour `key`, and `src` = indexes into `sources`.
-- **`core`** (older stories only; the new shape puts the reasoning in the step text) is the strategic logic, Tim Marshall style: what each actor needs, fears and can do, and why
+- **`core`** (no longer used; the reasoning now lives in the step text) was the strategic logic, Tim Marshall style: what each actor needs, fears and can do, and why
   geography leaves it little choice). It is an interpretation, so it is attributed ("Moscow says…", "analysts argue…"), backed
   by a source for each stated position, gives the other side's view, and never repeats the facts. The card shows it as the
   paragraph right after the step text, with no box or label (the owner rejected a separate 'Cốt lõi' section).
@@ -126,9 +126,9 @@ sites/geo/
 
 - The story must make the reader understand the deep cause, not list facts. **The model is `story_biendong.js` and
   `story_ukraine.js`** (approved shape, Nov 2026): a self-contained file, 7–8 short steps that teach one argument in
-  order, each tagged `need` → `blocked` → `move` → `counter` → `outlook`. No opener `chain`, no `core`, no merge layers.
-  The other stories still use `core_*.js` / `thesis_*.js` merged by `withCore()` / `withThesis()`; rewrite them into this
-  shape (the step list may change freely).
+  order, each tagged `need` → `blocked` → `move` → `counter` → `outlook`. No opener `chain`, no `core`, no merge layers:
+  all nine stories now have this shape and `stories.js` imports them bare. (`ui.js` still renders `chain`/`core` if a
+  step has them; don't add them.)
 - Step 1 opens with the question the reader already has ("Vì sao Bắc Kinh quyết giữ Biển Đông?") and answers its first
   part; the last step comes back to it ("Bắc Kinh sợ bị nhốt, các nước xung quanh sợ mất biển").
 - Step titles read as a chain when read alone ("Trung Quốc sống nhờ đường biển" → "Nhưng lối ra biển nào cũng hẹp" →
