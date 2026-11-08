@@ -10,6 +10,12 @@
 
 Owner's rule, applied throughout: **anything still disputed between parties says so and names the parties**, in both languages, while keeping the site's Vietnamese naming (Biển Đông, Hoàng Sa, Trường Sa) and Vietnam's position.
 
+4. **Strict re-check** of the 32 applied changes whose first verdict leaned on memory or search snippets: 23 kept, 9 corrected
+   (e.g. Taiwan GDP rank #22, San Marino ~15,000, Zimbabwe debt $22.7bn). Vanuatu's disaster-risk "rank" is now unranked
+   wording, because neither the old "#1" nor "among the highest" could be sourced.
+5. **VI/EN consistency**: 54 changes made in one language only were compared with their twin field; 21 twins were brought
+   in line (same verified fact, translated). `scripts/check.mjs` and the VI/EN pop/area/GDP checks pass.
+
 ## Result
 
 | | Count |

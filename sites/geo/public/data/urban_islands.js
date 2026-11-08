@@ -91,7 +91,7 @@ export const CAPITALS = [
     ],
     "pop": "~44 nghìn",
     "rank": 3,
-    "tx": "Thủ đô và trung tâm chính trị – hành chính của Vanuatu (Port Vila). Quần đảo 83 hòn đảo núi lửa hình chữ Y nằm trên \"Vành đai Lửa\" Thái Bình Dương (từng do cả Anh và Pháp cùng cai trị dưới chế độ \"Chung cư thuộc địa\" kỳ lạ nhất lịch sử tới năm 1980); quốc gia thuộc nhóm chịu rủi ro thiên tai động đất, núi lửa và siêu bão cao nhất thế giới. Thường xuyên hứng chịu động đất mạnh (như trận động đất 7,3 độ tại Port Vila tháng 12/2024) và các siêu bão cấp 5. Vị trí chiến lược trên biển San Hô khiến cả Úc, Pháp và Trung Quốc đều cạnh tranh tài trợ hạ tầng cảng và cảnh sát."
+    "tx": "Thủ đô và trung tâm chính trị – hành chính của Vanuatu (Port Vila). Quần đảo 83 hòn đảo núi lửa hình chữ Y nằm trên \"Vành đai Lửa\" Thái Bình Dương (từng do cả Anh và Pháp cùng cai trị dưới chế độ \"Chung cư thuộc địa\" kỳ lạ nhất lịch sử tới năm 1980); quốc gia chịu rủi ro thiên tai rất lớn từ động đất, núi lửa và siêu bão. Thường xuyên hứng chịu động đất mạnh (như trận động đất 7,3 độ tại Port Vila tháng 12/2024) và các siêu bão cấp 5. Vị trí chiến lược trên biển San Hô khiến cả Úc, Pháp và Trung Quốc đều cạnh tranh tài trợ hạ tầng cảng và cảnh sát."
   },
   {
     "id": "cap_uzbekistan",

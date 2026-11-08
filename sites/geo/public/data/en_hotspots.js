@@ -451,7 +451,7 @@ export const H_EN = {
   },
   base_tartus: {
     n: 'Tartus Naval Base & Khmeimim Air Base (Syria – Russia)',
-    tx: 'Established by the Soviet Union in 1971 on Syria’s Mediterranean coast, Tartus—paired since 2015 with nearby Khmeimim Air Base in Latakia—has served as Russia’s sole warm-water naval and logistics foothold in the Mediterranean and a key staging point for Russian operations into Africa. Following the collapse of the Assad regime in late 2024, an August 2026 Russia–Syria Memorandum of Understanding agreed to convert Tartus and Khmeimim into joint training facilities (with a three-month implementation period; a final agreement is still being worked out) under the transitional authorities.'
+    tx: 'Established by the Soviet Union in 1971 on Syria’s Mediterranean coast, Tartus—paired since 2015 with nearby Khmeimim Air Base in Latakia—has served as Russia’s sole warm-water naval and logistics foothold in the Mediterranean and a key staging point for Russian operations into Africa. Following the collapse of the Assad regime in late 2024, an August 2026 Russia–Syria Memorandum of Understanding agreed to convert Tartus and Khmeimim into joint training facilities (with a transition of up to three months) under the transitional authorities.'
   },
   base_yulin: {
     n: 'Yulin Nuclear Submarine Base (Sanya, Hainan Island – China)',

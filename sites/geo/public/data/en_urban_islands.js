@@ -5,7 +5,7 @@ export const CAPITALS_EN = {
   "cap_zimbabwe": {
     "n": "Harare",
     "pop": "~1.6M",
-    "tx": "Capital and political-administrative center of Zimbabwe (Harare). Situated on a fertile plateau wedged between the mighty Zambezi River (north) and Limpopo River (south), rich in platinum, lithium (Africa's largest reserves), gold, and diamonds, yet battered by early 21st-century hyperinflation and prolonged sanctions. Its elevation provides a cool climate, prime agricultural soils, and freedom from tsetse flies. Its shortest corridor to the sea is the ~300 km road, rail, and fuel pipeline route from the Mutare border down to Mozambique's port of Beira, alongside southern transit links through South Africa."
+    "tx": "Capital and political-administrative center of Zimbabwe (Harare). Situated on a fertile plateau wedged between the mighty Zambezi River (north) and Limpopo River (south), rich in platinum, lithium (Africa's largest reserves), gold, and diamonds, yet battered by early 21st-century hyperinflation and a prolonged economic crisis (Harare blames Western sanctions, while the West maintains they are targeted measures). Its elevation provides a cool climate, prime agricultural soils, and freedom from tsetse flies. Its shortest corridor to the sea is the ~300 km road, rail, and fuel pipeline route from the Mutare border down to Mozambique's port of Beira, alongside southern transit links through South Africa."
   },
   "cap_zambia": {
     "n": "Lusaka",
@@ -35,7 +35,7 @@ export const CAPITALS_EN = {
   "cap_vanuatu": {
     "n": "Port Vila",
     "pop": "~44K",
-    "tx": "Capital and political-administrative center of Vanuatu (Port Vila). A Y-shaped archipelago of 83 volcanic islands along the Pacific \"Ring of Fire\" (jointly ruled by Britain and France under history's strangest colonial \"Condominium\" until 1980), ranked among the highest globally for natural disaster risk from earthquakes, volcanoes, and Category 5 cyclones—including the magnitude 7.3 earthquake that struck Port Vila in December 2024. Its strategic location on the Coral Sea has made it a focal point of competition among Australia, France, and China over port and policing infrastructure."
+    "tx": "Capital and political-administrative center of Vanuatu (Port Vila). A Y-shaped archipelago of 83 volcanic islands along the Pacific \"Ring of Fire\" (jointly ruled by Britain and France under history's strangest colonial \"Condominium\" until 1980), highly exposed to natural disaster risk from earthquakes, volcanoes, and Category 5 cyclones—including the magnitude 7.3 earthquake that struck Port Vila in December 2024. Its strategic location on the Coral Sea has made it a focal point of competition among Australia, France, and China over port and policing infrastructure."
   },
   "cap_uzbekistan": {
     "n": "Tashkent",
@@ -559,7 +559,7 @@ export const CAPITALS_EN = {
   },
   "cap_mauritania": {
     "n": "Nouakchott",
-    "pop": "~742K",
+    "pop": "~1.4 million",
     "tx": "Capital and political-administrative center of Mauritania (Nouakchott). A vast sandy bridge between Arab-Berber North Africa and sub-Saharan West Africa: ~90% of its territory is Sahara desert, its population clusters in coastal Nouakchott and along the southern Senegal River, and its economy relies on 2.5 km-long freight trains hauling iron ore across the Sahara to the Atlantic alongside emerging offshore gas projects."
   },
   "cap_malta": {
@@ -1009,7 +1009,7 @@ export const CAPITALS_EN = {
   },
   "cap_cabo_verde": {
     "n": "Praia",
-    "pop": "~113K",
+    "pop": "~140K",
     "tx": "Capital and political-administrative center of Cabo Verde (Praia). A 10-island volcanic archipelago lying ~600 km off Senegal in the mid-Atlantic: despite Sahelian aridity and scarce natural resources, it stands as one of Africa's most stable, transparent democracies with high human development, sustained by maritime services, tourism, and remittances from a global diaspora larger than its domestic population."
   },
   "cap_canada": {
