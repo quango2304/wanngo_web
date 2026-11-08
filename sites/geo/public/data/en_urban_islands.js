@@ -35,7 +35,7 @@ export const CAPITALS_EN = {
   "cap_vanuatu": {
     "n": "Port Vila",
     "pop": "~44K",
-    "tx": "Capital and political-administrative center of Vanuatu (Port Vila). A Y-shaped archipelago of 83 volcanic islands along the Pacific \"Ring of Fire\" (jointly ruled by Britain and France under history's strangest colonial \"Condominium\" until 1980), ranked #1 globally for natural disaster risk from earthquakes, volcanoes, and Category 5 cyclones—including the magnitude 7.3 earthquake that struck Port Vila in December 2024. Its strategic location on the Coral Sea has made it a focal point of competition among Australia, France, and China over port and policing infrastructure."
+    "tx": "Capital and political-administrative center of Vanuatu (Port Vila). A Y-shaped archipelago of 83 volcanic islands along the Pacific \"Ring of Fire\" (jointly ruled by Britain and France under history's strangest colonial \"Condominium\" until 1980), ranked among the highest globally for natural disaster risk from earthquakes, volcanoes, and Category 5 cyclones—including the magnitude 7.3 earthquake that struck Port Vila in December 2024. Its strategic location on the Coral Sea has made it a focal point of competition among Australia, France, and China over port and policing infrastructure."
   },
   "cap_uzbekistan": {
     "n": "Tashkent",
@@ -69,7 +69,7 @@ export const CAPITALS_EN = {
   },
   "cap_guam": {
     "n": "Hagatna (Agana)",
-    "pop": "~122K",
+    "pop": "~1K",
     "tx": "Capital and political-administrative center of Guam (US). \"America's Tip of the Spear in the Western Pacific\": an unincorporated US territory at the southern end of the Mariana Islands where nearly one-third of the land is dedicated to strategic military bases—Andersen Air Force Base for B-2/B-21 stealth bombers and Apra Harbor for nuclear attack submarines. The US is building the world's densest 360-degree integrated missile defense shield on Guam to counter China's DF-26 (\"Guam Killer\") intermediate-range ballistic missiles, while the island also serves as a major trans-Pacific subsea fiber-optic cable hub."
   },
   "cap_american_samoa": {
@@ -119,13 +119,13 @@ export const CAPITALS_EN = {
   },
   "cap_cayman_is": {
     "n": "George Town",
-    "pop": "~4K",
+    "pop": "~35K",
     "tx": "Capital and political-administrative center of the Cayman Islands (UK) (George Town). A British Overseas Territory in the western Caribbean (south of Cuba and west of Jamaica) with zero personal or corporate income tax, turning three small coral islands into the world's 5th-largest international banking and hedge fund hub with trillions of dollars in registered assets, as well as a premier global registry for superyachts, despite high vulnerability to major hurricanes."
   },
   "cap_bermuda": {
     "n": "Hamilton",
-    "pop": "~52K",
-    "tx": "Capital and political-administrative center of Bermuda (UK) (Hamilton). Britain's oldest and most populous overseas territory (settled in 1609), isolated in the North Atlantic ~1,030 km off North Carolina (US); once the Royal Navy's \"Gibraltar of the West\" (from which British forces sailed to burn the White House in the War of 1812, and later a key US–UK anti-submarine base in WWII and the Cold War), it is now the \"reinsurance capital of the world.\""
+    "pop": "~850",
+    "tx": "Capital and political-administrative center of Bermuda (UK) (Hamilton). Britain's oldest overseas territory (settled in 1609), isolated in the North Atlantic ~1,030 km off North Carolina (US); once the Royal Navy's \"Gibraltar of the West\" (from which British forces sailed to burn the White House in the War of 1812, and later a key US–UK anti-submarine base in WWII and the Cold War), it is now the \"reinsurance capital of the world.\""
   },
   "cap_british_virgin_is": {
     "n": "Road Town",
@@ -134,7 +134,7 @@ export const CAPITALS_EN = {
   },
   "cap_turks_and_caicos_is": {
     "n": "Cockburn Town (Grand Turk; largest: Providenciales)",
-    "pop": "~6K",
+    "pop": "~3.7K",
     "tx": "Capital and political-administrative center of the Turks and Caicos Islands (UK) (Grand Turk). A British Overseas Territory forming the southeastern extension of the Bahamas chain (north of Hispaniola), famed for some of the planet's finest white-sand beaches (Grace Bay), booming luxury resort real estate, and control over the strategic Caicos Passage, with a maximum elevation of just 49 meters."
   },
   "cap_montserrat": {
@@ -209,7 +209,7 @@ export const CAPITALS_EN = {
   },
   "cap_timor_leste": {
     "n": "Dili",
-    "pop": "~234K",
+    "pop": "~325K (2022 census)",
     "tx": "Capital and political-administrative center of Timor-Leste (Dili). Southeast Asia's youngest nation (independent in 2002 and officially admitted as ASEAN's 11th full member in October 2025), occupying the eastern half of Timor Island between Indonesia and Australia. Its rugged mountain interior sheltered decades of guerrilla resistance, while the Timor Sea to the south holds major oil and gas reserves (such as the Greater Sunrise field)."
   },
   "cap_thailand": {
@@ -349,7 +349,7 @@ export const CAPITALS_EN = {
   },
   "cap_san_marino": {
     "n": "San Marino",
-    "pop": "~30K",
+    "pop": "~4K",
     "tx": "Capital and political-administrative center of San Marino. The world's oldest constitutional republic (founded in AD 301), preserving its independence atop the rugged limestone crags of Mount Titano and having offered sanctuary to leaders of Italian unification; connected directly by highway to the Italian Adriatic port of Rimini."
   },
   "cap_samoa": {
@@ -374,7 +374,7 @@ export const CAPITALS_EN = {
   },
   "cap_rwanda": {
     "n": "Kigali",
-    "pop": "~860K",
+    "pop": "~1.75M",
     "tx": "Capital and political-administrative center of Rwanda (Kigali). The tiny \"Land of a Thousand Hills\" has the highest population density in continental Africa (>500 people/km²); rising remarkably from the 1994 genocide into an orderly, clean nation whose military projects significant influence into mineral-rich eastern DR Congo. Because overland freight costs to the Indian Ocean ports of Dar es Salaam (Tanzania) and Mombasa (Kenya) are high, Kigali focuses on services, conferences, aviation (RwandAir), and technology."
   },
   "cap_russia": {
@@ -419,7 +419,7 @@ export const CAPITALS_EN = {
   },
   "cap_papua_new_guinea": {
     "n": "Port Moresby",
-    "pop": "~284K",
+    "pop": "~757K (National Capital District, 2024 census)",
     "tx": "Capital and political-administrative center of Papua New Guinea (Port Moresby). Occupying the eastern half of New Guinea (the world's second-largest island), its mountain jungle terrain is so rugged that Port Moresby has no road connection to any other major city in the country—fostering the planet's highest linguistic diversity (>850 indigenous languages) right off Australia's northern tip. In WWII, the Kokoda Track across the Owen Stanley Range halted Japan's overland advance on Port Moresby; rich in LNG, gold, and copper, PNG signed landmark defense agreements with the US (Lombrum Naval Base on Manus Island) and Australia in 2023."
   },
   "cap_panama": {
@@ -429,7 +429,7 @@ export const CAPITALS_EN = {
   },
   "cap_palau": {
     "n": "Ngerulmud (Melekeok; largest: Koror)",
-    "pop": "~7K",
+    "pop": "~300",
     "tx": "Capital and political-administrative center of Palau (Ngerulmud / Melekeok). An archipelago of over 340 limestone and volcanic islands at the westernmost edge of Micronesia (just a few hundred kilometers from the southern Philippines and Indonesia), serving as the western anchor of the \"Second Island Chain\" protected by the US military under the Compact of Free Association (COFA). Site of the bloody WWII Battle of Peleliu (1944), Palau has also designated 80% of its 500,000 km² Exclusive Economic Zone as a national marine sanctuary."
   },
   "cap_pakistan": {
@@ -459,7 +459,7 @@ export const CAPITALS_EN = {
   },
   "cap_niger": {
     "n": "Niamey",
-    "pop": "~915K",
+    "pop": "~1.5M",
     "tx": "Capital and political-administrative center of Niger (Niamey) on the Niger River. A sandy crossroads of the Sahel and Sahara, Niger is one of the world's poorest countries with the highest fertility rate (~6.7 children per woman) and over 5,800 km of exposed land borders, yet holds strategic uranium deposits and a newly completed ~2,000 km Chinese-backed crude oil pipeline linking the Agadem oilfield to the port of Seme in Benin."
   },
   "cap_nicaragua": {
@@ -509,7 +509,7 @@ export const CAPITALS_EN = {
   },
   "cap_namibia": {
     "n": "Windhoek",
-    "pop": "~268K",
+    "pop": "~486K",
     "tx": "Capital and political-administrative center of Namibia (Windhoek), situated on the cool central plateau at 1,650 m elevation. One of the least densely populated countries on Earth (~3.6 people/km², second only to Mongolia), wedged between the ancient Namib Desert along the Atlantic and the Kalahari Desert to the east; rich in diamonds, uranium (world's 3rd-largest producer), and major newly discovered offshore oil fields, while deep-water Walvis Bay was held as a British/South African enclave until 1994."
   },
   "cap_mozambique": {
@@ -569,7 +569,7 @@ export const CAPITALS_EN = {
   },
   "cap_mali": {
     "n": "Bamako",
-    "pop": "~1.5M",
+    "pop": "~4.2M",
     "tx": "Capital and political-administrative center of Mali (Bamako). A vast butterfly-shaped nation split in two: the northern Sahara desert (Azawad, home to nomadic Tuareg) lying over 1,500 km from the southwestern capital of Bamako in the Niger River savanna where most of the population lives. Landlocked Mali depends entirely on road and rail corridors to the ports of Dakar (Senegal) and Abidjan (Cote d'Ivoire)."
   },
   "cap_maldives": {
@@ -584,7 +584,7 @@ export const CAPITALS_EN = {
   },
   "cap_malawi": {
     "n": "Lilongwe",
-    "pop": "~647K",
+    "pop": "~989K",
     "tx": "Capital and political-administrative center of Malawi (Lilongwe). A long, narrow country hugging the Great Rift Valley along Lake Malawi (which covers over one-fifth of its territory); a densely populated, peaceful agricultural nation whose southern half is enclaved on three sides by Mozambique, leaving it completely dependent on rail links to the Mozambican Indian Ocean ports of Nacala and Beira."
   },
   "cap_madagascar": {
@@ -599,7 +599,7 @@ export const CAPITALS_EN = {
   },
   "cap_luxembourg": {
     "n": "Luxembourg",
-    "pop": "~107K",
+    "pop": "~139K",
     "tx": "Capital and political-administrative center of Luxembourg. A small Grand Duchy wedged between France, Germany, and Belgium; once a cliff-top stone fortress dubbed the \"Gibraltar of the North,\" it is now one of the world's richest nations per capita as a global investment fund and banking hub, connected via the Moselle and Rhine rivers to Belgian and Dutch seaports."
   },
   "cap_lithuania": {
@@ -609,7 +609,7 @@ export const CAPITALS_EN = {
   },
   "cap_liechtenstein": {
     "n": "Vaduz",
-    "pop": "~36K",
+    "pop": "~6K",
     "tx": "Capital and political-administrative center of Liechtenstein (Vaduz). A tiny Alpine principality in the upper Rhine Valley between Switzerland and Austria; one of only two \"doubly landlocked\" countries on Earth (alongside Uzbekistan), yet boasting one of the highest per capita incomes in the world through precision manufacturing and financial services under Swiss customs and monetary union."
   },
   "cap_libya": {
@@ -659,7 +659,7 @@ export const CAPITALS_EN = {
   },
   "cap_kiribati": {
     "n": "South Tarawa",
-    "pop": "~29K",
+    "pop": "~63K",
     "tx": "Capital and political-administrative center of Kiribati (Tarawa). An extraordinary geographic paradox: the total land area of its 33 coral atolls is just 811 km² (rising less than 2 meters above sea level), yet because they are scattered across all four hemispheres (North, South, East, and West), Kiribati commands a colossal 3.55 million km² Exclusive Economic Zone roughly equal in size to India. One of the world's most climate-vulnerable nations (having purchased 20 km² of land on Fiji's Vanua Levu island as a potential food-security and relocation reserve), it derives most of its state revenue from selling tuna fishing licenses."
   },
   "cap_kenya": {
@@ -679,8 +679,8 @@ export const CAPITALS_EN = {
   },
   "cap_japan": {
     "n": "Tokyo",
-    "pop": "~37.4M (metro)",
-    "tx": "The world's largest megacity sits at the heart of the Kanto Plain—the largest expanse of flat land in an archipelago that is 75% mountains. Deep, sheltered Tokyo Bay gave the city (formerly Edo under the Tokugawa Shogunate) direct access to Pacific shipping lanes while the Boso and Miura peninsulas shielded it from tsunamis and foreign fleets, though concentrating over 30% of Japan's population and GDP atop the Kanto tectonic fault line creates immense seismic risk."
+    "pop": "~33.4M (metro, UN 2025)",
+    "tx": "One of the world's largest megacities (third in the UN's 2025 ranking, behind Jakarta and Dhaka) sits at the heart of the Kanto Plain—the largest expanse of flat land in an archipelago that is 75% mountains. Deep, sheltered Tokyo Bay gave the city (formerly Edo under the Tokugawa Shogunate) direct access to Pacific shipping lanes while the Boso and Miura peninsulas shielded it from tsunamis and foreign fleets, though concentrating over 30% of Japan's population and GDP atop the Kanto tectonic fault line creates immense seismic risk."
   },
   "cap_jamaica": {
     "n": "Kingston",
@@ -699,8 +699,8 @@ export const CAPITALS_EN = {
   },
   "cap_palestine": {
     "n": "East Jerusalem (proclaimed) / Ramallah (administrative)",
-    "pop": "~25K",
-    "tx": "Capital and political-administrative center of Palestine (West Bank – Ramallah). Geographically and politically divided between the inland West Bank and coastal Gaza Strip at the heart of the century-long Middle East conflict, lacking territorial contiguity or an operating seaport or airport."
+    "pop": "~44K",
+    "tx": "Political-administrative center of Palestine (Ramallah); Palestine proclaims East Jerusalem its capital, while Israel claims all of Jerusalem as its capital. Geographically and politically divided between the inland West Bank and coastal Gaza Strip at the heart of the century-long Middle East conflict, lacking territorial contiguity or an operating seaport or airport."
   },
   "cap_ireland": {
     "n": "Dublin",
@@ -799,7 +799,7 @@ export const CAPITALS_EN = {
   },
   "cap_gabon": {
     "n": "Libreville",
-    "pop": "~578K",
+    "pop": "~700K",
     "tx": "Capital and political-administrative center of Gabon (Libreville). A resource-rich, highly urbanized Central African nation: nearly 90% of its land is covered by pristine Congo Basin rainforest, while over 85% of its small population lives in coastal cities (Libreville, Port-Gentil) and along the Trans-Gabon Railway exporting offshore oil, timber, and the world's second-largest manganese reserves."
   },
   "cap_france": {
@@ -895,7 +895,7 @@ export const CAPITALS_EN = {
   "cap_dominican_rep": {
     "n": "Santo Domingo",
     "pop": "~2.2M",
-    "tx": "Capital and political-administrative center of the Dominican Republic (Santo Domingo). Occupying the eastern two-thirds of Hispaniola: in stark contrast to neighboring Haiti, the Dominican Republic enjoys broad fertile valleys (such as the Cibao Valley), strictly protected forests, the Americas' largest gold mine (Pueblo Viejo), and the fastest-growing economy and #1 tourism industry (>10 million visitors/year) in the Caribbean."
+    "tx": "Capital and political-administrative center of the Dominican Republic (Santo Domingo). Occupying the eastern two-thirds of Hispaniola: in stark contrast to neighboring Haiti, the Dominican Republic enjoys broad fertile valleys (such as the Cibao Valley), strictly protected forests, Latin America's largest gold mine (Pueblo Viejo), and the fastest-growing economy and #1 tourism industry (>10 million visitors/year) in the Caribbean."
   },
   "cap_dominica": {
     "n": "Roseau",
@@ -909,7 +909,7 @@ export const CAPITALS_EN = {
   },
   "cap_greenland": {
     "n": "Nuuk",
-    "pop": "~15K",
+    "pop": "~20K",
     "tx": "Capital and political-administrative center of Greenland (Denmark) (Nuuk). The world's largest island (~80% covered by an ice sheet up to 3 km thick, with coastal towns connected only by air or sea), holding immense geostrategic value as NATO's \"all-seeing eye\" over the GIUK submarine gap, trans-Arctic ballistic missile trajectories (monitored from US Pituffik Space Base / Thule in the far north), and vast untapped rare-earth deposits."
   },
   "cap_faeroe_is": {
@@ -984,12 +984,12 @@ export const CAPITALS_EN = {
   },
   "cap_macao": {
     "n": "Macau (SAR)",
-    "pop": "~569K",
+    "pop": "~680K",
     "tx": "Capital and political-administrative center of Macau (China). A tiny peninsula and reclaimed islands on the western shore of the Pearl River Estuary, the first and last European colony in China (returned by Portugal in 1999); the most densely populated territory on Earth, driven by gaming and tourism rather than deep-water shipping."
   },
   "cap_hong_kong": {
     "n": "Hong Kong (SAR)",
-    "pop": "~7.2M",
+    "pop": "~7.5M",
     "tx": "Capital and political-administrative center of Hong Kong (China). Built around natural deep-water Victoria Harbour at the mouth of the Pearl River, where steep granite peaks compress dense skyscrapers along the waterfront; long the premier global financial and maritime gateway connecting mainland China with international capital under \"One Country, Two Systems.\""
   },
   "cap_chile": {
@@ -999,7 +999,7 @@ export const CAPITALS_EN = {
   },
   "cap_chad": {
     "n": "N'Djamena",
-    "pop": "~989K",
+    "pop": "~1.7M",
     "tx": "Capital and political-administrative center of Chad (N'Djamena). Dubbed the \"Dead Heart of Africa\": a vast landlocked Sahel-Saharan nation wedged between Libya to the north, war-torn Sudan to the east, the Central African Republic to the south, and the Boko Haram-affected Lake Chad basin to the west. N'Djamena sits right on the Cameroonian border along the Chari River, and all Chadian oil exports depend on the pipeline through Cameroon to the Atlantic."
   },
   "cap_central_african_rep": {
@@ -1034,12 +1034,12 @@ export const CAPITALS_EN = {
   },
   "cap_burundi": {
     "n": "Gitega (economic: Bujumbura)",
-    "pop": "~332K",
+    "pop": "~135K",
     "tx": "Capital and political-administrative center of Burundi (Gitega; economic capital: Bujumbura). Rwanda's \"geographic twin\" in demographic makeup and rolling highland terrain, which relocated its political seat from Bujumbura to central highland Gitega in 2019; landlocked and densely populated, it relies on overland and Lake Tanganyika transit through Tanzania to the port of Dar es Salaam."
   },
   "cap_burkina_faso": {
     "n": "Ouagadougou",
-    "pop": "~1.1M",
+    "pop": "~2.4M",
     "tx": "Capital and political-administrative center of Burkina Faso (Ouagadougou). The landlocked heart of West Africa's Sahel (\"Land of Upright People\"), where flat savanna terrain without mountain or forest barriers has left outlying towns vulnerable to jihadist insurgencies, while all external trade depends on rail and road corridors south to ports in Cote d'Ivoire, Ghana, Togo, and Benin."
   },
   "cap_bulgaria": {
@@ -1059,7 +1059,7 @@ export const CAPITALS_EN = {
   },
   "cap_botswana": {
     "n": "Gaborone",
-    "pop": "~208K",
+    "pop": "~246K",
     "tx": "Capital and political-administrative center of Botswana (Gaborone). Africa's remarkable development success story: landlocked and largely covered by the arid Kalahari Desert with just 12 km of paved roads at independence in 1966, transparent governance of massive diamond revenues transformed Botswana into mainland Africa's longest-standing continuous democracy, with population clustered along the slightly wetter eastern rail corridor bordering South Africa."
   },
   "cap_bosnia_and_herz": {
@@ -1074,7 +1074,7 @@ export const CAPITALS_EN = {
   },
   "cap_bhutan": {
     "n": "Thimphu",
-    "pop": "~99K",
+    "pop": "~115K",
     "tx": "Capital and political-administrative center of Bhutan (Thimphu). A Himalayan Buddhist kingdom perched in a steep valley at ~2,300 m elevation, maintaining close defense and hydropower ties with India while having no formal diplomatic relations with China to its north; Thimphu is famously the only national capital in the world without a single traffic light."
   },
   "cap_benin": {
@@ -1084,7 +1084,7 @@ export const CAPITALS_EN = {
   },
   "cap_belize": {
     "n": "Belmopan (largest: Belize City)",
-    "pop": "~15K",
+    "pop": "~21K",
     "tx": "Capital and political-administrative center of Belize (Belmopan). Central America's geopolitical outlier: the region's only English-speaking nation (formerly British Honduras) with its lowest population density, shielded offshore by the world's second-largest barrier reef. After Hurricane Hattie devastated coastal Belize City in 1961, the government built the planned inland capital of Belmopan in 1970."
   },
   "cap_belgium": {
@@ -1164,7 +1164,7 @@ export const CAPITALS_EN = {
   },
   "cap_andorra": {
     "n": "Andorra la Vella",
-    "pop": "~54K",
+    "pop": "~24K",
     "tx": "Capital and political-administrative center of Andorra (Andorra la Vella). A microstate tucked inside a high valley of the Pyrenees between France and Spain, independent since 1278 under a unique Co-Principality shared by the President of France and the Bishop of Urgell; Europe's highest capital city (1,023 m), driven by ski tourism, duty-free retail, and banking."
   },
   "cap_algeria": {
@@ -1197,13 +1197,13 @@ export const CITIES_EN = {
   },
   "city_haiphong": {
     "n": "Hai Phong",
-    "pop": "~4.1M (post-merger)",
+    "pop": "~4.7M (post-merger)",
     "tx": "Northern Vietnam's largest seaport gateway, situated where branches of the Thai Binh and Bach Dang rivers empty into the Gulf of Tonkin. Anchored by the Lach Huyen deep-water port (capable of berthing ultra-large container vessels sailing directly to Europe and the Americas) and expanded through its 2025 merger with Hai Duong, Hai Phong forms the maritime terminus of the Kunming–Lao Cai–Hanoi–Hai Phong economic corridor."
   },
   "city_danang": {
     "n": "Da Nang",
     "pop": "~3.0M (post-merger)",
-    "tx": "The central metropolis of Central Vietnam, curving around sheltered Da Nang Bay behind the natural breakwater of the Son Tra Peninsula and Hai Van Pass. Serving as the eastern maritime terminus of the Greater Mekong Subregion's East–West Economic Corridor (EWEC) linking Myanmar, Thailand, and Laos to the East Sea (South China Sea), its 2025 merger with Quang Nam expanded its industrial depth to the Chu Lai economic zone while administering the Paracel Islands."
+    "tx": "The central metropolis of Central Vietnam, curving around sheltered Da Nang Bay behind the natural breakwater of the Son Tra Peninsula and Hai Van Pass. Serving as the eastern maritime terminus of the Greater Mekong Subregion's East–West Economic Corridor (EWEC) linking Myanmar, Thailand, and Laos to the East Sea (South China Sea), its 2025 merger with Quang Nam expanded its industrial depth to the Chu Lai economic zone while Vietnam places the Paracel Islands (controlled by China since 1974 and also claimed by Taiwan) under its jurisdiction."
   },
   "city_cantho": {
     "n": "Can Tho",
@@ -1222,7 +1222,7 @@ export const CITIES_EN = {
   },
   "city_shanghai": {
     "n": "Shanghai",
-    "pop": "~29M",
+    "pop": "~24.8M",
     "tx": "China's premier financial and commercial heart and the world's #1 container port, commanding the exact mouth of the Yangtze River—where the 6,300 km waterway linking one-third of China's population and over 40% of its GDP empties into the East China Sea. Whoever controls Shanghai holds the import–export jugular of the entire Yangtze River basin from Chongqing and Wuhan down to Jiangsu and Zhejiang."
   },
   "city_shenzhen": {
@@ -1343,7 +1343,7 @@ export const CITIES_EN = {
   "city_kolkata": {
     "n": "Kolkata",
     "pop": "~15.5M",
-    "tx": "Capital of British India until 1911, situated along the Hooghly River (the western distributary of the Ganges Delta) ~120 km inland from the Bay of Bengal. Serves as the vital economic and logistical hub linking mainland India through the narrow \"Siliguri Corridor\" (Chicken's Neck) to India's seven Northeastern states."
+    "tx": "Capital of British India until 1911, situated along the Hooghly River (the western distributary of the Ganges Delta) ~120 km inland from the Bay of Bengal. Serves as the vital economic and logistical hub linking mainland India through the narrow \"Siliguri Corridor\" (Chicken's Neck) to India's eight Northeastern states."
   },
   "city_chennai": {
     "n": "Chennai",
@@ -1463,7 +1463,7 @@ export const CITIES_EN = {
   "city_sevastopol": {
     "n": "Sevastopol",
     "pop": "~550K",
-    "tx": "A natural deep-water naval fortress at the southwestern tip of the Crimean Peninsula jutting into the center of the Black Sea. From Empress Catherine the Great (1783), the Crimean War (1853–1856), and World War II to Russia's 2014 annexation of Crimea, Sevastopol served as the vital base of the Black Sea Fleet; however, relentless Ukrainian drone and cruise missile attacks forced Russia to evacuate virtually all major naval surface combatants eastward to Novorossiysk."
+    "tx": "A natural deep-water naval fortress at the southwestern tip of the Crimean Peninsula jutting into the center of the Black Sea. From Empress Catherine the Great (1783), the Crimean War (1853–1856), and World War II to Russia's 2014 annexation of Crimea (not internationally recognized; Ukraine and the UN treat Sevastopol as Ukrainian territory), Sevastopol served as the vital base of the Black Sea Fleet; however, relentless Ukrainian drone and cruise missile attacks forced Russia to evacuate virtually all major naval surface combatants eastward to Novorossiysk."
   },
   "city_novorossiysk": {
     "n": "Novorossiysk",
@@ -1543,7 +1543,7 @@ export const CITIES_EN = {
   "city_gibraltar": {
     "n": "Gibraltar",
     "pop": "~34K",
-    "tx": "A 6.8 km² British Overseas Territory (ceded by Spain under the 1713 Treaty of Utrecht) anchored by the 426 m limestone Rock of Gibraltar jutting into the 14 km-wide Strait of Gibraltar. Honeycombed with military tunnels, a submarine repair berth, and signals intelligence facilities, Gibraltar enables the UK and NATO to monitor all surface warships and submarines transiting between the Atlantic Ocean and the Mediterranean Sea."
+    "tx": "A 6.8 km² British Overseas Territory (ceded by Spain under the 1713 Treaty of Utrecht; Spain still claims sovereignty, and the July 2026 UK-EU treaty leaves that dispute unresolved) anchored by the 426 m limestone Rock of Gibraltar jutting into the 14 km-wide Strait of Gibraltar. Honeycombed with military tunnels, a submarine repair berth, and signals intelligence facilities, Gibraltar enables the UK and NATO to monitor all surface warships and submarines transiting between the Atlantic Ocean and the Mediterranean Sea."
   },
   "city_piraeus": {
     "n": "Piraeus",
@@ -1768,7 +1768,7 @@ export const CITIES_EN = {
   "city_perth": {
     "n": "Perth (and Fremantle / Stirling)",
     "pop": "~2.3M",
-    "tx": "One of the most isolated million-plus cities on Earth (closer to Jakarta and Singapore than to Australia's own capital Canberra), located on the southwestern coast of Western Australia—one of the planet's richest iron ore, gold, lithium, and LNG provinces. Just south of Perth, HMAS Stirling (Fleet Base West) serves as the Indian Ocean homeport for Royal Australian Navy submarines and rotational US and UK nuclear-powered attack submarines under the AUKUS pact."
+    "tx": "One of the most isolated million-plus cities on Earth (closer to Jakarta than to Australia's own capital Canberra), located on the southwestern coast of Western Australia—one of the planet's richest iron ore, gold, lithium, and LNG provinces. Just south of Perth, HMAS Stirling (Fleet Base West) serves as the Indian Ocean homeport for Royal Australian Navy submarines and rotational US and UK nuclear-powered attack submarines under the AUKUS pact."
   },
   "city_darwin": {
     "n": "Darwin",
@@ -1829,7 +1829,7 @@ export const ISLANDS_EN = {
     "n": "Paracel Islands (Hoang Sa)",
     "pop": "~15,000 km² (sea area)",
     "area": "~15,000 km² (sea area)",
-    "tx": "A coral archipelago comprising the Amphitrite and Crescent groups in the northern East Sea (South China Sea), lying at the same latitude as Da Nang–Quang Ngai directly astride vital international shipping lanes. Historically under Vietnamese sovereignty (administered under Da Nang City), the archipelago was seized in its entirety by China by military force in January 1974, with Beijing constructing a major air and naval base on Woody Island (Phu Lam)."
+    "tx": "A coral archipelago comprising the Amphitrite and Crescent groups in the northern East Sea (South China Sea), lying at the same latitude as Da Nang–Quang Ngai directly astride vital international shipping lanes. Claimed by Vietnam on historical grounds (placed under Da Nang City; disputed between Vietnam, China and Taiwan), the archipelago was seized in its entirety by China by military force in January 1974, with Beijing constructing a major air and naval base on Woody Island (Phu Lam)."
   },
   "isl_truongsa": {
     "n": "Spratly Islands (Truong Sa)",
@@ -1943,7 +1943,7 @@ export const ISLANDS_EN = {
     "n": "Wake Island",
     "pop": "6.5 km²",
     "area": "6.5 km²",
-    "tx": "An isolated US coral atoll situated roughly midway between Hawaii and Guam in the North Pacific Ocean; equipped with a 3,000 m military runway serving as a strategic trans-Pacific refueling and diversion airfield and missile defense test site."
+    "tx": "An isolated coral atoll administered by the US (also claimed by the Marshall Islands, which calls it Enen-kio; the US rejects the claim) situated roughly midway between Hawaii and Guam in the North Pacific Ocean; equipped with a 3,000 m military runway serving as a strategic trans-Pacific refueling and diversion airfield and missile defense test site."
   },
   "isl_midway": {
     "n": "Midway Atoll",
@@ -2075,7 +2075,7 @@ export const ISLANDS_EN = {
     "n": "Diego Garcia (Chagos Archipelago)",
     "pop": "30 km²",
     "area": "30 km²",
-    "tx": "The largest coral atoll of the Chagos Archipelago at the exact geographic center of the Indian Ocean. Under the landmark treaty signed on 22 May 2025, the UK formally recognized Mauritian sovereignty over the archipelago while leasing back Diego Garcia for 99 years, securing continued US–UK operation of its strategic naval and air base hosting prepositioning squadrons and B-2/B-52 bombers."
+    "tx": "The largest coral atoll of the Chagos Archipelago at the exact geographic center of the Indian Ocean. Under the treaty signed on 22 May 2025 (not yet ratified or in force; sovereignty disputed between the UK and Mauritius), the UK would recognize Mauritian sovereignty over the archipelago while leasing back Diego Garcia for 99 years, securing continued US–UK operation of its strategic naval and air base hosting prepositioning squadrons and B-2/B-52 bombers."
   },
   "isl_socotra": {
     "n": "Socotra Island",
@@ -2087,7 +2087,7 @@ export const ISLANDS_EN = {
     "n": "Qeshm & Hormuz Islands",
     "pop": "1,491 km² (Qeshm)",
     "area": "1,491 km² (Qeshm)",
-    "tx": "Two strategic Iranian islands commanding the narrowest curve of the Strait of Hormuz (through which ~20% of global petroleum and LNG passes). The 135 km-long Qeshm Island running parallel to the Iranian coast—together with Hormuz, Larak, and Abu Musa islands—forms the IRGC's underground anti-ship missile, naval mining, and fast-boat bastion. During the 2026 Iran War, these islands were the focal point of fighting as Iran shut the strait, drawing intense US–Israeli strikes and an enduring naval blockade."
+    "tx": "Two strategic Iranian islands commanding the narrowest curve of the Strait of Hormuz (through which ~20% of global petroleum and LNG passes). The 135 km-long Qeshm Island running parallel to the Iranian coast—together with Hormuz, Larak, and Abu Musa islands (Abu Musa held by Iran since 1971 but also claimed by the UAE)—forms the IRGC's underground anti-ship missile, naval mining, and fast-boat bastion. During the 2026 Iran War, these islands were the focal point of fighting as Iran shut the strait, drawing intense US–Israeli strikes and an enduring naval blockade."
   },
   "isl_bahrain": {
     "n": "Bahrain Island",
@@ -2129,7 +2129,7 @@ export const ISLANDS_EN = {
     "n": "Svalbard",
     "pop": "61,022 km²",
     "area": "61,022 km²",
-    "tx": "An Arctic archipelago at 78°N latitude midway between mainland Norway and the North Pole, home to the Svalbard Global Seed Vault. Under the 1920 Svalbard Treaty, Norway holds sovereignty subject to demilitarization rules while signatory nations retain commercial rights (Russia still operates the coal-mining settlement of Barentsburg). The \"Bear Gap\" between Svalbard and Norway's North Cape is the critical maritime choke point through which Russia's Northern Fleet submarines based at Murmansk must pass to reach the North Atlantic."
+    "tx": "An Arctic archipelago at 78°N latitude midway between mainland Norway and the North Pole, home to the Svalbard Global Seed Vault. Under the 1920 Svalbard Treaty, Norway holds sovereignty subject to demilitarization rules while signatory nations retain commercial rights (Russia still operates the coal-mining settlement of Barentsburg); Norway and Russia disagree over whether the treaty applies to the surrounding waters and continental shelf. The \"Bear Gap\" between Svalbard and Norway's North Cape is the critical maritime choke point through which Russia's Northern Fleet submarines based at Murmansk must pass to reach the North Atlantic."
   },
   "isl_franzjosef": {
     "n": "Franz Josef Land",
@@ -2165,7 +2165,7 @@ export const ISLANDS_EN = {
     "n": "Aland Islands",
     "pop": "1,580 km²",
     "area": "1,580 km²",
-    "tx": "An autonomous Swedish-speaking archipelago under Finnish sovereignty guarding the bottleneck entrance to the Gulf of Bothnia just ~40 km across the sea from Stockholm; internationally demilitarized and neutralized by treaty since 1856 and 1921."
+    "tx": "An autonomous Swedish-speaking archipelago under Finnish sovereignty guarding the bottleneck entrance to the Gulf of Bothnia just ~40 km across the sea from the Swedish coast (about 160 km from Stockholm); internationally demilitarized and neutralized by treaty since 1856 and 1921."
   },
   "isl_bornholm": {
     "n": "Bornholm",
@@ -2189,7 +2189,7 @@ export const ISLANDS_EN = {
     "n": "Crimean Peninsula",
     "pop": "27,000 km²",
     "area": "27,000 km²",
-    "tx": "A diamond-shaped peninsula functioning like an island fortress jutting into the center of the Black Sea (connected to mainland Ukraine only by the 5–7 km-wide Perekop Isthmus and linked to Russia's Kuban region via the 19 km Kerch Bridge). Annexed by Russia in 2014, Crimea and Sevastopol long dominated the Black Sea, but Ukrainian long-range missile and naval drone strikes have damaged the Kerch Bridge and forced the Black Sea Fleet to relocate its main combatants eastward to Novorossiysk."
+    "tx": "A diamond-shaped peninsula functioning like an island fortress jutting into the center of the Black Sea (connected to mainland Ukraine only by the 5–7 km-wide Perekop Isthmus and linked to Russia's Kuban region via the 19 km Kerch Bridge). Annexed by Russia in 2014 (not recognized by the UN General Assembly or most states; Ukraine still claims it), Crimea and Sevastopol long dominated the Black Sea, but Ukrainian long-range missile and naval drone strikes have damaged the Kerch Bridge and forced the Black Sea Fleet to relocate its main combatants eastward to Novorossiysk."
   },
   "isl_cyprus": {
     "n": "Cyprus",
@@ -2243,7 +2243,7 @@ export const ISLANDS_EN = {
     "n": "Rock of Gibraltar",
     "pop": "6.8 km²",
     "area": "6.8 km²",
-    "tx": "One of the ancient \"Pillars of Hercules\" on the northern shore of the Strait of Gibraltar—a British Overseas Territory commanding the 14 km-wide maritime chokepoint connecting the Atlantic Ocean and the Mediterranean Sea."
+    "tx": "One of the ancient \"Pillars of Hercules\" on the northern shore of the Strait of Gibraltar—a British Overseas Territory (claimed by Spain) commanding the 14 km-wide maritime chokepoint connecting the Atlantic Ocean and the Mediterranean Sea."
   },
   "isl_faroe": {
     "n": "Faroe Islands",
@@ -2416,7 +2416,7 @@ export const ADMIN1_EN = {
   "VN-DN": {
     "n": "Da Nang City",
     "cap": "Hai Chau",
-    "tx": "The central metropolis of Central Vietnam following the 2025 reunification of Da Nang City and Quang Nam Province (restoring the historic Quang Nam–Da Nang space). The expanded municipality commands full territorial depth stretching from the Truong Son (Annamite) mountain border with Laos (Nam Giang International Border Gate), through the UNESCO heritage sites of Hoi An and My Son and the Chu Lai Open Economic Zone and airport, to the deep-water ports of Tien Sa–Lien Chieu, while administering the Paracel Islands (Hoang Sa)."
+    "tx": "The central metropolis of Central Vietnam following the 2025 reunification of Da Nang City and Quang Nam Province (restoring the historic Quang Nam–Da Nang space). The expanded municipality commands full territorial depth stretching from the Truong Son (Annamite) mountain border with Laos (Nam Giang International Border Gate), through the UNESCO heritage sites of Hoi An and My Son and the Chu Lai Open Economic Zone and airport, to the deep-water ports of Tien Sa–Lien Chieu, while administratively responsible for the Paracel Islands (Hoang Sa), over which Vietnam asserts sovereignty; China has held them since 1974 and also claims them, as does Taiwan."
   },
   "VN-CT": {
     "n": "Can Tho City",
@@ -2526,7 +2526,7 @@ export const ADMIN1_EN = {
   "VN-34": {
     "n": "Khanh Hoa",
     "cap": "Nha Trang",
-    "tx": "Consolidated in 2025 by merging Khanh Hoa and Ninh Thuan provinces, bringing together Vietnam's longest and deepest coastline from Van Phong Bay, Nha Trang Bay, and the strategic Cam Ranh naval base down to Vinh Hy Bay and Ca Na deep-water port. The unified province serves as a premier marine economy hub, Vietnam's renewable and planned nuclear energy center in Ninh Thuan, and the mainland authority administering the frontline Spratly Islands (Truong Sa)."
+    "tx": "Consolidated in 2025 by merging Khanh Hoa and Ninh Thuan provinces, bringing together Vietnam's longest and deepest coastline from Van Phong Bay, Nha Trang Bay, and the strategic Cam Ranh naval base down to Vinh Hy Bay and Ca Na deep-water port. The unified province serves as a premier marine economy hub, Vietnam's renewable and planned nuclear energy center in Ninh Thuan, and the mainland authority administering the frontline Spratly Islands (Truong Sa), which are claimed in whole or in part by Vietnam, China, Taiwan, the Philippines, Malaysia, and Brunei (all but Brunei hold some features)."
   },
   "VN-35": {
     "n": "Lam Dong",
@@ -2721,7 +2721,7 @@ export const ADMIN1_EN = {
   "CN-XJ": {
     "n": "Xinjiang",
     "cap": "Urumqi",
-    "tx": "China's largest provincial-level division (~1.66 million km², one-sixth of national territory), defined by \"Three Mountain Ranges Framing Two Basins\" (the Altai, Tian Shan, and Kunlun ranges enclosing the Junggar and Tarim/Taklamakan basins). Bordering eight countries (Russia, Mongolia, Kazakhstan, Kyrgyzstan, Tajikistan, Afghanistan, Pakistan, and India), Xinjiang is China's western security buffer, a major source of oil, gas, coal, cotton, and solar polysilicon, and the primary overland gateway of the Belt and Road Initiative."
+    "tx": "China's largest provincial-level division (~1.66 million km², one-sixth of national territory), defined by \"Three Mountain Ranges Framing Two Basins\" (the Altai, Tian Shan, and Kunlun ranges enclosing the Junggar and Tarim/Taklamakan basins). Bordering eight countries (Russia, Mongolia, Kazakhstan, Kyrgyzstan, Tajikistan, Afghanistan, Pakistan, and India; the Aksai Chin boundary with India is disputed), Xinjiang is China's western security buffer, a major source of oil, gas, coal, cotton, and solar polysilicon, and the primary overland gateway of the Belt and Road Initiative."
   },
   "US-AK": {
     "n": "Alaska",
@@ -2751,7 +2751,7 @@ export const ADMIN1_EN = {
   "US-CO": {
     "n": "Colorado",
     "cap": "Denver",
-    "tx": "Straddling the Continental Divide at the highest elevation of the Rocky Mountains (the headwaters of the Colorado, Rio Grande, and Arkansas rivers). Because of its protected location deep inside the North American continent, Cheyenne Mountain and Colorado Springs host the hardened command centers of the North American Aerospace Defense Command (NORAD) and US Space Command."
+    "tx": "Straddling the Continental Divide at the highest elevation of the Rocky Mountains (the headwaters of the Colorado, Rio Grande, and Arkansas rivers). Because of its protected location deep inside the North American continent, Cheyenne Mountain and Colorado Springs host the hardened command centers of the North American Aerospace Defense Command (NORAD) and US Space Command (headquartered at Peterson SFB; in September 2025 President Trump announced its move to Huntsville, Alabama)."
   },
   "US-CT": {
     "n": "Connecticut",
@@ -2861,7 +2861,7 @@ export const ADMIN1_EN = {
   "US-NC": {
     "n": "North Carolina",
     "cap": "Raleigh",
-    "tx": "An East Coast state spanning from the Blue Ridge Mountains (Appalachians) across the Piedmont to the Outer Banks barrier islands; combines the Research Triangle Park (Raleigh–Durham–Chapel Hill) biotech/tech hub and Charlotte's national banking center with Fort Liberty (formerly Fort Bragg, headquarters of US Army Special Operations and the 82nd Airborne Division) and Camp Lejeune."
+    "tx": "An East Coast state spanning from the Blue Ridge Mountains (Appalachians) across the Piedmont to the Outer Banks barrier islands; combines the Research Triangle Park (Raleigh–Durham–Chapel Hill) biotech/tech hub and Charlotte's national banking center with Fort Bragg (renamed back from Fort Liberty in February 2025; headquarters of US Army Special Operations and the 82nd Airborne Division) and Camp Lejeune."
   },
   "US-ND": {
     "n": "North Dakota",
@@ -2876,7 +2876,7 @@ export const ADMIN1_EN = {
   "US-NH": {
     "n": "New Hampshire",
     "cap": "Concord",
-    "tx": "A rugged New England state anchored by the White Mountains and a brief 29 km Atlantic coastline that hosts the Portsmouth Naval Shipyard (maintaining US Navy nuclear attack submarines)."
+    "tx": "A rugged New England state anchored by the White Mountains and a brief 29 km Atlantic coastline beside the Portsmouth Naval Shipyard (which is actually in Kittery, Maine) (maintaining US Navy nuclear attack submarines)."
   },
   "US-NJ": {
     "n": "New Jersey",
@@ -3196,12 +3196,12 @@ export const ADMIN1_EN = {
   "IN-JK": {
     "n": "Jammu and Kashmir",
     "cap": "Srinagar (summer) / Jammu (winter)",
-    "tx": "A strategic Union Territory (reorganized in 2019 following the revocation of Article 370) comprising the Hindu-majority Jammu foothills and the Muslim-majority Kashmir Valley along the Jhelum and Chenab rivers; fronts the heavily militarized Line of Control (LoC) with Pakistan—the flashpoint of three Indo-Pakistani wars."
+    "tx": "A strategic Union Territory (reorganized in 2019 following the revocation of Article 370) comprising the Hindu-majority Jammu foothills and the Muslim-majority Kashmir Valley along the Jhelum and Chenab rivers; administered by India but disputed between India and Pakistan since 1947 (China also disputes parts of the wider region); fronts the heavily militarized Line of Control (LoC) with Pakistan—the flashpoint of three Indo-Pakistani wars."
   },
   "IN-LA": {
     "n": "Ladakh",
     "cap": "Leh / Kargil",
-    "tx": "A high-altitude cold-desert Union Territory above 3,500 m elevation (separated from Jammu and Kashmir in 2019) bisected by the upper Indus River entering from Tibet. Ladakh is Asia's most sensitive tri-junction military flashpoint: confronting Pakistan to the northwest (including the 6,000 m Siachen Glacier—the world's highest battlefield) and Chinese-held Aksai Chin to the east along the Line of Actual Control (site of the 2020 Galwan Valley and Pangong Tso clashes)."
+    "tx": "A high-altitude cold-desert Union Territory above 3,500 m elevation (separated from Jammu and Kashmir in 2019) bisected by the upper Indus River entering from Tibet. Ladakh is Asia's most sensitive tri-junction military flashpoint: confronting Pakistan to the northwest (including the 6,000 m Siachen Glacier—the world's highest battlefield) and Aksai Chin (claimed by India, held by China) to the east along the Line of Actual Control (site of the 2020 Galwan Valley and Pangong Tso clashes)."
   },
   "IN-AR": {
     "n": "Arunachal Pradesh",
@@ -3241,7 +3241,7 @@ export const ADMIN1_EN = {
   "IN-GA": {
     "n": "Goa",
     "cap": "Panaji",
-    "tx": "India's smallest state by area yet boasting its highest GDP per capita along the central Arabian Sea coast; a Portuguese colony for 450 years until 1961, renowned for beach tourism, iron-ore exports, and the natural harbor and naval shipyard at Mormugao / Vasco da Gama."
+    "tx": "India's smallest state by area yet boasting one of its highest GDP per capita figures (alongside Sikkim) along the central Arabian Sea coast; a Portuguese colony for 450 years until 1961, renowned for beach tourism, iron-ore exports, and the natural harbor and naval shipyard at Mormugao / Vasco da Gama."
   },
   "IN-AN": {
     "n": "Andaman and Nicobar Islands",
@@ -3311,7 +3311,7 @@ export const ADMIN1_EN = {
   "RU-KR": {
     "n": "Republic of Karelia",
     "cap": "Petrozavodsk",
-    "tx": "A forest-and-lake republic wedged between the White Sea, Lake Onega, and Lake Ladoga, sharing Russia's longest land border (>700 km) with new NATO member Finland and traversed by the strategic White Sea–Baltic Canal."
+    "tx": "A forest-and-lake republic wedged between the White Sea, Lake Onega, and Lake Ladoga, sharing a >700 km land border with new NATO member Finland and traversed by the strategic White Sea–Baltic Canal."
   },
   "RU-PSK": {
     "n": "Pskov Oblast",
@@ -3401,7 +3401,7 @@ export const ADMIN1_EN = {
   "RU-SE": {
     "n": "Republic of North Ossetia–Alania",
     "cap": "Vladikavkaz",
-    "tx": "Holds the central strategic choke point of the Greater Caucasus: capital Vladikavkaz (whose Russian name literally means \"Ruler of the Caucasus\") commands the northern entrance of both the Georgian Military Road through the Dariali Gorge (Upper Lars border crossing) and the Roki Tunnel into South Ossetia—the only central all-weather highway passes across the Caucasus mountain wall."
+    "tx": "Holds the central strategic choke point of the Greater Caucasus: capital Vladikavkaz (whose Russian name literally means \"Ruler of the Caucasus\") commands the northern entrance of both the Georgian Military Road through the Dariali Gorge (Upper Lars border crossing) and the Roki Tunnel into South Ossetia (internationally recognized as part of Georgia, but controlled by Russian-backed separatists; recognized as independent by Russia, not by most states)—the only central all-weather highway passes across the Caucasus mountain wall."
   },
   "RU-IN": {
     "n": "Republic of Ingushetia",
@@ -3421,12 +3421,12 @@ export const ADMIN1_EN = {
   "UA-43": {
     "n": "Autonomous Republic of Crimea",
     "cap": "Simferopol",
-    "tx": "A strategic diamond-shaped peninsula projecting into the center of the Black Sea and enclosing the Sea of Azov via the Kerch Strait. Internationally recognized as part of Ukraine (transferred within the USSR in 1954), Crimea was annexed by the Russian Federation in March 2014 and linked to Russia's Krasnodar Krai via the 19 km Kerch Strait Bridge."
+    "tx": "A strategic diamond-shaped peninsula projecting into the center of the Black Sea and enclosing the Sea of Azov via the Kerch Strait. Internationally recognized as part of Ukraine (transferred within the USSR in 1954), Crimea was annexed by the Russian Federation in March 2014 (claimed by Russia; not recognized by the UN General Assembly or most states) and linked to Russia's Krasnodar Krai via the 19 km Kerch Strait Bridge."
   },
   "UA-40": {
     "n": "Sevastopol (Special Status City)",
     "cap": "Sevastopol",
-    "tx": "A special-status port city at the southwestern tip of the Crimean Peninsula (internationally recognized as part of Ukraine, administered by Russia as a federal city since 2014); commands the premier natural deep-water naval harbor on the Black Sea."
+    "tx": "A special-status port city at the southwestern tip of the Crimean Peninsula (internationally recognized as part of Ukraine, administered by Russia as a federal city since 2014, and claimed by it; the annexation is not recognized by the UN General Assembly or most states); commands the premier natural deep-water naval harbor on the Black Sea."
   },
   "RU-TVE": {
     "n": "Tver Oblast",
@@ -3605,7 +3605,7 @@ export const ADMIN1_EN = {
   },
   "RU-KEM": {
     "n": "Kemerovo Oblast (Kuzbass)",
-    "cap": "Kemerovo (largest: Novokuznetsk)",
+    "cap": "Kemerovo (also the largest city; Novokuznetsk second)",
     "tx": "The Kuznetsk Basin (Kuzbass) in southern Siberia—one of the largest coal deposits on Earth, mining over 55% of Russia's total coal and nearly 80% of its metallurgical coking coal while supporting heavy steelmaking in Novokuznetsk."
   },
   "RU-AL": {
@@ -3676,7 +3676,7 @@ export const ADMIN1_EN = {
   "RU-SAK": {
     "n": "Sakhalin Oblast",
     "cap": "Yuzhno-Sakhalinsk",
-    "tx": "The Russian Federation's only entirely insular province, comprising Sakhalin Island (rich in offshore oil and LNG exported via the Sakhalin-1 and Sakhalin-2 projects) and the 1,300 km Kuril Islands chain enclosing the Sea of Okhotsk and bordering Japan's Hokkaido."
+    "tx": "The Russian Federation's only entirely insular province, comprising Sakhalin Island (rich in offshore oil and LNG exported via the Sakhalin-1 and Sakhalin-2 projects) and the 1,300 km Kuril Islands chain enclosing the Sea of Okhotsk and bordering Japan's Hokkaido (all Russian-controlled, but Japan claims the four southernmost islands - Iturup, Kunashir, Shikotan and the Habomais - as its 'Northern Territories')."
   },
   "RU-MAG": {
     "n": "Magadan Oblast",

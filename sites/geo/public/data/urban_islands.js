@@ -13,7 +13,7 @@ export const CAPITALS = [
     ],
     "pop": "~1,6 triệu",
     "rank": 2,
-    "tx": "Thủ đô và trung tâm chính trị – hành chính của Zimbabwe (Harare). Vùng cao nguyên màu mỡ kẹp giữa hai con sông lớn Zambezi (bắc) và Limpopo (nam), giàu bạch kim, lithium (lớn nhất châu Phi), vàng và kim cương, nhưng bị tàn phá bởi siêu lạm phát và lệnh trừng phạt kéo dài từ đầu thế kỷ 21. Khí hậu mát mẻ, đất đai nông nghiệp tốt và không có ruồi ngủ tsetse. Hành lang ngắn nhất ra biển là tuyến đường bộ, đường sắt và đường ống dẫn xăng dầu dài ~300 km từ biên giới Mutare xuống cảng Beira của Mozambique; ngoài ra đi qua Nam Phi ở phía nam."
+    "tx": "Thủ đô và trung tâm chính trị – hành chính của Zimbabwe (Harare). Vùng cao nguyên màu mỡ kẹp giữa hai con sông lớn Zambezi (bắc) và Limpopo (nam), giàu bạch kim, lithium (lớn nhất châu Phi), vàng và kim cương, nhưng bị tàn phá bởi siêu lạm phát và khủng hoảng kinh tế kéo dài từ đầu thế kỷ 21 (Harare đổ lỗi cho các lệnh trừng phạt của phương Tây, còn phương Tây khẳng định đó là biện pháp nhắm mục tiêu). Khí hậu mát mẻ, đất đai nông nghiệp tốt và không có ruồi ngủ tsetse. Hành lang ngắn nhất ra biển là tuyến đường bộ, đường sắt và đường ống dẫn xăng dầu dài ~300 km từ biên giới Mutare xuống cảng Beira của Mozambique; ngoài ra đi qua Nam Phi ở phía nam."
   },
   {
     "id": "cap_zambia",
@@ -91,7 +91,7 @@ export const CAPITALS = [
     ],
     "pop": "~44 nghìn",
     "rank": 3,
-    "tx": "Thủ đô và trung tâm chính trị – hành chính của Vanuatu (Port Vila). Quần đảo 83 hòn đảo núi lửa hình chữ Y nằm trên \"Vành đai Lửa\" Thái Bình Dương (từng do cả Anh và Pháp cùng cai trị dưới chế độ \"Chung cư thuộc địa\" kỳ lạ nhất lịch sử tới năm 1980); quốc gia chịu rủi ro thiên tai động đất, núi lửa và siêu bão số một thế giới. Thường xuyên hứng chịu động đất mạnh (như trận động đất 7,3 độ tại Port Vila tháng 12/2024) và các siêu bão cấp 5. Vị trí chiến lược trên biển San Hô khiến cả Úc, Pháp và Trung Quốc đều cạnh tranh tài trợ hạ tầng cảng và cảnh sát."
+    "tx": "Thủ đô và trung tâm chính trị – hành chính của Vanuatu (Port Vila). Quần đảo 83 hòn đảo núi lửa hình chữ Y nằm trên \"Vành đai Lửa\" Thái Bình Dương (từng do cả Anh và Pháp cùng cai trị dưới chế độ \"Chung cư thuộc địa\" kỳ lạ nhất lịch sử tới năm 1980); quốc gia thuộc nhóm chịu rủi ro thiên tai động đất, núi lửa và siêu bão cao nhất thế giới. Thường xuyên hứng chịu động đất mạnh (như trận động đất 7,3 độ tại Port Vila tháng 12/2024) và các siêu bão cấp 5. Vị trí chiến lược trên biển San Hô khiến cả Úc, Pháp và Trung Quốc đều cạnh tranh tài trợ hạ tầng cảng và cảnh sát."
   },
   {
     "id": "cap_uzbekistan",
@@ -310,7 +310,7 @@ export const CAPITALS = [
       -81.37,
       19.29
     ],
-    "pop": "~4 nghìn",
+    "pop": "~35 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Quần đảo Cayman (Anh) (George Town). Lãnh thổ hải ngoại thuộc Anh nằm ở Tây Caribbean (phía nam Cuba và phía tây Jamaica): hoàn toàn không đánh thuế thu nhập cá nhân và thuế doanh nghiệp, biến 3 hòn đảo san hô nhỏ bé này thành trung tâm quỹ đầu cơ (hedge fund) và ngân hàng quốc tế lớn thứ 5 thế giới với khối tài sản đăng ký hàng nghìn tỷ USD. Rất dễ ngập khi có bão lớn (như bão Ivan năm 2004). Đội tàu siêu du thuyền đăng ký cờ Cayman chiếm tỷ trọng rất lớn trên thế giới."
   },
@@ -323,9 +323,9 @@ export const CAPITALS = [
       -64.78,
       32.29
     ],
-    "pop": "~52 nghìn",
+    "pop": "~850",
     "rank": 3,
-    "tx": "Thủ đô và trung tâm chính trị – hành chính của Bermuda (Anh) (Hamilton). Lãnh thổ hải ngoại đông dân nhất và lâu đời nhất của Anh (định cư từ năm 1609), nằm cô lập giữa Bắc Đại Tây Dương cách bờ biển bang Bắc Carolina (Mỹ) khoảng 1.030 km; từng là \"Gibraltar của phương Tây\" của Hải quân Hoàng gia Anh, nay là \"thủ đô tái bảo hiểm (reinsurance) của thế giới\". Cách xa đất liền hàng nghìn km. Trong Chiến tranh năm 1812, Hạm đội Anh đã xuất phát từ chính căn cứ Bermuda này để tới đốt cháy Nhà Trắng tại Washington D.C.; trong Thế chiến II và Chiến tranh Lạnh là căn cứ săn tàu ngầm Liên Xô của Mỹ – Anh."
+    "tx": "Thủ đô và trung tâm chính trị – hành chính của Bermuda (Anh) (Hamilton). Lãnh thổ hải ngoại lâu đời nhất của Anh (định cư từ năm 1609), nằm cô lập giữa Bắc Đại Tây Dương cách bờ biển bang Bắc Carolina (Mỹ) khoảng 1.030 km; từng là \"Gibraltar của phương Tây\" của Hải quân Hoàng gia Anh, nay là \"thủ đô tái bảo hiểm (reinsurance) của thế giới\". Cách xa đất liền hàng nghìn km. Trong Chiến tranh năm 1812, Hạm đội Anh đã xuất phát từ chính căn cứ Bermuda này để tới đốt cháy Nhà Trắng tại Washington D.C.; trong Thế chiến II và Chiến tranh Lạnh là căn cứ săn tàu ngầm Liên Xô của Mỹ – Anh."
   },
   {
     "id": "cap_british_virgin_is",
@@ -544,7 +544,7 @@ export const CAPITALS = [
       125.58,
       -8.56
     ],
-    "pop": "~234 nghìn",
+    "pop": "~325 nghìn (điều tra 2022)",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Timor-Leste (Dili). Quốc gia trẻ nhất Đông Nam Á (độc lập năm 2002, chính thức trở thành thành viên thứ 11 của ASEAN vào tháng 10/2025), nằm ở nửa đông đảo Timor giữa Indonesia và Úc. Từng là căn cứ kháng chiến du kích lâu dài nhưng cản trở xây dựng hạ tầng. Biển Timor phía nam giàu trữ lượng dầu khí (mỏ Greater Sunrise)."
   },
@@ -908,7 +908,7 @@ export const CAPITALS = [
       12.44,
       43.94
     ],
-    "pop": "~30 nghìn",
+    "pop": "~4 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của San Marino (San Marino). Cộng hòa có hiến pháp lâu đời nhất thế giới (từ năm 301), tồn tại độc lập nhờ nằm trên đỉnh núi đá vôi Monte Titano hiểm trở và từng che chở cho những người thống nhất nước Ý. Địa hình núi đá từng giúp San Marino giữ tự trị qua các cuộc chiến thời Trung cổ. Kết nối đường bộ trực tiếp xuống cảng và thành phố Rimini của Ý."
   },
@@ -973,7 +973,7 @@ export const CAPITALS = [
       30.06,
       -1.95
     ],
-    "pop": "~860 nghìn",
+    "pop": "~1,75 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Rwanda (Kigali). \"Xứ sở nghìn đồi\" nhỏ bé nhưng có mật độ dân số cao nhất lục địa châu Phi (>500 người/km²); vươn dậy ngoạn mục từ thảm họa diệt chủng năm 1994 thành một quốc gia trật tự, sạch sẽ và có quân đội can dự mạnh mẽ vào vùng miền đông CHDC Congo giàu khoáng sản. Khí hậu mát mẻ và lượng mưa tốt giúp đất đai canh tác được quanh năm trên các sườn đồi bậc thang. Chi phí vận tải hàng hóa xuất nhập khẩu qua cảng Dar es Salaam (Tanzania) hoặc Mombasa (Kenya) rất cao, nên Kigali định hướng phát triển dịch vụ, hội nghị, hàng không (RwandAir) và công nghệ."
   },
@@ -1090,7 +1090,7 @@ export const CAPITALS = [
       147.19,
       -9.46
     ],
-    "pop": "~284 nghìn",
+    "pop": "~757 nghìn (NCD, điều tra 2024)",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Papua New Guinea (Port Moresby). Nửa phía đông của đảo New Guinea (hòn đảo lớn thứ hai thế giới): địa hình núi rừng hiểm trở tới mức thủ đô Port Moresby hoàn toàn không có đường bộ nối với bất kỳ thành phố lớn nào khác trong nước, tạo nên quốc gia đa dạng ngôn ngữ nhất hành tinh (>850 ngôn ngữ bản địa) nằm ngay sát mũi phía bắc của nước Úc. Trong Thế chiến II, đường mòn Kokoda qua dãy núi Owen Stanley hiểm trở này đã chặn đứng đà tiến quân trên bộ của phát xít Nhật về phía Port Moresby và nước Úc. Giàu tài nguyên khí đốt hóa lỏng (PNG LNG), vàng, đồng; năm 2023 ký Hiệp ước Hợp tác Quốc phòng lịch sử với Mỹ (mở cửa căn cứ hải quân Lombrum trên đảo Manus) và hiệp ước an ninh song phương với Úc."
   },
@@ -1194,7 +1194,7 @@ export const CAPITALS = [
       2.11,
       13.52
     ],
-    "pop": "~915 nghìn",
+    "pop": "~1,5 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Niger (Niamey). Ngã tư cát của vùng Sahel và Sahara: một trong những quốc gia nghèo nhất và có tỷ lệ sinh cao nhất thế giới (~6,7 con/phụ nữ), nhưng nắm giữ trữ lượng quặng uranium chiến lược và đường ống dầu mới nối ra vịnh Guinea. Không có địa hình bảo vệ vùng biên giới dài hơn 5.800 km. Đường ống dẫn dầu dài gần 2.000 km (do Trung Quốc đầu tư) nối mỏ Agadem ra cảng Seme của Benin vừa vận hành nhưng thường gặp căng thẳng chính trị giữa hai nước."
   },
@@ -1324,7 +1324,7 @@ export const CAPITALS = [
       17.08,
       -22.57
     ],
-    "pop": "~268 nghìn",
+    "pop": "~486 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Namibia (Windhoek). Một trong những quốc gia có mật độ dân số thấp nhất thế giới (~3,6 người/km², chỉ sau Mông Cổ): kẹp giữa sa mạc cổ Namib dọc Đại Tây Dương và sa mạc Kalahari ở phía đông, giàu kim cương, uranium (lớn thứ 3 thế giới) và phát hiện mỏ dầu lớn ngoài khơi. Thủ đô Windhoek nằm trên cao nguyên trung tâm mát mẻ ở độ cao 1.650 m. Vịnh Walvis tốt đến mức Anh/Nam Phi từng giữ làm vùng đất tách rời cho tới tận năm 1994 mới trao trả lại cho Namibia."
   },
@@ -1454,7 +1454,7 @@ export const CAPITALS = [
       -15.98,
       18.09
     ],
-    "pop": "~742 nghìn",
+    "pop": "~1,4 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Mauritania (Nouakchott). Chiếc cầu nối cát mênh mông giữa Bắc Phi Ả Rập-Berber và Tây Phi hạ Sahara: ~90% diện tích là sa mạc Sahara, kinh tế sống nhờ đoàn tàu hỏa dài 2,5 km chở quặng sắt xuyên sa mạc ra Đại Tây Dương. Dân cư tập trung ở thủ đô ven biển Nouakchott và dọc bờ sông Senegal ở cực nam. Giữ vị trí cửa ngõ ổn định hiếm hoi bên sườn tây vùng Sahel."
   },
@@ -1480,7 +1480,7 @@ export const CAPITALS = [
       -8,
       12.65
     ],
-    "pop": "~1,5 triệu",
+    "pop": "~4,2 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Mali (Bamako). Quốc gia rộng lớn hình cánh bướm bị chia làm đôi: nửa bắc là sa mạc Sahara (vùng Azawad của người du mục Tuareg), nửa nam là vùng thảo nguyên dọc vòng cung sông Niger nơi phần lớn dân số sinh sống. Khoảng cách từ thủ đô Bamako ở tây nam tới vùng Kidal ở đông bắc xa hơn 1.500 km. Phụ thuộc vào hành lang đường bộ và đường sắt ra cảng Dakar (Senegal) và cảng Abidjan (Bờ Biển Ngà)."
   },
@@ -1519,7 +1519,7 @@ export const CAPITALS = [
       33.78,
       -13.98
     ],
-    "pop": "~647 nghìn",
+    "pop": "~989 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Malawi (Lilongwe). Dải đất hẹp dài nằm nép mình dọc theo thung lũng Tách giãn Lớn bên bờ hồ Malawi (chiếm hơn 1/5 diện tích đất nước); một quốc gia nông nghiệp đông dân, hòa bình nhưng không giáp biển và bị kẹp sâu vào trong lòng Mozambique. Nửa phía nam đất nước bị lãnh thổ Mozambique bao bọc ở cả 3 phía đông, tây và nam. Phụ thuộc hoàn toàn vào các tuyến đường sắt nối ra cảng Nacala và cảng Beira của Mozambique trên Ấn Độ Dương."
   },
@@ -1558,7 +1558,7 @@ export const CAPITALS = [
       6.13,
       49.61
     ],
-    "pop": "~107 nghìn",
+    "pop": "~139 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Luxembourg (Luxembourg). Đại công quốc nhỏ bé kẹp giữa Pháp, Đức và Bỉ; từng là pháo đài đá \"Gibraltar của phương Bắc\", nay là một trong những quốc gia giàu nhất thế giới tính theo GDP đầu người nhờ tài chính và ngân hàng. Thành cổ Luxembourg xây trên vách đá dựng đứng từng là pháo đài chiến lược. Kết nối thương mại qua sông Moselle ra sông Rhine và các cảng của Bỉ, Hà Lan."
   },
@@ -1584,7 +1584,7 @@ export const CAPITALS = [
       9.52,
       47.13
     ],
-    "pop": "~36 nghìn",
+    "pop": "~6 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Liechtenstein (Vaduz). Công quốc nhỏ bé nằm trong thung lũng thượng nguồn sông Rhine giữa Thụy Sĩ và Áo; một trong hai quốc gia duy nhất trên thế giới \"hai lần không giáp biển\" (cùng với Uzbekistan). Được bảo vệ hoàn toàn bởi địa hình núi cao và nước láng giềng Thụy Sĩ. Tuy nhiên lại là một trong những nền kinh tế công nghiệp – tài chính có thu nhập bình quân đầu người cao nhất hành tinh."
   },
@@ -1714,7 +1714,7 @@ export const CAPITALS = [
       173.02,
       1.34
     ],
-    "pop": "~29 nghìn",
+    "pop": "~63 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Kiribati (Tarawa). Một nghịch lý địa lý phi thường: tổng diện tích đất liền của 33 đảo san hô chỉ vỏn vẹn 811 km² (và chỉ cao hơn mặt biển chưa tới 2 mét), nhưng do rải rác trên cả 4 bán cầu (Bắc, Nam, Đông, Tây) nên Kiribati sở hữu vùng đặc quyền kinh tế biển (EEZ) khổng lồ rộng tới 3,55 triệu km² — lớn tương đương cả nước Ấn Độ! Một trong những quốc gia đầu tiên trên thế giới có nguy cơ mất toàn bộ lãnh thổ đất liền do nước biển dâng (chính phủ Kiribati đã từng mua trước 20 km² đất trên đảo Vanua Levu của Fiji làm nơi dự phòng di dời nông nghiệp). Bán giấy phép đánh bắt cá ngừ cho các đội tàu nước ngoài mang lại phần lớn nguồn thu ngân sách nhà nước."
   },
@@ -1766,9 +1766,9 @@ export const CAPITALS = [
       139.75,
       35.69
     ],
-    "pop": "~37,4 triệu (vùng đô thị)",
+    "pop": "~33,4 triệu (vùng đô thị, LHQ 2025)",
     "rank": 1,
-    "tx": "Đại đô thị lớn nhất thế giới nằm ở trung tâm đồng bằng Kanto — vùng đất bằng phẳng rộng nhất của một quần đảo 75% là núi. Vịnh Tokyo sâu và kín gió giúp thành phố (xưa là Edo của Mạc phủ Tokugawa) vừa tiếp cận tuyến hàng hải Thái Bình Dương, vừa được bán đảo Boso và Miura che chắn trước sóng thần và hạm đội ngoại bang. Tuy nhiên, việc tập trung hơn 30% dân số và GDP Nhật Bản trên đứt gãy kiến tạo Kanto khiến Tokyo luôn đối mặt rủi ro siêu động đất trực diện."
+    "tx": "Một trong những đại đô thị lớn nhất thế giới (đứng thứ ba theo LHQ 2025, sau Jakarta và Dhaka) nằm ở trung tâm đồng bằng Kanto — vùng đất bằng phẳng rộng nhất của một quần đảo 75% là núi. Vịnh Tokyo sâu và kín gió giúp thành phố (xưa là Edo của Mạc phủ Tokugawa) vừa tiếp cận tuyến hàng hải Thái Bình Dương, vừa được bán đảo Boso và Miura che chắn trước sóng thần và hạm đội ngoại bang. Tuy nhiên, việc tập trung hơn 30% dân số và GDP Nhật Bản trên đứt gãy kiến tạo Kanto khiến Tokyo luôn đối mặt rủi ro siêu động đất trực diện."
   },
   {
     "id": "cap_jamaica",
@@ -1818,9 +1818,9 @@ export const CAPITALS = [
       35.21,
       31.9
     ],
-    "pop": "~25 nghìn",
+    "pop": "~44 nghìn",
     "rank": 2,
-    "tx": "Thủ đô và trung tâm chính trị – hành chính của Palestine (Bờ Tây) (Ramallah). Hai vùng lãnh thổ Bờ Tây và Dải Gaza bị chia cắt về mặt địa lý và chính trị, nằm ở tâm điểm của cuộc xung đột Trung Đông kéo dài hơn một thế kỷ. Không có sự liên thông lãnh thổ giữa Bờ Tây và Gaza. Hoàn toàn không có cảng biển hay sân bay hoạt động."
+    "tx": "Trung tâm chính trị – hành chính của Palestine (Ramallah); Palestine tuyên bố Đông Jerusalem là thủ đô, còn Israel coi toàn bộ Jerusalem là thủ đô của mình. Hai vùng lãnh thổ Bờ Tây và Dải Gaza bị chia cắt về mặt địa lý và chính trị, nằm ở tâm điểm của cuộc xung đột Trung Đông kéo dài hơn một thế kỷ. Không có sự liên thông lãnh thổ giữa Bờ Tây và Gaza. Hoàn toàn không có cảng biển hay sân bay hoạt động."
   },
   {
     "id": "cap_ireland",
@@ -2078,7 +2078,7 @@ export const CAPITALS = [
       9.46,
       0.39
     ],
-    "pop": "~578 nghìn",
+    "pop": "~700 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Gabon (Libreville). Quốc gia giàu có và đô thị hóa cao ở Trung Phi: gần 90% diện tích được bao phủ bởi rừng mưa nhiệt đới nguyên sinh lưu vực Congo, trong khi dân số ít ỏi hưởng nguồn thu lớn từ dầu mỏ, gỗ quý và quặng mangan (lớn thứ nhì thế giới). Hơn 85% dân số sống tập trung ở các đô thị ven biển (Libreville, Port-Gentil) và dọc tuyến đường sắt Trans-Gabon. Thuận lợi xuất khẩu dầu thô và khoáng sản thẳng ra đại dương."
   },
@@ -2327,7 +2327,7 @@ export const CAPITALS = [
     ],
     "pop": "~2,2 triệu",
     "rank": 2,
-    "tx": "Thủ đô và trung tâm chính trị – hành chính của Cộng hòa Dominica (Santo Domingo). Nửa phía đông (chiếm 2/3 diện tích) của đảo Hispaniola: đối lập hoàn toàn với nước láng giềng Haiti ở phía tây, Cộng hòa Dominica có những thung lũng nông nghiệp màu mỡ, rừng được bảo vệ nghiêm ngặt và nền kinh tế tăng trưởng nhanh nhất vùng Caribbean nhờ du lịch, khu chế xuất và khai thác mỏ vàng lớn nhất châu Mỹ. Thung lũng Cibao ở phía bắc và đồng bằng phía đông rộng rãi, bằng phẳng và cực kỳ màu mỡ. Điểm đến du lịch số một của cả vùng biển Caribbean (>10 triệu du khách/năm)."
+    "tx": "Thủ đô và trung tâm chính trị – hành chính của Cộng hòa Dominica (Santo Domingo). Nửa phía đông (chiếm 2/3 diện tích) của đảo Hispaniola: đối lập hoàn toàn với nước láng giềng Haiti ở phía tây, Cộng hòa Dominica có những thung lũng nông nghiệp màu mỡ, rừng được bảo vệ nghiêm ngặt và nền kinh tế tăng trưởng nhanh nhất vùng Caribbean nhờ du lịch, khu chế xuất và khai thác mỏ vàng lớn nhất Mỹ Latinh (Pueblo Viejo). Thung lũng Cibao ở phía bắc và đồng bằng phía đông rộng rãi, bằng phẳng và cực kỳ màu mỡ. Điểm đến du lịch số một của cả vùng biển Caribbean (>10 triệu du khách/năm)."
   },
   {
     "id": "cap_dominica",
@@ -2364,7 +2364,7 @@ export const CAPITALS = [
       -51.73,
       64.2
     ],
-    "pop": "~15 nghìn",
+    "pop": "~20 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Greenland (Đan Mạch) (Nuuk). Hòn đảo lớn nhất thế giới (lãnh thổ tự trị thuộc Vương quốc Đan Mạch): ~80% diện tích bị phủ dưới lớp băng dày tới 3 km, nhưng giữ vị trí \"mắt thần\" canh giữ khe biển GIUK, đường bay tên lửa đạn đạo qua Bắc Cực và kho đất hiếm khổng lồ dưới lớp băng đang tan. Mọi di chuyển giữa các khu dân cư ven biển đều phải đi bằng máy bay trực thăng, thủy phi cơ hoặc tàu thuyền. Căn cứ vũ trụ Pituffik (trước là căn cứ không quân Thule) của Mỹ ở cực bắc đảo là trạm radar cảnh báo sớm tên lửa liên lục địa quan trọng bậc nhất của Lầu Năm Góc."
   },
@@ -2559,7 +2559,7 @@ export const CAPITALS = [
       113.54,
       22.19
     ],
-    "pop": "~569 nghìn",
+    "pop": "~680 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Ma Cao (Trung Quốc) (Macau). Bán đảo nhỏ ở bờ tây cửa sông Châu Giang, thuộc địa châu Âu đầu tiên và cuối cùng tại Trung Quốc (Bồ Đào Nha trao trả năm 1999). Mật độ dân số cao nhất thế giới. Kinh tế dựa vào du lịch và sòng bạc hơn là cảng nước sâu."
   },
@@ -2572,7 +2572,7 @@ export const CAPITALS = [
       114.18,
       22.31
     ],
-    "pop": "~7,2 triệu",
+    "pop": "~7,5 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Hồng Kông (Trung Quốc) (Hong Kong). Cảng nước sâu tự nhiên ở cửa sông Châu Giang, từng là cửa ngõ duy nhất nối Trung Quốc với tư bản toàn cầu theo mô hình \"Một quốc gia, hai chế độ\". Địa hình đồi núi dốc khiến đô thị nén chặt dọc bờ vịnh Victoria. Trung tâm tài chính và trung chuyển hàng hải lớn bậc nhất châu Á."
   },
@@ -2598,7 +2598,7 @@ export const CAPITALS = [
       15.05,
       12.12
     ],
-    "pop": "~989 nghìn",
+    "pop": "~1,7 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Chad (N'Djamena). \"Trái tim chết của châu Phi\": quốc gia rộng lớn nằm sâu nhất trong nội lục châu Phi, bị kẹp giữa Libya ở phía bắc, nội chiến Sudan ở phía đông, Cộng hòa Trung Phi ở phía nam và lưu vực hồ Chad có Boko Haram ở phía tây. Thủ đô N'Djamena nằm ngay sát biên giới Cameroon bên bờ sông Chari. Xuất khẩu dầu mỏ hoàn toàn phụ thuộc vào đường ống Chad – Cameroon chạy ra Đại Tây Dương."
   },
@@ -2624,7 +2624,7 @@ export const CAPITALS = [
       -23.52,
       14.92
     ],
-    "pop": "~113 nghìn",
+    "pop": "~140 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Cabo Verde (Praia). Quần đảo 10 đảo núi lửa nằm cách bờ biển Senegal ~600 km ngoài Đại Tây Dương: nghèo tài nguyên và cực kỳ khô hạn (nằm trên cùng vĩ tuyến với vùng Sahel), nhưng lại là một trong những nền dân chủ ổn định, minh bạch và phát triển con người cao nhất châu Phi. Địa hình núi lửa cao dựng đứng (đỉnh Pico do Fogo cao 2.829 m). Sống nhờ du lịch biển, dịch vụ hàng hải và kiều hối từ cộng đồng người Cabo Verde ở nước ngoài (đông hơn cả dân số trong nước)."
   },
@@ -2689,7 +2689,7 @@ export const CAPITALS = [
       29.93,
       -3.43
     ],
-    "pop": "~332 nghìn",
+    "pop": "~135 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Burundi (Gitega; thủ đô kinh tế: Bujumbura). Quốc gia \"chị em song sinh\" với Rwanda về địa lý và cấu trúc dân cư (người Hutu và Tutsi trên vùng cao nguyên nghìn đồi), chuyển thủ đô chính trị từ Bujumbura về Gitega ở vùng cao nguyên trung tâm từ năm 2019. Mật độ dân số nông thôn cực cao gây áp lực lên diện tích đất canh tác. Phụ thuộc vào tuyến đường bộ và đường thủy hồ Tanganyika nối với đường sắt của Tanzania ra cảng Dar es Salaam."
   },
@@ -2702,7 +2702,7 @@ export const CAPITALS = [
       -1.53,
       12.37
     ],
-    "pop": "~1,1 triệu",
+    "pop": "~2,4 triệu",
     "rank": 2,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Burkina Faso (Ouagadougou). Trái tim không giáp biển của vùng Tây Phi – Sahel, từng mang tên \"Xứ sở của những con người chính trực\"; nay trở thành mặt trận nóng nhất của cuộc xung đột với các nhóm vũ trang thánh chiến. Không có núi cao hay rừng rậm che chắn, các nhóm vũ trang đi xe máy dễ dàng bao vây và cô lập các thị trấn. Phụ thuộc hoàn toàn vào tuyến đường sắt và đường bộ xuống các cảng của Bờ Biển Ngà, Ghana, Togo và Benin."
   },
@@ -2754,7 +2754,7 @@ export const CAPITALS = [
       25.91,
       -24.65
     ],
-    "pop": "~208 nghìn",
+    "pop": "~246 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Botswana (Gaborone). Câu chuyện thành công kỳ diệu của châu Phi: khi độc lập năm 1966 là một vùng bán sa mạc Kalahari không giáp biển và nghèo nhất thế giới (chỉ có 12 km đường nhựa), nhưng nhờ quản trị minh bạch không tham nhũng nguồn thu kim cương khổng lồ, Botswana đã trở thành nền dân chủ liên tục lâu đời nhất và có thu nhập trung bình cao ở lục địa. Dân cư tập trung ở dải phía đông dọc biên giới Nam Phi nơi có lượng mưa khá hơn. Phụ thuộc vào mạng lưới đường sắt và đường bộ qua Nam Phi (cảng Durban) và hành lang xuyên Kalahari sang cảng Walvis Bay (Namibia)."
   },
@@ -2793,7 +2793,7 @@ export const CAPITALS = [
       89.64,
       27.47
     ],
-    "pop": "~99 nghìn",
+    "pop": "~115 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Bhutan (Thimphu). Vương quốc Phật giáo nhỏ bé trên dãy Đông Himalaya, gắn chặt an ninh và kinh tế với Ấn Độ để tự vệ trước sức ép biên giới từ phía bắc. Bức tường tự nhiên bảo vệ vương quốc suốt nhiều thế kỷ. Không có quan hệ ngoại giao chính thức với Trung Quốc."
   },
@@ -2819,7 +2819,7 @@ export const CAPITALS = [
       -88.77,
       17.25
     ],
-    "pop": "~15 nghìn",
+    "pop": "~21 nghìn",
     "rank": 3,
     "tx": "Thủ đô và trung tâm chính trị – hành chính của Belize (Belmopan). Dị biệt địa chính trị của Trung Mỹ: quốc gia duy nhất trong khu vực nói tiếng Anh (từng là Honduras thuộc Anh), mật độ dân số thấp nhất Trung Mỹ, được bảo vệ ngoài khơi bởi rạn san hô chắn bờ lớn thứ hai thế giới. Năm 1970 đã dời thủ đô từ Belize City (sát biển, từng bị bão Hattie san phẳng năm 1961) vào Belmopan ở sâu trong nội địa. Thu hút du lịch biển nhưng các luồng san hô cạn lại cản trở tàu biển trọng tải cực lớn."
   },
@@ -3108,7 +3108,7 @@ export const CITIES = [
       106.68,
       20.86
     ],
-    "pop": "~4,1 triệu (sau sáp nhập)",
+    "pop": "~4,7 triệu (sau sáp nhập)",
     "rank": 1,
     "tx": "Cửa ngõ cảng biển lớn nhất miền Bắc Việt Nam, nơi các nhánh sông Thái Bình – Bạch Đằng đổ ra vịnh Bắc Bộ. Với cụm cảng nước sâu Lạch Huyện đón tàu siêu trọng tải đi thẳng châu Âu – Mỹ và không gian mở rộng sau khi hợp nhất với Hải Dương (2025), Hải Phòng là mắt xích đầu cuối của hành lang kinh tế Côn Minh – Lào Cai – Hà Nội – Hải Phòng."
   },
@@ -3123,7 +3123,7 @@ export const CITIES = [
     ],
     "pop": "~3,0 triệu (sau sáp nhập)",
     "rank": 1,
-    "tx": "Đô thị trung tâm của miền Trung Việt Nam nằm bên vịnh Đà Nẵng kín gió, được bán đảo Sơn Trà và đèo Hải Vân che chắn. Là điểm cuối phía đông của Hành lang Kinh tế Đông – Tây (EWEC) nối Myanmar – Thái Lan – Lào ra Biển Đông; sau khi hợp nhất với Quảng Nam (2025), Đà Nẵng mở rộng chiều sâu công nghiệp Chu Lai và không gian hướng ra quần đảo Hoàng Sa."
+    "tx": "Đô thị trung tâm của miền Trung Việt Nam nằm bên vịnh Đà Nẵng kín gió, được bán đảo Sơn Trà và đèo Hải Vân che chắn. Là điểm cuối phía đông của Hành lang Kinh tế Đông – Tây (EWEC) nối Myanmar – Thái Lan – Lào ra Biển Đông; sau khi hợp nhất với Quảng Nam (2025), Đà Nẵng mở rộng chiều sâu công nghiệp Chu Lai và không gian hướng ra quần đảo Hoàng Sa (Việt Nam đặt quần đảo này thuộc Đà Nẵng, nhưng Trung Quốc kiểm soát từ 1974 và Đài Loan cũng tuyên bố chủ quyền)."
   },
   {
     "id": "city_cantho",
@@ -3173,7 +3173,7 @@ export const CITIES = [
       121.47,
       31.23
     ],
-    "pop": "~29 triệu",
+    "pop": "~24,8 triệu",
     "rank": 1,
     "tx": "Trái tim tài chính, thương mại và cảng container số một thế giới, án ngữ ngay cửa sông Dương Tử (Trường Giang) — nơi dòng sông dài 6.300 km kết nối 1/3 dân số và hơn 40% GDP Trung Quốc đổ ra biển Hoa Đông. Ai kiểm soát Thượng Hải sẽ nắm giữ huyết mạch xuất nhập khẩu của toàn bộ lưu vực Dương Tử từ Trùng Khánh, Vũ Hán đến Giang Tô – Chiết Giang."
   },
@@ -3487,7 +3487,7 @@ export const CITIES = [
     ],
     "pop": "~15,5 triệu",
     "rank": 1,
-    "tx": "Từng là thủ đô của Ấn Độ thuộc Anh đến năm 1911, nằm bên sông Hooghly (nhánh phía tây của châu thổ sông Hằng) cách vịnh Bengal ~120 km. Là cửa ngõ kinh tế và hậu cần duy nhất nối phần chính lục địa Ấn Độ qua \"Hành lang Siliguri\" (Cổ Gà) tới 7 bang miền Đông Bắc."
+    "tx": "Từng là thủ đô của Ấn Độ thuộc Anh đến năm 1911, nằm bên sông Hooghly (nhánh phía tây của châu thổ sông Hằng) cách vịnh Bengal ~120 km. Là cửa ngõ kinh tế và hậu cần duy nhất nối phần chính lục địa Ấn Độ qua \"Hành lang Siliguri\" (Cổ Gà) tới 8 bang miền Đông Bắc."
   },
   {
     "id": "city_chennai",
@@ -3799,7 +3799,7 @@ export const CITIES = [
     ],
     "pop": "~550 nghìn",
     "rank": 1,
-    "tx": "Quân cảng nước sâu tự nhiên nằm ở mũi tây nam bán đảo Crimea vươn ra chính giữa Biển Đen. Kể từ thời Nữ hoàng Catherine Đại đế (1783), Chiến tranh Crimea (1853–1856), Thế chiến II cho tới khi Nga sáp nhập Crimea năm 2014, Sevastopol là căn cứ sống còn của Hạm đội Biển Đen; tuy nhiên trong cuộc xung đột với Ukraine, các đợt tập kích bằng xuồng không người lái và tên lửa hành trình đã buộc Nga phải sơ tán hầu hết tàu chiến chủ lực sang Novorossiysk."
+    "tx": "Quân cảng nước sâu tự nhiên nằm ở mũi tây nam bán đảo Crimea vươn ra chính giữa Biển Đen. Kể từ thời Nữ hoàng Catherine Đại đế (1783), Chiến tranh Crimea (1853–1856), Thế chiến II cho tới khi Nga sáp nhập Crimea năm 2014 (không được quốc tế công nhận; Ukraine và LHQ coi Sevastopol là lãnh thổ Ukraine), Sevastopol là căn cứ sống còn của Hạm đội Biển Đen; tuy nhiên trong cuộc xung đột với Ukraine, các đợt tập kích bằng xuồng không người lái và tên lửa hành trình đã buộc Nga phải sơ tán hầu hết tàu chiến chủ lực sang Novorossiysk."
   },
   {
     "id": "city_novorossiysk",
@@ -4007,7 +4007,7 @@ export const CITIES = [
     ],
     "pop": "~34 nghìn",
     "rank": 1,
-    "tx": "Lãnh thổ hải ngoại rộng chỉ 6,8 km² của Vương quốc Anh (nhượng lại từ Tây Ban Nha theo Hiệp ước Utrecht 1713) gắn với khối núi đá vôi cao 426 m vươn ra eo biển Gibraltar rộng chỉ 14 km. Với mạng lưới đường hầm quân sự trong lòng núi, cảng sửa chữa tàu ngầm và trạm tình báo tín hiệu, Gibraltar cho phép Anh và NATO giám sát mọi tàu chiến, tàu ngầm ra vào giữa Đại Tây Dương và Địa Trung Hải."
+    "tx": "Lãnh thổ hải ngoại rộng chỉ 6,8 km² của Vương quốc Anh (nhượng lại từ Tây Ban Nha theo Hiệp ước Utrecht 1713; Tây Ban Nha vẫn đòi chủ quyền, và hiệp ước Anh–EU ký tháng 7/2026 không giải quyết vấn đề này) gắn với khối núi đá vôi cao 426 m vươn ra eo biển Gibraltar rộng chỉ 14 km. Với mạng lưới đường hầm quân sự trong lòng núi, cảng sửa chữa tàu ngầm và trạm tình báo tín hiệu, Gibraltar cho phép Anh và NATO giám sát mọi tàu chiến, tàu ngầm ra vào giữa Đại Tây Dương và Địa Trung Hải."
   },
   {
     "id": "city_piraeus",
@@ -4592,7 +4592,7 @@ export const CITIES = [
     ],
     "pop": "~2,3 triệu",
     "rank": 1,
-    "tx": "Một trong những thành phố triệu dân biệt lập nhất thế giới (gần Jakarta và Singapore hơn là gần thủ đô Canberra của chính nước Úc), nằm ở bờ tây nam bang Tây Úc giàu quặng sắt, vàng và khí đốt bậc nhất hành tinh. Quân cảng HMAS Stirling ngay phía nam Perth là căn cứ Hạm đội Tây của Úc và là nơi luân phiên đóng quân của tàu ngầm tấn công hạt nhân Mỹ – Anh – Úc theo hiệp ước AUKUS để kiểm soát Ấn Độ Dương."
+    "tx": "Một trong những thành phố triệu dân biệt lập nhất thế giới (gần Jakarta hơn là gần thủ đô Canberra của chính nước Úc), nằm ở bờ tây nam bang Tây Úc giàu quặng sắt, vàng và khí đốt bậc nhất hành tinh. Quân cảng HMAS Stirling ngay phía nam Perth là căn cứ Hạm đội Tây của Úc và là nơi luân phiên đóng quân của tàu ngầm tấn công hạt nhân Mỹ – Anh – Úc theo hiệp ước AUKUS để kiểm soát Ấn Độ Dương."
   },
   {
     "id": "city_darwin",
@@ -4725,7 +4725,7 @@ export const ISLANDS = [
     ],
     "area": "~15.000 km² (vùng biển)",
     "rank": 1,
-    "tx": "Quần đảo san hô gồm hai nhóm An Vĩnh và Lưỡi Liềm nằm ở phía bắc Biển Đông, ngang vĩ độ với Đà Nẵng – Quảng Ngãi và án ngữ ngay trên tuyến hàng hải huyết mạch quốc tế. Thuộc chủ quyền lịch sử của Việt Nam (hiện thuộc TP. Đà Nẵng), bị Trung Quốc dùng vũ lực cưỡng chiếm toàn bộ vào tháng 1/1974 và xây dựng căn cứ không – hải quân lớn trên đảo Phú Lâm."
+    "tx": "Quần đảo san hô gồm hai nhóm An Vĩnh và Lưỡi Liềm nằm ở phía bắc Biển Đông, ngang vĩ độ với Đà Nẵng – Quảng Ngãi và án ngữ ngay trên tuyến hàng hải huyết mạch quốc tế. Thuộc chủ quyền lịch sử mà Việt Nam khẳng định (Việt Nam đặt dưới TP. Đà Nẵng; Trung Quốc và Đài Loan cũng tuyên bố chủ quyền), bị Trung Quốc dùng vũ lực cưỡng chiếm toàn bộ vào tháng 1/1974 và xây dựng căn cứ không – hải quân lớn trên đảo Phú Lâm."
   },
   {
     "id": "isl_truongsa",
@@ -4972,7 +4972,7 @@ export const ISLANDS = [
     ],
     "area": "6,5 km²",
     "rank": 2,
-    "tx": "Đảo san hô biệt lập thuộc Mỹ nằm ở khoảng giữa Hawaii và đảo Guam trên Bắc Thái Bình Dương; sở hữu đường băng dài 3.000 m đóng vai trò trạm tiếp nhiên liệu quân sự chiến lược và bãi thử phòng thủ tên lửa xuyên Thái Bình Dương."
+    "tx": "Đảo san hô biệt lập do Mỹ kiểm soát (Quần đảo Marshall cũng tuyên bố chủ quyền, gọi là Enen-kio; Mỹ không công nhận) nằm ở khoảng giữa Hawaii và đảo Guam trên Bắc Thái Bình Dương; sở hữu đường băng dài 3.000 m đóng vai trò trạm tiếp nhiên liệu quân sự chiến lược và bãi thử phòng thủ tên lửa xuyên Thái Bình Dương."
   },
   {
     "id": "isl_midway",
@@ -5258,7 +5258,7 @@ export const ISLANDS = [
     ],
     "area": "30 km²",
     "rank": 1,
-    "tx": "Đảo san hô lớn nhất thuộc Quần đảo Chagos nằm đúng tâm hình học của Ấn Độ Dương. Theo hiệp ước ký ngày 22/5/2025, Anh chính thức công nhận chủ quyền của Mauritius đối với quần đảo Chagos, đồng thời thuê lại đảo Diego Garcia trong 99 năm để liên quân Mỹ – Anh tiếp tục vận hành căn cứ hải – không quân chiến lược tối mật, nơi neo đậu các tàu kho tiền phương và tiếp nhận máy bay ném bom chiến lược B-2, B-52."
+    "tx": "Đảo san hô lớn nhất thuộc Quần đảo Chagos nằm đúng tâm hình học của Ấn Độ Dương. Hiệp ước ký ngày 22/5/2025 sẽ chuyển chủ quyền quần đảo Chagos cho Mauritius và Anh thuê lại đảo Diego Garcia 99 năm, nhưng chưa được phê chuẩn, chưa có hiệu lực (chủ quyền tranh chấp giữa Anh và Mauritius) để liên quân Mỹ – Anh tiếp tục vận hành căn cứ hải – không quân chiến lược tối mật, nơi neo đậu các tàu kho tiền phương và tiếp nhận máy bay ném bom chiến lược B-2, B-52."
   },
   {
     "id": "isl_socotra",
@@ -5284,7 +5284,7 @@ export const ISLANDS = [
     ],
     "area": "1.491 km² (Qeshm)",
     "rank": 1,
-    "tx": "Hai hòn đảo chiến lược của Iran nằm ngay điểm thắt nút cổ chai của eo biển Hormuz (nơi vận chuyển ~20% lượng dầu mỏ và khí hóa lỏng toàn cầu). Đảo Qeshm dài 135 km chạy song song bờ biển cùng đảo Hormuz, Larak và Abu Musa tạo thành mạng lưới hầm ngầm tên lửa bờ đối hải, bãi rải thủy lôi và xuồng cao tốc của IRGC. Trong Chiến tranh Iran năm 2026, khu vực này là tâm điểm xung đột khi Iran phong tỏa eo biển Hormuz và chịu các đợt không kích dữ dội từ liên quân Mỹ – Israel trước lệnh ngừng bắn."
+    "tx": "Hai hòn đảo chiến lược của Iran nằm ngay điểm thắt nút cổ chai của eo biển Hormuz (nơi vận chuyển ~20% lượng dầu mỏ và khí hóa lỏng toàn cầu). Đảo Qeshm dài 135 km chạy song song bờ biển cùng đảo Hormuz, Larak và Abu Musa (Abu Musa do Iran kiểm soát từ 1971, UAE cũng tuyên bố chủ quyền) tạo thành mạng lưới hầm ngầm tên lửa bờ đối hải, bãi rải thủy lôi và xuồng cao tốc của IRGC. Trong Chiến tranh Iran năm 2026, khu vực này là tâm điểm xung đột khi Iran phong tỏa eo biển Hormuz và chịu các đợt không kích dữ dội từ liên quân Mỹ – Israel trước lệnh ngừng bắn."
   },
   {
     "id": "isl_bahrain",
@@ -5375,7 +5375,7 @@ export const ISLANDS = [
     ],
     "area": "61.022 km²",
     "rank": 1,
-    "tx": "Quần đảo Bắc Cực nằm ở vĩ độ 78° Bắc (giữa lục địa Na Uy và Bắc Cực), nơi đặt Hầm Dự trữ Hạt giống Toàn cầu. Theo Hiệp ước Svalbard năm 1920, Na Uy có chủ quyền nhưng quần đảo phải phi quân sự hóa và các quốc gia ký kết được quyền khai thác kinh tế (Nga vẫn duy trì thị trấn mỏ than Barentsburg tại đây). Khe biển \"Bear Gap\" giữa Svalbard và mũi Bắc Na Uy là cửa ngõ sống còn mà tàu ngầm Hạm đội Phương Bắc của Nga tại Murmansk phải đi qua để ra Bắc Đại Tây Dương."
+    "tx": "Quần đảo Bắc Cực nằm ở vĩ độ 78° Bắc (giữa lục địa Na Uy và Bắc Cực), nơi đặt Hầm Dự trữ Hạt giống Toàn cầu. Theo Hiệp ước Svalbard năm 1920, Na Uy có chủ quyền nhưng quần đảo phải phi quân sự hóa và các quốc gia ký kết được quyền khai thác kinh tế (Nga vẫn duy trì thị trấn mỏ than Barentsburg tại đây); riêng phạm vi áp dụng của Hiệp ước ở vùng biển và thềm lục địa xung quanh vẫn là điểm bất đồng giữa Na Uy và Nga. Khe biển \"Bear Gap\" giữa Svalbard và mũi Bắc Na Uy là cửa ngõ sống còn mà tàu ngầm Hạm đội Phương Bắc của Nga tại Murmansk phải đi qua để ra Bắc Đại Tây Dương."
   },
   {
     "id": "isl_franzjosef",
@@ -5453,7 +5453,7 @@ export const ISLANDS = [
     ],
     "area": "1.580 km²",
     "rank": 2,
-    "tx": "Quần đảo tự trị nói tiếng Thụy Điển thuộc chủ quyền Phần Lan, nằm ngay nút cổ chai lối vào vịnh Bothnia và cách Stockholm chỉ ~40 km đường biển; theo các hiệp ước quốc tế từ năm 1856 và 1921, Åland là khu vực phi quân sự hóa và trung lập vĩnh viễn."
+    "tx": "Quần đảo tự trị nói tiếng Thụy Điển thuộc chủ quyền Phần Lan, nằm ngay nút cổ chai lối vào vịnh Bothnia và cách bờ biển Thụy Điển chỉ ~40 km (cách Stockholm khoảng 160 km đường biển); theo các hiệp ước quốc tế từ năm 1856 và 1921, Åland là khu vực phi quân sự hóa và trung lập vĩnh viễn."
   },
   {
     "id": "isl_bornholm",
@@ -5505,7 +5505,7 @@ export const ISLANDS = [
     ],
     "area": "27.000 km²",
     "rank": 1,
-    "tx": "Bán đảo có hình dáng như một hòn đảo thoi nhô ra chính giữa Biển Đen (chỉ nối với lục địa Ukraine qua eo đất Perekop rộng 5–7 km và nối với vùng Kuban của Nga qua cầu Kerch). Bị Nga sáp nhập năm 2014, Crimea cùng Sevastopol từng là pháo đài khống chế Biển Đen, nhưng các đòn tập kích tên lửa và xuồng không người lái của Ukraine từ năm 2022 đã làm hư hại cầu Kerch và buộc Hạm đội Biển Đen phải rút phần lớn tàu chiến về Novorossiysk."
+    "tx": "Bán đảo có hình dáng như một hòn đảo thoi nhô ra chính giữa Biển Đen (chỉ nối với lục địa Ukraine qua eo đất Perekop rộng 5–7 km và nối với vùng Kuban của Nga qua cầu Kerch). Bị Nga sáp nhập năm 2014 (không được Liên Hợp Quốc và đa số các nước công nhận; Ukraine vẫn coi là lãnh thổ của mình), Crimea cùng Sevastopol từng là pháo đài khống chế Biển Đen, nhưng các đòn tập kích tên lửa và xuồng không người lái của Ukraine từ năm 2022 đã làm hư hại cầu Kerch và buộc Hạm đội Biển Đen phải rút phần lớn tàu chiến về Novorossiysk."
   },
   {
     "id": "isl_cyprus",
@@ -5622,7 +5622,7 @@ export const ISLANDS = [
     ],
     "area": "6,8 km²",
     "rank": 2,
-    "tx": "\"Cột trụ của Hercules\" ở bờ bắc eo biển Gibraltar, vùng lãnh thổ hải ngoại của Anh kiểm soát cửa ngõ 14 km nối Đại Tây Dương và Địa Trung Hải."
+    "tx": "\"Cột trụ của Hercules\" ở bờ bắc eo biển Gibraltar, vùng lãnh thổ hải ngoại của Anh (Tây Ban Nha đòi chủ quyền) kiểm soát cửa ngõ 14 km nối Đại Tây Dương và Địa Trung Hải."
   },
   {
     "id": "isl_faroe",
@@ -5981,7 +5981,7 @@ export const ADMIN1_META = {
     "old": [
       "Quảng Nam"
     ],
-    "tx": "Đô thị trung tâm miền Trung sau khi hợp nhất Đà Nẵng và tỉnh Quảng Nam năm 2025 (tái lập không gian lịch sử Quảng Nam – Đà Nẵng). Thành phố mới sở hữu chiều sâu lãnh thổ hoàn chỉnh kéo dài từ đường biên giới dãy Trường Sơn giáp Lào (cửa khẩu Nam Giang), qua di sản Hội An – Mỹ Sơn, khu kinh tế mở và sân bay Chu Lai tới vịnh cảng nước sâu Tiên Sa – Liên Chiểu và trực tiếp quản lý quần đảo Hoàng Sa."
+    "tx": "Đô thị trung tâm miền Trung sau khi hợp nhất Đà Nẵng và tỉnh Quảng Nam năm 2025 (tái lập không gian lịch sử Quảng Nam – Đà Nẵng). Thành phố mới sở hữu chiều sâu lãnh thổ hoàn chỉnh kéo dài từ đường biên giới dãy Trường Sơn giáp Lào (cửa khẩu Nam Giang), qua di sản Hội An – Mỹ Sơn, khu kinh tế mở và sân bay Chu Lai tới vịnh cảng nước sâu Tiên Sa – Liên Chiểu và quản lý về hành chính quần đảo Hoàng Sa (Việt Nam khẳng định chủ quyền; Trung Quốc chiếm đóng toàn bộ quần đảo từ năm 1974 và cũng tuyên bố chủ quyền; Đài Loan cũng tuyên bố chủ quyền)."
   },
   "VN-CT": {
     "vi": "TP. Cần Thơ",
@@ -6142,7 +6142,7 @@ export const ADMIN1_META = {
     "old": [
       "Ninh Thuận"
     ],
-    "tx": "Tỉnh hợp nhất năm 2025 giữa Khánh Hòa và Ninh Thuận, quy tụ đường bờ biển dài nhất và sâu nhất Việt Nam từ vịnh Vân Phong, vịnh Nha Trang, quân cảng chiến lược Cam Ranh xuống vịnh Vĩnh Hy – Cà Ná. Tỉnh mới vừa là trung tâm kinh tế biển, trung tâm năng lượng tái tạo – điện hạt nhân quy hoạch tại Ninh Thuận, vừa trực tiếp quản lý đặc khu Trường Sa nơi đầu sóng ngọn gió."
+    "tx": "Tỉnh hợp nhất năm 2025 giữa Khánh Hòa và Ninh Thuận, quy tụ đường bờ biển dài nhất và sâu nhất Việt Nam từ vịnh Vân Phong, vịnh Nha Trang, quân cảng chiến lược Cam Ranh xuống vịnh Vĩnh Hy – Cà Ná. Tỉnh mới vừa là trung tâm kinh tế biển, trung tâm năng lượng tái tạo – điện hạt nhân quy hoạch tại Ninh Thuận, vừa trực tiếp quản lý đặc khu Trường Sa nơi đầu sóng ngọn gió (quần đảo mà Việt Nam, Trung Quốc, Đài Loan, Philippines, Malaysia và Brunei đều tuyên bố chủ quyền toàn bộ hoặc một phần; trừ Brunei, các bên đều kiểm soát một số thực thể)."
   },
   "VN-35": {
     "vi": "Lâm Đồng",
@@ -6394,7 +6394,7 @@ export const ADMIN1_META = {
     "vi": "Tân Cương",
     "cap": "Ürümqi (Ô Lỗ Mộc Tề)",
     "old": [],
-    "tx": "Đơn vị hành chính cấp tỉnh lớn nhất Trung Quốc (~1,66 triệu km², chiếm 1/6 diện tích cả nước), có địa hình \"Tam sơn kẹp nhị bồn\" (dãy Altai, Thiên Sơn và Côn Lôn kẹp hai bồn địa Junggar và Tarim/sa mạc Taklamakan). Giáp tới 8 quốc gia (Nga, Mông Cổ, Kazakhstan, Kyrgyzstan, Tajikistan, Afghanistan, Pakistan, Ấn Độ), Tân Cương là vùng đệm an ninh phía tây, nguồn dầu khí – bông – polysilicon năng lượng mặt trời khổng lồ và là cửa ngõ đất liền của Sáng kiến Vành đai và Con đường."
+    "tx": "Đơn vị hành chính cấp tỉnh lớn nhất Trung Quốc (~1,66 triệu km², chiếm 1/6 diện tích cả nước), có địa hình \"Tam sơn kẹp nhị bồn\" (dãy Altai, Thiên Sơn và Côn Lôn kẹp hai bồn địa Junggar và Tarim/sa mạc Taklamakan). Giáp tới 8 quốc gia (Nga, Mông Cổ, Kazakhstan, Kyrgyzstan, Tajikistan, Afghanistan, Pakistan, Ấn Độ; đoạn biên giới Aksai Chin với Ấn Độ đang tranh chấp), Tân Cương là vùng đệm an ninh phía tây, nguồn dầu khí – bông – polysilicon năng lượng mặt trời khổng lồ và là cửa ngõ đất liền của Sáng kiến Vành đai và Con đường."
   },
   "US-AK": {
     "vi": "Alaska",
@@ -6430,7 +6430,7 @@ export const ADMIN1_META = {
     "vi": "Colorado",
     "cap": "Denver",
     "old": [],
-    "tx": "Nằm trên đường phân thủy lục địa của dãy núi Rocky cao hiểm trở (đầu nguồn sông Colorado, Rio Grande và Arkansas). Nhờ vị trí nằm sâu ở chính giữa lục địa Bắc Mỹ, dãy núi Cheyenne tại Colorado Springs được chọn làm hầm ngầm chỉ huy hạt nhân kiên cố của Bộ Tư lệnh Phòng thủ Không gian Bắc Mỹ (NORAD) và Bộ Tư lệnh Vũ trụ Mỹ."
+    "tx": "Nằm trên đường phân thủy lục địa của dãy núi Rocky cao hiểm trở (đầu nguồn sông Colorado, Rio Grande và Arkansas). Nhờ vị trí nằm sâu ở chính giữa lục địa Bắc Mỹ, dãy núi Cheyenne tại Colorado Springs được chọn làm hầm ngầm chỉ huy hạt nhân kiên cố của Bộ Tư lệnh Phòng thủ Không gian Bắc Mỹ (NORAD) và Bộ Tư lệnh Vũ trụ Mỹ (hiện đặt trụ sở tại căn cứ Peterson, Colorado Springs; tháng 9/2025 Tổng thống Trump công bố chuyển về Huntsville, Alabama)."
   },
   "US-CT": {
     "vi": "Connecticut",
@@ -6454,7 +6454,7 @@ export const ADMIN1_META = {
     "vi": "Florida",
     "cap": "Tallahassee",
     "old": [],
-    "tx": "Bán đảo dài vươn sâu xuống phía nam như một \"cánh tay khổng lồ\" ngăn cách Đại Tây Dương với vịnh Mexico. Florida kiểm soát eo biển Florida (đối diện Cuba), đặt trụ sở hai bộ tư lệnh tác chiến quan trọng của Mỹ là CENTCOM và SOCOM tại Tampa, SOUTHCOM tại Miami, đồng thời vị trí gần Xích đạo bờ biển phía đông giúp Mũi Canaveral trở thành trung tâm phóng tên lửa vũ trụ số một của nước Mỹ."
+    "tx": "Bán đảo dài vươn sâu xuống phía nam như một \"cánh tay khổng lồ\" ngăn cách Đại Tây Dương với vịnh Mexico. Florida kiểm soát eo biển Florida (đối diện Cuba), đặt trụ sở ba bộ tư lệnh tác chiến quan trọng của Mỹ là CENTCOM và SOCOM tại Tampa, SOUTHCOM tại Miami, đồng thời vị trí gần Xích đạo bờ biển phía đông giúp Mũi Canaveral trở thành trung tâm phóng tên lửa vũ trụ số một của nước Mỹ."
   },
   "US-GA": {
     "vi": "Georgia",
@@ -6562,7 +6562,7 @@ export const ADMIN1_META = {
     "vi": "Bắc Carolina",
     "cap": "Raleigh",
     "old": [],
-    "tx": "Bang bờ Đông trải từ dãy núi Blue Ridge (Appalachian) ra chuỗi đảo chắn Outer Banks bên Đại Tây Dương; vừa có cụm công nghệ – dược phẩm Tam giác Nghiên cứu (Raleigh–Durham–Chapel Hill) và trung tâm ngân hàng Charlotte, vừa đặt căn cứ lục quân lớn nhất nước Mỹ là Fort Liberty (Fort Bragg — đại bản doanh Lực lượng Đặc nhiệm và Sư đoàn Dù 82)."
+    "tx": "Bang bờ Đông trải từ dãy núi Blue Ridge (Appalachian) ra chuỗi đảo chắn Outer Banks bên Đại Tây Dương; vừa có cụm công nghệ – dược phẩm Tam giác Nghiên cứu (Raleigh–Durham–Chapel Hill) và trung tâm ngân hàng Charlotte, vừa đặt căn cứ lục quân lớn nhất nước Mỹ là Fort Bragg (đổi lại từ Fort Liberty tháng 2/2025 — đại bản doanh Lực lượng Đặc nhiệm và Sư đoàn Dù 82)."
   },
   "US-ND": {
     "vi": "Bắc Dakota",
@@ -6580,7 +6580,7 @@ export const ADMIN1_META = {
     "vi": "New Hampshire",
     "cap": "Concord",
     "old": [],
-    "tx": "Bang vùng New England với dãy núi White Mountains và 29 km bờ biển ngắn ngủi nhưng có quân cảng sửa chữa tàu ngầm hạt nhân Portsmouth."
+    "tx": "Bang vùng New England với dãy núi White Mountains và 29 km bờ biển ngắn ngủi nhưng kề quân cảng sửa chữa tàu ngầm hạt nhân Portsmouth (thực tế nằm ở Kittery, bang Maine)."
   },
   "US-NJ": {
     "vi": "New Jersey",
@@ -6964,13 +6964,13 @@ export const ADMIN1_META = {
     "vi": "Jammu và Kashmir",
     "cap": "Srinagar (mùa hè) / Jammu (mùa đông)",
     "old": [],
-    "tx": "Lãnh thổ liên bang (tổ chức lại năm 2019 sau khi bãi bỏ Điều 370) gồm vùng đồng bằng chân núi Jammu đa số theo Ấn Độ giáo và thung lũng Kashmir đa số theo Hồi giáo trên thượng nguồn sông Jhelum và Chenab; giáp Đường Kiểm soát (LoC) quân sự hóa dày đặc với Pakistan — tâm điểm của 3 cuộc chiến tranh Ấn Độ – Pakistan."
+    "tx": "Lãnh thổ liên bang (tổ chức lại năm 2019 sau khi bãi bỏ Điều 370) gồm vùng đồng bằng chân núi Jammu đa số theo Ấn Độ giáo và thung lũng Kashmir đa số theo Hồi giáo trên thượng nguồn sông Jhelum và Chenab; do Ấn Độ quản lý nhưng bị tranh chấp giữa Ấn Độ và Pakistan từ năm 1947 (Trung Quốc cũng tranh chấp một phần vùng Kashmir rộng hơn); giáp Đường Kiểm soát (LoC) quân sự hóa dày đặc với Pakistan — tâm điểm của 3 cuộc chiến tranh Ấn Độ – Pakistan."
   },
   "IN-LA": {
     "vi": "Ladakh",
     "cap": "Leh / Kargil",
     "old": [],
-    "tx": "Lãnh thổ liên bang trên cao nguyên núi đá lạnh giá cao trên 3.500 m (tách ra từ bang Jammu và Kashmir năm 2019), nơi dòng sông Ấn chảy từ Tây Tạng vào. Ladakh là điểm nóng quân sự nhạy cảm nhất lục địa châu Á: phía tây bắc giáp Pakistan (bao gồm sông băng Siachen cao 6.000 m), phía đông giáp vùng Aksai Chin (do Trung Quốc kiểm soát dọc Đường Kiểm soát Thực tế LAC — nơi xảy ra đụng độ tại thung lũng Galwan và hồ Pangong năm 2020)."
+    "tx": "Lãnh thổ liên bang trên cao nguyên núi đá lạnh giá cao trên 3.500 m (tách ra từ bang Jammu và Kashmir năm 2019), nơi dòng sông Ấn chảy từ Tây Tạng vào. Ladakh là điểm nóng quân sự nhạy cảm nhất lục địa châu Á: phía tây bắc giáp Pakistan (bao gồm sông băng Siachen cao 6.000 m), phía đông giáp vùng Aksai Chin (Ấn Độ tuyên bố chủ quyền nhưng do Trung Quốc kiểm soát dọc Đường Kiểm soát Thực tế LAC — nơi xảy ra đụng độ tại thung lũng Galwan và hồ Pangong năm 2020)."
   },
   "IN-AR": {
     "vi": "Arunachal Pradesh",
@@ -7018,7 +7018,7 @@ export const ADMIN1_META = {
     "vi": "Goa",
     "cap": "Panaji",
     "old": [],
-    "tx": "Bang có diện tích nhỏ nhất nhưng có GDP bình quân đầu người cao nhất Ấn Độ bên bờ biển Ả Rập; từng là thuộc địa của Bồ Đào Nha suốt 450 năm (đến năm 1961), nổi tiếng với du lịch biển, xuất khẩu quặng sắt và cảng Mormugao."
+    "tx": "Bang có diện tích nhỏ nhất nhưng có GDP bình quân đầu người thuộc nhóm cao nhất Ấn Độ (cùng Sikkim) bên bờ biển Ả Rập; từng là thuộc địa của Bồ Đào Nha suốt 450 năm (đến năm 1961), nổi tiếng với du lịch biển, xuất khẩu quặng sắt và cảng Mormugao."
   },
   "IN-AN": {
     "vi": "Quần đảo Andaman và Nicobar",
@@ -7210,7 +7210,7 @@ export const ADMIN1_META = {
     "vi": "Cộng hòa Bắc Ossetia–Alania",
     "cap": "Vladikavkaz",
     "old": [],
-    "tx": "Giữ vị trí yết hầu ở trung tâm dãy Đại Kavkaz: thủ phủ Vladikavkaz (nghĩa là \"Người cai trị Kavkaz\") kiểm soát điểm đầu của Đường Quân sự Gruzia xuyên qua hẻm núi Dariali và đường hầm Roki sang Nam Ossetia — hai con đường hiếm hoi vượt qua bức tường núi Kavkaz."
+    "tx": "Giữ vị trí yết hầu ở trung tâm dãy Đại Kavkaz: thủ phủ Vladikavkaz (nghĩa là \"Người cai trị Kavkaz\") kiểm soát điểm đầu của Đường Quân sự Gruzia xuyên qua hẻm núi Dariali và đường hầm Roki sang Nam Ossetia (quốc tế công nhận là một phần của Gruzia, do chính quyền ly khai được Nga hậu thuẫn kiểm soát; Nga công nhận độc lập, đa số quốc gia thì không) — hai con đường hiếm hoi vượt qua bức tường núi Kavkaz."
   },
   "RU-IN": {
     "vi": "Cộng hòa Ingushetia",
@@ -7234,13 +7234,13 @@ export const ADMIN1_META = {
     "vi": "Cộng hòa Tự trị Krym (Crimea)",
     "cap": "Simferopol",
     "old": [],
-    "tx": "Bán đảo chiến lược vươn ra chính giữa Biển Đen và ngăn cách biển Azov qua eo biển Kerch. Thuộc Ukraine theo biên giới được quốc tế công nhận (chuyển giao năm 1954), nhưng đã bị Liên bang Nga sáp nhập từ tháng 3/2014 và kết nối với lục địa Nga bằng cầu vượt biển Kerch dài 19 km."
+    "tx": "Bán đảo chiến lược vươn ra chính giữa Biển Đen và ngăn cách biển Azov qua eo biển Kerch. Thuộc Ukraine theo biên giới được quốc tế công nhận (chuyển giao năm 1954), nhưng đã bị Liên bang Nga sáp nhập từ tháng 3/2014 (Nga tuyên bố chủ quyền; Đại hội đồng LHQ và đa số quốc gia không công nhận) và kết nối với lục địa Nga bằng cầu vượt biển Kerch dài 19 km."
   },
   "UA-40": {
     "vi": "TP. Sevastopol",
     "cap": "Sevastopol",
     "old": [],
-    "tx": "Thành phố cảng có quy chế đặc biệt ở mũi tây nam bán đảo Crimea (quốc tế công nhận thuộc Ukraine, Nga quản lý như một thành phố liên bang từ năm 2014); quân cảng nước sâu tự nhiên trọng yếu nhất của Hạm đội Biển Đen."
+    "tx": "Thành phố cảng có quy chế đặc biệt ở mũi tây nam bán đảo Crimea (quốc tế công nhận thuộc Ukraine, Nga quản lý như một thành phố liên bang từ năm 2014 và tuyên bố chủ quyền; Đại hội đồng LHQ và đa số quốc gia không công nhận việc sáp nhập); quân cảng nước sâu tự nhiên trọng yếu nhất của Hạm đội Biển Đen."
   },
   "RU-TVE": {
     "vi": "Tỉnh Tver",
@@ -7454,7 +7454,7 @@ export const ADMIN1_META = {
   },
   "RU-KEM": {
     "vi": "Tỉnh Kemerovo (Kuzbass)",
-    "cap": "Kemerovo (lớn nhất: Novokuznetsk)",
+    "cap": "Kemerovo (đồng thời là thành phố lớn nhất; Novokuznetsk đứng thứ hai)",
     "old": [],
     "tx": "Bồn địa than Kuznetsk (Kuzbass) ở Nam Siberia — một trong những bể than đá lớn nhất thế giới, cung cấp hơn 55% tổng sản lượng than đá và gần 80% than luyện cốc của toàn Liên bang Nga."
   },
@@ -7540,7 +7540,7 @@ export const ADMIN1_META = {
     "vi": "Tỉnh Sakhalin",
     "cap": "Yuzhno-Sakhalinsk",
     "old": [],
-    "tx": "Tỉnh đảo duy nhất của Liên bang Nga, bao gồm đảo lớn Sakhalin (giàu các mỏ dầu và khí hóa lỏng Sakhalin-1, 2 ngoài khơi) và toàn bộ chuỗi quần đảo Kuril ngăn cách biển Okhotsk với Thái Bình Dương (tiếp giáp trực tiếp Nhật Bản)."
+    "tx": "Tỉnh đảo duy nhất của Liên bang Nga, bao gồm đảo lớn Sakhalin (giàu các mỏ dầu và khí hóa lỏng Sakhalin-1, 2 ngoài khơi) và chuỗi quần đảo Kuril ngăn cách biển Okhotsk với Thái Bình Dương (Nga kiểm soát toàn bộ, nhưng Nhật Bản tuyên bố chủ quyền bốn đảo phía nam: Iturup/Etorofu, Kunashir/Kunashiri, Shikotan và Habomai, gọi là 'Lãnh thổ phương Bắc')."
   },
   "RU-MAG": {
     "vi": "Tỉnh Magadan",

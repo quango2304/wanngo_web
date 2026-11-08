@@ -65,8 +65,8 @@ export const RANK_METRICS = {
   },
   hdi: {
     key: 'hdi',
-    data_vi: 'Số liệu năm 2023. Có 192 quốc gia/vùng lãnh thổ được xếp hạng.',
-    data_en: '2023 data. 192 countries/territories are ranked.',
+    data_vi: 'Số liệu năm 2023. Có 193 quốc gia/vùng lãnh thổ được xếp hạng.',
+    data_en: '2023 data. 193 countries/territories are ranked.',
     desc_vi: 'Chỉ số tổng hợp (0–1) là trung bình nhân của 3 chỉ số thành phần: sức khỏe (tuổi thọ), giáo dục (số năm đi học trung bình và kỳ vọng) và mức sống (GNI bình quân đầu người). Phân nhóm: ≥0,800 rất cao; 0,700–0,799 cao; 0,550–0,699 trung bình; <0,550 thấp.',
     desc_en: 'A composite index (0–1), the geometric mean of 3 dimensions: health (life expectancy), education (mean and expected years of schooling) and standard of living (GNI per capita). Tiers: ≥0.800 very high; 0.700–0.799 high; 0.550–0.699 medium; <0.550 low.',
     link: 'https://hdr.undp.org/data-center/human-development-index',

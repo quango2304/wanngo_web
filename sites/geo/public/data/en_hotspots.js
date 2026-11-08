@@ -27,7 +27,7 @@ export const H_EN = {
   },
   hormuz: {
     n: 'Strait of Hormuz',
-    tx: 'The sole maritime outlet of the Persian Gulf into the Gulf of Oman and the Indian Ocean; while ~33 km wide at its narrowest point, the actual traffic separation lanes for supertankers are only ~3 km wide in each direction. An average of 20–21 million barrels of oil per day (~20% of global petroleum consumption) and roughly one-fifth of global liquefied natural gas (LNG, primarily from Qatar) pass through here, with over 80% bound for Asian markets. Iran controls the northern coast and the islands of Abu Musa and the Tunbs; during the 2026 war, Iran closed the strait, prompting international convoy operations and an ongoing US naval blockade off its approaches.'
+    tx: 'The sole maritime outlet of the Persian Gulf into the Gulf of Oman and the Indian Ocean; while ~33 km wide at its narrowest point, the actual traffic separation lanes for supertankers are only ~3 km wide in each direction. An average of 20–21 million barrels of oil per day (~20% of global petroleum consumption) and roughly one-fifth of global liquefied natural gas (LNG, primarily from Qatar) pass through here, with over 80% bound for Asian markets. Iran controls the northern coast and administers the islands of Abu Musa and the Tunbs (sovereignty over which is claimed by the UAE); during the 2026 war, Iran closed the strait, prompting international convoy operations and an ongoing US naval blockade off its approaches.'
   },
   babelmandeb: {
     n: 'Bab el-Mandeb Strait',
@@ -43,11 +43,11 @@ export const H_EN = {
   },
   gibraltar: {
     n: 'Strait of Gibraltar',
-    tx: 'The only natural gateway connecting the Mediterranean Sea to the Atlantic Ocean, narrowing to just ~14.3 km between Spain and Morocco. The Royal Navy seized the Rock of Gibraltar in 1704 (ceded under the 1713 Treaty of Utrecht) to command entrance to the Mediterranean, while Spain retains the autonomous enclaves of Ceuta and Melilla on the southern African shore; Madrid continues to press its sovereignty claim over Gibraltar.'
+    tx: 'The only natural gateway connecting the Mediterranean Sea to the Atlantic Ocean, narrowing to just ~14.3 km between Spain and Morocco. The Royal Navy seized the Rock of Gibraltar in 1704 (ceded under the 1713 Treaty of Utrecht) to command entrance to the Mediterranean, while Spain retains the autonomous cities of Ceuta and Melilla on the southern African shore (Morocco disputes Spanish sovereignty over them); Madrid continues to press its sovereignty claim over Gibraltar (a UK–EU treaty signed on 14 July 2026 and provisionally applied from 15 July removes routine land-border controls; the UK says it safeguards British sovereignty).'
   },
   dover: {
     n: 'Strait of Dover (Pas de Calais)',
-    tx: 'The narrowest part of the English Channel (~33 km between Dover in England and Cap Gris-Nez in France) and one of the busiest shipping lanes on the planet (~400 commercial vessels daily linking Northern Europe with the Atlantic). For nearly a millennium since 1066, this natural "watery moat" has shielded the island nation of Britain from every continental European invasion attempt—from the Spanish Armada in 1588 and Napoleon in 1805 to Hitler in 1940.'
+    tx: 'The narrowest part of the English Channel (~33 km between Dover in England and Cap Gris-Nez in France) and one of the busiest shipping lanes on the planet (~400 commercial vessels daily linking Northern Europe with the Atlantic). For nearly a millennium since 1066, this natural "watery moat" has shielded the island nation of Britain from nearly every continental European invasion attempt (the exception being William of Orange\'s landing in 1688)—from the Spanish Armada in 1588 and Napoleon in 1805 to Hitler in 1940.'
   },
   skagerrak: {
     n: 'Skagerrak, Kattegat & Danish Straits',
@@ -59,7 +59,7 @@ export const H_EN = {
   },
   panama: {
     n: 'Panama Canal',
-    tx: 'Opened in 1914 (built by the United States and handed over to Panamanian sovereignty at the end of 1999 under the Torrijos–Carter Treaties), this ~82 km waterway links the Atlantic and Pacific Oceans via a system of locks that lift and lower vessels to artificial Gatún Lake (26 m above sea level). It shortens the New York–San Francisco voyage from ~22,500 km (around Cape Horn) to ~9,500 km and handles ~5–6% of global maritime trade. The 2023–2024 El Niño drought restricted fresh water for lock operations, while Hong Kong-based firms operating ports at both ends of the canal have become a focal point of US–China rivalry.'
+    tx: 'Opened in 1914 (built by the United States and handed over to Panamanian sovereignty at the end of 1999 under the Torrijos–Carter Treaties), this ~82 km waterway links the Atlantic and Pacific Oceans via a system of locks that lift and lower vessels to artificial Gatún Lake (26 m above sea level). It shortens the New York–San Francisco voyage from ~22,500 km (around Cape Horn) to ~9,500 km and handles ~5–6% of global maritime trade. The 2023–2024 El Niño drought restricted fresh water for lock operations, while CK Hutchison\'s operation of the Balboa and Cristóbal ports at both ends of the canal was a focal point of US–China rivalry until Panama\'s Supreme Court ruled the concessions unconstitutional in January 2026 and the state took over the terminals in February 2026.'
   },
   bering: {
     n: 'Bering Strait',
@@ -83,7 +83,7 @@ export const H_EN = {
   },
   kerch: {
     n: 'Kerch Strait',
-    tx: 'A narrow chokepoint just ~4.5–15 km wide connecting the Black Sea to the shallow Sea of Azov (into which Russia’s Don River flows), lying between the Crimean Peninsula and Russia’s Taman Peninsula. After annexing Crimea in 2014, Russia built the 19 km Crimean Bridge (opened in 2018) across the strait, turning the Sea of Azov into a tightly controlled Russian maritime zone and making the bridge a prime strike target in the Russia–Ukraine conflict.'
+    tx: 'A narrow chokepoint just ~3.1–15 km wide connecting the Black Sea to the shallow Sea of Azov (into which Russia’s Don River flows), lying between the Crimean Peninsula and Russia’s Taman Peninsula. After annexing Crimea in 2014 (an annexation Ukraine does not recognize, and whose referendum UN General Assembly Resolution 68/262 declared invalid), Russia built the 19 km Crimean Bridge (opened in 2018) across the strait, turning the Sea of Azov into a tightly controlled Russian maritime zone and making the bridge a prime strike target in the Russia–Ukraine conflict.'
   },
   sunda: {
     n: 'Sunda Strait',
@@ -155,27 +155,27 @@ export const H_EN = {
   },
   ninedash: {
     n: 'Nine-Dash Line ("U-Shaped Line")',
-    tx: 'China’s unilateral demarcation claim encompassing roughly 80–90% of the East Sea (South China Sea), cutting deep into the Exclusive Economic Zones (EEZs) and continental shelves of Vietnam, the Philippines, Malaysia, Brunei, and Indonesia. In July 2016, an Arbitral Tribunal constituted under Annex VII of the UN Convention on the Law of the Sea (UNCLOS 1982) in a case brought by the Philippines ruled that China’s claim to "historic rights" within the nine-dash line has no legal basis under international law; Vietnam and the international community firmly reject this claim.'
+    tx: 'China’s unilateral demarcation claim encompassing roughly 80–90% of the East Sea (South China Sea), cutting deep into the Exclusive Economic Zones (EEZs) and continental shelves of Vietnam, the Philippines, Malaysia, Brunei, and Indonesia. In July 2016, an Arbitral Tribunal constituted under Annex VII of the UN Convention on the Law of the Sea (UNCLOS 1982) in a case brought by the Philippines ruled that China’s claim to "historic rights" within the nine-dash line has no legal basis under international law; Vietnam, the Philippines and many other states reject this claim; China and Taiwan (where the line originated as the ROC\'s eleven-dash line) do not accept the ruling and maintain their claims.'
   },
   hoangsa: {
     n: 'Paracel Islands (Hoang Sa)',
-    tx: 'A coral archipelago comprising the Amphitrite and Crescent groups in the northern East Sea (South China Sea), commanding international shipping lanes and the entrance to the Gulf of Tonkin. China seized the eastern group by force in 1956 and occupied the entire archipelago after a naval battle with South Vietnamese forces in January 1974, subsequently constructing a major military base on Woody Island (Phu Lam). Vietnam possesses comprehensive historical and legal evidence affirming its continuous sovereignty over the islands since at least the 17th century (via the Hoang Sa and Bac Hai flotillas).'
+    tx: 'A coral archipelago (disputed between Vietnam, China and Taiwan; controlled entirely by China since 1974) comprising the Amphitrite and Crescent groups in the northern East Sea (South China Sea), commanding international shipping lanes and the entrance to the Gulf of Tonkin. China seized the eastern group by force in 1956 and occupied the entire archipelago after a naval battle with South Vietnamese forces in January 1974, subsequently constructing a major military base on Woody Island (Phu Lam). Vietnam possesses comprehensive historical and legal evidence affirming its continuous sovereignty over the islands since at least the 17th century (via the Hoang Sa and Bac Hai flotillas).'
   },
   truongsa: {
     n: 'Spratly Islands (Truong Sa)',
-    tx: 'A vast archipelago in the southern East Sea (South China Sea) comprising over 100 islets, reefs, banks, and atolls, representing the world’s most complex multi-claimant territorial dispute involving Vietnam, China, Taiwan, the Philippines, Malaysia, and Brunei. Vietnam currently exercises sovereignty over the largest number of features; between 2013 and 2016, China conducted massive dredging to turn seven reefs (including Fiery Cross, Subi, and Mischief Reefs) into artificial military bases equipped with 3,000 m runways, deep-water harbors, and missile systems.'
+    tx: 'A vast archipelago in the southern East Sea (South China Sea) comprising over 100 islets, reefs, banks, and atolls, representing the world’s most complex multi-claimant territorial dispute involving Vietnam, China, Taiwan, the Philippines, Malaysia, and Brunei. Vietnam currently holds the largest number of features (the Philippines, China, Malaysia and Taiwan each hold others; Brunei claims an EEZ in the southeast of the archipelago); between 2013 and 2016, China conducted massive dredging to turn seven reefs (including Fiery Cross, Subi, and Mischief Reefs) into artificial military bases equipped with 3,000 m runways, deep-water harbors, and missile systems.'
   },
   scarborough: {
     n: 'Scarborough Shoal (Huangyan / Bajo de Masinloc)',
-    tx: 'A triangle-shaped coral atoll located just ~220 km west of Luzon Island in the Philippines (well within the Philippines’ 200-nautical-mile EEZ) but ~850 km from China’s Hainan Island. China seized de facto control of the shoal following a tense 2012 maritime standoff with the Philippines. Were Beijing to militarize Scarborough Shoal, it would complete a "strategic triangle" across the East Sea (South China Sea, alongside the Paracels and Spratlys) right on the doorstep of US-accessible bases in Luzon.'
+    tx: 'A triangle-shaped coral atoll (disputed among the Philippines, China and Taiwan) located just ~220 km west of Luzon Island in the Philippines (well within the Philippines’ 200-nautical-mile EEZ) but ~850 km from China’s Hainan Island. China seized de facto control of the shoal following a tense 2012 maritime standoff with the Philippines (in September 2025 China declared a national nature reserve there, which the Philippines protested). Were Beijing to militarize Scarborough Shoal, it would complete a "strategic triangle" across the East Sea (South China Sea, alongside the Paracels and Spratlys) right on the doorstep of US-accessible bases in Luzon.'
   },
   senkaku: {
     n: 'Senkaku / Diaoyu Islands',
-    tx: 'An uninhabited group of islets in the East China Sea near the Ryukyu chain and northeast of Taiwan, surrounded by potential undersea hydrocarbon reserves. Administered by Japan (which nationalized three of the islands from private Japanese owners in 2012), they are also claimed by both mainland China and Taiwan. The United States has repeatedly affirmed that Article 5 of the US–Japan Security Treaty covers the defense of the archipelago.'
+    tx: 'An uninhabited group of islets in the East China Sea near the Ryukyu chain and northeast of Taiwan, surrounded by potential undersea hydrocarbon reserves. Administered by Japan (which nationalized three of the islands from private Japanese owners in 2012), they are also claimed by both mainland China and Taiwan, while Japan holds that they are inherent Japanese territory and that no sovereignty dispute exists. The United States has repeatedly affirmed that Article 5 of the US–Japan Security Treaty covers the defense of the archipelago.'
   },
   kuril: {
     n: 'Southern Kuril Islands / Northern Territories',
-    tx: 'The four southernmost islands of the Kuril chain (Iturup/Etorofu, Kunashir/Kunashiri, Shikotan, and the Habomai islets) lying just north of Hokkaido. Seized by the Soviet Union in the final days of World War II (August 1945) to secure ice-free Pacific access from the Sea of Okhotsk for its Pacific Fleet, the islands are claimed by Japan as its Northern Territories—a dispute that has prevented Moscow and Tokyo from signing a formal WWII peace treaty to this day.'
+    tx: 'The four southernmost islands of the Kuril chain (Iturup/Etorofu, Kunashir/Kunashiri, Shikotan, and the Habomai islets) lying just north of Hokkaido. Seized by the Soviet Union in the final days of World War II (August 1945) to secure ice-free Pacific access from the Sea of Okhotsk for its Pacific Fleet, the islands, administered by Russia (which regards them as a legitimate result of WWII and withdrew from peace talks in March 2022), are claimed by Japan as its Northern Territories—a dispute that has prevented Moscow and Tokyo from signing a formal WWII peace treaty to this day.'
   },
   dokdo: {
     n: 'Dokdo / Takeshima Islets',
@@ -183,11 +183,11 @@ export const H_EN = {
   },
   kashmir: {
     n: 'Disputed Region of Kashmir',
-    tx: 'A rugged high-mountain territory at the junction of the Himalayas and the Karakoram, partitioned since the 1947 division of British India among three nuclear-armed powers: India administers Jammu, the Kashmir Valley, and Ladakh (~55% of the area); Pakistan controls Azad Kashmir and Gilgit-Baltistan (~30%); and China holds Aksai Chin and the Trans-Karakoram Tract (~15%). The headwaters of the Indus River system—Pakistan’s agricultural lifeblood—flow directly through this contested region.'
+    tx: 'A rugged high-mountain territory at the junction of the Himalayas and the Karakoram, partitioned since the 1947 division of British India among three nuclear-armed powers: India administers Jammu, the Kashmir Valley, and Ladakh (~45% of the area); Pakistan controls Azad Kashmir and Gilgit-Baltistan (~38%); and China holds Aksai Chin and the Trans-Karakoram Tract (~17%); India claims the entire former princely state, while Pakistan claims most of the region. The headwaters of the Indus River system—Pakistan’s agricultural lifeblood—flow directly through this contested region.'
   },
   crimea: {
     n: 'Crimean Peninsula',
-    tx: 'An "unsinkable aircraft carrier" projecting into the center of the Black Sea, home to the warm-water naval port of Sevastopol—the historic headquarters of Russia’s Black Sea Fleet since 1783. In 1954, Soviet leader Nikita Khrushchev transferred Crimea from the Russian SFSR to the Ukrainian SSR; in March 2014, following the Maidan revolution in Kyiv, Russia annexed the peninsula to prevent the potential loss of its sole warm-water Black Sea naval base. Ukraine and the UN General Assembly do not recognize the annexation.'
+    tx: 'An "unsinkable aircraft carrier" projecting into the center of the Black Sea, home to the warm-water naval port of Sevastopol—the historic headquarters of Russia’s Black Sea Fleet since 1783. In 1954, Soviet leader Nikita Khrushchev transferred Crimea from the Russian SFSR to the Ukrainian SSR; in March 2014, following the Maidan revolution in Kyiv, Russia annexed the peninsula (analysts say to keep its sole warm-water Black Sea naval base; Moscow calls it a "reunification" after a Russian-run referendum). Ukraine, the UN General Assembly (March 2014) and most states do not recognize the annexation; Russia treats Crimea as its territory.'
   },
   golan: {
     n: 'Golan Heights',
@@ -195,7 +195,7 @@ export const H_EN = {
   },
   westbank: {
     n: 'West Bank, East Jerusalem & Gaza Strip',
-    tx: 'The Palestinian territories defined by the 1949 Armistice Demarcation Line (Green Line) and occupied by Israel during the 1967 Six-Day War. The West Bank forms a strategic mountain ridge overlooking Israel’s narrow coastal plain (which was only ~15 km wide at its narrowest pre-1967 point); today over 500,000 Israeli settlers live in the West Bank and more than 200,000 in East Jerusalem alongside ~3 million Palestinians, making the creation of a territorially contiguous Palestinian state extraordinarily complex, with the Gaza Strip physically isolated and fragmented under post-ceasefire Israeli military control along the Yellow Line.'
+    tx: 'The Palestinian territories defined by the 1949 Armistice Demarcation Line (Green Line) and captured by Israel during the 1967 Six-Day War (the UN and the ICJ regard them as occupied territory and the settlements as unlawful; Israel calls them "disputed" and rejects this). The West Bank forms a strategic mountain ridge overlooking Israel’s narrow coastal plain (which was only ~15 km wide at its narrowest pre-1967 point); today over 500,000 Israeli settlers live in the West Bank and more than 200,000 in East Jerusalem alongside ~3 million Palestinians, making the creation of a territorially contiguous Palestinian state extraordinarily complex, with the Gaza Strip physically isolated and fragmented under post-ceasefire Israeli military control along the Yellow Line.'
   },
   caribbean: {
     n: 'Caribbean Sea – America’s "Strategic Inner Sea"',
@@ -207,15 +207,15 @@ export const H_EN = {
   },
   falklands: {
     n: 'Falkland Islands / Islas Malvinas',
-    tx: 'A South Atlantic archipelago located ~500 km east of Argentina’s Patagonian coast, strategically positioned to monitor approaches to the Strait of Magellan, Cape Horn, and the gateway to Antarctica. Britain reasserted colonial rule in 1833, while Argentina has continuously claimed sovereignty over what it calls the Malvinas. From April to June 1982, Argentina’s military junta invaded the islands, prompting Britain to dispatch a Royal Navy task force 13,000 km south to retake the archipelago in a 74-day war.'
+    tx: 'A South Atlantic archipelago located ~500 km east of Argentina’s Patagonian coast, strategically positioned to monitor approaches to the Strait of Magellan, Cape Horn, and the gateway to Antarctica. Britain reasserted rule in 1833 (Argentina calls it an illegal act of force), while Argentina has continuously claimed sovereignty over what it calls the Malvinas and the UK cites the islanders\' right to self-determination (the UN urges negotiations). From April to June 1982, Argentina’s military junta invaded the islands, prompting Britain to dispatch a Royal Navy task force 13,000 km south to retake the archipelago in a 74-day war.'
   },
   essequibo: {
     n: 'Essequibo Dispute (Guayana Esequiba)',
-    tx: 'A ~159,500 km² expanse of dense rainforest and continental shelf west of the Essequibo River, comprising roughly two-thirds of modern Guyana’s territory. Venezuela rejects the 1899 Paris Arbitral Award (which demarcated the border during the British colonial era) and claims the entire region; tensions escalated sharply after 2015 when a consortium led by ExxonMobil discovered massive offshore oil reserves in the Stabroek Block (>11 billion barrels), transforming Guyana into the world’s fastest-growing economy.'
+    tx: 'A ~159,500 km² expanse of dense rainforest and continental shelf west of the Essequibo River, comprising roughly two-thirds of modern Guyana’s territory. Venezuela rejects the 1899 Paris Arbitral Award (which demarcated the border during the British colonial era) and claims the entire region (Guyana treats the award as final and sued at the International Court of Justice, which found jurisdiction in April 2023; Venezuela does not recognize the Court\'s jurisdiction); tensions escalated sharply after 2015 when a consortium led by ExxonMobil discovered massive offshore oil reserves in the Stabroek Block (>11 billion barrels), transforming Guyana into the world’s fastest-growing economy.'
   },
   greenlandgap: {
     n: 'Greenland & Arctic Geopolitical Competition',
-    tx: 'The world’s largest island (~2.16 million km², an autonomous territory of the Kingdom of Denmark) occupies a pivotal hinge between North America and Europe: it anchors the GIUK naval gap and lies directly beneath the shortest transpolar flight path for intercontinental ballistic missiles between Russia and the United States (where the US has operated Pituffik/Thule Space Base since 1951). As melting ice unlocks vast rare-earth deposits (such as Kvanefjeld and Tanbreez) and Arctic shipping lanes, Washington has repeatedly expressed interest in purchasing or expanding strategic control over the island, though both Nuuk and Copenhagen reject any transfer of sovereignty.'
+    tx: 'The world’s largest island (~2.16 million km², an autonomous territory of the Kingdom of Denmark) occupies a pivotal hinge between North America and Europe: it anchors the GIUK naval gap and lies directly beneath the shortest transpolar flight path for intercontinental ballistic missiles between Russia and the United States (where the US has operated Pituffik/Thule Space Base since 1951). As melting ice unlocks vast rare-earth deposits (such as Kvanefjeld and Tanbreez) and Arctic shipping lanes, Washington has repeatedly expressed interest in purchasing or expanding strategic control over the island, though both Nuuk and Copenhagen reject any transfer of sovereignty; in September 2026 the US, Denmark and Greenland signed a security agreement expanding the US military presence while reaffirming Danish sovereignty (President Trump says it gives the US permanent control over security; Copenhagen and Nuuk reject that description).'
   },
   arctic: {
     n: 'Arctic Ocean & the Lomonosov Ridge',
@@ -231,7 +231,7 @@ export const H_EN = {
   },
   persiangulf: {
     n: 'Persian Gulf (Arabian Gulf)',
-    tx: 'A shallow "energy lake" (average depth ~50 m) covering ~251,000 km², holding over half of the world’s proven crude oil reserves and roughly 40% of its proven natural gas (including the colossal South Pars/North Dome gas field straddling the center of the gulf). Its entire northern coast belongs to Iran, shielded behind the towering Zagros Mountains, while its southern shore comprises the Arab monarchies of the Gulf Cooperation Council (GCC) and the US Navy’s Fifth Fleet headquarters in Bahrain.'
+    tx: 'A shallow "energy lake" (average depth ~50 m) covering ~251,000 km², holding over half of the world’s proven crude oil reserves and roughly 40% of its proven natural gas (including the colossal South Pars/North Dome gas field straddling the center of the gulf). Its entire northern coast belongs to Iran, shielded behind the towering Zagros Mountains, while its southern shore comprises the Arab monarchies of the Gulf Cooperation Council (GCC) and the US Navy’s Fifth Fleet headquarters in Bahrain. The name itself is disputed (Iran and most international usage say "Persian Gulf", Arab states say "Arabian Gulf"), and the UAE claims the Iranian-held islands of Abu Musa, Greater Tunb and Lesser Tunb.'
   },
   balticsea: {
     n: 'Baltic Sea – "NATO Lake"',
@@ -243,51 +243,51 @@ export const H_EN = {
   },
   eastchinasea: {
     n: 'East China Sea',
-    tx: 'A ~1.25 million km² sea bounded by China’s economic heartland (Shanghai and Zhejiang), the Korean Peninsula, Japan’s Kyushu and Ryukyu Islands, and Taiwan. It is the arena of intense disputes over continental shelf demarcation along the Okinawa Trough (including the Chunxiao/Shirakaba gas fields), sovereignty over the Senkaku/Diaoyu Islands, and overlapping Air Defense Identification Zones (ADIZs) among China, Japan, and South Korea.'
+    tx: 'A ~1.25 million km² sea bounded by China’s economic heartland (Shanghai and Zhejiang), the Korean Peninsula, Japan’s Kyushu and Ryukyu Islands, and Taiwan. It is the arena of intense disputes over continental shelf demarcation along the Okinawa Trough (including the Chunxiao/Shirakaba gas fields), sovereignty over the Senkaku/Diaoyu Islands (administered by Japan, claimed by China and Taiwan), and overlapping Air Defense Identification Zones (ADIZs) among China, Japan, and South Korea.'
   },
   wsahara_poly: {
     n: 'Western Sahara',
-    tx: 'A former Spanish colony in northwestern Africa rich in phosphate reserves (essential for global fertilizers) and Atlantic fishing grounds. Since Spain’s withdrawal in 1975, Morocco has controlled roughly 80% of the territory west of a fortified sand wall (the Berm), while the Algerian-backed Polisario Front proclaimed the Sahrawi Arab Democratic Republic in the eastern strip. The UN lists Western Sahara as a non-self-governing territory awaiting a referendum, while the United States (2020), Spain, and France (2024) have endorsed Morocco’s autonomy plan under Moroccan sovereignty.'
+    tx: 'A former Spanish colony in northwestern Africa rich in phosphate reserves (essential for global fertilizers) and Atlantic fishing grounds. Since Spain’s withdrawal in 1975, Morocco has controlled roughly 80% of the territory west of a fortified sand wall (the Berm), while the Algerian-backed Polisario Front proclaimed the Sahrawi Arab Democratic Republic in the eastern strip. The UN lists Western Sahara as a non-self-governing territory awaiting a referendum, while the United States (2020), Spain (2022), France (2024) and the UK (2025) have endorsed Morocco’s autonomy plan under Moroccan sovereignty (UNSC Resolution 2797, October 2025, takes it as a basis for talks; the Polisario Front rejects it). Sovereignty remains disputed between Morocco and the Polisario Front (SADR).'
   },
   transnistria: {
     n: 'Transnistria (Breakaway Left Bank of the Dniester)',
-    tx: 'A narrow strip of land (~200 km long) hugging the eastern bank of the Dniester River inside Moldova, directly bordering southwestern Ukraine near the strategic port of Odesa. It declared independence from Moldova after a brief war in 1992 and hosts roughly 1,500 Russian troops guarding a massive Soviet-era ammunition depot at Cobasna; though unrecognized by any UN member state, it serves Moscow as a geopolitical lever to restrain Moldova and threaten Ukraine’s western flank.'
+    tx: 'A narrow strip of land (~200 km long) hugging the eastern bank of the Dniester River inside Moldova, directly bordering southwestern Ukraine near the strategic port of Odesa. It declared independence from Moldova in 1990 and won de facto control after a brief war in 1992 and hosts roughly 1,500 Russian troops (Moscow calls them peacekeepers; the Parliamentary Assembly of the Council of Europe has described the territory as under Russian military occupation) guarding a massive Soviet-era ammunition depot at Cobasna; though unrecognized by any UN member state, it serves Moscow as a geopolitical lever to restrain Moldova and threaten Ukraine’s western flank.'
   },
   abkhazia: {
     n: 'Abkhazia & South Ossetia (Georgia)',
-    tx: 'Two breakaway territories comprising roughly 20% of Georgia’s internationally recognized territory on the southern slopes of the Greater Caucasus: Abkhazia controls a strategic stretch of the Black Sea coast, while South Ossetia holds the southern portal of the trans-mountain Roki Tunnel linking directly to Russia. Following the five-day Russo-Georgian War in August 2008, Moscow formally recognized both regions as independent states and established permanent military bases there, effectively halting Tbilisi’s path toward NATO membership.'
+    tx: 'Two breakaway territories comprising roughly 20% of Georgia’s internationally recognized territory on the southern slopes of the Greater Caucasus: Abkhazia controls a strategic stretch of the Black Sea coast, while South Ossetia holds the southern portal of the trans-mountain Roki Tunnel linking directly to Russia. Following the five-day Russo-Georgian War in August 2008, Moscow recognized both regions as independent states (only a few other states followed; Nauru withdrew its recognition in July 2026) and established permanent military bases there, while Georgia regards them as its territory occupied by Russia and most states and the UN do not recognize them, effectively halting Tbilisi’s path toward NATO membership.'
   },
   chagos: {
     n: 'Chagos Archipelago (Diego Garcia)',
-    tx: 'A group of 60 coral islands in the geographic center of the Indian Ocean. In 1965, Britain detached Chagos from Mauritius prior to granting independence to create the British Indian Ocean Territory (BIOT) and forcibly displaced the indigenous Chagossian population so the United States could lease the largest atoll, Diego Garcia, as a strategic military base. Following a 2019 International Court of Justice (ICJ) advisory opinion, the UK and Mauritius reached a historic agreement in 2024–2025 transferring sovereignty of the Chagos Archipelago to Mauritius while securing continued US–UK operation of the Diego Garcia base under a 99-year lease.'
+    tx: 'A group of 60 coral islands in the geographic center of the Indian Ocean. In 1965, Britain detached Chagos from Mauritius prior to granting independence to create the British Indian Ocean Territory (BIOT) and forcibly displaced the indigenous Chagossian population so the United States could lease the largest atoll, Diego Garcia, as a strategic military base. Following a 2019 International Court of Justice (ICJ) advisory opinion, the UK and Mauritius reached an agreement in October 2024 and signed a treaty on 22 May 2025 to transfer sovereignty of the Chagos Archipelago to Mauritius, with the UK retaining sovereign rights over Diego Garcia under an initial 99-year lease. As of November 2026, however, the treaty has not entered into force (the UK implementing bill was shelved in April 2026 because the US had not agreed to amend the 1966 UK–US agreement), so sovereignty remains unresolved.'
   },
   conf_ukraine: {
     n: 'Russia–Ukraine War',
-    tx: 'The largest conventional land war in Europe since World War II, which escalated into a full-scale invasion on February 24, 2022, following Russia’s 2014 annexation of Crimea and the war in the Donbas. Russia currently controls roughly 19% of Ukrainian territory; the active front line stretches over 1,000 km across the east and south (Luhansk, Donetsk, Zaporizhzhia, Kherson), characterized by grueling attrition warfare with artillery, trenches, long-range missile strikes, and dense FPV drone combat. The conflict has fundamentally reshaped European security architecture (prompting Finland and Sweden to join NATO) as well as global energy and food markets.'
+    tx: 'The largest conventional land war in Europe since World War II, which escalated into a full-scale invasion on February 24, 2022, following Russia’s 2014 annexation of Crimea and the war in the Donbas. Russia currently controls roughly 19–20% of Ukrainian territory (Russia claims to have annexed Crimea and four oblasts, which is not internationally recognized); the active front line stretches over 1,000 km across the east and south (Luhansk, Donetsk, Zaporizhzhia, Kherson), characterized by grueling attrition warfare with artillery, trenches, long-range missile strikes, and dense FPV drone combat. The conflict has fundamentally reshaped European security architecture (prompting Finland and Sweden to join NATO) as well as global energy and food markets.'
   },
   conf_iran: {
     n: 'Iran–Israel–US Confrontation & Nuclear Standoff',
-    tx: 'The central geopolitical fault line of the Middle East, pitting the Islamic Republic of Iran (and its regional "Axis of Resistance" network including Hezbollah in Lebanon, Hamas in Gaza, the Houthis in Yemen, and Shiite militias in Iraq and Syria) against Israel and the United States. After decades of proxy warfare and covert operations targeting Tehran’s uranium enrichment and ballistic missile programs, following direct strikes in 2024–2025 and the June 2025 Twelve-Day War, the 2026 Iran War saw major US–Israeli air campaigns kill Supreme Leader Ali Khamenei (succeeded by Mojtaba Khamenei); Iran struck back and closed the Strait of Hormuz before an April ceasefire and the June 2026 Islamabad Memorandum, though a US naval blockade around Hormuz continues.'
+    tx: 'The central geopolitical fault line of the Middle East, pitting the Islamic Republic of Iran (and its regional "Axis of Resistance" network including Hezbollah in Lebanon, Hamas in Gaza, the Houthis in Yemen, and Shiite militias in Iraq and Syria) against Israel and the United States. After decades of proxy warfare and covert operations targeting Tehran’s uranium enrichment and ballistic missile programs, following direct strikes in 2024–2025 and the June 2025 Twelve-Day War, the 2026 Iran War saw major US–Israeli air campaigns kill Supreme Leader Ali Khamenei (succeeded by Mojtaba Khamenei); Iran struck back and closed the Strait of Hormuz before an April ceasefire and the June 2026 Islamabad Memorandum; the ceasefire collapsed on 8 July 2026 and fighting resumed in September, and as of early November the US naval blockade continues alongside limited US strikes around Hormuz while Qatar mediates.'
   },
   conf_gaza: {
     n: 'Gaza Strip War (Israel–Hamas)',
-    tx: 'Triggered on October 7, 2023, by a Hamas-led cross-border assault from the Gaza Strip into southern Israel (~1,200 killed and ~250 hostages taken), which prompted an unprecedented large-scale aerial and ground offensive by the Israel Defense Forces (IDF). Intense urban combat across the densely populated coastal enclave (just 365 km² home to over 2.1 million people) has devastated infrastructure, killed over 74,000 Palestinians (MoH, late 2026), and created a catastrophic humanitarian disaster. Despite an October 2025 ceasefire, Israel maintains military control over more than 50% of the Gaza Strip along the fortified Yellow Line.'
+    tx: 'Triggered on October 7, 2023, by a Hamas-led cross-border assault from the Gaza Strip into southern Israel (~1,200 killed and ~250 hostages taken), which prompted an unprecedented large-scale aerial and ground offensive by the Israel Defense Forces (IDF). Intense urban combat across the densely populated coastal enclave (just 365 km² home to over 2.1 million people) has devastated infrastructure, killed over 74,000 Palestinians (MoH, late 2026), and created a catastrophic humanitarian disaster. Despite an October 2025 ceasefire, Israel maintains military control over roughly 60–65% of the Gaza Strip along the fortified Yellow Line.'
   },
   conf_lebanon: {
     n: 'Israel–Hezbollah Border Conflict (Lebanon)',
-    tx: 'The front along the Israel–Lebanon "Blue Line" erupted in October 2023 when the Iranian-backed militant group Hezbollah began cross-border rocket and artillery strikes in support of Hamas in Gaza. In late 2024, the conflict escalated into a major Israeli air campaign and ground incursion into southern Lebanon—killing Hezbollah leader Hassan Nasrallah. In March 2026, the 2026 Lebanon War erupted with an Israeli ground offensive into southern Lebanon; despite a June 2026 ceasefire framework, Israeli forces continue to occupy sections of the southern border zone and Lebanese national elections have been postponed to 2028.'
+    tx: 'The front along the Israel–Lebanon "Blue Line" erupted in October 2023 when the Iranian-backed militant group Hezbollah began cross-border rocket and artillery strikes in support of Hamas in Gaza. In late 2024, the conflict escalated into a major Israeli air campaign and ground incursion into southern Lebanon—killing Hezbollah leader Hassan Nasrallah. In March 2026, the 2026 Lebanon War erupted with an Israeli ground offensive into southern Lebanon; despite a US-announced June 2026 ceasefire framework (rejected by Hezbollah), Israeli forces continue to occupy sections of the southern border zone and Lebanese national elections have been postponed to 2028.'
   },
   conf_redsea: {
     n: 'Red Sea Security Crisis & Yemeni Civil War',
-    tx: 'Yemen’s civil war enabled the Houthi movement (Ansar Allah) to control Sanaa and the port of Hodeidah; in the south, the secessionist Southern Transitional Council (STC) was dissolved in January 2026. Since late 2023, the Houthis have sustained missile, drone, and uncrewed surface vessel attacks against commercial shipping transiting the Bab el-Mandeb Strait despite retaliatory strikes by US–UK coalitions and Israel, causing container traffic through the Suez Canal to plummet.'
+    tx: 'Yemen’s civil war enabled the Houthi movement (Ansar Allah) to control Sanaa and the port of Hodeidah; in the south, the secessionist Southern Transitional Council (STC) was declared dissolved in Riyadh in January 2026 (STC officials in the UAE reject this, saying it was made under duress). Since late 2023, the Houthis have sustained missile, drone, and uncrewed surface vessel attacks against commercial shipping transiting the Bab el-Mandeb Strait despite retaliatory strikes by US–UK coalitions and Israel, causing container traffic through the Suez Canal to plummet.'
   },
   conf_sudan: {
     n: 'Sudanese Civil War',
-    tx: 'Erupted in April 2023 between the Sudanese Armed Forces (SAF, led by General Abdel Fattah al-Burhan and operating from Port Sudan on the Red Sea) and the paramilitary Rapid Support Forces (RSF, commanded by General Hemedti and controlling much of Darfur). The conflict has devastated the capital region of Khartoum–Omdurman, triggered ethnic massacres in Darfur, and displaced over 13–14 million people (including more than 4.6 million refugees abroad), creating the world’s largest ongoing displacement and hunger crisis.'
+    tx: 'Erupted in April 2023 between the Sudanese Armed Forces (SAF, led by General Abdel Fattah al-Burhan and operating from Port Sudan on the Red Sea) and the paramilitary Rapid Support Forces (RSF, commanded by General Hemedti and controlling much of Darfur, especially since seizing El Fasher in October 2025). The conflict has devastated the capital region of Khartoum–Omdurman, triggered ethnic massacres in Darfur, and displaced over 13–14 million people (including more than 4.6 million refugees abroad), creating the world’s largest ongoing displacement and hunger crisis.'
   },
   conf_myanmar: {
     n: 'Multi-Front Civil War in Myanmar',
-    tx: 'Escalated nationwide following the February 2021 military coup that ousted Aung San Suu Kyi’s elected civilian government. The ruling junta (State Administration Council, SAC), entrenched in the central Irrawaddy valley and Naypyidaw, faces coordinated offensives from People’s Defense Forces (PDF) and powerful ethnic armed organizations along the mountainous periphery (such as the Three Brotherhood Alliance in Shan State, the Arakan Army in Rakhine State, and Kachin and Karen forces), disrupting overland trade corridors with China, India, and Thailand.'
+    tx: 'Escalated nationwide following the February 2021 military coup that ousted Aung San Suu Kyi’s elected civilian government. The ruling junta (State Administration Council, SAC, dissolved on 31 July 2025; after phased elections in December 2025–January 2026 that opponents and many observers regard as lacking credibility, Min Aung Hlaing was elected president by parliament on 3 April 2026), entrenched in the central Irrawaddy valley and Naypyidaw, faces coordinated offensives from People’s Defense Forces (PDF, aligned with the exiled National Unity Government, NUG, which claims to be the legitimate government) and powerful ethnic armed organizations along the mountainous periphery (such as the Three Brotherhood Alliance in Shan State, the Arakan Army in Rakhine State, and Kachin and Karen forces), disrupting overland trade corridors with China, India, and Thailand.'
   },
   sahelconf: {
     n: 'Sahel Coup Belt & Jihadist Insurgency',
@@ -295,15 +295,15 @@ export const H_EN = {
   },
   conf_venezuela: {
     n: 'Venezuelan Political Crisis & Essequibo Tensions',
-    tx: 'Despite sitting atop the world’s largest proven crude oil reserves (~303 billion barrels), Venezuela has suffered severe economic collapse and protracted political turmoil under President Nicolás Maduro, driving over 7.7 million Venezuelans to emigrate to Colombia, Brazil, the United States, and neighboring countries. Disputed legitimacy following the July 2024 presidential election, US oil sanctions, deepening military and energy ties with Russia, China, and Iran, and territorial claims over Guyana’s oil-rich Essequibo region keep Venezuela at the center of South American geopolitics.'
+    tx: 'Despite sitting atop the world’s largest proven crude oil reserves (~303 billion barrels), Venezuela has suffered severe economic collapse and protracted political turmoil under Nicolás Maduro (captured by US forces on 3 January 2026, which the US calls a law-enforcement operation and Caracas calls a kidnapping; Vice President Delcy Rodríguez has been acting president since 5 January 2026 and no election date has been set), driving over 7.7 million Venezuelans to emigrate to Colombia, Brazil, the United States, and neighboring countries. The disputed July 2024 presidential election (the electoral authority declared Maduro the winner; the opposition and many governments rejected the result), US oil sanctions, deepening military and energy ties with Russia, China, and Iran, and territorial claims over Guyana’s oil-rich Essequibo region keep Venezuela at the center of South American geopolitics.'
   },
   conf_kashmir: {
     n: 'India–Pakistan Flashpoint in Kashmir',
-    tx: 'One of the most dangerous militarized frontiers on Earth, where nuclear-armed rivals India and Pakistan face off along the ~740 km Line of Control (LoC). After three major wars (1947, 1965, 1971), the Kargil conflict (1999), the Balakot airstrike crisis (2019), and New Delhi’s revocation of Jammu & Kashmir’s special autonomous status under Article 370 (August 2019), following the April 2025 Pahalgam attack, India suspended the 1960 Indus Waters Treaty for the first time; sharp border clashes and retaliatory strikes in May 2025 were halted only by a fragile ceasefire, leaving the historic water treaty frozen indefinitely.'
+    tx: 'One of the most dangerous militarized frontiers on Earth, where nuclear-armed rivals India and Pakistan face off along the ~740 km Line of Control (LoC). After three major wars (1947, 1965, 1971), the Kargil conflict (1999), the Balakot airstrike crisis (2019), and New Delhi’s revocation of Jammu & Kashmir’s special autonomous status under Article 370 (August 2019), following the April 2025 Pahalgam attack (India blamed Pakistan, which denied involvement), India suspended the 1960 Indus Waters Treaty for the first time; sharp border clashes and retaliatory strikes in May 2025 were halted only by a fragile ceasefire on 10 May 2025 (India says it was agreed bilaterally, Pakistan credits US mediation; casualty and aircraft-loss claims differ), leaving the historic water treaty frozen indefinitely.'
   },
   conf_taiwan: {
     n: 'Taiwan Strait Military Flashpoint',
-    tx: 'The centerpiece of US–China strategic competition in the Indo-Pacific. Beijing regards Taiwan as an inalienable province and has not renounced the use of force for reunification, regularly staging large-scale encirclement and blockade exercises (such as Joint Sword) around the island and across the strait’s median line. Meanwhile, Taiwan occupies the central hinge of the First Island Chain and produces over 60% of the world’s semiconductors (and over 90% of ultra-advanced chips via TSMC), leading the United States (under the 1979 Taiwan Relations Act) and Japan to treat peace across the strait as a core national security interest.'
+    tx: 'The centerpiece of US–China strategic competition in the Indo-Pacific. Beijing regards Taiwan as an inalienable province (Taipei rejects this; the island\'s status is disputed) and has not renounced the use of force for reunification, regularly staging large-scale encirclement and blockade exercises (such as Joint Sword) around the island and across the strait’s median line. Meanwhile, Taiwan occupies the central hinge of the First Island Chain and produces over 60% of the world’s semiconductors (and over 90% of ultra-advanced chips via TSMC), leading the United States (under the 1979 Taiwan Relations Act) and Japan to treat peace across the strait as a core national security interest.'
   },
   sykespicot: {
     n: 'Sykes–Picot Agreement (1916): "A Line in the Sand"',
@@ -335,7 +335,7 @@ export const H_EN = {
   },
   oderneisse: {
     n: 'Oder–Neisse Line (1945)',
-    tx: 'Germany’s eastern border and Poland’s western border running along the Oder and Lusatian Neisse rivers to the Baltic Sea, fixed by Stalin, Churchill, and Truman at the Yalta and Potsdam Conferences in 1945. This decision physically shifted the entire Polish state roughly 200 km westward—with the Soviet Union retaining Poland’s eastern Kresy territories along the Curzon Line while Poland received Silesia, Pomerania, and southern East Prussia from Germany—accompanied by the forced expulsion and resettlement of millions of Germans and Poles after World War II.'
+    tx: 'Germany’s eastern border and Poland’s western border running along the Oder and Lusatian Neisse rivers to the Baltic Sea, provisionally fixed by Stalin, Truman, and Attlee (who replaced Churchill mid-conference) at the 1945 Potsdam Conference, building on Yalta, and recognized by a unified Germany only in 1990. This decision physically shifted the entire Polish state roughly 200 km westward—with the Soviet Union retaining Poland’s eastern Kresy territories along the Curzon Line while Poland received Silesia, Pomerania, and southern East Prussia from Germany—accompanied by the forced expulsion and resettlement of millions of Germans and Poles after World War II.'
   },
   tordesillas: {
     n: 'Treaty of Tordesillas Meridian (1494)',
@@ -371,7 +371,7 @@ export const H_EN = {
   },
   base_yokosuka: {
     n: 'Yokosuka Naval Base (US 7th Fleet Headquarters – Japan)',
-    tx: 'Located at the entrance to Tokyo Bay, Yokosuka is the most important US naval base in the Western Pacific and serves as headquarters for both the US Navy’s Seventh Fleet and the Japan Maritime Self-Defense Force Fleet. It is the only port outside the United States capable of permanently homeporting and maintaining a nuclear-powered US Navy aircraft carrier strike group (USS Ronald Reagan / USS George Washington).'
+    tx: 'Located at the entrance to Tokyo Bay, Yokosuka is the most important US naval base in the Western Pacific and serves as headquarters for both the US Navy’s Seventh Fleet and the Japan Maritime Self-Defense Force Fleet. It is the only port outside the United States capable of permanently homeporting and maintaining a nuclear-powered US Navy aircraft carrier strike group (currently USS George Washington, which replaced USS Ronald Reagan in 2024).'
   },
   base_humphreys: {
     n: 'Camp Humphreys & Osan Air Base (South Korea – US)',
@@ -379,7 +379,7 @@ export const H_EN = {
   },
   base_diegogarcia: {
     n: 'Diego Garcia Naval & Air Base (US – UK)',
-    tx: 'An "unsinkable aircraft carrier" at the geographic center of the Indian Ocean in the Chagos Archipelago, equidistant from East Africa, the Middle East, South Asia, Southeast Asia, and Western Australia. Equipped with a deep-water lagoon for carrier strike groups, nuclear submarines, and maritime prepositioning squadrons, plus a 3,650 m runway for B-2 Spirit stealth bombers, it has played a decisive role in operations across the Persian Gulf and South Asia (1991 Gulf War, Afghanistan 2001, Iraq 2003).'
+    tx: 'An "unsinkable aircraft carrier" at the geographic center of the Indian Ocean in the Chagos Archipelago (sovereignty disputed between the UK and Mauritius; a May 2025 treaty would transfer it to Mauritius with a 99-year lease on Diego Garcia, but UK ratification has stalled in 2026), equidistant from East Africa, the Middle East, South Asia, Southeast Asia, and Western Australia. Equipped with a deep-water lagoon for carrier strike groups, nuclear submarines, and maritime prepositioning squadrons, plus a 3,650 m runway for B-2 Spirit stealth bombers, it has played a decisive role in operations across the Persian Gulf and South Asia (1991 Gulf War, Afghanistan 2001, Iraq 2003).'
   },
   base_aludeid: {
     n: 'Al Udeid Air Base (Qatar – US)',
@@ -423,7 +423,7 @@ export const H_EN = {
   },
   base_subic: {
     n: 'Subic Bay, Clark & Northern Luzon EDCA Bases (Philippines)',
-    tx: 'Subic Bay and Clark Air Base formed the largest US overseas military complex during the Cold War before US forces withdrew in 1992. Faced with mounting pressure in the East Sea (South China Sea, where Scarborough Shoal lies ~240 km west of Subic) and across the Taiwan Strait, the Philippines has reactivated naval facilities at Subic and expanded the Enhanced Defense Cooperation Agreement (EDCA, 2023), granting US forces rotational access to nine strategic sites stretching from Balabac Island (near the Spratlys) up to Cagayan and Batanes (bordering the Bashi Channel).'
+    tx: 'Subic Bay and Clark Air Base formed the largest US overseas military complex during the Cold War before US forces withdrew in 1992. Faced with mounting pressure in the East Sea (South China Sea, where Scarborough Shoal, claimed by the Philippines, China and Taiwan and under de facto Chinese control since 2012, lies ~200 km west of Subic) and across the Taiwan Strait, the Philippines has reactivated naval facilities at Subic and expanded the Enhanced Defense Cooperation Agreement (EDCA, 2023), granting US forces rotational access to nine strategic sites stretching from Balabac Island (near the Spratlys) up to Cagayan and Isabela (northern Luzon, facing the Luzon Strait).'
   },
   base_changi: {
     n: 'Changi Naval Base (Singapore – Sentinel of the Malacca Strait)',
@@ -443,7 +443,7 @@ export const H_EN = {
   },
   base_sevastopol: {
     n: 'Sevastopol & Novorossiysk Naval Bases (Russian Black Sea Fleet)',
-    tx: 'Founded by Catherine the Great in 1783 on the southwestern tip of the Crimean Peninsula, Sevastopol has served for over two centuries as the primary homeport of Russia’s Black Sea Fleet thanks to its deep, sheltered, ice-free harbors. The fear of losing Sevastopol to a NATO-aligned Ukraine was a core driver of Moscow’s 2014 annexation of Crimea; however, since 2022, Ukrainian cruise missile and uncrewed surface vessel (USV) strikes have forced Russia to relocate most of its major warships from Sevastopol to Novorossiysk on the eastern Black Sea coast.'
+    tx: 'Founded by Catherine the Great in 1783 on the southwestern tip of the Crimean Peninsula, Sevastopol has served for over two centuries as the primary homeport of Russia’s Black Sea Fleet thanks to its deep, sheltered, ice-free harbors. The fear of losing Sevastopol to a NATO-aligned Ukraine was a core driver of Moscow’s 2014 annexation of Crimea (which Ukraine and the UN General Assembly, Resolution 68/262, do not recognize); however, since 2022, Ukrainian cruise missile and uncrewed surface vessel (USV) strikes have forced Russia to relocate most of its major warships from Sevastopol to Novorossiysk on the eastern Black Sea coast.'
   },
   base_vladivostok: {
     n: 'Vladivostok & Vilyuchinsk Naval Bases (Russian Pacific Fleet)',
@@ -451,7 +451,7 @@ export const H_EN = {
   },
   base_tartus: {
     n: 'Tartus Naval Base & Khmeimim Air Base (Syria – Russia)',
-    tx: 'Established by the Soviet Union in 1971 on Syria’s Mediterranean coast, Tartus—paired since 2015 with nearby Khmeimim Air Base in Latakia—has served as Russia’s sole warm-water naval and logistics foothold in the Mediterranean and a key staging point for Russian operations into Africa. Following the collapse of the Assad regime in late 2024, an August 2026 Russia–Syria Memorandum of Understanding transitioned Tartus and Khmeimim into joint training and logistics facilities under the transitional authorities.'
+    tx: 'Established by the Soviet Union in 1971 on Syria’s Mediterranean coast, Tartus—paired since 2015 with nearby Khmeimim Air Base in Latakia—has served as Russia’s sole warm-water naval and logistics foothold in the Mediterranean and a key staging point for Russian operations into Africa. Following the collapse of the Assad regime in late 2024, an August 2026 Russia–Syria Memorandum of Understanding agreed to convert Tartus and Khmeimim into joint training facilities (with a three-month implementation period; a final agreement is still being worked out) under the transitional authorities.'
   },
   base_yulin: {
     n: 'Yulin Nuclear Submarine Base (Sanya, Hainan Island – China)',
@@ -491,7 +491,7 @@ export const H_EN = {
   },
   pipe_druzhba: {
     n: 'Druzhba ("Friendship") Oil Pipeline Network',
-    tx: 'One of the world’s longest crude oil pipeline networks (>4,000 km), built by the Soviet Union in the 1960s to supply Urals crude from the Volga–Ural basin to Warsaw Pact states in Eastern and Central Europe. At Mozyr in Belarus, the pipeline splits into two branches: the northern leg through Poland to Germany (which halted Russian pipeline oil imports in 2023), and the southern leg through Ukraine to landlocked Hungary, Slovakia, and Czechia—which have continued to rely heavily on this overland supply.'
+    tx: 'One of the world’s longest crude oil pipeline networks (>4,000 km), built by the Soviet Union in the 1960s to supply Urals crude from the Volga–Ural basin to Warsaw Pact states in Eastern and Central Europe. At Mozyr in Belarus, the pipeline splits into two branches: the northern leg through Poland to Germany (which halted Russian pipeline oil imports in 2023), and the southern leg through Ukraine to landlocked Hungary and Slovakia (Czechia stopped taking Russian crude via Druzhba in 2025)—which have continued to rely heavily on this overland supply.'
   },
   pipe_btc: {
     n: 'Baku–Tbilisi–Ceyhan (BTC) Oil Pipeline',
@@ -519,7 +519,7 @@ export const H_EN = {
   },
   field_guyana: {
     n: 'Stabroek Offshore Oil Block (Guyana – South America)',
-    tx: 'A deep-water Atlantic oil province off the coast of Guyana (discovered in 2015 by a consortium of ExxonMobil, Hess, and CNOOC) containing over 11 billion barrels of recoverable oil equivalent with some of the lowest breakeven costs in the world. Surging offshore oil production has given this nation of ~800,000 people the world’s fastest GDP growth rate while reigniting neighboring Venezuela’s territorial claim over the Essequibo region and its offshore waters.'
+    tx: 'A deep-water Atlantic oil province off the coast of Guyana (discovered in 2015 by a consortium of ExxonMobil, Hess (acquired by Chevron in July 2025), and CNOOC) containing over 11 billion barrels of recoverable oil equivalent with some of the lowest breakeven costs in the world. Surging offshore oil production has given this nation of ~800,000 people the world’s fastest GDP growth rate while reigniting neighboring Venezuela’s territorial claim over the Essequibo region and its offshore waters.'
   },
   field_bachho: {
     n: 'Cuu Long & Nam Con Son Basins (Bach Ho, Lan Tay & Ca Voi Xanh Fields – Vietnam)',
@@ -527,7 +527,7 @@ export const H_EN = {
   },
   gerd: {
     n: 'Grand Ethiopian Renaissance Dam (GERD – Blue Nile)',
-    tx: 'Africa’s largest hydroelectric power plant (~5.15 GW design capacity, 74 billion m³ reservoir, officially inaugurated in September 2025), built on the Blue Nile in Ethiopia’s Benishangul-Gumuz region just ~15 km from the Sudanese border. Because the Blue Nile flowing off the Ethiopian Highlands supplies ~85% of the Nile water reaching Egypt, Addis Ababa views the dam as a vital engine of electrification and poverty reduction, whereas Cairo regards unilateral filling and operation of the mega-dam as an existential threat to the water security of over 110 million Egyptians.'
+    tx: 'Africa’s largest hydroelectric power plant (~5.15 GW design capacity, 74 billion m³ reservoir, officially inaugurated in September 2025), built on the Blue Nile in Ethiopia’s Benishangul-Gumuz region just ~15 km from the Sudanese border. Because rivers rising in the Ethiopian Highlands (chiefly the Blue Nile, plus the Atbara and Sobat) supply ~85% of the Nile water reaching Egypt, Addis Ababa views the dam as a vital engine of electrification and poverty reduction, whereas Cairo regards unilateral filling and operation of the mega-dam as an existential threat to the water security of over 110 million Egyptians.'
   },
   threegorges: {
     n: 'Three Gorges Dam (Yangtze River – China)',
@@ -595,7 +595,7 @@ export const H_EN = {
   },
   res_jiangxi: {
     n: 'Ganzhou Heavy Rare Earth Belt (Jiangxi – China) & Northern Myanmar Border',
-    tx: 'Unlike light rare earths found across several continents, ion-adsorption clay deposits rich in heavy rare-earth elements—especially dysprosium and terbium, indispensable additives that prevent permanent magnets in precision missiles, electric vehicles, and submarines from demagnetizing at high temperatures—are concentrated almost exclusively in southern Jiangxi province (Ganzhou, dubbed "China’s Rare Earth Kingdom") and across the border in northern Myanmar’s Kachin and Shan states, from which ore is trucked into China for refining.'
+    tx: 'Unlike light rare earths found across several continents, ion-adsorption clay deposits rich in heavy rare-earth elements—especially dysprosium and terbium, indispensable additives that prevent permanent magnets in precision missiles, electric vehicles, and submarines from demagnetizing at high temperatures—are concentrated mainly in southern Jiangxi province (Ganzhou, dubbed "China’s Rare Earth Kingdom") and across the border in northern Myanmar’s Kachin and Shan states, from which ore is trucked into China for refining.'
   },
   res_dongpao: {
     n: 'Dong Pao Rare Earth Deposit (Lai Chau) & Central Highlands Bauxite Belt (Vietnam)',
@@ -635,7 +635,7 @@ export const H_EN = {
   },
   tibet: {
     n: 'Tibetan Plateau (Qinghai–Tibet Plateau)',
-    tx: 'The "Roof of the World" (averaging over 4,500 m in elevation across ~2.5 million km²) and the "Water Tower of Asia": the headwaters of 10 major river systems sustaining nearly two billion people (the Yellow, Yangtze, Mekong, Salween, Irrawaddy, Brahmaputra, Ganges, Indus, Sutlej, and Tarim rivers). Geostrategically, controlling Tibet (since 1950–1951) gives China command over the upstream water supply of both its own heartland and its neighbors, while providing commanding military high ground overlooking the northern plains of India.'
+    tx: 'The "Roof of the World" (averaging over 4,500 m in elevation across ~2.5 million km²) and the "Water Tower of Asia": the headwaters of 10 major river systems sustaining nearly two billion people (the Yellow, Yangtze, Mekong, Salween, Irrawaddy, Brahmaputra, Ganges, Indus, Sutlej, and Tarim rivers). Geostrategically, controlling Tibet (since 1950–1951, a status the Tibetan government-in-exile disputes) gives China command over the upstream water supply of both its own heartland and its neighbors, while providing commanding military high ground overlooking the northern plains of India.'
   },
   pampas: {
     n: 'The Pampas & Rio de la Plata Basin',
@@ -691,7 +691,7 @@ export const H_EN = {
   },
   huanghe: {
     n: 'Yellow River (Huang He)',
-    tx: 'Stretching ~5,464 km, the Yellow River loops across the friable Loess Plateau—picking up the massive silt load that gives its waters their distinctive yellow hue—before crossing the North China Plain to empty into the Bohai Sea. Revered as the "Mother River" and cradle of ancient Chinese civilization in the Central Plains, it has also been called "China’s Sorrow" because heavy siltation raises its lower riverbed meters above the surrounding plain (an "elevated river"), triggering thousands of catastrophic levee breaches and course changes throughout history (such as in 1855 and 1938).'
+    tx: 'Stretching ~5,464 km, the Yellow River loops across the friable Loess Plateau—picking up the massive silt load that gives its waters their distinctive yellow hue—before crossing the North China Plain to empty into the Bohai Sea. Revered as the "Mother River" and cradle of ancient Chinese civilization in the Central Plains, it has also been called "China’s Sorrow" because heavy siltation raises its lower riverbed meters above the surrounding plain (an "elevated river"), triggering nearly 1,600 levee breaches and course changes throughout history (such as in 1855 and 1938).'
   },
   ganges: {
     n: 'Ganges River (Ganga / Padma)',
@@ -703,7 +703,7 @@ export const H_EN = {
   },
   indus: {
     n: 'Indus River',
-    tx: 'Rising near sacred Mount Kailash in Tibet (China), the ~3,180 km Indus flows northwest through Ladakh and Baltistan in disputed Kashmir before running the entire north–south length of Pakistan to empty into the Arabian Sea near Karachi. Just as Egypt depends on the Nile, over 80% of Pakistan’s population and 90% of its agricultural output rely on the Indus irrigation network (the main stem plus the five tributaries of the Punjab). Because India controls the upstream headwaters in Kashmir under the 1960 Indus Waters Treaty, any threat to suspend or alter the treaty during crises poses an existential national security challenge for Islamabad.'
+    tx: 'Rising near sacred Mount Kailash in Tibet (China), the ~3,180 km Indus flows northwest through Ladakh and Baltistan in disputed Kashmir before running the entire north–south length of Pakistan to empty into the Arabian Sea near Karachi. Just as Egypt depends on the Nile, over 80% of Pakistan’s population and 90% of its agricultural output rely on the Indus irrigation network (the main stem plus the five tributaries of the Punjab). Because India controls the upstream headwaters in Kashmir under the 1960 Indus Waters Treaty, India\'s April 2025 decision to hold the treaty \'in abeyance\' (which Pakistan rejects as having no legal basis) poses an existential national security challenge for Islamabad.'
   },
   salween: {
     n: 'Salween River (Nu Jiang / Thanlwin)',
@@ -719,7 +719,7 @@ export const H_EN = {
   },
   nile: {
     n: 'Nile River System (White Nile & Blue Nile)',
-    tx: 'The longest river on Earth (~6,650 km), flowing northward through 11 northeastern African countries before emptying into the Mediterranean Sea. Its two principal branches meet at the Sudanese capital of Khartoum: the White Nile rising in the Lake Victoria basin, and the Blue Nile flowing from Lake Tana in the Ethiopian Highlands (which, together with the Atbara River, supplies ~85% of the Nile’s total water volume and fertile silt). For Egypt—where 95% of the population lives packed along the narrow green ribbon of the Nile Valley and Delta amidst the Sahara Desert—the river’s flow is a matter of absolute national survival.'
+    tx: 'The longest river on Earth (~6,650 km), flowing northward through 11 northeastern African countries before emptying into the Mediterranean Sea. Its two principal branches meet at the Sudanese capital of Khartoum: the White Nile rising in the Lake Victoria basin, and the Blue Nile flowing from Lake Tana in the Ethiopian Highlands (which, together with the Atbara and Sobat rivers from the Ethiopian Highlands, supplies ~85% of the Nile’s total water volume and fertile silt). For Egypt—where 95% of the population lives packed along the narrow green ribbon of the Nile Valley and Delta amidst the Sahara Desert—the river’s flow is a matter of absolute national survival.'
   },
   congo: {
     n: 'Congo River & Livingstone Falls',
@@ -815,11 +815,11 @@ export const H_EN = {
   },
   himalaya: {
     n: 'Himalayan Mountain Range',
-    tx: 'The highest mountain arc on Earth (~2,400 km long, crowned by Mount Everest at 8,848.86 m and over 100 peaks exceeding 7,200 m), thrust upward by the ongoing collision of the Indian tectonic plate beneath the Eurasian plate. Geopolitically, this colossal wall of rock and ice has separated the civilization-states of India and China for millennia: despite sharing a disputed ~3,488 km Line of Actual Control (LAC), neither nuclear power can mount a large-scale mechanized ground invasion across the Himalayas into the other’s heartland.'
+    tx: 'The highest mountain arc on Earth (~2,400 km long, crowned by Mount Everest at 8,848.86 m and over 100 peaks exceeding 7,200 m), thrust upward by the ongoing collision of the Indian tectonic plate beneath the Eurasian plate. Geopolitically, this colossal wall of rock and ice has separated the civilization-states of India and China for millennia: despite sharing a disputed Line of Actual Control (LAC; India puts it at ~3,488 km, China at ~2,000 km, and it has never been jointly delineated), neither nuclear power can mount a large-scale mechanized ground invasion across the Himalayas into the other’s heartland.'
   },
   karakoram: {
     n: 'Karakoram Range (K2 & the Siachen Glacier)',
-    tx: 'Situated at the northwestern nexus of the Himalaya–Hindu Kush–Pamir mountain knot where the borders of Pakistan, India, and China converge (across Kashmir, Ladakh, Gilgit-Baltistan, and Xinjiang). It boasts the highest concentration of peaks over 8,000 m on Earth—led by K2 (8,611 m, the world’s second-highest mountain)—as well as the 5,700 m Siachen Glacier (the world’s highest-altitude battlefield between India and Pakistan since 1984) and the Karakoram Highway (CPEC) crossing the Khunjerab Pass between China and Pakistan.'
+    tx: 'Situated at the northwestern nexus of the Himalaya–Hindu Kush–Pamir mountain knot where the borders of Pakistan, India, and China converge (across Kashmir, Ladakh, Gilgit-Baltistan, and Xinjiang—the Kashmir region is administered separately by India, Pakistan and China, and its borders are disputed between them). It boasts the highest concentration of peaks over 8,000 m on Earth—led by K2 (8,611 m, the world’s second-highest mountain)—as well as the 5,700 m Siachen Glacier (the world’s highest-altitude battlefield between India and Pakistan since 1984) and the Karakoram Highway (CPEC) crossing the Khunjerab Pass between China and Pakistan.'
   },
   kunlun: {
     n: 'Kunlun Mountains (Northern Wall of Tibet)',
@@ -831,7 +831,7 @@ export const H_EN = {
   },
   alps: {
     n: 'The Alps',
-    tx: 'The highest and most extensive mountain arc in Western and Central Europe (~1,200 km long, peaking at Mont Blanc at 4,808 m), forming a protective northern rampart across the top of the Italian Peninsula while providing the mountain fortress that has enabled Switzerland to maintain armed neutrality for over two centuries. The Alps also serve as the "Water Tower of Europe," giving rise to the Rhine, Rhone, Po, and major tributaries of the Danube.'
+    tx: 'The highest and most extensive mountain arc in Western and Central Europe (~1,200 km long, peaking at Mont Blanc at ~4,808 m (summit ownership is disputed between France and Italy)), forming a protective northern rampart across the top of the Italian Peninsula while providing the mountain fortress that has enabled Switzerland to maintain armed neutrality for over two centuries. The Alps also serve as the "Water Tower of Europe," giving rise to the Rhine, Rhone, Po, and major tributaries of the Danube.'
   },
   pyrenees: {
     n: 'Pyrenees Mountains (France–Spain Border)',
@@ -839,7 +839,7 @@ export const H_EN = {
   },
   carpathians: {
     n: 'Carpathian Mountain Arc',
-    tx: 'Europe’s second-longest mountain range (~1,500 km), sweeping in a dramatic crescent from Czechia, Slovakia, and southern Poland across western Ukraine before curving around central Romania. The Carpathian arc forms a natural defensive bastion enclosing the Pannonian Basin (Hungary’s geographic core) and stands as the critical physical barrier separating the North European Plain to the north from the Danube basin and the Balkans to the south—historically channeling or blocking Russian military advances into Central Europe.'
+    tx: 'Europe’s third-longest mountain range (~1,500 km, after the Urals and the Scandinavian Mountains), sweeping in a dramatic crescent from Czechia, Slovakia, and southern Poland across western Ukraine before curving around central Romania. The Carpathian arc forms a natural defensive bastion enclosing the Pannonian Basin (Hungary’s geographic core) and stands as the critical physical barrier separating the North European Plain to the north from the Danube basin and the Balkans to the south—historically channeling or blocking Russian military advances into Central Europe.'
   },
   ural: {
     n: 'Ural Mountains (The Europe–Asia Divide)',
@@ -875,7 +875,7 @@ export const H_EN = {
   },
   altai: {
     n: 'Altai Mountains (Russia–China–Mongolia–Kazakhstan Quadripoint)',
-    tx: 'A major mountain range at the geographic center of Eurasia where the borders of four nations—Russia, China (Xinjiang), Mongolia, and Kazakhstan—converge, and where the great Ob and Irtysh rivers originate. The short ~55 km direct border segment between Russia and China high in the Altai Mountains (wedged between Kazakhstan and Mongolia) has also been proposed as the western route for the Altai gas pipeline linking Western Siberia to Xinjiang.'
+    tx: 'A major mountain range at the geographic center of Eurasia where the borders of four nations—Russia, China (Xinjiang), Mongolia, and Kazakhstan—converge, and where the great Ob and Irtysh rivers originate. The short ~55 km direct border segment between Russia and China high in the Altai Mountains (wedged between Kazakhstan and Mongolia) was proposed as the western (Altai) route for a gas pipeline linking Western Siberia to Xinjiang (the September 2025 Power of Siberia 2 memorandum instead routes the line via Mongolia).'
   },
   appalachian: {
     n: 'Appalachian Mountains (Eastern North America)',
@@ -891,7 +891,7 @@ export const H_EN = {
   },
   sahara: {
     n: 'Sahara Desert',
-    tx: 'The largest hot desert on Earth (~9.2 million km², roughly the size of the entire United States or China), spanning the full width of North Africa from the Atlantic Ocean to the Red Sea across 11 countries. In geopolitics and civilizational history, the Sahara has functioned for millennia as a vast "ocean of sand" separating the Mediterranean littoral of North Africa (historically tied to the Arab and European worlds) from Sub-Saharan Africa.'
+    tx: 'The largest hot desert on Earth (~9.2 million km², roughly the size of the entire United States or China), spanning the full width of North Africa from the Atlantic Ocean to the Red Sea across 10 countries and the disputed territory of Western Sahara (contested between Morocco and the Polisario Front). In geopolitics and civilizational history, the Sahara has functioned for millennia as a vast "ocean of sand" separating the Mediterranean littoral of North Africa (historically tied to the Arab and European worlds) from Sub-Saharan Africa.'
   },
   arabian: {
     n: 'Arabian Desert & the Rub’ al Khali Sand Sea',
@@ -955,7 +955,7 @@ export const H_EN = {
   },
   boreal: {
     n: 'North American Boreal Forest (Canadian Shield)',
-    tx: 'A sweeping northern coniferous forest belt arching from Alaska right across Canada to the Atlantic island of Newfoundland, growing atop the glacially scoured Precambrian rock of the Canadian Shield and dotted with millions of freshwater lakes. Because the thin, rocky soils of the Canadian Shield cannot support large-scale farming, roughly 90% of Canada’s population lives huddled within a narrow, warmer ~160 km strip hugging the southern border with the United States.'
+    tx: 'A sweeping northern coniferous forest belt arching from Alaska right across Canada to the Atlantic island of Newfoundland, growing atop the glacially scoured Precambrian rock of the Canadian Shield and dotted with millions of freshwater lakes. Because the thin, rocky soils of the Canadian Shield cannot support large-scale farming, roughly 75% of Canada’s population lives huddled within a narrow, warmer ~160 km strip hugging the southern border with the United States.'
   },
   arcticice: {
     n: 'Arctic Sea Ice – September Summer Minimum',
@@ -967,7 +967,7 @@ export const H_EN = {
   },
   greenlandice: {
     n: 'Greenland Continental Ice Sheet',
-    tx: 'The second-largest land ice mass on Earth (after Antarctica), blanketing roughly 80% of Greenland (~1.71 million km²) to an average thickness of ~1.5 km and over 3 km at its deepest point. Driven by Arctic amplification of global warming, the Greenland ice sheet is currently losing an average of over 250 billion tonnes of ice per year; if the entire sheet were to melt over future centuries, global sea levels would rise by ~7.4 meters.'
+    tx: 'The second-largest land ice mass on Earth (after Antarctica), blanketing roughly 80% of Greenland (~1.71 million km²) to an average thickness of ~1.5 km and over 3 km at its deepest point. Driven by Arctic amplification of global warming, the Greenland ice sheet has lost an average of roughly 220-270 billion tonnes of ice per year since the early 2000s (about 129 billion tonnes in 2025); if the entire sheet were to melt over future centuries, global sea levels would rise by ~7.4 meters.'
   },
   antarctica: {
     n: 'Antarctic Continental Ice Sheet',
@@ -1028,7 +1028,7 @@ export const LAKE_META_EN = {
     n: 'Lake Tana',
     area: '3,060 km²',
     rel: ['Ethiopia'],
-    tx: 'Ethiopia’s largest lake, perched at 1,788 m in the Amhara highlands—famous as the source of the Blue Nile, which supplies up to 85% of the annual floodwaters reaching Egypt and feeds the Grand Ethiopian Renaissance Dam (GERD, officially inaugurated in September 2025).'
+    tx: 'Ethiopia’s largest lake, perched at 1,788 m in the Amhara highlands—famous as the source of the Blue Nile, which supplies up to 85% of the annual floodwaters reaching Egypt and feeds the Grand Ethiopian Renaissance Dam (GERD, officially inaugurated in September 2025; Egypt objects, and no agreement regulating its filling and operation has been reached).'
   },
   deadsea: {
     n: 'Dead Sea',
@@ -1040,7 +1040,7 @@ export const LAKE_META_EN = {
     n: 'Sea of Galilee (Lake Kinneret)',
     area: '166 km²',
     rel: ['Israel', 'Syria'],
-    tx: 'A strategic freshwater lake in northeastern Israel nestled directly beneath the Golan Heights. Control over the Sea of Galilee and the upper Jordan River headwaters was one of the direct geopolitical triggers of the 1967 Six-Day War.'
+    tx: 'A strategic freshwater lake in northeastern Israel nestled directly beneath the Golan Heights (territory occupied by Israel since 1967; Israel applied its law there in 1981, which the UN Security Council declared void, and Syria still claims it; almost no other state recognises Israeli sovereignty). Control over the Sea of Galilee and the upper Jordan River headwaters was one of the direct geopolitical triggers of the 1967 Six-Day War.'
   },
   superior: {
     n: 'Lake Superior',
