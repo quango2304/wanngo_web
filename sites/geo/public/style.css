@@ -1657,3 +1657,23 @@ details.adm-list[open] > summary {
 @media (min-width: 760px) {
   #layers:not(.hide) ~ #bl { left: 304px; }
 }
+
+/* Touch and pen: comfortable tap targets (about 44px, the usual minimum for a fingertip) */
+@media (pointer: coarse) {
+  .ibtn { width: 44px; height: 44px; }
+  #pclose { width: 40px; height: 40px; }
+  .btn, .pill, select { min-height: 44px; }
+  .tg { min-height: 42px; padding: 6px 8px; }
+  .tg .sw { width: 36px; height: 20px; border-radius: 11px; }
+  .tg .sw:after { width: 16px; height: 16px; }
+  .tg.on .sw:after { transform: translateX(16px); }
+  .sg { min-height: 44px; }
+  .chip { min-height: 38px; padding: 6px 12px; }
+  .lbtn { min-height: 34px; padding: 4px 11px; font-size: 12px; }
+  details.lgrp > summary { min-height: 40px; padding: 8px 6px; }
+  details.adm-list > summary { min-height: 40px; }
+  .rk-tab, .rk-dir { min-height: 36px; padding: 7px 11px; }
+  .rk-row { min-height: 44px; }
+  .rk-pill { min-height: 44px; }
+  .rk-info-btn { width: 34px; height: 34px; }
+}

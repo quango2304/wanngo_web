@@ -1,8 +1,8 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108e';
-import { C0 } from '../data/countries.js?v=20261108e';
-import { LAYERS, H } from '../data/hotspots.js?v=20261108e';
-import { AL, REF } from '../data/alliances.js?v=20261108e';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108e';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108h';
+import { C0 } from '../data/countries.js?v=20261108h';
+import { LAYERS, H } from '../data/hotspots.js?v=20261108h';
+import { AL, REF } from '../data/alliances.js?v=20261108h';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108h';
 import {
   $,
   norm,
@@ -46,12 +46,13 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108e';
+} from './state.js?v=20261108h';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');
 
 let W = 0, Hh = 0, R0 = 1, k = 1, dpr = 1;
+let coarse = false; // touch / pen: larger markers and hit areas
 export const getK = () => k;
 
 export const proj = d3.geoOrthographic().clipAngle(90).precision(0.3).rotate([-106, -14]);
@@ -1483,7 +1484,7 @@ export function render(now) {
       const q = proj(mc);
       if (!q || q[0] < 0 || q[0] > W || q[1] < 0 || q[1] > Hh) continue;
       ctx.beginPath();
-      ctx.arc(q[0], q[1], f === sc || f === st.hov ? 4.2 : 2.9, 0, 7);
+      ctx.arc(q[0], q[1], (f === sc || f === st.hov ? 4.2 : 2.9) * (coarse ? 1.35 : 1), 0, 7);
       ctx.fillStyle = f === sc ? C.accent : C.dark ? '#C9C4B8' : '#6B6455';
       ctx.fill();
       ctx.lineWidth = 1.2;
@@ -1524,7 +1525,7 @@ export function render(now) {
       if (d3.geoDistance(cap.pt, centerPt) > Math.PI / 2 - 0.02) continue;
       const q = proj(cap.pt);
       if (!q) continue;
-      const rad = act ? 5.2 : cap.rank === 1 ? 3.9 : 3.2;
+      const rad = (act ? 5.2 : cap.rank === 1 ? 3.9 : 3.2) * (coarse ? 1.3 : 1);
       ctx.beginPath();
       ctx.arc(q[0], q[1], rad, 0, 7);
       ctx.fillStyle = C.dark ? '#0A0E15' : '#fff';
@@ -1534,11 +1535,11 @@ export function render(now) {
       ctx.stroke();
 
       ctx.beginPath();
-      ctx.arc(q[0], q[1], act ? 2.5 : 1.8, 0, 7);
+      ctx.arc(q[0], q[1], (act ? 2.5 : 1.8) * (coarse ? 1.3 : 1), 0, 7);
       ctx.fillStyle = '#E8590C';
       ctx.fill();
 
-      pushIconBox(q, 3.5);
+      pushIconBox(q, coarse ? 4.5 : 3.5);
       if (act || (!noText && (cap.rank === 1 ? k >= 1.35 : cap.rank === 2 ? k >= 1.85 : k >= 2.5))) {
         capLabels.push({ q, act, raw: capName(cap) });
       }
@@ -1553,7 +1554,7 @@ export function render(now) {
       if (d3.geoDistance(isl.pt, centerPt) > Math.PI / 2 - 0.02) continue;
       const q = proj(isl.pt);
       if (!q) continue;
-      const s = act ? 5.2 : 3.4;
+      const s = (act ? 5.2 : 3.4) * (coarse ? 1.3 : 1);
       ctx.beginPath();
       ctx.moveTo(q[0], q[1] - s);
       ctx.lineTo(q[0] + s, q[1]);
@@ -1566,7 +1567,7 @@ export function render(now) {
       ctx.strokeStyle = C.dark ? '#0A0E15' : '#fff';
       ctx.stroke();
 
-      pushIconBox(q, 3.5);
+      pushIconBox(q, coarse ? 4.5 : 3.5);
       if (act || (!noText && (isl.rank === 1 ? k >= 1.5 : k >= 2.2))) {
         islLabels.push({ q, act, raw: islName(isl) });
       }
@@ -1581,7 +1582,7 @@ export function render(now) {
       if (d3.geoDistance(ct.pt, centerPt) > Math.PI / 2 - 0.02) continue;
       const q = proj(ct.pt);
       if (!q) continue;
-      const s = act ? 3.3 : 2.5;
+      const s = (act ? 3.3 : 2.5) * (coarse ? 1.3 : 1);
       ctx.beginPath();
       ctx.rect(q[0] - s, q[1] - s, s * 2, s * 2);
       ctx.fillStyle = '#2563EB';
@@ -1602,7 +1603,7 @@ export function render(now) {
     if (h.kind !== 'pt' || !vh(h)) return;
     const p = h.geo.coordinates;
     if (!vis(p) || d3.geoDistance(p, centerPt) > Math.PI / 2 - 0.02) return;
-    pushIconBox(proj(p), 4.5);
+    pushIconBox(proj(p), coarse ? 6 : 4.5);
   });
 
   // 2. Timezone 24-hour Clock Badges (st.on.timezone — placed before country/ocean labels so they never get blocked or overlap text)
@@ -2019,19 +2020,20 @@ export function render(now) {
       ctx.stroke();
     }
     ctx.beginPath();
+    const ms = coarse ? 1.3 : 1;
     if (h.t === 'strait') {
-      const s = act ? 8 : 6;
+      const s = (act ? 8 : 6) * ms;
       ctx.moveTo(q[0], q[1] - s);
       ctx.lineTo(q[0] + s, q[1]);
       ctx.lineTo(q[0], q[1] + s);
       ctx.lineTo(q[0] - s, q[1]);
       ctx.closePath();
     } else if (h.t === 'base') {
-      drawRegPoly(q[0], q[1], act ? 7.5 : 6, 5);
+      drawRegPoly(q[0], q[1], (act ? 7.5 : 6) * ms, 5);
     } else if (h.t === 'resource') {
-      drawRegPoly(q[0], q[1], act ? 7.2 : 5.8, 6, 0);
+      drawRegPoly(q[0], q[1], (act ? 7.2 : 5.8) * ms, 6, 0);
     } else {
-      ctx.arc(q[0], q[1], act ? 7 : 5.5, 0, 7);
+      ctx.arc(q[0], q[1], (act ? 7 : 5.5) * ms, 0, 7);
     }
     ctx.fillStyle = c;
     ctx.fill();
@@ -2183,6 +2185,19 @@ const zoom = d3.zoom()
 
 const sel = d3.select(cv).call(zoom).on('dblclick.zoom', null);
 
+// Pointer type: fingers and pens need bigger hit areas and markers than a mouse. Starts from the media query and
+// follows whatever the user touched last (hybrid laptops switch between both).
+coarse = typeof matchMedia === 'function' && matchMedia('(pointer: coarse)').matches;
+const syncPointer = e => {
+  const c = e.pointerType === 'touch' || e.pointerType === 'pen';
+  if (c !== coarse) {
+    coarse = c;
+    st.dirty = true;
+  }
+};
+cv.addEventListener('pointerdown', syncPointer, true);
+cv.addEventListener('pointermove', syncPointer, true);
+
 // Prevent browser page zoom (pinch-to-zoom / ctrl+wheel) when hitting map zoom limits or pinching over UI
 let gestStartK = 1;
 let gestWheelSeen = false;
@@ -2286,51 +2301,45 @@ export function pick(mx, my) {
   if (!ll) return null;
   const centerPt = proj.invert([cx, cy]);
 
-  // 1. Active Hotspot Points (within 10px)
-  let best = null, bd = 10;
-  H.forEach(h => {
-    if (h.kind !== 'pt' || !vh(h)) return;
-    const p = h.geo.coordinates;
-    if (d3.geoDistance(p, centerPt) > Math.PI / 2) return;
-    const q = proj(p);
-    const d = Math.hypot(q[0] - mx, q[1] - my);
-    if (d < bd) {
-      bd = d;
-      best = h;
-    }
-  });
-  if (best) return best;
+  // Hit reach grows with the pointer: a fingertip is ~10x wider than a cursor, and a mouse still gets some slack
+  const hs = coarse ? 1.9 : 1.3;
 
-  // 2. Visible Islands, Capitals, Cities (within 9px)
-  bd = 9;
-  const checkPt = o => {
-    if (d3.geoDistance(o.pt, centerPt) > Math.PI / 2 - 0.02) return;
-    const q = proj(o.pt);
+  // 1+2. Point markers (hotspot icons, islands, capitals, cities): the nearest one inside its reach wins
+  let best = null, bd = Infinity;
+  const near = (o, p, tol, w = 1) => {
+    if (d3.geoDistance(p, centerPt) > Math.PI / 2 - 0.02) return;
+    const q = proj(p);
+    if (!q) return;
     const d = Math.hypot(q[0] - mx, q[1] - my);
-    if (d < bd) {
-      bd = d;
+    if (d > tol * hs) return;
+    const dw = d * w;
+    if (dw < bd) {
+      bd = dw;
       best = o;
     }
   };
+  H.forEach(h => {
+    if (h.kind === 'pt' && vh(h)) near(h, h.geo.coordinates, 10, 0.85);
+  });
   if (st.on.islands) {
     for (const isl of ISLANDS) {
-      if (st.sel === isl || (isl.rank === 1 ? k >= 1.15 : k >= 1.85)) checkPt(isl);
+      if (st.sel === isl || (isl.rank === 1 ? k >= 1.15 : k >= 1.85)) near(isl, isl.pt, 9);
     }
   }
   if (st.on.capitals) {
     for (const cap of CAPITALS) {
-      if (st.sel === cap || (cap.rank === 1 ? k >= 1.05 : cap.rank === 2 ? k >= 1.55 : k >= 2.2)) checkPt(cap);
+      if (st.sel === cap || (cap.rank === 1 ? k >= 1.05 : cap.rank === 2 ? k >= 1.55 : k >= 2.2)) near(cap, cap.pt, 9);
     }
   }
   if (st.on.cities) {
     for (const ct of CITIES) {
-      if (st.sel === ct || (ct.rank === 1 ? k >= 1.3 : k >= 1.9)) checkPt(ct);
+      if (st.sel === ct || (ct.rank === 1 ? k >= 1.3 : k >= 1.9)) near(ct, ct.pt, 9);
     }
   }
   if (best) return best;
 
-  // 3. Active Hotspot Lines (within 7px)
-  bd = 7;
+  // 3. Active Hotspot Lines
+  bd = 7 * hs;
   H.forEach(h => {
     if (h.kind !== 'line' || !vh(h)) return;
     h.dense.forEach(l => {
@@ -2342,8 +2351,8 @@ export function pick(mx, my) {
         }
         const q = proj(p);
         if (prev) {
-          // mountain ridges are drawn as a row of ^ peaks, so they get twice the reach of a plain line
-          const d = segD(mx, my, prev, q) * (h.t === 'mountain' || h.mtn ? 0.5 : 1);
+          // mountain ridges are drawn as a row of ^ peaks, so they get ~1.7x the reach of a plain line
+          const d = segD(mx, my, prev, q) * (h.t === 'mountain' || h.mtn ? (coarse ? 0.8 : 0.6) : 1);
           if (d < bd) {
             bd = d;
             best = h;
@@ -2365,7 +2374,7 @@ export function pick(mx, my) {
 
   // 4. Tiny Countries (k >= 1.4, within 9px)
   if (k >= 1.4) {
-    let bt = null, bdt = 9;
+    let bt = null, bdt = 9 * hs;
     for (const f of MAP.F) {
       const mc = f.mainCen || f.cen;
       if (tinyPx(f) >= 120 || d3.geoDistance(mc, centerPt) > Math.PI / 2) continue;
@@ -2404,7 +2413,22 @@ export function pick(mx, my) {
   const hp = H.find(
     h => (h.kind === 'poly' || h.polyGeo) && !h.ringOnly && on(h) && d3.geoContains(h.polyGeo || h.geo, ll)
   );
-  return hp || null;
+  if (hp) return hp;
+
+  // Touch only: a tap that lands just off the coast or a small island still picks the country next to it
+  if (coarse) {
+    for (const rr of [10, 18]) {
+      for (let a = 0; a < 8; a++) {
+        const px = mx + rr * Math.cos((a * Math.PI) / 4), py = my + rr * Math.sin((a * Math.PI) / 4);
+        if (Math.hypot(px - cx, py - cy) > r) continue;
+        const l2 = proj.invert([px, py]);
+        if (!l2) continue;
+        const c2 = MAP.F.find(f => inBB(f, l2) && d3.geoContains(f, l2));
+        if (c2) return c2;
+      }
+    }
+  }
+  return null;
 }
 
 export function flyTo(ll, nk, dur = 1100) {

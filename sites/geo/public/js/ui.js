@@ -1,9 +1,9 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261108e';
-import { C0, TOOLS } from '../data/countries.js?v=20261108e';
-import { RELC, REL } from '../data/religions.js?v=20261108e';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108e';
-import { iconSvg } from './icons.js?v=20261108e';
-import { AL, REF } from '../data/alliances.js?v=20261108e';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261108h';
+import { C0, TOOLS } from '../data/countries.js?v=20261108h';
+import { RELC, REL } from '../data/religions.js?v=20261108h';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261108h';
+import { iconSvg } from './icons.js?v=20261108h';
+import { AL, REF } from '../data/alliances.js?v=20261108h';
 import {
   $,
   norm,
@@ -61,7 +61,7 @@ import {
   ISL_BY_ID,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108e';
+} from './state.js?v=20261108h';
 import {
   cv,
   proj,
@@ -79,7 +79,7 @@ import {
   rebuildSearchIndex,
   CONT_OBJS,
   contName
-} from './globe.js?v=20261108e';
+} from './globe.js?v=20261108h';
 import {
   CONT,
   AMERICAS,
@@ -96,7 +96,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261108e';
+} from '../data/continents.js?v=20261108h';
 
 const P = $('#panel');
 const PB = $('#pbody');
