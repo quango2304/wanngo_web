@@ -109,8 +109,8 @@ sites/geo/
   colour is `c`; a point label can take `side:'l'`, `dy`, `ox`), a colour `key`, and `src` = indexes into `sources`.
 - **`core` is required on every step** (the strategic logic, Tim Marshall style: what each actor needs, fears and can do, and why
   geography leaves it little choice). It is an interpretation, so it is attributed ("Moscow says…", "analysts argue…"), backed
-  by a source for each stated position, gives the other side's view, and never repeats the facts. The card shows it in a
-  box labelled as a geopolitical reading, not a fact.
+  by a source for each stated position, gives the other side's view, and never repeats the facts. The card shows it as the
+  paragraph right after the step text, with no box or label (the owner rejected a separate 'Cốt lõi' section).
 - The engine is `startStory` / `goStep` / `endStory` in `js/ui.js` (the step card has a sticky header with Back/Next and
   step dots) and `buildStoryShapes` / `drawStory` in `js/globe.js`. While a story runs `st.story` holds its scene and the
   reader's layers are snapshotted and restored on close; `savePrefs` does nothing meanwhile. The link is

@@ -1,29 +1,29 @@
 // Explainers ("Góc nhìn"): step-by-step geography stories, one file each. Order = order in the list.
 // withCore() merges the strategic-logic text (data/core_<id>.js) into a story: step.core, extra sources, a closing line.
-import { HORMUZ } from './story_hormuz.js?v=20261109e';
-import { UKRAINE } from './story_ukraine.js?v=20261109e';
-import { REDSEA } from './story_redsea.js?v=20261109e';
-import { TAIWAN } from './story_taiwan.js?v=20261109e';
-import { BIENDONG } from './story_biendong.js?v=20261109e';
-import { CHINA } from './story_china.js?v=20261109e';
-import { USA } from './story_usa.js?v=20261109e';
-import { ARCTIC } from './story_arctic.js?v=20261109e';
-import { INDOPAK } from './story_indopak.js?v=20261109e';
-import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109e';
-import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109e';
-import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109e';
-import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109e';
-import { THESIS as THESIS_CHINA } from './thesis_china.js?v=20261109e';
-import { THESIS as THESIS_ARCTIC } from './thesis_arctic.js?v=20261109e';
-import { THESIS as THESIS_REDSEA } from './thesis_redsea.js?v=20261109e';
-import { THESIS as THESIS_INDOPAK } from './thesis_indopak.js?v=20261109e';
-import { THESIS as THESIS_TAIWAN } from './thesis_taiwan.js?v=20261109e';
-import { THESIS as THESIS_USA } from './thesis_usa.js?v=20261109e';
-import { THESIS as THESIS_HORMUZ } from './thesis_hormuz.js?v=20261109e';
-import { THESIS as THESIS_UKRAINE } from './thesis_ukraine.js?v=20261109e';
-import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109e';
-import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109e';
-import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109e';
+import { HORMUZ } from './story_hormuz.js?v=20261109h';
+import { UKRAINE } from './story_ukraine.js?v=20261109h';
+import { REDSEA } from './story_redsea.js?v=20261109h';
+import { TAIWAN } from './story_taiwan.js?v=20261109h';
+import { BIENDONG } from './story_biendong.js?v=20261109h';
+import { CHINA } from './story_china.js?v=20261109h';
+import { USA } from './story_usa.js?v=20261109h';
+import { ARCTIC } from './story_arctic.js?v=20261109h';
+import { INDOPAK } from './story_indopak.js?v=20261109h';
+import { CORE as CORE_HORMUZ } from './core_hormuz.js?v=20261109h';
+import { VI as VI_HORMUZ } from './vi_hormuz.js?v=20261109h';
+import { CORE as CORE_REDSEA } from './core_redsea.js?v=20261109h';
+import { CORE as CORE_BIENDONG } from './core_biendong.js?v=20261109h';
+import { THESIS as THESIS_CHINA } from './thesis_china.js?v=20261109h';
+import { THESIS as THESIS_ARCTIC } from './thesis_arctic.js?v=20261109h';
+import { THESIS as THESIS_REDSEA } from './thesis_redsea.js?v=20261109h';
+import { THESIS as THESIS_INDOPAK } from './thesis_indopak.js?v=20261109h';
+import { THESIS as THESIS_TAIWAN } from './thesis_taiwan.js?v=20261109h';
+import { THESIS as THESIS_USA } from './thesis_usa.js?v=20261109h';
+import { THESIS as THESIS_HORMUZ } from './thesis_hormuz.js?v=20261109h';
+import { THESIS as THESIS_UKRAINE } from './thesis_ukraine.js?v=20261109h';
+import { THESIS as THESIS_BIENDONG } from './thesis_biendong.js?v=20261109h';
+import { CORE as CORE_TAIWAN } from './core_taiwan.js?v=20261109h';
+import { CORE as CORE_UKRAINE } from './core_ukraine.js?v=20261109h';
 
 function withCore(story, c) {
   const off = story.sources.length;
@@ -46,6 +46,7 @@ function withThesis(story, t) {
     if (t.titles && t.titles[i]) st.title = t.titles[i];
     if (t.texts && t.texts[i]) st.text = t.texts[i];
     if (t.cores && t.cores[i]) st.core = t.cores[i];
+    else if (t.cores && t.cores[i] === null) delete st.core; // the text already carries the reasoning
   });
   story.steps.unshift(t.step);
   return story;

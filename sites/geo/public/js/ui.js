@@ -1,10 +1,10 @@
-import { NAMES, REGIONS } from '../data/regions.js?v=20261109e';
-import { C0, TOOLS } from '../data/countries.js?v=20261109e';
-import { RELC, REL } from '../data/religions.js?v=20261109e';
-import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261109e';
-import { iconSvg } from './icons.js?v=20261109e';
-import { AL, REF } from '../data/alliances.js?v=20261109e';
-import { STORIES } from '../data/stories.js?v=20261109e';
+import { NAMES, REGIONS } from '../data/regions.js?v=20261109h';
+import { C0, TOOLS } from '../data/countries.js?v=20261109h';
+import { RELC, REL } from '../data/religions.js?v=20261109h';
+import { LAYERS, UPDATED, H } from '../data/hotspots.js?v=20261109h';
+import { iconSvg } from './icons.js?v=20261109h';
+import { AL, REF } from '../data/alliances.js?v=20261109h';
+import { STORIES } from '../data/stories.js?v=20261109h';
 import {
   $,
   norm,
@@ -64,7 +64,7 @@ import {
   ADM1_BY_ID,
   LAKE_BY_ID,
   SEA_BY_EN
-} from './state.js?v=20261109e';
+} from './state.js?v=20261109h';
 import {
   cv,
   proj,
@@ -83,7 +83,7 @@ import {
   CONT_OBJS,
   contName,
   buildStoryShapes
-} from './globe.js?v=20261109e';
+} from './globe.js?v=20261109h';
 import {
   CONT,
   AMERICAS,
@@ -100,7 +100,7 @@ import {
   WORLD_POP_2024,
   cardKey,
   contOf
-} from '../data/continents.js?v=20261109e';
+} from '../data/continents.js?v=20261109h';
 
 const P = $('#panel');
 const PB = $('#pbody');
@@ -271,16 +271,15 @@ function storyHTML(def, i) {
   // the whole argument in one view (first step): numbered links, each tagged, in plain words
   if (step.chain && step.chain.length)
     s += `<ol class="stchain">${step.chain.map(c => `<li><b class="t-${c.tag}">${stagName(c.tag)}</b>${c.head ? `<strong>${tx(c.head)}</strong>` : ''}<span>${tx(c.text)}</span></li>`).join('')}</ol>`;
-  // the strategic logic (what each side needs and fears): an interpretation, labelled as such, kept apart from the facts
-  if (step.core)
-    s += `<div class="stcore"><b>${tr('Cốt lõi', 'The core')}</b><p>${tx(step.core)}</p><small>${tr('Cách lý giải địa chính trị, không phải dữ kiện; các bên có thể lập luận khác.', 'A geopolitical reading, not a fact; the parties may argue differently.')}</small></div>`;
+  // the strategic logic (what each side needs and fears) continues the text as one flowing read, no box or label
+  if (step.core) s += `<p class="txt txt2">${tx(step.core)}</p>`;
   if (step.facts && step.facts.length) s += `<ul class="stfacts">${step.facts.map(f => `<li>${tx(f)}</li>`).join('')}</ul>`;
   if (step.key && step.key.length)
     s += `<div class="stkey">${step.key.map(k => `<span><span class="sq" style="background:${k.c}"></span>${tx(k)}</span>`).join('')}</div>`;
   if (last && def.status)
     s += `<div class="stnow"><b>${tr('Tình hình tới ngày', 'Situation as of')} ${storyDate(def.asof)}</b><p>${tx(def.status)}</p></div>`;
   if (last && def.bottom)
-    s += `<div class="stcore stbottom"><b>${tr('Kết luận cốt lõi', 'The bottom line')}</b><p>${tx(def.bottom)}</p></div>`;
+    s += `<p class="txt txt2 stend">${tx(def.bottom)}</p>`;
   const srcIdx = [...new Set([...(step.src || []), ...(last ? def.statusSrc || [] : [])])];
   if (srcIdx.length)
     s += `<div class="stsrc">${tr('Nguồn', 'Sources')}: ${srcIdx
@@ -1227,7 +1226,7 @@ let seaTextP = null;
 const loadSeaText = () =>
   (seaTextP =
     seaTextP ||
-    Promise.all([import('../data/sea_story.js?v=20261109e'), import('../data/sea_info.js?v=20261109e')])
+    Promise.all([import('../data/sea_story.js?v=20261109h'), import('../data/sea_info.js?v=20261109h')])
       .then(([a, b]) => (SEA_TEXT = { story: a.SEA_STORY || {}, info: b.SEA_INFO || {} }))
       .catch(() => (SEA_TEXT = { story: {}, info: {} })));
 

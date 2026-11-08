@@ -2078,3 +2078,5 @@ body:has(#legend.show) #hint { opacity: 0 !important; }
 .stchain li span { display: block; }
 .stchain li strong { display: block; font-size: 15.5px; font-weight: 700; line-height: 1.35; margin: 1px 0 3px; color: var(--ink); }
 .stchain li span { color: var(--muted); font-size: 13.5px; }
+.txt.txt2 { margin-top: 10px; }
+.txt.stend { font-weight: 600; }
