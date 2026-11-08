@@ -1,8 +1,8 @@
 import { NAMES, REGIONS } from '../data/regions.js';
-import { C0 } from '../data/countries.js?v=20261108g';
+import { C0 } from '../data/countries.js?v=20261108h';
 import { LAYERS, H } from '../data/hotspots.js';
 import { AL, REF } from '../data/alliances.js';
-import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108g';
+import { CONT, AMERICAS, CONT_KEYS, CONT_LINES, contOf, contAt, isSplit } from '../data/continents.js?v=20261108h';
 import {
   $,
   norm,
@@ -44,7 +44,7 @@ import {
   ADMIN1_META,
   ADM1_BY_ID,
   LAKE_BY_ID
-} from './state.js?v=20261108g';
+} from './state.js?v=20261108h';
 
 export const cv = $('#cv');
 export const ctx = cv.getContext('2d');

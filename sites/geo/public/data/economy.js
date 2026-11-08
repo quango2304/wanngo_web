@@ -1,23 +1,23 @@
 // Macroeconomic & Development Profiles for 241 Countries & Territories (Bilingual VI / EN)
 export const ECON_TIERS = {
   "adv": {
-    "vi": "Thu nhập cao",
-    "en": "High income",
+    "vi": "Kinh tế phát triển · Thu nhập cao",
+    "en": "Advanced · High-Income",
     "c": "#10B981"
   },
   "emg": {
-    "vi": "Thu nhập trung bình cao",
-    "en": "Upper-middle income",
+    "vi": "Đang phát triển · Thu nhập TB cao",
+    "en": "Emerging · Upper-Middle Income",
     "c": "#0EA5E9"
   },
   "dev": {
-    "vi": "Thu nhập trung bình thấp",
-    "en": "Lower-middle income",
+    "vi": "Đang phát triển · Thu nhập TB thấp",
+    "en": "Developing · Lower-Middle Income",
     "c": "#F59E0B"
   },
   "low": {
-    "vi": "Thu nhập thấp",
-    "en": "Low income",
+    "vi": "Kém phát triển · Thu nhập thấp",
+    "en": "Least Developed · Low-Income",
     "c": "#EF4444"
   }
 };
@@ -283,7 +283,7 @@ export const ECON = {
     "note_en": "Guam's ~$6.9 billion high-income economy (~$40,800 per capita) rests on twin pillars: massive US federal defense spending and military construction (led by the >$10 billion build-out of Marine Corps Base Camp Blaz and the 360-degree Guam missile defense system) and duty-free beach resort tourism along Tumon Bay catering to Japanese and South Korean visitors. While East Asian tourist arrivals have recovered gradually due to a weak Japanese yen and post-Super Typhoon Mawar (2023) hotel repairs, unprecedented Pentagon infrastructure investment and new Google-backed trans-Pacific subsea cable landings continue to drive strong construction and services demand."
   },
   "American Samoa": {
-    "tier": "adv",
+    "tier": "emg",
     "gdp_vi": "~0,88 tỷ USD (lãnh thổ Mỹ)",
     "gdp_en": "~$880M (US Territory)",
     "pc_vi": "~18.000 USD",
@@ -1320,7 +1320,7 @@ export const ECON = {
     "note_en": "Frequently dubbed the \"Singapore of Africa\" for its clean governance, digital public services, and monthly community clean-up tradition (Umuganda), Rwanda has sustained impressive GDP growth of ~7.5–8% annually. Its service-led model combines international MICE conferences, global \"Visit Rwanda\" sports sponsorships, and high-margin mountain gorilla conservation tourism ($1,500 per trekking permit) with specialty coffee and tea exports, gold refining, and 3T critical minerals (tin, tantalum, tungsten) trade. Key structural challenges include transitioning its largely rural workforce into higher-productivity jobs and managing Western donor aid suspensions triggered by the conflict in eastern DR Congo."
   },
   "Russia": {
-    "tier": "adv",
+    "tier": "emg",
     "gdp_vi": "~2.186 tỷ USD (#10 thế giới, #4 PPP)",
     "gdp_en": "~$2.19T (#10 globally, #4 PPP)",
     "pc_vi": "~14.960 USD (PPP ~47.690 USD)",
@@ -1745,7 +1745,7 @@ export const ECON = {
     "note_en": "Nepal's ~$45B economy relies heavily on overseas worker remittances (~25–27% of GDP from the Gulf, Malaysia, and India), Himalayan trekking tourism, and subsistence farming. Its currency is pegged to the Indian Rupee (1.6 to 1), and India accounts for ~65% of Nepal's total external trade. While domestic industrial jobs remain scarce, Nepal is unlocking a major new revenue stream in 2024–2026 by exporting Himalayan hydropower to India (targeting 10,000 MW) and Bangladesh."
   },
   "Nauru": {
-    "tier": "adv",
+    "tier": "emg",
     "gdp_vi": "~0,20 tỷ USD (~200 triệu USD) (#199 thế giới)",
     "gdp_en": "~$200M (#199 globally)",
     "pc_vi": "~14.050 USD (PPP ~13.610 USD)",
@@ -2578,7 +2578,7 @@ export const ECON = {
     "note_en": "As the poorest nation in the Western Hemisphere, Haiti has suffered six consecutive years of economic contraction (2019–2024) as gang warfare, fuel blockades, and hyperinflation crippled urban commerce. Diaspora remittances of roughly $3.8–4.5 billion per year (exceeding 20% of GDP) serve as the primary economic lifeline preventing total humanitarian collapse for millions of households. Outside subsistence farming and exports of prized vetiver essential oil for luxury perfumes, formal industry centers on duty-free apparel assembly for the US market under the HOPE/HELP trade preference acts—increasingly concentrated in the safer northern Caracol Industrial Park after gang violence forced factory closures in Port-au-Prince."
   },
   "Guyana": {
-    "tier": "adv",
+    "tier": "emg",
     "gdp_vi": "~24,7 tỷ USD (#120 thế giới)",
     "gdp_en": "~$24.7B (#120 globally)",
     "pc_vi": "~29.680 USD (PPP ~80.270 USD)",
@@ -3275,7 +3275,7 @@ export const ECON = {
     "note_en": "Serving as the economic locomotive of the Euro-pegged West African CFA franc zone, Côte d'Ivoire supplies ~40% of the world's cocoa and leads global cashew production alongside burgeoning gold, rubber, and palm oil exports. By aggressively expanding domestic value-added processing—overtaking the Netherlands as the world's #1 cocoa-grinding nation in 2024–2025—and ramping up offshore oil and gas production at the Baleine field, the economy maintains ~6.5% annual growth despite climate pressures on aging cocoa trees."
   },
   "Costa Rica": {
-    "tier": "adv",
+    "tier": "emg",
     "gdp_vi": "~97 tỷ USD (#73 thế giới)",
     "gdp_en": "~$97B (#73 globally)",
     "pc_vi": "~18.850 USD (PPP ~31.550 USD)",
