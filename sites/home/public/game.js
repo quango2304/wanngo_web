@@ -134,11 +134,13 @@
 
   // Spots dev walks to (feet position)
   const SPOTS = {
-    coffee: { group: 'coffee', x: 190, y: 242, tall: [62, 304], line: 'refill time' },
+    // In the tall room he stands on the table's right and the sip clip plays mirrored;
+    // either way the mug in the clip lands on the mug on the table
+    coffee: { group: 'coffee', x: 190, y: 242, tall: [94, 288], line: 'refill time' },
     window: { group: 'bed', x: 340, y: 252, tall: [150, 340], line: 'look at that sky' },
     game: { group: 'bag', x: 445, y: 266 },
     mat: { group: 'mat', x: 110, y: 250 },
-    bed: { group: 'bed', x: 246, y: 244, tall: [100, 432] }
+    bed: { group: 'bed', x: 246, y: 244 } // must match the first frame of dev-bed.png
   };
   const CAT_SPOTS = {
     wide: [[40, 252], [220, 262], [400, 262], [520, 262]],
@@ -770,7 +772,12 @@
     catLie: ['cat-lie', 56, 56],
     // stand, crouch (1-4), leap (5-6), land (7), paws down (8); the cat starts 4px in and
     // ends 43px further on, so it is drawn 4px left of the 56px cat and moved on after
-    catPounce: ['cat-pounce', 112, 56]
+    catPounce: ['cat-pounce', 112, 56],
+    // The bed with him climbing in, drawn in place of the bed: from standing at its head
+    // (frame 0, his feet on SPOTS.bed) to asleep under the blanket (the bedSleep sprite)
+    bedIn: ['dev-bed', 208, 156],
+    // Standing at the coffee table (his feet 26px in, 142px down) with the mug beside him
+    sip: ['dev-sip', 92, 148]
   };
   // How far the cat's body has moved on in each pounce frame
   const POUNCE_SHIFT = [0, 1, 4, 4, 5, 16, 29, 43, 44];
@@ -989,18 +996,63 @@
         dev.wait = 4;
         dev.flip = false;
         sayDev(spot.line);
-        if (spot === SPOTS.coffee) fx('coffee', 0.7);
+        if (spot === SPOTS.window) return play(dev, 'rear', [0], 1, true); // back to us, looking out
         play(dev, 'stand', [8], 1, true);
+        if (spot === SPOTS.coffee) {
+          fx('coffee', 0.7);
+          dev.flip = L.tall;
+          sip();
+        }
       });
     });
   }
 
+  // At the coffee table: reach for the mug, a slow sip, put it back. The mug on the
+  // table is hidden while the clip has it.
+  const cup = { on: false };
+
+  function sip() {
+    const n = sprites.sip ? sprites.sip.width / SHEETS.sip[1] : 0;
+    if (still || !n) return;
+    cup.on = true;
+    play(cup, 'sip', seq(0, n - 1), 6, false, () => { cup.on = false; });
+    dev.wait = Math.max(dev.wait, n / 6 + 0.8);
+  }
+
+  // Climbing into bed and out again is one clip, played forward or back
+  const tuck = { on: false };
+
+  function tuckIn(then) {
+    dev.state = 'tuck';
+    const n = sprites.bedIn ? sprites.bedIn.width / SHEETS.bedIn[1] : 0;
+    const done = () => {
+      tuck.on = false;
+      dev.state = 'sleep';
+      dev.bed = dev.bedTo = 1;
+      then();
+    };
+    if (still || !n) return done();
+    tuck.on = true;
+    play(tuck, 'bedIn', seq(0, n - 1), 7, false, done);
+  }
+
+  function tuckOut(then) {
+    dev.state = 'tuck';
+    dev.bed = dev.bedTo = 0;
+    const n = sprites.bedIn ? sprites.bedIn.width / SHEETS.bedIn[1] : 0;
+    const done = () => {
+      tuck.on = false;
+      then();
+    };
+    if (still || !n) return done();
+    tuck.on = true;
+    play(tuck, 'bedIn', seq(n - 1, 0), 8, false, done);
+  }
+
   function nap() {
     standUp(() => walkTo(feetTo(SPOTS.bed), () => {
-      dev.state = 'sleep';
-      dev.bedTo = 1;
-      dev.napFor = 10;
       sayDev('quick nap');
+      tuckIn(() => { dev.napFor = 10; });
     }));
   }
 
@@ -1024,19 +1076,21 @@
   }
 
   function wakeUp(line) {
-    dev.state = 'pause';
-    dev.wait = 1;
     dev.napFor = 0;
-    dev.bedTo = 0;
     sayDev(line);
+    [dev.x, dev.y] = feetTo(SPOTS.bed);
+    dev.flip = false;
     play(dev, 'stand', [8], 1, true);
+    tuckOut(() => {
+      dev.state = 'pause';
+      dev.wait = 1;
+    });
   }
 
   function goToBed() {
     const toBed = () => walkTo(feetTo(SPOTS.bed), () => {
-      dev.state = 'sleep';
-      dev.bedTo = 1;
       sayDev('goodnight');
+      tuckIn(() => {});
     });
     if (dev.state === 'code') standUp(toBed);
     else toBed();
@@ -1119,13 +1173,18 @@
         wakeUp('morning…');
       }
     }
-    if (dev.state !== 'sleep') stepClip(dev, dt);
+    if (tuck.on) stepClip(tuck, dt);
+    else if (dev.state !== 'sleep') stepClip(dev, dt);
+    if (cup.on) stepClip(cup, dt);
     const fade = still ? 1 : dt / 0.5;
-    dev.bed = dev.bedTo > dev.bed ? Math.min(1, dev.bed + fade) : Math.max(0, dev.bed - fade);
+    if (dev.bedTo > dev.bed) dev.bed = Math.min(dev.bedTo, dev.bed + fade);
+    else if (dev.bedTo < dev.bed) dev.bed = Math.max(dev.bedTo, dev.bed - fade);
   }
 
   // Jump straight to a sensible place, used at load and when the layout flips
   function settleForLayout() {
+    tuck.on = false;
+    cup.on = false;
     if (isSleepTime()) {
       [dev.x, dev.y] = feetTo(SPOTS.bed);
       dev.state = 'sleep';
@@ -1141,7 +1200,12 @@
   }
 
   function drawDev() {
-    if (dev.bed >= 1) return; // he's in the bed sprite
+    if (dev.bed >= 1 || tuck.on) return; // he's in the bed sprite, or the climbing-in clip
+    if (cup.on) {
+      // The sip clip's frame is 92px wide with his feet 26px in (65px when mirrored)
+      const x = dev.x + 58 - (dev.flip ? 65 : 26);
+      return frame('sip', cup.frames[cup.i], x, dev.y + 146 - 142, dev.flip);
+    }
     ctx.globalAlpha = 1 - dev.bed;
     drawDevFrame();
     ctx.globalAlpha = 1;
@@ -1177,6 +1241,8 @@
     const [x, y] = at(r.group, r.x, r.y);
     let name = r.sprite;
     if (name === 'console' && dev.state === 'play') name = 'consolePlain';
+    if (name === 'bed' && tuck.on) return frame('bedIn', tuck.frames[tuck.i], x - 56, y - 54, false);
+    if (name === 'mug' && cup.on) return;
     sprite(name, x, y);
     if (name === 'monitor') drawTerm(ox + x, oy + y);
     if (name === 'bed' && dev.bed > 0) {
@@ -1729,7 +1795,7 @@
   // it's down. The cat stalks it, crouches, wiggles and pounces: hold still and he gets it,
   // flick away and he misses. Catches are kept per visitor, and he warms up to you.
   const POINTER = { x: 151, y: 161 }; // on the desk, in the wide room
-  const laser = { held: false, on: false, x: 0, y: 0, seenAt: 0, movedAt: 0, devFor: 0, devAt: 0 };
+  const laser = { held: false, on: false, x: 0, y: 0, px: 0, py: 0, vx: 0, vy: 0, seenAt: 0, movedAt: 0, devFor: 0, devAt: 0 };
   const aim = { x: 0, y: 0, at: 0, floor: false }; // where the visitor's pointer rests, laser or not
   const gameEl = document.getElementById('game');
   const toyBtn = document.getElementById('toy');
@@ -1817,10 +1883,24 @@
   function updateLaser(dt) {
     if (!laser.held || !laser.on) {
       laser.devFor = 0;
+      laser.fresh = true;
+      laser.vx = laser.vy = 0;
       return;
     }
     const now = performance.now();
     laser.seenAt = now;
+    // How fast the dot is going, smoothed, so a leap can lead it
+    if (laser.fresh) {
+      laser.fresh = false;
+      laser.px = laser.x;
+      laser.py = laser.y;
+    }
+    if (dt > 0) {
+      laser.vx = clamp(laser.vx + ((laser.x - laser.px) / dt - laser.vx) * 0.2, -300, 300);
+      laser.vy = clamp(laser.vy + ((laser.y - laser.py) / dt - laser.vy) * 0.2, -300, 300);
+    }
+    laser.px = laser.x;
+    laser.py = laser.y;
     // Under his paws the dot is gone, until you slide it out. A dot he has caught is dead to
     // him until it moves again, so holding still only wins once.
     if (cat.pinned && Math.hypot(laser.x - cat.pinned[0], laser.y - cat.pinned[1]) > 12) cat.pinned = null;
@@ -1939,6 +2019,9 @@
 
   // From a crouch, spring at a point: the leap lands the front paws 60px ahead,
   // nudged by up to 48px shorter or 28px longer to land on target
+  // The body really travels: it flies `far` px forward in a straight line while the
+  // frames play, and each frame is pulled back by how far the sheet already moved it.
+  // Front paws end up 16px ahead of the body.
   function leap(target, arc) {
     const s = cat.flip ? -1 : 1;
     const feet = [cat.x + 28, cat.y + 51];
@@ -1947,8 +2030,8 @@
       t: 0,
       sx: cat.x,
       sy: cat.y,
-      cx: s * clamp(s * (target[0] - feet[0]) - 60, -48, 28),
-      cy: clamp(target[1] - feet[1], -12, 12),
+      far: clamp(s * (target[0] - feet[0]) - 16, arc ? 6 : 24, 80),
+      cy: clamp(target[1] - feet[1], -14, 14),
       arc
     };
     cat.energy -= 0.13;
@@ -1989,8 +2072,9 @@
   function updateToy(dt) {
     const now = performance.now();
     const feet = [cat.x + 28, cat.y + 51];
-    // Low enough means on the floor, or the very bottom of something he can reach
-    const low = laser.y > floorTop() - 14;
+    // Anywhere below the wall line counts as floor; behind the furniture he goes for the
+    // nearest open floor in front of it
+    const low = laser.y > L.wall + 2;
     const goal = [floorX(laser.x), low ? clamp(laser.y, floorTop(), floorBottom()) : floorTop()];
     const dx = goal[0] - feet[0];
     const dy = goal[1] - feet[1];
@@ -2012,19 +2096,23 @@
           catAlert(0);
           break;
         }
-        if (low && Math.abs(dy) < 10 && Math.abs(dx) > 15 && Math.abs(dx) < 85 && cat.energy > 0) {
+        // A dot on the move gets a quick crouch; a still one gets the full butt wiggle
+        const moving = now - laser.movedAt < 250;
+        if (low && Math.abs(dy) < 14 && Math.abs(dx) > 40 && Math.abs(dx) < 96 && cat.energy > 0) {
           cat.flip = dx < 0;
           cat.toy = 'crouch';
-          cat.t = 0.35 + Math.random() * 0.6;
+          cat.t = moving ? 0.15 + Math.random() * 0.15 : 0.35 + Math.random() * 0.5;
           cat.lock = goal;
-          play(cat, 'catPounce', [1, 2, 3], 10, false, () => play(cat, 'catPounce', [3, 4], 9, true));
+          play(cat, 'catPounce', [1, 2, 3], 12, false, () => play(cat, 'catPounce', [3, 4], 9, true));
           break;
         }
-        // Stand a leap short of the dot, or right under it when it's up on the wall
+        // Stand a leap short of the dot, or right under it when it's up on the wall.
+        // He runs while it moves and only creeps up on a dot that sits still.
         const face = Math.abs(dx) < 15 ? (cat.flip ? -1 : 1) : Math.sign(dx);
-        const spot = low ? [floorX(goal[0] - face * 55), goal[1]] : [goal[0], floorTop()];
-        const far = Math.hypot(spot[0] - feet[0], spot[1] - feet[1]) > 70;
-        if (catStep(spot, (far ? 95 : 38) * zoomies, dt, !far && low)) {
+        const spot = low ? [floorX(goal[0] - face * 60), goal[1]] : [goal[0], floorTop()];
+        const near = Math.hypot(spot[0] - feet[0], spot[1] - feet[1]) < 50;
+        const creep = near && low && !moving;
+        if (catStep(spot, (creep ? 55 : 120) * zoomies, dt, creep)) {
           if (!low) {
             cat.toy = 'stare';
             cat.t = 0.4;
@@ -2035,7 +2123,7 @@
       }
 
       case 'crouch':
-        if (!laser.on || Math.hypot(goal[0] - cat.lock[0], goal[1] - cat.lock[1]) > 24) {
+        if (!laser.on || Math.hypot(goal[0] - cat.lock[0], goal[1] - cat.lock[1]) > 45) {
           cat.wig = 0;
           cat.toy = 'chase';
           cat.kind = '';
@@ -2044,21 +2132,25 @@
         cat.wig = still ? 0 : (Math.floor(now / 90) % 2) * (cat.flip ? 1 : -1);
         if (cat.t > 0) break;
         cat.wig = 0;
-        leap(goal, 0);
+        // Aim where the dot is heading, the way a cat leads a running mouse
+        leap([goal[0] + laser.vx * 0.42, clamp(goal[1] + laser.vy * 0.42, floorTop(), floorBottom())], 0);
         break;
 
       case 'leap': {
         const j = cat.jump;
         j.t += dt;
-        const k = Math.min(1, j.t / 0.42);
-        cat.x = j.sx + j.cx * k;
+        // In the air for the three frames before paws-down, then a beat on the ground
+        const k = Math.min(1, j.t / 0.31);
+        const s = cat.flip ? -1 : 1;
+        if (k >= 1 && cat.frames[cat.i] !== 8) play(cat, 'catPounce', [8], 1, true);
+        const body = POUNCE_SHIFT[4] + (j.far - POUNCE_SHIFT[4]) * k; // from where the crouch left him
+        cat.x = j.sx + s * (body - POUNCE_SHIFT[cat.frames[cat.i]]);
         cat.y = j.sy + j.cy * k;
         cat.hop = -Math.round(Math.sin(k * Math.PI) * (4 + j.arc));
-        if (k < 1) break;
+        if (j.t < 0.42) break;
         cat.hop = 0;
-        play(cat, 'catPounce', [8], 1, true);
-        const paws = cat.x + 28 + (cat.flip ? -60 : 60);
-        if (laser.on && low && !j.arc && Math.abs(paws - laser.x) < 10 && Math.abs(cat.y + 51 - goal[1]) < 9) caught();
+        const paws = j.sx + 28 + s * (j.far + 16);
+        if (laser.on && low && !j.arc && Math.abs(paws - laser.x) < 14 && Math.abs(cat.y + 51 - goal[1]) < 10) caught();
         else {
           cat.toy = 'miss';
           cat.t = 0.55;
@@ -2118,7 +2210,7 @@
         }
         // Low on the wall and holding still: he tries to jump for it
         if (laser.y > floorTop() - 70 && now - laser.movedAt > 1200 && cat.energy > 0.3 && Math.random() < dt * 0.8) {
-          leap([feet[0] + (cat.flip ? -20 : 20), feet[1]], 16);
+          leap([feet[0] + (cat.flip ? -24 : 24), feet[1]], 16);
         }
         break;
 
@@ -2189,7 +2281,7 @@
       const f = cat.frames[cat.i];
       on(cat.x + 28 + (cat.flip ? -1 : 1) * POUNCE_SHIFT[f], cat.y + 51, f === 5 || f === 6 ? 11 : 15, 3);
     } else on(cat.x + 28, cat.y + 51, 15, 3);
-    if (['walk', 'front', 'rear', 'stand'].includes(dev.sheet)) on(dev.x + 58, dev.y + 146, 17, 3);
+    if (['walk', 'front', 'rear', 'stand'].includes(dev.sheet) && dev.bed < 1 && !tuck.on) on(dev.x + 58, dev.y + 146, 17, 3);
     if (dev.sheet === 'push') on(dev.x + 74, dev.y + 144, 56, 4);
   }
 
