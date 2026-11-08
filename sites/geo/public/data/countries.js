@@ -2839,7 +2839,7 @@ export const C0 = {
       [
         "g",
         "Hiệp ước Lateran (1929) với Ý công nhận chủ quyền độc lập vĩnh viễn và bất khả xâm phạm của Tòa Thánh",
-        "Hiệp ước Lateran năm 1929 công nhận chủ quyền bất khả xâm phạm của Vatican và quy chế trung lập vĩnh viễn không can dự vào các cuộc tranh chấp lãnh thổ thế tục, đồng thời cấp quy chế ngoại교 cho nhiều tòa nhà của Tòa Thánh nằm rải rác trong thành phố Rome. Tòa Thánh hiện duy trì quan hệ ngoại giao chính thức với hơn 180 quốc gia và là quan sát viên thường trực tại Liên Hợp Quốc."
+        "Hiệp ước Lateran năm 1929 công nhận chủ quyền bất khả xâm phạm của Vatican và quy chế trung lập vĩnh viễn không can dự vào các cuộc tranh chấp lãnh thổ thế tục, đồng thời cấp quy chế ngoại giao cho nhiều tòa nhà của Tòa Thánh nằm rải rác trong thành phố Rome. Tòa Thánh hiện duy trì quan hệ ngoại giao chính thức với hơn 180 quốc gia và là quan sát viên thường trực tại Liên Hợp Quốc."
       ],
       [
         "b",
@@ -3835,7 +3835,7 @@ export const C0 = {
     "pop": "~116 triệu",
     "area": "1,0 triệu km²",
     "ch": "c5",
-    "sum": "Được nhà sử học cổ đại Herodotus mệnh danh là \"Món quà của sông Nile\", Ai Cập là nơi hơn 116 triệu người sinh sống chen chúc trên dải thung lũng và châu thổ xanh tươi chỉ chiếm khoảng 4% diện tích đất nước giữa sa mạc Sahara mênh mông. Nằm ở ngã tư chiến lược nối liền Bắc Phi với Tây Á qua bán đảo Sinai, hai vùng sa mạc khô cằn phía đông và phía tây từng đóng vai trò hào lũy tự nhiên bảo vệ nền văn minh các Pharaoh suốt hơn 5.000 năm lịch sử. Việc đào thông kênh đào Suez năm 1869 và quốc hữu hóa kênh này năm 1956 dưới thời Tổng thống Nasser đã đặt Ai Cập vào tâm điểm địa chính trị hàng hải toàn cầu.\n\nLà quốc gia đông dân nhất và là trung tâm văn hóa – học thuật hàng đầu của thế giới Ả Rập, Ai Cập hiện đang xây dựng Thủ đô Hành chính Mới ở phía đông Cairo nhằm giải tỏa áp lực dân số nghẹt thở dọc bờ sông Nile. Trong giai đoạn 2024–2026, dù doanh thu kênh đào Suez sụt giảm mạnh do khủng hoảng an ninh Biển Đỏ, Cairo đã vượt qua cơn khát ngoại tệ nhờ gói đầu tư kỷ lục 35 tỷ USD của UAE vào bán đảo Ras El-Hekma và sự hỗ trợ từ IMF, EU. Tuy nhiên, việc Ethiopia hoàn tất tích nước và vận hành siêu đập thủy điện Đại Phục Hưng (GERD) ở thượng nguồn vẫn được Ai Cập coi là thách thức an ninh nguồn nước sống còn nhất.",
+    "sum": "Được nhà sử học cổ đại Herodotus mệnh danh là \"Món quà của sông Nile\", Ai Cập là nơi hơn 116 triệu người sinh sống chen chúc trên dải thung lũng và châu thổ xanh tươi chỉ chiếm khoảng 4% diện tích đất nước giữa sa mạc Sahara mênh mông. Nằm ở ngã tư chiến lược nối liền Bắc Phi với Tây Á qua bán đảo Sinai, hai vùng sa mạc khô cằn phía đông và phía tây từng đóng vai trò hào lũy tự nhiên bảo vệ nền văn minh các Pharaoh suốt hơn 5.000 năm lịch sử. Việc đào thông kênh đào Suez năm 1869 và quốc hữu hóa kênh này năm 1956 dưới thời Tổng thống Nasser đã đặt Ai Cập vào tâm điểm địa chính trị hàng hải toàn cầu.\n\nLà quốc gia đông dân nhất và là trung tâm văn hóa – học thuật hàng đầu của thế giới Ả Rập, Ai Cập hiện đang xây dựng Thủ đô Hành chính Mới ở phía đông Cairo nhằm giải tỏa áp lực dân số nghẹt thở dọc bờ sông Nile. Trong giai đoạn 2024–2026, dù doanh thu kênh đào Suez sụt giảm mạnh do khủng hoảng an ninh Biển Đỏ, Cairo đã vượt qua cơn khát ngoại tệ nhờ gói đầu tư kỷ lục 35 tỷ USD của UAE vào bán đảo Ras El-Hekma và sự hỗ trợ từ IMF, EU. Tuy nhiên, việc Ethiopia chính thức khánh thành đập Đại Phục Hưng (GERD) vào ngày 9/9/2025 mà không có thỏa thuận ba bên ràng buộc vẫn được Ai Cập coi là thách thức an ninh nguồn nước sống còn nhất.",
     "t": [
       [
         "g",
@@ -3860,7 +3860,7 @@ export const C0 = {
       [
         "b",
         "Tử huyệt địa chính trị: ~85% lượng nước sông Nile bắt nguồn từ cao nguyên Ethiopia",
-        "Tử huyệt địa chính trị lớn nhất của Ai Cập nằm ở chỗ đất nước ở cuối nguồn nhưng lại phụ thuộc hoàn toàn vào sông Nile, nơi ~85% lượng nước bắt nguồn từ dòng Nile Xanh trên cao nguyên Ethiopia. Việc Addis Ababa vận hành đại đập GERD khiến Cairo luôn lo ngại nguy cơ thiếu nước nghiêm trọng nếu xảy ra các đợt hạn hán kéo dài nhiều năm."
+        "Tử huyệt địa chính trị lớn nhất của Ai Cập nằm ở chỗ đất nước ở cuối nguồn nhưng lại phụ thuộc hoàn toàn vào sông Nile, nơi ~85% lượng nước bắt nguồn từ dòng Nile Xanh trên cao nguyên Ethiopia. Việc Addis Ababa chính thức khánh thành đại đập GERD ngày 9/9/2025 (công suất 5.150 MW) mà không có hiệp định ba bên ràng buộc pháp lý khiến Cairo luôn lo ngại nguy cơ thiếu nước nghiêm trọng nếu xảy ra các đợt hạn hán kéo dài nhiều năm."
       ]
     ],
     "hs": [
@@ -3869,14 +3869,15 @@ export const C0 = {
       "gerd",
       "africalines",
       "sahara",
-      "r_suez"
+      "r_suez",
+      "redsea"
     ]
   },
   "Libya": {
     "cap": "Tripoli",
     "pop": "~7,4 triệu",
     "area": "1,76 triệu km²",
-    "sum": "Trải rộng trên diện tích 1,76 triệu km² ở Bắc Phi với hơn 90% là sa mạc Sahara khô cằn, Libya sở hữu đường bờ biển Địa Trung Hải dài nhất khu vực (~1.770 km) nằm ngay đối diện miền nam nước Ý. Trong suốt lịch sử từ thời thuộc địa Phoenicia, Hy Lạp, La Mã cho tới thời Đế chế Ottoman và thuộc địa Ý, địa lý tự nhiên đã chia tách đất nước thành ba vùng riêng biệt: Tripolitania ở phía tây hướng về Tunisia, Cyrenaica ở phía đông hướng về Ai Cập và vùng ốc đảo sa mạc Fezzan ở phía nam. Sự phát hiện trữ lượng dầu mỏ khổng lồ vào cuối thập niên 1950 đã biến một vương quốc sa mạc nghèo khó thành quốc gia giàu tài nguyên dưới chế độ cầm quyền kéo dài 42 năm của Đại tá Muammar Gaddafi.\n\nKể từ sau cuộc nổi dậy năm 2011 có sự can thiệp của NATO lật đổ Gaddafi, cấu trúc xã hội mang nặng tính bộ lạc và sự chia cắt địa lý Đông – Tây đã đẩy Libya vào vòng xoáy phân열 chính trị kéo dài. Đến giai đoạn 2025–2026, đất nước vẫn bị chia đôi trên thực tế giữa Chính phủ Thống nhất Quốc gia (GNU) được Liên Hợp Quốc công nhận tại Tripoli (do Thổ Nhĩ Kỳ hậu thuẫn) và chính quyền song song ở miền đông gắn với Quân đội Quốc gia Libya (LNA) của Tướng Khalifa Haftar (được Nga, UAE và Ai Cập hậu thuẫn). Dù nắm giữ trữ lượng dầu mỏ xác minh lớn nhất châu Phi, Libya vẫn đối mặt thách thức nan giải trong việc thống nhất thể chế nhà nước và kiểm soát các tuyến di cư vượt biển cũng như biên giới sa mạc phía nam.",
+    "sum": "Trải rộng trên diện tích 1,76 triệu km² ở Bắc Phi với hơn 90% là sa mạc Sahara khô cằn, Libya sở hữu đường bờ biển Địa Trung Hải dài nhất khu vực (~1.770 km) nằm ngay đối diện miền nam nước Ý. Trong suốt lịch sử từ thời thuộc địa Phoenicia, Hy Lạp, La Mã cho tới thời Đế chế Ottoman và thuộc địa Ý, địa lý tự nhiên đã chia tách đất nước thành ba vùng riêng biệt: Tripolitania ở phía tây hướng về Tunisia, Cyrenaica ở phía đông hướng về Ai Cập và vùng ốc đảo sa mạc Fezzan ở phía nam. Sự phát hiện trữ lượng dầu mỏ khổng lồ vào cuối thập niên 1950 đã biến một vương quốc sa mạc nghèo khó thành quốc gia giàu tài nguyên dưới chế độ cầm quyền kéo dài 42 năm của Đại tá Muammar Gaddafi.\n\nKể từ sau cuộc nổi dậy năm 2011 có sự can thiệp của NATO lật đổ Gaddafi, cấu trúc xã hội mang nặng tính bộ lạc và sự chia cắt địa lý Đông – Tây đã đẩy Libya vào vòng xoáy phân liệt chính trị kéo dài. Đến giai đoạn 2025–2026, đất nước vẫn bị chia đôi trên thực tế giữa Chính phủ Thống nhất Quốc gia (GNU) được Liên Hợp Quốc công nhận tại Tripoli (do Thổ Nhĩ Kỳ hậu thuẫn) và chính quyền song song ở miền đông gắn với Quân đội Quốc gia Libya (LNA) của Tướng Khalifa Haftar (được Nga, UAE và Ai Cập hậu thuẫn). Dù nắm giữ trữ lượng dầu mỏ xác minh lớn nhất châu Phi, Libya vẫn đối mặt thách thức nan giải trong việc thống nhất thể chế nhà nước và kiểm soát các tuyến di cư vượt biển cũng như biên giới sa mạc phía nam.",
     "t": [
       [
         "m",
@@ -3896,7 +3897,7 @@ export const C0 = {
       [
         "b",
         "Rơi vào nội chiến và chia cắt sau khi chế độ Gaddafi bị lật đổ năm 2011: Chính phủ ở Tripoli (được LHQ và Thổ Nhĩ Kỳ hậu thuẫn) đối đầu lực lượng của Tướng Haftar ở miền đông (được Nga, UAE, Ai Cập hậu thuẫn)",
-        "Sự phân열 giữa chính phủ Tripoli và lực lượng của Tướng Haftar ở miền đông đã biến Libya thành chiến trường ủy nhiệm giữa Thổ Nhĩ Kỳ với Nga (Quân đoàn châu Phi/Wagner cũ), UAE và Ai Cập. Trong khi đó, các đường biên giới kẻ thẳng xuyên sa mạc ở phía nam giáp Chad, Niger và Sudan gần như mở toang cho các mạng lưới buôn lậu vũ khí, vàng và nhiên liệu vùng Sahel."
+        "Sự phân liệt giữa chính phủ Tripoli và lực lượng của Tướng Haftar ở miền đông đã biến Libya thành chiến trường ủy nhiệm giữa Thổ Nhĩ Kỳ với Nga (Quân đoàn châu Phi/Wagner cũ), UAE và Ai Cập. Trong khi đó, các đường biên giới kẻ thẳng xuyên sa mạc ở phía nam giáp Chad, Niger và Sudan gần như mở toang cho các mạng lưới buôn lậu vũ khí, vàng và nhiên liệu vùng Sahel."
       ],
       [
         "g",
@@ -3906,7 +3907,8 @@ export const C0 = {
     ],
     "hs": [
       "sahara",
-      "africalines"
+      "africalines",
+      "mediterranean"
     ]
   },
   "Tunisia": {
@@ -3942,7 +3944,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "atlas"
+      "atlas",
+      "mediterranean"
     ]
   },
   "Algeria": {
@@ -3981,7 +3984,8 @@ export const C0 = {
     "hs": [
       "sahara",
       "africalines",
-      "atlas"
+      "atlas",
+      "wsahara_poly"
     ]
   },
   "Morocco": {
@@ -4018,7 +4022,8 @@ export const C0 = {
     ],
     "hs": [
       "gibraltar",
-      "atlas"
+      "atlas",
+      "wsahara_poly"
     ]
   },
   "W. Sahara": {
@@ -4055,7 +4060,8 @@ export const C0 = {
     ],
     "hs": [
       "sahara",
-      "africalines"
+      "africalines",
+      "wsahara_poly"
     ]
   },
   "Mauritania": {
@@ -4092,14 +4098,15 @@ export const C0 = {
     ],
     "hs": [
       "sahara",
-      "africalines"
+      "africalines",
+      "sahel_region"
     ]
   },
   "Mali": {
     "cap": "Bamako",
     "pop": "~24 triệu",
     "area": "1,24 triệu km²",
-    "sum": "Trải rộng 1,24 triệu km² ở trung tâm Tây Phi và hoàn toàn không giáp biển, Mali có hình dáng như hai cánh bướm bị chia đôi bởi tự nhiên: nửa phía bắc là sa mạc Sahara khô cằn (vùng Azawad của người du mục Tuareg), còn nửa phía nam là vùng thảo nguyên Sahel và Sudan được nuôi dưỡng bởi vòng cung vĩ đại của dòng sông Niger. Trong thời kỳ Trung cổ (thế kỷ 13–16), các đế chế Ghana, Mali (dưới thời hoàng đế giàu nhất lịch sử Mansa Musa) và Songhai từng kiểm soát các đoàn lạc đà buôn vàng – muối xuyên Sahara, biến thành cổ Timbuktu và Djenné thành trung tâm học thuật Hồi giáo lừng lẫy. Giành độc lập từ Pháp năm 1960, đường biên giới thuộc địa đã ghép chung các cộng đồng nông dân Bambara, Dogon ở miền nam với các bộ tộc du mục Tuareg và Ả Rập ở miền bắc.\n\nKể từ năm 2012, Mali trở thành tâm chấn khởi phát cuộc khủng hoảng an ninh vùng Sahel khi phong trào ly khai Tuareg và các nhóm thánh chiến vũ trang (JNIM liên kết Al-Qaeda, ISGS) chiếm giữ miền bắc và lan rộng xuống miền trung. Sau hai cuộc đảo chính quân sự liên tiếp năm 2020 và 2021 đưa Đại tá (nay là Đại tướng) Assimi Goïta lên nắm quyền, chính quyền Bamako đã trục xuất quân đội Pháp cùng phái bộ gìn giữ hòa bình Liên Hợp Quốc (MINUSMA), chuyển sang liên minh quân sự với Nga (lực lượng Wagner/Quân đoàn châu Phi) và tái chiếm thành trì Kidal cuối năm 2023. Đầu năm 2025, Mali cùng Burkina Faso và Niger chính thức rút khỏi khối Tây Phi ECOWAS để vận hành Liên minh các Quốc gia Sahel (AES), trong khi kinh tế vẫn dựa vào xuất khẩu vàng và mỏ lithium mới.",
+    "sum": "Trải rộng 1,24 triệu km² ở trung tâm Tây Phi và hoàn toàn không giáp biển, Mali có hình dáng như hai cánh bướm bị chia đôi bởi tự nhiên: nửa phía bắc là sa mạc Sahara khô cằn (vùng Azawad của người du mục Tuareg), còn nửa phía nam là vùng thảo nguyên Sahel và Sudan được nuôi dưỡng bởi vòng cung vĩ đại của dòng sông Niger. Trong thời kỳ Trung cổ (thế kỷ 13–16), các đế chế Ghana, Mali (dưới thời hoàng đế giàu nhất lịch sử Mansa Musa) và Songhai từng kiểm soát các đoàn lạc đà buôn vàng – muối xuyên Sahara, biến thành cổ Timbuktu và Djenné thành trung tâm học thuật Hồi giáo lừng lẫy. Giành độc lập từ Pháp năm 1960, đường biên giới thuộc địa đã ghép chung các cộng đồng nông dân Bambara, Dogon ở miền nam với các bộ tộc du mục Tuareg và Ả Rập ở miền bắc.\n\nKể từ năm 2012, Mali trở thành tâm chấn khởi phát cuộc khủng hoảng an ninh vùng Sahel khi phong trào ly khai Tuareg và các nhóm thánh chiến vũ trang (JNIM liên kết Al-Qaeda, ISGS) chiếm giữ miền bắc và lan rộng xuống miền trung. Sau hai cuộc đảo chính quân sự liên tiếp năm 2020 và 2021 đưa Đại tá (nay là Đại tướng) Assimi Goïta lên nắm quyền, chính quyền Bamako đã trục xuất quân đội Pháp cùng phái bộ gìn giữ hòa bình Liên Hợp Quốc (MINUSMA), chuyển sang liên minh quân sự với Nga (lực lượng Wagner/Quân đoàn châu Phi) và tái chiếm thành trì Kidal cuối năm 2023. Ngày 29/1/2025, việc Mali cùng Burkina Faso và Niger rút khỏi khối Tây Phi (ECOWAS) chính thức có hiệu lực nhằm củng cố Liên minh các Quốc gia Sahel (AES), trong khi kinh tế vẫn dựa vào xuất khẩu vàng và mỏ lithium mới.",
     "t": [
       [
         "b",
@@ -4131,14 +4138,15 @@ export const C0 = {
       "sahara",
       "sahelconf",
       "africalines",
-      "niger"
+      "niger",
+      "sahel_region"
     ]
   },
   "Niger": {
     "cap": "Niamey",
     "pop": "~27 triệu",
     "area": "1,27 triệu km²",
-    "sum": "Với diện tích 1,27 triệu km² nằm hoàn toàn trong nội lục Tây Phi, Niger là ngã tư cát rộng lớn nối liền Bắc Phi Ả Rập với vùng hạ Sahara, nơi hơn 80% lãnh thổ bị bao phủ bởi sa mạc Sahara (sa mạc Ténéré) và khối núi đá cổ Aïr ở phía bắc. Trong nhiều thế kỷ, thành phố ốc đảo Agadez và các vương quốc Hausa, Kanem-Bornu ở phía nam từng là trạm trung chuyển sầm uất của các tuyến thương mại xuyên sa mạc trước khi Pháp áp đặt ách thuộc địa vào đầu thế kỷ 20 và trao trả độc lập năm 1960. Do điều kiện tự nhiên khắc nghiệt, phần lớn trong số 27 triệu dân của Niger phải sống tập trung dọc dải thảo nguyên hẹp sát biên giới Nigeria ở phía nam và góc sông Niger ở tây nam.\n\nNiger hiện là quốc gia có tỷ suất sinh cao nhất hành tinh (~6,7 con/phụ nữ) và độ tuổi trung bình chỉ khoảng 15 tuổi, đặt ra áp lực khổng lồ về an ninh lương thực và giáo dục giữa lúc biến đổi khí hậu làm sa mạc hóa lấn dần mỗi năm. Tháng 7/2023, cuộc đảo chính quân sự do Tướng Abdourahamane Tchiani dẫn đầu đã lật đổ Tổng thống dân cử Mohamed Bazoum, chấm dứt vai trò \"thành trì chống khủng bố cuối cùng của phương Tây tại Sahel\" khi buộc toàn bộ quân đội Pháp và căn cứ máy bay không người lái (UAV) chiến lược của Mỹ tại Agadez phải rút lui vào năm 2024. Bước sang giai đoạn 2025–2026, Niger cùng Mali và Burkina Faso đã rút khỏi khối ECOWAS để lập Liên minh các Quốc gia Sahel (AES), đồng thời ghi nhận mức tăng trưởng GDP đột biến nhờ vận hành đường ống xuất khẩu dầu thô dài 2.000 km ra vịnh Guinea.",
+    "sum": "Với diện tích 1,27 triệu km² nằm hoàn toàn trong nội lục Tây Phi, Niger là ngã tư cát rộng lớn nối liền Bắc Phi Ả Rập với vùng hạ Sahara, nơi hơn 80% lãnh thổ bị bao phủ bởi sa mạc Sahara (sa mạc Ténéré) và khối núi đá cổ Aïr ở phía bắc. Trong nhiều thế kỷ, thành phố ốc đảo Agadez và các vương quốc Hausa, Kanem-Bornu ở phía nam từng là trạm trung chuyển sầm uất của các tuyến thương mại xuyên sa mạc trước khi Pháp áp đặt ách thuộc địa vào đầu thế kỷ 20 và trao trả độc lập năm 1960. Do điều kiện tự nhiên khắc nghiệt, phần lớn trong số 27 triệu dân của Niger phải sống tập trung dọc dải thảo nguyên hẹp sát biên giới Nigeria ở phía nam và góc sông Niger ở tây nam.\n\nNiger hiện là quốc gia có tỷ suất sinh cao nhất hành tinh (~6,7 con/phụ nữ) và độ tuổi trung bình chỉ khoảng 15 tuổi, đặt ra áp lực khổng lồ về an ninh lương thực và giáo dục giữa lúc biến đổi khí hậu làm sa mạc hóa lấn dần mỗi năm. Tháng 7/2023, cuộc đảo chính quân sự do Tướng Abdourahamane Tchiani dẫn đầu đã lật đổ Tổng thống dân cử Mohamed Bazoum, chấm dứt vai trò \"thành trì chống khủng bố cuối cùng của phương Tây tại Sahel\" khi buộc toàn bộ quân đội Pháp và căn cứ máy bay không người lái (UAV) chiến lược của Mỹ tại Agadez phải rút lui vào năm 2024. Bước sang giai đoạn 2025–2026, việc Niger cùng Mali và Burkina Faso rút khỏi khối ECOWAS chính thức có hiệu lực từ ngày 29/1/2025 để củng cố Liên minh các Quốc gia Sahel (AES), đồng thời kinh tế ghi nhận mức tăng trưởng GDP đột biến nhờ vận hành đường ống xuất khẩu dầu thô dài 2.000 km ra vịnh Guinea.",
     "t": [
       [
         "b",
@@ -4170,14 +4178,15 @@ export const C0 = {
       "sahara",
       "sahelconf",
       "niger",
-      "africalines"
+      "africalines",
+      "sahel_region"
     ]
   },
   "Burkina Faso": {
     "cap": "Ouagadougou",
     "pop": "~23,5 triệu",
     "area": "274 nghìn km²",
-    "sum": "Nằm ở trung tâm vòng cung sông Niger tại Tây Phi và hoàn toàn không giáp biển, Burkina Faso trải rộng trên một cao nguyên đá ong bằng phẳng cao trung bình 300–400 m với thảm thực vật thảo nguyên thưa thớt và là nơi khởi nguồn của ba nhánh sông Volta (Đen, Trắng, Đỏ). Trong lịch sử, vùng đất này từng là lãnh thổ của các vương quốc Mossi hùng mạnh có kỵ binh thiện chiến giữ vững độc lập suốt nhiều thế kỷ trước các đế chế Hồi giáo vùng sông Niger, cho đến khi bị Pháp thôn tính năm 1896 dưới tên gọi Thượng Volta (Upper Volta). Năm 1984, nhà lãnh đạo cách mạng huyền thoại Thomas Sankara đã đổi tên đất nước thành \"Burkina Faso\" — ghép từ tiếng Mooré và tiếng Dioula có nghĩa là \"Xứ sở của những con người chính trực\".\n\nTừng là quốc gia yên bình nổi tiếng với Liên hoan Điện ảnh toàn châu Phi (FESPACO) tại thủ đô Ouagadougou và tinh thần khoan dung tôn giáo, Burkina Faso từ sau năm 2015 đã trượt dài thành mặt trận đẫm máu nhất của cuộc xung đột thánh chiến toàn cầu. Hai cuộc đảo chính quân sự liên tiếp năm 2022 đưa Đại úy trẻ Ibrahim Traoré lên cầm quyền diễn ra trong bối cảnh các nhóm vũ trang cực đoan (JNIM và ISGS) kiểm soát hoặc phong tỏa khoảng 40–50% diện tích nông thôn, khiến hơn 2 triệu người phải rời bỏ nhà cửa. Bước sang giai đoạn 2025–2026, chính quyền Ouagadougou đã cắt đứt quan hệ quân sự với Pháp, dựa vào hợp tác an ninh với Nga, quốc hữu hóa một số mỏ vàng và cùng Mali, Niger rút khỏi khối ECOWAS để lập Liên minh các Quốc gia Sahel (AES).",
+    "sum": "Nằm ở trung tâm vòng cung sông Niger tại Tây Phi và hoàn toàn không giáp biển, Burkina Faso trải rộng trên một cao nguyên đá ong bằng phẳng cao trung bình 300–400 m với thảm thực vật thảo nguyên thưa thớt và là nơi khởi nguồn của ba nhánh sông Volta (Đen, Trắng, Đỏ). Trong lịch sử, vùng đất này từng là lãnh thổ của các vương quốc Mossi hùng mạnh có kỵ binh thiện chiến giữ vững độc lập suốt nhiều thế kỷ trước các đế chế Hồi giáo vùng sông Niger, cho đến khi bị Pháp thôn tính năm 1896 dưới tên gọi Thượng Volta (Upper Volta). Năm 1984, nhà lãnh đạo cách mạng huyền thoại Thomas Sankara đã đổi tên đất nước thành \"Burkina Faso\" — ghép từ tiếng Mooré và tiếng Dioula có nghĩa là \"Xứ sở của những con người chính trực\".\n\nTừng là quốc gia yên bình nổi tiếng với Liên hoan Điện ảnh toàn châu Phi (FESPACO) tại thủ đô Ouagadougou và tinh thần khoan dung tôn giáo, Burkina Faso từ sau năm 2015 đã trượt dài thành mặt trận đẫm máu nhất của cuộc xung đột thánh chiến toàn cầu. Hai cuộc đảo chính quân sự liên tiếp năm 2022 đưa Đại úy trẻ Ibrahim Traoré lên cầm quyền diễn ra trong bối cảnh các nhóm vũ trang cực đoan (JNIM và ISGS) kiểm soát hoặc phong tỏa khoảng 40–50% diện tích nông thôn, khiến hơn 2 triệu người phải rời bỏ nhà cửa. Bước sang giai đoạn 2025–2026, chính quyền Ouagadougou đã cắt đứt quan hệ quân sự với Pháp, dựa vào hợp tác an ninh với Nga, quốc hữu hóa một số mỏ vàng và cùng Mali, Niger chính thức hoàn tất việc rút khỏi khối ECOWAS vào ngày 29/1/2025 để củng cố Liên minh các Quốc gia Sahel (AES).",
     "t": [
       [
         "b",
@@ -4197,7 +4206,7 @@ export const C0 = {
       [
         "b",
         "Hai cuộc đảo chính quân sự liên tiếp năm 2022; chính quyền quân sự hiện mất quyền kiểm soát khoảng 40–50% lãnh thổ nông thôn vào tay các nhóm cực đoan",
-        "Bị kẹp giữa Mali ở phía bắc – tây và Niger ở phía đông (tạo thành tam giác biên giới Liptako-Gourma nóng bỏng), chính quyền của Đại úy Ibrahim Traoré đã huy động hàng chục nghìn tình nguyện viên bảo vệ tổ quốc (VDP) để chống phiến quân. Việc rút khỏi ECOWAS đầu năm 2025 tạo ra ranh giới địa chính trị mới giữa khối quân sự Sahel (AES) ở phía bắc và các nền dân chủ ven biển ở phía nam."
+        "Bị kẹp giữa Mali ở phía bắc – tây và Niger ở phía đông (tạo thành tam giác biên giới Liptako-Gourma nóng bỏng), chính quyền của Đại úy Ibrahim Traoré đã huy động hàng chục nghìn tình nguyện viên bảo vệ tổ quốc (VDP) để chống phiến quân. Việc hoàn tất rút khỏi ECOWAS từ ngày 29/1/2025 tạo ra ranh giới địa chính trị mới giữa khối quân sự Sahel (AES) ở phía bắc và các nền dân chủ ven biển ở phía nam."
       ],
       [
         "g",
@@ -4206,14 +4215,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "sahelconf"
+      "sahelconf",
+      "sahel_region"
     ]
   },
   "Chad": {
     "cap": "N'Djamena",
     "pop": "~20,3 triệu",
     "area": "1,28 triệu km²",
-    "sum": "Trải rộng 1,28 triệu km² ở vị trí xa biển nhất trên lục địa đen, Cộng hòa Chad thường được các nhà địa lý gọi là \"Trái tim chết của châu Phi\" và là chiếc cầu nối giữa Bắc Phi và Trung Phi. Địa hình đất nước trải dài qua ba dải khí hậu rõ rệt từ bắc xuống nam: miền bắc là sa mạc Sahara khô cằn được án ngữ bởi dãy núi lửa Tibesti cao hơn 3.400 m; miền trung là vùng bán hoang mạc Sahel (Batha, Ouaddaï); và miền nam là vùng đồng bằng thảo nguyên màu mỡ (\"Le Soudan\") được bồi đắp bởi sông Chari và Logone đổ vào hồ Chad. Kể từ khi giành độc lập từ Pháp năm 1960, sự phân chia Bắc – Nam giữa các bộ tộc chiến binh du mục Hồi giáo vùng sa mạc và cư dân nông nghiệp Cơ đốc giáo/bản địa ở miền nam đã định hình toàn bộ lịch sử chính trị đầy biến động của đất nước.\n\nDưới sự cầm quyền của gia tộc Déby từ năm 1990 — chuyển giao từ cố Tổng thống Idriss Déby (tử trận ngoài tiền tuyến năm 2021) sang con trai là Mahamat Idriss Déby (đắc cử Tổng thống tháng 5/2024) — Chad sở hữu một trong những quân đội thiện chiến nhất vùng sa mạc Sahel. Bị bao vây bốn phía bởi các cuộc xung đột từ Libya ở phía bắc, Boko Haram quanh hồ Chad ở phía tây, Cộng hòa Trung Phi ở phía nam và đặc biệt là cuộc nội chiến tàn khốc ở vùng Darfur của Sudan ở phía đông, Chad hiện đang gánh chịu hơn 1,2 triệu người tị nạn. Cuối năm 2024, N'Djamena đã bất ngờ chấm dứt hiệp ước hợp tác quốc phòng lịch sử với Pháp để đa dạng hóa quan hệ với UAE, Nga, Thổ Nhĩ Kỳ và Hungary giữa lúc nền kinh tế phụ thuộc nặng vào xuất khẩu dầu thô.",
+    "sum": "Trải rộng 1,28 triệu km² ở vị trí xa biển nhất trên lục địa đen, Cộng hòa Chad thường được các nhà địa lý gọi là \"Trái tim chết của châu Phi\" và là chiếc cầu nối giữa Bắc Phi và Trung Phi. Địa hình đất nước trải dài qua ba dải khí hậu rõ rệt từ bắc xuống nam: miền bắc là sa mạc Sahara khô cằn được án ngữ bởi dãy núi lửa Tibesti cao hơn 3.400 m; miền trung là vùng bán hoang mạc Sahel (Batha, Ouaddaï); và miền nam là vùng đồng bằng thảo nguyên màu mỡ (\"Le Soudan\") được bồi đắp bởi sông Chari và Logone đổ vào hồ Chad. Kể từ khi giành độc lập từ Pháp năm 1960, sự phân chia Bắc – Nam giữa các bộ tộc chiến binh du mục Hồi giáo vùng sa mạc và cư dân nông nghiệp Cơ đốc giáo/bản địa ở miền nam đã định hình toàn bộ lịch sử chính trị đầy biến động của đất nước.\n\nDưới sự cầm quyền của gia tộc Déby từ năm 1990 — chuyển giao từ cố Tổng thống Idriss Déby (tử trận ngoài tiền tuyến năm 2021) sang con trai là Mahamat Idriss Déby (đắc cử Tổng thống tháng 5/2024) — Chad sở hữu một trong những quân đội thiện chiến nhất vùng sa mạc Sahel. Bị bao vây bốn phía bởi các cuộc xung đột từ Libya ở phía bắc, Boko Haram quanh hồ Chad ở phía tây, Cộng hòa Trung Phi ở phía nam và đặc biệt là cuộc nội chiến tàn khốc ở vùng Darfur của Sudan ở phía đông, Chad hiện đang gánh chịu hơn 1,2 triệu người tị nạn. Sau khi N'Djamena chấm dứt hiệp ước quốc phòng với Pháp và hoàn tất tiếp quản căn cứ Adji Kossei khi quân đội Pháp rút hết vào ngày 31/1/2025, Chad đã đa dạng hóa quan hệ với UAE, Nga, Thổ Nhĩ Kỳ và Hungary giữa lúc nền kinh tế phụ thuộc nặng vào xuất khẩu dầu thô.",
     "t": [
       [
         "m",
@@ -4233,7 +4243,7 @@ export const C0 = {
       [
         "b",
         "Lằn ranh sắc tộc – tôn giáo giữa các bộ tộc du mục sa mạc miền bắc (nắm quyền lực quân sự) và cư dân nông nghiệp miền nam; đang tiếp nhận hơn 1 triệu người tị nạn từ vùng Darfur của Sudan",
-        "Hiếm có quốc gia nào có vòng vây biên giới khắc nghiệt như Chad: phía bắc là dải đất Aouzou từng xảy ra chiến tranh với Libya; phía tây là vùng đầm lầy hồ Chad nơi nhóm khủng bố Boko Haram/ISWAP ẩn náu; còn biên giới phía đông dài 1.400 km giáp vùng Darfur (Sudan) đang tràn ngập dòng người tị nạn và nguy cơ xung đột sắc tộc Zaghawa – Ả Rập lan sang. Quân đội Chad từ lâu là lực lượng trụ cột giữ ổn định nhưng cái giá phải trả là ngân sách an ninh nuốt trọn nguồn lực phát triển."
+        "Hiếm có quốc gia nào có vòng vây biên giới khắc nghiệt như Chad: phía bắc là dải đất Aouzou từng xảy ra chiến tranh với Libya; phía tây là vùng đầm lầy hồ Chad nơi nhóm khủng bố Boko Haram/ISWAP ẩn náu; còn biên giới phía đông dài 1.400 km giáp vùng Darfur (Sudan) đang tràn ngập dòng người tị nạn và nguy cơ xung đột sắc tộc Zaghawa – Ả Rập lan sang. Sau khi binh lính Pháp hoàn tất rút quân vào ngày 31/1/2025, quân đội Chad là lực lượng duy nhất bảo đảm an ninh biên giới nhưng ngân sách quốc phòng đã nuốt trọn nguồn lực phát triển."
       ],
       [
         "b",
@@ -4243,7 +4253,10 @@ export const C0 = {
     ],
     "hs": [
       "sahara",
-      "africalines"
+      "africalines",
+      "sahelconf",
+      "sahel_region",
+      "conf_sudan"
     ]
   },
   "Sudan": {
@@ -4251,7 +4264,7 @@ export const C0 = {
     "pop": "~50 triệu",
     "area": "1,86 triệu km²",
     "ch": "c5",
-    "sum": "Từng là quốc gia có diện tích lớn nhất châu Phi trước khi miền nam tách ra năm 2011, Sudan (1,86 triệu km²) là ngã tư lịch sử nối liền thế giới Ả Rập Trung Đông với châu Phi hạ Sahara, được định hình bởi nơi hợp lưu vĩ đại của hai dòng Nile Trắng và Nile Xanh tại thủ đô Khartoum. Đây là cái nôi của nền văn minh cổ đại Kush (vương quốc Nubia với số lượng kim tự tháp tại Meroë còn nhiều hơn cả Ai Cập) trước khi trải qua quá trình Ả Rập hóa – Hồi giáo hóa và thời kỳ đồng cai trị Anh – Ai Cập cho tới ngày độc lập năm 1956. Địa lý đất nước trải rộng từ sa mạc Nubia và Libya ở phía bắc, dãy đồi ven Biển Đỏ ở phía đông, đồng bằng phù sa Gezira màu mỡ ở giữa cho tới cao nguyên Darfur ở phía tây và dãy núi Nuba ở phía nam.\n\nSau khi chế độ độc tài 30 năm của Omar al-Bashir bị lật đổ năm 2019 và cuộc đảo chính năm 2021, Sudan từ tháng 4/2023 đã rơi vào cuộc nội chiến toàn diện tàn khốc giữa Quân đội Chính quy Sudan (SAF) do Tướng Abdel Fattah al-Burhan chỉ huy và Lực lượng Hỗ trợ Nhanh bán quân sự (RSF) của Tướng Mohamed Hamdan Dagalo (Hemedti). Bước sang giai đoạn 2025–2026, cuộc chiến đã tàn phá vùng thủ đô Khartoum (dù SAF đã phản công giành lại nhiều vị trí chiến lược tại Khartoum và Gezira đầu năm 2025 trong khi RSF cố thủ tại Darfur), buộc chính phủ phải điều hành từ thành phố cảng Port Sudan trên Biển Đỏ và gây ra cuộc khủng hoảng nhân đạo – tị nạn lớn nhất thế giới với hơn 11–12 triệu người mất nhà cửa. Nằm bên bờ Biển Đỏ và giữ vựa vàng cùng nguồn nước sông Nile, Sudan đang trở thành chiến trường cạnh tranh ảnh hưởng gay gắt giữa các cường quốc khu vực và quốc tế.",
+    "sum": "Từng là quốc gia có diện tích lớn nhất châu Phi trước khi miền nam tách ra năm 2011, Sudan (1,86 triệu km²) là ngã tư lịch sử nối liền thế giới Ả Rập Trung Đông với châu Phi hạ Sahara, được định hình bởi nơi hợp lưu vĩ đại của hai dòng Nile Trắng và Nile Xanh tại thủ đô Khartoum. Đây là cái nôi của nền văn minh cổ đại Kush (vương quốc Nubia với số lượng kim tự tháp tại Meroë còn nhiều hơn cả Ai Cập) trước khi trải qua quá trình Ả Rập hóa – Hồi giáo hóa và thời kỳ đồng cai trị Anh – Ai Cập cho tới ngày độc lập năm 1956. Địa lý đất nước trải rộng từ sa mạc Nubia và Libya ở phía bắc, dãy đồi ven Biển Đỏ ở phía đông, đồng bằng phù sa Gezira màu mỡ ở giữa cho tới cao nguyên Darfur ở phía tây và dãy núi Nuba ở phía nam.\n\nSau khi chế độ độc tài 30 năm của Omar al-Bashir bị lật đổ năm 2019 và cuộc đảo chính năm 2021, Sudan từ tháng 4/2023 đã rơi vào cuộc nội chiến toàn diện tàn khốc giữa Quân đội Chính quy Sudan (SAF) do Tướng Abdel Fattah al-Burhan chỉ huy và Lực lượng Hỗ trợ Nhanh bán quân sự (RSF) của Tướng Mohamed Hamdan Dagalo (Hemedti). Bước sang năm 2025–2026, Quân đội Chính quy (SAF) đã phản công tái chiếm phần lớn thủ đô Khartoum vào cuối tháng 3/2025, trong khi RSF kiểm soát phần lớn vùng Darfur sau cuộc bao vây El Fasher, buộc chính phủ phải đặt trụ sở điều hành thực tế tại thành phố cảng Port Sudan trên Biển Đỏ và gây ra cuộc khủng hoảng nhân đạo – tị nạn lớn nhất thế giới với hơn 11–12 triệu người mất nhà cửa. Nằm bên bờ Biển Đỏ và giữ vựa vàng cùng nguồn nước sông Nile, Sudan đang trở thành chiến trường cạnh tranh ảnh hưởng gay gắt giữa các cường quốc khu vực và quốc tế.",
     "t": [
       [
         "m",
@@ -4271,12 +4284,12 @@ export const C0 = {
       [
         "b",
         "Năm 2011 miền nam tách ra thành Nam Sudan (lấy đi 3/4 mỏ dầu); từ năm 2023 đất nước lại chia cắt giữa vùng Darfur (RSF kiểm soát) và miền đông/bắc (Quân đội kiểm soát)",
-        "Năm 2011, miền nam tách ra thành Nam Sudan khiến Khartoum mất đi 1/4 diện tích và 3/4 trữ lượng dầu mỏ; từ năm 2023, cuộc chiến giữa SAF và RSF lại đẩy đất nước vào nguy cơ chia cắt thực tế giữa miền tây (Darfur do RSF kiểm soát) và miền đông – bắc (do Quân đội kiểm soát). Sự can dự vũ khí, tài chính từ bên ngoài cùng dòng buôn lậu vàng qua biên giới Chad, Libya, Nam Sudan khiến xung đột cực kỳ khó chấm dứt."
+        "Năm 2011, miền nam tách ra thành Nam Sudan khiến Khartoum mất đi 1/4 diện tích và 3/4 trữ lượng dầu mỏ; từ năm 2023, cuộc chiến giữa SAF và RSF đã đẩy đất nước vào chia cắt sâu sắc. Đến cuối tháng 3/2025, SAF phản công tái chiếm phần lớn thủ đô Khartoum, trong khi RSF kiểm soát Darfur sau cuộc bao vây El Fasher, biến Port Sudan thành trung tâm điều hành thực tế của chính phủ. Sự can dự vũ khí, tài chính từ bên ngoài cùng dòng buôn lậu vàng qua biên giới Chad, Libya, Nam Sudan khiến xung đột cực kỳ khó chấm dứt."
       ],
       [
         "m",
         "Ở giữa dòng sông Nile: đập GERD của Ethiopia thực tế giúp Sudan điều tiết lũ lụt và có điện giá rẻ, nhưng Cairo lại ép Khartoum đứng về phía mình",
-        "Nằm ở vị trí trung lưu giữa Ethiopia và Ai Cập, Sudan có lợi ích kép nhưng đầy mâu thuẫn đối với đại đập thủy điện GERD của Ethiopia ngay sát biên giới bang Blue Nile. Trên thực tế, đập GERD giúp Sudan điều tiết các trận lũ lụt mùa hè tàn phá Khartoum và giữ mức nước ổn định quanh năm cho nông nghiệp Gezira, nhưng Cairo luôn gây sức ép chính trị để Khartoum cùng phản đối Addis Ababa."
+        "Nằm ở vị trí trung lưu giữa Ethiopia và Ai Cập, Sudan có lợi ích kép nhưng đầy mâu thuẫn đối với đập Đại Phục Hưng (GERD) được Ethiopia chính thức khánh thành ngày 9/9/2025 (công suất 5.150 MW) ngay sát biên giới bang Blue Nile. Trên thực tế, đập GERD giúp Sudan điều tiết các trận lũ lụt mùa hè tàn phá Khartoum và giữ mức nước ổn định quanh năm cho nông nghiệp Gezira, nhưng Cairo luôn gây sức ép chính trị để Khartoum cùng phản đối Addis Ababa."
       ]
     ],
     "hs": [
@@ -4284,7 +4297,8 @@ export const C0 = {
       "conf_sudan",
       "africalines",
       "gerd",
-      "sahara"
+      "sahara",
+      "redsea"
     ]
   },
   "S. Sudan": {
@@ -4321,7 +4335,8 @@ export const C0 = {
     ],
     "hs": [
       "nile",
-      "conf_sudan"
+      "conf_sudan",
+      "riftvalley"
     ]
   },
   "Eritrea": {
@@ -4358,7 +4373,9 @@ export const C0 = {
     ],
     "hs": [
       "babelmandeb",
-      "conf_redsea"
+      "conf_redsea",
+      "redsea",
+      "ethiopianhighlands"
     ]
   },
   "Djibouti": {
@@ -4396,7 +4413,9 @@ export const C0 = {
     "hs": [
       "babelmandeb",
       "conf_redsea",
-      "r_suez"
+      "r_suez",
+      "base_djibouti",
+      "redsea"
     ]
   },
   "Ethiopia": {
@@ -4404,7 +4423,7 @@ export const C0 = {
     "pop": "~130 triệu",
     "area": "1,1 triệu km²",
     "ch": "c5",
-    "sum": "Nằm sừng sững trên khối cao nguyên Abyssinia cao từ 2.000 đến 4.500 m bị cắt xẻ bởi các hẻm núi sâu thẳm và Thung lũng Tách giãn Lớn, Ethiopia được mệnh danh là \"Mái nhà\" và \"Tháp nước\" của Đông Bắc Phi. Với chiều sâu lịch sử hơn 2.000 năm từ Đế chế Aksum cổ đại và vương triều Solomon theo Cơ đốc giáo Chính thống Tewahedo, địa hình núi cao hiểm trở đã giúp Hoàng đế Menelik II đánh bại hoàn toàn quân xâm lược Ý tại trận Adwa lịch sử năm 1896, biến Ethiopia thành quốc gia châu Phi duy nhất giữ vững độc lập trước làn sóng thực dân châu Âu và được chọn làm nơi đặt trụ sở Liên minh châu Phi (AU) tại thủ đô Addis Ababa. Tuy nhiên, việc Eritrea tách ra độc lập năm 1993 đã khóa chặt quốc gia 130 triệu dân này vào nội lục dù biên giới chỉ cách Biển Đỏ khoảng 60 km.\n\nCấu trúc \"chủ nghĩa liên bang theo sắc tộc\" (chia đất nước thành các bang theo tộc người Oromo, Amhara, Tigray, Somali...) đã dẫn tới cuộc nội chiến đẫm máu tại vùng Tigray (2020–2022) cũng như các cuộc nổi dậy vũ trang kéo dài của lực lượng Fano tại vùng Amhara và OLA tại Oromia dưới thời Thủ tướng Abiy Ahmed. Bước sang giai đoạn 2024–2026, Ethiopia đang thực hiện ba bước ngoặt địa chiến lược lớn: hoàn tất tích nước và vận hành siêu đập thủy điện Đại Phục Hưng (GERD) công suất 5.150 MW trên dòng Nile Xanh bất chấp sự phản đối của Ai Cập; ráo riết tìm đường ra Biển Đỏ (từ biên bản ghi nhớ gây tranh cãi với Somaliland đầu năm 2024 đến Tuyên bố Ankara tháng 12/2024 do Thổ Nhĩ Kỳ trung gian với Somalia); và tiến hành cải cách kinh tế lịch sử thả nổi đồng Birr theo chương trình của IMF.",
+    "sum": "Nằm sừng sững trên khối cao nguyên Abyssinia cao từ 2.000 đến 4.500 m bị cắt xẻ bởi các hẻm núi sâu thẳm và Thung lũng Tách giãn Lớn, Ethiopia được mệnh danh là \"Mái nhà\" và \"Tháp nước\" của Đông Bắc Phi. Với chiều sâu lịch sử hơn 2.000 năm từ Đế chế Aksum cổ đại và vương triều Solomon theo Cơ đốc giáo Chính thống Tewahedo, địa hình núi cao hiểm trở đã giúp Hoàng đế Menelik II đánh bại hoàn toàn quân xâm lược Ý tại trận Adwa lịch sử năm 1896, biến Ethiopia thành quốc gia châu Phi duy nhất giữ vững độc lập trước làn sóng thực dân châu Âu và được chọn làm nơi đặt trụ sở Liên minh châu Phi (AU) tại thủ đô Addis Ababa. Tuy nhiên, việc Eritrea tách ra độc lập năm 1993 đã khóa chặt quốc gia 130 triệu dân này vào nội lục dù biên giới chỉ cách Biển Đỏ khoảng 60 km.\n\nCấu trúc \"chủ nghĩa liên bang theo sắc tộc\" (chia đất nước thành các bang theo tộc người Oromo, Amhara, Tigray, Somali...) đã dẫn tới cuộc nội chiến đẫm máu tại vùng Tigray (2020–2022) cũng như các cuộc nổi dậy vũ trang kéo dài của lực lượng Fano tại vùng Amhara và OLA tại Oromia dưới thời Thủ tướng Abiy Ahmed. Bước sang giai đoạn 2024–2026, Ethiopia đang thực hiện ba bước ngoặt địa chiến lược lớn: chính thức khánh thành và đưa vào vận hành toàn diện siêu đập thủy điện Đại Phục Hưng (GERD) ngày 9/9/2025 (công suất 5.150 MW) trên dòng Nile Xanh bất chấp sự phản đối của Ai Cập; ráo riết tìm đường ra Biển Đỏ (từ biên bản ghi nhớ gây tranh cãi với Somaliland đầu năm 2024 đến Tuyên bố Ankara tháng 12/2024 do Thổ Nhĩ Kỳ trung gian với Somalia); và tiến hành cải cách kinh tế lịch sử thả nổi đồng Birr theo chương trình của IMF.",
     "t": [
       [
         "g",
@@ -4429,13 +4448,15 @@ export const C0 = {
       [
         "g",
         "\"Tháp nước của Đông Bắc Phi\": cung cấp ~85% tổng lượng nước của sông Nile chảy về Sudan và Ai Cập, cũng như nguồn nước chính của Somalia",
-        "Ethiopia nắm giữ vị thế thượng nguồn tối thượng khi dòng Nile Xanh chảy từ cao nguyên nước này cung cấp tới ~85% tổng lượng nước của sông Nile chảy về Sudan và Ai Cập, đồng thời nuôi sống hai con sông duy nhất của Somalia (Jubba và Shabelle). Việc Ethiopia tự huy động vốn trong nước hoàn thành đại đập GERD (dung tích hồ chứa 74 tỷ m³ nước, công suất 5.150 MW) đã đảo ngược hoàn toàn cán cân quyền lực hàng thiên niên kỷ trên lưu vực sông Nile."
+        "Ethiopia nắm giữ vị thế thượng nguồn tối thượng khi dòng Nile Xanh chảy từ cao nguyên nước này cung cấp tới ~85% tổng lượng nước của sông Nile chảy về Sudan và Ai Cập, đồng thời nuôi sống hai con sông duy nhất của Somalia (Jubba và Shabelle). Việc Ethiopia tự huy động vốn trong nước khánh thành đại đập GERD vào ngày 9/9/2025 (dung tích hồ chứa 74 tỷ m³ nước, công suất 5.150 MW) đã đảo ngược hoàn toàn cán cân quyền lực hàng thiên niên kỷ trên lưu vực sông Nile."
       ]
     ],
     "hs": [
       "gerd",
       "nile",
-      "babelmandeb"
+      "babelmandeb",
+      "ethiopianhighlands",
+      "riftvalley"
     ]
   },
   "Somalia": {
@@ -4472,7 +4493,8 @@ export const C0 = {
     ],
     "hs": [
       "babelmandeb",
-      "r_suez"
+      "r_suez",
+      "redsea"
     ]
   },
   "Somaliland": {
@@ -4499,7 +4521,7 @@ export const C0 = {
       [
         "b",
         "Tranh chấp vùng biên giới phía đông (Sool và Sanaag) với bang Puntland của Somalia",
-        "Biên giới phía tây và nam giáp Djibouti, Ethiopia rất ổn định và nhộn nhịp thương mại, nhưng vùng biên giới phía đông (tỉnh Sool và Sanaag) lại là điểm nóng tranh chấp đẫm máu dựa trên ranh giới thị tộc. Năm 2023–2024, các thị tộc nhánh Darod (Dhulbahante) tại thành phố Las Anod đã nổi dậy đánh bật quân đội Somaliland (vốn do thị tộc Isaaq làm nòng cốt) để tuyên bố lập chính quyền SSC-Khatumo trực thuộc chính phủ liên bang Mogadishu."
+        "Biên giới phía tây và nam giáp Djibouti, Ethiopia rất ổn định và nhộn nhịp thương mại, nhưng vùng biên giới phía đông (tỉnh Sool và Sanaag) lại là điểm nóng tranh chấp đẫm máu dựa trên ranh giới thị tộc. Sau cuộc xung đột tại Las Anod năm 2023 dẫn tới việc thành lập chính quyền SSC-Khatumo, và việc Thổ Nhĩ Kỳ làm trung gian cho Tuyên bố Ankara giữa Ethiopia và Somalia tháng 12/2024, chính quyền Somaliland tuyên bố không bị ràng buộc bởi thỏa thuận này và tiếp tục kiên trì quyền tự quyết cũng như đàm phán độc lập về cảng biển Berbera."
       ],
       [
         "b",
@@ -4544,7 +4566,8 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "nile"
+      "nile",
+      "riftvalley"
     ]
   },
   "Uganda": {
@@ -4580,14 +4603,15 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "nile"
+      "nile",
+      "riftvalley"
     ]
   },
   "Tanzania": {
     "cap": "Dodoma (thương mại: Dar es Salaam)",
     "pop": "~68 triệu",
     "area": "947 nghìn km²",
-    "sum": "Với diện tích gần 947.000 km² và dân số 68 triệu người, Tanzania là quốc gia rộng lớn nhất Đông Phi, sở hữu khung địa lý kỳ vĩ bậc nhất lục địa: phía bắc có đỉnh núi lửa phủ tuyết Kilimanjaro cao 5.895 m (nóc nhà của toàn châu Phi) và thảo nguyên Serengeti; biên giới nội địa được bao bọc bởi ba đại hồ lớn nhất châu Phi (Victoria, Tanganyika và Malawi); còn phía đông mở ra hơn 1.400 km bờ biển Ấn Độ Dương cùng quần đảo hương liệu Zanzibar. Vùng bờ biển Swahili nơi đây từng là trung tâm thương mại hàng hải sầm uất kết nối châu Phi với Ả Rập, Ba Tư và Ấn Độ suốt hàng thế kỷ trước khi chịu sự cai trị của Đức rồi Anh. Năm 1964, nhà lãnh đạo lập quốc Julius Nyerere đã hợp nhất vùng đất liền Tanganyika với đảo quốc Zanzibar để khai sinh Cộng hòa Thống nhất Tanzania.\n\nĐiểm khác biệt vĩ đại nhất của Tanzania so với các nước láng giềng là dù có hơn 120 nhóm sắc tộc khác nhau, đất nước này chưa từng xảy ra nội chiến sắc tộc hay đảo chính quân sự kể từ khi độc lập nhờ chính sách tầm nhìn xa của cố Tổng thống Nyerere: lấy tiếng Swahili làm ngôn ngữ quốc gia thống nhất thay vì để một bộ tộc lớn áp đảo. Dưới thời nữ Tổng thống đầu tiên Samia Suluhu Hassan (nhậm chức năm 2021), Tanzania đã mở cửa mạnh mẽ thu hút đầu tư nước ngoài và hoàn thành hai công trình thế kỷ vào năm 2024: nhà máy thủy điện Julius Nyerere công suất 2.115 MW trên sông Rufiji và tuyến đường sắt cao tốc điện khí hóa khổ tiêu chuẩn (SGR) đầu tiên của Đông Phi nối Dar es Salaam với thủ đô Dodoma. Tanzania hiện đang vươn lên cạnh tranh trực tiếp với Kenya trong vai trò trung tâm cảng biển, khoáng sản chiến lược và du lịch sinh thái hàng đầu khu vực.",
+    "sum": "Với diện tích gần 947.000 km² và dân số 68 triệu người, Tanzania là quốc gia rộng lớn nhất Đông Phi, sở hữu khung địa lý kỳ vĩ bậc nhất lục địa: phía bắc có đỉnh núi lửa phủ tuyết Kilimanjaro cao 5.895 m (nóc nhà của toàn châu Phi) và thảo nguyên Serengeti; biên giới nội địa được bao bọc bởi ba đại hồ lớn nhất châu Phi (Victoria, Tanganyika và Malawi); còn phía đông mở ra hơn 1.400 km bờ biển Ấn Độ Dương cùng quần đảo hương liệu Zanzibar. Vùng bờ biển Swahili nơi đây từng là trung tâm thương mại hàng hải sầm uất kết nối châu Phi với Ả Rập, Ba Tư và Ấn Độ suốt hàng thế kỷ trước khi chịu sự cai trị của Đức rồi Anh. Năm 1964, nhà lãnh đạo lập quốc Julius Nyerere đã hợp nhất vùng đất liền Tanganyika với đảo quốc Zanzibar để khai sinh Cộng hòa Thống nhất Tanzania.\n\nĐiểm khác biệt vĩ đại nhất của Tanzania so với các nước láng giềng là dù có hơn 120 nhóm sắc tộc khác nhau, đất nước này chưa từng xảy ra nội chiến sắc tộc hay đảo chính quân sự kể từ khi độc lập nhờ chính sách tầm nhìn xa của cố Tổng thống Nyerere: lấy tiếng Swahili làm ngôn ngữ quốc gia thống nhất thay vì để một bộ tộc lớn áp đảo. Dưới thời nữ Tổng thống đầu tiên Samia Suluhu Hassan (nhậm chức năm 2021 và tái đắc cử nhiệm kỳ hai vào tháng 10/2025), Tanzania đã mở cửa mạnh mẽ thu hút đầu tư nước ngoài và hoàn thành hai công trình thế kỷ vào năm 2024: nhà máy thủy điện Julius Nyerere công suất 2.115 MW trên sông Rufiji và tuyến đường sắt cao tốc điện khí hóa khổ tiêu chuẩn (SGR) đầu tiên của Đông Phi nối Dar es Salaam với thủ đô Dodoma. Tanzania hiện đang vươn lên cạnh tranh trực tiếp với Kenya trong vai trò trung tâm cảng biển, khoáng sản chiến lược và du lịch sinh thái hàng đầu khu vực.",
     "t": [
       [
         "g",
@@ -4615,7 +4639,10 @@ export const C0 = {
         "Nhờ nắm giữ các lưu vực sông nội địa (Rufiji, Pangani, Ruvuma, Wami) bắt nguồn từ các dãy núi cao trong nước và tiếp giáp ba Đại Hồ, Tanzania hoàn toàn tự chủ về an ninh nguồn nước ngọt và thủy điện. Nguồn nước dồi dào ở lưu vực sông Kilombero và vùng cao nguyên phía nam (Mbeya, Iringa) đang biến Tanzania thành vựa xuất khẩu gạo và ngô nuôi sống cả khu vực Đông và Nam Phi."
       ]
     ],
-    "hs": []
+    "hs": [
+      "riftvalley",
+      "nile"
+    ]
   },
   "Rwanda": {
     "cap": "Kigali",
@@ -4650,7 +4677,9 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "congo"
+      "congo",
+      "riftvalley",
+      "nile"
     ]
   },
   "Burundi": {
@@ -4685,13 +4714,16 @@ export const C0 = {
         "Nằm ngay trên đường phân thủy chia đôi lưu vực sông Nile (qua sông Ruvubu chảy vào sông Kagera – hồ Victoria) và lưu vực sông Congo (qua sông Ruzizi và hồ Tanganyika), Burundi có lượng mưa dồi dào trên vùng cao nguyên. Tuy nhiên, biến đổi khí hậu và mực nước hồ Tanganyika dâng cao kỷ lục trong giai đoạn 2023–2025 đã gây ngập lụt nặng nề cho nhiều khu phố và bến cảng của trung tâm kinh tế Bujumbura."
       ]
     ],
-    "hs": []
+    "hs": [
+      "riftvalley",
+      "nile"
+    ]
   },
   "Madagascar": {
     "cap": "Antananarivo",
     "pop": "~32 triệu",
     "area": "587 nghìn km²",
-    "sum": "Nằm ngoài khơi bờ đông nam châu Phi qua eo biển Mozambique rộng hơn 400 km, Madagascar là hòn đảo lớn thứ tư trên thế giới (587.041 km² — lớn hơn cả nước Pháp). Do đã tách khỏi siêu lục địa Gondwana từ 160 triệu năm trước và tách khỏi tiểu lục địa Ấn Độ từ 88 triệu năm trước, hòn đảo này tiến hóa trong sự cô lập hoàn toàn như một \"lục địa thứ tám\" thu nhỏ, nơi tới 90% các loài động thực vật — như vượn cáo (lemur) và cây bao báp khổng lồ — không thể tìm thấy ở bất kỳ nơi nào khác trên Trái Đất. Điều kỳ thú nhất về lịch sử con người nơi đây là những cư dân đầu tiên vượt biển đến định cư vào đầu Công nguyên lại không phải từ châu Phi ở ngay bên cạnh, mà là những thủy thủ Nam Đảo (Austronesian) chèo thuyền bầu từ đảo Borneo (Đông Nam Á) vượt hơn 6.000 km Ấn Độ Dương, sau đó hòa huyết với người Bantu Đông Phi để tạo nên dân tộc và ngôn ngữ Malagasy thống nhất dưới Vương quốc Merina trước khi Pháp đô hộ (1896–1960).\n\nĐịa hình hòn đảo được chia làm ba dải chạy dọc từ bắc xuống nam: dải bờ biển phía đông hẹp mưa nhiều và rừng nhiệt đới; vùng cao nguyên trung tâm mát mẻ (nơi đặt thủ đô Antananarivo ở độ cao 1.280 m với những cánh đồng lúa nước bậc thang kiểu Đông Nam Á); và vùng đồng bằng phía tây cùng cực nam bán hoang mạc khô cằn. Trong kỷ nguyên hiện đại, vị trí án ngữ toàn bộ sườn đông kênh đào Mozambique biến Madagascar thành điểm nút hàng hải quan trọng trên tuyến siêu tàu chở dầu và tàu hàng đi vòng qua mũi Hảo Vọng (đặc biệt khi Biển Đỏ bất ổn giai đoạn 2024–2026). Tuy nhiên, những cuộc khủng hoảng chính trị chu kỳ sau độc lập, hạ tầng đường bộ xuống cấp và các siêu bão nhiệt đới Ấn Độ Dương tàn phá hàng năm khiến hơn 75% trong số 31 triệu người dân đảo quốc giàu tài nguyên này vẫn sống trong cảnh nghèo khó.",
+    "sum": "Nằm ngoài khơi bờ đông nam châu Phi qua eo biển Mozambique rộng hơn 400 km, Madagascar là hòn đảo lớn thứ tư trên thế giới (587.041 km² — lớn hơn cả nước Pháp). Do đã tách khỏi siêu lục địa Gondwana từ 160 triệu năm trước và tách khỏi tiểu lục địa Ấn Độ từ 88 triệu năm trước, hòn đảo này tiến hóa trong sự cô lập hoàn toàn như một \"lục địa thứ tám\" thu nhỏ, nơi tới 90% các loài động thực vật — như vượn cáo (lemur) và cây bao báp khổng lồ — không thể tìm thấy ở bất kỳ nơi nào khác trên Trái Đất. Điều kỳ thú nhất về lịch sử con người nơi đây là những cư dân đầu tiên vượt biển đến định cư vào đầu Công nguyên lại không phải từ châu Phi ở ngay bên cạnh, mà là những thủy thủ Nam Đảo (Austronesian) chèo thuyền bầu từ đảo Borneo (Đông Nam Á) vượt hơn 6.000 km Ấn Độ Dương, sau đó hòa huyết với người Bantu Đông Phi để tạo nên dân tộc và ngôn ngữ Malagasy thống nhất dưới Vương quốc Merina trước khi Pháp đô hộ (1896–1960).\n\nĐịa hình hòn đảo được chia làm ba dải chạy dọc từ bắc xuống nam: dải bờ biển phía đông hẹp mưa nhiều và rừng nhiệt đới; vùng cao nguyên trung tâm mát mẻ (nơi đặt thủ đô Antananarivo ở độ cao 1.280 m với những cánh đồng lúa nước bậc thang kiểu Đông Nam Á); và vùng đồng bằng phía tây cùng cực nam bán hoang mạc khô cằn. Trong kỷ nguyên hiện đại, vị trí án ngữ toàn bộ sườn đông kênh đào Mozambique biến Madagascar thành điểm nút hàng hải quan trọng trên tuyến siêu tàu chở dầu và tàu hàng đi vòng qua mũi Hảo Vọng (đặc biệt khi Biển Đỏ bất ổn giai đoạn 2024–2026). Tuy nhiên, những cuộc khủng hoảng chính trị chu kỳ sau độc lập, hạ tầng đường bộ xuống cấp và các siêu bão nhiệt đới Ấn Độ Dương tàn phá hàng năm khiến hơn 75% dân số vẫn nghèo khó. Tháng 10/2025, khủng hoảng chính trị bùng phát từ các cuộc biểu tình của giới trẻ đã dẫn tới việc Tổng thống Andry Rajoelina bị phế truất và phải đào tẩu ra nước ngoài; quân đội (đơn vị CAPSAT) tiếp quản quyền lực và Đại tá Michael Randrianirina tuyên thệ nhậm chức Tổng thống lâm thời hướng tới chuyển tiếp dân chủ.",
     "t": [
       [
         "g",
@@ -4711,7 +4743,7 @@ export const C0 = {
       [
         "g",
         "Quốc đảo không có biên giới đất liền; chỉ có tranh chấp chủ quyền với Pháp đối với nhóm \"Đảo Rải rác\" (Îles Éparses) không người ở trong kênh đào Mozambique",
-        "Là quốc đảo không có biên giới đất liền, tranh chấp lãnh thổ duy nhất của Madagascar là yêu sách chủ quyền đối với nhóm \"Đảo Rải rác\" (Îles Éparses — gồm Juan de Nova, Europa, Bassas da India và Glorieuses) do Pháp tiếp tục giữ lại trong kênh đào Mozambique khi trao trả độc lập năm 1960, bởi các đảo nhỏ này nắm giữ vùng đặc quyền kinh tế (EEZ) rộng lớn giàu tiềm năng dầu khí ngoài khơi. Dưới thời Tổng thống Andry Rajoelina (tái đắc cử cuối năm 2023), Antananarivo duy trì chính sách đối ngoại cân bằng giữa Pháp, Mỹ, Nhật Bản và Trung Quốc."
+        "Là quốc đảo không có biên giới đất liền, tranh chấp lãnh thổ duy nhất của Madagascar là yêu sách chủ quyền đối với nhóm \"Đảo Rải rác\" (Îles Éparses — gồm Juan de Nova, Europa, Bassas da India và Glorieuses) do Pháp tiếp tục giữ lại trong kênh đào Mozambique khi trao trả độc lập năm 1960, bởi các đảo nhỏ này nắm giữ vùng đặc quyền kinh tế (EEZ) rộng lớn giàu tiềm năng dầu khí ngoài khơi. Sau cuộc đảo chính quân sự tháng 10/2025 lật đổ Tổng thống Andry Rajoelina đưa Đại tá Michael Randrianirina lên làm Tổng thống lâm thời, chính quyền chuyển tiếp duy trì chính sách đối ngoại đa phương với Pháp, Mỹ, SADC và Trung Quốc trong khi xúc tiến lộ trình tổ chức bầu cử dân chủ mới."
       ],
       [
         "g",
@@ -4763,7 +4795,7 @@ export const C0 = {
     "cap": "Port Louis",
     "pop": "~1,25 triệu",
     "area": "2,04 nghìn km²",
-    "sum": "Nằm biệt lập giữa vùng biển Tây Nam Ấn Độ Dương, cách đảo Madagascar khoảng 900 km về phía đông, Mauritius là quốc đảo núi lửa thuộc quần đảo Mascarene được bao bọc bởi vòng đai rạn san hô ngầm và cao nguyên trung tâm xanh mướt. Không có cư dân bản địa cho tới khi người Hà Lan, người Pháp và sau đó là Đế quốc Anh lần lượt chiếm đóng từ thế kỷ 17 đến thế kỷ 19, hòn đảo từng là trung tâm đồn điền mía đường được xây dựng bởi mồ hôi của nô lệ châu Phi và lao động giao kèo từ Ấn Độ. Khi giành độc lập năm 1968, nhà kinh tế học đoạt giải Nobel James Meade từng bi quan dự báo Mauritius sẽ thất bại vì bùng nổ dân số, xung đột sắc tộc và nền kinh tế độc canh chỉ biết trồng mía.\n\nThế nhưng Mauritius đã viết nên câu chuyện kỳ tích rực rỡ nhất châu Phi khi kết hợp nền dân chủ nghị viện đa sắc tộc ổn định (Ấn – Phi – Hoa – Pháp) với chiến lược chuyển dịch kinh tế qua 4 nấc thang: từ mía đường sang dệt may xuất khẩu, du lịch nghỉ dưỡng hạng sang, trung tâm tài chính quốc tế và công nghệ số. Tháng 10/2024, Mauritius đạt thắng lợi ngoại giao lịch sử khi Vương quốc Anh ký thỏa thuận công nhận chủ quyền của nước này đối với quần đảo Chagos (trong khi vẫn duy trì quyền thuê căn cứ quân sự Mỹ – Anh tại đảo Diego Garcia trong 99 năm), mở rộng vùng đặc quyền kinh tế biển lên hơn 2,3 triệu km². Dưới chính phủ của Thủ tướng Navin Ramgoolam đắc cử cuối năm 2024, quốc đảo tiếp tục giữ vai trò cầu nối đầu tư chiến lược giữa Ấn Độ với châu Phi, đồng thời đối mặt với thách thức già hóa dân số và nước biển dâng.",
+    "sum": "Nằm biệt lập giữa vùng biển Tây Nam Ấn Độ Dương, cách đảo Madagascar khoảng 900 km về phía đông, Mauritius là quốc đảo núi lửa thuộc quần đảo Mascarene được bao bọc bởi vòng đai rạn san hô ngầm và cao nguyên trung tâm xanh mướt. Không có cư dân bản địa cho tới khi người Hà Lan, người Pháp và sau đó là Đế quốc Anh lần lượt chiếm đóng từ thế kỷ 17 đến thế kỷ 19, hòn đảo từng là trung tâm đồn điền mía đường được xây dựng bởi mồ hôi của nô lệ châu Phi và lao động giao kèo từ Ấn Độ. Khi giành độc lập năm 1968, nhà kinh tế học đoạt giải Nobel James Meade từng bi quan dự báo Mauritius sẽ thất bại vì bùng nổ dân số, xung đột sắc tộc và nền kinh tế độc canh chỉ biết trồng mía.\n\nThế nhưng Mauritius đã viết nên câu chuyện kỳ tích rực rỡ nhất châu Phi khi kết hợp nền dân chủ nghị viện đa sắc tộc ổn định (Ấn – Phi – Hoa – Pháp) với chiến lược chuyển dịch kinh tế qua 4 nấc thang: từ mía đường sang dệt may xuất khẩu, du lịch nghỉ dưỡng hạng sang, trung tâm tài chính quốc tế và công nghệ số. Sau thỏa thuận nguyên tắc tháng 10/2024, ngày 22/5/2025, Mauritius và Vương quốc Anh đã chính thức ký kết hiệp ước chuyển giao chủ quyền quần đảo Chagos cho Mauritius (trong khi Anh/Mỹ tiếp tục thuê căn cứ quân sự Diego Garcia trong 99 năm), mở rộng vùng đặc quyền kinh tế biển lên hơn 2,3 triệu km². Dưới chính phủ của Thủ tướng Navin Ramgoolam đắc cử cuối năm 2024, quốc đảo tiếp tục giữ vai trò cầu nối đầu tư chiến lược giữa Ấn Độ với châu Phi, đồng thời đối mặt với thách thức già hóa dân số và nước biển dâng.",
     "t": [
       [
         "g",
@@ -4782,8 +4814,8 @@ export const C0 = {
       ],
       [
         "g",
-        "Tháng 10/2024, Anh đạt thỏa thuận lịch sử đồng ý trao trả chủ quyền quần đảo Chagos cho Mauritius (trong khi căn cứ quân sự Mỹ – Anh tại đảo Diego Garcia được tiếp tục thuê hoạt động tối thiểu 99 năm)",
-        "Sau gần 6 thập kỷ đấu tranh pháp lý tại Tòa án Công lý Quốc tế (ICJ) và Liên Hợp Quốc, thỏa thuận lịch sử tháng 10/2024 với Anh đã chính thức khép lại hồ sơ phi thực dân hóa cuối cùng của London tại châu Phi tại quần đảo Chagos. Việc giữ nguyên căn cứ Diego Garcia theo hợp đồng thuê dài hạn vừa mang lại nguồn thu ngân sách ổn định cho Mauritius, vừa đảm bảo an ninh chiến lược cho Mỹ và Ấn Độ."
+        "Ký hiệp ước lịch sử ngày 22/5/2025 trao trả chủ quyền quần đảo Chagos cho Mauritius (trong khi căn cứ quân sự Mỹ – Anh tại đảo Diego Garcia được tiếp tục thuê hoạt động 99 năm)",
+        "Sau gần 6 thập kỷ đấu tranh pháp lý tại Tòa án Công lý Quốc tế (ICJ) và Liên Hợp Quốc, hiệp ước lịch sử ký ngày 22/5/2025 với Anh đã chính thức hoàn tất chuyển giao chủ quyền quần đảo Chagos cho Mauritius, khép lại hồ sơ phi thực dân hóa cuối cùng của London tại châu Phi. Việc giữ nguyên căn cứ Diego Garcia theo hợp đồng thuê dài hạn vừa mang lại nguồn thu ngân sách ổn định cho Mauritius, vừa đảm bảo an ninh chiến lược cho Mỹ và Ấn Độ."
       ],
       [
         "g",
@@ -4792,14 +4824,16 @@ export const C0 = {
       ]
     ],
     "hs": [
-      "r_cape"
+      "r_cape",
+      "chagos",
+      "base_diegogarcia"
     ]
   },
   "Seychelles": {
     "cap": "Victoria",
     "pop": "~120 nghìn",
     "area": "459 km²",
-    "sum": "Tọa lạc ở vùng biển Tây Ấn Độ Dương ở vĩ độ 4–10° Nam, Cộng hòa Seychelles là một quần đảo gồm 115 hòn đảo trải rộng trên vùng đặc quyền kinh tế biển (EEZ) khổng lồ tới 1,37 triệu km² dù tổng diện tích đất nổi chỉ vỏn vẹn 459 km². Khác với mọi đảo đại dương khác trên thế giới có nguồn gốc từ núi lửa hay san hô, cụm 42 đảo trung tâm của Seychelles (như Mahé, Praslin, La Digue) được cấu tạo từ những khối đá granit cổ đại tách ra khỏi siêu lục địa Gondwana cách đây 750 triệu năm. Không có người ở cho tới khi thực dân Pháp đặt chân đến năm 1770 và chuyển giao cho Anh sau thời kỳ Napoleon (1814), quần đảo hình thành bản sắc văn hóa Creole độc đáo pha trộn giữa người gốc Phi được giải phóng, người Âu và thương nhân châu Á trước khi độc lập năm 1976.\n\nNgày nay, Seychelles là quốc gia có dân số ít nhất nhưng lại giàu có nhất châu Phi tính theo GDP bình quân đầu người (~21.800 USD danh nghĩa, hơn 43.000 USD PPP) cùng nền dân chủ đa đảng minh bạch. Dưới chính sách giới hạn số lượng phòng khách sạn cao cấp để bảo vệ môi trường và việc phát hành 'Trái phiếu Xanh đại dương' đầu tiên trên thế giới, hơn một nửa diện tích đất liền và 30% vùng biển của Seychelles đã trở thành khu bảo tồn thiên nhiên. Nằm ngay ngã tư hàng hải giữa Đông Phi, vịnh Ba Tư và Ấn Độ, quốc đảo này vừa là trung tâm chế biến cá ngừ số một Ấn Độ Dương, vừa khéo léo cân bằng hợp tác an ninh hàng hải chống cướp biển và buôn lậu với Ấn Độ, Mỹ, Pháp và Trung Quốc.",
+    "sum": "Tọa lạc ở vùng biển Tây Ấn Độ Dương ở vĩ độ 4–10° Nam, Cộng hòa Seychelles là một quần đảo gồm 115 hòn đảo trải rộng trên vùng đặc quyền kinh tế biển (EEZ) khổng lồ tới 1,37 triệu km² dù tổng diện tích đất nổi chỉ vỏn vẹn 459 km². Khác với mọi đảo đại dương khác trên thế giới có nguồn gốc từ núi lửa hay san hô, cụm 42 đảo trung tâm của Seychelles (như Mahé, Praslin, La Digue) được cấu tạo từ những khối đá granit cổ đại tách ra khỏi siêu lục địa Gondwana cách đây 750 triệu năm. Không có người ở cho tới khi thực dân Pháp đặt chân đến năm 1770 và chuyển giao cho Anh sau thời kỳ Napoleon (1814), quần đảo hình thành bản sắc văn hóa Creole độc đáo pha trộn giữa người gốc Phi được giải phóng, người Âu và thương nhân châu Á trước khi độc lập năm 1976.\n\nNgày nay, Seychelles là quốc gia có dân số ít nhất nhưng lại giàu có nhất châu Phi tính theo GDP bình quân đầu người (~21.800 USD danh nghĩa, hơn 43.000 USD PPP) cùng nền dân chủ đa đảng ổn định (sau cuộc bầu cử tổng thống tháng 10/2025 đưa ông Patrick Herminie thuộc đảng United Seychelles lên nắm quyền). Dưới chính sách giới hạn số lượng phòng khách sạn cao cấp để bảo vệ môi trường và việc phát hành 'Trái phiếu Xanh đại dương' đầu tiên trên thế giới, hơn một nửa diện tích đất liền và 30% vùng biển của Seychelles đã trở thành khu bảo tồn thiên nhiên. Nằm ngay ngã tư hàng hải giữa Đông Phi, vịnh Ba Tư và Ấn Độ, quốc đảo này vừa là trung tâm chế biến cá ngừ số một Ấn Độ Dương, vừa khéo léo cân bằng hợp tác an ninh hàng hải chống cướp biển và buôn lậu với Ấn Độ, Mỹ, Pháp và Trung Quốc.",
     "t": [
       [
         "g",
