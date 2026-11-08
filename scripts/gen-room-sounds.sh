@@ -35,7 +35,36 @@ SOUNDS=(
   "ahh|1.2|false|a young man's satisfied refreshed 'aaah' sigh right after a big gulp of a cold drink, one short exhale, close recording, no music"
 )
 
+# Spoken lines, made with text to speech (eleven_v3, which reads audio tags like [exhales])
+# name | voice id | text
+VOICE=9KsetBCT7UMILPg6Ksvu # "Lax": young, casual
+SPEECH=(
+  "count1|$VOICE|[exhales sharply] One!"
+  "count2|$VOICE|[exhales sharply] Two!"
+  "count3|$VOICE|[exhales] Three!"
+  "count4|$VOICE|[exhales] Four."
+  "count5|$VOICE|[breathing hard] Five."
+  "count6|$VOICE|[straining] Six..."
+  "count7|$VOICE|[straining, through gritted teeth] Seven..."
+  "count8|$VOICE|[gasping, exhausted] Eight!"
+)
+
 want=("$@")
+for row in "${SPEECH[@]}"; do
+  IFS='|' read -r name voice text <<<"$row"
+  if [ ${#want[@]} -gt 0 ] && [[ " ${want[*]} " != *" $name "* ]]; then continue; fi
+  if [ ! -s "$raw/$name.mp3" ]; then
+    echo "requesting $name"
+    body=$(jq -n --arg t "$text" '{text: $t, model_id: "eleven_v3"}')
+    curl -sS --fail-with-body -X POST "https://api.elevenlabs.io/v1/text-to-speech/$voice?output_format=mp3_44100_128" \
+      -H "xi-api-key: $ELEVENLABS_API_KEY" -H "Content-Type: application/json" -d "$body" -o "$raw/$name.mp3"
+  fi
+  ffmpeg -y -loglevel error -i "$raw/$name.mp3" \
+    -af "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse,loudnorm=I=-22:TP=-3:LRA=11" \
+    -ac 1 -ar 44100 -b:a 48k "$out/$name.mp3"
+  echo "  $name.mp3 $(du -h "$out/$name.mp3" | cut -f1)"
+done
+
 for row in "${SOUNDS[@]}"; do
   IFS='|' read -r name secs loop prompt <<<"$row"
   if [ ${#want[@]} -gt 0 ] && [[ " ${want[*]} " != *" $name "* ]]; then continue; fi

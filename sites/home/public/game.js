@@ -365,7 +365,8 @@
   // starts on the first tap or key press, and the speaker button in the bar mutes it.
   // --------------------------------------------------------------------------
   const CLIPS = ['key1', 'key2', 'key3', 'meow', 'purr', 'game', 'win', 'lose', 'day', 'night', 'ac', 'snore',
-    'coffee', 'steps', 'switch', 'tvon', 'chair', 'ahh'];
+    'coffee', 'steps', 'switch', 'tvon', 'chair', 'ahh',
+    'count1', 'count2', 'count3', 'count4', 'count5', 'count6', 'count7', 'count8'];
   const LOOP_RATE = { steps: 1.2 };
   const clips = {};
   const loops = {};
@@ -393,7 +394,8 @@
     syncSound();
   }
 
-  function fx(name, volume, rate) {
+  // delay: seconds from now; offset: seconds into the clip to start from
+  function fx(name, volume, rate, delay, offset) {
     if (!audio || !wanted || !clips[name] || audio.state !== 'running') return;
     const src = audio.createBufferSource();
     const gain = audio.createGain();
@@ -401,7 +403,7 @@
     src.playbackRate.value = rate || 1;
     gain.gain.value = volume === undefined ? 1 : volume;
     src.connect(gain).connect(master);
-    src.start();
+    src.start(audio.currentTime + (delay || 0), offset || 0);
   }
 
   // Ambience that follows the room: the day or the night outside, the air conditioner,
@@ -977,12 +979,48 @@
       dev.flip = false;
       play(dev, 'drop', seq(0, 8), 12, false, () => {
         dev.state = 'push';
-        dev.wait = 9;
         dev.reps = 0;
-        dev.lineIn = 1.2;
-        play(dev, 'push', seq(0, 8), 9, true);
+        dev.wait = 0;
+        dev.lastFrame = 0;
+        play(dev, 'push', seq(0, 8), PUSH_FPS[0], true);
       });
     }));
+  }
+
+  // Push-ups follow the frames: frame 4 is the bottom, frame 8 back at the top. Each rep
+  // is counted at the top, out loud, and the last ones get slower. The voice clips have a
+  // breath before the number (COUNT_AT, measured), so each starts early enough for the
+  // number to land as he comes up.
+  const PUSH_REPS = 8;
+  const PUSH_FPS = [9, 9, 9, 9, 9, 7.5, 6.5, 5.5];
+  const COUNT_AT = [1.04, 0.62, 0.64, 0.68, 0.1, 1.1, 0.38, 1.2];
+
+  function updatePush(dt) {
+    if (dev.reps >= PUSH_REPS) {
+      dev.wait -= dt;
+      if (dev.wait <= 0) getUp(sitDown);
+      return;
+    }
+    const f = dev.frames[dev.i];
+    if (f === dev.lastFrame) return;
+    dev.lastFrame = f;
+    if (f === 4) {
+      // At the bottom: start the next number so its word lands at the top
+      const n = dev.reps;
+      const lead = 4 / dev.fps;
+      fx('count' + (n + 1), 0.9, 1, Math.max(0, lead - COUNT_AT[n]), Math.max(0, COUNT_AT[n] - lead));
+    }
+    if (f === 8) {
+      dev.reps++;
+      sayDev(String(dev.reps) + (dev.reps >= 6 ? '…' : ''));
+      if (dev.reps >= PUSH_REPS) {
+        dev.wait = 1.1;
+        play(dev, 'push', [8], 1, true);
+        setTimeout(() => { if (dev.state === 'push') sayDev('ok, that’s enough'); }, 700);
+      } else {
+        dev.fps = PUSH_FPS[dev.reps];
+      }
+    }
   }
 
   function getUp(then) {
@@ -1228,16 +1266,7 @@
       }
       if (dev.wait <= 0) getUp(sitDown);
     }
-    if (dev.state === 'push') {
-      dev.wait -= dt;
-      dev.lineIn -= dt;
-      if (dev.lineIn <= 0) {
-        dev.lineIn = 1;
-        dev.reps++;
-        sayDev(dev.wait > 1 ? String(dev.reps) : 'ok, that’s enough');
-      }
-      if (dev.wait <= 0) getUp(sitDown);
-    }
+    if (dev.state === 'push') updatePush(dt);
     if (dev.state === 'pause') {
       dev.wait -= dt;
       if (dev.wait <= 0) sitDown();
