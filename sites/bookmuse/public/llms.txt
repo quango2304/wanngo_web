@@ -58,6 +58,7 @@ Bookmuse is free, with no ads and no in-app purchases, and an account is optiona
 - [Home](https://bookmuse.wanngo.com/): what Bookmuse does, with common questions
 - [App Store](https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446): download for iPhone and iPad
 - [Support](https://bookmuse.wanngo.com/support/): full questions and answers, and how to contact us
+- [Bookmuse for Kobo](https://bookmuse.wanngo.com/kobo/): install the app on Kobo e-readers, with updates, uninstall steps and source code
 - [Tiếng Việt](https://bookmuse.wanngo.com/vi/)
 - [Español](https://bookmuse.wanngo.com/es/)
 - [Privacy Policy](https://bookmuse.wanngo.com/privacy/)

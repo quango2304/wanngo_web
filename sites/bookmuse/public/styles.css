@@ -42,3 +42,17 @@
 @media (prefers-reduced-motion: reduce) {
   .faq summary::after { transition: none; }
 }
+
+/* Kobo install page */
+.doc code { padding: 1px 6px; border-radius: 6px; background: var(--paper); color: var(--ink); font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+.doc .dl { margin: 36px 0 8px; }
+.doc .dl p { font-size: 15px; }
+.doc .dl .fine { margin-top: 6px; font-size: 12.5px; line-height: 1.5; color: var(--muted); overflow-wrap: anywhere; }
+.doc .dl > div { flex: 1 1 260px; min-width: 0; }
+.doc .dl .fine code { padding: 0; background: none; color: inherit; font-size: inherit; }
+.contact-card .btn.off { background: var(--paper); color: var(--muted); box-shadow: inset 0 0 0 1px var(--line); cursor: default; pointer-events: none; transform: none; }
+.doc .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0; padding: 0; list-style: none; }
+.doc .chips li { margin: 0; padding: 6px 14px; border-radius: 99px; background: var(--paper); color: var(--ink); font-size: 14.5px; line-height: 1.4; }
+.doc .steps { counter-reset: step; margin: 16px 0 0; padding: 0; list-style: none; }
+.doc .steps li { position: relative; min-height: 28px; margin: 0 0 14px; padding-left: 44px; }
+.doc .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: -1px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 14px; font-weight: 600; }
