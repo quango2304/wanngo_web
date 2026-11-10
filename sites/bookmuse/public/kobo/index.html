@@ -27,7 +27,7 @@
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/be-vietnam-pro-latin-600-normal.woff2" crossorigin>
   <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
   <link rel="stylesheet" href="/site.css?v=4">
-  <link rel="stylesheet" href="/styles.css?v=3">
+  <link rel="stylesheet" href="/styles.css?v=4">
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -59,25 +59,34 @@
     <ul><li>Your library and reading place, synced with the phone app</li><li>Highlights, notes and bookmarks</li><li>Tap a word for an offline dictionary, and save it to your words</li><li>Word review with flashcards, and reading time and stats</li><li>Books from USB, catalogs and Dropbox</li></ul>
     <p>There is no listening and no AI on the Kobo. An account is optional: without one, Bookmuse reads the books you copy over USB.</p>
 
+    <h2>A look at it</h2>
+    <div class="shots"><figure><img src="/assets/kobo/reader-1.png" alt="A calm page made for e-ink" width="720" height="960" loading="lazy" decoding="async"><figcaption>A calm page made for e-ink</figcaption></figure><figure><img src="/assets/kobo/dict-1.png" alt="Tap and hold a word for the dictionary, offline" width="720" height="960" loading="lazy" decoding="async"><figcaption>Tap and hold a word for the dictionary, offline</figcaption></figure><figure><img src="/assets/kobo/select-1.png" alt="Highlight, add a note or search from the same bar" width="720" height="960" loading="lazy" decoding="async"><figcaption>Highlight, add a note or search from the same bar</figcaption></figure><figure><img src="/assets/kobo/saved-1.png" alt="Words and highlights from your phone, on the Kobo" width="720" height="960" loading="lazy" decoding="async"><figcaption>Words and highlights from your phone, on the Kobo</figcaption></figure><figure><img src="/assets/kobo/review-1.png" alt="Review saved words with flashcards" width="720" height="960" loading="lazy" decoding="async"><figcaption>Review saved words with flashcards</figcaption></figure><figure><img src="/assets/kobo/stats-1.png" alt="Reading time, streak and goals" width="720" height="960" loading="lazy" decoding="async"><figcaption>Reading time, streak and goals</figcaption></figure></div>
+
     <h2>Which Kobos</h2>
-    <p>Bookmuse runs on the Kobo models that the Plato reader supports:</p>
+    <p>Bookmuse runs on these Kobo models:</p>
     <ul class="chips"><li>Touch</li><li>Glo</li><li>Mini</li><li>Aura</li><li>Aura HD</li><li>Aura H₂O</li><li>Glo HD</li><li>Touch 2.0</li><li>Aura ONE</li><li>Aura Edition 2</li><li>Aura H₂O Edition 2</li><li>Clara HD</li><li>Forma</li><li>Libra H₂O</li><li>Nia</li><li>Elipsa</li><li>Sage</li><li>Libra 2</li><li>Clara 2E</li><li>Elipsa 2E</li><li>Clara BW</li><li>Clara Colour</li><li>Libra Colour</li></ul>
     <p>We tested it on the Forma first. The other models should work but haven't been tried yet, so <a href="/support/">tell us</a> if something is off.</p>
 
     <h2 id="install">Install</h2>
-    <ol class="steps"><li><b>Connect the Kobo to a computer</b> with a USB cable. Tap <b>Connect</b> on the Kobo if it asks.</li><li><b>Copy <code>KoboRoot.tgz</code></b> into the hidden <code>.kobo</code> folder on the Kobo. To see hidden folders, press <b>Cmd+Shift+.</b> in the Mac Finder, or choose <b>View › Show › Hidden items</b> in Windows.</li><li><b>Eject the Kobo.</b> It restarts and installs by itself, which takes a few minutes. Keep it on.</li><li><b>Open Bookmuse.</b> On the Kobo's home screen, tap the menu at the bottom right, then <b>Bookmuse</b>. (The entry comes from NickelMenu, which is in the same file.)</li><li><b>Sign in</b> by scanning the QR code with the Bookmuse app on your phone, or with your email and password. You can skip this and read books you copy over USB.</li></ol>
+    <ol class="steps"><li><b>Connect the Kobo to a computer</b> with a USB cable. Tap <b>Connect</b> on the Kobo if it asks.</li><li><b>Copy <code>KoboRoot.tgz</code></b> into the hidden <code>.kobo</code> folder on the Kobo. To see hidden folders, press <b>Cmd+Shift+.</b> in the Mac Finder, or choose <b>View › Show › Hidden items</b> in Windows.</li><li><b>Eject the Kobo and unplug the cable.</b> It restarts and installs by itself, which takes a few minutes. Keep it on. (With the cable still in, Bookmuse waits for the next restart to open.)</li><li><b>Bookmuse opens by itself.</b> When the Kobo starts again, it shows its own home screen for a few seconds, then opens Bookmuse. It does this every time the Kobo starts.</li><li><b>Sign in</b> by scanning the QR code with the Bookmuse app on your phone, or with your email and password. You can skip this and read books you copy over USB.</li></ol>
+    <p><b>Wi-Fi:</b> Bookmuse asks for your Wi-Fi network the first time it opens; you can change it later in <b>Settings › Wi-Fi</b>.</p>
+
+    <h2 id="opening">Opening Bookmuse</h2>
+    <p>The Kobo opens Bookmuse every time it starts. <b>Quit to Kobo</b> in Bookmuse Settings takes you to the Kobo's own screens until the next restart.</p>
+    <p>If Bookmuse doesn't open by itself, open it from the menu: tap the menu button at the bottom right of the Kobo's home screen, then tap <b>Bookmuse</b>. You need this after Quit to Kobo, when the startup switch is off, and after a Kobo firmware update. (The menu entry comes from NickelMenu, which is in the same file.)</p>
+    <p>To stop it opening at startup, turn off <b>Settings › Open Bookmuse at Startup</b> in Bookmuse. From a computer you can also create an empty file named <code>no-autostart</code> in <code>.adds/bookmuse</code>; delete it to turn the setting back on. Bookmuse also stays closed when the Kobo starts with a USB cable connected to a computer, and when it was closed within a minute at the last two starts. Turn the switch off and on again to reset that.</p>
 
     <h2 id="update">Updating</h2>
     <p>In Bookmuse, open <b>Settings › About › Check for Update</b>. The new version downloads over Wi-Fi and installs when the Kobo restarts.</p>
 
     <h2 id="firmware">After a Kobo firmware update</h2>
-    <p>A firmware update from Kobo can remove NickelMenu, and the Bookmuse entry with it. Copy <code>KoboRoot.tgz</code> again (steps 1 to 3). Your books and settings stay on the Kobo.</p>
+    <p>A firmware update from Kobo removes the startup hook and can remove NickelMenu, and the Bookmuse entry with it. Until you copy <code>KoboRoot.tgz</code> again (steps 1 to 3), Bookmuse won't open by itself; if its menu entry is still there, open it from the menu. Your books and settings stay on the Kobo.</p>
 
     <h2 id="uninstall">Uninstall</h2>
-    <ol class="steps"><li>Connect the Kobo by USB. Your computer may hide folders that start with a dot; see step 2 above.</li><li>Delete the <code>.adds/bookmuse</code> folder and the <code>.adds/nm/bookmuse</code> file (and <code>.kobo/KoboRoot.tgz</code> if an update is waiting).</li><li>To remove NickelMenu too, create an empty file named <code>uninstall</code> in <code>.adds/nm</code>.</li><li>Eject the Kobo and let it restart. Your books and your Bookmuse account are not touched.</li></ol>
+    <ol class="steps"><li>Connect the Kobo by USB. Your computer may hide folders that start with a dot; see step 2 above.</li><li>Delete the <code>.adds/bookmuse</code> folder and the <code>.adds/nm/bookmuse</code> file (and <code>.kobo/KoboRoot.tgz</code> if an update is waiting). Bookmuse stops opening at startup as soon as the folder is gone.</li><li>To remove NickelMenu too, create an empty file named <code>uninstall</code> in <code>.adds/nm</code>.</li><li>Eject the Kobo and let it restart. Your books and your Bookmuse account are not touched.</li></ol>
 
     <h2>Credits</h2>
-    <p>Bookmuse for Kobo is free software under the <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a>, based on <a href="https://github.com/baskerville/plato">Plato</a> by Bastien Dejean. The source of each version is linked in the download box. NickelMenu by <a href="https://github.com/pgaskin/NickelMenu">pgaskin</a> (MIT) adds the menu entry. Dictionaries come from <a href="https://en.wiktionary.org">Wiktionary</a> (CC BY-SA).</p>
+    <p>Bookmuse for Kobo is free software under the <a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPLv3</a>. The source of each version is linked in the download box. NickelMenu by <a href="https://github.com/pgaskin/NickelMenu">pgaskin</a> (MIT) adds the menu entry, and the startup hook follows the boot script of <a href="https://github.com/NiLuJe/kfmon">KFMon</a> (NiLuJe, GPLv3). Dictionaries come from <a href="https://en.wiktionary.org">Wiktionary</a> (CC BY-SA).</p>
   </main>
 
   <footer class="foot">

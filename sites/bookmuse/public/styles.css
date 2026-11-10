@@ -56,3 +56,8 @@
 .doc .steps { counter-reset: step; margin: 16px 0 0; padding: 0; list-style: none; }
 .doc .steps li { position: relative; min-height: 28px; margin: 0 0 14px; padding-left: 44px; }
 .doc .steps li::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: -1px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--paper); color: var(--ink); font-size: 14px; font-weight: 600; }
+.doc .shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 16px; margin: 20px 0 8px; }
+.doc .shots figure { margin: 0; }
+.doc .shots img { display: block; width: 100%; height: auto; border-radius: 10px; background: #fff; box-shadow: 0 0 0 1px var(--line), var(--card-shadow); }
+.doc .shots figcaption { margin-top: 10px; color: var(--muted); font-size: 13.5px; line-height: 1.45; text-wrap: balance; }
+@media (max-width: 560px) { .doc .shots { grid-template-columns: repeat(2, 1fr); } }
