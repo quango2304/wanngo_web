@@ -363,14 +363,39 @@ button {
 
 .close {
   position: absolute;
-  top: 2px;
-  right: 6px;
-  padding: 0 6px;
+  top: 0;
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
   border: 0;
   background: none;
-  font-size: 26px;
-  line-height: 1.1;
+  color: var(--ink);
+  font: inherit;
+  font-size: 32px;
+  line-height: 1;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.close:hover,
+.close:active,
+.close:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  outline: 0;
+}
+
+/* Text keeps clear of the close button */
+.box .kind,
+.box .h1,
+.box .h2,
+.arcade-box .kind,
+.arcade-box .h2 {
+  padding-right: 34px;
 }
 
 /* Holding the laser pointer: the dot is the cursor, and the room stops taking clicks */
