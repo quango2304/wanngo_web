@@ -1,7 +1,7 @@
 # wanngo_web
 
 The owner's static sites on Cloudflare (free plan), one folder per site. Product backends and dashboards live in their own
-repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `specs/tasks/T65-domain-move.md` there).
+repos (Bookmuse: `../bookmuse/`, read its `docs/`; this repo's move is in `docs/web-dashboard.md` there).
 
 | Site | Folder | Worker | Hosts |
 |---|---|---|---|
@@ -14,7 +14,7 @@ repos (Bookmuse: `../bookmuse/`, read its `ROADMAP.md`; this repo's move is `spe
 - **Images** go in the site's `public/assets/`. **Videos** go to the R2 bucket `wanngo-media`, served at
   `https://media.wanngo.com/<site>/<name>.{mp4,webm,jpg}`: `scripts/upload-media.sh <video> <site>/<name>` encodes and
   uploads them (needs ffmpeg and `npx wrangler login`). Videos never go in git; keep the originals elsewhere.
-  The Bookmuse home pages' clips are already encoded (`bookmuse/landing/*.mp4`, specs in `../bookmuse/specs/tasks/T68-landing-redesign.md`).
+  The Bookmuse home pages' clips are already encoded (`bookmuse/landing/*.mp4`, specs in `../bookmuse/docs/web-dashboard.md`).
 - **Bookmuse pages share `site.css` and `site.js`** (fonts, light and dark, nav, footer, the theme switch); the home pages add `landing.css`, the others `styles.css`. Bump the `?v=` on those links in every page when one changes: they are cached for an hour.
 - Bookmuse's share links (`/b/…`), the AI-agent sign-in page and the universal-link files are on `bookmuse-app.wanngo.com`
   (the `bookmuse_web` dashboard), not on the landing. The landing's Sign in buttons link straight to that dashboard.
