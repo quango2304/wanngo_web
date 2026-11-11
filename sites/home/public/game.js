@@ -1432,6 +1432,8 @@
 
   function catSit() {
     cat.state = 'idle';
+    cat.x = Math.round(cat.x); // at rest he sits on the room's pixel grid
+    cat.y = Math.round(cat.y);
     cat.wait = 7 + Math.random() * 10;
     play(cat, 'catIdle', seq(0, 8), 6, true);
   }
@@ -1692,9 +1694,12 @@
   }
 
   closeBtn.addEventListener('click', closeBox);
-  // A tap anywhere outside an open card closes it (a shelf item tapped reopens its own)
+  // A tap anywhere outside an open card closes it (a shelf item tapped reopens its own).
+  // The intro only goes on a phone, where it covers the front of the room, and only once
+  // the visitor taps the room itself.
   document.addEventListener('pointerdown', (e) => {
-    if (box.hidden || closeBtn.hidden || box.contains(e.target) || e.target.closest('.bar')) return;
+    if (box.hidden || box.contains(e.target) || e.target.closest('.bar')) return;
+    if (!intro.hidden && !(L.tall && document.getElementById('load') === null && (e.target === canvas || hot.contains(e.target)))) return;
     closeBox();
   });
   document.addEventListener('keydown', (e) => {
