@@ -112,7 +112,8 @@
     offs: {
       ac: [-464, -6], lantern: [-196, -8], window: [-278, 30], clock: [-96, 6], cork: [-80, 90], succs: [96, 86],
       shelf: [-298, 56], tv: [-322, 46], coffee: [-194, 46], desk: [-58, 178], fig: [200, 156], snake: [90, 167],
-      monstera: [-392, 50], bed: [-144, 238], bag: [-268, 76], catbed: [-466, 238], mat: [-58, 192]
+      monstera: [-392, 50], bed: [-144, 238], bag: [-268, 76], catbed: [-466, 238], mat: [-58, 192],
+      hang: [-128, -2], art: [2, 8], sconce: [-108, -12]
     }
   };
   let L = WIDE;
@@ -126,6 +127,7 @@
   const LIGHTS = [
     { id: 'desk', group: 'desk', x: 97, y: 128, r: 78, c: '255,206,130' },
     { id: 'lantern', group: 'lantern', x: 438, y: 46, r: 100, c: '255,224,170' },
+    { id: 'sconce', group: 'sconce', x: 268, y: 119, r: 48, c: '255,214,150' },
     { id: 'tv', group: 'tv', x: 445, y: 140, r: 64, c: '150,190,255' },
     { id: 'screen', group: 'desk', x: 126, y: 126, r: 52, c: '160,180,255' }
   ];
@@ -168,6 +170,9 @@
     keyboard: [257, 330, 45, 6]
   };
 
+  // Pieces added later live in their own sheet, room-decor-a.png: [x, y, w, h]
+  const DECOR = { hang: [6, 4, 25, 72], art: [43, 10, 42, 55], sconce: [100, 24, 19, 26] };
+
   // The room, placed by hand. x, y are in the wide room; the tall room is the same
   // furniture moved by group. `base` is where a thing meets the floor: anyone whose
   // feet are above that line is behind it. No base means it's on the wall or flat on
@@ -178,6 +183,9 @@
     { id: 'succs', sprite: 'succs', group: 'succs', x: 12, y: 44 },
     { id: 'cork', sprite: 'cork', group: 'cork', x: 90, y: 66 },
     { id: 'clock', sprite: 'clock', group: 'clock', x: 212, y: 90 },
+    { id: 'art', sprite: 'art', group: 'art', x: 158, y: 22 }, // Hạ Long Bay at sunset
+    { id: 'hang', sprite: 'hang', group: 'hang', x: 244, y: 4 }, // on a cord from the ceiling
+    { id: 'sconce', sprite: 'sconce', group: 'sconce', x: 258, y: 112 }, // the reading lamp over the bed
     { id: 'lantern', sprite: 'lantern', group: 'lantern', x: 420, y: 8 },
     { id: 'tv', sprite: 'tv', group: 'tv', x: 418, y: 120 },
     { id: 'rug', sprite: 'rug', group: 'bed', x: 270, y: 222 },
@@ -239,7 +247,7 @@
 
   function drawChair() {
     const [x, y] = at('desk', 106, 170);
-    sprite('chair', x + Math.round(chairOut()[0] * chair.t), y + Math.round(chairOut()[1] * chair.t));
+    sprite('chair', x + snap(chairOut()[0] * chair.t), y + snap(chairOut()[1] * chair.t));
   }
 
   // Feet positions to walk through, so nobody crosses a piece of furniture
@@ -258,6 +266,9 @@
     { id: 'lamp', label: 'desk lamp', group: 'desk', x: 71, y: 112, w: 38, h: 54, act: () => toggleLamp('desk') },
     { id: 'window', label: 'window', group: 'window', x: 282, y: 30, w: 98, h: 90, act: () => sayDev(clockLine('it’s {t} here in Saigon')) },
     { id: 'clock', label: 'clock', group: 'clock', x: 212, y: 90, w: 27, h: 27, act: () => sayDev(clockLine('{t}. should I be sleeping?')) },
+    { id: 'art', label: 'print of Hạ Long Bay', group: 'art', x: 158, y: 22, w: 42, h: 55, say: 'Hạ Long Bay. I’ll go back one day' },
+    { id: 'hang', label: 'hanging pothos', group: 'hang', x: 244, y: 4, w: 25, h: 72, say: 'a cutting from the one on the shelf' },
+    { id: 'sconce', label: 'wall lamp', group: 'sconce', x: 258, y: 112, w: 19, h: 26, act: () => toggleLamp('sconce') },
     { id: 'cork', label: 'cork board', group: 'cork', x: 90, y: 66, w: 58, h: 44, say: 'todo: fewer todos' },
     { id: 'succs', label: 'little succulents', group: 'succs', x: 12, y: 44, w: 67, h: 36, say: 'the only ones I never forget' },
     { id: 'fig', label: 'fig tree', group: 'fig', x: 4, y: 85, w: 62, h: 110, say: 'taller than my last app' },
@@ -265,7 +276,7 @@
     { id: 'monitor', label: 'monitor', group: 'desk', x: 86, y: 96, w: 80, h: 70, act: () => peekScreen() },
     { id: 'tower', label: 'PC', group: 'desk', x: 168, y: 107, w: 28, h: 58, say: 'louder than the cat' },
     { id: 'mug', label: 'mug', group: 'coffee', x: 207, y: 177, w: 14, h: 11, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
-    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(() => visit(SPOTS.coffee), 'the real senior engineer') },
+    { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(getCoffee, 'the real senior engineer') },
     { id: 'bed', label: 'bed', group: 'bed', x: 256, y: 146, w: 151, h: 86, act: () => invite(nap, 'not yet. one more commit.') },
     { id: 'tv', label: 'TV: play', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: () => openArcade() },
     { id: 'console', label: 'game console: play', group: 'tv', x: 412, y: 177, w: 68, h: 49, act: () => openArcade() },
@@ -305,6 +316,11 @@
 
   let scale = 3; // device pixels per room pixel
   let cssScale = 3;
+  let sub = 1; // canvas pixels per room pixel
+  let RW = 0; // the canvas in room pixels
+  let RH = 0;
+  const TOP = 52; // the bar's height, in CSS pixels
+  const snap = (v) => Math.round(v * sub) / sub;
   let ox = 0;
   let oy = 0;
   const sprites = {};
@@ -498,7 +514,7 @@
   // recorded clip of their own (switches, the cat) skip them.
   function sound(id) {
     if (!audio || !wanted || audio.state !== 'running') return;
-    if (['cat', 'ac', 'tv', 'lamp', 'lantern', 'coffee'].includes(id)) return;
+    if (['cat', 'ac', 'tv', 'lamp', 'lantern', 'sconce', 'coffee'].includes(id)) return;
     if (id.startsWith('item') || id === 'globe') {
       tone(660, 660, 0, 0.07, 'square', 0.025);
       tone(990, 990, 0.07, 0.11, 'square', 0.025);
@@ -523,17 +539,23 @@
     const next = vw / vh < 0.8 ? TALL : WIDE;
     const changed = next !== L;
     L = next;
-    // Phones fill the width; on big screens stick to whole pixels so the art stays crisp
+    // Phones fill the width, and the whole room fits under the bar; on big screens stick to
+    // whole pixels so the art stays crisp
     scale = L.tall
-      ? Math.min((vw * dpr) / L.w, (vh * dpr) / (L.h + 20))
+      ? Math.min((vw * dpr) / L.w, ((vh - TOP - 6) * dpr) / L.h)
       : Math.max(1, Math.floor(Math.min((vw * dpr) / L.w, (vh * dpr) / L.h)));
     cssScale = scale / dpr;
-    canvas.width = lightmap.width = Math.ceil((vw * dpr) / scale);
-    canvas.height = lightmap.height = Math.ceil((vh * dpr) / scale);
-    canvas.style.width = (canvas.width * scale) / dpr + 'px';
-    canvas.style.height = (canvas.height * scale) / dpr + 'px';
-    ox = Math.floor((canvas.width - L.w) / 2);
-    oy = L.tall ? Math.round(52 / cssScale) : Math.floor((canvas.height - L.h) / 2);
+    RW = lightmap.width = Math.ceil((vw * dpr) / scale);
+    RH = lightmap.height = Math.ceil((vh * dpr) / scale);
+    // The canvas has `sub` pixels to each room pixel, so people and the cat glide instead of
+    // hopping a whole room pixel at a time; the art itself stays on the room's grid
+    sub = Math.max(1, Math.min(Math.round(scale), Math.floor(Math.sqrt(6e6 / (RW * RH)))));
+    canvas.width = RW * sub;
+    canvas.height = RH * sub;
+    canvas.style.width = (RW * scale) / dpr + 'px';
+    canvas.style.height = (RH * scale) / dpr + 'px';
+    ox = Math.floor((RW - L.w) / 2);
+    oy = L.tall ? Math.round(TOP / cssScale) : Math.floor((RH - L.h) / 2);
     document.documentElement.style.setProperty('--px', cssScale + 'px');
     THINGS.forEach((t) => {
       const [x, y] = at(t.group, t.x, t.y);
@@ -611,8 +633,8 @@
 
   function drawLight(now) {
     const d = darkness();
-    const w = canvas.width;
-    const h = canvas.height;
+    const w = RW;
+    const h = RH;
     const t = now / 1000;
 
     // Sunbeam through the window
@@ -680,6 +702,7 @@
       });
       ctx.save();
       ctx.globalCompositeOperation = 'multiply';
+      ctx.imageSmoothingEnabled = true; // soft light, not blocks
       ctx.drawImage(lightmap, 0, 0);
       ctx.restore();
     }
@@ -761,6 +784,8 @@
     catRear: ['cat-rear', 56, 56],
     catWalk: ['cat-walk', 56, 56],
     catLie: ['cat-lie', 56, 56],
+    // Sitting, he licks a paw and washes behind his ear; frames 0 and 8 are catIdle's frame 0
+    catGroom: ['cat-groom', 56, 56],
     // stand, crouch (1-4), leap (5-6), land (7), paws down (8); the cat starts 4px in and
     // ends 43px further on, so it is drawn 4px left of the 56px cat and moved on after
     catPounce: ['cat-pounce', 112, 56],
@@ -812,8 +837,8 @@
     const [, w, h] = SHEETS[name];
     const img = sprites[name];
     if (!img) return;
-    x = Math.round(x);
-    y = Math.round(y);
+    x = snap(x);
+    y = snap(y);
     if (flip) {
       ctx.save();
       ctx.translate(ox + x + w, oy + y);
@@ -877,11 +902,13 @@
   function startCoding(sameBreak) {
     dev.state = 'code';
     dev.flip = false;
+    dev.doing = null;
     [dev.x, dev.y] = seat();
     play(dev, 'type', seq(0, 8), 0.01, true);
     dev.burst = 1;
     dev.keyIn = 0;
     if (sameBreak !== true) dev.breakIn = 10 + Math.random() * 8;
+    if (dev.next) dev.breakIn = 1.2; // he promised
   }
 
   // Real typing comes in bursts, with a stop to think now and then
@@ -1158,23 +1185,33 @@
     }));
   }
 
-  // Each break comes up once before any repeats, the fun ones first
-  let breaks = [playGames, doPushUps, () => visit(SPOTS.coffee), nap, () => visit(SPOTS.window)];
+  // Each break comes up once before any repeats, the fun ones first. One he was talked
+  // into counts too, so he doesn't go straight back to it.
+  const getCoffee = () => visit(SPOTS.coffee);
+  const lookOut = () => visit(SPOTS.window);
+  let breaks = [playGames, doPushUps, getCoffee, nap, lookOut];
 
   function takeBreak() {
-    if (!breaks.length) {
-      breaks = [playGames, doPushUps, () => visit(SPOTS.coffee), nap, () => visit(SPOTS.window)]
-        .sort(() => Math.random() - 0.5);
-    }
-    breaks.shift()();
+    if (!breaks.length) breaks = [playGames, doPushUps, getCoffee, nap, lookOut].sort(() => Math.random() - 0.5);
+    const go = dev.next || breaks[0];
+    dev.next = null;
+    breaks = breaks.filter((b) => b !== go);
+    dev.doing = go;
+    go();
   }
 
-  // Clicking his beanbag, mat or bed talks him into it
+  // Clicking his beanbag, mat, bed or the coffee machine talks him into it. Busy with
+  // something else, he goes as soon as he's back at the desk.
   function invite(go, line) {
     if (dev.state === 'sleep') return sayDev(MUMBLES[0]);
-    if (dev.state !== 'code' || isSleepTime()) return sayDev(line);
+    if (isSleepTime() || dev.doing === go || dev.next === go) return sayDev(line);
+    if (dev.state !== 'code') {
+      dev.next = go;
+      return sayDev('ok, right after this');
+    }
     sayDev('good idea');
-    go();
+    dev.next = go;
+    takeBreak();
   }
 
   function wakeUp(line) {
@@ -1190,6 +1227,7 @@
   }
 
   function goToBed() {
+    dev.next = null;
     const toBed = () => walkTo(feetTo(SPOTS.bed), () => {
       sayDev('goodnight');
       tuckIn(() => {});
@@ -1319,8 +1357,10 @@
   }
 
   function sprite(name, x, y) {
-    const [sx, sy, w, h] = KIT[name];
-    ctx.drawImage(sprites.kit, sx, sy, w, h, ox + x, oy + y, w, h);
+    const sheet = DECOR[name] ? sprites.decor : sprites.kit;
+    if (!sheet) return;
+    const [sx, sy, w, h] = DECOR[name] || KIT[name];
+    ctx.drawImage(sheet, sx, sy, w, h, ox + x, oy + y, w, h);
   }
 
   function drawPiece(r) {
@@ -1501,7 +1541,22 @@
         sayAt('mrrp', cat);
         const side = aim.x > cat.x + 28 ? -16 : 16;
         catWalkTo(catFeet([floorX(aim.x + side), clamp(aim.y, floorTop(), floorBottom())]), 50);
-      } else if (cat.wait <= 0) roam();
+      } else if (cat.wait <= 0) {
+        // Now and then he stays put and washes instead, starting from the idle loop's first
+        // frame, which is the clip's first frame too
+        if (cat.groom === undefined) cat.groom = !still && darkness() < 0.7 && !!sprites.catGroom && Math.random() < 0.45;
+        if (!cat.groom) {
+          cat.groom = undefined;
+          roam();
+        } else if (cat.i === 0) {
+          cat.groom = undefined;
+          cat.state = 'groom';
+          play(cat, 'catGroom', [0, 1, 2, 3, 4, 5, 4, 5, 4, 5, 6, 7, 8], 7, false, () => {
+            catSit();
+            cat.wait = 4 + Math.random() * 6;
+          });
+        }
+      }
     }
     if (cat.state === 'walk') {
       const dx = cat.goal[0] - cat.x;
@@ -2175,7 +2230,7 @@
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   // Where the cat's feet can go: the open floor in front of the furniture
   const floorTop = () => (L.tall ? 300 : 236);
-  const floorBottom = () => Math.max(floorTop() + 20, Math.min(canvas.height - oy - 4, L.h + 40));
+  const floorBottom = () => Math.max(floorTop() + 20, Math.min(RH - oy - 4, L.h + 40));
   const floorX = (x) => clamp(x, 14, L.w - 14);
 
   function syncToy() {
@@ -2271,8 +2326,8 @@
 
   function drawDot() {
     if (!laser.held || !laser.on || cat.pinned) return;
-    const x = Math.round(ox + laser.x);
-    const y = Math.round(oy + laser.y);
+    const x = snap(ox + laser.x);
+    const y = snap(oy + laser.y);
     ctx.save();
     ctx.globalCompositeOperation = 'lighter';
     ctx.fillStyle = 'rgba(255,40,40,0.28)';
@@ -2667,8 +2722,9 @@
   // --------------------------------------------------------------------------
   // Wall and floor are plain paint, so they fit any screen shape
   function drawRoom() {
-    const w = canvas.width;
-    const h = canvas.height;
+    const w = RW;
+    const h = RH;
+    ctx.setTransform(sub, 0, 0, sub, 0, 0);
     const line = oy + L.wall;
     ctx.imageSmoothingEnabled = false;
     ctx.globalCompositeOperation = 'source-over';
@@ -2685,6 +2741,8 @@
     const [cx, cy] = at('lantern', 438, 8);
     ctx.fillStyle = '#8F7860';
     ctx.fillRect(ox + cx, 0, 1, oy + cy + 1);
+    const [hx, hy] = at('hang', 254, 4);
+    ctx.fillRect(ox + hx, 0, 1, oy + hy + 1);
     ROOM.forEach((r) => {
       if (!r.base) drawPiece(r);
     });
@@ -2782,10 +2840,10 @@
 
   makeButtons();
   addEventListener('resize', resize);
-  toLoad = 3 + Object.keys(SHEETS).length;
+  toLoad = 4 + Object.keys(SHEETS).length;
   const fonts = ['400 18px "Pixelify Sans"', '600 18px "Pixelify Sans"'].map((f) =>
     (document.fonts ? document.fonts.load(f) : Promise.resolve()).catch(() => {}).then(loadStep));
-  const assets = fonts.concat([load('kit', 'room-flat-f')]);
+  const assets = fonts.concat([load('kit', 'room-flat-f'), load('decor', 'room-decor-a')]);
   Object.keys(SHEETS).forEach((k) => assets.push(load(k, SHEETS[k][0])));
   const atLeast = new Promise((r) => setTimeout(r, 700));
   bootTerm();
