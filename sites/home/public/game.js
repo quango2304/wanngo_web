@@ -1179,6 +1179,7 @@
     cup.on = true;
     play(cup, 'sip', seq(0, n - 1), 6, false, () => {
       cup.on = false;
+      brew.full = false; // he drank it
       refreshed();
     });
   }
@@ -1216,6 +1217,43 @@
     if (then) then();
   }
 
+  // The coffee in the mug: it darkens in as it fills, ripples run out from where the stream
+  // lands and little splashes hop up; a full cup steams for a while. x, y: the mug sprite.
+  function drawMugCoffee(x, y) {
+    const level = brew.on ? Math.min(1, brew.t / BREW_TIME) : brew.full ? 1 : 0;
+    const px = ox + x;
+    const py = oy + y;
+    // The sprite has coffee drawn in; an empty mug shows its dark inside instead
+    ctx.fillStyle = '#3A3440';
+    ctx.fillRect(px + 2, py + 1, 8, 1);
+    if (level <= 0) return;
+    ctx.globalAlpha = level;
+    ctx.fillStyle = '#603A28';
+    ctx.fillRect(px + 2, py + 1, 8, 1);
+    ctx.globalAlpha = 1;
+    if (still) return;
+    const t = performance.now() / 1000;
+    if (brew.on && brew.t > 0.4) {
+      const r = Math.floor((t * 7) % 4);
+      ctx.fillStyle = '#A06A46';
+      ctx.fillRect(px + Math.max(2, 6 - r), py + 1, 1, 1);
+      ctx.fillRect(px + Math.min(9, 6 + r), py + 1, 1, 1);
+      ctx.fillStyle = '#7A4A30';
+      for (let i = 0; i < 2; i++) {
+        const f = (t * 2.6 + i * 0.5) % 1;
+        ctx.fillRect(px + 6 + (i ? 1 : -1) * snap(f * 3), py + 1 - snap(f * (1 - f) * 10), 1, 1);
+      }
+    } else if (brew.full && brew.steam > 0) {
+      ctx.fillStyle = '#FFFBEF';
+      for (let i = 0; i < 2; i++) {
+        const f = (t * 0.9 + i / 2) % 1;
+        ctx.globalAlpha = 0.7 * (1 - f) * Math.min(1, brew.steam / 2);
+        ctx.fillRect(px + 4 + i * 3 + snap(Math.sin(f * 6 + i * 2)), py - snap(f * 5), 1, 1);
+      }
+      ctx.globalAlpha = 1;
+    }
+  }
+
   // x, y: the machine sprite's place in the room
   function drawBrewer(x, y) {
     const px = ox + x;
@@ -1235,11 +1273,20 @@
     }
     if (still) return;
     if (brew.on) {
-      // A thin stream from the spout, with drops running down it
-      ctx.fillStyle = '#5A3422';
-      ctx.fillRect(px + 13, py + 21, 1, 4);
-      ctx.fillStyle = '#8A5A3A';
-      ctx.fillRect(px + 13, py + 21 + Math.floor(brew.t * 12) % 4, 1, 1);
+      // It starts and ends in drips; in between, a steady stream with drops running down it
+      const t = brew.t;
+      if (t < 0.5 || t > BREW_TIME - 0.6) {
+        const f = (t * 3.2) % 1;
+        ctx.fillStyle = '#5A3422';
+        ctx.fillRect(px + 13, py + 21, 1, 1);
+        ctx.fillRect(px + 13, py + 21 + snap(f * 4), 1, 1);
+      } else {
+        ctx.fillStyle = '#5A3422';
+        ctx.fillRect(px + 13, py + 21, 1, 4);
+        ctx.fillStyle = '#8A5A3A';
+        ctx.fillRect(px + 13, py + 21 + Math.floor(t * 12) % 4, 1, 1);
+        ctx.fillRect(px + 13, py + 21 + Math.floor(t * 12 + 2) % 4, 1, 1);
+      }
     }
     // Steam off the top while it brews, thinning out after
     const k = brew.on ? 1 : brew.steam / 5;
@@ -1478,10 +1525,7 @@
     if (name === 'mug' && cup.on) return;
     sprite(name, x, y);
     if (name === 'coffee') drawBrewer(x, y);
-    if (name === 'mug' && brew.full) {
-      ctx.fillStyle = '#5A3422'; // coffee at the rim
-      ctx.fillRect(ox + x + 2, oy + y + 1, 8, 1);
-    }
+    if (name === 'mug') drawMugCoffee(x, y);
     if (name === 'monitor') drawTerm(ox + x, oy + y);
     if (name === 'bed' && dev.bed > 0) {
       ctx.globalAlpha = dev.bed;
