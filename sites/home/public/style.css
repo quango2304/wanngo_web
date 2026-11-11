@@ -499,6 +499,12 @@ button {
 }
 
 @media (max-width: 560px) {
+  .tvplay {
+    padding: 1px 6px 2px;
+    border-width: 2px;
+    font-size: 14px;
+  }
+
   .bar {
     font-size: 18px;
     gap: 8px;
@@ -523,4 +529,37 @@ button {
   .desc {
     font-size: 16px;
   }
+}
+
+/* The play button on the TV screen, shown when the TV is pointed at or tapped */
+.tvplay {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 3px 10px 4px;
+  background: var(--paper);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  box-shadow: 0 0 0 2px var(--paper);
+  font: inherit;
+  font-size: 17px;
+  line-height: 1.1;
+  white-space: nowrap;
+  cursor: pointer;
+  animation: tvplay-in 0.15s steps(3);
+}
+
+.tvplay:hover,
+.tvplay:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  outline: 0;
+}
+
+.tvplay[hidden],
+.game.lasering .tvplay {
+  display: none;
+}
+
+@keyframes tvplay-in {
+  from { transform: translate(-50%, -50%) scale(0.6); }
 }

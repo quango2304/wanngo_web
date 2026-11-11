@@ -278,8 +278,8 @@
     { id: 'mug', label: 'mug', group: 'coffee', x: 207, y: 177, w: 14, h: 11, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
     { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(getCoffee, 'the real senior engineer') },
     { id: 'bed', label: 'bed', group: 'bed', x: 256, y: 146, w: 151, h: 86, act: () => invite(nap, 'not yet. one more commit.') },
-    { id: 'tv', label: 'TV: play', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: () => openArcade() },
-    { id: 'console', label: 'game console: play', group: 'tv', x: 412, y: 177, w: 68, h: 49, act: () => openArcade() },
+    { id: 'tv', label: 'TV', group: 'tv', x: 418, y: 120, w: 55, h: 35, act: (e) => offerGame(e) },
+    { id: 'console', label: 'game console', group: 'tv', x: 412, y: 177, w: 68, h: 49, act: (e) => offerGame(e) },
     { id: 'bag', label: 'beanbag', group: 'bag', x: 418, y: 222, w: 54, h: 40, act: () => invite(playGames, 'best seat in the house') },
     { id: 'mat', label: 'exercise mat', group: 'mat', x: 64, y: 238, w: 108, h: 26, act: () => invite(doPushUps, 'I use this. sometimes.') },
     { id: 'monstera', label: 'monstera', group: 'monstera', x: 530, y: 181, w: 42, h: 59, say: 'she gets the best light' },
@@ -330,14 +330,18 @@
       const b = document.createElement('button');
       b.type = 'button';
       b.setAttribute('aria-label', t.label);
-      b.addEventListener('click', () => {
+      b.addEventListener('click', (e) => {
         sound(t.id);
         flash(t);
-        if (t.act) t.act();
+        if (t.act) t.act(e);
         else sayDev(t.say);
       });
       hot.appendChild(b);
       t.el = b;
+      if (t.id === 'tv' || t.id === 'console') {
+        b.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') showPlay(); });
+        b.addEventListener('pointerleave', () => hidePlay(0.3));
+      }
       if (t.id === 'laser') {
         b.addEventListener('pointerenter', () => { laser.hovered = true; });
         b.addEventListener('pointerleave', () => { laser.hovered = false; });
@@ -631,6 +635,60 @@
     sayDev(acOn ? 'ahh. thank you.' : 'it’s 34 degrees in Saigon. please.');
   }
 
+  // Life outside the window: now and then a few birds fly past by day, or a shooting star
+  // crosses the night sky. skyShow() brings the next one on soon.
+  const sky = { next: 6, birds: null, star: null };
+
+  function skyShow(delay) {
+    sky.next = Math.min(sky.next, delay);
+  }
+
+  function stepSky(dt) {
+    if (still) return;
+    if (sky.birds) sky.birds.t += dt;
+    if (sky.star) sky.star.t += dt;
+    sky.next -= dt;
+    if (sky.next > 0) return;
+    sky.next = 14 + Math.random() * 16;
+    if (darkness() > 0.5) sky.star = { t: 0, x: 18 + Math.random() * 34, y: 2 + Math.random() * 10 };
+    else sky.birds = { t: 0, n: 2 + Math.floor(Math.random() * 3), dir: Math.random() < 0.5 ? 1 : -1, y: 6 + Math.random() * 16 };
+  }
+
+  function drawSky(gx, gy) {
+    if (!sky.birds && !sky.star) return;
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(ox + gx, oy + gy, GLASS.w, GLASS.h - 10);
+    ctx.clip();
+    const b = sky.birds;
+    if (b) {
+      const span = GLASS.w + 30;
+      ctx.fillStyle = '#4A4858';
+      for (let j = 0; j < b.n; j++) {
+        const p = b.t * 15 - j * 7;
+        const x = gx + (b.dir > 0 ? p - 12 : GLASS.w + 12 - p);
+        const y = gy + b.y + (j % 2) * 3 + Math.sin(b.t * 3 + j) * 1.5;
+        const up = Math.floor(b.t * 7 + j * 1.3) % 2;
+        [[-2, up ? -1 : 1], [-1, 0], [0, up ? 1 : 0], [1, 0], [2, up ? -1 : 1]].forEach(([dx, dy]) => {
+          ctx.fillRect(ox + snap(x + dx), oy + snap(y + dy), 1, 1);
+        });
+      }
+      if (b.t * 15 > span + b.n * 7) sky.birds = null;
+    }
+    const st = sky.star;
+    if (st) {
+      const k = st.t / 1.1;
+      for (let i = 0; i < 11; i++) {
+        ctx.globalAlpha = Math.max(0, (1 - i / 11) * (1 - k * 0.5));
+        ctx.fillStyle = i ? '#CFE4FF' : '#FFFFFF';
+        ctx.fillRect(ox + snap(gx + st.x - k * 36 + i), oy + snap(gy + st.y + k * 18 - i * 0.5), 1, 1);
+      }
+      ctx.globalAlpha = 1;
+      if (k >= 1) sky.star = null;
+    }
+    ctx.restore();
+  }
+
   function drawLight(now) {
     const d = darkness();
     const w = RW;
@@ -732,6 +790,7 @@
         ctx.fillRect(ox + gx + 3 + ((i * 29) % (GLASS.w - 6)), oy + gy + 3 + ((i * 17) % 30), 1, 1);
       }
     }
+    drawSky(...at('window', GLASS.x, GLASS.y));
     if (d > 0.15) {
       STRING.forEach((p, i) => {
         const [x, y] = at('window', p[0], p[1]);
@@ -823,7 +882,10 @@
     // (frame 0, his feet on SPOTS.bed) to asleep under the blanket (the bedSleep sprite)
     bedIn: ['dev-bed', 208, 156],
     // Standing by the coffee machine (his feet 26px in, 142px down), the mug in its slot
-    sip: ['dev-sip-machine', 92, 148]
+    sip: ['dev-sip-machine', 92, 148],
+    // At the window, back to us: a big stretch, hands behind his head, arms down. 64px wide,
+    // cut from x 28 of his 120px frame and 4px lower; frames 0 and 6 are dev-rear's frame 0
+    gaze: ['dev-gaze', 64, 160]
   };
   // How far the cat's body has moved on in each pounce frame
   const POUNCE_SHIFT = [0, 1, 4, 4, 5, 16, 29, 43, 44];
@@ -1080,7 +1142,7 @@
         dev.wait = 4;
         dev.flip = false;
         sayDev(spot.line);
-        if (spot === SPOTS.window) return play(dev, 'rear', [0], 1, true); // back to us, looking out
+        if (spot === SPOTS.window) return lookOutside(); // back to us, looking out
         play(dev, 'stand', [8], 1, true);
         if (spot === SPOTS.coffee) {
           dev.flip = L.tall;
@@ -1089,6 +1151,20 @@
         }
       });
     });
+  }
+
+  // At the window: he watches the sky a while (birds by day, a shooting star at night) and
+  // has a long stretch
+  const GAZE = [0, 1, 2, 3, 4, 4, 3, 4, 4, 3, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 5, 6];
+
+  function lookOutside() {
+    dev.wait = 2 + GAZE.length / 6;
+    skyShow(1.2);
+    if (!sprites.gaze) return play(dev, 'rear', [0], 1, true);
+    play(dev, 'rear', [0], 1, true);
+    setTimeout(() => {
+      if (dev.state === 'pause' && dev.sheet === 'rear') play(dev, 'gaze', GAZE, 6, false, () => play(dev, 'rear', [0], 1, true));
+    }, 900);
   }
 
   // At the coffee table: reach for the mug, a slow sip, put it back. The mug on the
@@ -1372,6 +1448,7 @@
       const [x, y] = at('bag', 395, 158);
       return frame(n, dev.frames[dev.i], x, y, dev.flip);
     }
+    if (n === 'gaze') return frame(n, dev.frames[dev.i], dev.x + 28, dev.y - 4, false);
     const y = SHEETS[n][2] === 120 ? dev.y + 31 : dev.y;
     frame(n, dev.frames[dev.i], dev.x, y, dev.flip && n !== 'front' && n !== 'rear');
   }
@@ -1970,6 +2047,40 @@
     else if (g.over || g.dead > 0) arcadeLine.textContent = (arcade.record ? `new best: ${g.score}!` : `${g.score} ${g.score === 1 ? 'gap' : 'gaps'}${best}`) + ' · tap to go again';
     else arcadeLine.textContent = `${g.score}${best}`;
   }
+
+  // The TV and the console don't start the game themselves: pointing at them (or a tap, on
+  // a phone) brings up a play button on the screen, and that button opens it
+  const playBtn = document.getElementById('tvplay');
+  let playHide = 0;
+
+  function showPlay() {
+    clearTimeout(playHide);
+    if (arcade.open || laser.held) return;
+    const [x, y] = at('tv', SCREEN.x + SCREEN.w / 2, SCREEN.y + SCREEN.h / 2);
+    playBtn.style.left = (ox + x) * cssScale + 'px';
+    playBtn.style.top = (oy + y) * cssScale + 'px';
+    playBtn.hidden = false;
+  }
+
+  function hidePlay(after) {
+    clearTimeout(playHide);
+    playHide = setTimeout(() => { playBtn.hidden = true; }, after * 1000);
+  }
+
+  function offerGame(e) {
+    showPlay();
+    hidePlay(5);
+    if (e && e.detail === 0) playBtn.focus(); // from the keyboard
+    if (dev.state === 'play') sayDev('want a go?');
+  }
+
+  playBtn.addEventListener('pointerenter', () => clearTimeout(playHide));
+  playBtn.addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') hidePlay(0.3); });
+  playBtn.addEventListener('click', () => {
+    playBtn.hidden = true;
+    openArcade();
+  });
+  addEventListener('resize', () => { playBtn.hidden = true; });
 
   function openArcade() {
     if (arcade.open) return;
@@ -2806,7 +2917,7 @@
       const f = cat.frames[cat.i];
       on(cat.x + 28 + (cat.flip ? -1 : 1) * POUNCE_SHIFT[f], cat.y + 51, f === 5 || f === 6 ? 11 : 15, 3);
     } else on(cat.x + 28, cat.y + 51, 15, 3);
-    if (['walk', 'front', 'rear', 'stand'].includes(dev.sheet) && dev.bed < 1 && !tuck.on) on(dev.x + 58, dev.y + 146, 17, 3);
+    if (['walk', 'front', 'rear', 'stand', 'gaze'].includes(dev.sheet) && dev.bed < 1 && !tuck.on) on(dev.x + 58, dev.y + 146, 17, 3);
     if (dev.sheet === 'push') on(dev.x + 74, dev.y + 144, 56, 4);
   }
 
@@ -2850,6 +2961,7 @@
     stepChair(dt);
     stepTerm(dt);
     stepBrew(dt);
+    stepSky(dt);
     stepTvGame(dt);
     drawRoom();
     drawClock();
