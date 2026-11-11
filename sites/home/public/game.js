@@ -883,6 +883,9 @@
     bedIn: ['dev-bed', 208, 156],
     // Standing by the coffee machine (his feet 26px in, 142px down), the mug in its slot
     sip: ['dev-sip-machine', 92, 148],
+    // At the machine before the sip: he presses its button (frame 2), then taps his foot
+    // while it brews. The left 52x140 of the sip frame from 4px down; 0 and 8 are its frame 0
+    press: ['dev-press', 52, 140],
     // At the window, back to us: a big stretch, hands behind his head, arms down. 64px wide,
     // cut from x 28 of his 120px frame and 4px lower; frames 0 and 6 are dev-rear's frame 0
     gaze: ['dev-gaze', 64, 160]
@@ -1146,8 +1149,8 @@
         play(dev, 'stand', [8], 1, true);
         if (spot === SPOTS.coffee) {
           dev.flip = L.tall;
-          dev.wait = BREW_TIME + 4;
-          startBrew(sip);
+          dev.wait = BREW_TIME + 5;
+          brewCoffee();
         }
       });
     });
@@ -1181,6 +1184,21 @@
       cup.on = false;
       brew.full = false; // he drank it
       refreshed();
+    });
+  }
+
+  // He presses the button, and the machine starts as his finger lands; then he waits,
+  // tapping his foot, until the cup is full and sip() takes over
+  const PRESS = [0, 1, 2, 2, 2];
+  const TAP = [1, 0, 0, 7, 0, 7, 0, 0, 3, 3, 0, 0, 7, 6, 7, 0, 0];
+
+  function brewCoffee() {
+    if (still || !sprites.press) return startBrew(sip);
+    cup.on = true;
+    play(cup, 'press', PRESS, 7, false, () => {
+      if (dev.state !== 'pause') return (cup.on = false);
+      startBrew(sip);
+      play(cup, 'press', TAP, 5, false, () => { cup.on = false; });
     });
   }
 
@@ -1481,6 +1499,8 @@
     if (cup.on) {
       // The sip clip's frame is 92px wide with his feet 26px in (65px when mirrored)
       const x = dev.x + 58 - (dev.flip ? 65 : 26);
+      // The press clip is the left 52x140 of that frame, 4px down
+      if (cup.sheet === 'press') return frame('press', cup.frames[cup.i], x + (dev.flip ? 40 : 0), dev.y + 8, dev.flip);
       return frame('sip', cup.frames[cup.i], x, dev.y + 146 - 142, dev.flip);
     }
     ctx.globalAlpha = 1 - dev.bed;
@@ -1522,7 +1542,7 @@
     let name = r.sprite;
     if (name === 'console' && dev.state === 'play') name = 'consolePlain';
     if (name === 'bed' && tuck.on) return frame('bedIn', tuck.frames[tuck.i], x - 56, y - 54, false);
-    if (name === 'mug' && cup.on) return;
+    if (name === 'mug' && cup.on && cup.sheet === 'sip') return;
     sprite(name, x, y);
     if (name === 'coffee') drawBrewer(x, y);
     if (name === 'mug') drawMugCoffee(x, y);
