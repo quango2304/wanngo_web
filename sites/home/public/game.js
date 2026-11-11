@@ -753,12 +753,42 @@
     ctx.fillStyle = isAcOn() ? '#6BE08A' : '#D0705A';
     ctx.fillRect(ox + vx + 70, oy + vy - 13, 3, 2);
     if (isAcOn() && !still) {
-      ctx.fillStyle = 'rgba(190,226,250,0.8)';
-      for (let i = 0; i < 9; i++) {
-        const f = ((t * 0.5 + i * 0.11) % 1);
-        const x = vx + ((i * 23) % VENT.w) + Math.sin(f * 6 + i) * 3;
-        ctx.globalAlpha = 0.8 * (1 - f);
-        ctx.fillRect(ox + Math.round(x), oy + Math.round(vy + f * 34), 1, 2);
+      // Cold air pours out of the vent and fans out on its way down: a blue haze, ribbons
+      // of air curling as they go, and quick specks. A bit softer at night.
+      const cx = vx + VENT.w / 2;
+      const dim = 1 - 0.35 * d;
+      const reach = 50;
+      const haze = ctx.createLinearGradient(0, oy + vy, 0, oy + vy + reach);
+      haze.addColorStop(0, `rgba(150,205,255,${0.26 * dim})`);
+      haze.addColorStop(0.5, `rgba(150,205,255,${0.1 * dim})`);
+      haze.addColorStop(1, 'rgba(150,205,255,0)');
+      ctx.fillStyle = haze;
+      ctx.beginPath();
+      ctx.moveTo(ox + vx + 2, oy + vy);
+      ctx.lineTo(ox + vx + VENT.w - 2, oy + vy);
+      ctx.lineTo(ox + vx + VENT.w + 12, oy + vy + reach);
+      ctx.lineTo(ox + vx - 12, oy + vy + reach);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = '#B4DDFF';
+      for (let i = 0; i < 7; i++) {
+        const f = (t * 0.36 + i / 7) % 1;
+        const x0 = vx + 4 + ((i * 31) % (VENT.w - 22));
+        const x = x0 + (x0 + 7 - cx) * 0.4 * f;
+        const y0 = vy + 2 + f * (reach - 4);
+        const fade = Math.min(1, f * 5) * (1 - f) * dim;
+        for (let k = 0; k < 15; k++) {
+          ctx.globalAlpha = fade * (1 - Math.abs(k - 7) / 9);
+          ctx.fillRect(ox + snap(x + k), oy + snap(y0 + Math.sin(k * 0.5 + t * 3 + i * 1.7) * 1.8), 1, 1);
+        }
+      }
+      ctx.fillStyle = '#93CBF4';
+      for (let i = 0; i < 20; i++) {
+        const f = (t * 0.75 + i * 0.137) % 1;
+        const x0 = vx + 3 + ((i * 17) % (VENT.w - 6));
+        const x = x0 + (x0 - cx) * 0.35 * f + Math.sin(f * 7 + i) * 2;
+        ctx.globalAlpha = 0.9 * Math.min(1, f * 8) * (1 - f) * dim;
+        ctx.fillRect(ox + snap(x), oy + snap(vy + 1 + f * (reach + 8)), 1, 2);
       }
       ctx.globalAlpha = 1;
     }
