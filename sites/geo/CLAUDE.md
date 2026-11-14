@@ -100,7 +100,7 @@ sites/geo/
 
 ## Explainers (Views tab, `data/stories.js`)
 
-- The Views tab lists step-by-step geography stories (Hormuz, Ukraine, Red Sea, Taiwan, East Sea). A story is a file
+- The Views tab lists step-by-step geography stories (Hormuz, Ukraine, Red Sea, Taiwan, East Sea, China, USA, Arctic, India–Pakistan, Myanmar). A story is a file
   `data/story_<id>.js` exporting `{id, icon, c, title, sub, asof, status, statusSrc, sources[], steps[]}`; every text is
   `{vi, en}`. A step is `{title, text, core, facts[], ll, k, layers[], show[], refs[], hl{}, dim, draw[], key[], src[]}`:
   camera (`ll` centre, `k` zoom), the layers to switch on (everything else is off, so the map stays clean), hotspot ids
@@ -127,7 +127,7 @@ sites/geo/
 - The story must make the reader understand the deep cause, not list facts. **The model is `story_biendong.js` and
   `story_ukraine.js`** (approved shape, Nov 2026): a self-contained file, 7–8 short steps that teach one argument in
   order, each tagged `need` → `blocked` → `move` → `counter` → `outlook`. No opener `chain`, no `core`, no merge layers:
-  all nine stories now have this shape and `stories.js` imports them bare. (`ui.js` still renders `chain`/`core` if a
+  all ten stories now have this shape and `stories.js` imports them bare. (`ui.js` still renders `chain`/`core` if a
   step has them; don't add them.)
 - Step 1 opens with the question the reader already has ("Vì sao Bắc Kinh quyết giữ Biển Đông?") and answers its first
   part; the last step comes back to it ("Bắc Kinh sợ bị nhốt, các nước xung quanh sợ mất biển").
