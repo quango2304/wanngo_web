@@ -2,7 +2,7 @@
 // was not kept, an army that sees itself as the glue, the 2021 coup that brought the war into the valley, the 2023–24
 // offensives, China's stake and its brake, and where it stands. Facts checked 14 Nov 2026; each step names its sources.
 // By design nothing on the map shows who holds what: control is told in words with a date and a source.
-const MM = '#B07A3A', CN = '#C53030', VAL = '#8A5A00', HILL = '#2F6B3A', ARMY = '#7C3AED', RES = '#2E7CC0', PIPE = '#D97706';
+const CITY = '#6B7280', MM = '#B07A3A', CN = '#C53030', VAL = '#8A5A00', HILL = '#2F6B3A', ARMY = '#7C3AED', RES = '#2E7CC0', PIPE = '#D97706';
 
 export const MYANMAR = {
   id: 'myanmar',
@@ -12,8 +12,8 @@ export const MYANMAR = {
   sub: { vi: 'Một thung lũng, một vòng núi và người láng giềng lớn', en: 'A valley, a ring of hills and a big neighbour' },
   asof: '2026-11-14',
   status: {
-    vi: 'Đến 5/11/2026 chưa có ngừng bắn toàn quốc. Ông Min Aung Hlaing làm tổng thống từ 3/4/2026, sau cuộc bầu cử mà LHQ và Mỹ cho là không tự do, không công bằng. Theo ACLED (7/2026), hơn 100.000 người đã chết; theo UNHCR, 3.580.100 người phải rời nhà kể từ 2/2021 và chưa về được (6/7/2026).',
-    en: 'As of 5 Nov 2026 there is no nationwide ceasefire. Min Aung Hlaing has been president since 3 Apr 2026, after an election the UN and the US called neither free nor fair. ACLED (Jul 2026) counts more than 100,000 dead; UNHCR says 3,580,100 people have been displaced since Feb 2021 and remain so (6 Jul 2026).'
+    vi: 'Đến 5/11/2026 chưa có ngừng bắn toàn quốc. Ông Min Aung Hlaing làm tổng thống từ 3/4/2026, sau cuộc bầu cử mà LHQ và Mỹ cho là không tự do, không công bằng. Theo ACLED (7/2026), hơn 100.000 người đã chết; theo số liệu LHQ tại Myanmar, 3.580.100 người phải rời nhà kể từ 2/2021 và chưa về được (6/7/2026).',
+    en: 'As of 5 Nov 2026 there is no nationwide ceasefire. Min Aung Hlaing has been president since 3 Apr 2026, after an election the UN and the US called neither free nor fair. ACLED (Jul 2026) counts more than 100,000 dead; UN figures for Myanmar show 3,580,100 people displaced since Feb 2021 who remain so (6 Jul 2026).'
   },
   statusSrc: [17, 19, 8],
   sources: [
@@ -25,7 +25,7 @@ export const MYANMAR = {
     { n: 'Wikipedia, 2008 Constitution of Myanmar', url: 'https://en.wikipedia.org/wiki/2008_Constitution_of_Myanmar' },
     { n: 'Wikipedia, 2021 Myanmar coup d’état', url: 'https://en.wikipedia.org/wiki/2021_Myanmar_coup_d%27%C3%A9tat' },
     { n: 'Wikipedia, National Unity Government of Myanmar', url: 'https://en.wikipedia.org/wiki/National_Unity_Government_of_Myanmar' },
-    { n: 'UNHCR, Myanmar Emergency Overview Map (6/7/2026)', url: 'https://www.ecoi.net/en/file/local/2142325/260706%20Myanmar%20displacement%20overview.pdf' },
+    { n: 'UNHCR, Myanmar Emergency Overview Map (số liệu của LHQ tại Myanmar, 6/7/2026)', url: 'https://www.ecoi.net/en/file/local/2142325/260706%20Myanmar%20displacement%20overview.pdf' },
     { n: 'Wikipedia, Operation 1027', url: 'https://en.wikipedia.org/wiki/Operation_1027' },
     { n: 'AFP qua eNCA (22/4/2025, trả Lashio)', url: 'https://www.enca.com/news/myanmar-rebels-prepare-hand-key-city-back-junta-china-says' },
     { n: 'Wikipedia, Rakhine offensive (2023–nay)', url: 'https://en.wikipedia.org/wiki/Rakhine_offensive_(2023%E2%80%93present)' },
@@ -96,8 +96,8 @@ export const MYANMAR = {
       tag: 'move',
       title: { vi: 'Quân đội tự coi mình là chất keo', en: 'The army sees itself as the glue' },
       text: {
-        vi: 'Quân đội Myanmar coi mình là lực lượng giữ cho đất nước khỏi tan rã. Năm 1962, khi người Shan và Karenni đòi quyền rời Liên bang theo hiến pháp 1947, tướng Ne Win đảo chính; nhiều nhà sử học nói quân đội sợ đất nước vỡ ra. Từ đó quân đội cai trị từ thung lũng và đánh lên vành đai núi suốt nhiều thập kỷ. Hiến pháp 2008 do quân đội soạn vẫn dành cho họ 25% ghế quốc hội.',
-        en: 'Myanmar’s army sees itself as the force that keeps the country from breaking apart. In 1962, as the Shan and Karenni claimed a right to leave the Union under the 1947 constitution, General Ne Win seized power; many historians say the army feared the country would fall apart. From then on the army ruled from the valley and fought up into the hills for decades. The 2008 constitution, written under the army, still reserves 25% of parliament’s seats for it.'
+        vi: 'Quân đội Myanmar coi mình là lực lượng giữ cho đất nước khỏi tan rã. Năm 1962, khi người Shan và Karenni đòi quyền rời Liên bang theo hiến pháp 1947, tướng Ne Win đảo chính; nhiều nhà sử học nói quân đội sợ đất nước vỡ ra. Từ đó quân đội cai trị từ thung lũng và đánh lên vành đai núi suốt nhiều thập kỷ. Hiến pháp 2008 vẫn dành cho quân đội 25% ghế quốc hội.',
+        en: 'Myanmar’s army sees itself as the force that keeps the country from breaking apart. In 1962, as the Shan and Karenni claimed a right to leave the Union under the 1947 constitution, General Ne Win seized power; many historians say the army feared the country would fall apart. From then on the army ruled from the valley and fought up into the hills for decades. The 2008 constitution still reserves 25% of parliament’s seats for the army.'
       },
       facts: [
         {
@@ -126,8 +126,8 @@ export const MYANMAR = {
       tag: 'counter',
       title: { vi: 'Đảo chính 2021 đưa chiến tranh vào thung lũng', en: 'The 2021 coup brought the war into the valley' },
       text: {
-        vi: 'Tháng 11/2020, đảng NLD của bà Aung San Suu Kyi thắng lớn. Ngày 1/2/2021 quân đội đảo chính, nói bầu cử gian lận; ủy ban bầu cử bác cáo buộc ấy vì thiếu bằng chứng. Các nghị sĩ bị lật đổ lập Chính phủ Đoàn kết Dân tộc (NUG), và tháng 5/2021 NUG lập Lực lượng Phòng vệ Nhân dân (PDF). Lần này chiến tranh lan vào chính thung lũng của người Bamar: theo UNHCR, riêng vùng Sagaing có 1.343.000 người phải rời nhà (6/7/2026).',
-        en: 'In November 2020, Aung San Suu Kyi’s NLD won a landslide. On 1 Feb 2021 the army seized power, claiming the vote was rigged; the election commission rejected the claim for lack of evidence. Ousted MPs formed the National Unity Government (NUG), and in May 2021 the NUG set up the People’s Defence Force (PDF). This time the war spread into the Bamar valley itself: UNHCR counts 1,343,000 people displaced in Sagaing Region alone (6 Jul 2026).'
+        vi: 'Tháng 11/2020, đảng NLD của bà Aung San Suu Kyi thắng lớn. Ngày 1/2/2021 quân đội đảo chính, nói bầu cử gian lận; ủy ban bầu cử bác cáo buộc ấy vì thiếu bằng chứng. Các nghị sĩ bị lật đổ lập Chính phủ Đoàn kết Dân tộc (NUG), và tháng 5/2021 NUG lập Lực lượng Phòng vệ Nhân dân (PDF). Lần này chiến tranh lan vào chính thung lũng của người Bamar: theo số liệu LHQ, riêng vùng Sagaing có 1.343.000 người phải rời nhà (6/7/2026).',
+        en: 'In November 2020, Aung San Suu Kyi’s NLD won a landslide. On 1 Feb 2021 the army seized power, claiming the vote was rigged; the election commission rejected the claim for lack of evidence. Ousted MPs formed the National Unity Government (NUG), and in May 2021 the NUG set up the People’s Defence Force (PDF). This time the war spread into the Bamar valley itself: UN figures count 1,343,000 people displaced in Sagaing Region alone (6 Jul 2026).'
       },
       facts: [
         {
@@ -155,8 +155,8 @@ export const MYANMAR = {
       tag: 'move',
       title: { vi: 'Rồi núi và thung lũng cùng đánh', en: 'Then hills and valley fought together' },
       text: {
-        vi: 'Ngày 27/10/2023, liên minh Ba Anh Em gồm MNDAA, TNLA và Quân đội Arakan (AA) mở Chiến dịch 1027 ở bắc bang Shan, cùng nhiều nhóm PDF. Tháng 8/2024 MNDAA chiếm Lashio, nơi đặt Bộ chỉ huy Đông Bắc của quân đội. Ngày 20/12/2024 AA chiếm Bộ chỉ huy miền Tây ở Ann, bang Rakhine. Quân đội mất hai bộ chỉ huy vùng, điều chưa từng có.',
-        en: 'On 27 Oct 2023 the Three Brotherhood Alliance of the MNDAA, the TNLA and the Arakan Army (AA) launched Operation 1027 in northern Shan State, alongside many PDF units. In August 2024 the MNDAA took Lashio, home of the army’s Northeastern Command. On 20 Dec 2024 the AA took the Western Command at Ann, in Rakhine State. The army had lost two regional commands, something without precedent.'
+        vi: 'Ngày 27/10/2023, ba đội quân dân tộc ở vùng núi, gọi là liên minh Ba Anh Em, mở Chiến dịch 1027 ở bắc bang Shan. Các đơn vị PDF từ thung lũng đánh cùng họ. Tháng 8/2024 quân Kokang (MNDAA) chiếm Lashio, nơi đặt Bộ chỉ huy Đông Bắc của quân đội. Ngày 20/12/2024 Quân đội Arakan (AA) chiếm Bộ chỉ huy miền Tây ở Ann, bang Rakhine.',
+        en: 'On 27 Oct 2023 three ethnic armies from the hills, known as the Three Brotherhood Alliance, launched Operation 1027 in northern Shan State. PDF units from the valley fought alongside them. In August 2024 the Kokang army (MNDAA) took Lashio, home of the army’s Northeastern Command. On 20 Dec 2024 the Arakan Army (AA) took the Western Command at Ann, in Rakhine State.'
       },
       facts: [
         {
@@ -171,8 +171,8 @@ export const MYANMAR = {
       hl: { Myanmar: MM },
       dim: true,
       draw: [
-        { k: 'pt', p: [97.75, 22.93], c: RES, r: 5, label: { vi: 'Lashio', en: 'Lashio' } },
-        { k: 'pt', p: [94.03, 19.78], c: RES, r: 5, label: { vi: 'Ann', en: 'Ann' }, side: 'l' }
+        { k: 'pt', p: [97.75, 22.93], c: CITY, r: 5, label: { vi: 'Lashio', en: 'Lashio' } },
+        { k: 'pt', p: [94.03, 19.78], c: CITY, r: 5, label: { vi: 'Ann', en: 'Ann' }, side: 'l' }
       ],
       src: [9, 10, 11]
     },
@@ -206,8 +206,8 @@ export const MYANMAR = {
       tag: 'counter',
       title: { vi: 'Nên Bắc Kinh kéo phanh', en: 'So Beijing pulled the brake' },
       text: {
-        vi: 'Bắc Kinh coi chính quyền quân sự là bên bảo đảm lợi ích của mình ở biên giới (Reuters). Nhà phân tích David Mathieson nói Trung Quốc không tìm cách chấm dứt nội chiến, chỉ muốn giao tranh dịu đi. Bắc Kinh đóng cửa khẩu và giữ thủ lĩnh MNDAA ở Trung Quốc; ngày 22/4/2025 MNDAA trả Lashio cho quân đội. Tháng 10/2025, sau đàm phán ở Côn Minh, TNLA cũng đồng ý rút khỏi Mogok và Momeik.',
-        en: 'Beijing sees the junta as the guarantor of its interests on the border (Reuters). The analyst David Mathieson says China is not trying to end the civil war, only to see the fighting ease. Beijing closed border crossings and held the MNDAA’s leader in China; on 22 Apr 2025 the MNDAA handed Lashio back to the army. In October 2025, after talks in Kunming, the TNLA also agreed to leave Mogok and Momeik.'
+        vi: 'Bắc Kinh coi chính quyền quân sự là bên bảo đảm lợi ích của mình ở biên giới (Reuters). Nhà phân tích David Mathieson nói Trung Quốc không tìm cách chấm dứt nội chiến, chỉ muốn giao tranh dịu đi. Bắc Kinh đóng cửa khẩu và giữ thủ lĩnh quân Kokang ở Trung Quốc; cuối tháng 4/2025 quân Kokang trả Lashio cho quân đội. Tháng 10/2025, sau đàm phán ở Côn Minh, một đội quân khác của liên minh là TNLA cũng đồng ý rút khỏi Mogok và Momeik.',
+        en: 'Beijing sees the junta as the guarantor of its interests on the border (Reuters). The analyst David Mathieson says China is not trying to end the civil war, only to see the fighting ease. Beijing closed border crossings and held the Kokang army’s leader in China; in late April 2025 the Kokang army handed Lashio back to the army. In October 2025, after talks in Kunming, another alliance member, the TNLA, also agreed to leave Mogok and Momeik.'
       },
       facts: [
         {
@@ -222,8 +222,8 @@ export const MYANMAR = {
       hl: { Myanmar: MM, China: CN },
       dim: true,
       draw: [
-        { k: 'pt', p: [97.75, 22.93], c: ARMY, r: 5, label: { vi: 'Lashio', en: 'Lashio' } },
-        { k: 'pt', p: [97.23, 24.27], c: HILL, r: 4.5, label: { vi: 'Bhamo', en: 'Bhamo' }, side: 'l' },
+        { k: 'pt', p: [97.75, 22.93], c: CITY, r: 5, label: { vi: 'Lashio', en: 'Lashio' } },
+        { k: 'pt', p: [97.23, 24.27], c: CITY, r: 4.5, label: { vi: 'Bhamo', en: 'Bhamo' }, side: 'l' },
         { k: 'pt', p: [102.7, 25.04], c: CN, r: 4.5, label: { vi: 'Côn Minh', en: 'Kunming' } }
       ],
       src: [14, 15, 10, 16]
