@@ -197,3 +197,27 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
   .side.l { left: calc(50% - var(--pw) * 1.12); }
   .side.r { left: calc(50% + var(--pw) * 0.32); }
 }
+
+/* The hero phone: the formats Bookmuse opens, drawn as an app screen (1em = 1% of the phone's width). */
+.fmt { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 0 5.2em 4em; background: #f2efea; color: #16130f; font-family: var(--sans); text-align: left; letter-spacing: -0.01em; }
+.fmt-bar { display: flex; align-items: center; justify-content: space-between; height: 12.4em; padding: 0.4em 2.6em 0 4.2em; font-size: 1em; }
+.fmt-bar b { font-size: 4.1em; font-weight: 600; }
+.fmt-bar svg { width: 18em; height: 3.4em; }
+.fmt h3 { margin: 1.4em 0 0; font: 700 7.6em/1.08 var(--sans); letter-spacing: -0.03em; }
+.fmt-sub { margin: 1.6em 0 0; font-size: 3.5em; line-height: 1.3; color: #7a7066; }
+.fmt ul { list-style: none; margin: 4.4em 0 0; padding: 0.6em 0; border-radius: 6em; background: #fff; box-shadow: 0 0.3em 1.2em rgba(45, 26, 8, 0.05); }
+.fmt li { position: relative; display: flex; align-items: center; gap: 3.6em; padding: 2.15em 4em; }
+.fmt li + li::before { content: ""; position: absolute; top: 0; left: 17.6em; right: 0; height: 1px; background: #ece7e0; }
+.fmt i { flex: none; display: grid; place-items: center; width: 10em; height: 10em; border-radius: 2.6em; background: var(--c); color: #fff; font-style: normal; letter-spacing: 0.02em; }
+.fmt i span { font-size: 2.45em; font-weight: 700; }
+.fmt li > span { min-width: 0; }
+.fmt li b { display: block; font-size: 4.15em; font-weight: 600; line-height: 1.2; }
+.fmt li small { display: block; margin-top: 0.3em; font-size: 3.2em; line-height: 1.25; color: #8a8076; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.fmt-h { margin: 1.7em 0 0 1.3em; font-size: 3.1em; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #8a8076; }
+.fmt-src { display: flex; flex-wrap: wrap; gap: 2em 1.8em; margin: 2.4em 0 0; }
+.fmt-src span { padding: 0.55em 1.05em; border-radius: 99em; background: #fff; box-shadow: 0 0.1em 0.4em rgba(45, 26, 8, 0.05); font-size: 3.3em; font-weight: 500; }
+.fmt-home { align-self: center; width: 36%; height: 1.5em; margin-top: auto; border-radius: 1em; background: #16130f; }
+@media (prefers-reduced-motion: no-preference) {
+  .fmt li, .fmt-src span { animation: fmt-in 0.9s var(--ease) both; animation-delay: calc(0.75s + var(--n, 7) * 0.07s); }
+}
+@keyframes fmt-in { from { opacity: 0; transform: translateY(1.4em); } }
