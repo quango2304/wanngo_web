@@ -49,10 +49,10 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .glow { position: absolute; left: 50%; top: 34%; width: 900px; height: 900px; margin-left: -450px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 185, 138, 0.17), rgba(255, 185, 138, 0) 68%); pointer-events: none; }
 .head { position: relative; text-align: center; max-width: 780px; }
 .night .lede { color: var(--night-soft); margin-top: 20px; }
-.duo { position: relative; display: flex; justify-content: center; gap: clamp(32px, 7vw, 104px); flex-wrap: wrap; margin-top: clamp(56px, 6vw, 80px); }
-.duo figure { display: flex; flex-direction: column; align-items: center; gap: 24px; }
-.duo figure:nth-child(2) { margin-top: 72px; }
-.duo .phone { --w: clamp(258px, 25vw, 320px); --rim: linear-gradient(140deg, #8e867d, #3b3733 30%, #66605a 64%, #34312d); --rim-button: #66605a; box-shadow: 0 8em 18em -4em rgba(0, 0, 0, 0.8); }
+.duo { position: relative; display: flex; justify-content: center; gap: clamp(20px, 2.6vw, 40px); margin-top: clamp(56px, 6vw, 80px); padding: 0 24px; }
+.duo figure { display: flex; flex-direction: column; align-items: center; gap: 24px; margin: 0; }
+.duo figure:nth-child(even) { margin-top: 64px; }
+.duo .phone { --w: clamp(216px, 19vw, 262px); --rim: linear-gradient(140deg, #8e867d, #3b3733 30%, #66605a 64%, #34312d); --rim-button: #66605a; box-shadow: 0 8em 18em -4em rgba(0, 0, 0, 0.8); }
 .duo figcaption { text-align: center; font-size: 15px; color: var(--night-soft); }
 .duo figcaption b { display: block; color: var(--night-ink); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
 
@@ -173,7 +173,23 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
   .pin { display: none; }
   .step { min-height: 0; max-width: none; opacity: 1; padding: 44px 0; text-align: center; }
   .inline { display: flex; }
-  .duo figure:nth-child(2) { margin-top: 0; }
+}
+
+/* Four voices: a row on wide screens, two by two below that; on phones the sound pill is just the speaker. */
+@media (max-width: 1040px) {
+  .duo { display: grid; grid-template-columns: repeat(2, auto); justify-content: center; column-gap: clamp(16px, 6vw, 72px); row-gap: clamp(32px, 6vw, 48px); padding: 0 16px; }
+  .duo .phone { --w: clamp(150px, 32vw, 300px); }
+}
+@media (max-width: 620px) {
+  .duo figure:nth-child(even) { margin-top: 40px; }
+  .duo figure { gap: 16px; }
+  .duo .phone { --w: min(42vw, 220px); box-shadow: 0 3em 8em -2em rgba(0, 0, 0, 0.7); }
+  .duo figcaption { font-size: 13px; }
+  .duo figcaption b { font-size: 16px; }
+  .live, .live[aria-pressed="true"] { top: 6px; min-width: 0; height: 32px; padding: 0 12px; gap: 6px; }
+  .live svg { width: 16px; height: 16px; }
+  .live .off-t, .live[aria-pressed="true"] .on-t { display: none; }
+  .eq { height: 14px; }
 }
 
 @media (max-width: 620px) {
