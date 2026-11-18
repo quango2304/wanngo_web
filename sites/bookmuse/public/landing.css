@@ -205,7 +205,10 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
 .chat .doc { flex: none; width: 28px; height: 36px; border-radius: 4px 6px 6px 4px; background: linear-gradient(150deg, var(--sun-2), var(--sun-3)); box-shadow: 0 4px 10px -4px rgba(45, 26, 8, 0.5); }
 
 .today { display: flex; align-items: center; gap: 20px; margin-top: 28px; padding: 16px; border-radius: 22px; background: var(--paper); }
-.today img { width: 76px; height: auto; border-radius: 4px 7px 7px 4px; box-shadow: 0 10px 22px -10px rgba(45, 26, 8, 0.5); }
+.today { color: inherit; text-decoration: none; transition: transform 0.2s ease; }
+.today:hover { transform: translateY(-2px); }
+.today:hover .go { background: var(--ink); color: var(--ground); box-shadow: none; }
+.today img { width: 76px; height: auto; aspect-ratio: 2 / 3; object-fit: cover; background: var(--line); border-radius: 4px 7px 7px 4px; box-shadow: 0 10px 22px -10px rgba(45, 26, 8, 0.5); }
 .today div { display: grid; justify-items: start; gap: 2px; min-width: 0; }
 .today .until { margin-bottom: 6px; padding: 3px 10px; border-radius: 99px; background: var(--ink); color: var(--ground); font-size: 12px; font-weight: 600; }
 .today b { font-size: 18px; letter-spacing: -0.01em; }
@@ -258,6 +261,7 @@ a.store:hover { color: var(--ground); transform: translateY(-2px) scale(1.02); }
   .steps li.in .draw { stroke-dasharray: 40; animation: draw 1.2s var(--ease) 0.3s both; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .today, .today:hover { transform: none; transition: none; }
   .sc, .sc.on, .qfb, .fb, .finger, .ls-seg button.now::after { transition: none; }
   .on .ls-list li, .on .keep li, .on .done, .on .sys *, .opt.pick-no, .qo.pick-no { animation: none !important; }
   .store, .try span { transition: none; }

@@ -11,7 +11,7 @@ Bookmuse is free to download. One summary a day is free to read in full, the sam
 - A quiz that checks the ideas and explains the answers.
 - The key takeaways on one screen.
 - One lesson on screen at a time, with a bar that shows where you are; your place syncs across devices.
-- Anyone can try a summary in a web browser from its share link, for example https://bookmuse-app.wanngo.com/s/thinking-fast-and-slow
+- Anyone can try a summary in a web browser from its share link; today's free summary is always at https://bookmuse-app.wanngo.com/s/today
 
 ## Books
 
@@ -35,7 +35,7 @@ Bookmuse is free to download. One summary a day is free to read in full, the sam
 
 - [Home](https://bookmuse.wanngo.com/): what Bookmuse is, with common questions
 - [App Store](https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446): download for iPhone and iPad
-- [Try a summary](https://bookmuse-app.wanngo.com/s/thinking-fast-and-slow): Thinking, Fast and Slow in the browser
+- [Try a summary](https://bookmuse-app.wanngo.com/s/today): today's free summary, in full, in the browser
 - [Support](https://bookmuse.wanngo.com/support/): questions and answers, Free and Pro, and how to contact us
 - [Privacy Policy](https://bookmuse.wanngo.com/privacy/)
 - [Delete Your Account](https://bookmuse.wanngo.com/delete-account/)
