@@ -6,7 +6,7 @@ repos (Bookmuse: `../bookmuse/`, read its `docs/`; this repo's move is in `docs/
 | Site | Folder | Worker | Hosts |
 |---|---|---|---|
 | Personal home: "the little room" (pixel-art canvas game) | `sites/home` | `wanngo-home` | `wanngo.com`, `www.wanngo.com` |
-| Bookmuse landing, privacy, support, delete-account (en, `/vi/`, `/es/`) | `sites/bookmuse` | `bookmuse-landing` | `bookmuse.wanngo.com` |
+| Bookmuse landing, privacy, support, delete-account (English only; `_redirects` sends old `/vi/`, `/es/`, `/kobo/` addresses on) | `sites/bookmuse` | `bookmuse-landing` | `bookmuse.wanngo.com` |
 | Geopolitics study notes | `sites/geo` | `wanngo-geo` | `geo.wanngo.com` |
 
 - Each site is a Worker with static assets only (`wrangler.jsonc` + `public/`, `_headers` for headers): no script, so every
@@ -14,12 +14,13 @@ repos (Bookmuse: `../bookmuse/`, read its `docs/`; this repo's move is in `docs/
 - **Images** go in the site's `public/assets/`. **Videos** go to the R2 bucket `wanngo-media`, served at
   `https://media.wanngo.com/<site>/<name>.{mp4,webm,jpg}`: `scripts/upload-media.sh <video> <site>/<name>` encodes and
   uploads them (needs ffmpeg and `npx wrangler login`). Videos never go in git; keep the originals elsewhere.
-  The Bookmuse home pages' clips are already encoded (`bookmuse/landing/*.mp4`, specs in `../bookmuse/docs/web-dashboard.md`).
-- **Bookmuse pages share `site.css` and `site.js`** (fonts, light and dark, nav, footer, the theme switch); the home pages add `landing.css`, the others `styles.css`. Bump the `?v=` on those links in every page when one changes: they are cached for an hour.
+  The Bookmuse home page plays no videos now; its centre phone is a lesson demo drawn in HTML (`landing.js`), and the cover wall is made by
+  `scripts/bookmuse-covers.sh` from the published summaries only (`../bookmuse/docs/web-dashboard.md`).
+- **Bookmuse pages share `site.css` and `site.js`** (fonts, light and dark, nav, footer, the theme switch); the home page adds `landing.css`, the others `styles.css`. Bump the `?v=` on those links in every page when one changes: they are cached for an hour.
 - Bookmuse's share links (`/b/…`), the AI-agent sign-in page and the universal-link files are on `bookmuse-app.wanngo.com`
   (the `bookmuse_web` dashboard), not on the landing. The landing's Sign in buttons link straight to that dashboard.
 - Bookmuse's privacy policy and deletion page are linked from the apps, App Store Connect, Play Console, Google and Dropbox:
-  when a Bookmuse feature changes what data is kept or sent, update en/vi/es together.
+  when a Bookmuse feature changes what data is kept or sent, update them (English only).
 - **Home's room** (`sites/home/public/`) is a pixel-art canvas game (`index.html`, `style.css`, `game.js`, no libraries): a room you click around in, on Vietnam time. It is a straight-on 2D view: every piece of furniture is a separate flat sprite in `public/assets/room/room-flat-f.png` (`KIT`) or, for pieces added later, `room-decor-a.png` (`DECOR`), placed in `ROOM` in `game.js` and drawn back to front by where it meets the floor, and people walk on the open floor in front of it. Don't draw anything at an angle or split a sprite to fake depth. Wall, floor, sunlight, lamps and night are drawn in code. Wide and tall layouts move the same sprites by group, so a new group needs an offset in `TALL.offs`. The canvas has several pixels per room pixel (`sub`) so people and the cat move smoothly; the art stays on the room's grid. Assets are cached for 7 days, so give a replaced image a new name. `?hour=3` pins the clock for testing.
   **Sound** is clips in `public/assets/audio/` (typing, cat, game, ambience; made with ElevenLabs by `scripts/gen-room-sounds.sh`, which needs `ELEVENLABS_API_KEY` in the environment, never in git), started on the first tap and muted by the speaker button; the chip blips are still made in code.
 - **Geo** (`sites/geo/public/`) is an interactive 3D orthographic geopolitical globe (`index.html`, `style.css`, `js/{main,globe,ui,state}.js`, `data/{regions,countries,religions,hotspots,alliances}.js`, `assets/map/world-{110m,50m}.json`, `assets/vendor/d3-geo.min.js`). It boots immediately with `world-110m.json` and upgrades in the background to `world-50m.json`.

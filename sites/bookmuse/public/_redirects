@@ -1,0 +1,8 @@
+# The site is English only (2026-11-18): the Vietnamese and Spanish pages go to the same English page.
+# 302, not 301, because the languages may come back. The Kobo app is no longer offered.
+/vi /  302
+/vi/* /:splat  302
+/es /  302
+/es/* /:splat  302
+/kobo /  301
+/kobo/* /  301
