@@ -7,7 +7,9 @@
     "deploy:home": "wrangler deploy -c sites/home/wrangler.jsonc",
     "deploy:bookmuse": "wrangler deploy -c sites/bookmuse/wrangler.jsonc",
     "dev:geo": "wrangler dev -c sites/geo/wrangler.jsonc --port 8791",
-    "deploy:geo": "wrangler deploy -c sites/geo/wrangler.jsonc"
+    "deploy:geo": "wrangler deploy -c sites/geo/wrangler.jsonc",
+    "dev:remoteconfig": "wrangler dev -c sites/remoteconfig/wrangler.jsonc --port 8792",
+    "deploy:remoteconfig": "wrangler deploy -c sites/remoteconfig/wrangler.jsonc"
   },
   "devDependencies": {
     "wrangler": "4.148.0"

@@ -1,0 +1,13 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Remote config for the owner's apps (remoteconfig.wanngo.com): static JSON only, no script, so every request is free.
+  // /v1/ads.json lists the apps to advertise inside other apps (the sticker apps pick one at random, never themselves).
+  "name": "wanngo-remoteconfig",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "none"
+  },
+  "routes": [{ "pattern": "remoteconfig.wanngo.com", "custom_domain": true }],
+  "workers_dev": false
+}

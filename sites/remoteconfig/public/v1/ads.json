@@ -1,0 +1,24 @@
+{
+  "ads": [
+    {
+      "id": "bookmuse",
+      "appStoreID": "6815728446",
+      "name": "Bookmuse",
+      "slogan": {
+        "en": "15 min to deeply learn a book",
+        "vi": "15 phút để hiểu sâu một cuốn sách",
+        "es": "15 min para aprender a fondo un libro"
+      },
+      "icon": "https://remoteconfig.wanngo.com/icons/bookmuse-1.png",
+      "weight": 1,
+      "colors": [
+        "#2E2440",
+        "#8E4A6B",
+        "#F2836B",
+        "#5B3358",
+        "#C9655E",
+        "#2E2440"
+      ]
+    }
+  ]
+}

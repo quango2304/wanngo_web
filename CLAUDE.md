@@ -8,6 +8,7 @@ repos (Bookmuse: `../bookmuse/`, read its `docs/`; this repo's move is in `docs/
 | Personal home: "the little room" (pixel-art canvas game) | `sites/home` | `wanngo-home` | `wanngo.com`, `www.wanngo.com` |
 | Bookmuse landing, privacy, support, delete-account (English only; `_redirects` sends old `/vi/`, `/es/`, `/kobo/` addresses on) | `sites/bookmuse` | `bookmuse-landing` | `bookmuse.wanngo.com` |
 | Geopolitics study notes | `sites/geo` | `wanngo-geo` | `geo.wanngo.com` |
+| Remote config for the owner's apps: `/v1/ads.json` lists the apps to advertise inside other apps (the sticker apps show one, picked at random by `weight`, never themselves; slogans en/vi/es, card `colors`); icons in `/icons/` (give a changed icon a new name). No script, so every request is free | `sites/remoteconfig` | `wanngo-remoteconfig` | `remoteconfig.wanngo.com` |
 
 - Each site is a Worker with static assets only (`wrangler.jsonc` + `public/`, `_headers` for headers): no script, so every
   request is a free asset request. Workers assets cap one file at 25 MiB and a site at 20,000 files.

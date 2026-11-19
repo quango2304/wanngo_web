@@ -1,0 +1,10 @@
+/*
+  X-Content-Type-Options: nosniff
+  Access-Control-Allow-Origin: *
+
+/v1/*
+  Content-Type: application/json; charset=utf-8
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/icons/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
