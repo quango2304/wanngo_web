@@ -11,7 +11,7 @@
       });
     }, { rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(function (el) { seen.observe(el); });
-    // The gradients and the cover wall stop moving while off screen.
+    // The cover wall stops moving while off screen.
     var idle = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) { e.target.classList.toggle('paused', !e.isIntersecting); });
     });

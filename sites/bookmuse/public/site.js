@@ -15,7 +15,7 @@
     var current = mode();
     root.dataset.mode = current;
     button.setAttribute('aria-label', button.dataset[current === 'dark' ? 'toLight' : 'toDark']);
-    bars.forEach(function (bar) { bar.content = current === 'dark' ? '#15120e' : '#fcfbf9'; });
+    bars.forEach(function (bar) { bar.content = current === 'dark' ? '#1F1E1D' : '#F4E9DC'; });
   }
 
   function pick(next) {
