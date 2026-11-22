@@ -10,6 +10,7 @@ Docs: ../bookmuse/docs/web-dashboard.md, "The public catalog pages".
   BOOKMUSE_API=http://localhost:8080 ...       build from another backend (default: production)
   BOOKMUSE_PAGES_CACHE=/some/dir ...          keep every fetch in that folder and reuse it (only for trying out this script)
 """
+from html.parser import HTMLParser
 import base64, datetime, hashlib, html, json, os, re, shutil, subprocess, sys, time, urllib.error, urllib.parse, urllib.request
 from pathlib import Path
 
@@ -115,6 +116,45 @@ def image(url, version_key, outs, state, keep, data=None):
     state["images"][version_key] = url
 
 
+# ---------- locked lessons ----------
+
+DROP_ATTR = {"src", "srcset", "poster", "alt", "title", "aria-label", "aria-description", "aria-valuetext", "placeholder", "label", "content"}
+
+
+class _Skeleton(HTMLParser):
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.out = []
+
+    def _tag(self, tag, attrs, close=""):
+        kept = []
+        for k, v in attrs:
+            if k in DROP_ATTR:
+                continue
+            v = v or ""
+            if k.startswith("data-") and re.search(r"\s", v):
+                v = ""
+            kept.append(f' {k}="{html.escape(v, quote=True)}"')
+        self.out.append(f"<{tag}{''.join(kept)}{close}>")
+
+    def handle_starttag(self, tag, attrs):
+        self._tag(tag, attrs)
+
+    def handle_startendtag(self, tag, attrs):
+        self._tag(tag, attrs, "/")
+
+    def handle_endtag(self, tag):
+        self.out.append(f"</{tag}>")
+
+
+def skeleton(fragment):
+    """The elements of an HTML fragment without its words (htmlnote/preview.go's skeleton)."""
+    p = _Skeleton()
+    p.feed(fragment)
+    p.close()
+    return "".join(p.out)
+
+
 # ---------- page parts ----------
 
 def head(title, desc, path, image_url, ld, og_type="website", app_arg=None, extra=""):
@@ -216,14 +256,12 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
     intro = next(x[0] for x in sections if x[1] == "intro")
     free = [x for x in sections if x[1] == "lesson" and not x[3]][:FREE_LESSONS]
     free_ids = {x[2] for x in free}
-    # The locked sections stay as the preview has them (their elements with no text) so the page's script finds what it
-    # looks for; hidden, and without the preview's "Update Bookmuse" line. A section that is whole on the free day is emptied the same way.
+    # The locked sections stay as element skeletons (each element with its tag, id, classes and short data-* values, no text, no
+    # prose attribute, no image), hidden, so the page's script finds what it looks for: the server's own rule (htmlnote/preview.go),
+    # applied again here because on its free day the preview file is whole.
     def shell(sec):
-        body = re.sub(r"<p>This part of the summary is in Bookmuse Pro\..*?</p>", "", sec[0], count=1, flags=re.S)
-        body = re.sub(r'^<section data-lesson="(\w+)" id="([\w-]+)"( data-locked)?>', r'<section data-lesson="\1" id="\2" data-locked hidden>', body)
-        if not sec[3]:   # whole (the free day): keep the elements, drop the words
-            body = re.sub(r">([^<]+)<", lambda m: "><" if m.group(1).strip() else m.group(0), body)
-        return body
+        m = re.match(r'<section data-lesson="(\w+)" id="([\w-]+)"( data-locked)?>(.*)</section>$', sec[0], re.S)
+        return f'<section data-lesson="{m.group(1)}" id="{m.group(2)}" data-locked hidden>{skeleton(m.group(4))}</section>'
     shells = "".join(shell(x) for x in sections if x[1] != "intro" and x[2] not in free_ids)
     has = {x[1] for x in sections}
     lessons = d.get("lessons") or []
