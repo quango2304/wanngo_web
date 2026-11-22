@@ -187,6 +187,20 @@ main .qz-opts button.dim:not(.plain):not(.right):not(.wrong){opacity:1;color:var
 @media (min-width:600px){figure svg{max-width:420px;margin-inline:auto}}
 /* type and contrast: end */
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+/* the trolley widgets (fig-cases, fig-fit) */
+.case-q{margin:14px 0 6px; font-size:1rem; line-height:1.45; font-weight:600}
+.case-out{min-height:1.45em; margin:8px 0 0; font-size:.875rem; color:var(--ink-2)}
+#fig-cases svg{display:block; width:100%; height:auto; margin-top:4px}
+#fig-cases .who{fill:var(--ink); transition:fill .3s ease-out}
+#fig-cases .who.hit{fill:var(--track)}
+#fig-cases #br-man{transition:transform .3s ease-out, fill .3s ease-out}
+#fig-cases #br-man.fell{transform:translate(30px,64px)}
+#fig-cases .route{stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset .3s ease-out}
+#fig-cases .route.go{stroke-dashoffset:0}
+.fit-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:4px 0}
+.fit-row>span:last-child{white-space:nowrap}
+.fit-row b{font-weight:600}
+.fit-row .no{color:var(--coral-text)}
 /* look: begin */
 /* The cream, charcoal, coral look (docs/design-system.md, "Lesson pages"): three colours, flat, circles, patterns, dark cards. It sets the
    design tokens (names as in design/tokens.json) for light and dark, maps the page's older variable names onto them, and restyles the parts.
@@ -433,9 +447,9 @@ main :is(input,textarea)::placeholder{color:var(--ink-2); opacity:.8}
 <nav class="bm-crumbs" aria-label="Breadcrumb"><a href="/summaries/">Summaries</a><i aria-hidden="true">›</i><a href="/courses/justice/">Justice</a><i aria-hidden="true">›</i><span aria-current="page">Part 1</span></nav>
 <main id="main">
 <p class="bm-course">Part 1 of 10 in the course <a href="/courses/justice/">Justice</a></p><section data-lesson="intro" id="intro">
-    <img id="bookmuse-cover" class="cover" alt="" aria-hidden="true" src="/assets/summaries/justice-1-hard-cases.webp?v=d26ee27a" width="480" height="720">
+    <img id="bookmuse-cover" class="cover" alt="" aria-hidden="true" src="/assets/summaries/justice-1-hard-cases.webp?v=3c95e625" width="480" height="720">
     <h1 id="title">Hard cases: how we reason about right</h1>
-    <p class="byline" id="byline">Part 1 of 10 in Justice, a course by Bookmuse</p><p class="bm-meta">4 lessons · 11 min · quiz and takeaways</p><div class="bm-cta"><a class="p" href="https://bookmuse-app.wanngo.com/s/justice-1-hard-cases">Read it lesson by lesson</a><a class="s" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Get the app</a></div>
+    <p class="byline" id="byline">Part 1 of 10 in Justice, a course by Bookmuse</p><p class="bm-meta">4 lessons · 12 min · quiz and takeaways</p><div class="bm-cta"><a class="p" href="https://bookmuse-app.wanngo.com/s/justice-1-hard-cases">Read it lesson by lesson</a><a class="s" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Get the app</a></div>
     <h2 id="intro-h">Why we argue about fair</h2>
     <p class="claim" id="intro-p1">We judge what is fair with three ideas, and we sharpen each one by testing it on hard cases.</p>
     <p id="intro-p2">Justice is our own course on the big ideas of moral and political philosophy. This is its first part, so it builds on nothing and you can start here.</p>
@@ -482,19 +496,43 @@ main :is(input,textarea)::placeholder{color:var(--ink-2); opacity:.8}
     <p id="l2-p2">Most people say turn. Their rule is simple: save as many lives as you can.</p>
     <p id="l2-p3">Now change one thing. You are not the driver. You stand on a bridge above the track, and a heavy stranger stands beside you. If you push him off, he stops the trolley and the five live. He dies. The count is the same as before.</p>
     <figure id="fig-cases">
-      <p class="ftitle">Same count, two answers</p>
-      <svg viewBox="0 0 304 148" role="img" aria-label="Two cases with the same count, one life for five. Turn the trolley: most people say yes. Push the stranger: most people say no.">
-        <rect x="2" y="8" width="130" height="124" rx="14" class="n-plain"/>
-        <text x="18" y="34" class="t-tick">Turn the trolley</text>
-        <text x="18" y="86" class="t-hero">Yes</text>
-        <text x="18" y="112" class="t-label">most people say</text>
-        <path d="M140 70H162M155 64L162 70L155 76" class="l-edge"/>
-        <rect x="170" y="8" width="132" height="124" rx="14" class="n-focal"/>
-        <text x="186" y="34" class="t-tick f-on-coral">Push the stranger</text>
-        <text x="186" y="86" class="t-hero f-on-coral">No</text>
-        <text x="186" y="112" class="t-label f-on-coral">most people say</text>
+      <span class="tag">TRY IT</span>
+      <p class="hint">Tap your answer in each case</p>
+      <p class="ftitle">Make the call, twice</p>
+      <p class="case-q">1. You drive the trolley. Turn onto the side track?</p>
+      <svg viewBox="0 0 304 132" role="img" aria-label="A trolley rolls toward five workers on the main track. A switch can send it onto a side track, where one worker stands.">
+        <path d="M8 52H296" class="l-edge"/>
+        <path d="M104 52C132 52 138 100 170 100H296" class="l-edge"/>
+        <g class="car"><rect x="14" y="30" width="42" height="18" rx="6" class="n-subject"/><circle cx="24" cy="50" r="3" class="n-subject"/><circle cx="46" cy="50" r="3" class="n-subject"/></g>
+        <g id="sw-five"><g class="who"><circle cx="226" cy="30" r="5"/><rect x="221" y="36" width="10" height="14" rx="5"/></g><g class="who"><circle cx="242" cy="30" r="5"/><rect x="237" y="36" width="10" height="14" rx="5"/></g><g class="who"><circle cx="258" cy="30" r="5"/><rect x="253" y="36" width="10" height="14" rx="5"/></g><g class="who"><circle cx="274" cy="30" r="5"/><rect x="269" y="36" width="10" height="14" rx="5"/></g><g class="who"><circle cx="290" cy="30" r="5"/><rect x="285" y="36" width="10" height="14" rx="5"/></g></g>
+        <g id="sw-one"><g class="who"><circle cx="262" cy="78" r="5"/><rect x="257" y="84" width="10" height="14" rx="5"/></g></g>
+        <text x="258" y="70" text-anchor="middle" class="t-tick">5 workers</text>
+        <text x="262" y="120" text-anchor="middle" class="t-tick">1 worker</text>
+        <text x="104" y="40" text-anchor="middle" class="t-tick">Switch</text>
+        <path id="sw-stay" d="M58 52H214" class="l-main route" pathLength="1"/>
+        <path id="sw-turn" d="M58 52H104C132 52 138 100 170 100H250" class="l-main route" pathLength="1"/>
       </svg>
-      <figcaption>One life for five, yet the answers differ.</figcaption>
+      <div class="segs" data-seg role="group" aria-label="The switch" id="sw-pick"><button aria-pressed="false" data-v="stay">Stay on course</button><button aria-pressed="false" data-v="turn">Turn</button></div>
+      <p class="case-out" id="sw-out" aria-live="polite"></p>
+      <p class="case-q">2. You stand on the bridge. Push the stranger?</p>
+      <svg viewBox="0 0 304 132" role="img" aria-label="A trolley rolls toward five workers. You stand on a bridge above the track, next to a heavy stranger.">
+        <path d="M8 112H296" class="l-edge"/>
+        <path d="M128 56V112M192 56V112" class="l-hair"/>
+        <rect x="116" y="48" width="88" height="8" rx="4" class="n-plain"/>
+        <g class="car"><rect x="14" y="90" width="42" height="18" rx="6" class="n-subject"/><circle cx="24" cy="110" r="3" class="n-subject"/><circle cx="46" cy="110" r="3" class="n-subject"/></g>
+        <g id="br-five"><g class="who"><circle cx="226" cy="90" r="5"/><rect x="221" y="96" width="10" height="14" rx="5"/></g><g class="who"><circle cx="242" cy="90" r="5"/><rect x="237" y="96" width="10" height="14" rx="5"/></g><g class="who"><circle cx="258" cy="90" r="5"/><rect x="253" y="96" width="10" height="14" rx="5"/></g><g class="who"><circle cx="274" cy="90" r="5"/><rect x="269" y="96" width="10" height="14" rx="5"/></g><g class="who"><circle cx="290" cy="90" r="5"/><rect x="285" y="96" width="10" height="14" rx="5"/></g></g>
+        <g class="who you"><circle cx="140" cy="28" r="5"/><rect x="135" y="34" width="10" height="14" rx="5"/></g>
+        <g class="who stranger" id="br-man"><circle cx="174" cy="23" r="6"/><rect x="167" y="30" width="14" height="18" rx="7"/></g>
+        <text x="146" y="14" text-anchor="end" class="t-tick">You</text>
+        <text x="166" y="12" class="t-tick">Stranger</text>
+        <text x="258" y="128" text-anchor="middle" class="t-tick">5 workers</text>
+        <path id="br-push" d="M58 112H190" class="l-main route" pathLength="1"/>
+        <path id="br-stay" d="M58 112H214" class="l-main route" pathLength="1"/>
+      </svg>
+      <div class="segs" data-seg role="group" aria-label="The bridge" id="br-pick"><button aria-pressed="false" data-v="dont">Don&rsquo;t push</button><button aria-pressed="false" data-v="push">Push</button></div>
+      <p class="case-out" id="br-out" aria-live="polite"></p>
+      <div class="answer" id="cases-verdict" aria-live="polite" hidden></div>
+      <figcaption>One life for five both times. Do your two answers agree?</figcaption>
     </figure>
     <p id="l2-p4">Most people say do not push. Yet the rule that said turn now says push. One of the two answers has to change.</p>
     <p id="l2-p5">People try to explain the gap. One try: you only want to stop the trolley, not to kill anyone. That is true in both cases. Another try: pushing is just more upsetting, and you should overcome it. Maybe. A third try: the stranger never chose to be involved. But neither did the worker on the side track. Even so, many people still feel the difference is real.</p>
@@ -527,6 +565,15 @@ main :is(input,textarea)::placeholder{color:var(--ink-2); opacity:.8}
       <figcaption>A hard case sends you round again with a better rule.</figcaption>
     </figure>
     <p id="l3-p2">You can revise in two ways. You may change your judgment: perhaps pushing is right after all. Or you may change the rule: perhaps it needs a limit, such as &ldquo;unless it uses a person against their will.&rdquo; Neither move is automatic. You weigh which one you trust more, then test again.</p>
+    <figure id="fig-fit">
+      <span class="tag">TRY IT</span>
+      <p class="hint">Tap a rule to test it</p>
+      <p class="ftitle">Find a rule that fits your answers</p>
+      <p class="case-q" id="fit-yours"></p>
+      <div class="seg" data-seg role="group" aria-label="A rule to test" id="fit-pick"><button aria-pressed="false" data-v="most">Save the most lives</button><button aria-pressed="false" data-v="never">Never take an innocent life</button><button aria-pressed="false" data-v="use">Save the most, but never use a person against their will</button></div>
+      <div class="answer" id="fit-out" aria-live="polite" hidden></div>
+      <figcaption>A rule earns its place when it gives your answer in every case.</figcaption>
+    </figure>
     <p id="l3-p3">The same loop works at home. Say two roommates share a rule: whoever cooks never washes up. It feels fair for years. Then one of them cooks for ten guests and uses every pot. The rule now feels unfair. They keep the idea behind it, that cooking is work, and add a limit: after a big party, everyone helps.</p>
     <p id="l3-p3b">Two traps are easy to fall into. One is changing a rule only to escape one awkward case, without asking if the new rule fits other cases. The other is never changing a rule at all. A good thinker does the work in between: the new rule has to prove itself on cases you have not seen yet.</p>
     <p id="l3-p4">This is an old way to think. Socrates and Aristotle worked like this. A hard case is not a trick. It is how a rule gets better.</p>

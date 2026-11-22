@@ -79,6 +79,21 @@ Lessons:
 6. Prepare for the pain: Picture the win and the trouble, then train for both
 7. Fail, then learn: Take every failure apart, fix it, and try again
 
+### The Prince — Niccolò Machiavelli
+Page: https://bookmuse.wanngo.com/summaries/the-prince/
+Core idea: A ruler keeps power by judging people as they really are, relying on his own strength, never making his people hate him, and preparing in calm times for the day luck turns.
+About the book: The Prince is a short book of advice to a ruler, written by Niccolò Machiavelli as a gift for Lorenzo de’ Medici. It argues that a ruler should judge people as they are, rely on his own strength, avoid being hated, and prepare for bad luck. The advice is harsh, and the book admits that some of the means it describes bring power but no glory.
+Categories: Personalities, Leadership
+Length: 7 lessons, 16 min
+Lessons:
+1. See people as they are: Plan for how people really act, not for how they should.
+2. Fear is safer than love: Love breaks when interest calls. Fear holds.
+3. Never be hated or despised: The best protection is the good will of your people.
+4. The lion and the fox: A ruler needs force and cunning, and must look good.
+5. Your own arms: Hired and lent soldiers fail you. Build your own.
+6. Hurt once, help slowly: Do the harm you must at once. Give benefits a little at a time.
+7. Luck is only half: Use calm times to prepare for the flood.
+
 ### The Monk Who Sold His Ferrari — Robin Sharma
 Page: https://bookmuse.wanngo.com/summaries/the-monk-who-sold-his-ferrari/
 Core idea: A fulfilling life is built from the inside: a trained mind, a clear purpose, daily self-improvement and a life of giving, lived now and not later.
@@ -93,6 +108,21 @@ Lessons:
 5. Respect your time: The gold stopwatch: spend it on what counts.
 6. Selflessly serve others: The yellow roses: your life is only as good as what you give.
 7. Embrace the present: The path of diamonds: do not put off living.
+
+### Atomic Habits — James Clear
+Page: https://bookmuse.wanngo.com/summaries/atomic-habits/
+Core idea: Small habits, repeated every day, build the person you want to become. Make good habits obvious, attractive, easy and satisfying, and flip those four laws to break bad ones.
+About the book: Atomic Habits (2018) is James Clear's practical guide to building good habits and breaking bad ones. Clear, a writer who rebuilt his own life with small habits after a serious injury in high school, draws on psychology and everyday stories. He argues that results come from systems, not goals: tiny changes, repeated every day, add up to big ones. The book gives four simple laws that make any habit easier to start and harder to drop.
+Categories: Self-Growth, Productivity
+Length: 7 lessons, 17 min
+Lessons:
+1. Tiny gains add up: Get 1% better each day, and trust your system
+2. Habits shape who you are: Every action is a vote for who you become
+3. The habit loop: Four steps, four laws, and how to flip them
+4. The first law: make it obvious: Give a habit a clear cue. To break one: make it invisible
+5. The second law: make it attractive: Pair it with something you want. To break one: make it unattractive
+6. The third law: make it easy: Start in two minutes. To break a habit: make it difficult
+7. The fourth law: make it satisfying: Reward it right away. To break a habit: make it unsatisfying
 
 ### Ikigai — Héctor García, Francesc Miralles
 Page: https://bookmuse.wanngo.com/summaries/ikigai/
@@ -456,21 +486,6 @@ Lessons:
 6. Go around, not through: Action: when force fails, find the side door
 7. Accept it, then love it: Will: what you cannot change, you can still use
 8. Get ready before it comes: Will: build your strength and picture what could go wrong
-
-### The Prince — Niccolò Machiavelli
-Page: https://bookmuse.wanngo.com/summaries/the-prince/
-Core idea: A ruler keeps power by judging people as they really are, relying on his own strength, never making his people hate him, and preparing in calm times for the day luck turns.
-About the book: The Prince is a short book of advice to a ruler, written by Niccolò Machiavelli as a gift for Lorenzo de’ Medici. It argues that a ruler should judge people as they are, rely on his own strength, avoid being hated, and prepare for bad luck. The advice is harsh, and the book admits that some of the means it describes bring power but no glory.
-Categories: Personalities, Leadership
-Length: 7 lessons, 16 min
-Lessons:
-1. See people as they are: Plan for how people really act, not for how they should.
-2. Fear is safer than love: Love breaks when interest calls. Fear holds.
-3. Never be hated or despised: The best protection is the good will of your people.
-4. The lion and the fox: A ruler needs force and cunning, and must look good.
-5. Your own arms: Hired and lent soldiers fail you. Build your own.
-6. Hurt once, help slowly: Do the harm you must at once. Give benefits a little at a time.
-7. Luck is only half: Use calm times to prepare for the flood.
 
 ### Think Again — Adam Grant
 Page: https://bookmuse.wanngo.com/summaries/think-again/
@@ -1706,38 +1721,6 @@ Lessons:
 6. Do not fool yourself: The easiest person to fool is you.
 7. Look at the thing itself: He read every book himself, and one with nothing in it still had a rating.
 8. Be a beginner in the open: Be bad first, practice, and stop minding.
-
-### Refactoring UI — Adam Wathan, Steve Schoger
-Page: https://bookmuse.wanngo.com/summaries/refactoring-ui/
-Core idea: A good-looking interface needs no artistic talent: build one real feature at a time, choose from short lists of values, and make what matters stand out.
-About the book: Refactoring UI is a practical guide for people who build interfaces but are not designers. Adam Wathan and Steve Schoger wrote it in 2018. They argue that good design comes from clear tactics, not talent: start with a real feature, choose from short lists of values, and give the most important things the most emphasis. It covers hierarchy, spacing, text, color, depth, images and finishing touches.
-Categories: Society & Tech
-Length: 9 lessons, 20 min
-Lessons:
-1. Start with a feature, not a layout: Build one real feature at a time.
-2. Pick from a short list: Choose values once, then reuse them.
-3. Make what matters stand out: Show what matters, quiet the rest.
-4. Give things room: Space groups things and gives room.
-5. Text that reads well: Sizes, fonts and line spacing.
-6. Build a real color palette: Shades chosen ahead, in HSL.
-7. Use light to show depth: Light from above shows height.
-8. Use images with care: Steady contrast, and the right size.
-9. Finishing touches: Small touches that polish a design.
-
-### Atomic Habits — James Clear
-Page: https://bookmuse.wanngo.com/summaries/atomic-habits/
-Core idea: Small habits, repeated every day, build the person you want to become. Make good habits obvious, attractive, easy and satisfying, and flip those four laws to break bad ones.
-About the book: Atomic Habits (2018) is James Clear's practical guide to building good habits and breaking bad ones. Clear, a writer who rebuilt his own life with small habits after a serious injury in high school, draws on psychology and everyday stories. He argues that results come from systems, not goals: tiny changes, repeated every day, add up to big ones. The book gives four simple laws that make any habit easier to start and harder to drop.
-Categories: Self-Growth, Productivity
-Length: 7 lessons, 17 min
-Lessons:
-1. Tiny gains add up: Get 1% better each day, and trust your system
-2. Habits shape who you are: Every action is a vote for who you become
-3. The habit loop: Four steps, four laws, and how to flip them
-4. The first law: make it obvious: Give a habit a clear cue. To break one: make it invisible
-5. The second law: make it attractive: Pair it with something you want. To break one: make it unattractive
-6. The third law: make it easy: Start in two minutes. To break a habit: make it difficult
-7. The fourth law: make it satisfying: Reward it right away. To break a habit: make it unsatisfying
 
 ### Dopamine Detox — Thibaut Meurisse
 Page: https://bookmuse.wanngo.com/summaries/dopamine-detox/
@@ -3454,6 +3437,23 @@ Lessons:
 7. You know less than you think: Why other people’s knowledge feels like your own
 8. Know yourself first: Why Harari says to learn how your own mind works
 
+### Refactoring UI — Adam Wathan, Steve Schoger
+Page: https://bookmuse.wanngo.com/summaries/refactoring-ui/
+Core idea: A good-looking interface needs no artistic talent: build one real feature at a time, choose from short lists of values, and make what matters stand out.
+About the book: Refactoring UI is a practical guide for people who build interfaces but are not designers. Adam Wathan and Steve Schoger wrote it in 2018. They argue that good design comes from clear tactics, not talent: start with a real feature, choose from short lists of values, and give the most important things the most emphasis. It covers hierarchy, spacing, text, color, depth, images and finishing touches.
+Categories: Society & Tech
+Length: 9 lessons, 20 min
+Lessons:
+1. Start with a feature, not a layout: Build one real feature at a time.
+2. Pick from a short list: Choose values once, then reuse them.
+3. Make what matters stand out: Show what matters, quiet the rest.
+4. Give things room: Space groups things and gives room.
+5. Text that reads well: Sizes, fonts and line spacing.
+6. Build a real color palette: Shades chosen ahead, in HSL.
+7. Use light to show depth: Light from above shows height.
+8. Use images with care: Steady contrast, and the right size.
+9. Finishing touches: Small touches that polish a design.
+
 ### 13 Things Mentally Strong People Don't Do — Amy Morin
 Page: https://bookmuse.wanngo.com/summaries/13-things-mentally-strong-people-don-t-do/
 Core idea: You are only as strong as your worst habits, so mental strength means dropping thirteen habits of thinking, feeling and acting that hold you back.
@@ -3489,7 +3489,7 @@ Page: https://bookmuse.wanngo.com/summaries/justice-1-hard-cases/
 Core idea: We judge what is fair with three ideas, and we sharpen each one by testing it on hard cases.
 About the book: Part 1 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It shows the three ideas people lean on when they judge what is fair, and how a hard case such as the runaway trolley makes us sharpen a rule. It builds on nothing, so anyone can start here.
 Categories: Society & Tech
-Length: 4 lessons, 11 min
+Length: 4 lessons, 12 min
 Lessons:
 1. Three ways to ask what is fair: Welfare, freedom and virtue
 2. The runaway trolley: One case where a good rule pulls two ways
@@ -3501,7 +3501,7 @@ Page: https://bookmuse.wanngo.com/summaries/justice-2-greatest-happiness/
 Core idea: Bentham said the right act is the one that brings the most happiness to everyone it touches, and that simple idea has two big problems.
 About the book: Part 2 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It follows Jeremy Bentham's utilitarian idea that the right act brings the most happiness, counting everyone the same, and then tests it against two big objections: it can override one person's rights, and it forces every good onto one scale. It builds on the welfare idea from Part 1.
 Categories: Society & Tech
-Length: 4 lessons, 11 min
+Length: 4 lessons, 12 min
 Lessons:
 1. Count the happiness: Bentham's one rule, and how a group can use it
 2. One sum for every law: Adding the good and taking off the harm
@@ -3513,7 +3513,7 @@ Page: https://bookmuse.wanngo.com/summaries/justice-3-higher-pleasures/
 Core idea: Mill tried to save the greatest happiness idea by adding freedom and quality, and critics say each rescue leans on a value beyond happiness.
 About the book: Part 3 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It follows Mill's attempt to save Bentham's greatest happiness idea: freedom defended by long-run happiness, and higher pleasures judged by people who know both. It builds on Part 2, and asks whether the rescue quietly leaves the idea behind.
 Categories: Society & Tech
-Length: 5 lessons, 11 min
+Length: 5 lessons, 12 min
 Lessons:
 1. Two cracks to mend: What Mill wanted to keep and fix
 2. Freedom for the long run: Why a free society is a happier one
@@ -3526,7 +3526,7 @@ Page: https://bookmuse.wanngo.com/summaries/justice-4-own-ourselves/
 Core idea: Libertarians say you own yourself, so what you earn is yours and only a thin state is fair, but the idea is hard to follow to its edge.
 About the book: Part 4 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It tests the libertarian claim that you own yourself, so your earnings are yours and only a thin state is fair, and follows it to hard cases such as selling a kidney. It builds on Part 1's three ways to ask what is fair, and Parts 2 and 3 are not needed.
 Categories: Society & Tech
-Length: 4 lessons, 12 min
+Length: 4 lessons, 13 min
 Lessons:
 1. A state that does little: What a libertarian will not let the state do
 2. Fair means fairly gained: Why how wealth arrives matters more than how it is spread
@@ -3538,19 +3538,19 @@ Page: https://bookmuse.wanngo.com/summaries/justice-5-what-money-cant-buy/
 Core idea: Letting money decide can go wrong in two ways: the choice may not be free, and the thing sold may lose its meaning.
 About the book: Part 5 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It sets out the case for letting markets decide, then two doubts: a choice made from need is not fully free, and some goods lose their meaning when sold. It builds on Part 4's idea that willing deals are just.
 Categories: Society & Tech
-Length: 4 lessons, 11 min
+Length: 4 lessons, 13 min
 Lessons:
 1. The case for letting money decide: Why a willing deal looks fair
 2. When need makes the choice: The first doubt: is the choice free?
 3. Some things change when sold: The second doubt: a price can spoil a good
-4. Two doubts, two fixes: Why a fairer market can still be wrong
+4. Two doubts that come apart: Why a fairer market can still be wrong
 
 ### Duty and motive — Bookmuse
 Page: https://bookmuse.wanngo.com/summaries/justice-6-duty-and-motive/
 Core idea: For Kant, an act is good when you do it because it is right, and acting on that reason is what it means to be free.
 About the book: Part 6 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It follows Immanuel Kant's view that an act is good because of the reason behind it, and that freedom means acting on a law you give yourself. It builds on Part 2, where utilitarians judged acts by their results.
 Categories: Society & Tech
-Length: 5 lessons, 13 min
+Length: 5 lessons, 14 min
 Lessons:
 1. Right act, wrong reason: Why the motive gives an act its worth
 2. Freedom is not doing what you want: Acting on a law you give yourself
@@ -3576,7 +3576,7 @@ Page: https://bookmuse.wanngo.com/summaries/justice-8-behind-the-veil/
 Core idea: The fair rules for a society are the ones we would pick if we did not know where we would end up in it.
 About the book: Part 8 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It follows John Rawls, who argued that fair rules are the ones people would choose behind a veil that hides who they will be. It builds on Kant's idea of an imagined agreement from Part 7 and answers the happiness and free-market ideas of Parts 2 and 4.
 Categories: Society & Tech
-Length: 5 lessons, 13 min
+Length: 5 lessons, 14 min
 Lessons:
 1. When a deal is not fair: Why agreeing is not enough
 2. The veil of ignorance: Choosing rules without knowing your place
@@ -3602,7 +3602,7 @@ Page: https://bookmuse.wanngo.com/summaries/justice-10-what-we-owe-each-other/
 Core idea: On the view this part ends with, we may owe each other more than we ever agreed to, and a fair society cannot avoid asking what a good life together is.
 About the book: Part 10 of 10 in Justice, our own course on the big ideas of moral and political philosophy. It asks whether we owe each other more than we have chosen: duties of membership, the story we are part of, and why a fair society cannot stay neutral about the good life. It builds on Kant's autonomy (Part 6), Rawls's veil (Part 8) and Aristotle's purpose (Part 9).
 Categories: Society & Tech
-Length: 5 lessons, 13 min
+Length: 5 lessons, 14 min
 Lessons:
 1. Debts we never signed: The idea that we owe only what we choose
 2. A third kind of duty: Duties of membership, with no yes needed

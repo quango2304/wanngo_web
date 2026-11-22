@@ -187,6 +187,24 @@ main .qz-opts button.dim:not(.plain):not(.right):not(.wrong){opacity:1;color:var
 @media (min-width:600px){figure svg{max-width:420px;margin-inline:auto}}
 /* type and contrast: end */
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+/* the lifeboat widgets (fig-boat, fig-sum) */
+.case-q{margin:14px 0 6px; font-size:1rem; line-height:1.45; font-weight:600}
+.case-out{min-height:1.45em; margin:8px 0 0; font-size:.875rem; color:var(--ink-2)}
+#fig-boat svg,#fig-sum svg{display:block; width:100%; height:auto; margin-top:4px}
+#fig-boat .who{fill:var(--ink); transition:fill .3s ease-out}
+#fig-boat .who.hit{fill:var(--track)}
+#bt-ship{opacity:0; transition:opacity .3s ease-out}
+#bt-ship.show{opacity:1}
+#sm-beam{transform-origin:152px 50px; transition:transform .3s ease-out}
+#sm-left,#sm-right{transition:transform .3s ease-out}
+#fig-sum .who{fill:var(--ink)}
+#fig-sum .sv{transition:opacity .3s ease-out}
+#fig-sum .sv.off{opacity:0}
+#sm-rows{margin:6px 0 8px}
+.fit-row{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:4px 0}
+.fit-row>span:last-child{white-space:nowrap}
+.fit-row b{font-weight:700}
+.fit-row.tot{border-top:1px solid var(--line); margin-top:4px; padding-top:8px}
 /* look: begin */
 /* The cream, charcoal, coral look (docs/design-system.md, "Lesson pages"): three colours, flat, circles, patterns, dark cards. It sets the
    design tokens (names as in design/tokens.json) for light and dark, maps the page's older variable names onto them, and restyles the parts.
@@ -433,9 +451,9 @@ main :is(input,textarea)::placeholder{color:var(--ink-2); opacity:.8}
 <nav class="bm-crumbs" aria-label="Breadcrumb"><a href="/summaries/">Summaries</a><i aria-hidden="true">›</i><a href="/courses/justice/">Justice</a><i aria-hidden="true">›</i><span aria-current="page">Part 2</span></nav>
 <main id="main">
 <p class="bm-course">Part 2 of 10 in the course <a href="/courses/justice/">Justice</a></p><section data-lesson="intro" id="intro">
-    <img id="bookmuse-cover" class="cover" alt="" aria-hidden="true" src="/assets/summaries/justice-2-greatest-happiness.webp?v=67bbbcb4" width="480" height="720">
+    <img id="bookmuse-cover" class="cover" alt="" aria-hidden="true" src="/assets/summaries/justice-2-greatest-happiness.webp?v=60cea649" width="480" height="720">
     <h1 id="title">The greatest happiness</h1>
-    <p class="byline" id="byline">Part 2 of 10 in Justice, a course by Bookmuse</p><p class="bm-meta">4 lessons · 11 min · quiz and takeaways</p><div class="bm-cta"><a class="p" href="https://bookmuse-app.wanngo.com/s/justice-2-greatest-happiness">Read it lesson by lesson</a><a class="s" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Get the app</a></div>
+    <p class="byline" id="byline">Part 2 of 10 in Justice, a course by Bookmuse</p><p class="bm-meta">4 lessons · 12 min · quiz and takeaways</p><div class="bm-cta"><a class="p" href="https://bookmuse-app.wanngo.com/s/justice-2-greatest-happiness">Read it lesson by lesson</a><a class="s" href="https://apps.apple.com/us/app/bookmuse-ai-reading-companion/id6815728446">Get the app</a></div>
     <h2 id="intro-h">The case for counting happiness</h2>
     <p class="claim" id="intro-p1">Bentham said the right act is the one that brings the most happiness to everyone it touches, and that simple idea has two big problems.</p>
     <p id="intro-p2">Part 1 named welfare as one way to ask what is fair: who is better off? This part follows that idea all the way, to see how strong it is and where it breaks.</p>
@@ -503,19 +521,59 @@ main :is(input,textarea)::placeholder{color:var(--ink-2); opacity:.8}
     <h2 id="l3-h" data-n="03">The trouble with rights</h2>
     <p class="key" id="l3-key">The first objection: if only the total counts, one person's basic rights can be traded away for everyone else's pleasure.</p>
     <p id="l3-p1">Bentham scorned natural rights, the rights people are said to have just by being human. He called the idea &ldquo;nonsense upon stilts.&rdquo; He held that any defense of a right has to rest on the happiness it protects.</p>
-    <p id="l3-p2">Critics see a weak spot here. This echoes Part 1's freedom idea: people have claims that numbers should not override. A sum counts each person's happiness, but no person gets a protected space. If the numbers come out right, almost anything can be done to one person.</p>
-    <p id="l3-p3">Take Hana, who lives in a block of flats. She keeps a diary, and one day she leaves it in the lobby by mistake. Forty neighbors would enjoy reading it, worth 1 point each. Hana would be badly hurt, worth 25 points of pain.</p>
-    <figure id="fig-diary" data-anim>
-      <p class="ftitle">Whose diary is it?</p>
-      <div class="bars">
-        <div><p class="lbl"><span>Forty neighbors enjoy it, 1 point each</span><span>+40</span></p><div class="track"><div class="bar good a-grow" style="width:80%"></div></div></div>
-        <div><p class="lbl"><span>Hana is hurt</span><span>&#8722;25</span></p><div class="track"><div class="bar p-dots a-grow" style="width:50%;--a-delay:.5s"></div></div></div>
-        <div><p class="lbl"><span>Net, by the sum</span><span>+15</span></p></div>
-      </div>
-      <figcaption>Forty small gains beat one big loss, so the sum says yes.</figcaption>
+    <p id="l3-p2b">Critics see a weak spot here. Part 1 named freedom as respect for people&rsquo;s own choices and rights. A sum counts each person&rsquo;s happiness, but no person gets a protected space.</p>
+    <p id="l3-boat1">A famous case tests this idea. In 1884, four English sailors drifted in a small lifeboat, far out in the South Atlantic. Their ship had sunk in a storm. They had a little food and no fresh water. The fourth was Richard Parker, the cabin boy, a young helper on the ship. He was seventeen, an orphan, on his first long voyage. He had drunk seawater and become ill, and he seemed to be dying.</p>
+    <p id="l3-boat2">On the twentieth day, with no ship in sight, the captain and the mate killed him. The three men ate from his body for four days. On the 24th day a ship found them. Back in England, the captain and the mate went on trial. They said it was necessary. The defense argued that, without the killing, all four would likely have died.</p>
+    <figure id="fig-boat">
+      <span class="tag">TRY IT</span>
+      <p class="hint">Tap your answer</p>
+      <p class="ftitle">You are the judge</p>
+      <p class="case-q">Set the law aside. Was killing the cabin boy morally allowed?</p>
+      <svg viewBox="0 0 304 150" role="img" aria-label="Four sailors in a small lifeboat on open sea: a captain, a mate, a sailor and the cabin boy, who lies ill at one end. Your answer changes which figures are shown as lost.">
+        <g id="bt-ship"><path d="M250 30H284L278 38H256Z" class="n-subject"/><path d="M267 30V10" class="l-edge"/><path d="M269 12L280 28H269Z" class="n-plain"/></g>
+        <g id="bt-crew">
+          <g class="who"><circle cx="76" cy="64" r="7"/><rect x="69" y="73" width="14" height="26" rx="7"/></g>
+          <g class="who"><circle cx="130" cy="64" r="7"/><rect x="123" y="73" width="14" height="26" rx="7"/></g>
+          <g class="who"><circle cx="184" cy="64" r="7"/><rect x="177" y="73" width="14" height="26" rx="7"/></g>
+        </g>
+        <g class="who" id="bt-boy"><circle cx="218" cy="83" r="7"/><rect x="225" y="76" width="34" height="14" rx="7"/></g>
+        <path d="M40 92H274C268 116 246 124 226 124H88C68 124 46 116 40 92Z" class="n-plain"/>
+        <path d="M40 92H274" class="l-edge"/>
+        <path d="M6 128C26 122 42 134 62 128S98 122 118 128S154 134 174 128S210 122 230 128S266 134 286 128" class="l-hair"/>
+        <path d="M6 142C26 136 42 148 62 142S98 136 118 142S154 148 174 142S210 136 230 142S266 148 286 142" class="l-hair"/>
+        <text x="76" y="48" text-anchor="middle" class="t-tick">Captain</text>
+        <text x="130" y="48" text-anchor="middle" class="t-tick">Mate</text>
+        <text x="184" y="48" text-anchor="middle" class="t-tick">Sailor</text>
+        <text x="240" y="64" text-anchor="middle" class="t-tick">Cabin boy</text>
+      </svg>
+      <div class="segs" data-seg role="group" aria-label="Your verdict" id="bt-pick"><button aria-pressed="false" data-v="no">Not allowed</button><button aria-pressed="false" data-v="ok">Allowed</button></div>
+      <p class="case-out" id="bt-out" aria-live="polite"></p>
     </figure>
-    <p id="l3-p4">The sum says read it. That feels wrong, and a utilitarian has a first answer. In real life, such a habit would not stay in one building. People would stop leaving anything out, and neighbors would stop trusting each other. That is a loss, and it counts in the sum. So a careful utilitarian may say no, and keep privacy as a useful rule.</p>
-    <p id="l3-p5">The critic is not satisfied. Suppose nobody ever finds out and nobody grows afraid. Reading the diary still seems wrong. The reason, the critic says, is not the total. The diary is Hana's, and she has a right to keep it private, whatever the numbers say.</p>
+    <p id="l3-sum1">Bentham&rsquo;s sum looks at the same boat. Each saved sailor adds 10 points. The boy&rsquo;s loss takes off 10 if he would soon have died anyway, and 25 if he had years ahead. The points are ours, only to make the sum visible.</p>
+    <figure id="fig-sum">
+      <span class="tag">TRY IT</span>
+      <p class="hint">Tap to flip the sum. Does your answer flip too?</p>
+      <p class="ftitle">Bentham&rsquo;s sum on the boat</p>
+      <svg viewBox="0 0 304 168" role="img" aria-label="A balance. On the left, the sailors who would be saved. On the right, the cabin boy. The beam tips toward the larger number of points.">
+        <path d="M152 56V150M124 152H180" class="l-main"/>
+        <g id="sm-beam"><path d="M30 50H274" class="l-main"/></g>
+        <circle cx="152" cy="50" r="6" class="n-subject"/>
+        <g id="sm-left" class="pan"><path d="M30 50L2 96M30 50L58 96M2 96C2 110 58 110 58 96" class="l-edge"/><g class="who"><g class="sv" data-i="0"><circle cx="9" cy="80" r="4"/><rect x="4.5" y="84" width="9" height="12" rx="4.5"/></g><g class="sv" data-i="1"><circle cx="20" cy="80" r="4"/><rect x="15.5" y="84" width="9" height="12" rx="4.5"/></g><g class="sv" data-i="2"><circle cx="31" cy="80" r="4"/><rect x="26.5" y="84" width="9" height="12" rx="4.5"/></g></g></g>
+        <g id="sm-right" class="pan"><path d="M274 50L246 96M274 50L302 96M246 96C246 110 302 110 302 96" class="l-edge"/><g class="who"><circle cx="274" cy="80" r="5"/><rect x="268.5" y="85" width="11" height="11" rx="5.5"/></g></g>
+        <text x="2" y="164" class="t-tick">Sailors saved</text>
+        <text x="302" y="164" text-anchor="end" class="t-tick">The boy&rsquo;s loss</text>
+      </svg>
+      <div class="rows" id="sm-ctrl" style="margin:10px 0">
+        <div class="row"><span>Sailors saved</span><div class="stepper" data-stepper data-min="1" data-max="3" data-step="1" data-value="3" id="sm-step"><button aria-label="Fewer sailors saved">&minus;</button><output>3</output><button aria-label="More sailors saved">+</button></div></div>
+        <div class="row"><span>He would soon have died anyway (the defense&rsquo;s claim)</span><button class="sw" role="switch" aria-checked="true" aria-label="He would soon have died anyway" id="sm-dying"></button></div>
+      </div>
+      <div id="sm-rows" aria-live="polite"></div>
+      <div class="answer" id="sm-compare" aria-live="polite"></div>
+      <figcaption>The beam follows the points.</figcaption>
+    </figure>
+    <p id="l3-sum2">Whatever you chose, ask one thing. If your answer stays put when the total moves, something other than the total is holding it up.</p>
+    <p id="l3-first">A utilitarian has a first answer: a fuller sum may say no. Allowing such a killing could weaken the rule against murder. It could also make captains less willing to take boys to sea. Those harms belong in the sum.</p>
+    <p id="l3-critic">The critic is not satisfied. Suppose the full sum still said yes. Killing a helpless boy who never agreed still seems wrong, because it uses a person. That wrong lies in how he is treated, not in the count.</p>
     <p id="l3-p6">So the objection is not that utilitarians always do awful things. It is that when they refuse, the reason is the wrong one. A right that holds only while the sum allows it is a weak right.</p>
     <aside class="qz" data-ok="1" data-more="The rights objection says something matters beyond the total, even a perfect total."><span class="tag">QUICK CHECK</span><p class="hint">Tap an answer</p><p class="q">A letter meant for a neighbor lands in Pat's mailbox. It holds news that would amuse the whole street. Which remark makes the rights objection?</p><div class="qz-opts"><button data-why="No. This is the utilitarian answer. It worries about later harm, so it stays inside the sum.">&ldquo;If people open each other's mail, trust drops and everyone loses.&rdquo;</button><button data-why="Right. It does not recount anything. It says the letter belongs to the neighbor, whatever the total.">&ldquo;Even if no one found out, it is not Pat's to read.&rdquo;</button><button data-why="No. This only argues about the numbers. A rights objection holds even when the numbers favor reading it.">&ldquo;The fun is too small to count against a neighbor's feelings.&rdquo;</button></div><div class="answer" hidden></div></aside>
   </section>
