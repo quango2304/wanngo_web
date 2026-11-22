@@ -626,7 +626,7 @@ def ping():
         return
     for i in range(0, len(urls), 10000):
         body = json.dumps({"host": HOST, "key": key, "keyLocation": f"{SITE}/{key}.txt", "urlList": urls[i:i + 10000]}).encode()
-        req = urllib.request.Request("https://api.indexnow.org/IndexNow", data=body, headers={"Content-Type": "application/json; charset=utf-8"})
+        req = urllib.request.Request("https://api.indexnow.org/IndexNow", data=body, headers={"Content-Type": "application/json; charset=utf-8", "User-Agent": "bookmuse-pages/1"})
         with urllib.request.urlopen(req, timeout=60) as r:
             print(f"IndexNow: {len(urls[i:i + 10000])} urls, HTTP {r.status}")
     state["pinged"] = {p: v[0] for p, v in pages.items()}
