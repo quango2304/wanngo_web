@@ -209,7 +209,7 @@
   "summary:justice-7-is-lying-ever-right": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-0e23-75bf-9d0a-18bef00715c1/cover.jpg?v=1#aba3e26de2b48adea32dc08595d163aad1481542a328c7fe4564d05fec6afce7",
   "summary:justice-8-behind-the-veil": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-143d-7eff-aba3-9d6022d4f831/cover.jpg?v=1#1d9a400a989009e595900810f3790581f18ffc2fc1791b56156d65f7b231a1e3",
   "summary:justice-9-who-deserves-what": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-197f-74c6-bc8f-19a12b4bb5c8/cover.jpg?v=1#8b70506f7b96009cc4cbf48bdc95f926990c116f94ca00e4c502528b892f99bd",
-  "summary:leaders-eat-last": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-f452-78bc-b0a1-cc50c9791e88/cover.jpg?v=5#50693dd62650107e5014e3a335da0e31c57f1e6d71a300f80882351c4961ee7d",
+  "summary:leaders-eat-last": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-f452-78bc-b0a1-cc50c9791e88/cover.jpg?v=6#32e06425228ad84b6ebe8236584ca8dba72cc5315089e04f5861847e9ebe17db",
   "summary:lives-of-the-stoics": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-0e3a-7edc-9b57-82a1ba356d64/cover.jpg?v=5#d467312c134d6aedeec8bc085279cfef9cd630a765cbb2050a23e02f90c1f785",
   "summary:love-unfu-ked": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f072-91b4-7783-9bee-4fdb7ffce23e/cover.jpg?v=5#276f321039b85b1e70ca406373cbab637efc6a0d9368b0cfe943bdd3fec38108",
   "summary:love-yourself-like-your-life-depends-on-it": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-14ce-7986-afa9-7354c676d7dd/cover.jpg?v=6#5f90b2d03a18289d5ba9d22a331e85b825efe0987aae6f9b147de2c4711876c5",
@@ -1733,7 +1733,7 @@
    "2026-11-22"
   ],
   "/summaries/leaders-eat-last/": [
-   "33a356a9da9e4e36",
+   "2f2daf58d413340f",
    "2026-11-22"
   ],
   "/summaries/lives-of-the-stoics/": [
@@ -1869,7 +1869,7 @@
    "2026-11-22"
   ],
   "/summaries/refactoring-ui/": [
-   "35c643073f53a444",
+   "cc7f61af1159d047",
    "2026-11-22"
   ],
   "/summaries/rich-dad-poor-dad-what-the-rich-teach-their-kids-about-money/": [
@@ -2658,7 +2658,7 @@
   "/summaries/justice-7-is-lying-ever-right/": "8a6a223e659e6a40",
   "/summaries/justice-8-behind-the-veil/": "a7832ba3cb7207d5",
   "/summaries/justice-9-who-deserves-what/": "d3c100cae8cf3741",
-  "/summaries/leaders-eat-last/": "33a356a9da9e4e36",
+  "/summaries/leaders-eat-last/": "2f2daf58d413340f",
   "/summaries/lives-of-the-stoics/": "e68e9131aa86db27",
   "/summaries/love-unfu-ked/": "9d9ae44969f29af8",
   "/summaries/love-yourself-like-your-life-depends-on-it/": "b2bc4d3141f59aca",
@@ -2692,7 +2692,7 @@
   "/summaries/quiet/": "a8420b697f92827d",
   "/summaries/read-people-like-a-book/": "43d6bc83c5567335",
   "/summaries/reasons-to-stay-alive/": "6959e60b10126286",
-  "/summaries/refactoring-ui/": "35c643073f53a444",
+  "/summaries/refactoring-ui/": "cc7f61af1159d047",
   "/summaries/rich-dad-poor-dad-what-the-rich-teach-their-kids-about-money/": "0385bdd745b020fe",
   "/summaries/salt-sugar-and-fat-how-the-food-giants-hooked-us/": "c0041417ee91f5a4",
   "/summaries/sapiens/": "4c8b1b4300598d58",
