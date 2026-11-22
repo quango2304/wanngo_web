@@ -1,0 +1,2317 @@
+{
+ "images": {
+  "author:a-g-lafley": "https://bookmuse-api.wanngo.com/v1/authors/a-g-lafley/photo.jpg?v=1",
+  "author:al-sweigart": "https://bookmuse-api.wanngo.com/v1/authors/al-sweigart/photo.jpg?v=1",
+  "author:al-switzler": "https://bookmuse-api.wanngo.com/v1/authors/al-switzler/photo.jpg?v=1",
+  "author:amy-cuddy": "https://bookmuse-api.wanngo.com/v1/authors/amy-cuddy/photo.jpg?v=1",
+  "author:amy-morin": "https://bookmuse-api.wanngo.com/v1/authors/amy-morin/photo.jpg?v=1",
+  "author:angela-duckworth": "https://bookmuse-api.wanngo.com/v1/authors/angela-duckworth/photo.jpg?v=1",
+  "author:anna-lembke": "https://bookmuse-api.wanngo.com/v1/authors/anna-lembke/photo.jpg?v=1",
+  "author:anna-rosling-ronnlund": "https://bookmuse-api.wanngo.com/v1/authors/anna-rosling-ronnlund/photo.jpg?v=1",
+  "author:ashlee-vance": "https://bookmuse-api.wanngo.com/v1/authors/ashlee-vance/photo.jpg?v=1",
+  "author:atul-gawande": "https://bookmuse-api.wanngo.com/v1/authors/atul-gawande/photo.jpg?v=1",
+  "author:ayn-rand": "https://bookmuse-api.wanngo.com/v1/authors/ayn-rand/photo.jpg?v=1",
+  "author:aziz-ansari": "https://bookmuse-api.wanngo.com/v1/authors/aziz-ansari/photo.jpg?v=1",
+  "author:barry-mcdonagh": "https://bookmuse-api.wanngo.com/v1/authors/barry-mcdonagh/photo.jpg?v=1",
+  "author:bell-hooks": "https://bookmuse-api.wanngo.com/v1/authors/bell-hooks/photo.jpg?v=1",
+  "author:benjamin-graham": "https://bookmuse-api.wanngo.com/v1/authors/benjamin-graham/photo.jpg?v=1",
+  "author:bessel-van-der-kolk": "https://bookmuse-api.wanngo.com/v1/authors/bessel-van-der-kolk/photo.jpg?v=1",
+  "author:bill-bryson": "https://bookmuse-api.wanngo.com/v1/authors/bill-bryson/photo.jpg?v=1",
+  "author:bj-fogg": "https://bookmuse-api.wanngo.com/v1/authors/bj-fogg/photo.jpg?v=1",
+  "author:cal-newport": "https://bookmuse-api.wanngo.com/v1/authors/cal-newport/photo.jpg?v=1",
+  "author:carl-sagan": "https://bookmuse-api.wanngo.com/v1/authors/carl-sagan/photo.jpg?v=1",
+  "author:carmine-gallo": "https://bookmuse-api.wanngo.com/v1/authors/carmine-gallo/photo.jpg?v=2",
+  "author:carol-dweck": "https://bookmuse-api.wanngo.com/v1/authors/carol-dweck/photo.jpg?v=1",
+  "author:charles-duhigg": "https://bookmuse-api.wanngo.com/v1/authors/charles-duhigg/photo.jpg?v=1",
+  "author:chris-voss": "https://bookmuse-api.wanngo.com/v1/authors/chris-voss/photo.jpg?v=1",
+  "author:christina-lamb": "https://bookmuse-api.wanngo.com/v1/authors/christina-lamb/photo.jpg?v=1",
+  "author:dale-carnegie": "https://bookmuse-api.wanngo.com/v1/authors/dale-carnegie/photo.jpg?v=2",
+  "author:daniel-goleman": "https://bookmuse-api.wanngo.com/v1/authors/daniel-goleman/photo.jpg?v=1",
+  "author:daniel-kahneman": "https://bookmuse-api.wanngo.com/v1/authors/daniel-kahneman/photo.jpg?v=1",
+  "author:daniel-siegel": "https://bookmuse-api.wanngo.com/v1/authors/daniel-siegel/photo.jpg?v=2",
+  "author:daron-acemoglu": "https://bookmuse-api.wanngo.com/v1/authors/daron-acemoglu/photo.jpg?v=1",
+  "author:david-allen": "https://bookmuse-api.wanngo.com/v1/authors/david-allen/photo.jpg?v=1",
+  "author:david-bach": "https://bookmuse-api.wanngo.com/v1/authors/david-bach/photo.jpg?v=1",
+  "author:david-brooks": "https://bookmuse-api.wanngo.com/v1/authors/david-brooks/photo.jpg?v=1",
+  "author:david-goggins": "https://bookmuse-api.wanngo.com/v1/authors/david-goggins/photo.jpg?v=1",
+  "author:don-norman": "https://bookmuse-api.wanngo.com/v1/authors/don-norman/photo.jpg?v=1",
+  "author:eckhart-tolle": "https://bookmuse-api.wanngo.com/v1/authors/eckhart-tolle/photo.jpg?v=1",
+  "author:emeran-mayer": "https://bookmuse-api.wanngo.com/v1/authors/emeran-mayer/photo.jpg?v=1",
+  "author:emily-gregory": "https://bookmuse-api.wanngo.com/v1/authors/emily-gregory/photo.jpg?v=1",
+  "author:eric-ries": "https://bookmuse-api.wanngo.com/v1/authors/eric-ries/photo.jpg?v=1",
+  "author:gary-chapman": "https://bookmuse-api.wanngo.com/v1/authors/gary-chapman/photo.jpg?v=2",
+  "author:gary-keller": "https://bookmuse-api.wanngo.com/v1/authors/gary-keller/photo.jpg?v=2",
+  "author:grant-cardone": "https://bookmuse-api.wanngo.com/v1/authors/grant-cardone/photo.jpg?v=1",
+  "author:hal-elrod": "https://bookmuse-api.wanngo.com/v1/authors/hal-elrod/photo.jpg?v=1",
+  "author:hans-rosling": "https://bookmuse-api.wanngo.com/v1/authors/hans-rosling/photo.jpg?v=1",
+  "author:heather-mcghee": "https://bookmuse-api.wanngo.com/v1/authors/heather-mcghee/photo.jpg?v=1",
+  "author:henrik-fexeus": "https://bookmuse-api.wanngo.com/v1/authors/henrik-fexeus/photo.jpg?v=1",
+  "author:james-a-robinson": "https://bookmuse-api.wanngo.com/v1/authors/james-a-robinson/photo.jpg?v=1",
+  "author:james-allen": "https://bookmuse-api.wanngo.com/v1/authors/james-allen/photo.jpg?v=1",
+  "author:james-clear": "https://bookmuse-api.wanngo.com/v1/authors/james-clear/photo.jpg?v=1",
+  "author:jared-diamond": "https://bookmuse-api.wanngo.com/v1/authors/jared-diamond/photo.jpg?v=1",
+  "author:jaron-lanier": "https://bookmuse-api.wanngo.com/v1/authors/jaron-lanier/photo.jpg?v=1",
+  "author:jay-papasan": "https://bookmuse-api.wanngo.com/v1/authors/jay-papasan/photo.jpg?v=2",
+  "author:jay-shetty": "https://bookmuse-api.wanngo.com/v1/authors/jay-shetty/photo.jpg?v=1",
+  "author:jd-vance": "https://bookmuse-api.wanngo.com/v1/authors/jd-vance/photo.jpg?v=1",
+  "author:jeff-bezos": "https://bookmuse-api.wanngo.com/v1/authors/jeff-bezos/photo.jpg?v=1",
+  "author:jen-sincero": "https://bookmuse-api.wanngo.com/v1/authors/jen-sincero/photo.jpg?v=1",
+  "author:jennette-mccurdy": "https://bookmuse-api.wanngo.com/v1/authors/jennette-mccurdy/photo.jpg?v=1",
+  "author:johann-hari": "https://bookmuse-api.wanngo.com/v1/authors/johann-hari/photo.jpg?v=1",
+  "author:john-c-maxwell": "https://bookmuse-api.wanngo.com/v1/authors/john-c-maxwell/photo.jpg?v=1",
+  "author:jonathan-haidt": "https://bookmuse-api.wanngo.com/v1/authors/jonathan-haidt/photo.jpg?v=1",
+  "author:jordan-b-peterson": "https://bookmuse-api.wanngo.com/v1/authors/jordan-b-peterson/photo.jpg?v=1",
+  "author:joseph-grenny": "https://bookmuse-api.wanngo.com/v1/authors/joseph-grenny/photo.jpg?v=1",
+  "author:kerry-patterson": "https://bookmuse-api.wanngo.com/v1/authors/kerry-patterson/photo.jpg?v=1",
+  "author:laura-vanderkam": "https://bookmuse-api.wanngo.com/v1/authors/laura-vanderkam/photo.jpg?v=1",
+  "author:malala-yousafzai": "https://bookmuse-api.wanngo.com/v1/authors/malala-yousafzai/photo.jpg?v=1",
+  "author:malcolm-gladwell": "https://bookmuse-api.wanngo.com/v1/authors/malcolm-gladwell/photo.jpg?v=1",
+  "author:marc-schulz": "https://bookmuse-api.wanngo.com/v1/authors/marc-schulz/photo.jpg?v=1",
+  "author:marcus-aurelius": "https://bookmuse-api.wanngo.com/v1/authors/marcus-aurelius/photo.jpg?v=1",
+  "author:mark-goulston": "https://bookmuse-api.wanngo.com/v1/authors/mark-goulston/photo.jpg?v=1",
+  "author:mark-manson": "https://bookmuse-api.wanngo.com/v1/authors/mark-manson/photo.jpg?v=1",
+  "author:matt-haig": "https://bookmuse-api.wanngo.com/v1/authors/matt-haig/photo.jpg?v=1",
+  "author:matthew-walker": "https://bookmuse-api.wanngo.com/v1/authors/matthew-walker/photo.jpg?v=1",
+  "author:michael-moss": "https://bookmuse-api.wanngo.com/v1/authors/michael-moss/photo.jpg?v=1",
+  "author:michael-pollan": "https://bookmuse-api.wanngo.com/v1/authors/michael-pollan/photo.jpg?v=1",
+  "author:morgan-housel": "https://bookmuse-api.wanngo.com/v1/authors/morgan-housel/photo.jpg?v=1",
+  "author:mortimer-j-adler": "https://bookmuse-api.wanngo.com/v1/authors/mortimer-j-adler/photo.jpg?v=1",
+  "author:napoleon-hill": "https://bookmuse-api.wanngo.com/v1/authors/napoleon-hill/photo.jpg?v=1",
+  "author:neil-degrasse-tyson": "https://bookmuse-api.wanngo.com/v1/authors/neil-degrasse-tyson/photo.jpg?v=1",
+  "author:niccolo-machiavelli": "https://bookmuse-api.wanngo.com/v1/authors/niccolo-machiavelli/photo.jpg?v=1",
+  "author:norman-vincent-peale": "https://bookmuse-api.wanngo.com/v1/authors/norman-vincent-peale/photo.jpg?v=1",
+  "author:ola-rosling": "https://bookmuse-api.wanngo.com/v1/authors/ola-rosling/photo.jpg?v=1",
+  "author:oliver-sacks": "https://bookmuse-api.wanngo.com/v1/authors/oliver-sacks/photo.jpg?v=1",
+  "author:paul-kalanithi": "https://bookmuse-api.wanngo.com/v1/authors/paul-kalanithi/photo.jpg?v=1",
+  "author:peter-thiel": "https://bookmuse-api.wanngo.com/v1/authors/peter-thiel/photo.jpg?v=1",
+  "author:phil-knight": "https://bookmuse-api.wanngo.com/v1/authors/phil-knight/photo.jpg?v=1",
+  "author:philippa-perry": "https://bookmuse-api.wanngo.com/v1/authors/philippa-perry/photo.jpg?v=1",
+  "author:ramit-sethi": "https://bookmuse-api.wanngo.com/v1/authors/ramit-sethi/photo.jpg?v=1",
+  "author:ray-dalio": "https://bookmuse-api.wanngo.com/v1/authors/ray-dalio/photo.jpg?v=1",
+  "author:richard-dawkins": "https://bookmuse-api.wanngo.com/v1/authors/richard-dawkins/photo.jpg?v=1",
+  "author:richard-feynman": "https://bookmuse-api.wanngo.com/v1/authors/richard-feynman/photo.jpg?v=1",
+  "author:robert-cialdini": "https://bookmuse-api.wanngo.com/v1/authors/robert-cialdini/photo.jpg?v=2",
+  "author:robert-greene": "https://bookmuse-api.wanngo.com/v1/authors/robert-greene/photo.jpg?v=2",
+  "author:robert-i-sutton": "https://bookmuse-api.wanngo.com/v1/authors/robert-i-sutton/photo.jpg?v=1",
+  "author:robert-kiyosaki": "https://bookmuse-api.wanngo.com/v1/authors/robert-kiyosaki/photo.jpg?v=1",
+  "author:robin-sharma": "https://bookmuse-api.wanngo.com/v1/authors/robin-sharma/photo.jpg?v=1",
+  "author:roger-martin": "https://bookmuse-api.wanngo.com/v1/authors/roger-martin/photo.jpg?v=1",
+  "author:ron-mcmillan": "https://bookmuse-api.wanngo.com/v1/authors/ron-mcmillan/photo.jpg?v=1",
+  "author:ryan-holiday": "https://bookmuse-api.wanngo.com/v1/authors/ryan-holiday/photo.jpg?v=1",
+  "author:simon-sinek": "https://bookmuse-api.wanngo.com/v1/authors/simon-sinek/photo.jpg?v=2",
+  "author:stanley-mcchrystal": "https://bookmuse-api.wanngo.com/v1/authors/stanley-mcchrystal/photo.jpg?v=1",
+  "author:stephen-hawking": "https://bookmuse-api.wanngo.com/v1/authors/stephen-hawking/photo.jpg?v=1",
+  "author:stephen-j-dubner": "https://bookmuse-api.wanngo.com/v1/authors/stephen-j-dubner/photo.jpg?v=1",
+  "author:stephen-r-covey": "https://bookmuse-api.wanngo.com/v1/authors/stephen-r-covey/photo.jpg?v=2",
+  "author:steven-d-levitt": "https://bookmuse-api.wanngo.com/v1/authors/steven-d-levitt/photo.jpg?v=1",
+  "author:sun-tzu": "https://bookmuse-api.wanngo.com/v1/authors/sun-tzu/photo.jpg?v=1",
+  "author:tara-westover": "https://bookmuse-api.wanngo.com/v1/authors/tara-westover/photo.jpg?v=1",
+  "author:thibaut-meurisse": "https://bookmuse-api.wanngo.com/v1/authors/thibaut-meurisse/photo.jpg?v=1",
+  "author:thomas-erikson": "https://bookmuse-api.wanngo.com/v1/authors/thomas-erikson/photo.jpg?v=1",
+  "author:thomas-piketty": "https://bookmuse-api.wanngo.com/v1/authors/thomas-piketty/photo.jpg?v=1",
+  "author:timothy-ferriss": "https://bookmuse-api.wanngo.com/v1/authors/timothy-ferriss/photo.jpg?v=2",
+  "author:tony-robbins": "https://bookmuse-api.wanngo.com/v1/authors/tony-robbins/photo.jpg?v=1",
+  "author:trevor-noah": "https://bookmuse-api.wanngo.com/v1/authors/trevor-noah/photo.jpg?v=1",
+  "author:vanessa-van-edwards": "https://bookmuse-api.wanngo.com/v1/authors/vanessa-van-edwards/photo.jpg?v=1",
+  "author:vex-king": "https://bookmuse-api.wanngo.com/v1/authors/vex-king/photo.jpg?v=1",
+  "author:viktor-frankl": "https://bookmuse-api.wanngo.com/v1/authors/viktor-frankl/photo.jpg?v=1",
+  "author:virginia-woolf": "https://bookmuse-api.wanngo.com/v1/authors/virginia-woolf/photo.jpg?v=1",
+  "author:walter-isaacson": "https://bookmuse-api.wanngo.com/v1/authors/walter-isaacson/photo.jpg?v=1",
+  "author:william-h-mcraven": "https://bookmuse-api.wanngo.com/v1/authors/william-h-mcraven/photo.jpg?v=1",
+  "author:yuval-noah-harari": "https://bookmuse-api.wanngo.com/v1/authors/yuval-noah-harari/photo.jpg?v=2",
+  "course:justice": "https://bookmuse-api.wanngo.com/v1/courses/01a201ec-3b5a-73cd-bc0b-c9a299a519c4/cover.jpg?v=1",
+  "summary:100m-offers": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-4614-74bf-bbad-d22101110215/cover.jpg?v=5#f869ec25a465a9bb20f65df600c25bfd201b3e54f510be8267963a7a71b73fbb",
+  "summary:101-essays-that-will-change-the-way-you-think": "https://bookmuse-api.wanngo.com/v1/summaries/01a20129-0f31-7276-8b11-38a3d57f883f/cover.jpg?v=1#042954ec9a7684183382bac1a7b8cc29ef250b710ce874eebc140f1671a4eaa9",
+  "summary:12-rules-for-life": "https://bookmuse-api.wanngo.com/v1/summaries/01a200f8-7132-7a71-b6aa-6e4712e09163/cover.jpg?v=1#3a34ada2c1b4432a04b39d53d3e8b717ae2fec619aad94d658df8e35e22d21e5",
+  "summary:13-things-mentally-strong-people-don-t-do": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-886f-7db2-9af9-3f2fbad7b317/cover.jpg?v=7#a771b06c15d38c2245c306aa06f9f018bbed1e801858d8b0c5a8d4fef1d15a3f",
+  "summary:21-lessons-for-the-21st-century": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-e614-795e-b40e-e8c31c84eacb/cover.jpg?v=6#9068f9c57cf5c950a51092280caa8cf331c501eed2f4ae69c0d91a63e4b66400",
+  "summary:8-rules-of-love": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-f932-7157-b914-75b1955a5e21/cover.jpg?v=6#7f5deaef8d03afd331ee60a7b22e6aa3995d8c9e840f812a0ce262778f28ddee",
+  "summary:a-brief-history-of-time": "https://bookmuse-api.wanngo.com/v1/summaries/01a20091-2e35-74d5-b1a1-6ff2a9cce234/cover.jpg?v=1#8c5d53e55013dc48deead14654980db26a219d26ed0df2077a672c364508700f",
+  "summary:a-people-s-history-of-the-united-states": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ae-e2a7-7c30-976d-ada959810b23/cover.jpg?v=1#9379e565801504208f0738b53b3729514f7d8cb966a12894246bbb70317c565c",
+  "summary:a-room-of-ones-own": "https://bookmuse-api.wanngo.com/v1/summaries/01a20155-e22b-798b-bd45-92fa8902e154/cover.jpg?v=1#386a0762c05db1ccde81af1df6bb37ae5032477594691385ac34392b7e0e028c",
+  "summary:a-short-history-of-nearly-everything": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-8542-79f5-8d44-9c617725bd84/cover.jpg?v=7#66c28139e02b96f6d6786c84eecf475302330bd2b3fd22d883ac6befe6a1760c",
+  "summary:active-listening-techniques": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f058-5367-756d-989c-a7e1feacac6a/cover.jpg?v=4#91c25215286576629e498bf5fd371cf1836cf0d8c1e07d9c1b6f735fe3889230",
+  "summary:all-about-love": "https://bookmuse-api.wanngo.com/v1/summaries/01a201e0-8f2a-715d-8dc3-f3e76523d83d/cover.jpg?v=1#248d8d83cb3ec72397e4124f3e010c8f90b5d479a1a1f35eab46bbdb7e720cb1",
+  "summary:as-a-man-thinketh": "https://bookmuse-api.wanngo.com/v1/summaries/01a2009c-4a1a-7699-bdad-ad9af7d3fe02/cover.jpg?v=1#92ee554ab16a396801c443a1024d46ab464aa42ea238a96f2f8aadcd4791ba00",
+  "summary:astrophysics-for-people-in-a-hurry": "https://bookmuse-api.wanngo.com/v1/summaries/01a201a6-2c92-74a4-8c1c-f3c3adf079d6/cover.jpg?v=2#8c39095223d99cbc3689d81bb78395213b0f033516830e9ef7edc3713db49537",
+  "summary:atlas-shrugged": "https://bookmuse-api.wanngo.com/v1/summaries/01a201a3-7b23-7276-a531-fea02b638d97/cover.jpg?v=1#93beb64c94e42b600700b445382df8a32f1555daef264863b4754b1cf95662e4",
+  "summary:atomic-habits": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e592-f9bc-7db6-9b14-27b316596bef/cover.jpg?v=6#ed252d4f50278350a44c09ff78355d1e8594e214cbd620ce966be23e163dca50",
+  "summary:automate-the-boring-stuff-with-python-2nd-edition": "https://bookmuse-api.wanngo.com/v1/summaries/01a20141-b584-7bb5-b44f-696e73e9fb6c/cover.jpg?v=1#061c4fa0cb086ea851640a0be53dd2df8a0af7221503caac24a2bdfab208d193",
+  "summary:becoming-supernatural": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c3-13d4-7384-9be3-f0620ab50aeb/cover.jpg?v=1#9961f30e5fc62cf4d7035bb13db46e4dcf4de6076e8b6b74b5947b57ed09339b",
+  "summary:being-mortal": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-27f1-739f-9b06-8ba5229f4ead/cover.jpg?v=1#19620c82313fde76642de6947379169a558187b57bc08ed962a9eef192fc7a9c",
+  "summary:biohack-your-brain": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-5814-70c3-97a0-599748977eb2/cover.jpg?v=5#67660d7590cf41bb11da642b88f155f562fb54ed9695fabd397e2cbffdb4ccc5",
+  "summary:blink": "https://bookmuse-api.wanngo.com/v1/summaries/01a20194-9c4e-7301-ac42-7e3745b8b871/cover.jpg?v=1#73e7f07d9041b9382b69d52d1a62099ff3c8cf152d2de94b8c6f55a1d26ea924",
+  "summary:born-a-crime": "https://bookmuse-api.wanngo.com/v1/summaries/01a2016e-43b3-7a27-bee1-307e86b103d5/cover.jpg?v=1#1fdbb83aec5dabd4efd4ecac650740a3644f1d7d209838419a73e37fccaeacdd",
+  "summary:boundaries": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c4-48c8-737b-a70e-df3c9f04a6ca/cover.jpg?v=1#a1ec682928d23cfc2939d435866685e0afe6c0b548f3e00333b273a8db9035d3",
+  "summary:breaking-the-habit-of-being-yourself": "https://bookmuse-api.wanngo.com/v1/summaries/01a20177-dc0e-73e7-8c73-cb66ad8af3cb/cover.jpg?v=1#28fe44a28848a716f19685b8cd31465b6145975a87dd90c9cf6462fa092fe9fd",
+  "summary:calling-in-the-one-revised-and-expanded": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f065-a8b1-7bd4-abee-bba305dcf8b4/cover.jpg?v=4#13b0edb318bcd2b0a6314790d4ea6e02d6c77396eb50051fdc67123a7a0eff0d",
+  "summary:can-t-hurt-me": "https://bookmuse-api.wanngo.com/v1/summaries/01a20092-72ab-73e6-8e10-13c071114488/cover.jpg?v=1#d621ab2c750e05594c97ef819050ae2f4709c70fe12f45163f117c55fe70555d",
+  "summary:capital-in-the-21st-century": "https://bookmuse-api.wanngo.com/v1/summaries/01a200ec-f68f-7956-a0f3-a19d0200606b/cover.jpg?v=1#508f58e678a6c0b891929f007d9fcdf5018ae776aad3594d5c536dd5ab9d1a18",
+  "summary:cosmos": "https://bookmuse-api.wanngo.com/v1/summaries/01a20166-3615-77a3-908e-a4dd0f777e21/cover.jpg?v=1#168658ceb7eb49fad01dde6a61667977cfa483dd5f8d2439d6d95966516198d3",
+  "summary:crucial-conversations-tools-for-talking-when-stakes-are-high": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ad-e0a1-76a1-95a6-000beca2fc60/cover.jpg?v=1#2b429ebc2678c9828f82dd054a1aa47a4e7729e378221b941696a3d6810d6df8",
+  "summary:cues": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f035-6819-7eea-a7e1-eb47c7d0d99d/cover.jpg?v=4#76f006cda6a2073fa5c810726eb685401bde05b7b91d655a849b49bb5160cc5d",
+  "summary:dare": "https://bookmuse-api.wanngo.com/v1/summaries/01a20199-4049-7489-9a55-142c5b7b14ca/cover.jpg?v=1#4a339cb1915809594dfa3936f6f26a37faa9a0a134f36b212179188a047a7e5b",
+  "summary:declutter-your-mind": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f047-c060-77f3-b849-4ed56ed8fd79/cover.jpg?v=4#23cf3c2d378e6084ad4c23df2243303710d3df50871531f2d64e313c4c794882",
+  "summary:deep-work": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-5b74-7693-b83d-2c2b04add75f/cover.jpg?v=7#5d9b689f75d93dbc7b7b2ddf49918810fff377df1c406932f0178e9ef7f4c9ff",
+  "summary:digital-minimalism": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef9c-c3ff-79d4-8c10-0b35cb33cc31/cover.jpg?v=5#246d6b893ffc26df7cec6c98b021d04b1885cf87f7adb20e4cce9f49330bd0f4",
+  "summary:don-t-believe-everything-you-think-why-your-thinking-is-the-beginning-and-end-of-suffering": "https://bookmuse-api.wanngo.com/v1/summaries/01a2014f-11fb-7a60-b2ff-3cea9ece1b5e/cover.jpg?v=1#becd6a469fa944bb08c4be9bbf3d411bd333407c2ea917c7aacd822f7b1a1ef4",
+  "summary:don-t-overthink-it": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-60e9-780e-9e43-84b0f622ba3e/cover.jpg?v=5#558f22b6c9bba863242b9be18908c321b38e97117ae09d5c9f0939e9c2362c1c",
+  "summary:dopamine-detox": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-9627-749c-9d5f-8891b4ba96d9/cover.jpg?v=6#ddac333e1e2d052e2410e615c343491716c800f9c84f1d7bd3ab69316c6f9635",
+  "summary:dopamine-nation": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef91-4a9e-7307-ad1b-19ae5a285be9/cover.jpg?v=5#8012dfbf34047bbaed0e2f2bf1dc46b2c0563f191d13c39cf5f87e65f32b4f4c",
+  "summary:drama-free": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-640a-76d0-9795-d630cb40f369/cover.jpg?v=5#ee05f3cfc25ed4429a43d05be77bb7e3638e6db8fba759967fa510c40a8786c4",
+  "summary:eat-and-run": "https://bookmuse-api.wanngo.com/v1/summaries/01a2019c-c140-7287-aa4f-d8a85144997f/cover.jpg?v=1#2bfa8dbbb72d9133ee8cca7e25960b71430a67a6a5ccba47034db109f8911053",
+  "summary:eat-that-frog": "https://bookmuse-api.wanngo.com/v1/summaries/01a2011f-0f61-750f-bc7e-0e23ca4801ad/cover.jpg?v=1#20d23eae903e5854f68c2b120e9e742cfa4c02ddbb84ada1a9181b9e012b72aa",
+  "summary:educated1": "https://bookmuse-api.wanngo.com/v1/summaries/01a201f0-6e79-7af4-abdc-48cb71573e0c/cover.jpg?v=1#bed5dc9867d526b6c3124cd5a63c6b77c5606c66557c9840cf702c20bbdcfeac",
+  "summary:ego-is-the-enemy": "https://bookmuse-api.wanngo.com/v1/summaries/01a20178-b1bb-7985-9953-69875c4831f2/cover.jpg?v=1#9e80a582d7cb4131ff95c066e592137d230a14afa8bbc73da0e94baa09d2cb0a",
+  "summary:elon-musk": "https://bookmuse-api.wanngo.com/v1/summaries/01a20136-23b4-7535-a5cd-9bc0bce0ebff/cover.jpg?v=1#1107b6f0a6c0b7c3a34fbff918b8a14771ca6e3089bac1b564dc629856053eda",
+  "summary:emotional-blackmail": "https://bookmuse-api.wanngo.com/v1/summaries/01a201a0-ec64-7791-a08b-48fffc4341fe/cover.jpg?v=1#2a5b4b2049f2d212a72f7aa54296175ae64d76335d90ea025b65e530e17375fc",
+  "summary:emotional-intelligence1": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-67a2-7c48-a5d0-ae63bed90422/cover.jpg?v=7#3e842cd7d9f183094e97f01015060451ff3a86b601acaf47b07f2b8e6324b134",
+  "summary:factfulness-ten-reasons-we-re-wrong-about-the-world": "https://bookmuse-api.wanngo.com/v1/summaries/01a201f2-9c6e-7915-9ff1-e67a8f50911c/cover.jpg?v=1#4174d8ff0c7412fd1f3cec1022bf86b5f34fb033b0089e3235dcaff6c9b1cdb1",
+  "summary:freakonomics": "https://bookmuse-api.wanngo.com/v1/summaries/01a2012d-c20b-7868-bde3-1f2595c18175/cover.jpg?v=1#abab345ddd7a1f950bd06a5d407da8da506579b53060f65e66c24a0f4ba20300",
+  "summary:games-people-play": "https://bookmuse-api.wanngo.com/v1/summaries/01a2013b-fe14-7dbb-87e5-dc920ccb8026/cover.jpg?v=1#2c20577ba9587b419052fb2717068533dcc9c56cf6e761cd7f9e5ae1ccd7fef3",
+  "summary:getting-things-done": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ae-dcc2-73cc-b319-2fb6fd794742/cover.jpg?v=1#62fd59ac5bda72512b99de723f3c5defc3c1dd265db078a71640c1f342eeb708",
+  "summary:getting-to-yes": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-2e40-7060-902d-6a11b1565386/cover.jpg?v=1#2d1190b63e05a7273c26e9330bf7e99f5b696f545be90aa444a87f28382c3a0e",
+  "summary:good-vibes-good-life": "https://bookmuse-api.wanngo.com/v1/summaries/01a201bd-38b6-7eef-b531-82c0e3c5e9bc/cover.jpg?v=1#6e7cafb1d7a2c2d350ded9b37b6847ec261f801973eb4fa200e34db7b877cf4f",
+  "summary:grit": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ba-bc9f-76f8-84ec-7bdac2c77f5b/cover.jpg?v=2#7a47d7004c3f127d5c3af4e6565719c59587e86dc2ef3328b410bad9174211c5",
+  "summary:guns-germs-and-steel": "https://bookmuse-api.wanngo.com/v1/summaries/01a20105-f8ba-73b2-a81c-512da3ef44cd/cover.jpg?v=1#4f86613a1a7a43d17284b1a507fdd511b641f8e81bd21dd952ad4be129cd45e1",
+  "summary:hillbilly-elegy": "https://bookmuse-api.wanngo.com/v1/summaries/01a200a1-30f5-7d9b-90fc-0f7dad939cce/cover.jpg?v=1#95d94057751a1213928f75e291521214c2d285e845e20a7c8b8a9536622040e4",
+  "summary:hinch-yourself-happy": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c4-5638-754b-a06e-7378cb110799/cover.jpg?v=1#a58473fb442e0637f1fb5ea38fa52f73fe4f3cf7e6994ce37c6898fe1249f501",
+  "summary:hold-me-tight": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efba-30a1-7b35-a6e3-3bb3f3e29a79/cover.jpg?v=4#1f9c003f24a2b02c0edff9d63ad7c67fa77662fa306beebe012cd909bf1b3528",
+  "summary:how-to-be-alone": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f048-d827-7beb-9f05-0d83b1f5a009/cover.jpg?v=4#5b6e6e599413646fc274ceb223ad4301b67132a42377d7d1b04bf8644b62f8e9",
+  "summary:how-to-be-an-adult-in-relationships": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-6aa7-7dcc-97cb-24d677bd796f/cover.jpg?v=6#2d5a5ad92cb925e93a53619142a102698194fdff500b5ced9d316896c32ad733",
+  "summary:how-to-be-your-own-therapist": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f04b-de30-74f1-a698-6f24adcd504d/cover.jpg?v=4#5efa1f70e30cf9e86992a450f71d72a5cf64e3a4bd4da829265890d77b862fb1",
+  "summary:how-to-break-up-with-your-phone": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f009-0464-7967-8bf5-b06a479965b1/cover.jpg?v=4#e4665bf07130771a0958010e0a6413a3c606fb0b804c33393aa9e7744cf2e489",
+  "summary:how-to-get-on-with-anyone": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f074-c661-7609-b347-03dde930a33c/cover.jpg?v=5#dc6d555adfac302f2febf4d818cba8bf41b8476f853ef1720aa3eae8bf6906e4",
+  "summary:how-to-know-a-person": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f01e-bd08-7964-8789-1d2995eec07c/cover.jpg?v=4#792312836a12db89e5bc4fd1f3867285ad6ad852187eb7b05044e7de585f6d60",
+  "summary:how-to-make-people-like-you-in-90-seconds-or-less": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f01e-b89d-70a1-9423-53d618d0c512/cover.jpg?v=4#0a4bab1583517f6708a193332a7342bb9febb440925758d6eaeb781ad34b9966",
+  "summary:how-to-make-sh-t-happen": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-6e7f-74f9-ab93-74869e087596/cover.jpg?v=5#f8d6e924f830c17b12c95798c7de90599cd2cf372141d50722569d62e85c7b70",
+  "summary:how-to-read-a-book": "https://bookmuse-api.wanngo.com/v1/summaries/01a2013e-41f2-7136-a186-fa576b243213/cover.jpg?v=1#93d948e1285251b0a76e8c47aa133c1818e3a28045532b2b045d6d10ba9b2c86",
+  "summary:how-to-stop-losing-your-shit-with-your-kids": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f072-9635-73c9-b510-e1dd08bbe42c/cover.jpg?v=4#8669068593f11cb578b787e92ab896708ae0171a4760fb502f4437c2e9b38ef7",
+  "summary:how-to-stop-worrying-and-start-living": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-9970-7aa6-b4e0-b92ad49fe4e1/cover.jpg?v=7#d36c8b56f7a4f5164d0a93a64471d1a98888b11d21a1cfacc861ed3dc747fa8d",
+  "summary:how-to-talk-so-kids-will-listen-listen-so-kids-will-talk": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef9d-d102-7e3a-8c5d-04a7ad04f7c7/cover.jpg?v=5#b2ff3117b9f345729fbb3595ece5bb579447546e2d912b1e4d83d1453b9f6270",
+  "summary:how-to-talk-to-anyone": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-9f35-7165-b1db-dd8ecd554b0e/cover.jpg?v=7#41f99f4ac7832cc72be1ab82ac7eabbe5b3f33b656465c31323357bf5c757dbe",
+  "summary:how-to-win-friends-influence-people-in-digital-age": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-71de-7bb4-9baa-33a3d2dbae3e/cover.jpg?v=6#18dc09e21f18dca2b163a426206256bcf6eb44ff757aeea688a1fcfafa7d7be1",
+  "summary:i-am-malala": "https://bookmuse-api.wanngo.com/v1/summaries/01a20189-36b3-7a80-9506-adcc06cec294/cover.jpg?v=1#0b9786b49926389106d2632d5a6cd92298c0674ddd4a478b19377d7c84285f5c",
+  "summary:i-want-to-die-but-i-want-to-eat-tteokbokki": "https://bookmuse-api.wanngo.com/v1/summaries/01a20118-e918-7bfb-b309-e6eb453fa51a/cover.jpg?v=1#cc860ad209182fee6b174ab353bc8f8ab86e4967087d24086cf52ab36e510bb5",
+  "summary:i-will-teach-you-to-be-rich": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-9523-75d1-af21-5a993507b7d5/cover.jpg?v=5#2bcdb84f514aef23cbb53b4a9b3bf4ca9f16a79418f88788fe72c33f3e22f54f",
+  "summary:ikigai": "https://bookmuse-api.wanngo.com/v1/summaries/01a200a4-cb93-7b65-bcac-956f76e68dff/cover.jpg?v=1#763594181103a19c334a83a7017bd8e74b319faee59feffa2bf1ddefc6547991",
+  "summary:im-glad-my-mom-died": "https://bookmuse-api.wanngo.com/v1/summaries/01a20118-09cd-72b2-8e37-2b404068952a/cover.jpg?v=1#47148d32c96a700b0d88acb19bdb7b02a4e5015a2563901da64fc8e234c0743f",
+  "summary:influence": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e594-7a1e-7d5b-9c7a-c31d3050283f/cover.jpg?v=5#bd1a07835bbf3d9e603418d9f5096856c6f81caca8452daa728f605ca60b655b",
+  "summary:invent-and-wander": "https://bookmuse-api.wanngo.com/v1/summaries/01a201d4-7228-7b37-a04b-b889298bdc08/cover.jpg?v=1#52b71528c672400fa0731ca521767ffa8a09baecfa76561bb97c68d8307f77d5",
+  "summary:just-listen-discover-the-secret-to-getting-through-to-absolutely-anyone": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f00b-16aa-733e-95b2-3c9868e16826/cover.jpg?v=4#7cb3378a374afa995ccc4ef619a6d1097f680cbbc9f1477832dbc2532e402cb0",
+  "summary:justice-1-hard-cases": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-dbae-7028-862b-ca901a17592e/cover.jpg?v=1#d26ee27af4cd2e665faa15d677fe3861da829f141ccc75d88a28d28e5fe69465",
+  "summary:justice-10-what-we-owe-each-other": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-2398-7366-9b99-f3ac1994bfbd/cover.jpg?v=1#83a45a3fa5778d026990ef74ba20749b6651eceb3b11cbc5d6e25514cf890739",
+  "summary:justice-2-greatest-happiness": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-e46f-7d27-aac8-b915672f4547/cover.jpg?v=1#67bbbcb471705f7cf1875acf1ffdf7caaae049a64da5ed75ed9d8044b1d39c9a",
+  "summary:justice-3-higher-pleasures": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-ebbe-710a-91dc-89b4a41c85ad/cover.jpg?v=1#884e3bd14183d1094977e864e9f66812eec02aca1aa3644273601c0daf4f2767",
+  "summary:justice-4-own-ourselves": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-f163-7a99-a429-3d88dcc4fda1/cover.jpg?v=1#06873841dfe1061e79aa207c4cf379cecab49e061b1d0603165b33e49285c0ee",
+  "summary:justice-5-what-money-cant-buy": "https://bookmuse-api.wanngo.com/v1/summaries/01a201eb-f781-7bcd-802f-ba230ba2a9a4/cover.jpg?v=1#6959e7ed57454a87907536ba26f93ccafef84a6a3a837dc70704aab63a2b9333",
+  "summary:justice-6-duty-and-motive": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-06e7-74cd-9772-9414f571c4a0/cover.jpg?v=1#db4ac7e0bd0552ab0223e8d1c1737dcc3a702d5c3b43005e268c7fc5fad20b35",
+  "summary:justice-7-is-lying-ever-right": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-0e23-75bf-9d0a-18bef00715c1/cover.jpg?v=1#aba3e26de2b48adea32dc08595d163aad1481542a328c7fe4564d05fec6afce7",
+  "summary:justice-8-behind-the-veil": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-143d-7eff-aba3-9d6022d4f831/cover.jpg?v=1#1d9a400a989009e595900810f3790581f18ffc2fc1791b56156d65f7b231a1e3",
+  "summary:justice-9-who-deserves-what": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ec-197f-74c6-bc8f-19a12b4bb5c8/cover.jpg?v=1#8b70506f7b96009cc4cbf48bdc95f926990c116f94ca00e4c502528b892f99bd",
+  "summary:leaders-eat-last": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-f452-78bc-b0a1-cc50c9791e88/cover.jpg?v=5#50693dd62650107e5014e3a335da0e31c57f1e6d71a300f80882351c4961ee7d",
+  "summary:lives-of-the-stoics": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-0e3a-7edc-9b57-82a1ba356d64/cover.jpg?v=5#d467312c134d6aedeec8bc085279cfef9cd630a765cbb2050a23e02f90c1f785",
+  "summary:love-unfu-ked": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f072-91b4-7783-9bee-4fdb7ffce23e/cover.jpg?v=5#276f321039b85b1e70ca406373cbab637efc6a0d9368b0cfe943bdd3fec38108",
+  "summary:love-yourself-like-your-life-depends-on-it": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-14ce-7986-afa9-7354c676d7dd/cover.jpg?v=6#5f90b2d03a18289d5ba9d22a331e85b825efe0987aae6f9b147de2c4711876c5",
+  "summary:make-your-bed": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-077d-724d-bd9f-75f4ad46afd1/cover.jpg?v=5#8016d2512b91bbe955410d4f910f769b5f948576ed86bc7d247e4634391b1fc5",
+  "summary:man-s-search-for-meaning": "https://bookmuse-api.wanngo.com/v1/summaries/01a2008e-ab88-7015-a1cb-b6c332682d14/cover.jpg?v=1#41d2c8507b8b75561c9e548e4e9aa08fd0822f527b09289f088324339c7ac927",
+  "summary:mastery": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c3-0dc2-7899-a6dd-128a16f8bf59/cover.jpg?v=1#2e017d649354a95cd2a41e2ecd997fa04bdf752402c92f678cd87fff9219004b",
+  "summary:meditations": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-9c57-7318-8e8b-46984fe00e28/cover.jpg?v=5#add6dfa97444f4901e037bf4f87818738d8003618dfd5ffdabbe955f5b96972a",
+  "summary:men-are-from-mars-women-are-from-venus": "https://bookmuse-api.wanngo.com/v1/summaries/01a20100-63bd-7170-b736-a0efd32ce504/cover.jpg?v=1#eff75272b749897298e64886c6784fd2b1036819337b06d147583adb9bf0f9d0",
+  "summary:million-dollar-habits": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-1a4e-7810-b987-bd1dee316494/cover.jpg?v=5#db56435c628c9b167a3b4d458aed738427563c239d425a7e53e08ebf172acd36",
+  "summary:mindful-relationship-habits": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f040-ca0f-749d-8b39-c95f8cbab669/cover.jpg?v=4#9005edf651dc14004e8267816a6729cb24c16a7207f8e25cbab60d85486290ad",
+  "summary:mindset": "https://bookmuse-api.wanngo.com/v1/summaries/01a20152-8ebe-716e-bdd3-104a5be704fb/cover.jpg?v=1#d36387f043633dafff07bfab455b89ef4c5f880ba79094e5ab98f3e2ffdaf7d2",
+  "summary:modern-romance": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efdf-4af8-785b-981c-9c94a8e03f92/cover.jpg?v=4#f4261647432bead801401c7b95b3e9c3d2ded488f72602da69bd0666ec1f14af",
+  "summary:money-master-the-game": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-1e1f-7a48-bd32-cae1951564d7/cover.jpg?v=8#4daf377cc990a67771cdd1bee8e5db8c4a5a17f5e14b1c137b94898d4c23529d",
+  "summary:my-age-of-anxiety": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-2158-767c-9838-c2b0def9d8fb/cover.jpg?v=6#e338d0fe10dae731312930fedf9d612d5e62fdb3a8e20ca5a9d6895766325705",
+  "summary:negotiation-hacks": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f06d-056d-7c69-8ddc-4eabe0debb37/cover.jpg?v=5#7a7ad6ae876202ca24ebf059b53b2b902c33cb6db7af6c56e0185fd67cb8ebfb",
+  "summary:never-split-the-difference": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-0e41-753b-b006-58c4c3ba50da/cover.jpg?v=5#3ed3a5d7ac11ff5506f1a05c4284a632cdbf7fc1818348411970ac8e3d249218",
+  "summary:nexus-a-brief-history-of-information-networks-from-the-stone-age-to-ai": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efc5-e2b6-7267-9870-b51841a1b964/cover.jpg?v=5#074f18247bf6c97bd526e3f99c83a69970b2ae48794bbc028ad8bf0c80813e8c",
+  "summary:no-drama-discipline": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f013-3d80-7b7f-8e72-7a35d88fec48/cover.jpg?v=4#ba3cbd88367bb5548270c180f50315c69619f6e2a62cb2e5d0fb2be0882c8b02",
+  "summary:no-excuses": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-260b-7206-9b62-59b5d704494f/cover.jpg?v=6#3c59d169324f8661975dbe9e9cb3a2d6df0f2f82a830bdcbd5415db05c75585e",
+  "summary:nonviolent-communication": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c5-235c-7564-8451-751e271984ab/cover.jpg?v=1#08f7a16776fd43f45579a00330cd5daad5adcf6fa1cd787a14d7ff74ea32ed1b",
+  "summary:on-writing": "https://bookmuse-api.wanngo.com/v1/summaries/01a2016a-d5bb-7bdf-8adc-6e34fb98aa84/cover.jpg?v=1#0163e258c4839e4cff9cbcf50ca2602551095de273f80a024037398d5cfef26a",
+  "summary:outliers": "https://bookmuse-api.wanngo.com/v1/summaries/01a20171-ecc9-747f-b334-23c72aed2a45/cover.jpg?v=1#134dbcf9e58999f96ef3ea01a7ab10b0463bc4114d8ab999c1876bfbb074f420",
+  "summary:outwitting-the-devil": "https://bookmuse-api.wanngo.com/v1/summaries/01a201f3-07cc-73c4-903f-2a3b5daa1b23/cover.jpg?v=1#97e6cc96879baa0afae4c5dc32f65b4dbccc8ffb6f92f74e9be763798e3cc210",
+  "summary:playing-to-win": "https://bookmuse-api.wanngo.com/v1/summaries/01a20193-7880-7ddd-9fbf-49a788986ceb/cover.jpg?v=1#f271672df2d42879f930b9e8cc3b16feddff084a71a643e58831109dd9106159",
+  "summary:power-questions": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f02d-98c6-7049-a5a9-aa5fc17feadd/cover.jpg?v=4#53e787f86556e6d6af1dd9e9ce78361c02769a0f14bc66be27d8b1aab6d6c02b",
+  "summary:pre-suasion": "https://bookmuse-api.wanngo.com/v1/summaries/01a1effa-aa38-7ef4-a0c6-501d9cf0aa54/cover.jpg?v=4#e8971dc7e5ba777563ecb4bdf9b624cf4ef678e30e3a5600fd18bf64b9903a34",
+  "summary:presence": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efc5-323e-7d90-9483-072b7ae3b0e7/cover.jpg?v=4#4277b5406202edbad109d307456471f5a2e2f578f37c6dde80cb9ff5e1a4be60",
+  "summary:principles": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-fcab-79eb-a50a-d8d0cf2f5b58/cover.jpg?v=7#4e4759100b9d63e31ed437f609dcde48918bfb9e8a4bd7d2abe855dbec34ef2d",
+  "summary:principles-for-dealing-with-the-changing-world-order": "https://bookmuse-api.wanngo.com/v1/summaries/01a20123-8119-77ab-8361-96b436587c04/cover.jpg?v=1#21ceb01f0fac40a57e0dfcf20ba4a3ffade76482d309573b23bbf836b570ab40",
+  "summary:psycho-cybernetics-a-new-way-to-get-more-living-out-of-life": "https://bookmuse-api.wanngo.com/v1/summaries/01a2017d-622a-7113-84cb-3844a1bf27ce/cover.jpg?v=1#33303006aa7bcc64394d299736038c0f40980d288f1c44c935104578bd1f752c",
+  "summary:quiet": "https://bookmuse-api.wanngo.com/v1/summaries/01a2018b-1599-72f8-9209-92b806b11b46/cover.jpg?v=1#d736847e14217d094a2428609ce506da5e97404232fdd2c51c8ca6483feedbc9",
+  "summary:read-people-like-a-book": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-2980-7b01-aa25-294b528139eb/cover.jpg?v=7#283830f4f743c26921c227486c3059ef437df90871b4c4e476c4042f4554bd6e",
+  "summary:reasons-to-stay-alive": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efa3-5e35-7a11-8857-f1287937ccdc/cover.jpg?v=5#3fd20a0371b5e321f5c87b67ba5b24194f4517ebf4c1978e42de1dcbfd1aab42",
+  "summary:refactoring-ui": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f31d-eb2f-7446-8692-2b5f236d1e6c/cover.jpg?v=3#29495f78c666fc569ac82aa3d3cdfa3458c0a835e5577daae6a14e11c38ef3d0",
+  "summary:rich-dad-poor-dad-what-the-rich-teach-their-kids-about-money": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-a8f2-7328-9116-d6b8354b8a9a/cover.jpg?v=6#ab0b77b478d2f996d55a099a730754c23953a7e33f3bf97217b1fa95d28bf820",
+  "summary:salt-sugar-and-fat-how-the-food-giants-hooked-us": "https://bookmuse-api.wanngo.com/v1/summaries/01a20180-1ffa-7c06-be00-340f7ca941f9/cover.jpg?v=1#9acd53edfd22098ae1b3a70aaa62eb93a101559039e6eadf42ecf4ef610ff93f",
+  "summary:sapiens": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-0409-72f7-aef2-925409483ca4/cover.jpg?v=6#529c11d37b5f29a3809b22c146fce766364648070033a43848e05a991f3575dd",
+  "summary:scaling-up-excellence": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f055-9e41-75a0-8895-7b19cfef7b31/cover.jpg?v=4#41dc4b041a2aafe6101af47ab120e28f548b266eaff05dae3753676885120a22",
+  "summary:scrum1": "https://bookmuse-api.wanngo.com/v1/summaries/01a1eff0-db94-7ec3-b42e-ee1776eb75a9/cover.jpg?v=4#da6f7a84af10421fe3414f403f8b77f5d02c876cd287564cdb12bead0224b091",
+  "summary:set-boundaries-find-peace": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efcd-946e-7de9-9024-a14081cf2464/cover.jpg?v=4#518dbfc3af2b969cf336e1b9fe94d737ee997fa7acf2aa1536d95f743d81670c",
+  "summary:shoe-dog": "https://bookmuse-api.wanngo.com/v1/summaries/01a20167-807a-7b9a-b6fb-4ad41a1f19a4/cover.jpg?v=1#1d6b35d5032a5ad805872ad8d0ecc2aec01a3d02d516c1a536cd55d53171a0d0",
+  "summary:single-on-purpose": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f00d-5010-79af-9d04-bc82c1b93619/cover.jpg?v=4#fab5a24cfd69f8cbd2be8454703e9ba895b8f2bf79f73f7fa2dbe2ba13d2befd",
+  "summary:speed-reading": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f055-2d21-7785-ad21-16ab212ad886/cover.jpg?v=4#50b2a94bd66fee3dd5ef2abc4af1fbf77a4164f5c3c88de28f8636cb1cc43458",
+  "summary:start-with-why": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-161b-790b-afe9-e4dbd5ff7895/cover.jpg?v=5#918a4bab146c7355f0d0726a19f4d5f9f4dc59719e8cc425c93fa830279eb1a3",
+  "summary:steve-jobs": "https://bookmuse-api.wanngo.com/v1/summaries/01a200ec-f174-73ce-83d9-ab0b4f72ad1a/cover.jpg?v=1#e5b53d69d592037f5ace8915aa406b05716c8399ae57c2744f97311c6f1bbff8",
+  "summary:stolen-focus-why-you-cant-pay-attention": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efb5-08f8-7e0e-8930-75dda4cde83f/cover.jpg?v=5#ccde515ac9ecb9a2291bd2715ec2bc3244779df7f628b87e08ec1107c914f934",
+  "summary:stop-checking-your-likes": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f062-68c4-7a08-999c-09d5cc67e0de/cover.jpg?v=4#4df4ae3b8902e4534a059186249e6be6293fbbe25140abd81fd6eaa762b6b6f8",
+  "summary:surely-youre-joking-mr-feynman": "https://bookmuse-api.wanngo.com/v1/summaries/01a2018f-b08a-7edd-810f-f35ede5692d1/cover.jpg?v=1#15ca10724b733333ef69b57f3443667f7a484dbd92e87c4e27c0dbf802124475",
+  "summary:surrounded-by-idiots": "https://bookmuse-api.wanngo.com/v1/summaries/01a2013a-aadc-7d3c-b137-31a593d40434/cover.jpg?v=1#fac4f093672d3183a0fb0a342f0d65288be6d8f9b271ee6d067c6b7eb81a76dd",
+  "summary:talk-like-ted": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-f285-7925-be21-2560433e2768/cover.jpg?v=6#5c5dde63fd740cd2cbb72fe02fb28afaccb315fd5f0758261efaa340fbad3445",
+  "summary:talking-to-strangers": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-2ce8-70e3-afcf-4101da6f1651/cover.jpg?v=6#071e50220838e61aa6fa5d9d80aab8ba06ca44753bc14fd294f8765a8c71e604",
+  "summary:team-of-teams": "https://bookmuse-api.wanngo.com/v1/summaries/01a2014e-c7a9-77fd-a1ee-da9d9126a8cd/cover.jpg?v=1#dcba332a53aa2fb8f9551b0db5c0a09018513030db30c35d97e85349cbd00d87",
+  "summary:ten-arguments-to-delete-your-social-media-account-right-now": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-c822-798b-80b7-b83229b74f8c/cover.jpg?v=5#3040485cdd875acfc2a53850aa6257186c9c2bc63aa034ca96f153f5a1b44315",
+  "summary:the-10x-rule": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-2589-73f6-86ac-7777fb016840/cover.jpg?v=5#02def78d94a051b25d554faf71f14c202204a853ab1440588c91d7468497516f",
+  "summary:the-11-laws-of-likability": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f05e-dba0-71ee-8c40-fb8eef82f9ac/cover.jpg?v=4#0c853626e208ae41a08e49bb4b35537cd7cca829ae52158d3986b097a62c3f31",
+  "summary:the-15-invaluable-laws-of-growth": "https://bookmuse-api.wanngo.com/v1/summaries/01a1effc-8206-7b1f-bb80-bddb4220b9cf/cover.jpg?v=4#307679ddd5a9b6d5c90ee0ad03d69369bbbd9ce61a26c404da0f2655c9b1fee2",
+  "summary:the-2-hour-job-search-using-technology-to-get-the-right-job-faster": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f03c-cfc9-7454-a01f-fe0d2087b404/cover.jpg?v=4#9d83a7a521724523415886c540aa607896503992300064f875d485b451b396f6",
+  "summary:the-4-hour-body": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efdc-1cb3-79c5-91b5-d4e9175a6e7f/cover.jpg?v=4#1fd9cc8ab324a957e9d343a67311658ef9dfdfd96db986894215878adf185a4e",
+  "summary:the-4-hour-workweek": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8d-f826-743b-a2a5-89f76fc36e66/cover.jpg?v=5#33d7e6991c04d203e6631f2916f6da011f380354989a8046ccfdfc505b7768af",
+  "summary:the-48-laws-of-power": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-af0a-71ad-adcf-b3055770096e/cover.jpg?v=8#972bd529e6f65b8255598659153d7ed74be2af483a11bada98568bd6fa0d16b1",
+  "summary:the-5-am-club": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-b5b7-7210-9964-3a74f5113a2a/cover.jpg?v=7#dc281feab55a6068cb4dfeb7a5c7cfb2d2e616f6800b4abbf5756dfb603dd34d",
+  "summary:the-5-love-languages": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f01e-c33f-7c66-9c36-eb9992a37e10/cover.jpg?v=4#7c4fe53d33c068390be99149fa7b7eecf8f5f2bd13ca21112157000cb8736e12",
+  "summary:the-5-love-languages-of-children": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f013-392b-759a-bbee-050116b8fdb4/cover.jpg?v=4#5f84a8bd712b55b0ae7c301d5fa2aaba694f712b51aabf8b8a18912d0bf13939",
+  "summary:the-5-second-rule": "https://bookmuse-api.wanngo.com/v1/summaries/01a1eff4-df33-7829-8fc6-2dc2c2271205/cover.jpg?v=4#2f785fa8034d89e34893079797b7cf620a2f01d66b09d87803486338e519adde",
+  "summary:the-7-habits-of-highly-effective-families": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f035-7196-7c73-82cb-57a0004c1311/cover.jpg?v=4#085462c0751bc31fdd3fefd3de0e216a8524b684cff6b38d16f28202f303d8b1",
+  "summary:the-7-habits-of-highly-effective-people": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-b943-7ce7-9782-d4031bdfd8c9/cover.jpg?v=7#7e07b7ecb2b6d086d8c31c5cdecd5a5be7da10ac15de44925ac1f71547318d27",
+  "summary:the-80-20-ceo": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f074-c201-7ef7-8e93-be080f024ddc/cover.jpg?v=5#f8d553f940ef7a3c33aee8aad158236242b375ce6b460fe009f11374a2fb60fa",
+  "summary:the-80-20-principle": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-326c-7670-88c2-706167656445/cover.jpg?v=7#ad2da281c40bc9596c0ec1e4da519695149c0b118f8023e944d725554f609c29",
+  "summary:the-anxious-generation": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efbf-b93b-7a9e-998a-537d1c35ec11/cover.jpg?v=4#e2c01fbfec8d3b15623bafd0e8cce8ed12a1e14cd0f6ef3bc5b20ec4145e4320",
+  "summary:the-art-of-loving": "https://bookmuse-api.wanngo.com/v1/summaries/01a20162-0b67-747c-8d0e-9eb729d21f86/cover.jpg?v=1#f446d5eee755189e10340af2667022e465886c6fecbeda8b683342bdca0709f9",
+  "summary:the-art-of-reading-minds": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efaf-ef60-7b11-99ba-4f7cb5834f7b/cover.jpg?v=5#7baec3a6fb18bbc6c9785cc02102d877435e6d981dab52f7ab50dc93a5ad3350",
+  "summary:the-art-of-seduction": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-35d1-7f34-9c2c-8d7749562cf4/cover.jpg?v=8#d5dd5e292764ab303bc5f174e75b3d22240a1c3a65e7d6ff4a664f1494f2f8bb",
+  "summary:the-art-of-stillness": "https://bookmuse-api.wanngo.com/v1/summaries/01a201d5-40b3-73e7-b37d-f7ff31a6d069/cover.jpg?v=1#c584ea51f42aae687ffef827f037972e19b30bc4e201a9a82f55a299d692c1ea",
+  "summary:the-art-of-war": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-b2d5-7f11-a4a5-d5c5840a5247/cover.jpg?v=5#0f85d389e60eb688530f99120dad042383b65c47012157dbafeb8e7698d8d479",
+  "summary:the-automatic-millionaire-expanded-and-updated": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f064-cf6e-7f0c-b63b-90b181068736/cover.jpg?v=4#518b956f25fa7c8183574788af62ff2328f9e732c91228f5550699c1d1645469",
+  "summary:the-bhagavad-gita": "https://bookmuse-api.wanngo.com/v1/summaries/01a200ac-08e6-7d71-bfca-d73d4532a396/cover.jpg?v=1#dfe6fd1bfa75911357a1d45187fccc669e886f9ff8270a30a7868f533a53211c",
+  "summary:the-body-keeps-the-score": "https://bookmuse-api.wanngo.com/v1/summaries/01a20140-81e3-79eb-b1cf-bbfb5a42ec25/cover.jpg?v=1#3769dcc56f211457a5b6aeb7a9e783d1939d8bfeebac7d7830dc41d9f485c6cb",
+  "summary:the-book-you-wish-your-parents-had-read-and-your-children-will-be-glad-that-you-did": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-3ac8-7744-b5d2-f4376507aa02/cover.jpg?v=6#41e7bf53f25454b37f2f4c36c59fe8d8909c12202ca2b4dd580f1648a5b20f0a",
+  "summary:the-charisma-myth": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efad-62f3-7baf-b798-63968988f68a/cover.jpg?v=5#933dc48aca9ecb272a6d28b77f9e4310674e469237ce81cb8eeceaad1c3b4453",
+  "summary:the-code-of-the-extraordinary-mind": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efd8-c311-750c-a894-3fb2b33e65eb/cover.jpg?v=4#17eed9621eb7b229845c6492fee340e2ce3ca02e22942ca62b06a27b9eded13a",
+  "summary:the-courage-to-be-disliked": "https://bookmuse-api.wanngo.com/v1/summaries/01a200a5-3259-742f-8ebc-86010bcfed6e/cover.jpg?v=1#d10d05d1301a3ca8205813e32a27828860f1a108796dbfc43de9b85edccc2574",
+  "summary:the-danish-way-of-parenting": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f047-3aa8-79c3-b23f-5241957e31ec/cover.jpg?v=4#3eafe1f08112d6e58a7dca25009d1862ca250a4cad8d6ba69dae97076bf27a2b",
+  "summary:the-design-of-everyday-things": "https://bookmuse-api.wanngo.com/v1/summaries/01a200d9-1aa9-79ae-8227-fd7ef3be8d37/cover.jpg?v=1#c47ee65b2d5e283aa24bc307507cfe613f54b6bdf2b86414371f16fc2d63521f",
+  "summary:the-diary-of-a-ceo": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-cfbf-7b0b-a154-87b54dbb02cd/cover.jpg?v=5#3a5e753d09ff7a85eccc6ec247d7d867727f391b1f38f4c2f488d1624e9ca7f1",
+  "summary:the-fire-next-time": "https://bookmuse-api.wanngo.com/v1/summaries/01a201b5-f64f-7c94-9907-9a5dbfbe157e/cover.jpg?v=1#bfefa0fd1c4ba5a2c561459d163764d95e00fe7e56d13d4089254a0641dc6226",
+  "summary:the-four-agreements": "https://bookmuse-api.wanngo.com/v1/summaries/01a20116-8389-7ecc-84a9-6e03811d0f28/cover.jpg?v=1#d4a2de8ee20914a5bf939398562f714fec2d8e60c36715e5ff46ce5360949413",
+  "summary:the-good-life-lessons-from-the-world-s-longest-scientific-study-of-happiness": "https://bookmuse-api.wanngo.com/v1/summaries/01a20155-376d-7206-bf61-fef696e87728/cover.jpg?v=1#2ea1601eeafde435109b1fbd82b1ab9433b94b170d2f14d057ab62478f709e67",
+  "summary:the-great-ceo-within": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f053-55fc-764d-a180-cd1b2131bef7/cover.jpg?v=4#4719238a83ec8adbdbc759a96e23bf8c59a737af50fbeeaa0f7a99d4a3f2fb4d",
+  "summary:the-immortal-life-of-henrietta-lacks": "https://bookmuse-api.wanngo.com/v1/summaries/01a201cd-f21d-74cc-ade3-7e6f83d306fa/cover.jpg?v=1#e2a25b9d1248a4e273c0f8422cda92a54e69b488280ab3f17486150f2ffb47e9",
+  "summary:the-intelligent-investor": "https://bookmuse-api.wanngo.com/v1/summaries/01a2009e-2d1d-77ab-8320-4028ebdd5976/cover.jpg?v=1#709a5ac93349fec9c674b732df49254b235fff335e5ce6931da9bf843ee0c723",
+  "summary:the-laws-of-human-nature": "https://bookmuse-api.wanngo.com/v1/summaries/01a200fd-a775-7334-9f40-6aa755643680/cover.jpg?v=1#b5de9a7d6042feebf9b52a1ed85c60dd5795932b12ae0bdd5bfb21c7d1684ca1",
+  "summary:the-lean-startup": "https://bookmuse-api.wanngo.com/v1/summaries/01a2018e-218f-7efe-bc84-fd473d42e792/cover.jpg?v=1#757b4d6bb50bdf25cf8dd3b454c6c650231167ff63fae6e74ed3a3b76e9cba77",
+  "summary:the-let-them-theory-a-life-changing-tool-that-millions-of-people-can-t-stop-talking-about": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-b892-7d0e-b4a1-368631909514/cover.jpg?v=4#bc58d397438b65c054b241cb223848a2cd4172f9d51060410354362fd073ac27",
+  "summary:the-magic-of-thinking-big": "https://bookmuse-api.wanngo.com/v1/summaries/01a2010a-a7c5-70f2-a5e6-9dc1e4017398/cover.jpg?v=1#812f7d451bb38c52c3984dd96053d65b65685a96be17fbb5a0b745a1c8a284f4",
+  "summary:the-man-who-mistook-his-wife-for-a-hat": "https://bookmuse-api.wanngo.com/v1/summaries/01a20184-6255-7023-b0dc-4953f29364ba/cover.jpg?v=1#849b416973338a9c089a3c0b71b1365fdab4aeb66e58be5ad281e573d39314f1",
+  "summary:the-millionaire-next-door": "https://bookmuse-api.wanngo.com/v1/summaries/01a201ae-d33e-7273-af34-9af1f5d3d5b6/cover.jpg?v=1#0187afecd917d72e8b982f11c2ba853ee04edf63e499bda9bc675d4e614f844d",
+  "summary:the-mind-gut-connection": "https://bookmuse-api.wanngo.com/v1/summaries/01a20196-a712-7ecf-bcf8-1e7d424a44b8/cover.jpg?v=1#e8d0a65435e5e033ab62761d02140df51b99cb13eb291de4657789d2e3a6dbc0",
+  "summary:the-miracle-morning": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8e-1786-70ab-8f08-74fd67fa3581/cover.jpg?v=5#a74463ef3ba6b1cea15084c751ba93450f814c3796b4bed443f142d62d76e943",
+  "summary:the-monk-who-sold-his-ferrari": "https://bookmuse-api.wanngo.com/v1/summaries/01a20128-72c4-7502-961f-e23040fa1953/cover.jpg?v=1#29e10f4e748dfe849302100bd18f6074445413bc71e3a59ae94466bb5e6d6561",
+  "summary:the-mountain-is-you": "https://bookmuse-api.wanngo.com/v1/summaries/01a20150-4a4d-7eb2-bd74-28db4ad23219/cover.jpg?v=1#631f0836b23f3f4d7526f2155baa68f81b6253d10d2b2d32bebb5877d8c3d198",
+  "summary:the-next-millionaire-next-door": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c5-1b2a-7206-b959-2aff07cc03c0/cover.jpg?v=1#bb620180c12666d46f855b916360763e5089718d5d4b8bfa74379ee3961eec76",
+  "summary:the-obstacle-is-the-way": "https://bookmuse-api.wanngo.com/v1/summaries/01a201c4-4efb-7daf-b7a9-35c3c75cddd2/cover.jpg?v=1#89354c05e74c475b0cb0bf67094a2a34cafe51ab46fd2fd6f27aed8b72267241",
+  "summary:the-omnivores-dilemma": "https://bookmuse-api.wanngo.com/v1/summaries/01a200b4-0afe-72b7-bc0d-e9a463c3b353/cover.jpg?v=1#6979b7d82348a7728a3340d01f485776dc5e3598876977fbb5d6e825d5cd0ca3",
+  "summary:the-one-thing": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-dc37-719e-9366-ab83159651f5/cover.jpg?v=7#9d1677025ccad7f4d9b6b2a3b69e4a81b8244a54fa679e39998107690add21c2",
+  "summary:the-personal-mba": "https://bookmuse-api.wanngo.com/v1/summaries/01a201cb-d72b-778c-b36c-ea1af599571d/cover.jpg?v=1#a7eff0a0268af05a7ce4ee1b2b7d6e1478e9abfec9c90b5f30c6152a04952989",
+  "summary:the-pomodoro-technique": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f03b-6116-7af6-9495-b85f9899f8d1/cover.jpg?v=4#a3e8515c9cc5aa96d8b021fed60efd8574c06a4e7d3c2308774bdf2151ed8044",
+  "summary:the-power-of-habit": "https://bookmuse-api.wanngo.com/v1/summaries/01a200ea-8a73-76d7-b5c2-e91e310dbe5b/cover.jpg?v=1#e394f618fb1c2f6bf1bcecf1757a503aad6291c6d29f00b26356b01fe50e88ee",
+  "summary:the-power-of-now": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-df7b-713e-b971-be314624e790/cover.jpg?v=6#dba28de5fb736ad89ad74708b3c7c949730f44660565e9edbf53f63836800e76",
+  "summary:the-power-of-positive-thinking": "https://bookmuse-api.wanngo.com/v1/summaries/01a20090-08df-7987-a462-8692908cebb9/cover.jpg?v=1#559adfc5a82f5cdd772d6993b5f37cb273111919d75f91306b47f43095df4e2c",
+  "summary:the-power-of-your-subconscious-mind": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-e2a1-7cae-9d2d-cb67bc1ae226/cover.jpg?v=7#e3cf34505b581ef2fc1ebd436261afb2ae0a1c47a37adc95906f20183ce49da0",
+  "summary:the-prince": "https://bookmuse-api.wanngo.com/v1/summaries/01a2008b-b27f-7c63-a614-86d71c2347e6/cover.jpg?v=1#e0d04c2efc56922d1d4d3617aa14c1227e8544ce8dc3eb2850388ad532e4e27e",
+  "summary:the-psychology-of-money": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-e6fa-79ca-9f94-c7e5bb8fb31f/cover.jpg?v=7#2f05cbbce89464c6213f725606d7f92e40315fdde8ebaf11ebcd3de54cf79e34",
+  "summary:the-science-of-getting-rich": "https://bookmuse-api.wanngo.com/v1/summaries/01a2013a-a380-7783-b249-69c695c20d48/cover.jpg?v=1#15fcae11c366cd6cb064a83736dec5748719efb43ff8b0aaed11ee26d8d5a00a",
+  "summary:the-science-of-self-discipline": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-ecc1-7f20-9c84-9ab1a6215e53/cover.jpg?v=5#f0547960265125976ac92de958b626e23888ada6441b2a2ff4a28cda7dd1473a",
+  "summary:the-secret": "https://bookmuse-api.wanngo.com/v1/summaries/01a200f9-7178-7396-ae45-9ef9b09c71a7/cover.jpg?v=1#ad527c02697988c29da1c8f8ddf1b07f6e0f2778c54c63014ba7a3dbd2742f1a",
+  "summary:the-selfish-gene": "https://bookmuse-api.wanngo.com/v1/summaries/01a20177-4697-7b1d-8f2c-eac34a998495/cover.jpg?v=1#4a4863a9a34fb5098989b7f6180d6fabc40ff7bc7f36ce13296e5ef684ffec28",
+  "summary:the-simple-path-to-wealth": "https://bookmuse-api.wanngo.com/v1/summaries/01a200e9-85aa-7a27-bf66-38cf91280d55/cover.jpg?v=1#979f035dd891cfdd53fc88ae0064066bdaa8721864512783916e218703c8edcb",
+  "summary:the-subtle-art-of-not-giving-a-f-ck": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-effb-7539-a55b-af16dbf1af83/cover.jpg?v=6#197605c2ceb5c0208f5ec2829797adad7cb0dba36ae8c8f6e70c357571618515",
+  "summary:the-sum-of-us": "https://bookmuse-api.wanngo.com/v1/summaries/01a201a3-ebea-7a81-ac91-c09829793cc3/cover.jpg?v=1#a0cceb139de90ed068e1c554228913a966ed229caaf7bba19ce51e4fd3e607b5",
+  "summary:the-untethered-soul": "https://bookmuse-api.wanngo.com/v1/summaries/01a201d6-d126-7dd1-9580-7cf0c0ae60be/cover.jpg?v=1#2a1ff60f5b6b455d4cef4750139f98db93db0248c36f37fbce12e2026526d7df",
+  "summary:the-whole-brain-child": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efe8-9749-7ceb-aa96-831452000e35/cover.jpg?v=4#37fdba9a41f6eb9d3841a1d9a854c4eb91dcc31784e10d98209f8b5229d81d06",
+  "summary:think-again": "https://bookmuse-api.wanngo.com/v1/summaries/01a201d8-7f7e-74c4-933b-3aafb2be647b/cover.jpg?v=1#a975801cf7931ea4078ba707904e5d6a15ed921c2e96cae7e202c9831c091775",
+  "summary:think-and-grow-rich": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-f486-72b6-92a0-4463efc9665f/cover.jpg?v=6#3eeb4c66ea61a20120dd0e5a375020b885768cfd83e2ac51c9b14887bb13a3bc",
+  "summary:think-like-a-monk": "https://bookmuse-api.wanngo.com/v1/summaries/01a20165-d24f-744c-b01e-345a89d0358d/cover.jpg?v=1#fb24cbc2e8f72943d5af8cc08566ebebc0719c167db789cd0f5134f348492aba",
+  "summary:thinking-fast-and-slow": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e593-bdae-7d75-951d-5873126bfeaa/cover.jpg?v=8#af0f8d9fe98c8e9c94eb4880b8dec24e11864d79a21335bcded344b6b401206f",
+  "summary:tiny-habits": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efd1-0fdb-7508-bcaf-9e91141ed084/cover.jpg?v=4#59947af172bf0162c89cb0f5363548eff5a6071f6f2044b9b491307ce7efcd77",
+  "summary:tuesdays-with-morrie": "https://bookmuse-api.wanngo.com/v1/summaries/01a2010d-1ac3-71ed-8718-5867d09a7815/cover.jpg?v=1#f82c790ca1963fad87163da4221533e9d9a739aa397d698dcdd9a7994b31de41",
+  "summary:turn-the-ship-around": "https://bookmuse-api.wanngo.com/v1/summaries/01a20152-d16e-78d8-969e-96678e8b7bb6/cover.jpg?v=1#01fb42b9c71d94cc72e712c0dfdcbc761240bc203af1ef534cdaf19683169166",
+  "summary:unf-k-yourself": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-f81d-707b-8b2b-bc749bb0d14f/cover.jpg?v=7#06750b0b375fc44793dd953fb396e6f4ce02a23944e8a3fc590b8a3cd861c764",
+  "summary:unlimited-memory": "https://bookmuse-api.wanngo.com/v1/summaries/01a1effe-dbe7-7461-b393-251fe9d5de5d/cover.jpg?v=4#e7c1fe463199ed944081ca1799cce555bf202f83fef34135a3fa32896053c0e9",
+  "summary:what-if-serious-scientific-answers-to-absurd-hypothetical-questions": "https://bookmuse-api.wanngo.com/v1/summaries/01a200e9-dbf9-78ca-b3a8-71fac7b95ab9/cover.jpg?v=1#65acadcbf3733dce4b763862a639790e658f09f2f1c5ff94c3f0050b7197fa56",
+  "summary:what-the-most-successful-people-do-before-breakfast": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-fc1d-7677-b263-197d869dd5a3/cover.jpg?v=5#5315746a70aa60ce4bbbd484985ed1dc4b13acb97ffa1cc9fb1df53749b1b383",
+  "summary:when-breath-becomes-air": "https://bookmuse-api.wanngo.com/v1/summaries/01a2017c-0b11-7538-b952-d07e8d1df125/cover.jpg?v=1#faa810a929c1358034c89bf52a516f18b6aa058abd4c352901adbe5a678129a4",
+  "summary:who-moved-my-cheese-an-amazing-way-to-deal-with-change-in-your-work-and-in-your-life": "https://bookmuse-api.wanngo.com/v1/summaries/01a20139-dfdf-7710-bb04-a4c3d64dc5c7/cover.jpg?v=1#db22013c1f0e8d4bdf7c2f513e4c2419300e8b3f8390b5551bc0542a85547af4",
+  "summary:why-does-he-do-that": "https://bookmuse-api.wanngo.com/v1/summaries/01a20158-5322-7d1d-980e-bcfd9d08d23d/cover.jpg?v=1#14f339431162ff8c44fe8c1b8bfbfab35aecde763004854bf8b4e123e92f3635",
+  "summary:why-has-nobody-told-me-this-before": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef8f-5211-7071-a3de-542537988713/cover.jpg?v=5#25a09a82dc9cf698bf02267b3fd5c2bbb5153e0c6ebfa83ff2406c79a4fee5e2",
+  "summary:why-nations-fail": "https://bookmuse-api.wanngo.com/v1/summaries/01a201f5-b962-7296-b373-0e2713c7fe8c/cover.jpg?v=1#6d834c7337f4a2db0fddad551d7152debb30084634835c1ef802b3adcfe209fb",
+  "summary:why-we-sleep": "https://bookmuse-api.wanngo.com/v1/summaries/01a1e595-ff8d-7ad4-b0ce-7084afb8ba91/cover.jpg?v=7#4d5c11c72044a9c686ac6036902a7ad5efe3649867f4436ddbe615c1589bb68f",
+  "summary:women-who-love-too-much": "https://bookmuse-api.wanngo.com/v1/summaries/01a201d9-88fe-77b1-982d-21ef1cabf505/cover.jpg?v=1#5babd1198913600adedd524d9f27e9c44c968eacd2a00321bc79f9b45467af83",
+  "summary:women-who-run-with-the-wolves": "https://bookmuse-api.wanngo.com/v1/summaries/01a201fd-1e4c-7b0e-8aad-6b5882099d3a/cover.jpg?v=1#0c13f03b083a6158e950744a9057b5c0be82191a13d6f2b6c3597bbd07fb9d76",
+  "summary:words-that-change-minds": "https://bookmuse-api.wanngo.com/v1/summaries/01a1f035-6c88-7472-b93d-f0f87f428107/cover.jpg?v=4#614d4bf07243759668b0768ec92758f603326fd59d8c11eb3cf0879d36a7797a",
+  "summary:you-are-a-badass-at-making-money": "https://bookmuse-api.wanngo.com/v1/summaries/01a1ef95-19c3-7ed6-8f99-0d59a311eec8/cover.jpg?v=5#8aade9238314b05008b0d6dcce438f33e5fac04387d202a1f4a624c7fde961b9",
+  "summary:you-re-not-listening": "https://bookmuse-api.wanngo.com/v1/summaries/01a1efd2-99d0-776c-b1e3-97fa4591e14f/cover.jpg?v=4#333d2eba3fbf0fdf6f0d6bbb9edadb64725853b44758a605c3d171fd47205950",
+  "summary:zero-to-one": "https://bookmuse-api.wanngo.com/v1/summaries/01a2010b-1e54-784f-9f1f-d91968ae4067/cover.jpg?v=1#cb626529dbf39e92779e3410ba9de398dab6979905a9de57c38654ed20f0305d"
+ },
+ "pages": {
+  "/authors/a-g-lafley/": [
+   "5d2743249a0f1c1e",
+   "2026-11-22"
+  ],
+  "/authors/adam-grant/": [
+   "4fdb9d37e36168cc",
+   "2026-11-22"
+  ],
+  "/authors/adam-wathan/": [
+   "cc7d9057ffbebcc9",
+   "2026-11-22"
+  ],
+  "/authors/adele-faber/": [
+   "2809b710e135386a",
+   "2026-11-22"
+  ],
+  "/authors/al-sweigart/": [
+   "1e8982cb57e66b07",
+   "2026-11-22"
+  ],
+  "/authors/al-switzler/": [
+   "df2b101cd167ae67",
+   "2026-11-22"
+  ],
+  "/authors/alex-hormozi/": [
+   "119e00a964713e89",
+   "2026-11-22"
+  ],
+  "/authors/amy-cuddy/": [
+   "45a2199fde67e75d",
+   "2026-11-22"
+  ],
+  "/authors/amy-morin/": [
+   "7ab5725376c758d6",
+   "2026-11-22"
+  ],
+  "/authors/andrew-sobel/": [
+   "784d1a78c9c61c89",
+   "2026-11-22"
+  ],
+  "/authors/angela-duckworth/": [
+   "2a237bf7c5b10f55",
+   "2026-11-22"
+  ],
+  "/authors/anna-lembke/": [
+   "822c3dcb606d3143",
+   "2026-11-22"
+  ],
+  "/authors/anna-rosling-ronnlund/": [
+   "c0afeff8db63fa8d",
+   "2026-11-22"
+  ],
+  "/authors/anne-bogel/": [
+   "e1ff3b909710130e",
+   "2026-11-22"
+  ],
+  "/authors/ashlee-vance/": [
+   "07c6f6f94944fde1",
+   "2026-11-22"
+  ],
+  "/authors/atul-gawande/": [
+   "89f87c62e366c9cd",
+   "2026-11-22"
+  ],
+  "/authors/ayn-rand/": [
+   "b99bdc79464c8793",
+   "2026-11-22"
+  ],
+  "/authors/aziz-ansari/": [
+   "d82ff5e34d339d90",
+   "2026-11-22"
+  ],
+  "/authors/baek-sehee/": [
+   "b08160c5a3008a12",
+   "2026-11-22"
+  ],
+  "/authors/barrie-davenport/": [
+   "b91f4f9d8938f09f",
+   "2026-11-22"
+  ],
+  "/authors/barry-mcdonagh/": [
+   "0fca72b0e2a130ab",
+   "2026-11-22"
+  ],
+  "/authors/bell-hooks/": [
+   "c1df9b7c36478f0a",
+   "2026-11-22"
+  ],
+  "/authors/benjamin-graham/": [
+   "3142784b2ea16cb8",
+   "2026-11-22"
+  ],
+  "/authors/bessel-van-der-kolk/": [
+   "9df9ef9ff710ffb9",
+   "2026-11-22"
+  ],
+  "/authors/bill-bryson/": [
+   "345d975cbf10ea76",
+   "2026-11-22"
+  ],
+  "/authors/bill-canady/": [
+   "302f57e4b838c7ca",
+   "2026-11-22"
+  ],
+  "/authors/bj-fogg/": [
+   "a57d483019368cde",
+   "2026-11-22"
+  ],
+  "/authors/blake-masters/": [
+   "9346ae7ea96077a9",
+   "2026-11-22"
+  ],
+  "/authors/brian-tracy/": [
+   "83501df3f3f02b8b",
+   "2026-11-22"
+  ],
+  "/authors/brianna-wiest/": [
+   "75305593b89b3ea7",
+   "2026-11-22"
+  ],
+  "/authors/bruce-patton/": [
+   "52678156fd787381",
+   "2026-11-22"
+  ],
+  "/authors/cal-newport/": [
+   "84ca5ee8b55d3168",
+   "2026-11-22"
+  ],
+  "/authors/carl-sagan/": [
+   "985013f564a5e221",
+   "2026-11-22"
+  ],
+  "/authors/carla-naumburg/": [
+   "0f6f2602c9389665",
+   "2026-11-22"
+  ],
+  "/authors/carmine-gallo/": [
+   "0201139eb59eb43a",
+   "2026-11-22"
+  ],
+  "/authors/carol-dweck/": [
+   "b985477f7cf1c3d2",
+   "2026-11-22"
+  ],
+  "/authors/catherine-price/": [
+   "b574230647bfe5a3",
+   "2026-11-22"
+  ],
+  "/authors/catherine-stothart/": [
+   "53bab2ed5e194f42",
+   "2026-11-22"
+  ],
+  "/authors/charles-duhigg/": [
+   "bd25a9f913ba8293",
+   "2026-11-22"
+  ],
+  "/authors/chris-fussell/": [
+   "d18980258d6ab929",
+   "2026-11-22"
+  ],
+  "/authors/chris-voss/": [
+   "640d6ea6509dc31d",
+   "2026-11-22"
+  ],
+  "/authors/christina-lamb/": [
+   "331cb6bab79f9bfb",
+   "2026-11-22"
+  ],
+  "/authors/clarissa-pinkola-estes/": [
+   "05407208f651c4b9",
+   "2026-11-22"
+  ],
+  "/authors/dale-carnegie/": [
+   "abe486733ce1b853",
+   "2026-11-22"
+  ],
+  "/authors/daniel-goleman/": [
+   "aed2b5de29f302cd",
+   "2026-11-22"
+  ],
+  "/authors/daniel-kahneman/": [
+   "2cf362a63452039b",
+   "2026-11-22"
+  ],
+  "/authors/daniel-siegel/": [
+   "bd1de466be5f451a",
+   "2026-11-22"
+  ],
+  "/authors/daron-acemoglu/": [
+   "3c2910c4b2a74dd6",
+   "2026-11-22"
+  ],
+  "/authors/david-allen/": [
+   "aa96ddfd3672f2f8",
+   "2026-11-22"
+  ],
+  "/authors/david-bach/": [
+   "3dd24e26cd830880",
+   "2026-11-22"
+  ],
+  "/authors/david-brooks/": [
+   "9f849bf17498fc72",
+   "2026-11-22"
+  ],
+  "/authors/david-goggins/": [
+   "6d48617e0f220734",
+   "2026-11-22"
+  ],
+  "/authors/david-j-schwartz/": [
+   "1b21e958e6d7dd44",
+   "2026-11-22"
+  ],
+  "/authors/david-richo/": [
+   "90526405f4602beb",
+   "2026-11-22"
+  ],
+  "/authors/david-silverman/": [
+   "6fe3274a133f1238",
+   "2026-11-22"
+  ],
+  "/authors/don-miguel-ruiz/": [
+   "f5b5f4754afa328a",
+   "2026-11-22"
+  ],
+  "/authors/don-norman/": [
+   "30a1a70f86c2170c",
+   "2026-11-22"
+  ],
+  "/authors/eckhart-tolle/": [
+   "872d3c816fb7b3c4",
+   "2026-11-22"
+  ],
+  "/authors/elaine-mazlish/": [
+   "c6e2a54426e45405",
+   "2026-11-22"
+  ],
+  "/authors/emeran-mayer/": [
+   "3a925294c081fd95",
+   "2026-11-22"
+  ],
+  "/authors/emily-gregory/": [
+   "fc75b0a0c3ce7ec7",
+   "2026-11-22"
+  ],
+  "/authors/eric-berne/": [
+   "5b4219d40f05ebd5",
+   "2026-11-22"
+  ],
+  "/authors/eric-klinenberg/": [
+   "a14a3cbc7da7f529",
+   "2026-11-22"
+  ],
+  "/authors/eric-ries/": [
+   "63377354a3a31c45",
+   "2026-11-22"
+  ],
+  "/authors/erich-fromm/": [
+   "ae008108aaa2935b",
+   "2026-11-22"
+  ],
+  "/authors/francesc-miralles/": [
+   "1cb0972e0ee4120e",
+   "2026-11-22"
+  ],
+  "/authors/francesco-cirillo/": [
+   "712e6c987beebb12",
+   "2026-11-22"
+  ],
+  "/authors/fumitake-koga/": [
+   "72b651e0f919d712",
+   "2026-11-22"
+  ],
+  "/authors/gary-chapman/": [
+   "47070330bce648a6",
+   "2026-11-22"
+  ],
+  "/authors/gary-john-bishop/": [
+   "ed2fa15dde9f485a",
+   "2026-11-22"
+  ],
+  "/authors/gary-keller/": [
+   "f851761639c509cf",
+   "2026-11-22"
+  ],
+  "/authors/grant-cardone/": [
+   "f927e0daf903140f",
+   "2026-11-22"
+  ],
+  "/authors/hal-elrod/": [
+   "a1ab81c5f4b5240e",
+   "2026-11-22"
+  ],
+  "/authors/hans-rosling/": [
+   "d6b883a9fdc77e27",
+   "2026-11-22"
+  ],
+  "/authors/heather-mcghee/": [
+   "09c963b8a3f0d9e9",
+   "2026-11-22"
+  ],
+  "/authors/hector-garcia/": [
+   "f3f73d19d822a3fa",
+   "2026-11-22"
+  ],
+  "/authors/henrik-fexeus/": [
+   "ddc90e53b4736408",
+   "2026-11-22"
+  ],
+  "/authors/henry-cloud/": [
+   "04c699db3c765803",
+   "2026-11-22"
+  ],
+  "/authors/howard-zinn/": [
+   "3a3e5e07037b7c0e",
+   "2026-11-22"
+  ],
+  "/authors/huggy-rao/": [
+   "7a2ff9d85c595b4d",
+   "2026-11-22"
+  ],
+  "/authors/iben-dissing-sandahl/": [
+   "f1da4347324adafb",
+   "2026-11-22"
+  ],
+  "/authors/ichiro-kishimi/": [
+   "1d841dc9457c8342",
+   "2026-11-22"
+  ],
+  "/authors/james-a-robinson/": [
+   "f3f9dac5d19b7f6e",
+   "2026-11-22"
+  ],
+  "/authors/james-allen/": [
+   "2c599fd9c084898b",
+   "2026-11-22"
+  ],
+  "/authors/james-baldwin/": [
+   "477e0786c9057c95",
+   "2026-11-22"
+  ],
+  "/authors/james-clear/": [
+   "14bdd5829dcc68de",
+   "2026-11-22"
+  ],
+  "/authors/jared-diamond/": [
+   "9be5c462f3764ad7",
+   "2026-11-22"
+  ],
+  "/authors/jaron-lanier/": [
+   "f4dbb618a18f7ec4",
+   "2026-11-22"
+  ],
+  "/authors/jason-zweig/": [
+   "06ecc533a46656f2",
+   "2026-11-22"
+  ],
+  "/authors/jay-papasan/": [
+   "a30f5bdd8336ab36",
+   "2026-11-22"
+  ],
+  "/authors/jay-shetty/": [
+   "71f1d52a3bc90fc4",
+   "2026-11-22"
+  ],
+  "/authors/jd-vance/": [
+   "69e5cecda40de76e",
+   "2026-11-22"
+  ],
+  "/authors/jeff-bezos/": [
+   "9fce3b3ca6634651",
+   "2026-11-22"
+  ],
+  "/authors/jeff-sutherland/": [
+   "85f1cbfca715510f",
+   "2026-11-22"
+  ],
+  "/authors/jen-sincero/": [
+   "389bd12ef8b08f8b",
+   "2026-11-22"
+  ],
+  "/authors/jennette-mccurdy/": [
+   "bfc4ac8cb00e2666",
+   "2026-11-22"
+  ],
+  "/authors/jerold-panas/": [
+   "7b192d54e56440ab",
+   "2026-11-22"
+  ],
+  "/authors/jessica-joelle-alexander/": [
+   "675ac388e6a422fd",
+   "2026-11-22"
+  ],
+  "/authors/jj-sutherland/": [
+   "3824991fa8423be1",
+   "2026-11-22"
+  ],
+  "/authors/jl-collins/": [
+   "8ed7b010c2c59a35",
+   "2026-11-22"
+  ],
+  "/authors/joe-dispenza/": [
+   "df211afb0ad08c3e",
+   "2026-11-22"
+  ],
+  "/authors/johann-hari/": [
+   "a82fb14a5c22c3cc",
+   "2026-11-22"
+  ],
+  "/authors/john-c-maxwell/": [
+   "4a1fab5625b44f04",
+   "2026-11-22"
+  ],
+  "/authors/john-gray/": [
+   "2742731e064790d5",
+   "2026-11-22"
+  ],
+  "/authors/john-kim/": [
+   "7580d843f5af9785",
+   "2026-11-22"
+  ],
+  "/authors/john-townsend/": [
+   "b02830b55103cd20",
+   "2026-11-22"
+  ],
+  "/authors/jonathan-haidt/": [
+   "cef6852e83d462c1",
+   "2026-11-22"
+  ],
+  "/authors/jordan-b-peterson/": [
+   "45713f8d484a8d8e",
+   "2026-11-22"
+  ],
+  "/authors/joseph-grenny/": [
+   "cb1318819e00b5bd",
+   "2026-11-22"
+  ],
+  "/authors/joseph-murphy/": [
+   "a479e0aefec3d460",
+   "2026-11-22"
+  ],
+  "/authors/joseph-nguyen/": [
+   "9690921b84ad30d3",
+   "2026-11-22"
+  ],
+  "/authors/josh-kaufman/": [
+   "1666639214ce0654",
+   "2026-11-22"
+  ],
+  "/authors/julie-smith/": [
+   "eb64b49e45ae856b",
+   "2026-11-22"
+  ],
+  "/authors/kam-knight/": [
+   "05473f5935dc2537",
+   "2026-11-22"
+  ],
+  "/authors/kamal-ravikant/": [
+   "a10699ee0cf08701",
+   "2026-11-22"
+  ],
+  "/authors/kate-murphy/": [
+   "43e76f5358cf33fe",
+   "2026-11-22"
+  ],
+  "/authors/katherine-woodward-thomas/": [
+   "3ceb3ae80af7c5c0",
+   "2026-11-22"
+  ],
+  "/authors/kerry-patterson/": [
+   "0d1c1060ec2d84ea",
+   "2026-11-22"
+  ],
+  "/authors/kevin-horsley/": [
+   "1a807fc80a3c9a78",
+   "2026-11-22"
+  ],
+  "/authors/kristen-willeumier/": [
+   "8c00b0f9ff4e0d3c",
+   "2026-11-22"
+  ],
+  "/authors/l-david-marquet/": [
+   "acbf3b8f857bc350",
+   "2026-11-22"
+  ],
+  "/authors/lane-moore/": [
+   "afc9bfb9c726613e",
+   "2026-11-22"
+  ],
+  "/authors/laura-vanderkam/": [
+   "3b5d543ca4d0108f",
+   "2026-11-22"
+  ],
+  "/authors/leil-lowndes/": [
+   "2551be08ab64cadf",
+   "2026-11-22"
+  ],
+  "/authors/lundy-bancroft/": [
+   "df10b0fa68225adb",
+   "2026-11-22"
+  ],
+  "/authors/malala-yousafzai/": [
+   "1b0f39f64cbaedc9",
+   "2026-11-22"
+  ],
+  "/authors/malcolm-gladwell/": [
+   "2e63727e6028d0cb",
+   "2026-11-22"
+  ],
+  "/authors/marc-schulz/": [
+   "36980c71ed420ad3",
+   "2026-11-22"
+  ],
+  "/authors/marcus-aurelius/": [
+   "2b05844057f66703",
+   "2026-11-22"
+  ],
+  "/authors/mark-goulston/": [
+   "b8045f9f787b0939",
+   "2026-11-22"
+  ],
+  "/authors/mark-manson/": [
+   "87adf84b8a018b9a",
+   "2026-11-22"
+  ],
+  "/authors/marshall-b-rosenberg/": [
+   "f8302e7131374de0",
+   "2026-11-22"
+  ],
+  "/authors/matt-haig/": [
+   "450a8a4a222d9ec3",
+   "2026-11-22"
+  ],
+  "/authors/matt-mochary/": [
+   "4cecb57a37fc21cf",
+   "2026-11-22"
+  ],
+  "/authors/matthew-walker/": [
+   "91c10cb3f20d78ca",
+   "2026-11-22"
+  ],
+  "/authors/maxwell-maltz/": [
+   "2d525f97eec99c63",
+   "2026-11-22"
+  ],
+  "/authors/mel-robbins/": [
+   "5c192c239d56670c",
+   "2026-11-22"
+  ],
+  "/authors/michael-a-singer/": [
+   "1b15a3cae2042abb",
+   "2026-11-22"
+  ],
+  "/authors/michael-moss/": [
+   "8a00aaa8636046fa",
+   "2026-11-22"
+  ],
+  "/authors/michael-pollan/": [
+   "c043af4b013ead7c",
+   "2026-11-22"
+  ],
+  "/authors/michelle-tillis-lederman/": [
+   "b14baa15ef210158",
+   "2026-11-22"
+  ],
+  "/authors/mitch-albom/": [
+   "9e98e4a29ffa202b",
+   "2026-11-22"
+  ],
+  "/authors/morgan-housel/": [
+   "d1b8024453446fc7",
+   "2026-11-22"
+  ],
+  "/authors/mortimer-j-adler/": [
+   "76d3e22ad82850d5",
+   "2026-11-22"
+  ],
+  "/authors/mrs-hinch/": [
+   "1befa18d57496588",
+   "2026-11-22"
+  ],
+  "/authors/napoleon-hill/": [
+   "f823fa7515f12646",
+   "2026-11-22"
+  ],
+  "/authors/nedra-glover-tawwab/": [
+   "8400eafe241e93fc",
+   "2026-11-22"
+  ],
+  "/authors/neil-degrasse-tyson/": [
+   "ef49650a84b8ae9b",
+   "2026-11-22"
+  ],
+  "/authors/niccolo-machiavelli/": [
+   "1271c80f037b71fe",
+   "2026-11-22"
+  ],
+  "/authors/nicholas-boothman/": [
+   "4a931d7990095a0e",
+   "2026-11-22"
+  ],
+  "/authors/nixaly-leonardo/": [
+   "0b2ab19e1cda89fb",
+   "2026-11-22"
+  ],
+  "/authors/norman-vincent-peale/": [
+   "44d0d2419cb6cf25",
+   "2026-11-22"
+  ],
+  "/authors/ola-rosling/": [
+   "7ff21862d6fd7e56",
+   "2026-11-22"
+  ],
+  "/authors/oliver-sacks/": [
+   "2925115ca7f0138b",
+   "2026-11-22"
+  ],
+  "/authors/olivia-fox-cabane/": [
+   "7cd61c3a97acba82",
+   "2026-11-22"
+  ],
+  "/authors/owen-okane/": [
+   "b0652edf56b18070",
+   "2026-11-22"
+  ],
+  "/authors/patrick-king/": [
+   "539696ee7d575bfa",
+   "2026-11-22"
+  ],
+  "/authors/paul-kalanithi/": [
+   "c40459a80dc515d2",
+   "2026-11-22"
+  ],
+  "/authors/peter-hollins/": [
+   "44d9cd945f61184c",
+   "2026-11-22"
+  ],
+  "/authors/peter-thiel/": [
+   "2a712d7a0f5ebbf0",
+   "2026-11-22"
+  ],
+  "/authors/phil-knight/": [
+   "a9d45c4b39a163f9",
+   "2026-11-22"
+  ],
+  "/authors/philippa-perry/": [
+   "6a792abd2f5ce500",
+   "2026-11-22"
+  ],
+  "/authors/pico-iyer/": [
+   "591b53ed354f0ab3",
+   "2026-11-22"
+  ],
+  "/authors/ramit-sethi/": [
+   "72fe072721b5d2c4",
+   "2026-11-22"
+  ],
+  "/authors/randall-munroe/": [
+   "9db0b3703363195a",
+   "2026-11-22"
+  ],
+  "/authors/ray-dalio/": [
+   "710aa868cf1f74db",
+   "2026-11-22"
+  ],
+  "/authors/rebecca-skloot/": [
+   "e0da230cbfc02095",
+   "2026-11-22"
+  ],
+  "/authors/rhonda-byrne/": [
+   "9fb1050e33ef3e41",
+   "2026-11-22"
+  ],
+  "/authors/richard-dawkins/": [
+   "ff0e259e4a75dd3a",
+   "2026-11-22"
+  ],
+  "/authors/richard-feynman/": [
+   "ca72360bde44d0f5",
+   "2026-11-22"
+  ],
+  "/authors/richard-koch/": [
+   "769179c77175a862",
+   "2026-11-22"
+  ],
+  "/authors/robert-cialdini/": [
+   "1901e4d8af25c880",
+   "2026-11-22"
+  ],
+  "/authors/robert-greene/": [
+   "1161a03ff3faaf5e",
+   "2026-11-22"
+  ],
+  "/authors/robert-i-sutton/": [
+   "ff5b160a9cf36d69",
+   "2026-11-22"
+  ],
+  "/authors/robert-kiyosaki/": [
+   "220d2832f95654ea",
+   "2026-11-22"
+  ],
+  "/authors/robert-waldinger/": [
+   "89c4db6bd09444e6",
+   "2026-11-22"
+  ],
+  "/authors/robin-norwood/": [
+   "0b9815a01b85ae1d",
+   "2026-11-22"
+  ],
+  "/authors/robin-sharma/": [
+   "c8d49a68958fee6e",
+   "2026-11-22"
+  ],
+  "/authors/roger-fisher/": [
+   "53c0a2fd58db8887",
+   "2026-11-22"
+  ],
+  "/authors/roger-martin/": [
+   "ff696b38fd6716bf",
+   "2026-11-22"
+  ],
+  "/authors/ron-mcmillan/": [
+   "f50913e91825f4f9",
+   "2026-11-22"
+  ],
+  "/authors/ross-campbell/": [
+   "db75a1897b1273df",
+   "2026-11-22"
+  ],
+  "/authors/ryan-holiday/": [
+   "57e109e9b9f3ec39",
+   "2026-11-22"
+  ],
+  "/authors/sarah-stanley-fallaw/": [
+   "af49a7abe651dad3",
+   "2026-11-22"
+  ],
+  "/authors/scott-jurek/": [
+   "a3bb8fc52335f865",
+   "2026-11-22"
+  ],
+  "/authors/scott-stossel/": [
+   "da642121cb01574c",
+   "2026-11-22"
+  ],
+  "/authors/sean-whalen/": [
+   "083bfaef8691ce37",
+   "2026-11-22"
+  ],
+  "/authors/shelle-rose-charvet/": [
+   "0daa02a8c39e5688",
+   "2026-11-22"
+  ],
+  "/authors/simon-rycraft/": [
+   "e14e15193a68f813",
+   "2026-11-22"
+  ],
+  "/authors/simon-sinek/": [
+   "e2f529b848cea2f4",
+   "2026-11-22"
+  ],
+  "/authors/sj-scott/": [
+   "3afa7ff74e1a9b63",
+   "2026-11-22"
+  ],
+  "/authors/spencer-johnson/": [
+   "c2907850d3c3a805",
+   "2026-11-22"
+  ],
+  "/authors/stanley-mcchrystal/": [
+   "dffdd5b5491e2be4",
+   "2026-11-22"
+  ],
+  "/authors/stellan-moreira/": [
+   "85156b00a0ef27e9",
+   "2026-11-22"
+  ],
+  "/authors/stephen-hanselman/": [
+   "93d43d93ecb5fdab",
+   "2026-11-22"
+  ],
+  "/authors/stephen-hawking/": [
+   "dca211eb0df3057f",
+   "2026-11-22"
+  ],
+  "/authors/stephen-j-dubner/": [
+   "9ef2042e71a4eaa4",
+   "2026-11-22"
+  ],
+  "/authors/stephen-king/": [
+   "ab906e30033b305a",
+   "2026-11-22"
+  ],
+  "/authors/stephen-r-covey/": [
+   "a910026d0ee50382",
+   "2026-11-22"
+  ],
+  "/authors/steve-dalton/": [
+   "8955b02a53c50a5b",
+   "2026-11-22"
+  ],
+  "/authors/steve-friedman/": [
+   "0b8098f7b541e72f",
+   "2026-11-22"
+  ],
+  "/authors/steve-schoger/": [
+   "98b0e3c19bafe842",
+   "2026-11-22"
+  ],
+  "/authors/steven-bartlett/": [
+   "348402d6d81c03da",
+   "2026-11-22"
+  ],
+  "/authors/steven-d-levitt/": [
+   "276aab5889c27bab",
+   "2026-11-22"
+  ],
+  "/authors/sue-johnson/": [
+   "6ba3f45d1ec2b2f6",
+   "2026-11-22"
+  ],
+  "/authors/sun-tzu/": [
+   "343d2af56cfb01cd",
+   "2026-11-22"
+  ],
+  "/authors/susan-cain/": [
+   "bbeed5f6935ca098",
+   "2026-11-22"
+  ],
+  "/authors/susan-forward/": [
+   "3482eead56e18ee1",
+   "2026-11-22"
+  ],
+  "/authors/susie-moore/": [
+   "15f635effab96522",
+   "2026-11-22"
+  ],
+  "/authors/tahl-raz/": [
+   "bfb169b231b7226c",
+   "2026-11-22"
+  ],
+  "/authors/tantum-collins/": [
+   "a97ceff721adffaf",
+   "2026-11-22"
+  ],
+  "/authors/tara-westover/": [
+   "2e96ba8885adab39",
+   "2026-11-22"
+  ],
+  "/authors/thibaut-meurisse/": [
+   "6c9c35d7da3f1584",
+   "2026-11-22"
+  ],
+  "/authors/thomas-erikson/": [
+   "321b189dbbb53d56",
+   "2026-11-22"
+  ],
+  "/authors/thomas-j-stanley/": [
+   "d6418ea44f71133c",
+   "2026-11-22"
+  ],
+  "/authors/thomas-piketty/": [
+   "8d69df1d6a8ee282",
+   "2026-11-22"
+  ],
+  "/authors/timothy-ferriss/": [
+   "3404a735f12e2352",
+   "2026-11-22"
+  ],
+  "/authors/tina-payne-bryson/": [
+   "bd6d12ac136140bf",
+   "2026-11-22"
+  ],
+  "/authors/tony-robbins/": [
+   "d8d3468c1f2c3333",
+   "2026-11-22"
+  ],
+  "/authors/trevor-noah/": [
+   "b0bcc68f7b2c4570",
+   "2026-11-22"
+  ],
+  "/authors/vanessa-van-edwards/": [
+   "38490cb2f9103abe",
+   "2026-11-22"
+  ],
+  "/authors/vex-king/": [
+   "c475273e4c069ab6",
+   "2026-11-22"
+  ],
+  "/authors/viktor-frankl/": [
+   "f153fabbd26222a1",
+   "2026-11-22"
+  ],
+  "/authors/virginia-woolf/": [
+   "2117dd7f0f462852",
+   "2026-11-22"
+  ],
+  "/authors/vishen-lakhiani/": [
+   "f3c9edd3d1ceba62",
+   "2026-11-22"
+  ],
+  "/authors/vyasa/": [
+   "d37db36fbc2bafe5",
+   "2026-11-22"
+  ],
+  "/authors/wallace-d-wattles/": [
+   "516a4eba09a84d4c",
+   "2026-11-22"
+  ],
+  "/authors/walter-isaacson/": [
+   "9517d0db3fdd1438",
+   "2026-11-22"
+  ],
+  "/authors/william-d-danko/": [
+   "5c544705f77d6c19",
+   "2026-11-22"
+  ],
+  "/authors/william-h-mcraven/": [
+   "8d798ce66b6519ba",
+   "2026-11-22"
+  ],
+  "/authors/william-ury/": [
+   "467dfad24209585a",
+   "2026-11-22"
+  ],
+  "/authors/yuval-noah-harari/": [
+   "5919ee2e2053cba5",
+   "2026-11-22"
+  ],
+  "/categories/business-career/": [
+   "5ce06caf8f85a89a",
+   "2026-11-22"
+  ],
+  "/categories/family/": [
+   "48d4d97735c8ff3c",
+   "2026-11-22"
+  ],
+  "/categories/fiction/": [
+   "3539b6677098803a",
+   "2026-11-22"
+  ],
+  "/categories/happiness/": [
+   "12eb61c5608da89c",
+   "2026-11-22"
+  ],
+  "/categories/health/": [
+   "d02d479b05b5f55a",
+   "2026-11-22"
+  ],
+  "/categories/home-environment/": [
+   "b433abbbfc257cb6",
+   "2026-11-22"
+  ],
+  "/categories/leadership/": [
+   "73a20da5a12067d0",
+   "2026-11-22"
+  ],
+  "/categories/love-sex/": [
+   "919ba7e95cc1dd56",
+   "2026-11-22"
+  ],
+  "/categories/money-investments/": [
+   "8d05ee3d37e49e67",
+   "2026-11-22"
+  ],
+  "/categories/negotiation/": [
+   "28f231681581d242",
+   "2026-11-22"
+  ],
+  "/categories/personalities/": [
+   "9332a5bce94de216",
+   "2026-11-22"
+  ],
+  "/categories/productivity/": [
+   "b2745bb8e34271a3",
+   "2026-11-22"
+  ],
+  "/categories/self-growth/": [
+   "4720df64430569da",
+   "2026-11-22"
+  ],
+  "/categories/society-tech/": [
+   "b9f93649cc03a77e",
+   "2026-11-22"
+  ],
+  "/categories/spirituality/": [
+   "c1dfd3e0da1c2d27",
+   "2026-11-22"
+  ],
+  "/categories/sports-fitness/": [
+   "bf9bda660a680fa5",
+   "2026-11-22"
+  ],
+  "/collections/build-better-habits/": [
+   "f7acd33964926da9",
+   "2026-11-22"
+  ],
+  "/collections/calm-the-worry/": [
+   "b7ce27aef8499ec6",
+   "2026-11-22"
+  ],
+  "/collections/money-calmly/": [
+   "93a8183d8ef90b9f",
+   "2026-11-22"
+  ],
+  "/collections/people-skills/": [
+   "0383272db588142c",
+   "2026-11-22"
+  ],
+  "/collections/think-clearly/": [
+   "86d6ecd471dbf78c",
+   "2026-11-22"
+  ],
+  "/courses/justice/": [
+   "b99b5155c543f135",
+   "2026-11-22"
+  ],
+  "/summaries/": [
+   "9d9324bc47d2c556",
+   "2026-11-22"
+  ],
+  "/summaries/100m-offers/": [
+   "fb45d54427c6ed2d",
+   "2026-11-22"
+  ],
+  "/summaries/101-essays-that-will-change-the-way-you-think/": [
+   "529d1a50d23e86fb",
+   "2026-11-22"
+  ],
+  "/summaries/12-rules-for-life/": [
+   "a49b10c2bdd3fd29",
+   "2026-11-22"
+  ],
+  "/summaries/13-things-mentally-strong-people-don-t-do/": [
+   "879b87e582dd0b57",
+   "2026-11-22"
+  ],
+  "/summaries/21-lessons-for-the-21st-century/": [
+   "bbc1dddedf0f7f0a",
+   "2026-11-22"
+  ],
+  "/summaries/8-rules-of-love/": [
+   "1ed4de6236e3061b",
+   "2026-11-22"
+  ],
+  "/summaries/a-brief-history-of-time/": [
+   "8984d9a067695176",
+   "2026-11-22"
+  ],
+  "/summaries/a-people-s-history-of-the-united-states/": [
+   "f5e4e9c3666f5184",
+   "2026-11-22"
+  ],
+  "/summaries/a-room-of-ones-own/": [
+   "0e9683a73d5a3625",
+   "2026-11-22"
+  ],
+  "/summaries/a-short-history-of-nearly-everything/": [
+   "9095f3c69f89800c",
+   "2026-11-22"
+  ],
+  "/summaries/active-listening-techniques/": [
+   "79ecf1029feeeeb9",
+   "2026-11-22"
+  ],
+  "/summaries/all-about-love/": [
+   "591a4ce78bb8737e",
+   "2026-11-22"
+  ],
+  "/summaries/as-a-man-thinketh/": [
+   "dac67d13ebd3c33b",
+   "2026-11-22"
+  ],
+  "/summaries/astrophysics-for-people-in-a-hurry/": [
+   "458484c84fc796f7",
+   "2026-11-22"
+  ],
+  "/summaries/atlas-shrugged/": [
+   "aedaf98d0984abb3",
+   "2026-11-22"
+  ],
+  "/summaries/atomic-habits/": [
+   "88c2fb0cac7871d9",
+   "2026-11-22"
+  ],
+  "/summaries/automate-the-boring-stuff-with-python-2nd-edition/": [
+   "f1bf1d6550ed13df",
+   "2026-11-22"
+  ],
+  "/summaries/becoming-supernatural/": [
+   "d0ea86edfeadc959",
+   "2026-11-22"
+  ],
+  "/summaries/being-mortal/": [
+   "d90b6daad01ace3f",
+   "2026-11-22"
+  ],
+  "/summaries/biohack-your-brain/": [
+   "f8e91e0ffc7a7073",
+   "2026-11-22"
+  ],
+  "/summaries/blink/": [
+   "179fa2a27a903aea",
+   "2026-11-22"
+  ],
+  "/summaries/born-a-crime/": [
+   "3dec968268140637",
+   "2026-11-22"
+  ],
+  "/summaries/boundaries/": [
+   "d7eb5c66bac16953",
+   "2026-11-22"
+  ],
+  "/summaries/breaking-the-habit-of-being-yourself/": [
+   "0b5f70a82b97af8e",
+   "2026-11-22"
+  ],
+  "/summaries/calling-in-the-one-revised-and-expanded/": [
+   "229c4fc5f0ac9df7",
+   "2026-11-22"
+  ],
+  "/summaries/can-t-hurt-me/": [
+   "b229049bd0bed0f0",
+   "2026-11-22"
+  ],
+  "/summaries/capital-in-the-21st-century/": [
+   "7be5c1809b028f24",
+   "2026-11-22"
+  ],
+  "/summaries/cosmos/": [
+   "28f610caa7d4d654",
+   "2026-11-22"
+  ],
+  "/summaries/crucial-conversations-tools-for-talking-when-stakes-are-high/": [
+   "d4398b55a9bf2bb5",
+   "2026-11-22"
+  ],
+  "/summaries/cues/": [
+   "103a9e7733b11c95",
+   "2026-11-22"
+  ],
+  "/summaries/dare/": [
+   "35c24f614e732d95",
+   "2026-11-22"
+  ],
+  "/summaries/declutter-your-mind/": [
+   "fd5c6e3d5d7e6f2e",
+   "2026-11-22"
+  ],
+  "/summaries/deep-work/": [
+   "30083bb0bb34d2a1",
+   "2026-11-22"
+  ],
+  "/summaries/digital-minimalism/": [
+   "3c46b1a12919ccfc",
+   "2026-11-22"
+  ],
+  "/summaries/don-t-believe-everything-you-think-why-your-thinking-is-the-beginning-and-end-of-suffering/": [
+   "5363832539cf2dd3",
+   "2026-11-22"
+  ],
+  "/summaries/don-t-overthink-it/": [
+   "3387fa6c8c00e20c",
+   "2026-11-22"
+  ],
+  "/summaries/dopamine-detox/": [
+   "fb7fdeae00c35ccb",
+   "2026-11-22"
+  ],
+  "/summaries/dopamine-nation/": [
+   "93ce33a91039d439",
+   "2026-11-22"
+  ],
+  "/summaries/drama-free/": [
+   "fa7987efd4e3737a",
+   "2026-11-22"
+  ],
+  "/summaries/eat-and-run/": [
+   "8e8eccaf15f87bcb",
+   "2026-11-22"
+  ],
+  "/summaries/eat-that-frog/": [
+   "95c255c67500e55c",
+   "2026-11-22"
+  ],
+  "/summaries/educated1/": [
+   "d252faaad855ba32",
+   "2026-11-22"
+  ],
+  "/summaries/ego-is-the-enemy/": [
+   "590b2599a975c94f",
+   "2026-11-22"
+  ],
+  "/summaries/elon-musk/": [
+   "a86870a0825a1681",
+   "2026-11-22"
+  ],
+  "/summaries/emotional-blackmail/": [
+   "619caf74b2943d6d",
+   "2026-11-22"
+  ],
+  "/summaries/emotional-intelligence1/": [
+   "3b0ccec15f82e2f8",
+   "2026-11-22"
+  ],
+  "/summaries/factfulness-ten-reasons-we-re-wrong-about-the-world/": [
+   "a9046a14bee09250",
+   "2026-11-22"
+  ],
+  "/summaries/freakonomics/": [
+   "ae22aa3076ed398e",
+   "2026-11-22"
+  ],
+  "/summaries/games-people-play/": [
+   "068acb5c72c30214",
+   "2026-11-22"
+  ],
+  "/summaries/getting-things-done/": [
+   "ea49e316a1797137",
+   "2026-11-22"
+  ],
+  "/summaries/getting-to-yes/": [
+   "950af8ca2639df9e",
+   "2026-11-22"
+  ],
+  "/summaries/good-vibes-good-life/": [
+   "84801f201ba25ef0",
+   "2026-11-22"
+  ],
+  "/summaries/grit/": [
+   "12d8174895c0c9b3",
+   "2026-11-22"
+  ],
+  "/summaries/guns-germs-and-steel/": [
+   "e73fd3706a1f912f",
+   "2026-11-22"
+  ],
+  "/summaries/hillbilly-elegy/": [
+   "4853dcf71722d3d5",
+   "2026-11-22"
+  ],
+  "/summaries/hinch-yourself-happy/": [
+   "d29ab19c71d81c84",
+   "2026-11-22"
+  ],
+  "/summaries/hold-me-tight/": [
+   "4ae895ee4f996538",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-be-alone/": [
+   "45089f575af136e4",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-be-an-adult-in-relationships/": [
+   "646d6903e5d261d7",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-be-your-own-therapist/": [
+   "4d8db4e04930cf57",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-break-up-with-your-phone/": [
+   "71db725ffdb2bbc7",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-get-on-with-anyone/": [
+   "3046cc8cb1aa6a6b",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-know-a-person/": [
+   "ceba8338254914ee",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-make-people-like-you-in-90-seconds-or-less/": [
+   "968e2ccdd64cbd9b",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-make-sh-t-happen/": [
+   "c719e21177d51221",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-read-a-book/": [
+   "76a4f74f51e913f7",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-stop-losing-your-shit-with-your-kids/": [
+   "3752cc614f9a3b1f",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-stop-worrying-and-start-living/": [
+   "b5647004908fde25",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-talk-so-kids-will-listen-listen-so-kids-will-talk/": [
+   "6cddcc2a9f9fa854",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-talk-to-anyone/": [
+   "23166d9976ea1c79",
+   "2026-11-22"
+  ],
+  "/summaries/how-to-win-friends-influence-people-in-digital-age/": [
+   "6eff0ce0d386a0f8",
+   "2026-11-22"
+  ],
+  "/summaries/i-am-malala/": [
+   "9a5bb5fd83c36927",
+   "2026-11-22"
+  ],
+  "/summaries/i-want-to-die-but-i-want-to-eat-tteokbokki/": [
+   "c8dcc0cf9caba35a",
+   "2026-11-22"
+  ],
+  "/summaries/i-will-teach-you-to-be-rich/": [
+   "dc72bbef82c234c1",
+   "2026-11-22"
+  ],
+  "/summaries/ikigai/": [
+   "f5284ec0cf67292b",
+   "2026-11-22"
+  ],
+  "/summaries/im-glad-my-mom-died/": [
+   "75c1673e8b7e80fa",
+   "2026-11-22"
+  ],
+  "/summaries/influence/": [
+   "62c57eaff020b7a4",
+   "2026-11-22"
+  ],
+  "/summaries/invent-and-wander/": [
+   "c17aef09a1f294f4",
+   "2026-11-22"
+  ],
+  "/summaries/just-listen-discover-the-secret-to-getting-through-to-absolutely-anyone/": [
+   "a75450303697be56",
+   "2026-11-22"
+  ],
+  "/summaries/justice-1-hard-cases/": [
+   "af199f2557eba49e",
+   "2026-11-22"
+  ],
+  "/summaries/justice-10-what-we-owe-each-other/": [
+   "d81f3f56550a6547",
+   "2026-11-22"
+  ],
+  "/summaries/justice-2-greatest-happiness/": [
+   "b355645d1391f11c",
+   "2026-11-22"
+  ],
+  "/summaries/justice-3-higher-pleasures/": [
+   "a1365259e279d4e9",
+   "2026-11-22"
+  ],
+  "/summaries/justice-4-own-ourselves/": [
+   "20fb3b542e1362dc",
+   "2026-11-22"
+  ],
+  "/summaries/justice-5-what-money-cant-buy/": [
+   "8f0ae0bb5bd3caf8",
+   "2026-11-22"
+  ],
+  "/summaries/justice-6-duty-and-motive/": [
+   "fbb90945f824caff",
+   "2026-11-22"
+  ],
+  "/summaries/justice-7-is-lying-ever-right/": [
+   "b42879a88e85732b",
+   "2026-11-22"
+  ],
+  "/summaries/justice-8-behind-the-veil/": [
+   "c985a32e489190ed",
+   "2026-11-22"
+  ],
+  "/summaries/justice-9-who-deserves-what/": [
+   "fdcb14ee93f029a0",
+   "2026-11-22"
+  ],
+  "/summaries/leaders-eat-last/": [
+   "be5de21417201aec",
+   "2026-11-22"
+  ],
+  "/summaries/lives-of-the-stoics/": [
+   "1e83f4e28bd54216",
+   "2026-11-22"
+  ],
+  "/summaries/love-unfu-ked/": [
+   "a6e51a0b989364e9",
+   "2026-11-22"
+  ],
+  "/summaries/love-yourself-like-your-life-depends-on-it/": [
+   "42105f7e33a0e7cb",
+   "2026-11-22"
+  ],
+  "/summaries/make-your-bed/": [
+   "12ed4d1196fa1f69",
+   "2026-11-22"
+  ],
+  "/summaries/man-s-search-for-meaning/": [
+   "2cddcd91b383533b",
+   "2026-11-22"
+  ],
+  "/summaries/mastery/": [
+   "471925a6ad72ada9",
+   "2026-11-22"
+  ],
+  "/summaries/meditations/": [
+   "44b3600aad0455cd",
+   "2026-11-22"
+  ],
+  "/summaries/men-are-from-mars-women-are-from-venus/": [
+   "5a00660c6f262e05",
+   "2026-11-22"
+  ],
+  "/summaries/million-dollar-habits/": [
+   "0dec3cc67406c3ec",
+   "2026-11-22"
+  ],
+  "/summaries/mindful-relationship-habits/": [
+   "28a99ca50db34f6d",
+   "2026-11-22"
+  ],
+  "/summaries/mindset/": [
+   "8cd7dd8a85738eb6",
+   "2026-11-22"
+  ],
+  "/summaries/modern-romance/": [
+   "4744bf2e80cdf0da",
+   "2026-11-22"
+  ],
+  "/summaries/money-master-the-game/": [
+   "275d9b9341c0c954",
+   "2026-11-22"
+  ],
+  "/summaries/my-age-of-anxiety/": [
+   "218772b990a8d7e0",
+   "2026-11-22"
+  ],
+  "/summaries/negotiation-hacks/": [
+   "f6a13457d678990d",
+   "2026-11-22"
+  ],
+  "/summaries/never-split-the-difference/": [
+   "3b2571e81126426b",
+   "2026-11-22"
+  ],
+  "/summaries/nexus-a-brief-history-of-information-networks-from-the-stone-age-to-ai/": [
+   "74cc4d60e507526d",
+   "2026-11-22"
+  ],
+  "/summaries/no-drama-discipline/": [
+   "10bca05a67616f92",
+   "2026-11-22"
+  ],
+  "/summaries/no-excuses/": [
+   "19c7dcd42f0a9efc",
+   "2026-11-22"
+  ],
+  "/summaries/nonviolent-communication/": [
+   "8d44057f68ceae31",
+   "2026-11-22"
+  ],
+  "/summaries/on-writing/": [
+   "01580cc3d9f9333b",
+   "2026-11-22"
+  ],
+  "/summaries/outliers/": [
+   "f107ebe7c9b2d798",
+   "2026-11-22"
+  ],
+  "/summaries/outwitting-the-devil/": [
+   "faef34c32326369f",
+   "2026-11-22"
+  ],
+  "/summaries/playing-to-win/": [
+   "cbb133e5d5b0689c",
+   "2026-11-22"
+  ],
+  "/summaries/power-questions/": [
+   "c04ccd011ecd3450",
+   "2026-11-22"
+  ],
+  "/summaries/pre-suasion/": [
+   "109edc962debdf18",
+   "2026-11-22"
+  ],
+  "/summaries/presence/": [
+   "bdb48f825afdf05e",
+   "2026-11-22"
+  ],
+  "/summaries/principles-for-dealing-with-the-changing-world-order/": [
+   "816d68e676a86535",
+   "2026-11-22"
+  ],
+  "/summaries/principles/": [
+   "87443d3f1ad4a26c",
+   "2026-11-22"
+  ],
+  "/summaries/psycho-cybernetics-a-new-way-to-get-more-living-out-of-life/": [
+   "dc05d8d429eb133c",
+   "2026-11-22"
+  ],
+  "/summaries/quiet/": [
+   "7e202504cf729f37",
+   "2026-11-22"
+  ],
+  "/summaries/read-people-like-a-book/": [
+   "fd4688032ed281c5",
+   "2026-11-22"
+  ],
+  "/summaries/reasons-to-stay-alive/": [
+   "1ff29d4d45c52cde",
+   "2026-11-22"
+  ],
+  "/summaries/refactoring-ui/": [
+   "83140fb0668068b5",
+   "2026-11-22"
+  ],
+  "/summaries/rich-dad-poor-dad-what-the-rich-teach-their-kids-about-money/": [
+   "0fd30fed8827a607",
+   "2026-11-22"
+  ],
+  "/summaries/salt-sugar-and-fat-how-the-food-giants-hooked-us/": [
+   "c27077e48e298c61",
+   "2026-11-22"
+  ],
+  "/summaries/sapiens/": [
+   "f51968e7c22fea37",
+   "2026-11-22"
+  ],
+  "/summaries/scaling-up-excellence/": [
+   "dd84177af185088f",
+   "2026-11-22"
+  ],
+  "/summaries/scrum1/": [
+   "ce3b81437e6a2080",
+   "2026-11-22"
+  ],
+  "/summaries/set-boundaries-find-peace/": [
+   "8c750b46d916e9b6",
+   "2026-11-22"
+  ],
+  "/summaries/shoe-dog/": [
+   "c1ecae4eba01f615",
+   "2026-11-22"
+  ],
+  "/summaries/single-on-purpose/": [
+   "e796465cbfad06dc",
+   "2026-11-22"
+  ],
+  "/summaries/speed-reading/": [
+   "ecc78817e796a66d",
+   "2026-11-22"
+  ],
+  "/summaries/start-with-why/": [
+   "1a31ed41664b3d7c",
+   "2026-11-22"
+  ],
+  "/summaries/steve-jobs/": [
+   "1a690b36f711eec9",
+   "2026-11-22"
+  ],
+  "/summaries/stolen-focus-why-you-cant-pay-attention/": [
+   "c840907d0d967020",
+   "2026-11-22"
+  ],
+  "/summaries/stop-checking-your-likes/": [
+   "87e0b385fb9e7594",
+   "2026-11-22"
+  ],
+  "/summaries/surely-youre-joking-mr-feynman/": [
+   "70e1de8545de8756",
+   "2026-11-22"
+  ],
+  "/summaries/surrounded-by-idiots/": [
+   "493ecd9a14dc5077",
+   "2026-11-22"
+  ],
+  "/summaries/talk-like-ted/": [
+   "570bb94dd5e24eb1",
+   "2026-11-22"
+  ],
+  "/summaries/talking-to-strangers/": [
+   "a6fb3bbfa87e6a99",
+   "2026-11-22"
+  ],
+  "/summaries/team-of-teams/": [
+   "a139e8e36b5b46af",
+   "2026-11-22"
+  ],
+  "/summaries/ten-arguments-to-delete-your-social-media-account-right-now/": [
+   "75aba230a559b79e",
+   "2026-11-22"
+  ],
+  "/summaries/the-10x-rule/": [
+   "be2a9354df89a264",
+   "2026-11-22"
+  ],
+  "/summaries/the-11-laws-of-likability/": [
+   "725d6eb52f08bae2",
+   "2026-11-22"
+  ],
+  "/summaries/the-15-invaluable-laws-of-growth/": [
+   "89a9ed7ae44691e6",
+   "2026-11-22"
+  ],
+  "/summaries/the-2-hour-job-search-using-technology-to-get-the-right-job-faster/": [
+   "fe4db5cdb10c8601",
+   "2026-11-22"
+  ],
+  "/summaries/the-4-hour-body/": [
+   "d78b33d14708b6fc",
+   "2026-11-22"
+  ],
+  "/summaries/the-4-hour-workweek/": [
+   "aaebf8556b74e304",
+   "2026-11-22"
+  ],
+  "/summaries/the-48-laws-of-power/": [
+   "6f79721380c12734",
+   "2026-11-22"
+  ],
+  "/summaries/the-5-am-club/": [
+   "e11b7b9a22003e16",
+   "2026-11-22"
+  ],
+  "/summaries/the-5-love-languages-of-children/": [
+   "e4e08a6cbf4c3bcf",
+   "2026-11-22"
+  ],
+  "/summaries/the-5-love-languages/": [
+   "feb4983ede22b1e2",
+   "2026-11-22"
+  ],
+  "/summaries/the-5-second-rule/": [
+   "701180e174249945",
+   "2026-11-22"
+  ],
+  "/summaries/the-7-habits-of-highly-effective-families/": [
+   "94bd2d40845ebb76",
+   "2026-11-22"
+  ],
+  "/summaries/the-7-habits-of-highly-effective-people/": [
+   "9689bf65c45d43cb",
+   "2026-11-22"
+  ],
+  "/summaries/the-80-20-ceo/": [
+   "3e5a9a6b07be961a",
+   "2026-11-22"
+  ],
+  "/summaries/the-80-20-principle/": [
+   "07946de171bb31ce",
+   "2026-11-22"
+  ],
+  "/summaries/the-anxious-generation/": [
+   "44787230435d3545",
+   "2026-11-22"
+  ],
+  "/summaries/the-art-of-loving/": [
+   "d803a7c3367349c3",
+   "2026-11-22"
+  ],
+  "/summaries/the-art-of-reading-minds/": [
+   "e8743a241f9270da",
+   "2026-11-22"
+  ],
+  "/summaries/the-art-of-seduction/": [
+   "a96c19bef9dcd950",
+   "2026-11-22"
+  ],
+  "/summaries/the-art-of-stillness/": [
+   "6f8a25bcf89a9350",
+   "2026-11-22"
+  ],
+  "/summaries/the-art-of-war/": [
+   "591e266ba8c0cd55",
+   "2026-11-22"
+  ],
+  "/summaries/the-automatic-millionaire-expanded-and-updated/": [
+   "e906d1189df12458",
+   "2026-11-22"
+  ],
+  "/summaries/the-bhagavad-gita/": [
+   "eb6e840103cf905e",
+   "2026-11-22"
+  ],
+  "/summaries/the-body-keeps-the-score/": [
+   "ed5d2e48cae8dd95",
+   "2026-11-22"
+  ],
+  "/summaries/the-book-you-wish-your-parents-had-read-and-your-children-will-be-glad-that-you-did/": [
+   "cdb80dcbc1db7e37",
+   "2026-11-22"
+  ],
+  "/summaries/the-charisma-myth/": [
+   "db40f90a59b31be7",
+   "2026-11-22"
+  ],
+  "/summaries/the-code-of-the-extraordinary-mind/": [
+   "23e278e88f47cb7a",
+   "2026-11-22"
+  ],
+  "/summaries/the-courage-to-be-disliked/": [
+   "1d40b04289eb9cdb",
+   "2026-11-22"
+  ],
+  "/summaries/the-danish-way-of-parenting/": [
+   "53ff2369f22ca44d",
+   "2026-11-22"
+  ],
+  "/summaries/the-design-of-everyday-things/": [
+   "104244b7b8bdb1e7",
+   "2026-11-22"
+  ],
+  "/summaries/the-diary-of-a-ceo/": [
+   "eb96a83ba6bd2272",
+   "2026-11-22"
+  ],
+  "/summaries/the-fire-next-time/": [
+   "d504fa3ca1f21d00",
+   "2026-11-22"
+  ],
+  "/summaries/the-four-agreements/": [
+   "30ccdc8b977fd9e6",
+   "2026-11-22"
+  ],
+  "/summaries/the-good-life-lessons-from-the-world-s-longest-scientific-study-of-happiness/": [
+   "dba1d9dde06df73a",
+   "2026-11-22"
+  ],
+  "/summaries/the-great-ceo-within/": [
+   "dc4526c72b9088ff",
+   "2026-11-22"
+  ],
+  "/summaries/the-immortal-life-of-henrietta-lacks/": [
+   "70e2c0e1eb3a24d6",
+   "2026-11-22"
+  ],
+  "/summaries/the-intelligent-investor/": [
+   "33ee18d5cfa4d120",
+   "2026-11-22"
+  ],
+  "/summaries/the-laws-of-human-nature/": [
+   "19491de99f4689d4",
+   "2026-11-22"
+  ],
+  "/summaries/the-lean-startup/": [
+   "c29ee26085715ca8",
+   "2026-11-22"
+  ],
+  "/summaries/the-let-them-theory-a-life-changing-tool-that-millions-of-people-can-t-stop-talking-about/": [
+   "7cbec35fb66bf97b",
+   "2026-11-22"
+  ],
+  "/summaries/the-magic-of-thinking-big/": [
+   "9dd40f8618eeb03c",
+   "2026-11-22"
+  ],
+  "/summaries/the-man-who-mistook-his-wife-for-a-hat/": [
+   "ecd2622eda7dd615",
+   "2026-11-22"
+  ],
+  "/summaries/the-millionaire-next-door/": [
+   "56368eeac37de8c3",
+   "2026-11-22"
+  ],
+  "/summaries/the-mind-gut-connection/": [
+   "ce9fafbae74a4e99",
+   "2026-11-22"
+  ],
+  "/summaries/the-miracle-morning/": [
+   "0d7d01b598c5110e",
+   "2026-11-22"
+  ],
+  "/summaries/the-monk-who-sold-his-ferrari/": [
+   "5b352ddede2c66d2",
+   "2026-11-22"
+  ],
+  "/summaries/the-mountain-is-you/": [
+   "6d41de29afac861b",
+   "2026-11-22"
+  ],
+  "/summaries/the-next-millionaire-next-door/": [
+   "a88515852db18965",
+   "2026-11-22"
+  ],
+  "/summaries/the-obstacle-is-the-way/": [
+   "e775b3b3cfe8f21e",
+   "2026-11-22"
+  ],
+  "/summaries/the-omnivores-dilemma/": [
+   "da2baf955700d878",
+   "2026-11-22"
+  ],
+  "/summaries/the-one-thing/": [
+   "0ebc89f08288825b",
+   "2026-11-22"
+  ],
+  "/summaries/the-personal-mba/": [
+   "62286de1bd479738",
+   "2026-11-22"
+  ],
+  "/summaries/the-pomodoro-technique/": [
+   "99ac54f13e32bf28",
+   "2026-11-22"
+  ],
+  "/summaries/the-power-of-habit/": [
+   "c21ae95211885dc0",
+   "2026-11-22"
+  ],
+  "/summaries/the-power-of-now/": [
+   "5a60abe7c79f3ff9",
+   "2026-11-22"
+  ],
+  "/summaries/the-power-of-positive-thinking/": [
+   "91990a441108a0b5",
+   "2026-11-22"
+  ],
+  "/summaries/the-power-of-your-subconscious-mind/": [
+   "d14ae347c3c14595",
+   "2026-11-22"
+  ],
+  "/summaries/the-prince/": [
+   "02ce31840710645b",
+   "2026-11-22"
+  ],
+  "/summaries/the-psychology-of-money/": [
+   "e295d378a255c1db",
+   "2026-11-22"
+  ],
+  "/summaries/the-science-of-getting-rich/": [
+   "c9d7efe354b7f2a7",
+   "2026-11-22"
+  ],
+  "/summaries/the-science-of-self-discipline/": [
+   "3bbe002110c357a9",
+   "2026-11-22"
+  ],
+  "/summaries/the-secret/": [
+   "37843170d07bf359",
+   "2026-11-22"
+  ],
+  "/summaries/the-selfish-gene/": [
+   "bc508ecd605e8095",
+   "2026-11-22"
+  ],
+  "/summaries/the-simple-path-to-wealth/": [
+   "83e765884e962a15",
+   "2026-11-22"
+  ],
+  "/summaries/the-subtle-art-of-not-giving-a-f-ck/": [
+   "f94c856aedf51150",
+   "2026-11-22"
+  ],
+  "/summaries/the-sum-of-us/": [
+   "dc952f0b69770007",
+   "2026-11-22"
+  ],
+  "/summaries/the-untethered-soul/": [
+   "b5f4a6f314c32598",
+   "2026-11-22"
+  ],
+  "/summaries/the-whole-brain-child/": [
+   "466fc920b73e65e2",
+   "2026-11-22"
+  ],
+  "/summaries/think-again/": [
+   "89ab5c739eb53b96",
+   "2026-11-22"
+  ],
+  "/summaries/think-and-grow-rich/": [
+   "0abe0b48868ca1d0",
+   "2026-11-22"
+  ],
+  "/summaries/think-like-a-monk/": [
+   "fce3c40f72840d3a",
+   "2026-11-22"
+  ],
+  "/summaries/thinking-fast-and-slow/": [
+   "5f21b714c8fc7df6",
+   "2026-11-22"
+  ],
+  "/summaries/tiny-habits/": [
+   "141d87dbc390e605",
+   "2026-11-22"
+  ],
+  "/summaries/tuesdays-with-morrie/": [
+   "c3bd4e297d166eb3",
+   "2026-11-22"
+  ],
+  "/summaries/turn-the-ship-around/": [
+   "fb49f3e132d3f5d2",
+   "2026-11-22"
+  ],
+  "/summaries/unf-k-yourself/": [
+   "b7b8f5889d6778d2",
+   "2026-11-22"
+  ],
+  "/summaries/unlimited-memory/": [
+   "582289fff59c10ab",
+   "2026-11-22"
+  ],
+  "/summaries/what-if-serious-scientific-answers-to-absurd-hypothetical-questions/": [
+   "864356380480eb03",
+   "2026-11-22"
+  ],
+  "/summaries/what-the-most-successful-people-do-before-breakfast/": [
+   "e9ed39958eca4d67",
+   "2026-11-22"
+  ],
+  "/summaries/when-breath-becomes-air/": [
+   "def4a1041c8d48b5",
+   "2026-11-22"
+  ],
+  "/summaries/who-moved-my-cheese-an-amazing-way-to-deal-with-change-in-your-work-and-in-your-life/": [
+   "a26b8a1e7576358a",
+   "2026-11-22"
+  ],
+  "/summaries/why-does-he-do-that/": [
+   "5ffda927b09a8d49",
+   "2026-11-22"
+  ],
+  "/summaries/why-has-nobody-told-me-this-before/": [
+   "8f94588cacc6714e",
+   "2026-11-22"
+  ],
+  "/summaries/why-nations-fail/": [
+   "39d27ca5b587ea25",
+   "2026-11-22"
+  ],
+  "/summaries/why-we-sleep/": [
+   "70d9cc2225cd3cba",
+   "2026-11-22"
+  ],
+  "/summaries/women-who-love-too-much/": [
+   "83f474f0b0a5b4f4",
+   "2026-11-22"
+  ],
+  "/summaries/women-who-run-with-the-wolves/": [
+   "da254650cadbc31f",
+   "2026-11-22"
+  ],
+  "/summaries/words-that-change-minds/": [
+   "215c2b6abe24724e",
+   "2026-11-22"
+  ],
+  "/summaries/you-are-a-badass-at-making-money/": [
+   "9732d4a8a489283b",
+   "2026-11-22"
+  ],
+  "/summaries/you-re-not-listening/": [
+   "17f4d994cebf0ebe",
+   "2026-11-22"
+  ],
+  "/summaries/zero-to-one/": [
+   "8ed34d058b63c171",
+   "2026-11-22"
+  ]
+ },
+ "pinged": {}
+}

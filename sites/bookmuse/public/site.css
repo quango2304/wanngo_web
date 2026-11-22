@@ -119,6 +119,10 @@ html:not(.js) .theme { display: none; }
   .nav .btn { padding: 0 14px; font-size: 14px; }
   .signin { padding: 0 4px; font-size: 13px; }
 }
+/* Phones: the nav keeps Summaries; Your library (the dashboard, for people who already have an account) waits for a wider screen. */
+@media (max-width: 440px) {
+  .nav .signin[href^="https://bookmuse-app"] { display: none; }
+}
 
 @media (max-width: 350px) {
   .brand { font-size: 15px; gap: 8px; }

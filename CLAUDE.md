@@ -15,9 +15,12 @@ repos (Bookmuse: `../bookmuse/`, read its `docs/`; this repo's move is in `docs/
 - **Images** go in the site's `public/assets/`. **Videos** go to the R2 bucket `wanngo-media`, served at
   `https://media.wanngo.com/<site>/<name>.{mp4,webm,jpg}`: `scripts/upload-media.sh <video> <site>/<name>` encodes and
   uploads them (needs ffmpeg and `npx wrangler login`). Videos never go in git; keep the originals elsewhere.
-  The Bookmuse home page plays no videos now; its centre phone is a lesson demo drawn in HTML (`landing.js`), and the cover wall is made by
-  `scripts/bookmuse-covers.sh` from the published summaries only (`../bookmuse/docs/web-dashboard.md`).
-- **Bookmuse pages share `site.css` and `site.js`** (fonts, light and dark, nav, footer, the theme switch); the home page adds `landing.css`, the others `styles.css`. Bump the `?v=` on those links in every page when one changes: they are cached for an hour.
+  The Bookmuse home page plays no videos now; its centre phone is a lesson demo drawn in HTML (`landing.js`).
+- **Bookmuse catalog pages** (`/summaries/`, `/categories/`, `/courses/`, `/collections/`, `/authors/`, the home page's cover wall and Browse block,
+  `sitemap.xml`, the lists in `llms.txt` and `llms-full.txt`) are generated from production's public API by `scripts/bookmuse-pages.py`; never edit
+  them by hand. `scripts/bookmuse-pages.sh` builds, deploys and pings IndexNow: run it after anything changes on production, then commit
+  `sites/bookmuse` by path (`../bookmuse/docs/web-dashboard.md`, "The public catalog pages").
+- **Bookmuse pages share `site.css` and `site.js`** (fonts, light and dark, nav, footer, the theme switch); the home page adds `landing.css` and `catalog.css`, the catalog pages `catalog.css`, the others `styles.css`. Bump the `?v=` on those links in every page when one changes: they are cached for an hour.
 - Bookmuse's share links (`/b/…`), the AI-agent sign-in page and the universal-link files are on `bookmuse-app.wanngo.com`
   (the `bookmuse_web` dashboard), not on the landing. The landing's Sign in buttons link straight to that dashboard.
 - Bookmuse's privacy policy and deletion page are linked from the apps, App Store Connect, Play Console, Google and Dropbox:

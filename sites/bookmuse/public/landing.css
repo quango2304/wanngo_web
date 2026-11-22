@@ -181,6 +181,12 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
 .row { display: flex; width: max-content; }
 .track { display: flex; gap: 22px; margin: 0; padding: 0 11px; list-style: none; }
 .track li { flex: none; }
+.track a { display: block; border-radius: var(--r-cover); }
+.track a:focus-visible { outline: 2px solid var(--coral); outline-offset: 3px; }
+/* Browse the library, under the wall: category chips, course and collection tiles, all summaries (written by scripts/bookmuse-pages.py). */
+.browse { margin-top: 36px; }
+.browse .bm-tiles { margin-top: 24px; }
+.browse .all { margin-top: 28px; }
 .track img { width: clamp(118px, 12vw, 158px); height: auto; aspect-ratio: 2 / 3; border-radius: var(--r-cover); box-shadow: 0 8px 18px -8px color-mix(in srgb, var(--on-coral) 45%, transparent); }
 
 /* Free today (the dark card, the one thing to act on) and your own lessons (a light card). */
