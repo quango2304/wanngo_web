@@ -33,137 +33,19 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
 .free { margin-top: 16px; font-size: 14px; color: var(--ink-2); }
 .free b { color: var(--ink); font-weight: 600; }
 
-/* The stage: three whole phones standing upright, bottoms in line, the live lesson in the middle and tallest. Never cropped. */
-.stage { --pw: clamp(250px, 22vw, 300px); position: relative; z-index: 1; display: grid; grid-template-columns: 1fr auto 1fr; align-items: end; max-width: 1180px; margin: clamp(40px, 5vw, 64px) auto 0; padding: 0 24px; }
-.side { position: relative; z-index: 1; grid-row: 1; }
-.side.l { grid-column: 1; justify-self: end; margin-right: calc(var(--pw) * 0.06); }
-.side.r { grid-column: 3; justify-self: start; margin-left: calc(var(--pw) * 0.06); }
-.side .phone { --w: calc(var(--pw) * 0.86); }
-.center { position: relative; z-index: 2; grid-row: 1; grid-column: 2; }
-.center .phone { --w: var(--pw); }
+/* The hero video: a silent loop on a rounded light card (its own background is the surface colour, so the edge never shows a
+   colour shift). Wide above 700 px, tall below; landing.js picks the cut for the width and the theme. */
+.film { position: relative; margin: clamp(40px, 5vw, 64px) 0 0; aspect-ratio: 16 / 9; border-radius: var(--r-card); overflow: hidden; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.film video { display: block; width: 100%; height: 100%; object-fit: cover; background: var(--surface); }
+.film-btn { position: absolute; right: 16px; bottom: 16px; display: grid; place-items: center; width: 44px; height: 44px; padding: 0; border: 0; border-radius: 50%; background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); cursor: pointer; opacity: 0.85; transition: opacity 0.2s; }
+.film-btn:hover, .film-btn:focus-visible { opacity: 1; }
+.film-btn:focus-visible { outline: 2px solid var(--coral); outline-offset: 2px; }
+.film-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+.film-btn .i-play { fill: currentColor; stroke: none; }
+.film-btn .i-play, .film.playing .film-btn .i-pause { display: block; }
+.film-btn .i-pause, .film.playing .film-btn .i-play { display: none; }
+@media (max-width: 699px) { .film { aspect-ratio: 4 / 5; } }
 .hero + .how { padding-top: clamp(56px, 7vw, 96px); }
-
-/* The phone (1em = 1% of the phone's width): a flat charcoal bezel, no rim, no shadow. */
-.phone { --w: 300px; position: relative; width: var(--w); font-size: calc(var(--w) / 100); padding: 2.9em; border-radius: 16.6em; background: var(--card); box-shadow: 0 0 0 1px var(--line); }
-.phone::before, .phone::after { content: ""; position: absolute; width: 0.7em; border-radius: 0.4em; background: var(--card); }
-.phone::before { left: -0.5em; top: 24%; height: 7.5em; box-shadow: 0 10.5em 0 var(--card), 0 -9em 0 0 var(--card); }
-.phone::after { right: -0.5em; top: 30%; height: 13em; }
-.bezel { display: block; }
-.screen { position: relative; display: block; overflow: hidden; aspect-ratio: 1206 / 2622; border-radius: 13.7em; background: var(--bg); transform: translateZ(0); }
-.screen img { width: 100%; height: 100%; object-fit: cover; }
-.island { position: absolute; z-index: 5; top: 1.42%; left: 50%; width: 32%; height: 4.65%; margin-left: -16%; border-radius: 99px; background: var(--on-coral); }
-
-/* The lesson demo: the app's lesson reader, drawn in HTML with the same tokens (cream page, surface cards, a dark key-text card). */
-.ls { position: absolute; inset: 0; isolation: isolate; display: flex; flex-direction: column; background: var(--bg); color: var(--ink); font-family: var(--font); text-align: left; letter-spacing: -0.01em; }
-.ls button { font: inherit; color: inherit; cursor: pointer; -webkit-tap-highlight-color: transparent; }
-.ls svg { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
-.ls-bar { display: flex; align-items: center; justify-content: space-between; height: 12.4em; padding: 0.4em 2.6em 0 4.2em; flex: none; }
-.ls-bar b { font-size: 4.1em; font-weight: 600; }
-.ls-bar svg { width: 18em; height: 3.4em; fill: currentColor; stroke: none; }
-.ls-top { display: flex; align-items: center; gap: 3em; padding: 0 5em; height: 9em; flex: none; }
-.ls-x, .ls-menu { display: grid; place-items: center; width: 8.4em; height: 8.4em; border-radius: 50%; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
-.ls-x svg { width: 3.6em; height: 3.6em; stroke-width: 2.2; }
-.ls-book { flex: 1; font-size: 3.3em; font-weight: 500; color: var(--ink-2); text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.ls-menu { display: flex; gap: 0.9em; align-items: center; justify-content: center; }
-.ls-menu i { width: 1.2em; height: 1.2em; border-radius: 50%; background: var(--ink); }
-/* Progress: done is ink, current is coral, to come is track. */
-.ls-seg { display: flex; gap: 1.3em; padding: 3.4em 5.4em 0; flex: none; }
-.ls-seg button { position: relative; flex: 1; height: 4.4em; padding: 0; border: 0; background: none; }
-.ls-seg button::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.2em; margin-top: -0.6em; border-radius: 1em; background: var(--track); }
-.ls-seg button::after { content: ""; position: absolute; left: 0; top: 50%; height: 1.2em; margin-top: -0.6em; width: 0; border-radius: 1em; background: var(--ink); }
-.ls-seg button.past::after { width: 100%; }
-.ls-seg button.now::after { width: 100%; background: var(--coral); transition: width var(--dur, 4s) linear; }
-.ls-seg button.now.start::after { width: 0; transition: none; }
-.ls-scenes { position: relative; flex: 1; }
-.sc { position: absolute; inset: 0; padding: 5em 5.4em 0; opacity: 0; visibility: hidden; transform: translateY(3em); transition: opacity 0.5s ease, transform 0.7s var(--ease), visibility 0s 0.6s; }
-.sc.on { opacity: 1; visibility: visible; transform: none; transition: opacity 0.6s ease 0.1s, transform 0.8s var(--ease) 0.1s, visibility 0s; }
-.sc h4 { position: relative; margin: 0 0 0.7em; font-size: 6.4em; font-weight: 600; line-height: 1.12; letter-spacing: -0.025em; }
-.sc h4[data-n] { min-height: 2.15em; }
-.sc h4[data-n]::before { content: attr(data-n); position: absolute; z-index: -1; right: 0; top: 0; font-size: 2.1em; font-weight: 200; line-height: 1; letter-spacing: -0.04em; color: var(--big-number); }
-.sc .tag { display: block; font-size: 3em; line-height: 1.3; font-weight: 600; color: var(--coral-text); }
-.sc .big { margin-top: 0.5em; font: 600 7.6em/1.08 var(--font); letter-spacing: -0.03em; }
-.sc .big em { font-style: normal; color: var(--coral-text); }
-.key { padding: 5em 5.4em 5.6em; border-radius: 5.6em; }
-.ls-list { list-style: none; margin: 4em 0 0; padding: 0; border-radius: 4em; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
-.ls-list li { display: flex; align-items: center; gap: 0.8em; padding: 0.8em 1.2em 0.8em 0.8em; font-size: 3.5em; font-weight: 500; }
-.ls-list li + li { border-top: 1px solid var(--line); }
-.ls-list li span { display: grid; place-items: center; flex: none; width: 1.8em; height: 1.8em; border-radius: 50%; background: var(--track); color: var(--ink); font-size: 0.8em; font-weight: 600; }
-.on .ls-list li { animation: ls-in 0.8s var(--ease) both; animation-delay: calc(0.5s + var(--n) * 0.14s); }
-
-.card { padding: 5em; border-radius: 4em; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
-.sc .q { margin-top: 0.7em; font-size: 4.3em; line-height: 1.38; font-weight: 500; }
-.sc .q b { font-weight: 600; }
-.opts { display: grid; grid-template-columns: 1fr 1fr; gap: 3em; margin-top: 5em; }
-/* An answer is a capsule with a hairline edge; picked is the inverse fill with a check; wrong keeps its edge, gets a cross and coral text. */
-.opts .opt, .qo { display: flex; align-items: center; justify-content: center; gap: 0.4em; min-height: 2.9em; padding: 0 0.8em; border: 0; border-radius: 99px; background: transparent; box-shadow: inset 0 0 0 1px var(--line); font-weight: 600; }
-.opts .opt { font-size: 5.4em; }
-.opt.pick-yes::before { content: ""; width: 0.85em; height: 0.85em; background: currentColor; -webkit-mask: url(/assets/icons/check.svg) center / contain no-repeat; mask: url(/assets/icons/check.svg) center / contain no-repeat; }
-.opt.pick-no::before { content: ""; width: 0.85em; height: 0.85em; background: currentColor; -webkit-mask: url(/assets/icons/close.svg) center / contain no-repeat; mask: url(/assets/icons/close.svg) center / contain no-repeat; }
-.opt.pick-yes, .qo.pick-yes { background: var(--ink); color: var(--bg); box-shadow: none; }
-.opt.pick-no, .qo.pick-no { color: var(--coral-text); animation: shake 0.5s; }
-.fb { height: 0; overflow: hidden; margin: 0; font-size: 3.5em; line-height: 1.35; color: var(--ink-2); opacity: 0; transition: opacity 0.4s; }
-.fb.show { height: auto; margin-top: 0.8em; opacity: 1; }
-.fb-yes.show { color: var(--ink); font-weight: 600; }
-
-/* The figure: ink and surface, one coral mark, people as discs. */
-.sys { display: block; width: 100%; margin-top: 1em; overflow: visible; font-family: var(--font); }
-.sys text { font-size: 12px; font-weight: 500; text-anchor: middle; fill: var(--ink); }
-.sys .lab { font-size: 13px; font-weight: 600; }
-.sys .cap { font-size: 12px; font-weight: 400; fill: var(--ink-2); }
-.sys .qcard rect { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
-.sys .qcard .b { font-weight: 600; }
-.sys .s1 circle, .sys .s1 .body { fill: var(--ink); stroke: var(--ink); stroke-width: 2; }
-.sys .bolt { fill: none; stroke: var(--ink); stroke-width: 1.5; }
-.sys .bubble rect { fill: var(--coral); }
-.sys .bubble text { fill: var(--on-coral); font-weight: 600; font-size: 13px; }
-.sys .ok rect { fill: var(--surface); stroke: var(--line); stroke-width: 1; }
-.sys .s2 .chair { fill: none; stroke: var(--ink); stroke-width: 1.5; }
-.sys .s2 circle { fill: var(--surface); stroke: var(--ink); stroke-width: 1.5; }
-.sys .s2 .body { fill: url(#sys-lines); stroke: var(--ink); stroke-width: 1.5; }
-.sys .pl { fill: none; stroke: var(--ink); stroke-width: 1.2; stroke-linecap: round; }
-.sys .qcard, .sys .bubble, .sys .ok, .sys .bolt { transform-box: fill-box; transform-origin: center; }
-.on .sys .qcard { animation: q-fly 1.2s var(--ease) 0.4s both; }
-.on .sys .bolt { animation: bolt 0.6s ease 1.4s 2 both; }
-.on .sys .bubble { animation: pop 0.6s var(--ease) 1.6s both; }
-.on .sys .ok { animation: pop 0.6s var(--ease) 2.5s both; }
-.on .sys .s2 circle { animation: nod 0.5s ease 2.7s 2; transform-box: fill-box; transform-origin: bottom center; }
-
-.qopts { display: grid; gap: 3em; margin-top: 5em; }
-.qopts .qo { justify-content: flex-start; gap: 0.75em; min-height: 3.5em; padding: 0 1.2em; font-size: 4em; text-align: left; }
-.qo i { position: relative; flex: none; width: 1.1em; height: 1.1em; border-radius: 50%; box-shadow: inset 0 0 0 1px var(--line); }
-.qo.pick-yes i { box-shadow: none; background: var(--bg); }
-.qo.pick-yes i::after { content: ""; position: absolute; inset: 18%; background: var(--ink); -webkit-mask: url(/assets/icons/check.svg) center / contain no-repeat; mask: url(/assets/icons/check.svg) center / contain no-repeat; }
-.qo.pick-no i { box-shadow: none; background: currentColor; -webkit-mask: url(/assets/icons/close.svg) center / contain no-repeat; mask: url(/assets/icons/close.svg) center / contain no-repeat; }
-.qfb { margin-top: 1.1em; font-size: 3.6em; line-height: 1.35; font-weight: 600; color: var(--ink); opacity: 0; transform: translateY(0.6em); transition: opacity 0.4s, transform 0.5s var(--ease); }
-.qfb.show { opacity: 1; transform: none; }
-
-/* Key takeaways: the key text on the dark card. */
-.keep { list-style: none; margin: 4em 0 0; padding: 1em 5em; border-radius: 5.6em; }
-.keep li { position: relative; font-size: 3.9em; line-height: 1.32; padding: 0.9em 0 0.9em 1.9em; }
-.keep li + li { border-top: 1px solid var(--line); }
-.keep li::before { content: ""; position: absolute; left: 0; top: 1em; width: 1.3em; height: 1.3em; border-radius: 50%; background: var(--coral); }
-.keep li::after { content: ""; position: absolute; left: 0.25em; top: 1.25em; width: 0.8em; height: 0.8em; background: var(--on-coral); -webkit-mask: url(/assets/icons/check.svg) center / contain no-repeat; mask: url(/assets/icons/check.svg) center / contain no-repeat; }
-.on .keep li, .on .done { animation: ls-in 0.8s var(--ease) both; animation-delay: calc(0.4s + var(--n) * 0.45s); }
-.done { display: flex; align-items: center; justify-content: space-between; margin-top: 2em; padding: 0 0.4em; font-size: 4em; }
-.done svg { width: 1.4em; height: 1.4em; color: var(--coral); stroke-width: 1.75; }
-
-.finger { position: absolute; z-index: 3; left: 0; top: 0; width: 11em; height: 11em; border-radius: 50%; background: color-mix(in srgb, var(--ink) 25%, transparent); border: 0.6em solid var(--bg); opacity: 0; pointer-events: none; transition: transform 0.9s var(--ease), opacity 0.3s; }
-.finger.show { opacity: 1; }
-.finger.tap { animation: tap 0.35s ease; }
-
-/* The footer pill: flat, a hairline edge, as the app's lesson footer. */
-.ls-foot { display: flex; align-items: center; justify-content: space-between; flex: none; height: 11em; margin: 1em 5em 4.4em; padding: 0 1.4em 0 4.4em; border-radius: 99px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
-.ls-where { font-size: 3.4em; font-weight: 600; color: var(--ink-2); }
-.ls-next { display: grid; place-items: center; width: 8em; height: 8em; border-radius: 50%; background: var(--ink); color: var(--bg); }
-.ls-next svg { width: 4.2em; height: 4.2em; stroke-width: 2; }
-
-@keyframes ls-in { from { opacity: 0; transform: translateY(1.4em); } }
-@keyframes q-fly { from { transform: translate(-30px, 0); opacity: 0; } 50% { opacity: 1; transform: none; } to { transform: none; } }
-@keyframes bolt { 0%, 100% { opacity: 1; } 50% { opacity: 0.1; } }
-@keyframes pop { from { opacity: 0; transform: scale(0.6) translateY(8px); } to { opacity: 1; transform: none; } }
-@keyframes nod { 50% { transform: rotate(12deg); } }
-@keyframes shake { 20%, 60% { transform: translateX(-0.12em); } 40%, 80% { transform: translateX(0.12em); } }
-@keyframes tap { 50% { transform: var(--at) scale(0.8); } }
 
 /* How a summary works: four light cards with a large pale number. */
 .how { padding-bottom: clamp(72px, 9vw, 120px); }
@@ -244,9 +126,7 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
   .hero h1 .ln + .ln > span { animation-delay: 0.1s; }
   .hero .lede { animation: up 1s var(--ease) 0.25s both; }
   .hero .stores, .hero .free { animation: up 1s var(--ease) 0.35s both; }
-  .center .phone { animation: phone-up 1.5s var(--ease) 0.3s both; }
-  .side.l .phone { animation: fan-l 1.5s var(--ease) 0.6s both; }
-  .side.r .phone { animation: fan-r 1.5s var(--ease) 0.68s both; }
+  .film { animation: up 1.2s var(--ease) 0.45s both; }
   .row.r1 { animation: slide 90s linear infinite; }
   .row.r2 { animation: slide 110s linear infinite reverse; }
   .rows:hover .row { animation-play-state: paused; }
@@ -257,9 +137,6 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
 .paused .row { animation-play-state: paused; }
 @keyframes up { from { opacity: 0; transform: translateY(18px); } }
 @keyframes rise { from { transform: translateY(105%); } }
-@keyframes phone-up { from { opacity: 0; transform: translateY(120px) scale(0.96); } to { opacity: 1; transform: none; } }
-@keyframes fan-l { from { opacity: 0; transform: translate(40%, 60px); } to { opacity: 1; transform: none; } }
-@keyframes fan-r { from { opacity: 0; transform: translate(-40%, 60px); } to { opacity: 1; transform: none; } }
 @keyframes slide { to { transform: translateX(-50%); } }
 @keyframes draw { from { stroke-dashoffset: 40; } to { stroke-dashoffset: 0; } }
 
@@ -272,9 +149,6 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
   .hero { --d: clamp(170px, 46vw, 340px); padding-top: calc(var(--d) * 0.86 + 12px); }
   .hero .deco .ring { top: calc(var(--d) * 0.36); }
   .hero-copy > *, .hero .lede { max-width: 640px; }
-  .stage { --pw: min(300px, 66vw); grid-template-columns: 1fr; justify-items: center; }
-  .side { display: none; }
-  .center { grid-column: 1; }
   .duo-band { grid-template-columns: 1fr; }
   .qa { grid-template-columns: 1fr; }
   .cta { padding-top: calc(var(--d) * 0.86 + 24px); }
@@ -286,7 +160,6 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
   .stores { flex-direction: column; align-items: flex-start; gap: 8px; }
   .stores .store { align-self: stretch; justify-content: center; }
   .steps, .tiles { grid-template-columns: 1fr; }
-  .stage { padding: 0 16px; }
   .cta { margin: 0 12px 24px; }
   .today { gap: 14px; }
 }

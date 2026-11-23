@@ -15,7 +15,7 @@ repos (Bookmuse: `../bookmuse/`, read its `docs/`; this repo's move is in `docs/
 - **Images** go in the site's `public/assets/`. **Videos** go to the R2 bucket `wanngo-media`, served at
   `https://media.wanngo.com/<site>/<name>.{mp4,webm,jpg}`: `scripts/upload-media.sh <video> <site>/<name>` encodes and
   uploads them (needs ffmpeg and `npx wrangler login`). Videos never go in git; keep the originals elsewhere.
-  The Bookmuse home page plays no videos now; its centre phone is a lesson demo drawn in HTML (`landing.js`).
+  The Bookmuse home page plays one: the hero video, drawn and rendered in the parent repo (`../bookmuse/design/landing-video/`, `make.sh` uploads it).
 - **Bookmuse catalog pages** (`/summaries/`, `/categories/`, `/courses/`, `/collections/`, `/authors/`, the home page's cover wall and Browse block,
   `sitemap.xml`, the lists in `llms.txt` and `llms-full.txt`) are generated from production's public API by `scripts/bookmuse-pages.py`; never edit
   them by hand. `scripts/bookmuse-pages.sh` builds, deploys and pings IndexNow: run it after anything changes on production, then commit
