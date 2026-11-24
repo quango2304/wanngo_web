@@ -78,6 +78,15 @@
       href: 'https://systemdesign.wanngo.com/',
       cta: 'Start learning',
       say: 'one server… then millions'
+    },
+    {
+      name: 'Databases',
+      kind: 'Course',
+      desc: 'My database notes turned into a course: modeling, SQL, pages on disk, indexes, transactions, picking a database and scaling it, each one an animated diagram you step through.',
+      dest: 'database.wanngo.com',
+      href: 'https://database.wanngo.com/',
+      cta: 'Start learning',
+      say: 'every app is a thin layer over one'
     }
   ];
 
@@ -283,7 +292,7 @@
     { id: 'fig', label: 'fig tree', group: 'fig', x: 4, y: 85, w: 62, h: 110, say: 'taller than my last app' },
     { id: 'snake', label: 'snake plant', group: 'snake', x: 40, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
     { id: 'monitor', label: 'monitor', group: 'desk', x: 86, y: 96, w: 80, h: 70, act: () => peekScreen() },
-    { id: 'tower', label: 'PC', group: 'desk', x: 168, y: 107, w: 28, h: 58, say: 'louder than the cat' },
+    { id: 'tower', label: 'Databases', group: 'desk', x: 168, y: 107, w: 28, h: 58, act: () => openCard(8) },
     { id: 'mug', label: 'mug', group: 'coffee', x: 207, y: 177, w: 14, h: 11, act: () => sayDev('coffee number ' + (3 + Math.floor(Math.random() * 3))) },
     { id: 'coffee', label: 'coffee machine', group: 'coffee', x: 200, y: 152, w: 27, h: 42, act: () => invite(getCoffee, 'the real senior engineer') },
     { id: 'bed', label: 'bed', group: 'bed', x: 256, y: 146, w: 151, h: 86, act: () => invite(nap, 'not yet. one more commit.') },
@@ -528,7 +537,7 @@
   function sound(id) {
     if (!audio || !wanted || audio.state !== 'running') return;
     if (['cat', 'ac', 'tv', 'lamp', 'lantern', 'sconce', 'coffee'].includes(id)) return;
-    if (id.startsWith('item') || id === 'globe' || id === 'cork') {
+    if (id.startsWith('item') || id === 'globe' || id === 'cork' || id === 'tower') {
       tone(660, 660, 0, 0.07, 'square', 0.025);
       tone(990, 990, 0.07, 0.11, 'square', 0.025);
     } else if (id === 'dev') {
