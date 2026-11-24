@@ -1,0 +1,14 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // The interactive system design course (systemdesign.wanngo.com): a built Vite app, static files only.
+  // Routing is by #hash, so only / is a page; a missing file is a plain 404 (never index.html, which would hide a missing chunk).
+  "name": "wanngo-systemdesign",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "none"
+  },
+  "routes": [{ "pattern": "systemdesign.wanngo.com", "custom_domain": true }],
+  "workers_dev": false
+}

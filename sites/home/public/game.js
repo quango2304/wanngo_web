@@ -69,6 +69,15 @@
       href: 'https://geo.wanngo.com/',
       cta: 'Spin it',
       say: 'where in the world…'
+    },
+    {
+      name: 'System design',
+      kind: 'Course',
+      desc: 'Dilum Sanjaya’s interactive course, pinned to my board: load balancing, caching, sharding, queues and whole systems, each one an animated diagram you step through.',
+      dest: 'systemdesign.wanngo.com',
+      href: 'https://systemdesign.wanngo.com/',
+      cta: 'Start learning',
+      say: 'one server… then millions'
     }
   ];
 
@@ -269,7 +278,7 @@
     { id: 'art', label: 'print of Hạ Long Bay', group: 'art', x: 158, y: 22, w: 42, h: 55, say: 'Hạ Long Bay. I’ll go back one day' },
     { id: 'hang', label: 'hanging pothos', group: 'hang', x: 244, y: 4, w: 25, h: 72, say: 'a cutting from the one on the shelf' },
     { id: 'sconce', label: 'wall lamp', group: 'sconce', x: 258, y: 112, w: 19, h: 26, act: () => toggleLamp('sconce') },
-    { id: 'cork', label: 'cork board', group: 'cork', x: 90, y: 66, w: 58, h: 44, say: 'todo: fewer todos' },
+    { id: 'cork', label: 'System design', group: 'cork', x: 90, y: 66, w: 58, h: 44, act: () => openCard(7) },
     { id: 'succs', label: 'little succulents', group: 'succs', x: 12, y: 44, w: 67, h: 36, say: 'the only ones I never forget' },
     { id: 'fig', label: 'fig tree', group: 'fig', x: 4, y: 85, w: 62, h: 110, say: 'taller than my last app' },
     { id: 'snake', label: 'snake plant', group: 'snake', x: 40, y: 165, w: 36, h: 62, say: 'impossible to kill. tested.' },
@@ -519,7 +528,7 @@
   function sound(id) {
     if (!audio || !wanted || audio.state !== 'running') return;
     if (['cat', 'ac', 'tv', 'lamp', 'lantern', 'sconce', 'coffee'].includes(id)) return;
-    if (id.startsWith('item') || id === 'globe') {
+    if (id.startsWith('item') || id === 'globe' || id === 'cork') {
       tone(660, 660, 0, 0.07, 'square', 0.025);
       tone(990, 990, 0.07, 0.11, 'square', 0.025);
     } else if (id === 'dev') {
