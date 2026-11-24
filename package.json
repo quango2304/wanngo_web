@@ -11,7 +11,9 @@
     "dev:remoteconfig": "wrangler dev -c sites/remoteconfig/wrangler.jsonc --port 8792",
     "deploy:remoteconfig": "wrangler deploy -c sites/remoteconfig/wrangler.jsonc",
     "dev:systemdesign": "wrangler dev -c sites/systemdesign/wrangler.jsonc --port 8793",
-    "deploy:systemdesign": "wrangler deploy -c sites/systemdesign/wrangler.jsonc"
+    "deploy:systemdesign": "wrangler deploy -c sites/systemdesign/wrangler.jsonc",
+    "dev:database": "wrangler dev -c sites/database/wrangler.jsonc --port 8794",
+    "deploy:database": "wrangler deploy -c sites/database/wrangler.jsonc"
   },
   "devDependencies": {
     "wrangler": "4.148.0"
