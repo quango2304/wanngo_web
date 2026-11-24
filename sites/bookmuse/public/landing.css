@@ -54,6 +54,8 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
 .steps li::before { content: counter(s, decimal-leading-zero); display: block; margin-bottom: 14px; font-size: clamp(72px, 7vw, 96px); font-weight: 200; line-height: 1; letter-spacing: -0.04em; color: var(--big-number); }
 .steps .ic { position: absolute; top: 22px; right: 22px; display: block; width: 28px; height: 28px; color: var(--ink); }
 .steps svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.steps.three { grid-template-columns: repeat(3, 1fr); }
+.android { padding-bottom: clamp(72px, 9vw, 120px); }
 .steps h3 { font-size: 20px; font-weight: 600; letter-spacing: -0.015em; }
 .steps p { margin-top: 8px; font-size: 15px; line-height: 1.5; color: var(--ink-2); }
 
@@ -143,6 +145,7 @@ a.store:hover { color: var(--bg); transform: scale(1.03); }
 /* Tablets and phones */
 @media (max-width: 1000px) {
   .steps, .tiles { grid-template-columns: 1fr 1fr; }
+  .steps.three { grid-template-columns: 1fr; }
 }
 @media (max-width: 860px) {
   /* The composition sits above the copy. */

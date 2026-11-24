@@ -1,6 +1,6 @@
 # Bookmuse
 
-> Bookmuse is a book-summaries app for iPhone and iPad: big ideas from great books, made visual. Each summary is a short course of interactive lessons (diagrams that move, guess-first questions, a quiz and the key takeaways) that teaches a book's core ideas in a few short sittings.
+> Bookmuse is a book-summaries app for iPhone, iPad and Android: big ideas from great books, made visual. Each summary is a short course of interactive lessons (diagrams that move, guess-first questions, a quiz and the key takeaways) that teaches a book's core ideas in a few short sittings.
 
 Bookmuse is free to download. One summary a day is free to read in full, the same one for everyone (it changes at 00:00 UTC); every other summary opens as a preview (the intro and the first three lessons). Bookmuse Pro, a monthly or yearly subscription in the App Store (the yearly plan starts with a 7-day free trial), opens every summary and adds 10 GB of cloud storage and more Bookmuse AI. Reading summaries needs a free account. The app needs iOS or iPadOS 26 and also runs on Apple-silicon Macs as the iPad app. Summaries are in English. It was made by Quan Ngo Van (wanngo).
 
