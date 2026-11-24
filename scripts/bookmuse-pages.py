@@ -297,7 +297,7 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
     wall = f"""<section class="bm-wall" id="locked" aria-labelledby="locked-h">
   <p class="tag">{more}</p>
   <h2 id="locked-h">Keep going with {e(short_title(title))}</h2>
-  <p>The rest of this summary is in Bookmuse for iPhone and iPad: one full summary is free every day, and Pro opens them all.</p>
+  <p>The rest of this summary is in Bookmuse for iPhone, iPad and <a href="/#android">Android</a>: one full summary is free every day, and Pro opens them all.</p>
   <ol>{rows}</ol>
   <div class="btns"><a class="p" href="{APP_STORE}">Get the app</a><a class="s" href="{read}">Read in your browser →</a></div>
 </section>"""

@@ -49,6 +49,37 @@ Lessons:
 7. Losses loom larger: Prospect theory, ownership and framing
 8. Two selves: The self that lives and the self that remembers
 
+### Atomic Habits — James Clear
+Page: https://bookmuse.wanngo.com/summaries/atomic-habits/
+Core idea: Small habits, repeated every day, build the person you want to become. Make good habits obvious, attractive, easy and satisfying, and flip those four laws to break bad ones.
+About the book: Atomic Habits (2018) is James Clear's practical guide to building good habits and breaking bad ones. Clear, a writer who rebuilt his own life with small habits after a serious injury in high school, draws on psychology and everyday stories. He argues that results come from systems, not goals: tiny changes, repeated every day, add up to big ones. The book gives four simple laws that make any habit easier to start and harder to drop.
+Categories: Self-Growth, Productivity
+Length: 7 lessons, 17 min
+Lessons:
+1. Tiny gains add up: Get 1% better each day, and trust your system
+2. Habits shape who you are: Every action is a vote for who you become
+3. The habit loop: Four steps, four laws, and how to flip them
+4. The first law: make it obvious: Give a habit a clear cue. To break one: make it invisible
+5. The second law: make it attractive: Pair it with something you want. To break one: make it unattractive
+6. The third law: make it easy: Start in two minutes. To break a habit: make it difficult
+7. The fourth law: make it satisfying: Reward it right away. To break a habit: make it unsatisfying
+
+### Being Mortal — Atul Gawande
+Page: https://bookmuse.wanngo.com/summaries/being-mortal/
+Core idea: When a body can no longer be fixed, safety and a longer life are not enough: people want to stay the authors of their own story, so doctors, care homes and families must ask what matters most and shape care around it.
+About the book: Being Mortal (2014) is surgeon Atul Gawande's book about aging, serious illness and dying. He was never taught about mortality in medical school, and he uses patients, his wife's grandmother and his own father to show how medicine, nursing homes and families treat the last chapters of life. He argues that modern medicine is good at fixing and prolonging life but poor at helping people live well when they cannot be fixed. It is for anyone who will face aging or illness, their own or a parent's.
+Categories: Health, Spirituality
+Length: 8 lessons, 20 min
+Lessons:
+1. When independence ends: We prize living alone, but that ends, and few plan for it.
+2. Managing decline: Old age is wearing down, and good care protects what matters.
+3. Homes built for safety: Nursing homes began as a fix for hospitals, not a life for people.
+4. A home, not a ward: Help works best in your own home, on your terms.
+5. A reason to live: Something to care for, and the right to write your own story.
+6. Hope is not a plan: Why we chase more treatment, and what hospice and talking change.
+7. The hard conversation: The questions that turn a doctor into a guide.
+8. Two kinds of courage: Face the truth, then act on it, and shape the ending.
+
 ### The Mountain Is You — Brianna Wiest
 Page: https://bookmuse.wanngo.com/summaries/the-mountain-is-you/
 Core idea: Self-sabotage is not a flaw. It is a way of coping that meets a need you cannot see, so you get free by finding the need, feeling what you avoid, and changing one small step at a time.
@@ -109,83 +140,20 @@ Lessons:
 6. Selflessly serve others: The yellow roses: your life is only as good as what you give.
 7. Embrace the present: The path of diamonds: do not put off living.
 
-### Atomic Habits — James Clear
-Page: https://bookmuse.wanngo.com/summaries/atomic-habits/
-Core idea: Small habits, repeated every day, build the person you want to become. Make good habits obvious, attractive, easy and satisfying, and flip those four laws to break bad ones.
-About the book: Atomic Habits (2018) is James Clear's practical guide to building good habits and breaking bad ones. Clear, a writer who rebuilt his own life with small habits after a serious injury in high school, draws on psychology and everyday stories. He argues that results come from systems, not goals: tiny changes, repeated every day, add up to big ones. The book gives four simple laws that make any habit easier to start and harder to drop.
-Categories: Self-Growth, Productivity
-Length: 7 lessons, 17 min
+### The ONE Thing — Gary Keller, Jay Papasan
+Page: https://bookmuse.wanngo.com/summaries/the-one-thing/
+Core idea: Big results come from going small: find the ONE Thing that makes everything else easier or unnecessary, and do it first.
+About the book: The ONE Thing is a 2013 book by Gary Keller, the cofounder of Keller Williams Realty, with writer Jay Papasan. It argues that big results come from going small: doing one right thing at a time, like falling dominoes. The book names six lies about success, then gives one question for finding what matters most and a plan for protecting the time to act on it. It is for anyone who feels busy and behind.
+Categories: Productivity
+Length: 7 lessons, 16 min
 Lessons:
-1. Tiny gains add up: Get 1% better each day, and trust your system
-2. Habits shape who you are: Every action is a vote for who you become
-3. The habit loop: Four steps, four laws, and how to flip them
-4. The first law: make it obvious: Give a habit a clear cue. To break one: make it invisible
-5. The second law: make it attractive: Pair it with something you want. To break one: make it unattractive
-6. The third law: make it easy: Start in two minutes. To break a habit: make it difficult
-7. The fourth law: make it satisfying: Reward it right away. To break a habit: make it unsatisfying
-
-### Ikigai — Héctor García, Francesc Miralles
-Page: https://bookmuse.wanngo.com/summaries/ikigai/
-Core idea: A long, happy life starts with a reason to get up each morning, kept alive by staying busy, close to friends, light on food, gentle in movement and calm in pace.
-About the book: Ikigai is a short book by Héctor García and Francesc Miralles, first published in Spanish in 2016. The authors visited Ogimi, a village on the island of Okinawa where people live longer than almost anywhere, and interviewed its oldest residents. They argue that a reason to get up each morning, kept alive by friends, light food, gentle movement and a calm pace, is the Japanese secret to a long and happy life. It is for anyone who wants more meaning and energy in everyday life.
-Categories: Happiness
-Length: 7 lessons, 18 min
-Lessons:
-1. A reason to get up: What ikigai is, and why Japan has no word for retiring
-2. Meaning is found, not made: Viktor Frankl on discovering your purpose
-3. Lose yourself in the doing: Flow: a stretch, a clear aim and one task at a time
-4. Stay close to your people: The moai, a group that looks after its members
-5. Eat light, move often: Stop at 80 percent full, and keep moving all day
-6. Busy, but never in a rush: Stress wears the body down, a small challenge helps
-7. Fall seven times, rise eight: Setbacks, and how to grow stronger from them
-
-### The Body Keeps the Score — Bessel van der Kolk
-Page: https://bookmuse.wanngo.com/summaries/the-body-keeps-the-score/
-Core idea: Trauma is not only what happened. It is the mark left on the brain and body, and healing means helping them feel safe in the present.
-About the book: The Body Keeps the Score is a 2014 book by the psychiatrist Bessel van der Kolk about how trauma changes the brain and body. He draws on forty years of work with veterans and with adults and children hurt in childhood. He argues that trauma is not only a past event but a mark that keeps the body's alarm switched on, so healing needs the body, other people and more than talk.
-Categories: Happiness
-Length: 8 lessons, 21 min
-Lessons:
-1. Trauma is a mark, not a memory: Why the war did not end for a veteran named Tom
-2. The alarm that will not switch off: What brain scans show during a flashback
-3. Losing touch with your body: Numbness, and why feeling your body comes first
-4. We calm each other down: Safety is shared, from a baby's first days onward
-5. Childhood wounds are common and hidden: A large study, and why labels miss the cause
-6. Trauma is remembered in pieces: Why a clear story may not be enough
-7. Healing starts in the body: Six ways to calm the alarm, and a yoga study
-8. Many roads back: Three roads to healing, and how to choose help
-
-### The Courage to Be Disliked — Ichiro Kishimi, Fumitake Koga
-Page: https://bookmuse.wanngo.com/summaries/the-courage-to-be-disliked/
-Core idea: People are not stuck because of their past. They are stuck because change feels scary, and the way out is the courage to live your own life, even if some people dislike you.
-About the book: The Courage to Be Disliked is a book by the philosopher Ichiro Kishimi and the writer Fumitake Koga, first published in Japan in 2013. It is a conversation over five nights between a philosopher and a doubtful young man, and it retells the ideas of the psychiatrist Alfred Adler. It argues that people can change at any moment, that the past does not decide who you are, and that happiness comes from feeling of use to others while living your own life, even if some people dislike you.
-Categories: Happiness, Self-Growth
-Length: 8 lessons, 18 min
-Lessons:
-1. Your past does not decide: You move toward goals, and you give old events their meaning
-2. You choose to stay the same: Change feels scary, so people keep the old self
-3. Feeling less is an opinion: Comparing makes you feel small, and you can change that view
-4. Separate your tasks: Do your part and leave other people's parts to them
-5. Freedom costs being disliked: You cannot be free and liked by everyone
-6. Equal, never above or below: Skip praise and scolding, and say thank you
-7. Happiness is feeling useful: Three things that build a sense of being of use
-8. Live each moment like a dance: Give your full effort to now, not to a far summit
-
-### The Power of Habit — Charles Duhigg
-Page: https://bookmuse.wanngo.com/summaries/the-power-of-habit/
-Core idea: Habits are loops that run without thought, and once you know how a loop works, you can change it.
-About the book: The Power of Habit (2012) is journalist Charles Duhigg's look at the science of habits. It explains how a habit works in the brain, why some stick, and how to change them, in people, companies and whole societies. It argues that habits can be changed once we understand their parts. It is for anyone who wants to build a routine or drop one.
-Categories: Productivity, Self-Growth
-Length: 8 lessons, 20 min
-Lessons:
-1. Every habit is a loop: Cue, routine and reward
-2. A craving drives the loop: Why a cue and a reward are not enough
-3. Keep the cue, change the routine: The Golden Rule of habit change, in four steps
-4. Belief grows in a group: What holds a new routine under stress
-5. One habit can change the rest: Keystone habits and small wins
-6. Willpower becomes a habit: Why willpower tires, and a plan for hard moments
-7. How a movement is built: Friends, community and new habits
-8. You can choose your habits: Why knowing a habit makes it yours
+1. One domino at a time: Why one right action can start a chain of results
+2. Six lies about success: The beliefs that pull you off course, and the truth for each
+3. Find the vital few: Cut a long list down until one thing is left
+4. The Focusing Question: One question that shows your first domino
+5. From purpose to right now: Turn a big goal into the next thing to do
+6. Time block your ONE Thing: Give it the best hours of your day, and guard them
+7. Guard it from four thieves: What steals your focus, and how to stop it
 
 ### Boundaries — Dr. Henry Cloud, Dr. John Townsend
 Page: https://bookmuse.wanngo.com/summaries/boundaries/
@@ -201,24 +169,6 @@ Lessons:
 5. When to say yes: A yes you can’t mean is not love, and boundaries are not selfish
 6. How to say no and hold it: Say it kindly, feel for them, and expect pushback
 7. Growing boundaries, step by step: Eleven signs that show how far you have come
-
-### Cosmos — Carl Sagan
-Page: https://bookmuse.wanngo.com/summaries/cosmos/
-Core idea: We live on a small world in a vast and ancient Cosmos, we come from it, and science is how we found out.
-About the book: Cosmos is a 1980 book by the astronomer Carl Sagan, written beside his thirteen-part television series. It tells how people learned the size, the age and the makeup of the universe, from a stick and a shadow in ancient Alexandria to spacecraft that left Earth. It argues that we are a small part of a vast Cosmos, that science is how we found this out, and that our survival depends on keeping that wider view.
-Categories: Society & Tech
-Length: 10 lessons, 25 min
-Lessons:
-1. A small place in a vast Cosmos: Earth is one rare spot in a mostly empty universe.
-2. A world that can be understood: A stick, a shadow and a good question measured the Earth.
-3. Facts beat a favorite idea: Kepler gave up the circle because of eight small minutes.
-4. Venus is a warning: A twin of Earth became a furnace, so care for ours.
-5. How selection builds life: A crab with a samurai face shows how life is shaped.
-6. We are made of starstuff: The atoms in you were made inside stars.
-7. To look far is to look back: Distant light shows the past, and the universe's start.
-8. Memory beyond the body: Genes, brains and libraries, and what a lost library costs.
-9. Are we alone?: Seven guesses, and one that decides the answer.
-10. Who speaks for Earth?: One species on one fragile world.
 
 ### Crucial Conversations — Joseph Grenny, Kerry Patterson, Ron McMillan, Al Switzler, Emily Gregory
 Page: https://bookmuse.wanngo.com/summaries/crucial-conversations-tools-for-talking-when-stakes-are-high/
@@ -284,36 +234,6 @@ Lessons:
 7. Hope gets you up again: Fall seven, rise eight
 8. Other people grow your grit: Parents, teachers and teams
 
-### How to Read a Book — Mortimer J. Adler
-Page: https://bookmuse.wanngo.com/summaries/how-to-read-a-book/
-Core idea: A hard book can lift your understanding, but only if you work on it: first to see its shape, then to grasp what it says, and last to judge it fairly.
-About the book: How to Read a Book is a guide to reading for understanding, first published in 1940 by the American philosopher Mortimer J. Adler. It says that a book above your level can lift you only if you read it actively, in three ways: for its structure, for its meaning and for a fair judgment. Adler gives rules for practicing on the great books, and he ends by arguing that readers who can do this become free minds. It is for anyone who can read but wants to read better.
-Categories: Productivity, Self-Growth
-Length: 7 lessons, 20 min
-Lessons:
-1. Read to understand more: Facts alone leave you where you stood
-2. Three readings, one habit: The whole list of rules, and how practice joins them
-3. See the skeleton: What kind of book, what it says, how it fits
-4. Come to terms: Use the key words in the author's sense
-5. Say it in your own words: Claims, arguments and two tests of understanding
-6. Talk back, fairly: Judge only after you understand, and give reasons
-7. Start with the great books: Learn on books that teach, and read them together
-
-### Man’s Search for Meaning — Viktor E. Frankl
-Page: https://bookmuse.wanngo.com/summaries/man-s-search-for-meaning/
-Core idea: People are driven most by a search for meaning, not by pleasure or power, and a person with a reason to live can bear almost any hardship, because one freedom can never be taken away: the freedom to choose how to respond.
-About the book: Man’s Search for Meaning (first published in German in 1946) is Viktor Frankl’s account of three years in Nazi concentration camps and of the method he built from them. Frankl, a psychiatrist in Vienna, argues that people are driven most by a search for meaning, and that a person with a reason to live can bear almost any hardship. The second part explains his method, logotherapy, and why happiness cannot be chased. It is for anyone who wants to understand what keeps a person going in a hard time.
-Categories: Happiness, Self-Growth
-Length: 7 lessons, 16 min
-Lessons:
-1. A why to live for: How a reason to live holds a person up
-2. The empty feeling: Why people feel hollow, and what is missing
-3. Life asks you: Turn the big question round
-4. Three ways to find meaning: Doing, loving, and facing what you cannot change
-5. The last freedom: What nobody can take from you
-6. Meaning in suffering: What to do with pain you cannot avoid
-7. Happiness is a side effect: Why chasing it makes it run away
-
 ### Nonviolent Communication — Marshall B. Rosenberg
 Page: https://bookmuse.wanngo.com/summaries/nonviolent-communication/
 Core idea: Judging and demanding make people defend themselves or give in out of fear. Saying what you see, feel, need and ask for, and hearing the same four things in others, lets people give from the heart.
@@ -328,35 +248,6 @@ Lessons:
 5. Ask, don't demand: Make a request someone can say no to
 6. Listen for feelings and needs: How to hear someone who is upset or angry
 7. Be gentle with yourself: Turn “I should” into the need behind it
-
-### The Four Agreements — Don Miguel Ruiz
-Page: https://bookmuse.wanngo.com/summaries/the-four-agreements/
-Core idea: As children we agreed to beliefs we never chose, and four new agreements can replace the ones that make us suffer.
-About the book: The Four Agreements is a short 1997 book by Don Miguel Ruiz, who presents it as Toltec wisdom from southern Mexico. It argues that, as children, we agreed to beliefs we never chose, and that these beliefs now shape how we feel and act. It offers four new agreements to replace them, for anyone who wants less self-blame, calmer relationships and more freedom.
-Categories: Spirituality, Self-Growth
-Length: 6 lessons, 16 min
-Lessons:
-1. Beliefs you never chose: Where your beliefs came from, and the inner Judge that enforces them.
-2. Be impeccable with your word: Words can build or harm. Use them with truth and love.
-3. Don't take anything personally: What others say and do is about them, not about you.
-4. Don't make assumptions: Ask instead of guessing, and many fights never start.
-5. Always do your best: Your best changes every day. Give that, no more and no less.
-6. Break the old agreements: See your old beliefs, break them step by step, and replace them.
-
-### The Intelligent Investor — Benjamin Graham, Jason Zweig
-Page: https://bookmuse.wanngo.com/summaries/the-intelligent-investor/
-Core idea: Treat a stock as a small piece of a real business: pay less than it is worth, plan for being wrong, and do not let the market’s moods or your own run your money.
-About the book: The Intelligent Investor is a classic guide to investing for ordinary people, first published in 1949 by Benjamin Graham, with fresh commentary by Jason Zweig. It teaches that a stock is a share of a real business, that you should pay less than it is worth, and that your own behavior is the biggest risk. It is written for people who want safe, steady results, not quick riches.
-Categories: Money & Investments
-Length: 7 lessons, 19 min
-Lessons:
-1. Investing is not speculating: An investor studies a business. A speculator bets on a price.
-2. Treat a stock as a business: Ask what it is worth and how much you are paying.
-3. Mr. Market: The market names a price every day. You need not accept it.
-4. The margin of safety: Pay well under what a thing is worth, so a mistake cannot ruin you.
-5. Choose your role and split your money: Most people should be defensive investors with a simple plan.
-6. Do not chase the hot streak: Over the long run most funds do worse than the market. Costs and fading streaks are why.
-7. Your own worst enemy: How you act matters more than what you own.
 
 ### Why Nations Fail — Daron Acemoglu and James A. Robinson
 Page: https://bookmuse.wanngo.com/summaries/why-nations-fail/
@@ -406,6 +297,756 @@ Lessons:
 6. Reflect: the Weekly Review: Keep your lists current so you trust them
 7. Engage: what to do right now: Four things that guide each choice
 8. Plan a project naturally: Five steps your mind already uses
+
+### The Obstacle Is the Way — Ryan Holiday
+Page: https://bookmuse.wanngo.com/summaries/the-obstacle-is-the-way/
+Core idea: Whatever blocks your way can be used. See it clearly, act on it with energy, and accept what you cannot change, and the obstacle becomes the way forward.
+About the book: The Obstacle Is the Way is a 2014 self-help book by Ryan Holiday, built on the ideas of the ancient Stoics. It tells the stories of generals, inventors, athletes and presidents who met trouble with three disciplines: Perception, Action and the Will. Holiday argues that what blocks your path can become your path, if you see it clearly, act with energy and accept what you cannot change. It is written for anyone who feels stuck.
+Categories: Self-Growth, Happiness
+Length: 8 lessons, 19 min
+Lessons:
+1. Stay calm, see the facts: Perception: stay calm, then look at what is really there
+2. Know what is up to you: Perception: spend your effort only where it counts
+3. Find the opportunity inside: Perception: every obstacle has a second side
+4. Start now and keep going: Action: begin before you feel ready, and do not stop
+5. Take one step at a time: Action: the process turns a mountain into small steps
+6. Go around, not through: Action: when force fails, find the side door
+7. Accept it, then love it: Will: what you cannot change, you can still use
+8. Get ready before it comes: Will: build your strength and picture what could go wrong
+
+### Think Again — Adam Grant
+Page: https://bookmuse.wanngo.com/summaries/think-again/
+Core idea: Being smart is not enough: in a world that changes fast, rethinking and unlearning matter just as much, and you build them by thinking like a scientist.
+About the book: Think Again (2021) is a book by organizational psychologist Adam Grant. It argues that rethinking and unlearning matter as much as intelligence in a world that changes fast. Through stories and studies, it shows how to rethink in your own mind, with other people and in groups. It is for anyone who wants to change their mind well and help others do the same.
+Categories: Business & Career, Self-Growth
+Length: 8 lessons, 20 min
+Lessons:
+1. Think like a scientist: Treat your opinions as guesses to test, not truths to defend.
+2. Confident humility: Trust that you can learn, and doubt what you know now.
+3. The joy of being wrong: Let go of your old self and your opinions, and mistakes become discoveries.
+4. The good fight: Argue about ideas, not people, and ask critics to push back.
+5. Debate like a dance: Find common ground, give fewer reasons and ask questions.
+6. Listening opens minds: Ask open questions and listen, so people find their own reasons to change.
+7. Cultures that learn: Make it safe to question, and judge how a choice was made, not only how it ended.
+8. Plans are drafts: Check your career and life plans twice a year.
+
+### Becoming Supernatural — Joe Dispenza
+Page: https://bookmuse.wanngo.com/summaries/becoming-supernatural/
+Core idea: Your thoughts, actions and feelings keep your future a copy of your past, and you can change them ahead of time with a clear intention and an elevated emotion, until your body believes the new life has begun.
+About the book: Becoming Supernatural is a 2017 self-help book by Joe Dispenza, a chiropractor who teaches workshops on the brain. It argues that your thoughts and feelings keep your future a copy of your past, and that meditation can change both. It offers a set of meditations for healing, new chances and mystical experiences. Dispenza reads quantum physics and biology in his own way, and his stories come from people at his workshops.
+Categories: Spirituality, Self-Growth
+Length: 8 lessons, 23 min
+Lessons:
+1. Your past becomes your future: How the same thoughts and feelings keep you stuck.
+2. Your body believes what you rehearse: Thinking can change your brain, muscles and genes.
+3. Where attention goes, energy flows: Call your energy back to the present moment.
+4. Intention plus elevated emotion: How to call a new job, health or chance.
+5. Free the energy stuck in your body: The eight energy centers and the breath.
+6. Open your heart: A steady heart rhythm brings the brain into order.
+7. Walk into your future: Mind Movies and a walking meditation.
+8. Beyond the senses: The pineal gland and the mystical experience.
+
+### Getting to Yes — Roger Fisher, William Ury, Bruce Patton
+Page: https://bookmuse.wanngo.com/summaries/getting-to-yes/
+Core idea: You do not have to choose between being hard and being soft. Settle the problem itself, not a contest of will, protect the person across the table, and look for a result both sides can call fair.
+About the book: Getting to Yes is a short guide to negotiating, first published in 1981 by Roger Fisher and William Ury of the Harvard Negotiation Project, with Bruce Patton as editor and later coauthor. It argues that you do not have to choose between being hard and being soft. It offers a method called principled negotiation: settle the problem itself of the problem, look for results that help both sides, and be fair to the people. It is written for anyone who negotiates, from a raise to a peace treaty.
+Categories: Negotiation
+Length: 7 lessons, 19 min
+Lessons:
+1. Why haggling fails: Defending a position makes the deal worse, slower and more bitter
+2. Separate the people from the problem: Treat feelings and misunderstandings on their own
+3. Focus on interests, not positions: Ask why a side wants something, not only what it wants
+4. Invent options for mutual gain: Make a bigger pile of choices before you decide
+5. Insist on objective criteria: Let a fair standard decide, not a contest of will
+6. Know your BATNA: Your power is what you can do if there is no deal
+7. When they push, don't push back: Turn their attack toward the problem, and spot dirty tricks
+
+### Mastery — Robert Greene
+Page: https://bookmuse.wanngo.com/summaries/mastery/
+Core idea: Mastery is not a gift some people are born with. It grows in anyone who finds the work that fits them, then spends years in three phases of learning, until they can feel their whole field at once.
+About the book: Mastery (2012) is Robert Greene’s guide to how people reach the highest level of skill in any field. Greene, the author of The 48 Laws of Power, studied the lives of great masters such as Leonardo da Vinci, Charles Darwin and Mozart, and interviewed nine living ones. He argues that mastery is not a gift of genius but the result of a long process in three phases, which anyone can follow by choosing the right work and staying with it for years. It is for anyone who wants to build deep skill and a career that fits who they are.
+Categories: Self-Growth, Personalities
+Length: 7 lessons, 18 min
+Lessons:
+1. Find your Life’s Task: The early pull that points to your work
+2. Submit to reality: Watch, practice one skill, then test your work
+3. Learn from a mentor: How a mentor shortens the road, and when to leave
+4. See people as they are: Drop the childish view of people, and know the seven deadly realities
+5. Wake the dimensional mind: An open mind plus deep knowledge makes you creative
+6. Hold the tension, then let go: Why feeling stuck is part of the idea
+7. Feel the whole field: After years of focus you sense the whole, not the parts
+
+### Astrophysics for People in a Hurry — Neil deGrasse Tyson
+Page: https://bookmuse.wanngo.com/summaries/astrophysics-for-people-in-a-hurry/
+Core idea: The same laws of physics work everywhere, so by reading every kind of light we have traced the universe from a pinpoint to us, and most of it is still dark.
+About the book: Astrophysics for People in a Hurry is a 2017 book by the astrophysicist Neil deGrasse Tyson. It is a short guide to the universe, from the big bang to dark matter and dark energy, for readers with little time. It argues that the same laws of physics hold everywhere, that most of the cosmos is still unknown, and that seeing our small place in it should make us humble.
+Categories: Society & Tech
+Length: 7 lessons, 19 min
+Lessons:
+1. From a pinpoint to people: How the universe grew up, step by step
+2. The same laws everywhere: Why the Sun and Earth follow one rulebook
+3. The afterglow of the big bang: The oldest light, found by accident
+4. Dark matter: Gravity from something we cannot see
+5. Dark energy: A push in empty space, and Einstein's blunder
+6. Seeing the invisible: Telescopes for every kind of light
+7. The cosmic perspective: Why the huge universe should make us humble
+
+### The Millionaire Next Door — Thomas J. Stanley and William D. Danko
+Page: https://bookmuse.wanngo.com/summaries/the-millionaire-next-door/
+Core idea: Most American millionaires are ordinary people who spend far less than they earn and invest the rest, while many high earners who look rich own little.
+About the book: The Millionaire Next Door is a 1996 study of how ordinary Americans become wealthy. Thomas J. Stanley and William D. Danko studied millionaires for twenty years. They argue that wealth comes from spending far less than you earn, planning, and raising independent children, not from luck, inheritance or a show of status. It is for anyone who earns well but cannot seem to build wealth.
+Categories: Money & Investments
+Length: 7 lessons, 17 min
+Lessons:
+1. Wealth is what you keep: Net worth, not pay, makes you wealthy.
+2. Live below your means: Millionaires spend little and invest first.
+3. Plan before you spend: Budget, set goals, and give money time each month.
+4. Status is a costly treadmill: Showing wealth uses up the money that builds it.
+5. Cash gifts hold adults back: The more adult children are given, the less they build.
+6. Raise children who stand alone: Independence grows from example and from struggle.
+7. Own your work: Most millionaires are self-employed in plain businesses.
+
+### The Selfish Gene — Richard Dawkins
+Page: https://bookmuse.wanngo.com/summaries/the-selfish-gene/
+Core idea: Evolution works on genes, not on groups: genes that copy themselves well spread, bodies are the machines they build, and kindness shows up among relatives and between players who meet again.
+About the book: The Selfish Gene is a popular science book by the zoologist Richard Dawkins, first published in 1976. It argues that evolution is best seen from the point of view of the gene, the thing that gets copied, and that bodies are machines that carry genes along. It explains why animals help their relatives, raise their young, choose mates and sometimes cooperate, and it adds the idea of the meme. It is for anyone who wants a new way to see why living things act as they do.
+Categories: Society & Tech
+Length: 9 lessons, 25 min
+Lessons:
+1. Not for the good of the group: Why a gift to the whole group cannot win
+2. Genes and the machines they build: Copies, mistakes and bodies that carry them
+3. Genes set rules, brains decide: Why genes build brains instead of steering
+4. Hawks, doves and stable strategies: The mix of behavior that nobody can beat
+5. Why we help our relatives: How close kin make helping pay
+6. Parents and children want different deals: The quiet quarrel over milk and food
+7. Mates share children, not interests: Why each partner is tempted to do less
+8. How cooperation can win: Nice, forgiving and not envious beats cheating
+9. Memes: ideas that copy themselves: A new copier that spreads from mind to mind
+
+### Playing to Win — A.G. Lafley and Roger L. Martin
+Page: https://bookmuse.wanngo.com/summaries/playing-to-win/
+Core idea: Strategy is not a vision or a plan. It is a set of five connected choices about how you will win, and you can test those choices by asking “What would have to be true?”
+About the book: Playing to Win (2013) is a guide to strategy by A.G. Lafley, who was chief executive of Procter & Gamble, and Roger L. Martin, a business school dean and strategy adviser. It argues that strategy is a set of five connected choices about how to win, not a vision or a plan. The authors teach the five choices, a way to think through the facts and a way to choose between options, with stories from P&G. It is for managers and for anyone who wants a clearer way to decide where to compete and how to win.
+Categories: Business & Career, Leadership
+Length: 7 lessons, 19 min
+Lessons:
+1. Strategy is choice: Five connected choices, and how Olay came back.
+2. Play to win: Why an aim that was too modest sank Saturn.
+3. Where to play, and where not: How Bounty split its buyers into three groups.
+4. How to win: Cost less, or be worth more: the only two ways.
+5. Strengths that fit together: A razor for India, and strengths that back each other up.
+6. Manage what matters: The meetings, messages and measures that carry a strategy through.
+7. Ask what would have to be true: A way to choose between options that ends the arguing.
+
+### Quiet — Susan Cain
+Page: https://bookmuse.wanngo.com/summaries/quiet/
+Core idea: Our culture treats the bold, talkative style as the best one. Yet up to half of Americans are introverts, and quiet strengths are powers we cannot afford to waste.
+About the book: Quiet is a 2012 book by Susan Cain, a former Wall Street lawyer. It argues that our schools, workplaces and culture favor bold, talkative people, even though one third to one half of Americans are introverts. Drawing on psychology and brain research, it explains where introversion comes from and shows how quiet people lead, create and think. It is for introverts, and for anyone who lives with, manages or teaches one.
+Categories: Productivity, Self-Growth
+Length: 8 lessons, 19 min
+Lessons:
+1. A world built for talkers: How the bold style became the one we admire
+2. Loud is not the same as right: Talkers win the room, but not always with the best ideas
+3. Great work starts alone: Why solitude can beat the brainstorm
+4. Born alert to the new: A baby study that shows where quiet can start
+5. Find your sweet spot: You can stretch, but only so far
+6. Careful minds see warnings: Why slowing down can save you money and mistakes
+7. Stretch for what you love: How to act outgoing without losing yourself
+8. Quiet people connect too: Different ways of being social, at home and at school
+
+### The Mind-Gut Connection — Emeran Mayer
+Page: https://bookmuse.wanngo.com/summaries/the-mind-gut-connection/
+Core idea: Your brain, your gut and the trillions of microbes in it talk to each other all day, and what you eat and how you feel changes what they say.
+About the book: The Mind-Gut Connection is a 2016 book by Emeran Mayer, a gastroenterologist and researcher at UCLA. Mayer explains how the brain, the gut and the trillions of microbes in it send each other messages all day. He shows how this talk shapes stress, mood, appetite and gut feelings, and how early life and modern food change it. He writes for general readers who want to look after both gut and mind.
+Categories: Health
+Length: 8 lessons, 20 min
+Lessons:
+1. A gut that listens and talks: Its own nerves, and a cable to your brain
+2. Emotions play out in your gut: Why stress can make a healthy gut sick
+3. Your microbes join the talk: Three ways they send messages to your brain
+4. Can microbes change your mood?: A yogurt study, and what is still unproven
+5. Early life sets the dial: How childhood stress tunes the gut and brain
+6. Gut feelings guide your choices: How your brain turns body signals into hunches
+7. Modern food scrambles the talk: Fat, sweeteners and eating past full
+8. Farm your gut microbes: Variety, plants and calm meals
+
+### The Next Millionaire Next Door — Thomas J. Stanley and Sarah Stanley Fallaw
+Page: https://bookmuse.wanngo.com/summaries/the-next-millionaire-next-door/
+Core idea: People build wealth with everyday habits: they spend less than they earn, ignore what others show off, and run their money like a job.
+About the book: The Next Millionaire Next Door is a 2018 follow-up to the classic study of how ordinary Americans build wealth. Thomas J. Stanley died in 2015, and his daughter Sarah Stanley Fallaw, a psychologist, finished it with a new survey of millionaires. They argue that the habits behind wealth are the same today: spend less than you earn, ignore what others show off, and manage your money like a job. It is for anyone who wants to build wealth on their own.
+Categories: Money & Investments
+Length: 8 lessons, 19 min
+Lessons:
+1. Income is not wealth: Wealth is what you own minus what you owe.
+2. Ignore the myths of wealth: Blaming others costs you more than it gives.
+3. Ignore the Joneses: Neighbors and screens set what you spend.
+4. Your upbringing is not your fate: Children copy parents, and adults can change.
+5. Wealth is a job: Someone must run the household's money.
+6. Discipline beats test scores: Grades and famous schools matter less than habits.
+7. Margin buys career freedom: Saving gives you the choice to change your work.
+8. Invest simply and keep learning: Low cost and calm beat exotic and clever.
+
+### The Untethered Soul — Michael A. Singer
+Page: https://bookmuse.wanngo.com/summaries/the-untethered-soul/
+Core idea: You are not your thoughts or your feelings. You are the one who notices them, and you grow free by letting them pass instead of guarding yourself.
+About the book: The Untethered Soul is a 2007 book by Michael A. Singer about the voice in your head and the self behind it. It draws on yoga, Buddhist and Christian teachings. Singer argues that you are the one who notices your thoughts and feelings, not the thoughts themselves, and that you become free by letting them pass instead of guarding yourself against them. It is for anyone who wants less inner worry and more peace.
+Categories: Spirituality
+Length: 8 lessons, 18 min
+Lessons:
+1. The voice is not you: The chatter in your head is not who you are
+2. You are the one who sees: Awareness stays when everything else changes
+3. Old pain stays in your heart: Why a small thing can hit so hard
+4. Let go the moment you are hit: Meet the first tightening with release
+5. Remove the thorn: Guarding a sore spot never heals it
+6. Your walls are made of thoughts: The self you defend is a house you built
+7. Choose happiness, whatever happens: Events do not ruin your day. Resisting them does
+8. Death is a teacher: Every moment counts because life can end
+
+### All About Love — bell hooks
+Page: https://bookmuse.wanngo.com/summaries/all-about-love/
+Core idea: Love is not a feeling that happens to us. It is a choice we make again and again, and we learn it by telling the truth, treating people fairly and facing our fear.
+About the book: All About Love: New Visions is a 2000 book by the writer and cultural critic bell hooks. She argues that most of us were never taught what love is, and that this is why love so often fails. Drawing on her own life and on thinkers such as M. Scott Peck and Erich Fromm, she describes love as a choice and an action. She shows how honesty, fairness, community and courage can bring us back to it.
+Categories: Love & Sex
+Length: 8 lessons, 19 min
+Lessons:
+1. Love is what you do: Love is a choice to help someone grow, not a feeling
+2. Childhood teaches love: Children learn what love is from how adults treat them
+3. Love needs the truth: Lies wear away the trust that love stands on
+4. Love starts with you: You cannot give what you refuse yourself
+5. Greed pushes out love: A culture of power and getting more leaves little room for love
+6. One love for every bond: Friends, family and partners all deserve the same love
+7. True love is mutual work: Choose love, talk honestly, listen and give
+8. Love casts out fear: Facing death, shame and wounds with an open heart
+
+### I Am Malala — Malala Yousafzai, Christina Lamb
+Page: https://bookmuse.wanngo.com/summaries/i-am-malala/
+Core idea: A girl who loved school kept speaking up for it when the Taliban banned it. They shot her for it, and her voice only grew louder.
+About the book: I Am Malala is the memoir of Malala Yousafzai, written with the journalist Christina Lamb and published in 2013. It tells how a girl from the Swat Valley in Pakistan grew up in a school her father built, spoke out for girls' education when the Taliban banned it, and was shot on her school bus in 2012. It shows how she survived and kept campaigning, and is for anyone who wants to see what one voice can do.
+Categories: Personalities
+Length: 7 lessons, 17 min
+Lessons:
+1. A daughter free as a bird: Why one person's belief can change a child's life
+2. School is every child's right: The children of the rubbish mountain
+3. How a radio voice took a valley: Help first, then fear
+4. Speak, even when afraid: Why silence helps those who use fear
+5. They came for her voice: The threats, the bus, and no wish for revenge
+6. Many hands saved her: Doctors, army leaders and strangers
+7. One cause, not one story: From a hospital bed to the United Nations
+
+### Outwitting the Devil — Napoleon Hill
+Page: https://bookmuse.wanngo.com/summaries/outwitting-the-devil/
+Core idea: In this book the Devil is fear living in the unused part of your mind, and you outwit him by deciding what you want and thinking for yourself.
+About the book: Outwitting the Devil is Napoleon Hill’s 1938 manuscript, published in 2011 with notes by Sharon Lechter. Hill writes it as an interview in which he makes the Devil confess how he controls people through fear and drifting. He argues that you can break free by deciding what you want, mastering yourself and learning from defeat. It is for readers who want a plain method for taking charge of their own minds.
+Categories: Productivity, Self-Growth
+Length: 7 lessons, 18 min
+Lessons:
+1. Fear is the real devil: Where the Devil lives, and how fear gets in
+2. The habit of drifting: Why most people never choose their own course
+3. How habits harden: Why a repeated thought sets, and what time adds
+4. Know what you want: A purpose, a plan, and another plan when it fails
+5. Master yourself first: Three appetites that rule you if you let them
+6. Learn from defeat: Why a setback is only a failure if you accept it
+7. Choose your company: The people near you shape how you think
+
+### Psycho-Cybernetics — Maxwell Maltz, MD
+Page: https://bookmuse.wanngo.com/summaries/psycho-cybernetics-a-new-way-to-get-more-living-out-of-life/
+Core idea: Your mind steers you toward the picture you hold of yourself. Change that picture, with vivid imagination, calm practice and new habits, and you change what you do.
+About the book: Psycho-Cybernetics (1960) is a self-help classic by Maxwell Maltz, a plastic surgeon. Maltz noticed that a new face did not always change a patient, and he concluded that the picture people hold of themselves, the self-image, sets what they can do. Borrowing ideas from cybernetics, the science of self-steering machines, he describes the brain as a goal-seeking system that you can aim with imagination, relaxation and new habits. It is for anyone held back by doubt, worry or old hurts.
+Categories: Self-Growth, Happiness
+Length: 8 lessons, 19 min
+Lessons:
+1. Your picture of yourself: You act to match it, so it sets your limits
+2. Your built-in guidance system: Give it a target and let it steer, misses and all
+3. Practice in your head: A vivid picture works on your nerves like the real thing
+4. Beliefs that hypnotize you: A false idea can act like a hypnotist's order
+5. Stop jamming the machinery: Think first, then let go and stay calm
+6. The happiness habit: Pleasant thinking is a skill you can practice now
+7. Signs of success and failure: Seven traits to grow and seven signals to read
+8. Cut out old hurts: Forgive completely, yourself too
+
+### The Personal MBA — Josh Kaufman
+Page: https://bookmuse.wanngo.com/summaries/the-personal-mba/
+Core idea: Every business is five simple parts, and you can learn them yourself, along with how people and systems behave, without an expensive degree.
+About the book: The Personal MBA (2010, with new material in the 2012 paperback) is a plain-language guide to how business works. Josh Kaufman worked at Procter & Gamble, then left to build the Personal MBA project full time. He argues that most of business comes down to a few simple ideas, and that anyone can learn them without a business degree. The book gathers 248 of them as mental models about how businesses, people and systems work, for beginners and for experienced people alike.
+Categories: Business & Career, Productivity
+Length: 9 lessons, 22 min
+Lessons:
+1. The five parts of every business: Business is five simple parts, and each one can fail
+2. Prove people want it first: Sell it before you build it
+3. Earn the right attention: Get noticed by the people who might buy
+4. Sell by removing doubt: Teach buyers, answer their doubts and take the risk
+5. Beat what customers expect: Promise what you can beat, and be steady
+6. Keep more than you spend: Profit, cash and knowing when it is enough
+7. Change your surroundings, not your will: Make the right choice the easy one
+8. Keep teams small and clear: Why big teams slow down, and how to stay clear
+9. Expect surprises from systems: Side effects, start simple, and build to survive
+
+### Women Who Love Too Much — Robin Norwood
+Page: https://bookmuse.wanngo.com/summaries/women-who-love-too-much/
+Core idea: Loving too much means obsessing about a man who cannot love you back and calling it love. The way out is to turn all that effort toward yourself.
+About the book: Women Who Love Too Much is a self-help book by the counselor Robin Norwood, first published in 1985. It describes women who give everything to men who cannot love them back, and it argues that this pattern grows in childhood homes where feelings were ignored. Norwood compares the pattern to an addiction and offers ten steps of recovery for women who keep wishing and hoping that he will change.
+Categories: Love & Sex, Self-Growth
+Length: 7 lessons, 19 min
+Lessons:
+1. When love means pain: What loving too much is, in fifteen signs
+2. Where it begins: How a childhood teaches you to earn love by fixing
+3. Why the wrong man feels right: Why struggle feels like love and kind men feel dull
+4. Love as a drug: Why letting go feels like withdrawal
+5. Help that controls: How fixing him keeps you stuck, and what acceptance does
+6. The ten steps out: The book's plan, and why it starts with you
+7. Being known: What love feels like once you recover
+
+### Atlas Shrugged — Ayn Rand
+Page: https://bookmuse.wanngo.com/summaries/atlas-shrugged/
+Core idea: The world runs on the minds of people who think and build. Punish them for it, and they will leave, and everything stops with them.
+About the book: Atlas Shrugged is a 1957 novel by Ayn Rand, a Russian-born American writer. It is set in a United States that is slowly falling apart, as its most able people vanish one by one. The story and a long speech by its hero, John Galt, argue that the world runs on the minds of people who think and build, that money rests on voluntary trade, and that a duty to sacrifice yourself for others destroys the people it feeds on.
+Categories: Business & Career, Fiction
+Length: 8 lessons, 18 min
+Lessons:
+1. The mind moves the world: Where every rail, motor and pay check comes from
+2. Money means trade: Why the book calls money good
+3. The factory that ran on need: What happened when pay followed need
+4. Your life is your own: What sacrifice means, and the book's values
+5. A is A: Facts stay facts, whatever you wish
+6. A gun is not an argument: Why force cannot make a mind work
+7. The sanction of the victim: How the people who punish ability need your help
+8. The strike: What happens when the thinkers say no
+
+### Blink — Malcolm Gladwell
+Page: https://bookmuse.wanngo.com/summaries/blink/
+Core idea: Decisions made in the first two seconds can be as good as slow, careful ones, but they can be fooled, so learn when to trust a first impression, when to guard it and how to train it.
+About the book: Blink is a 2005 book by Malcolm Gladwell, a staff writer at The New Yorker. It argues that snap judgments made in the first two seconds can be as good as long, careful thinking. Through stories from art, medicine, war, business and policing, it shows when they work, when they fail and how to train them.
+Categories: Self-Growth
+Length: 8 lessons, 20 min
+Lessons:
+1. A mind that knows before you do: A card game and a statue show it.
+2. A thin slice tells a lot: A few minutes of talk can predict a marriage or a lawsuit.
+3. The locked door: You cannot say why you know, and your reasons may be wrong.
+4. The Warren Harding error: How looks switch thinking off, and how a screen helps.
+5. Less information, better decisions: A four-fact rule beat doctors in an emergency room.
+6. Rules make quick thinking work: What improv actors and a Marine general have in common.
+7. Why asking can mislead: Why cola tests, a chair and a singer fooled the testers.
+8. Stress shuts the quick mind: A night in the Bronx, and how to keep your head.
+
+### Dare — Barry McDonagh
+Page: https://bookmuse.wanngo.com/summaries/dare/
+Core idea: Anxiety is a wave of nervous energy, and it traps you only when you fear it, so you heal by moving with the wave, not against it.
+About the book: Dare (2015) is Barry McDonagh's guide to ending anxiety and panic attacks. McDonagh had his first panic attack at eighteen, was caught in high anxiety for about 500 more days, and has coached people with anxiety for over ten years. The book argues that anxiety is only a wave of nervous energy and that the real trap is fear of it, and it teaches a four-step reply called the DARE Response. It is for anyone stuck in worry, panic or avoidance.
+Categories: Happiness
+Length: 8 lessons, 19 min
+Lessons:
+1. Fear of fear: Why anxiety loops, and what keeps it going
+2. A false alarm: Why the feelings are not a sign something is wrong with you
+3. The DARE Response: Four steps to use when a wave arrives
+4. Say yes to it: Why accepting anxiety makes it fade
+5. Demand more: What to do when a wave grows into a panic attack
+6. Leave your safe zone: How to win back the places you avoid
+7. Thoughts are just thoughts: Why a scary thought says nothing about you
+8. Setbacks are part of it: What recovery looks like, and how you know you are there
+
+### Eat & Run — Scott Jurek, Steve Friedman
+Page: https://bookmuse.wanngo.com/summaries/eat-and-run/
+Core idea: Strength to keep going is built by doing hard things one piece at a time, with good food, a calm mind and friends, and the journey matters more than the prize.
+About the book: Eat & Run is the memoir of ultramarathon champion Scott Jurek, written with Steve Friedman and published in 2012. It follows a poor Minnesota boy who learned to keep going, won the 100-mile Western States race seven years in a row on a plant-based diet, and set records in Death Valley and Greece. It argues that endurance comes from doing hard things piece by piece, with good food, a calm mind and friends, and is for anyone who wants to run farther or simply keep going.
+Categories: Health, Sports & Fitness
+Length: 6 lessons, 16 min
+Lessons:
+1. Sometimes you just do things: How hard chores and a first race built his strength
+2. Food is who we are: Changing what you eat in steps, and eating enough
+3. Run by feel, then check: Instinct first, then a few simple numbers
+4. The mind sets the limit: A four-step checklist for when things go wrong
+5. Friends carry you: How a friend got him up in Death Valley
+6. The journey is the prize: Why the finish line is not the point
+
+### Educated — Tara Westover
+Page: https://bookmuse.wanngo.com/summaries/educated1/
+Core idea: Being educated means learning to weigh many voices and build your own mind, and for Tara Westover that cost her family.
+About the book: Educated: A Memoir is a 2018 memoir by Tara Westover. She grew up in an Idaho mountain family that prepared for the end of the world, with no school and a father who feared the Government and doctors. At seventeen she sat in her first university class, and she later earned a PhD at Cambridge. The book follows what that education cost her, and it is for readers who want to see how a person builds her own mind.
+Categories: Personalities, Family, Self-Growth
+Length: 7 lessons, 18 min
+Lessons:
+1. The world you are given: A child takes her family’s story as the whole world
+2. Faith before safety: Who pays when a belief outranks safety
+3. Patience for hard things: How she learned what she could not yet understand
+4. Keeping your own account: Holding your memory when others tell it another way
+5. Many voices, not one: Reading without fear or worship
+6. You are not your costume: Who you are does not change with the room
+7. The price of your own mind: What a family can ask in return for love
+
+### Hinch Yourself Happy — Mrs. Hinch
+Page: https://bookmuse.wanngo.com/summaries/hinch-yourself-happy/
+Core idea: A home you love and look after can calm a worried mind, because cleaning gives your thoughts a job, a finish line and a small win.
+About the book: Hinch Yourself Happy (2019) is a book of cleaning tips and personal stories by Sophie Hinchliffe, known online as Mrs Hinch, who shares her cleaning on Instagram. She explains why cleaning calms her anxiety and mixes how-to steps with advice on loving your home, making chores fun and being kind to yourself. It is for anyone who wants a cleaner home and a calmer mind.
+Categories: Happiness, Home & Environment
+Length: 7 lessons, 18 min
+Lessons:
+1. Make your home yours: Fill it with what you love, not what impresses visitors
+2. Cleaning calms a worried mind: Give worry a job to do and a finish line
+3. Make the chore fun: Silly names and a strong beat make it easier to start
+4. Start small, even on a low day: No strict routine: a list, a circle and a backwards list
+5. A place for everything: A home for each thing makes tidying easy
+6. Cheap basics, used safely: The sink shine, a plughole fix and five safety tips
+7. Be kind to yourself: Skip the comparing, and let mess and mean words go
+
+### Salt, Sugar and Fat — Michael Moss
+Page: https://bookmuse.wanngo.com/summaries/salt-sugar-and-fat-how-the-food-giants-hooked-us/
+Core idea: Food companies build their products around salt, sugar and fat so that people want more, and they will not stop on their own.
+About the book: Salt Sugar Fat is a 2013 book by Michael Moss, a reporter. Moss spent three and a half years inside the food industry, reading company records and talking with the people who make, test and sell processed food. He shows how salt, sugar and fat are measured, shaped and sold to make people want more. He writes for shoppers who want to know what is in the grocery store, and what they can do about it.
+Categories: Health
+Length: 9 lessons, 23 min
+Lessons:
+1. The bliss point: How sugar is measured and tuned
+2. Fat has no brake: Why fat is the quiet pillar
+3. A salt habit they teach: Where salt hides, and how a craving is made
+4. Convenience sells first: From instant pudding to Lunchables
+5. Heavy users and kids: How Coke chased its best customers
+6. A healthy-looking label: How foods are made to look better for you
+7. Washington warns and sells: A department with two jobs
+8. Why companies cannot stop: A secret meeting, and what came after
+9. Taking back control: What shoppers can do now
+
+### The Lean Startup — Eric Ries
+Page: https://bookmuse.wanngo.com/summaries/the-lean-startup/
+Core idea: A startup exists to learn how to build a business that lasts, and it learns fastest by testing each guess with real customers in small steps.
+About the book: The Lean Startup (2011) by Eric Ries argues that a new business is an experiment. He shows how to test an idea cheaply with a rough first version, measure real progress, and know when to change course. The book grew out of his own failed first company and his work at IMVU, and it borrows ideas from Toyota’s lean factories. It is for founders and for people who build new products inside large companies.
+Categories: Business & Career
+Length: 8 lessons, 19 min
+Lessons:
+1. Steer, don’t launch: A plan fails when nothing is known, so steer instead.
+2. Count what you learn: Real progress is proven learning about customers.
+3. Test your leaps of faith: Find the two guesses that everything rests on.
+4. Build the smallest test: Test an idea with the least work.
+5. Measure with honest numbers: Judge each new group of customers on its own.
+6. Know when to pivot: Change strategy on a schedule, with data in hand.
+7. Work in small batches: Small pieces show problems early.
+8. Find your engine of growth: Sticky, viral or paid: choose one.
+
+### When Breath Becomes Air — Paul Kalanithi
+Page: https://bookmuse.wanngo.com/summaries/when-breath-becomes-air/
+Core idea: Death comes for everyone, so the real question is how to live with it: with other people, with honesty, and by going on.
+About the book: When Breath Becomes Air is a memoir by Paul Kalanithi, a neurosurgeon who was diagnosed with stage IV lung cancer at thirty-six, near the end of his training. It follows him from a young man asking what makes life meaningful, to a doctor learning to guide the dying, to a patient facing his own death. He died in March 2015, and his wife, Lucy, wrote the epilogue. It is for anyone who wonders how to live well when time is short.
+Categories: Health, Family
+Length: 7 lessons, 18 min
+Lessons:
+1. Meaning is made between people: Why he left books and brain science for medicine.
+2. Meet people where they are: How he learned to give hard news.
+3. Strive for excellence, not perfection: Why one millimeter matters, and why perfect is out of reach.
+4. Odds cannot tell you how to live: Why his own doctor would not give him numbers.
+5. Keep choosing what matters: How his plans broke and how he rebuilt them.
+6. A full life is not easy: Why he chose to have a child, and what he wrote to her.
+7. Look death in the eye: How he and his wife faced the end together.
+
+### Women Who Run With the Wolves — Clarissa Pinkola Estés
+Page: https://bookmuse.wanngo.com/summaries/women-who-run-with-the-wolves/
+Core idea: Every woman has a wild, instinctive self that knows what is true and what she needs. Being trained to be tame buries it, and old stories show how to dig it up and live with it.
+About the book: Women Who Run With the Wolves is a 1992 book by the Jungian psychoanalyst and poet Clarissa Pinkola Estés. She argues that every woman has a wild, instinctive self that is buried, not lost, when she is too domesticated. Retelling old myths and fairy tales such as La Loba, Bluebeard, Vasalisa and the Handless Maiden, she reads each as a map for finding that self again. She shows how intuition, belonging, solitude and creative work bring it back.
+Categories: Society & Tech, Spirituality
+Length: 9 lessons, 23 min
+Lessons:
+1. Sing over the bones: The wild self is buried, not dead
+2. Spot the predator: The inner force that kills your light, and the questions that expose it
+3. Feed your intuition: Listen to it and act, or it withers
+4. Stay through the endings: Love moves in cycles, and the dead stage is part of it
+5. Find your own pack: Spend less time on who failed you, more on your kind
+6. Keep your red shoes: Eight traps that pry a meaningful life away
+7. Go home to yourself: Solitude on a schedule, before your skin dries out
+8. Keep the river clear: Guard your creative life, and rest when focus is lost
+9. Wander and grow new hands: Loss and exile are stages, and what was cut can grow back
+
+### A People's History of the United States — Howard Zinn
+Page: https://bookmuse.wanngo.com/summaries/a-people-s-history-of-the-united-states/
+Core idea: Told from below, American history shows a few powerful people using the nation, the law and war to protect their wealth, and ordinary people who pushed back again and again and sometimes won.
+About the book: A People's History of the United States, first published in 1980, is Howard Zinn's account of American history from Columbus to the early 2000s. He tells it from the side of Native Americans, enslaved people, workers, women and soldiers, not only presidents and generals. Zinn, a historian who took part in the civil rights and anti-war movements, argues that governments serve the powerful, and that ordinary people have changed the country by resisting.
+Categories: Society & Tech
+Length: 8 lessons, 24 min
+Lessons:
+1. Whose side tells the story: A history that follows the leaders hides the people they hurt
+2. How the color line began: Racism grew from conditions, and rulers kept poor people apart
+3. A revolution for whom: Leaders used the people's anger, then fenced it in
+4. Land taken, promises broken: Indian removal opened land for profit through broken treaties
+5. Freedom pushed from below: Leaders moved only as the pressure grew
+6. Force first, then a little help: Strikes met troops, then small gains kept the system standing
+7. War and the state: Wars serve the powerful, and war silences dissent
+8. Ordinary people can win: Change came from people acting together
+
+### Emotional Blackmail — Susan Forward with Donna Frazier
+Page: https://bookmuse.wanngo.com/summaries/emotional-blackmail/
+Core idea: Emotional blackmail is a threat from someone close: do what I want, or you will suffer. It works through fear, obligation and guilt, and it ends when you change how you respond.
+About the book: Emotional Blackmail is a self-help book by the therapist Susan Forward, written with Donna Frazier and first published in 1997. It shows how people close to us use fear, obligation and guilt to make us give in, and why both sides play their parts. Its second half teaches step-by-step ways to answer pressure calmly and to stand by your own choices. It is for anyone who keeps giving in to a partner, parent, boss or friend.
+Categories: Self-Growth, Happiness
+Length: 8 lessons, 18 min
+Lessons:
+1. How blackmail works: A demand, pressure and a threat, until you give in
+2. Four faces of one threat: Punishers, self-punishers, sufferers and tantalizers
+3. Fear, obligation and guilt: The three feelings blackmailers turn up
+4. It is not about you: The fear behind the pressure
+5. Your hot buttons: Why you give in, and how you teach it
+6. Stop, observe, decide: What to do before you answer
+7. Say it without defending: Four ways to hold your ground
+8. Disconnect your hot buttons: Exercises for lingering fear, duty and guilt
+
+### Factfulness — Hans Rosling, Ola Rosling and Anna Rosling Rönnlund
+Page: https://bookmuse.wanngo.com/summaries/factfulness-ten-reasons-we-re-wrong-about-the-world/
+Core idea: Almost everyone sees the world as more frightening and hopeless than it is, because ten built-in instincts pull our thinking toward drama.
+About the book: Factfulness is a 2018 book by the Swedish doctor and professor Hans Rosling with his son Ola Rosling and his daughter-in-law Anna Rosling Rönnlund. Hans Rosling tested thousands of people with simple fact questions about the world and found that most score worse than chimpanzees guessing at random. The book says ten built-in instincts pull us toward a more dramatic, frightening view than the data show, and gives a simple rule for controlling each one.
+Categories: Society & Tech
+Length: 8 lessons, 20 min
+Lessons:
+1. The world is not split in two: Most people live in the middle, on four income levels
+2. Better and still bad: Why the world looks worse than the facts say
+3. Not every line is straight: Why the world's population will stop growing
+4. Frightening is not dangerous: Why we fear the wrong things
+5. Compare and divide: How to put a lonely number in proportion
+6. Question your categories: Income shapes life more than culture does
+7. Look for causes, not villains: Why blaming one person stops you thinking
+8. Take a breath: Now or never is almost never true
+
+### Invent & Wander — Jeff Bezos and Walter Isaacson
+Page: https://bookmuse.wanngo.com/summaries/invent-and-wander/
+Core idea: Bezos built Amazon by thinking in years, serving customers instead of rivals, and inventing through many bold bets, and he tried to keep it Day One as the company grew.
+About the book: Invent & Wander (2021) collects the writings of Jeff Bezos: his yearly letters to Amazon’s shareholders from 1997 to 2019, plus talks and interviews, with an introduction by the biographer Walter Isaacson. Bezos argues for thinking in years, putting customers ahead of rivals, making bold bets and accepting many failures, and keeping the energy of a young company, which he calls Day One. It is for anyone who wants to build, lead or invent.
+Categories: Leadership, Business & Career
+Length: 8 lessons, 17 min
+Lessons:
+1. Think in years, not quarters: Why the long view lines up customers and owners
+2. Obsess over customers, not rivals: Customers always want more, and that pulls you forward
+3. Big winners pay for many experiments: To invent, you make bold bets and accept the misses
+4. Wander where numbers can’t lead: What math can decide, and what only judgment can
+5. Two kinds of doors: Slow down for choices you can’t undo, speed up on the rest
+6. Stay in Day One: What Day Two looks like, and how to resist it
+7. Hire missionaries: People who love the mission, and three hiring questions
+8. High standards and six-page memos: Good work takes longer than people expect
+
+### The Art of Stillness — Pico Iyer
+Page: https://bookmuse.wanngo.com/summaries/the-art-of-stillness/
+Core idea: The world keeps speeding up, so one of the most useful things you can do is go nowhere on purpose: sit still often, and bring the calm back into your life.
+About the book: The Art of Stillness is a short 2014 TED Books essay by the travel writer Pico Iyer. He asks why a man who spent his life on the move found some of his deepest joy in sitting still, and he tells what he learned from a Zen center, a monk who used to be a scientist, and busy companies. It is for anyone who feels the world moving too fast.
+Categories: Self-Growth, Happiness
+Length: 6 lessons, 17 min
+Lessons:
+1. The answer is inside: Why a change of place rarely fixes what bothers you
+2. Stillness can be trained: A monk, a Marine and what the studies found
+3. Speed makes stillness urgent: Why the busier the world gets, the more you need a pause
+4. Stillness is hard: The dark side: what comes up when you sit alone
+5. A Sabbath for everyone: A regular empty space in time, even on a flight
+6. Bring the calm back: Why stillness is not a place to hide
+
+### The Fire Next Time — James Baldwin
+Page: https://bookmuse.wanngo.com/summaries/the-fire-next-time/
+Core idea: James Baldwin says America's race problem grows out of white fear and white innocence, that hating back harms the hater too, and that Black and white Americans can only be free together.
+About the book: The Fire Next Time (1963) is James Baldwin's pair of essays on race, faith and love in America. Baldwin, a Black writer from Harlem, writes a letter to his young nephew and then looks back on his boyhood, his years as a young preacher and a dinner with the leader of the Nation of Islam. He argues that white fear and innocence sit at the root of racism, that hating back harms the hater too, and that Black and white Americans can only be free together. It is one man's view, for anyone who wants to understand it.
+Categories: Society & Tech
+Length: 7 lessons, 19 min
+Lessons:
+1. Innocence is the crime: What Baldwin tells his nephew he cannot forgive
+2. Growing up afraid: What fear did to him at fourteen
+3. A church with no love: Why the young preacher walked away
+4. Refusing the pull of hate: His dinner with Elijah Muhammad
+5. Accept the past, then use it: Why a made-up past always fails
+6. Free together: Why white freedom depends on Black freedom
+7. The fire next time: The warning in the title, and the choice
+
+### The Immortal Life of Henrietta Lacks — Rebecca Skloot
+Page: https://bookmuse.wanngo.com/summaries/the-immortal-life-of-henrietta-lacks/
+Core idea: In 1951 doctors took cells from a poor Black woman without telling her, and those cells became one of the most useful tools in medicine, while her family was never told.
+About the book: The Immortal Life of Henrietta Lacks is a 2010 nonfiction book by the science writer Rebecca Skloot. It tells how cells taken in 1951 from Henrietta Lacks, a poor Black mother of five, became the first human cells to keep dividing in a lab without end. It follows the science, the history of research ethics and the Lacks family, above all Henrietta’s daughter Deborah, who spent her life trying to learn who her mother was. It is for anyone who wants to know whose body medicine rests on.
+Categories: Health, Personalities
+Length: 7 lessons, 20 min
+Lessons:
+1. The woman behind the letters: Who Henrietta was, and how a piece of her tumor was taken
+2. Cells that would not die: Why her cells kept dividing when all the others died
+3. A workhorse for the world: How the cells helped test a polio vaccine, then spread everywhere
+4. Taking without asking: How one doctor’s secret shots led to rules about consent
+5. Why trust was broken: The history behind the Lacks family’s fear of hospitals
+6. A family nobody told: How the family found out, and what they wanted
+7. Who owns your tissue: What the law says about cells once they leave your body
+
+### The Man Who Mistook His Wife for a Hat — Oliver Sacks
+Page: https://bookmuse.wanngo.com/summaries/the-man-who-mistook-his-wife-for-a-hat/
+Core idea: A brain illness is never only something taken away: the person inside keeps working to stay themselves, so to understand a patient you need their story, not just a list of what is wrong.
+About the book: The Man Who Mistook His Wife for a Hat is a 1985 book by Oliver Sacks, a British neurologist. It tells 24 true stories about patients whose brains lost a skill, had too much of one, or played back the past. Sacks argues that to understand an illness you must know the person, because a patient is always working to stay themselves. It is for anyone curious about the brain and what makes us who we are.
+Categories: Health
+Length: 7 lessons, 20 min
+Lessons:
+1. Seeing the parts, missing the person: A man who knew every feature and no face
+2. A self is a story: Two men with no memory, and what is left
+3. The hidden sense of your body: A woman who lost it and felt disembodied
+4. Patients invent their own fixes: Glasses with a level, a spinning chair, hands that learn
+5. When too much feels like health: Too much energy can be a gift and a trap
+6. The brain keeps your past: The same replay means different things to different people
+7. Look past the gaps: What holds a mind together when puzzles fail
+
+### The Sum of Us — Heather McGhee
+Page: https://bookmuse.wanngo.com/summaries/the-sum-of-us/
+Core idea: The belief that one group gains only when another loses is a false story, and it has drained the shared goods that most Americans depend on.
+About the book: The Sum of Us (2021) by Heather McGhee asks why Americans cannot have nice things such as good schools, health care and fair pay. After years in economic policy, she traveled the country and found that a false zero-sum story, in which one race's gain is another's loss, has drained shared goods for almost everyone. Through stories from a drained pool to a Mississippi car plant and a Maine mill town, she shows what racism costs all Americans and what people can win when they join together.
+Categories: Society & Tech
+Length: 8 lessons, 20 min
+Lessons:
+1. The zero-sum story: Why one group’s gain was told as another’s loss.
+2. Racism drained the pool: How a public pool, college and health care were lost.
+3. The canary in the coal mine: How risky loans spread from the first victims to all.
+4. Divided workers win less: How splitting workers keeps pay low, and how they win.
+5. A democracy with holes: How voting rules built for some caught many.
+6. The same sky: Why pollution and costs reach everyone.
+7. The hidden wound: What denial and fear cost white Americans.
+8. The Solidarity Dividend: What people win together, and how to aim for it.
+
+### Surely You’re Joking, Mr. Feynman! — Richard P. Feynman
+Page: https://bookmuse.wanngo.com/summaries/surely-youre-joking-mr-feynman/
+Core idea: Real understanding is something you test for yourself, with puzzles, plain examples, play and honesty, never with names, titles or the word of experts.
+About the book: Surely You’re Joking, Mr. Feynman! is a book of true stories by the physicist Richard Feynman, collected by his drumming friend Ralph Leighton and first published in 1985. It follows Feynman from fixing radios as a boy to the atomic bomb project, teaching in Brazil and a Nobel Prize. The stories are funny, and together they show a mind that tests everything for itself. It is for anyone who likes curious people, science or learning.
+Categories: Personalities, Self-Growth
+Length: 8 lessons, 21 min
+Lessons:
+1. Stay with the puzzle: A puzzle was built by a person, so learn how it works and keep going.
+2. Know the thing, not its name: Students who could recite a rule could not use it on a bay of water.
+3. Hold one example in your head: Ask for one real case, and ask early.
+4. Talk to the idea, not the person: Fame in the room did not change what he said about the physics.
+5. Play first, importance later: A wobbling plate led to the work behind a Nobel Prize.
+6. Do not fool yourself: The easiest person to fool is you.
+7. Look at the thing itself: He read every book himself, and one with nothing in it still had a rating.
+8. Be a beginner in the open: Be bad first, practice, and stop minding.
+
+### Ikigai — Héctor García, Francesc Miralles
+Page: https://bookmuse.wanngo.com/summaries/ikigai/
+Core idea: A long, happy life starts with a reason to get up each morning, kept alive by staying busy, close to friends, light on food, gentle in movement and calm in pace.
+About the book: Ikigai is a short book by Héctor García and Francesc Miralles, first published in Spanish in 2016. The authors visited Ogimi, a village on the island of Okinawa where people live longer than almost anywhere, and interviewed its oldest residents. They argue that a reason to get up each morning, kept alive by friends, light food, gentle movement and a calm pace, is the Japanese secret to a long and happy life. It is for anyone who wants more meaning and energy in everyday life.
+Categories: Happiness
+Length: 7 lessons, 18 min
+Lessons:
+1. A reason to get up: What ikigai is, and why Japan has no word for retiring
+2. Meaning is found, not made: Viktor Frankl on discovering your purpose
+3. Lose yourself in the doing: Flow: a stretch, a clear aim and one task at a time
+4. Stay close to your people: The moai, a group that looks after its members
+5. Eat light, move often: Stop at 80 percent full, and keep moving all day
+6. Busy, but never in a rush: Stress wears the body down, a small challenge helps
+7. Fall seven times, rise eight: Setbacks, and how to grow stronger from them
+
+### The Body Keeps the Score — Bessel van der Kolk
+Page: https://bookmuse.wanngo.com/summaries/the-body-keeps-the-score/
+Core idea: Trauma is not only what happened. It is the mark left on the brain and body, and healing means helping them feel safe in the present.
+About the book: The Body Keeps the Score is a 2014 book by the psychiatrist Bessel van der Kolk about how trauma changes the brain and body. He draws on forty years of work with veterans and with adults and children hurt in childhood. He argues that trauma is not only a past event but a mark that keeps the body's alarm switched on, so healing needs the body, other people and more than talk.
+Categories: Happiness
+Length: 8 lessons, 21 min
+Lessons:
+1. Trauma is a mark, not a memory: Why the war did not end for a veteran named Tom
+2. The alarm that will not switch off: What brain scans show during a flashback
+3. Losing touch with your body: Numbness, and why feeling your body comes first
+4. We calm each other down: Safety is shared, from a baby's first days onward
+5. Childhood wounds are common and hidden: A large study, and why labels miss the cause
+6. Trauma is remembered in pieces: Why a clear story may not be enough
+7. Healing starts in the body: Six ways to calm the alarm, and a yoga study
+8. Many roads back: Three roads to healing, and how to choose help
+
+### The Courage to Be Disliked — Ichiro Kishimi, Fumitake Koga
+Page: https://bookmuse.wanngo.com/summaries/the-courage-to-be-disliked/
+Core idea: People are not stuck because of their past. They are stuck because change feels scary, and the way out is the courage to live your own life, even if some people dislike you.
+About the book: The Courage to Be Disliked is a book by the philosopher Ichiro Kishimi and the writer Fumitake Koga, first published in Japan in 2013. It is a conversation over five nights between a philosopher and a doubtful young man, and it retells the ideas of the psychiatrist Alfred Adler. It argues that people can change at any moment, that the past does not decide who you are, and that happiness comes from feeling of use to others while living your own life, even if some people dislike you.
+Categories: Happiness, Self-Growth
+Length: 8 lessons, 18 min
+Lessons:
+1. Your past does not decide: You move toward goals, and you give old events their meaning
+2. You choose to stay the same: Change feels scary, so people keep the old self
+3. Feeling less is an opinion: Comparing makes you feel small, and you can change that view
+4. Separate your tasks: Do your part and leave other people's parts to them
+5. Freedom costs being disliked: You cannot be free and liked by everyone
+6. Equal, never above or below: Skip praise and scolding, and say thank you
+7. Happiness is feeling useful: Three things that build a sense of being of use
+8. Live each moment like a dance: Give your full effort to now, not to a far summit
+
+### The Power of Habit — Charles Duhigg
+Page: https://bookmuse.wanngo.com/summaries/the-power-of-habit/
+Core idea: Habits are loops that run without thought, and once you know how a loop works, you can change it.
+About the book: The Power of Habit (2012) is journalist Charles Duhigg's look at the science of habits. It explains how a habit works in the brain, why some stick, and how to change them, in people, companies and whole societies. It argues that habits can be changed once we understand their parts. It is for anyone who wants to build a routine or drop one.
+Categories: Productivity, Self-Growth
+Length: 8 lessons, 20 min
+Lessons:
+1. Every habit is a loop: Cue, routine and reward
+2. A craving drives the loop: Why a cue and a reward are not enough
+3. Keep the cue, change the routine: The Golden Rule of habit change, in four steps
+4. Belief grows in a group: What holds a new routine under stress
+5. One habit can change the rest: Keystone habits and small wins
+6. Willpower becomes a habit: Why willpower tires, and a plan for hard moments
+7. How a movement is built: Friends, community and new habits
+8. You can choose your habits: Why knowing a habit makes it yours
+
+### Cosmos — Carl Sagan
+Page: https://bookmuse.wanngo.com/summaries/cosmos/
+Core idea: We live on a small world in a vast and ancient Cosmos, we come from it, and science is how we found out.
+About the book: Cosmos is a 1980 book by the astronomer Carl Sagan, written beside his thirteen-part television series. It tells how people learned the size, the age and the makeup of the universe, from a stick and a shadow in ancient Alexandria to spacecraft that left Earth. It argues that we are a small part of a vast Cosmos, that science is how we found this out, and that our survival depends on keeping that wider view.
+Categories: Society & Tech
+Length: 10 lessons, 25 min
+Lessons:
+1. A small place in a vast Cosmos: Earth is one rare spot in a mostly empty universe.
+2. A world that can be understood: A stick, a shadow and a good question measured the Earth.
+3. Facts beat a favorite idea: Kepler gave up the circle because of eight small minutes.
+4. Venus is a warning: A twin of Earth became a furnace, so care for ours.
+5. How selection builds life: A crab with a samurai face shows how life is shaped.
+6. We are made of starstuff: The atoms in you were made inside stars.
+7. To look far is to look back: Distant light shows the past, and the universe's start.
+8. Memory beyond the body: Genes, brains and libraries, and what a lost library costs.
+9. Are we alone?: Seven guesses, and one that decides the answer.
+10. Who speaks for Earth?: One species on one fragile world.
+
+### How to Read a Book — Mortimer J. Adler
+Page: https://bookmuse.wanngo.com/summaries/how-to-read-a-book/
+Core idea: A hard book can lift your understanding, but only if you work on it: first to see its shape, then to grasp what it says, and last to judge it fairly.
+About the book: How to Read a Book is a guide to reading for understanding, first published in 1940 by the American philosopher Mortimer J. Adler. It says that a book above your level can lift you only if you read it actively, in three ways: for its structure, for its meaning and for a fair judgment. Adler gives rules for practicing on the great books, and he ends by arguing that readers who can do this become free minds. It is for anyone who can read but wants to read better.
+Categories: Productivity, Self-Growth
+Length: 7 lessons, 20 min
+Lessons:
+1. Read to understand more: Facts alone leave you where you stood
+2. Three readings, one habit: The whole list of rules, and how practice joins them
+3. See the skeleton: What kind of book, what it says, how it fits
+4. Come to terms: Use the key words in the author's sense
+5. Say it in your own words: Claims, arguments and two tests of understanding
+6. Talk back, fairly: Judge only after you understand, and give reasons
+7. Start with the great books: Learn on books that teach, and read them together
+
+### Man’s Search for Meaning — Viktor E. Frankl
+Page: https://bookmuse.wanngo.com/summaries/man-s-search-for-meaning/
+Core idea: People are driven most by a search for meaning, not by pleasure or power, and a person with a reason to live can bear almost any hardship, because one freedom can never be taken away: the freedom to choose how to respond.
+About the book: Man’s Search for Meaning (first published in German in 1946) is Viktor Frankl’s account of three years in Nazi concentration camps and of the method he built from them. Frankl, a psychiatrist in Vienna, argues that people are driven most by a search for meaning, and that a person with a reason to live can bear almost any hardship. The second part explains his method, logotherapy, and why happiness cannot be chased. It is for anyone who wants to understand what keeps a person going in a hard time.
+Categories: Happiness, Self-Growth
+Length: 7 lessons, 16 min
+Lessons:
+1. A why to live for: How a reason to live holds a person up
+2. The empty feeling: Why people feel hollow, and what is missing
+3. Life asks you: Turn the big question round
+4. Three ways to find meaning: Doing, loving, and facing what you cannot change
+5. The last freedom: What nobody can take from you
+6. Meaning in suffering: What to do with pain you cannot avoid
+7. Happiness is a side effect: Why chasing it makes it run away
+
+### The Four Agreements — Don Miguel Ruiz
+Page: https://bookmuse.wanngo.com/summaries/the-four-agreements/
+Core idea: As children we agreed to beliefs we never chose, and four new agreements can replace the ones that make us suffer.
+About the book: The Four Agreements is a short 1997 book by Don Miguel Ruiz, who presents it as Toltec wisdom from southern Mexico. It argues that, as children, we agreed to beliefs we never chose, and that these beliefs now shape how we feel and act. It offers four new agreements to replace them, for anyone who wants less self-blame, calmer relationships and more freedom.
+Categories: Spirituality, Self-Growth
+Length: 6 lessons, 16 min
+Lessons:
+1. Beliefs you never chose: Where your beliefs came from, and the inner Judge that enforces them.
+2. Be impeccable with your word: Words can build or harm. Use them with truth and love.
+3. Don't take anything personally: What others say and do is about them, not about you.
+4. Don't make assumptions: Ask instead of guessing, and many fights never start.
+5. Always do your best: Your best changes every day. Give that, no more and no less.
+6. Break the old agreements: See your old beliefs, break them step by step, and replace them.
+
+### The Intelligent Investor — Benjamin Graham, Jason Zweig
+Page: https://bookmuse.wanngo.com/summaries/the-intelligent-investor/
+Core idea: Treat a stock as a small piece of a real business: pay less than it is worth, plan for being wrong, and do not let the market’s moods or your own run your money.
+About the book: The Intelligent Investor is a classic guide to investing for ordinary people, first published in 1949 by Benjamin Graham, with fresh commentary by Jason Zweig. It teaches that a stock is a share of a real business, that you should pay less than it is worth, and that your own behavior is the biggest risk. It is written for people who want safe, steady results, not quick riches.
+Categories: Money & Investments
+Length: 7 lessons, 19 min
+Lessons:
+1. Investing is not speculating: An investor studies a business. A speculator bets on a price.
+2. Treat a stock as a business: Ask what it is worth and how much you are paying.
+3. Mr. Market: The market names a price every day. You need not accept it.
+4. The margin of safety: Pay well under what a thing is worth, so a mistake cannot ruin you.
+5. Choose your role and split your money: Most people should be defensive investors with a simple plan.
+6. Do not chase the hot streak: Over the long run most funds do worse than the market. Costs and fading streaks are why.
+7. Your own worst enemy: How you act matters more than what you own.
 
 ### Guns, Germs, and Steel — Jared Diamond
 Page: https://bookmuse.wanngo.com/summaries/guns-germs-and-steel/
@@ -471,38 +1112,6 @@ Lessons:
 7. Learn from every setback: Defeat is a state of mind, and a setback can teach.
 8. Aim at a goal: Know where you are going, then take one step.
 
-### The Obstacle Is the Way — Ryan Holiday
-Page: https://bookmuse.wanngo.com/summaries/the-obstacle-is-the-way/
-Core idea: Whatever blocks your way can be used. See it clearly, act on it with energy, and accept what you cannot change, and the obstacle becomes the way forward.
-About the book: The Obstacle Is the Way is a 2014 self-help book by Ryan Holiday, built on the ideas of the ancient Stoics. It tells the stories of generals, inventors, athletes and presidents who met trouble with three disciplines: Perception, Action and the Will. Holiday argues that what blocks your path can become your path, if you see it clearly, act with energy and accept what you cannot change. It is written for anyone who feels stuck.
-Categories: Self-Growth, Happiness
-Length: 8 lessons, 19 min
-Lessons:
-1. Stay calm, see the facts: Perception: stay calm, then look at what is really there
-2. Know what is up to you: Perception: spend your effort only where it counts
-3. Find the opportunity inside: Perception: every obstacle has a second side
-4. Start now and keep going: Action: begin before you feel ready, and do not stop
-5. Take one step at a time: Action: the process turns a mountain into small steps
-6. Go around, not through: Action: when force fails, find the side door
-7. Accept it, then love it: Will: what you cannot change, you can still use
-8. Get ready before it comes: Will: build your strength and picture what could go wrong
-
-### Think Again — Adam Grant
-Page: https://bookmuse.wanngo.com/summaries/think-again/
-Core idea: Being smart is not enough: in a world that changes fast, rethinking and unlearning matter just as much, and you build them by thinking like a scientist.
-About the book: Think Again (2021) is a book by organizational psychologist Adam Grant. It argues that rethinking and unlearning matter as much as intelligence in a world that changes fast. Through stories and studies, it shows how to rethink in your own mind, with other people and in groups. It is for anyone who wants to change their mind well and help others do the same.
-Categories: Business & Career, Self-Growth
-Length: 8 lessons, 20 min
-Lessons:
-1. Think like a scientist: Treat your opinions as guesses to test, not truths to defend.
-2. Confident humility: Trust that you can learn, and doubt what you know now.
-3. The joy of being wrong: Let go of your old self and your opinions, and mistakes become discoveries.
-4. The good fight: Argue about ideas, not people, and ask critics to push back.
-5. Debate like a dance: Find common ground, give fewer reasons and ask questions.
-6. Listening opens minds: Ask open questions and listen, so people find their own reasons to change.
-7. Cultures that learn: Make it safe to question, and judge how a choice was made, not only how it ended.
-8. Plans are drafts: Check your career and life plans twice a year.
-
 ### A Brief History of Time — Stephen Hawking
 Page: https://bookmuse.wanngo.com/summaries/a-brief-history-of-time/
 Core idea: The universe runs on laws we can understand, and joining the science of the very big with the science of the very small may show how it all began.
@@ -518,52 +1127,6 @@ Lessons:
 6. A universe with no edge: A start that is not a boundary
 7. Why time runs one way: Disorder, memory and a trip to the past
 8. The hunt for one theory: Four forces, two clashing theories, one goal
-
-### Becoming Supernatural — Joe Dispenza
-Page: https://bookmuse.wanngo.com/summaries/becoming-supernatural/
-Core idea: Your thoughts, actions and feelings keep your future a copy of your past, and you can change them ahead of time with a clear intention and an elevated emotion, until your body believes the new life has begun.
-About the book: Becoming Supernatural is a 2017 self-help book by Joe Dispenza, a chiropractor who teaches workshops on the brain. It argues that your thoughts and feelings keep your future a copy of your past, and that meditation can change both. It offers a set of meditations for healing, new chances and mystical experiences. Dispenza reads quantum physics and biology in his own way, and his stories come from people at his workshops.
-Categories: Spirituality, Self-Growth
-Length: 8 lessons, 23 min
-Lessons:
-1. Your past becomes your future: How the same thoughts and feelings keep you stuck.
-2. Your body believes what you rehearse: Thinking can change your brain, muscles and genes.
-3. Where attention goes, energy flows: Call your energy back to the present moment.
-4. Intention plus elevated emotion: How to call a new job, health or chance.
-5. Free the energy stuck in your body: The eight energy centers and the breath.
-6. Open your heart: A steady heart rhythm brings the brain into order.
-7. Walk into your future: Mind Movies and a walking meditation.
-8. Beyond the senses: The pineal gland and the mystical experience.
-
-### Getting to Yes — Roger Fisher, William Ury, Bruce Patton
-Page: https://bookmuse.wanngo.com/summaries/getting-to-yes/
-Core idea: You do not have to choose between being hard and being soft. Settle the problem itself, not a contest of will, protect the person across the table, and look for a result both sides can call fair.
-About the book: Getting to Yes is a short guide to negotiating, first published in 1981 by Roger Fisher and William Ury of the Harvard Negotiation Project, with Bruce Patton as editor and later coauthor. It argues that you do not have to choose between being hard and being soft. It offers a method called principled negotiation: settle the problem itself of the problem, look for results that help both sides, and be fair to the people. It is written for anyone who negotiates, from a raise to a peace treaty.
-Categories: Negotiation
-Length: 7 lessons, 19 min
-Lessons:
-1. Why haggling fails: Defending a position makes the deal worse, slower and more bitter
-2. Separate the people from the problem: Treat feelings and misunderstandings on their own
-3. Focus on interests, not positions: Ask why a side wants something, not only what it wants
-4. Invent options for mutual gain: Make a bigger pile of choices before you decide
-5. Insist on objective criteria: Let a fair standard decide, not a contest of will
-6. Know your BATNA: Your power is what you can do if there is no deal
-7. When they push, don't push back: Turn their attack toward the problem, and spot dirty tricks
-
-### Mastery — Robert Greene
-Page: https://bookmuse.wanngo.com/summaries/mastery/
-Core idea: Mastery is not a gift some people are born with. It grows in anyone who finds the work that fits them, then spends years in three phases of learning, until they can feel their whole field at once.
-About the book: Mastery (2012) is Robert Greene’s guide to how people reach the highest level of skill in any field. Greene, the author of The 48 Laws of Power, studied the lives of great masters such as Leonardo da Vinci, Charles Darwin and Mozart, and interviewed nine living ones. He argues that mastery is not a gift of genius but the result of a long process in three phases, which anyone can follow by choosing the right work and staying with it for years. It is for anyone who wants to build deep skill and a career that fits who they are.
-Categories: Self-Growth, Personalities
-Length: 7 lessons, 18 min
-Lessons:
-1. Find your Life’s Task: The early pull that points to your work
-2. Submit to reality: Watch, practice one skill, then test your work
-3. Learn from a mentor: How a mentor shortens the road, and when to leave
-4. See people as they are: Drop the childish view of people, and know the seven deadly realities
-5. Wake the dimensional mind: An open mind plus deep knowledge makes you creative
-6. Hold the tension, then let go: Why feeling stuck is part of the idea
-7. Feel the whole field: After years of focus you sense the whole, not the parts
 
 ### Mindset — Carol S. Dweck
 Page: https://bookmuse.wanngo.com/summaries/mindset/
@@ -659,21 +1222,6 @@ Lessons:
 7. Pursue what is meaningful: Give up an easy pleasure now for a larger good later.
 8. Tell the truth: When unsure, tell the truth.
 
-### Astrophysics for People in a Hurry — Neil deGrasse Tyson
-Page: https://bookmuse.wanngo.com/summaries/astrophysics-for-people-in-a-hurry/
-Core idea: The same laws of physics work everywhere, so by reading every kind of light we have traced the universe from a pinpoint to us, and most of it is still dark.
-About the book: Astrophysics for People in a Hurry is a 2017 book by the astrophysicist Neil deGrasse Tyson. It is a short guide to the universe, from the big bang to dark matter and dark energy, for readers with little time. It argues that the same laws of physics hold everywhere, that most of the cosmos is still unknown, and that seeing our small place in it should make us humble.
-Categories: Society & Tech
-Length: 7 lessons, 19 min
-Lessons:
-1. From a pinpoint to people: How the universe grew up, step by step
-2. The same laws everywhere: Why the Sun and Earth follow one rulebook
-3. The afterglow of the big bang: The oldest light, found by accident
-4. Dark matter: Gravity from something we cannot see
-5. Dark energy: A push in empty space, and Einstein's blunder
-6. Seeing the invisible: Telescopes for every kind of light
-7. The cosmic perspective: Why the huge universe should make us humble
-
 ### Principles for Dealing with the Changing World Order — Ray Dalio
 Page: https://bookmuse.wanngo.com/summaries/principles-for-dealing-with-the-changing-world-order/
 Core idea: Empires, their money and their markets rise and fall in one repeating Big Cycle, so the smart move is to learn its pattern and protect yourself from the worst case.
@@ -720,38 +1268,6 @@ Lessons:
 6. Self-love is not selfishness: Caring for yourself belongs to love
 7. Pseudo-love: Look-alikes that pass for love
 8. Practice love every day: Discipline, concentration, patience, faith and courage
-
-### The Millionaire Next Door — Thomas J. Stanley and William D. Danko
-Page: https://bookmuse.wanngo.com/summaries/the-millionaire-next-door/
-Core idea: Most American millionaires are ordinary people who spend far less than they earn and invest the rest, while many high earners who look rich own little.
-About the book: The Millionaire Next Door is a 1996 study of how ordinary Americans become wealthy. Thomas J. Stanley and William D. Danko studied millionaires for twenty years. They argue that wealth comes from spending far less than you earn, planning, and raising independent children, not from luck, inheritance or a show of status. It is for anyone who earns well but cannot seem to build wealth.
-Categories: Money & Investments
-Length: 7 lessons, 17 min
-Lessons:
-1. Wealth is what you keep: Net worth, not pay, makes you wealthy.
-2. Live below your means: Millionaires spend little and invest first.
-3. Plan before you spend: Budget, set goals, and give money time each month.
-4. Status is a costly treadmill: Showing wealth uses up the money that builds it.
-5. Cash gifts hold adults back: The more adult children are given, the less they build.
-6. Raise children who stand alone: Independence grows from example and from struggle.
-7. Own your work: Most millionaires are self-employed in plain businesses.
-
-### The Selfish Gene — Richard Dawkins
-Page: https://bookmuse.wanngo.com/summaries/the-selfish-gene/
-Core idea: Evolution works on genes, not on groups: genes that copy themselves well spread, bodies are the machines they build, and kindness shows up among relatives and between players who meet again.
-About the book: The Selfish Gene is a popular science book by the zoologist Richard Dawkins, first published in 1976. It argues that evolution is best seen from the point of view of the gene, the thing that gets copied, and that bodies are machines that carry genes along. It explains why animals help their relatives, raise their young, choose mates and sometimes cooperate, and it adds the idea of the meme. It is for anyone who wants a new way to see why living things act as they do.
-Categories: Society & Tech
-Length: 9 lessons, 25 min
-Lessons:
-1. Not for the good of the group: Why a gift to the whole group cannot win
-2. Genes and the machines they build: Copies, mistakes and bodies that carry them
-3. Genes set rules, brains decide: Why genes build brains instead of steering
-4. Hawks, doves and stable strategies: The mix of behavior that nobody can beat
-5. Why we help our relatives: How close kin make helping pay
-6. Parents and children want different deals: The quiet quarrel over milk and food
-7. Mates share children, not interests: Why each partner is tempted to do less
-8. How cooperation can win: Nice, forgiving and not envious beats cheating
-9. Memes: ideas that copy themselves: A new copier that spreads from mind to mind
 
 ### The Simple Path to Wealth — J.L. Collins
 Page: https://bookmuse.wanngo.com/summaries/the-simple-path-to-wealth/
@@ -829,37 +1345,6 @@ Lessons:
 6. How to stop a game: Decline the payoff, and what happens next
 7. Life beyond games: Awareness, spontaneity and intimacy
 
-### Playing to Win — A.G. Lafley and Roger L. Martin
-Page: https://bookmuse.wanngo.com/summaries/playing-to-win/
-Core idea: Strategy is not a vision or a plan. It is a set of five connected choices about how you will win, and you can test those choices by asking “What would have to be true?”
-About the book: Playing to Win (2013) is a guide to strategy by A.G. Lafley, who was chief executive of Procter & Gamble, and Roger L. Martin, a business school dean and strategy adviser. It argues that strategy is a set of five connected choices about how to win, not a vision or a plan. The authors teach the five choices, a way to think through the facts and a way to choose between options, with stories from P&G. It is for managers and for anyone who wants a clearer way to decide where to compete and how to win.
-Categories: Business & Career, Leadership
-Length: 7 lessons, 19 min
-Lessons:
-1. Strategy is choice: Five connected choices, and how Olay came back.
-2. Play to win: Why an aim that was too modest sank Saturn.
-3. Where to play, and where not: How Bounty split its buyers into three groups.
-4. How to win: Cost less, or be worth more: the only two ways.
-5. Strengths that fit together: A razor for India, and strengths that back each other up.
-6. Manage what matters: The meetings, messages and measures that carry a strategy through.
-7. Ask what would have to be true: A way to choose between options that ends the arguing.
-
-### Quiet — Susan Cain
-Page: https://bookmuse.wanngo.com/summaries/quiet/
-Core idea: Our culture treats the bold, talkative style as the best one. Yet up to half of Americans are introverts, and quiet strengths are powers we cannot afford to waste.
-About the book: Quiet is a 2012 book by Susan Cain, a former Wall Street lawyer. It argues that our schools, workplaces and culture favor bold, talkative people, even though one third to one half of Americans are introverts. Drawing on psychology and brain research, it explains where introversion comes from and shows how quiet people lead, create and think. It is for introverts, and for anyone who lives with, manages or teaches one.
-Categories: Productivity, Self-Growth
-Length: 8 lessons, 19 min
-Lessons:
-1. A world built for talkers: How the bold style became the one we admire
-2. Loud is not the same as right: Talkers win the room, but not always with the best ideas
-3. Great work starts alone: Why solitude can beat the brainstorm
-4. Born alert to the new: A baby study that shows where quiet can start
-5. Find your sweet spot: You can stretch, but only so far
-6. Careful minds see warnings: Why slowing down can save you money and mistakes
-7. Stretch for what you love: How to act outgoing without losing yourself
-8. Quiet people connect too: Different ways of being social, at home and at school
-
 ### The Laws of Human Nature — Robert Greene
 Page: https://bookmuse.wanngo.com/summaries/the-laws-of-human-nature/
 Core idea: Deep forces such as emotion, self-love, envy and fear drive us without our knowing, and once you see them in others and in yourself, you stop being caught off guard.
@@ -875,38 +1360,6 @@ Lessons:
 6. Everyone has a dark side: The law of repression, and how to face your own
 7. Envy hides in friendship: The law of envy, and how to spot it early
 8. Death makes life real: The law of death denial, and what facing it gives you
-
-### The Mind-Gut Connection — Emeran Mayer
-Page: https://bookmuse.wanngo.com/summaries/the-mind-gut-connection/
-Core idea: Your brain, your gut and the trillions of microbes in it talk to each other all day, and what you eat and how you feel changes what they say.
-About the book: The Mind-Gut Connection is a 2016 book by Emeran Mayer, a gastroenterologist and researcher at UCLA. Mayer explains how the brain, the gut and the trillions of microbes in it send each other messages all day. He shows how this talk shapes stress, mood, appetite and gut feelings, and how early life and modern food change it. He writes for general readers who want to look after both gut and mind.
-Categories: Health
-Length: 8 lessons, 20 min
-Lessons:
-1. A gut that listens and talks: Its own nerves, and a cable to your brain
-2. Emotions play out in your gut: Why stress can make a healthy gut sick
-3. Your microbes join the talk: Three ways they send messages to your brain
-4. Can microbes change your mood?: A yogurt study, and what is still unproven
-5. Early life sets the dial: How childhood stress tunes the gut and brain
-6. Gut feelings guide your choices: How your brain turns body signals into hunches
-7. Modern food scrambles the talk: Fat, sweeteners and eating past full
-8. Farm your gut microbes: Variety, plants and calm meals
-
-### The Next Millionaire Next Door — Thomas J. Stanley and Sarah Stanley Fallaw
-Page: https://bookmuse.wanngo.com/summaries/the-next-millionaire-next-door/
-Core idea: People build wealth with everyday habits: they spend less than they earn, ignore what others show off, and run their money like a job.
-About the book: The Next Millionaire Next Door is a 2018 follow-up to the classic study of how ordinary Americans build wealth. Thomas J. Stanley died in 2015, and his daughter Sarah Stanley Fallaw, a psychologist, finished it with a new survey of millionaires. They argue that the habits behind wealth are the same today: spend less than you earn, ignore what others show off, and manage your money like a job. It is for anyone who wants to build wealth on their own.
-Categories: Money & Investments
-Length: 8 lessons, 19 min
-Lessons:
-1. Income is not wealth: Wealth is what you own minus what you owe.
-2. Ignore the myths of wealth: Blaming others costs you more than it gives.
-3. Ignore the Joneses: Neighbors and screens set what you spend.
-4. Your upbringing is not your fate: Children copy parents, and adults can change.
-5. Wealth is a job: Someone must run the household's money.
-6. Discipline beats test scores: Grades and famous schools matter less than habits.
-7. Margin buys career freedom: Saving gives you the choice to change your work.
-8. Invest simply and keep learning: Low cost and calm beat exotic and clever.
 
 ### The Science of Getting Rich — Wallace D. Wattles
 Page: https://bookmuse.wanngo.com/summaries/the-science-of-getting-rich/
@@ -924,22 +1377,6 @@ Lessons:
 7. Guard your thoughts: Use your will on yourself and keep poverty out of mind
 8. Act now, where you are: Thought brings it, action receives it
 
-### The Untethered Soul — Michael A. Singer
-Page: https://bookmuse.wanngo.com/summaries/the-untethered-soul/
-Core idea: You are not your thoughts or your feelings. You are the one who notices them, and you grow free by letting them pass instead of guarding yourself.
-About the book: The Untethered Soul is a 2007 book by Michael A. Singer about the voice in your head and the self behind it. It draws on yoga, Buddhist and Christian teachings. Singer argues that you are the one who notices your thoughts and feelings, not the thoughts themselves, and that you become free by letting them pass instead of guarding yourself against them. It is for anyone who wants less inner worry and more peace.
-Categories: Spirituality
-Length: 8 lessons, 18 min
-Lessons:
-1. The voice is not you: The chatter in your head is not who you are
-2. You are the one who sees: Awareness stays when everything else changes
-3. Old pain stays in your heart: Why a small thing can hit so hard
-4. Let go the moment you are hit: Meet the first tightening with release
-5. Remove the thorn: Guarding a sore spot never heals it
-6. Your walls are made of thoughts: The self you defend is a house you built
-7. Choose happiness, whatever happens: Events do not ruin your day. Resisting them does
-8. Death is a teacher: Every moment counts because life can end
-
 ### Think Like a Monk — Jay Shetty
 Page: https://bookmuse.wanngo.com/summaries/think-like-a-monk/
 Core idea: You do not need robes or a monastery to find peace and purpose: you train your mind the way monks do, by letting go, growing and giving.
@@ -955,22 +1392,6 @@ Lessons:
 6. Drive the chariot of your mind: You are not your mind, and you can train it.
 7. Gratitude, even for setbacks: A habit that changes how you see things.
 8. Serve first, not later: Giving heals the giver, and you need not wait.
-
-### All About Love — bell hooks
-Page: https://bookmuse.wanngo.com/summaries/all-about-love/
-Core idea: Love is not a feeling that happens to us. It is a choice we make again and again, and we learn it by telling the truth, treating people fairly and facing our fear.
-About the book: All About Love: New Visions is a 2000 book by the writer and cultural critic bell hooks. She argues that most of us were never taught what love is, and that this is why love so often fails. Drawing on her own life and on thinkers such as M. Scott Peck and Erich Fromm, she describes love as a choice and an action. She shows how honesty, fairness, community and courage can bring us back to it.
-Categories: Love & Sex
-Length: 8 lessons, 19 min
-Lessons:
-1. Love is what you do: Love is a choice to help someone grow, not a feeling
-2. Childhood teaches love: Children learn what love is from how adults treat them
-3. Love needs the truth: Lies wear away the trust that love stands on
-4. Love starts with you: You cannot give what you refuse yourself
-5. Greed pushes out love: A culture of power and getting more leaves little room for love
-6. One love for every bond: Friends, family and partners all deserve the same love
-7. True love is mutual work: Choose love, talk honestly, listen and give
-8. Love casts out fear: Facing death, shame and wounds with an open heart
 
 ### Capital in the 21st Century — Thomas Piketty
 Page: https://bookmuse.wanngo.com/summaries/capital-in-the-21st-century/
@@ -988,52 +1409,6 @@ Lessons:
 7. Inheritance is coming back: Balzac's warning, and work against family money
 8. A yearly tax on wealth: Piketty's answer, and why banks must share data
 
-### I Am Malala — Malala Yousafzai, Christina Lamb
-Page: https://bookmuse.wanngo.com/summaries/i-am-malala/
-Core idea: A girl who loved school kept speaking up for it when the Taliban banned it. They shot her for it, and her voice only grew louder.
-About the book: I Am Malala is the memoir of Malala Yousafzai, written with the journalist Christina Lamb and published in 2013. It tells how a girl from the Swat Valley in Pakistan grew up in a school her father built, spoke out for girls' education when the Taliban banned it, and was shot on her school bus in 2012. It shows how she survived and kept campaigning, and is for anyone who wants to see what one voice can do.
-Categories: Personalities
-Length: 7 lessons, 17 min
-Lessons:
-1. A daughter free as a bird: Why one person's belief can change a child's life
-2. School is every child's right: The children of the rubbish mountain
-3. How a radio voice took a valley: Help first, then fear
-4. Speak, even when afraid: Why silence helps those who use fear
-5. They came for her voice: The threats, the bus, and no wish for revenge
-6. Many hands saved her: Doctors, army leaders and strangers
-7. One cause, not one story: From a hospital bed to the United Nations
-
-### Outwitting the Devil — Napoleon Hill
-Page: https://bookmuse.wanngo.com/summaries/outwitting-the-devil/
-Core idea: In this book the Devil is fear living in the unused part of your mind, and you outwit him by deciding what you want and thinking for yourself.
-About the book: Outwitting the Devil is Napoleon Hill’s 1938 manuscript, published in 2011 with notes by Sharon Lechter. Hill writes it as an interview in which he makes the Devil confess how he controls people through fear and drifting. He argues that you can break free by deciding what you want, mastering yourself and learning from defeat. It is for readers who want a plain method for taking charge of their own minds.
-Categories: Productivity, Self-Growth
-Length: 7 lessons, 18 min
-Lessons:
-1. Fear is the real devil: Where the Devil lives, and how fear gets in
-2. The habit of drifting: Why most people never choose their own course
-3. How habits harden: Why a repeated thought sets, and what time adds
-4. Know what you want: A purpose, a plan, and another plan when it fails
-5. Master yourself first: Three appetites that rule you if you let them
-6. Learn from defeat: Why a setback is only a failure if you accept it
-7. Choose your company: The people near you shape how you think
-
-### Psycho-Cybernetics — Maxwell Maltz, MD
-Page: https://bookmuse.wanngo.com/summaries/psycho-cybernetics-a-new-way-to-get-more-living-out-of-life/
-Core idea: Your mind steers you toward the picture you hold of yourself. Change that picture, with vivid imagination, calm practice and new habits, and you change what you do.
-About the book: Psycho-Cybernetics (1960) is a self-help classic by Maxwell Maltz, a plastic surgeon. Maltz noticed that a new face did not always change a patient, and he concluded that the picture people hold of themselves, the self-image, sets what they can do. Borrowing ideas from cybernetics, the science of self-steering machines, he describes the brain as a goal-seeking system that you can aim with imagination, relaxation and new habits. It is for anyone held back by doubt, worry or old hurts.
-Categories: Self-Growth, Happiness
-Length: 8 lessons, 19 min
-Lessons:
-1. Your picture of yourself: You act to match it, so it sets your limits
-2. Your built-in guidance system: Give it a target and let it steer, misses and all
-3. Practice in your head: A vivid picture works on your nerves like the real thing
-4. Beliefs that hypnotize you: A false idea can act like a hypnotist's order
-5. Stop jamming the machinery: Think first, then let go and stay calm
-6. The happiness habit: Pleasant thinking is a skill you can practice now
-7. Signs of success and failure: Seven traits to grow and seven signals to read
-8. Cut out old hurts: Forgive completely, yourself too
-
 ### Steve Jobs — Walter Isaacson
 Page: https://bookmuse.wanngo.com/summaries/steve-jobs/
 Core idea: Steve Jobs made products people loved by joining art with technology, controlling the whole experience and keeping only what mattered, and the same intensity that drove the work often hurt the people around him.
@@ -1049,23 +1424,6 @@ Lessons:
 6. Say no to almost everything: How cutting products saved Apple in 1997.
 7. Show people what they will want: Why he skipped market research and replaced his own hit.
 8. Build a company, not just products: What he lost in 1985, and what he built to last.
-
-### The Personal MBA — Josh Kaufman
-Page: https://bookmuse.wanngo.com/summaries/the-personal-mba/
-Core idea: Every business is five simple parts, and you can learn them yourself, along with how people and systems behave, without an expensive degree.
-About the book: The Personal MBA (2010, with new material in the 2012 paperback) is a plain-language guide to how business works. Josh Kaufman worked at Procter & Gamble, then left to build the Personal MBA project full time. He argues that most of business comes down to a few simple ideas, and that anyone can learn them without a business degree. The book gathers 248 of them as mental models about how businesses, people and systems work, for beginners and for experienced people alike.
-Categories: Business & Career, Productivity
-Length: 9 lessons, 22 min
-Lessons:
-1. The five parts of every business: Business is five simple parts, and each one can fail
-2. Prove people want it first: Sell it before you build it
-3. Earn the right attention: Get noticed by the people who might buy
-4. Sell by removing doubt: Teach buyers, answer their doubts and take the risk
-5. Beat what customers expect: Promise what you can beat, and be steady
-6. Keep more than you spend: Profit, cash and knowing when it is enough
-7. Change your surroundings, not your will: Make the right choice the easy one
-8. Keep teams small and clear: Why big teams slow down, and how to stay clear
-9. Expect surprises from systems: Side effects, start simple, and build to survive
 
 ### Tuesdays with Morrie — Mitch Albom
 Page: https://bookmuse.wanngo.com/summaries/tuesdays-with-morrie/
@@ -1111,37 +1469,6 @@ Lessons:
 5. Picture it, then move: See the new cheese, let go and go
 6. Change together: A group changes when its people do
 
-### Women Who Love Too Much — Robin Norwood
-Page: https://bookmuse.wanngo.com/summaries/women-who-love-too-much/
-Core idea: Loving too much means obsessing about a man who cannot love you back and calling it love. The way out is to turn all that effort toward yourself.
-About the book: Women Who Love Too Much is a self-help book by the counselor Robin Norwood, first published in 1985. It describes women who give everything to men who cannot love them back, and it argues that this pattern grows in childhood homes where feelings were ignored. Norwood compares the pattern to an addiction and offers ten steps of recovery for women who keep wishing and hoping that he will change.
-Categories: Love & Sex, Self-Growth
-Length: 7 lessons, 19 min
-Lessons:
-1. When love means pain: What loving too much is, in fifteen signs
-2. Where it begins: How a childhood teaches you to earn love by fixing
-3. Why the wrong man feels right: Why struggle feels like love and kind men feel dull
-4. Love as a drug: Why letting go feels like withdrawal
-5. Help that controls: How fixing him keeps you stuck, and what acceptance does
-6. The ten steps out: The book's plan, and why it starts with you
-7. Being known: What love feels like once you recover
-
-### Atlas Shrugged — Ayn Rand
-Page: https://bookmuse.wanngo.com/summaries/atlas-shrugged/
-Core idea: The world runs on the minds of people who think and build. Punish them for it, and they will leave, and everything stops with them.
-About the book: Atlas Shrugged is a 1957 novel by Ayn Rand, a Russian-born American writer. It is set in a United States that is slowly falling apart, as its most able people vanish one by one. The story and a long speech by its hero, John Galt, argue that the world runs on the minds of people who think and build, that money rests on voluntary trade, and that a duty to sacrifice yourself for others destroys the people it feeds on.
-Categories: Business & Career, Fiction
-Length: 8 lessons, 18 min
-Lessons:
-1. The mind moves the world: Where every rail, motor and pay check comes from
-2. Money means trade: Why the book calls money good
-3. The factory that ran on need: What happened when pay followed need
-4. Your life is your own: What sacrifice means, and the book's values
-5. A is A: Facts stay facts, whatever you wish
-6. A gun is not an argument: Why force cannot make a mind work
-7. The sanction of the victim: How the people who punish ability need your help
-8. The strike: What happens when the thinkers say no
-
 ### Automate the Boring Stuff with Python — Al Sweigart
 Page: https://bookmuse.wanngo.com/summaries/automate-the-boring-stuff-with-python-2nd-edition/
 Core idea: A short program can do in seconds the repetitive computer jobs that eat your hours, and you do not have to be a software engineer to write one.
@@ -1158,38 +1485,6 @@ Lessons:
 7. Pick the most direct tool: The web, other apps, and clicking when nothing else works
 8. Bugs are normal: Catch them early, read the clues, ask well
 
-### Being Mortal — Atul Gawande
-Page: https://bookmuse.wanngo.com/summaries/being-mortal/
-Core idea: When a body can no longer be fixed, safety and a longer life are not enough: people want to stay the authors of their own story, so doctors, care homes and families must ask what matters most and shape care around it.
-About the book: Being Mortal (2014) is surgeon Atul Gawande's book about aging, serious illness and dying. He was never taught about mortality in medical school, and he uses patients, his wife's grandmother and his own father to show how medicine, nursing homes and families treat the last chapters of life. He argues that modern medicine is good at fixing and prolonging life but poor at helping people live well when they cannot be fixed. It is for anyone who will face aging or illness, their own or a parent's.
-Categories: Health, Spirituality
-Length: 8 lessons, 20 min
-Lessons:
-1. When independence ends: We prize living alone, but that ends, and few plan for it.
-2. Managing decline: Old age is wearing down, and good care protects what matters.
-3. Homes built for safety: Nursing homes began as a fix for hospitals, not a life for people.
-4. A home, not a ward: Help works best in your own home, on your terms.
-5. A reason to live: Something to care for, and the right to write your own story.
-6. Hope is not a plan: Why we chase more treatment, and what hospice and talking change.
-7. The hard conversation: The questions that turn a doctor into a guide.
-8. Two kinds of courage: Face the truth, then act on it, and shape the ending.
-
-### Blink — Malcolm Gladwell
-Page: https://bookmuse.wanngo.com/summaries/blink/
-Core idea: Decisions made in the first two seconds can be as good as slow, careful ones, but they can be fooled, so learn when to trust a first impression, when to guard it and how to train it.
-About the book: Blink is a 2005 book by Malcolm Gladwell, a staff writer at The New Yorker. It argues that snap judgments made in the first two seconds can be as good as long, careful thinking. Through stories from art, medicine, war, business and policing, it shows when they work, when they fail and how to train them.
-Categories: Self-Growth
-Length: 8 lessons, 20 min
-Lessons:
-1. A mind that knows before you do: A card game and a statue show it.
-2. A thin slice tells a lot: A few minutes of talk can predict a marriage or a lawsuit.
-3. The locked door: You cannot say why you know, and your reasons may be wrong.
-4. The Warren Harding error: How looks switch thinking off, and how a screen helps.
-5. Less information, better decisions: A four-fact rule beat doctors in an emergency room.
-6. Rules make quick thinking work: What improv actors and a Marine general have in common.
-7. Why asking can mislead: Why cola tests, a chair and a singer fooled the testers.
-8. Stress shuts the quick mind: A night in the Bronx, and how to keep your head.
-
 ### Born a Crime — Trevor Noah
 Page: https://bookmuse.wanngo.com/summaries/born-a-crime/
 Core idea: Apartheid made Trevor Noah’s birth a crime and tried to keep people apart, and a mother who loved hard, taught him to think and found the cracks in unjust rules gave him ways to cross every line.
@@ -1205,66 +1500,6 @@ Lessons:
 6. The world does not love you: Why she did not let him off, and what she did behind his back
 7. Freedom needs a fishing rod: A CD writer, a street corner and the hustle that went nowhere
 8. Why she could not just leave: Why the question was harder than it looked
-
-### Dare — Barry McDonagh
-Page: https://bookmuse.wanngo.com/summaries/dare/
-Core idea: Anxiety is a wave of nervous energy, and it traps you only when you fear it, so you heal by moving with the wave, not against it.
-About the book: Dare (2015) is Barry McDonagh's guide to ending anxiety and panic attacks. McDonagh had his first panic attack at eighteen, was caught in high anxiety for about 500 more days, and has coached people with anxiety for over ten years. The book argues that anxiety is only a wave of nervous energy and that the real trap is fear of it, and it teaches a four-step reply called the DARE Response. It is for anyone stuck in worry, panic or avoidance.
-Categories: Happiness
-Length: 8 lessons, 19 min
-Lessons:
-1. Fear of fear: Why anxiety loops, and what keeps it going
-2. A false alarm: Why the feelings are not a sign something is wrong with you
-3. The DARE Response: Four steps to use when a wave arrives
-4. Say yes to it: Why accepting anxiety makes it fade
-5. Demand more: What to do when a wave grows into a panic attack
-6. Leave your safe zone: How to win back the places you avoid
-7. Thoughts are just thoughts: Why a scary thought says nothing about you
-8. Setbacks are part of it: What recovery looks like, and how you know you are there
-
-### Eat & Run — Scott Jurek, Steve Friedman
-Page: https://bookmuse.wanngo.com/summaries/eat-and-run/
-Core idea: Strength to keep going is built by doing hard things one piece at a time, with good food, a calm mind and friends, and the journey matters more than the prize.
-About the book: Eat & Run is the memoir of ultramarathon champion Scott Jurek, written with Steve Friedman and published in 2012. It follows a poor Minnesota boy who learned to keep going, won the 100-mile Western States race seven years in a row on a plant-based diet, and set records in Death Valley and Greece. It argues that endurance comes from doing hard things piece by piece, with good food, a calm mind and friends, and is for anyone who wants to run farther or simply keep going.
-Categories: Health, Sports & Fitness
-Length: 6 lessons, 16 min
-Lessons:
-1. Sometimes you just do things: How hard chores and a first race built his strength
-2. Food is who we are: Changing what you eat in steps, and eating enough
-3. Run by feel, then check: Instinct first, then a few simple numbers
-4. The mind sets the limit: A four-step checklist for when things go wrong
-5. Friends carry you: How a friend got him up in Death Valley
-6. The journey is the prize: Why the finish line is not the point
-
-### Educated — Tara Westover
-Page: https://bookmuse.wanngo.com/summaries/educated1/
-Core idea: Being educated means learning to weigh many voices and build your own mind, and for Tara Westover that cost her family.
-About the book: Educated: A Memoir is a 2018 memoir by Tara Westover. She grew up in an Idaho mountain family that prepared for the end of the world, with no school and a father who feared the Government and doctors. At seventeen she sat in her first university class, and she later earned a PhD at Cambridge. The book follows what that education cost her, and it is for readers who want to see how a person builds her own mind.
-Categories: Personalities, Family, Self-Growth
-Length: 7 lessons, 18 min
-Lessons:
-1. The world you are given: A child takes her family’s story as the whole world
-2. Faith before safety: Who pays when a belief outranks safety
-3. Patience for hard things: How she learned what she could not yet understand
-4. Keeping your own account: Holding your memory when others tell it another way
-5. Many voices, not one: Reading without fear or worship
-6. You are not your costume: Who you are does not change with the room
-7. The price of your own mind: What a family can ask in return for love
-
-### Hinch Yourself Happy — Mrs. Hinch
-Page: https://bookmuse.wanngo.com/summaries/hinch-yourself-happy/
-Core idea: A home you love and look after can calm a worried mind, because cleaning gives your thoughts a job, a finish line and a small win.
-About the book: Hinch Yourself Happy (2019) is a book of cleaning tips and personal stories by Sophie Hinchliffe, known online as Mrs Hinch, who shares her cleaning on Instagram. She explains why cleaning calms her anxiety and mixes how-to steps with advice on loving your home, making chores fun and being kind to yourself. It is for anyone who wants a cleaner home and a calmer mind.
-Categories: Happiness, Home & Environment
-Length: 7 lessons, 18 min
-Lessons:
-1. Make your home yours: Fill it with what you love, not what impresses visitors
-2. Cleaning calms a worried mind: Give worry a job to do and a finish line
-3. Make the chore fun: Silly names and a strong beat make it easier to start
-4. Start small, even on a low day: No strict routine: a list, a circle and a backwards list
-5. A place for everything: A home for each thing makes tidying easy
-6. Cheap basics, used safely: The sink shine, a plughole fix and five safety tips
-7. Be kind to yourself: Skip the comparing, and let mess and mean words go
 
 ### I Want to Die but I Want to Eat Tteokbokki — Baek Sehee
 Page: https://bookmuse.wanngo.com/summaries/i-want-to-die-but-i-want-to-eat-tteokbokki/
@@ -1312,23 +1547,6 @@ Lessons:
 6. Roots that still shape you: Honor feuds, cockpit hints and change
 7. Work that means something: Garment workers, rice farmers and hard work
 8. Open the door for more people: A Bronx school, and what a fair chance does
-
-### Salt, Sugar and Fat — Michael Moss
-Page: https://bookmuse.wanngo.com/summaries/salt-sugar-and-fat-how-the-food-giants-hooked-us/
-Core idea: Food companies build their products around salt, sugar and fat so that people want more, and they will not stop on their own.
-About the book: Salt Sugar Fat is a 2013 book by Michael Moss, a reporter. Moss spent three and a half years inside the food industry, reading company records and talking with the people who make, test and sell processed food. He shows how salt, sugar and fat are measured, shaped and sold to make people want more. He writes for shoppers who want to know what is in the grocery store, and what they can do about it.
-Categories: Health
-Length: 9 lessons, 23 min
-Lessons:
-1. The bliss point: How sugar is measured and tuned
-2. Fat has no brake: Why fat is the quiet pillar
-3. A salt habit they teach: Where salt hides, and how a craving is made
-4. Convenience sells first: From instant pudding to Lunchables
-5. Heavy users and kids: How Coke chased its best customers
-6. A healthy-looking label: How foods are made to look better for you
-7. Washington warns and sells: A department with two jobs
-8. Why companies cannot stop: A secret meeting, and what came after
-9. Taking back control: What shoppers can do now
 
 ### Team of Teams — Stanley McChrystal, Tantum Collins, David Silverman and Chris Fussell
 Page: https://bookmuse.wanngo.com/summaries/team-of-teams/
@@ -1393,22 +1611,6 @@ Lessons:
 7. Friends, coworkers and strangers count: The ties we tend to neglect
 8. It is never too late: Why your past is not your fate
 
-### The Lean Startup — Eric Ries
-Page: https://bookmuse.wanngo.com/summaries/the-lean-startup/
-Core idea: A startup exists to learn how to build a business that lasts, and it learns fastest by testing each guess with real customers in small steps.
-About the book: The Lean Startup (2011) by Eric Ries argues that a new business is an experiment. He shows how to test an idea cheaply with a rough first version, measure real progress, and know when to change course. The book grew out of his own failed first company and his work at IMVU, and it borrows ideas from Toyota’s lean factories. It is for founders and for people who build new products inside large companies.
-Categories: Business & Career
-Length: 8 lessons, 19 min
-Lessons:
-1. Steer, don’t launch: A plan fails when nothing is known, so steer instead.
-2. Count what you learn: Real progress is proven learning about customers.
-3. Test your leaps of faith: Find the two guesses that everything rests on.
-4. Build the smallest test: Test an idea with the least work.
-5. Measure with honest numbers: Judge each new group of customers on its own.
-6. Know when to pivot: Change strategy on a schedule, with data in hand.
-7. Work in small batches: Small pieces show problems early.
-8. Find your engine of growth: Sticky, viral or paid: choose one.
-
 ### The Omnivore's Dilemma — Michael Pollan
 Page: https://bookmuse.wanngo.com/summaries/the-omnivores-dilemma/
 Core idea: Most of what we eat comes from one cheap crop, corn, and its real cost is hidden. Knowing where your food comes from helps you choose better.
@@ -1441,54 +1643,6 @@ Lessons:
 7. Aim for excellence, not for avoiding errors: Give people a goal and principles they can decide with.
 8. Emancipate, don't just empower: Release talent, and what lasts after the leader leaves.
 
-### When Breath Becomes Air — Paul Kalanithi
-Page: https://bookmuse.wanngo.com/summaries/when-breath-becomes-air/
-Core idea: Death comes for everyone, so the real question is how to live with it: with other people, with honesty, and by going on.
-About the book: When Breath Becomes Air is a memoir by Paul Kalanithi, a neurosurgeon who was diagnosed with stage IV lung cancer at thirty-six, near the end of his training. It follows him from a young man asking what makes life meaningful, to a doctor learning to guide the dying, to a patient facing his own death. He died in March 2015, and his wife, Lucy, wrote the epilogue. It is for anyone who wonders how to live well when time is short.
-Categories: Health, Family
-Length: 7 lessons, 18 min
-Lessons:
-1. Meaning is made between people: Why he left books and brain science for medicine.
-2. Meet people where they are: How he learned to give hard news.
-3. Strive for excellence, not perfection: Why one millimeter matters, and why perfect is out of reach.
-4. Odds cannot tell you how to live: Why his own doctor would not give him numbers.
-5. Keep choosing what matters: How his plans broke and how he rebuilt them.
-6. A full life is not easy: Why he chose to have a child, and what he wrote to her.
-7. Look death in the eye: How he and his wife faced the end together.
-
-### Women Who Run With the Wolves — Clarissa Pinkola Estés
-Page: https://bookmuse.wanngo.com/summaries/women-who-run-with-the-wolves/
-Core idea: Every woman has a wild, instinctive self that knows what is true and what she needs. Being trained to be tame buries it, and old stories show how to dig it up and live with it.
-About the book: Women Who Run With the Wolves is a 1992 book by the Jungian psychoanalyst and poet Clarissa Pinkola Estés. She argues that every woman has a wild, instinctive self that is buried, not lost, when she is too domesticated. Retelling old myths and fairy tales such as La Loba, Bluebeard, Vasalisa and the Handless Maiden, she reads each as a map for finding that self again. She shows how intuition, belonging, solitude and creative work bring it back.
-Categories: Society & Tech, Spirituality
-Length: 9 lessons, 23 min
-Lessons:
-1. Sing over the bones: The wild self is buried, not dead
-2. Spot the predator: The inner force that kills your light, and the questions that expose it
-3. Feed your intuition: Listen to it and act, or it withers
-4. Stay through the endings: Love moves in cycles, and the dead stage is part of it
-5. Find your own pack: Spend less time on who failed you, more on your kind
-6. Keep your red shoes: Eight traps that pry a meaningful life away
-7. Go home to yourself: Solitude on a schedule, before your skin dries out
-8. Keep the river clear: Guard your creative life, and rest when focus is lost
-9. Wander and grow new hands: Loss and exile are stages, and what was cut can grow back
-
-### A People's History of the United States — Howard Zinn
-Page: https://bookmuse.wanngo.com/summaries/a-people-s-history-of-the-united-states/
-Core idea: Told from below, American history shows a few powerful people using the nation, the law and war to protect their wealth, and ordinary people who pushed back again and again and sometimes won.
-About the book: A People's History of the United States, first published in 1980, is Howard Zinn's account of American history from Columbus to the early 2000s. He tells it from the side of Native Americans, enslaved people, workers, women and soldiers, not only presidents and generals. Zinn, a historian who took part in the civil rights and anti-war movements, argues that governments serve the powerful, and that ordinary people have changed the country by resisting.
-Categories: Society & Tech
-Length: 8 lessons, 24 min
-Lessons:
-1. Whose side tells the story: A history that follows the leaders hides the people they hurt
-2. How the color line began: Racism grew from conditions, and rulers kept poor people apart
-3. A revolution for whom: Leaders used the people's anger, then fenced it in
-4. Land taken, promises broken: Indian removal opened land for profit through broken treaties
-5. Freedom pushed from below: Leaders moved only as the pressure grew
-6. Force first, then a little help: Strikes met troops, then small gains kept the system standing
-7. War and the state: Wars serve the powerful, and war silences dissent
-8. Ordinary people can win: Change came from people acting together
-
 ### A Room of One's Own — Virginia Woolf
 Page: https://bookmuse.wanngo.com/summaries/a-room-of-ones-own/
 Core idea: A woman needs money of her own and a room with a lock on the door if she is to write fiction, because a free mind needs both, and for centuries women had neither.
@@ -1518,38 +1672,6 @@ Lessons:
 5. Fail, fix, fly again: How four launches taught SpaceX to reach orbit.
 6. Keep hold of the vision: Why he fights to stay in charge.
 7. Ask for the impossible: How he pushes people, and what it costs them.
-
-### Emotional Blackmail — Susan Forward with Donna Frazier
-Page: https://bookmuse.wanngo.com/summaries/emotional-blackmail/
-Core idea: Emotional blackmail is a threat from someone close: do what I want, or you will suffer. It works through fear, obligation and guilt, and it ends when you change how you respond.
-About the book: Emotional Blackmail is a self-help book by the therapist Susan Forward, written with Donna Frazier and first published in 1997. It shows how people close to us use fear, obligation and guilt to make us give in, and why both sides play their parts. Its second half teaches step-by-step ways to answer pressure calmly and to stand by your own choices. It is for anyone who keeps giving in to a partner, parent, boss or friend.
-Categories: Self-Growth, Happiness
-Length: 8 lessons, 18 min
-Lessons:
-1. How blackmail works: A demand, pressure and a threat, until you give in
-2. Four faces of one threat: Punishers, self-punishers, sufferers and tantalizers
-3. Fear, obligation and guilt: The three feelings blackmailers turn up
-4. It is not about you: The fear behind the pressure
-5. Your hot buttons: Why you give in, and how you teach it
-6. Stop, observe, decide: What to do before you answer
-7. Say it without defending: Four ways to hold your ground
-8. Disconnect your hot buttons: Exercises for lingering fear, duty and guilt
-
-### Factfulness — Hans Rosling, Ola Rosling and Anna Rosling Rönnlund
-Page: https://bookmuse.wanngo.com/summaries/factfulness-ten-reasons-we-re-wrong-about-the-world/
-Core idea: Almost everyone sees the world as more frightening and hopeless than it is, because ten built-in instincts pull our thinking toward drama.
-About the book: Factfulness is a 2018 book by the Swedish doctor and professor Hans Rosling with his son Ola Rosling and his daughter-in-law Anna Rosling Rönnlund. Hans Rosling tested thousands of people with simple fact questions about the world and found that most score worse than chimpanzees guessing at random. The book says ten built-in instincts pull us toward a more dramatic, frightening view than the data show, and gives a simple rule for controlling each one.
-Categories: Society & Tech
-Length: 8 lessons, 20 min
-Lessons:
-1. The world is not split in two: Most people live in the middle, on four income levels
-2. Better and still bad: Why the world looks worse than the facts say
-3. Not every line is straight: Why the world's population will stop growing
-4. Frightening is not dangerous: Why we fear the wrong things
-5. Compare and divide: How to put a lonely number in proportion
-6. Question your categories: Income shapes life more than culture does
-7. Look for causes, not villains: Why blaming one person stops you thinking
-8. Take a breath: Now or never is almost never true
 
 ### Freakonomics — Steven D. Levitt and Stephen J. Dubner
 Page: https://bookmuse.wanngo.com/summaries/freakonomics/
@@ -1582,22 +1704,6 @@ Lessons:
 6. The hidden rules: How moving up feels, and why it is hard
 7. A thumb on the scale: What helps, and who has to do it
 
-### Invent & Wander — Jeff Bezos and Walter Isaacson
-Page: https://bookmuse.wanngo.com/summaries/invent-and-wander/
-Core idea: Bezos built Amazon by thinking in years, serving customers instead of rivals, and inventing through many bold bets, and he tried to keep it Day One as the company grew.
-About the book: Invent & Wander (2021) collects the writings of Jeff Bezos: his yearly letters to Amazon’s shareholders from 1997 to 2019, plus talks and interviews, with an introduction by the biographer Walter Isaacson. Bezos argues for thinking in years, putting customers ahead of rivals, making bold bets and accepting many failures, and keeping the energy of a young company, which he calls Day One. It is for anyone who wants to build, lead or invent.
-Categories: Leadership, Business & Career
-Length: 8 lessons, 17 min
-Lessons:
-1. Think in years, not quarters: Why the long view lines up customers and owners
-2. Obsess over customers, not rivals: Customers always want more, and that pulls you forward
-3. Big winners pay for many experiments: To invent, you make bold bets and accept the misses
-4. Wander where numbers can’t lead: What math can decide, and what only judgment can
-5. Two kinds of doors: Slow down for choices you can’t undo, speed up on the rest
-6. Stay in Day One: What Day Two looks like, and how to resist it
-7. Hire missionaries: People who love the mission, and three hiring questions
-8. High standards and six-page memos: Good work takes longer than people expect
-
 ### On Writing — Stephen King
 Page: https://bookmuse.wanngo.com/summaries/on-writing/
 Core idea: Writing is one mind reaching another, and hard work can make a competent writer good: read a lot, write a lot, use plain honest words, find the story, and cut your second draft.
@@ -1613,81 +1719,6 @@ Lessons:
 6. A situation, not a plot: Dig the story up instead of building it
 7. Rewrite with the door open: Rest the draft, cut a tenth, ask a trusted reader
 8. Write for the joy of it: Why King writes, and how it helped him after an accident
-
-### The Art of Stillness — Pico Iyer
-Page: https://bookmuse.wanngo.com/summaries/the-art-of-stillness/
-Core idea: The world keeps speeding up, so one of the most useful things you can do is go nowhere on purpose: sit still often, and bring the calm back into your life.
-About the book: The Art of Stillness is a short 2014 TED Books essay by the travel writer Pico Iyer. He asks why a man who spent his life on the move found some of his deepest joy in sitting still, and he tells what he learned from a Zen center, a monk who used to be a scientist, and busy companies. It is for anyone who feels the world moving too fast.
-Categories: Self-Growth, Happiness
-Length: 6 lessons, 17 min
-Lessons:
-1. The answer is inside: Why a change of place rarely fixes what bothers you
-2. Stillness can be trained: A monk, a Marine and what the studies found
-3. Speed makes stillness urgent: Why the busier the world gets, the more you need a pause
-4. Stillness is hard: The dark side: what comes up when you sit alone
-5. A Sabbath for everyone: A regular empty space in time, even on a flight
-6. Bring the calm back: Why stillness is not a place to hide
-
-### The Fire Next Time — James Baldwin
-Page: https://bookmuse.wanngo.com/summaries/the-fire-next-time/
-Core idea: James Baldwin says America's race problem grows out of white fear and white innocence, that hating back harms the hater too, and that Black and white Americans can only be free together.
-About the book: The Fire Next Time (1963) is James Baldwin's pair of essays on race, faith and love in America. Baldwin, a Black writer from Harlem, writes a letter to his young nephew and then looks back on his boyhood, his years as a young preacher and a dinner with the leader of the Nation of Islam. He argues that white fear and innocence sit at the root of racism, that hating back harms the hater too, and that Black and white Americans can only be free together. It is one man's view, for anyone who wants to understand it.
-Categories: Society & Tech
-Length: 7 lessons, 19 min
-Lessons:
-1. Innocence is the crime: What Baldwin tells his nephew he cannot forgive
-2. Growing up afraid: What fear did to him at fourteen
-3. A church with no love: Why the young preacher walked away
-4. Refusing the pull of hate: His dinner with Elijah Muhammad
-5. Accept the past, then use it: Why a made-up past always fails
-6. Free together: Why white freedom depends on Black freedom
-7. The fire next time: The warning in the title, and the choice
-
-### The Immortal Life of Henrietta Lacks — Rebecca Skloot
-Page: https://bookmuse.wanngo.com/summaries/the-immortal-life-of-henrietta-lacks/
-Core idea: In 1951 doctors took cells from a poor Black woman without telling her, and those cells became one of the most useful tools in medicine, while her family was never told.
-About the book: The Immortal Life of Henrietta Lacks is a 2010 nonfiction book by the science writer Rebecca Skloot. It tells how cells taken in 1951 from Henrietta Lacks, a poor Black mother of five, became the first human cells to keep dividing in a lab without end. It follows the science, the history of research ethics and the Lacks family, above all Henrietta’s daughter Deborah, who spent her life trying to learn who her mother was. It is for anyone who wants to know whose body medicine rests on.
-Categories: Health, Personalities
-Length: 7 lessons, 20 min
-Lessons:
-1. The woman behind the letters: Who Henrietta was, and how a piece of her tumor was taken
-2. Cells that would not die: Why her cells kept dividing when all the others died
-3. A workhorse for the world: How the cells helped test a polio vaccine, then spread everywhere
-4. Taking without asking: How one doctor’s secret shots led to rules about consent
-5. Why trust was broken: The history behind the Lacks family’s fear of hospitals
-6. A family nobody told: How the family found out, and what they wanted
-7. Who owns your tissue: What the law says about cells once they leave your body
-
-### The Man Who Mistook His Wife for a Hat — Oliver Sacks
-Page: https://bookmuse.wanngo.com/summaries/the-man-who-mistook-his-wife-for-a-hat/
-Core idea: A brain illness is never only something taken away: the person inside keeps working to stay themselves, so to understand a patient you need their story, not just a list of what is wrong.
-About the book: The Man Who Mistook His Wife for a Hat is a 1985 book by Oliver Sacks, a British neurologist. It tells 24 true stories about patients whose brains lost a skill, had too much of one, or played back the past. Sacks argues that to understand an illness you must know the person, because a patient is always working to stay themselves. It is for anyone curious about the brain and what makes us who we are.
-Categories: Health
-Length: 7 lessons, 20 min
-Lessons:
-1. Seeing the parts, missing the person: A man who knew every feature and no face
-2. A self is a story: Two men with no memory, and what is left
-3. The hidden sense of your body: A woman who lost it and felt disembodied
-4. Patients invent their own fixes: Glasses with a level, a spinning chair, hands that learn
-5. When too much feels like health: Too much energy can be a gift and a trap
-6. The brain keeps your past: The same replay means different things to different people
-7. Look past the gaps: What holds a mind together when puzzles fail
-
-### The Sum of Us — Heather McGhee
-Page: https://bookmuse.wanngo.com/summaries/the-sum-of-us/
-Core idea: The belief that one group gains only when another loses is a false story, and it has drained the shared goods that most Americans depend on.
-About the book: The Sum of Us (2021) by Heather McGhee asks why Americans cannot have nice things such as good schools, health care and fair pay. After years in economic policy, she traveled the country and found that a false zero-sum story, in which one race's gain is another's loss, has drained shared goods for almost everyone. Through stories from a drained pool to a Mississippi car plant and a Maine mill town, she shows what racism costs all Americans and what people can win when they join together.
-Categories: Society & Tech
-Length: 8 lessons, 20 min
-Lessons:
-1. The zero-sum story: Why one group’s gain was told as another’s loss.
-2. Racism drained the pool: How a public pool, college and health care were lost.
-3. The canary in the coal mine: How risky loans spread from the first victims to all.
-4. Divided workers win less: How splitting workers keeps pay low, and how they win.
-5. A democracy with holes: How voting rules built for some caught many.
-6. The same sky: Why pollution and costs reach everyone.
-7. The hidden wound: What denial and fear cost white Americans.
-8. The Solidarity Dividend: What people win together, and how to aim for it.
 
 ### Why Does He Do That? — Lundy Bancroft
 Page: https://bookmuse.wanngo.com/summaries/why-does-he-do-that/
@@ -1706,21 +1737,22 @@ Lessons:
 8. How he recruits the people around him: Why so many take his side, and how to help.
 9. What real change looks like: Specific steps, and why change takes outside consequences.
 
-### Surely You’re Joking, Mr. Feynman! — Richard P. Feynman
-Page: https://bookmuse.wanngo.com/summaries/surely-youre-joking-mr-feynman/
-Core idea: Real understanding is something you test for yourself, with puzzles, plain examples, play and honesty, never with names, titles or the word of experts.
-About the book: Surely You’re Joking, Mr. Feynman! is a book of true stories by the physicist Richard Feynman, collected by his drumming friend Ralph Leighton and first published in 1985. It follows Feynman from fixing radios as a boy to the atomic bomb project, teaching in Brazil and a Nobel Prize. The stories are funny, and together they show a mind that tests everything for itself. It is for anyone who likes curious people, science or learning.
-Categories: Personalities, Self-Growth
-Length: 8 lessons, 21 min
+### Refactoring UI — Adam Wathan, Steve Schoger
+Page: https://bookmuse.wanngo.com/summaries/refactoring-ui/
+Core idea: A good-looking interface needs no artistic talent: build one real feature at a time, choose from short lists of values, and make what matters stand out.
+About the book: Refactoring UI is a practical guide for people who build interfaces but are not designers. Adam Wathan and Steve Schoger wrote it in 2018. They argue that good design comes from clear tactics, not talent: start with a real feature, choose from short lists of values, and give the most important things the most emphasis. It covers hierarchy, spacing, text, color, depth, images and finishing touches.
+Categories: Society & Tech
+Length: 9 lessons, 20 min
 Lessons:
-1. Stay with the puzzle: A puzzle was built by a person, so learn how it works and keep going.
-2. Know the thing, not its name: Students who could recite a rule could not use it on a bay of water.
-3. Hold one example in your head: Ask for one real case, and ask early.
-4. Talk to the idea, not the person: Fame in the room did not change what he said about the physics.
-5. Play first, importance later: A wobbling plate led to the work behind a Nobel Prize.
-6. Do not fool yourself: The easiest person to fool is you.
-7. Look at the thing itself: He read every book himself, and one with nothing in it still had a rating.
-8. Be a beginner in the open: Be bad first, practice, and stop minding.
+1. Start with a feature, not a layout: Build one real feature at a time.
+2. Pick from a short list: Choose values once, then reuse them.
+3. Make what matters stand out: Show what matters, quiet the rest.
+4. Give things room: Space groups things and gives room.
+5. Text that reads well: Sizes, fonts and line spacing.
+6. Build a real color palette: Shades chosen ahead, in HSL.
+7. Use light to show depth: Light from above shows height.
+8. Use images with care: Steady contrast, and the right size.
+9. Finishing touches: Small touches that polish a design.
 
 ### Dopamine Detox — Thibaut Meurisse
 Page: https://bookmuse.wanngo.com/summaries/dopamine-detox/
@@ -2113,21 +2145,6 @@ Lessons:
 3. Four ways back to love: The loop, a meditation, a mirror and one question
 4. Don’t fight the dark: Switch on a light instead of fighting fear
 5. Don’t coast: Keep the practice going when life gets good
-
-### The ONE Thing — Gary Keller, Jay Papasan
-Page: https://bookmuse.wanngo.com/summaries/the-one-thing/
-Core idea: Big results come from going small: find the ONE Thing that makes everything else easier or unnecessary, and do it first.
-About the book: The ONE Thing is a 2013 book by Gary Keller, the cofounder of Keller Williams Realty, with writer Jay Papasan. It argues that big results come from going small: doing one right thing at a time, like falling dominoes. The book names six lies about success, then gives one question for finding what matters most and a plan for protecting the time to act on it. It is for anyone who feels busy and behind.
-Categories: Productivity
-Length: 7 lessons, 16 min
-Lessons:
-1. One domino at a time: Why one right action can start a chain of results
-2. Six lies about success: The beliefs that pull you off course, and the truth for each
-3. Find the vital few: Cut a long list down until one thing is left
-4. The Focusing Question: One question that shows your first domino
-5. From purpose to right now: Turn a big goal into the next thing to do
-6. Time block your ONE Thing: Give it the best hours of your day, and guard them
-7. Guard it from four thieves: What steals your focus, and how to stop it
 
 ### Don’t Overthink It — Anne Bogel
 Page: https://bookmuse.wanngo.com/summaries/don-t-overthink-it/
@@ -3436,23 +3453,6 @@ Lessons:
 6. Terror is a show: How a few attacks make millions afraid
 7. You know less than you think: Why other people’s knowledge feels like your own
 8. Know yourself first: Why Harari says to learn how your own mind works
-
-### Refactoring UI — Adam Wathan, Steve Schoger
-Page: https://bookmuse.wanngo.com/summaries/refactoring-ui/
-Core idea: A good-looking interface needs no artistic talent: build one real feature at a time, choose from short lists of values, and make what matters stand out.
-About the book: Refactoring UI is a practical guide for people who build interfaces but are not designers. Adam Wathan and Steve Schoger wrote it in 2018. They argue that good design comes from clear tactics, not talent: start with a real feature, choose from short lists of values, and give the most important things the most emphasis. It covers hierarchy, spacing, text, color, depth, images and finishing touches.
-Categories: Society & Tech
-Length: 9 lessons, 20 min
-Lessons:
-1. Start with a feature, not a layout: Build one real feature at a time.
-2. Pick from a short list: Choose values once, then reuse them.
-3. Make what matters stand out: Show what matters, quiet the rest.
-4. Give things room: Space groups things and gives room.
-5. Text that reads well: Sizes, fonts and line spacing.
-6. Build a real color palette: Shades chosen ahead, in HSL.
-7. Use light to show depth: Light from above shows height.
-8. Use images with care: Steady contrast, and the right size.
-9. Finishing touches: Small touches that polish a design.
 
 ### 13 Things Mentally Strong People Don't Do — Amy Morin
 Page: https://bookmuse.wanngo.com/summaries/13-things-mentally-strong-people-don-t-do/
