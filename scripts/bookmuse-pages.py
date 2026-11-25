@@ -157,7 +157,7 @@ def skeleton(fragment):
 
 # ---------- page parts ----------
 
-def head(title, desc, path, image_url, ld, og_type="website", app_arg=None, extra=""):
+def head(title, desc, path, image_url, ld, og_type="website", app_arg=None, extra="", image_alt=None):
     app = f'<meta name="apple-itunes-app" content="app-id=6815728446{", app-argument=" + e(app_arg) if app_arg else ""}">'
     return f"""<!doctype html>
 <html lang="en">
@@ -175,8 +175,12 @@ def head(title, desc, path, image_url, ld, og_type="website", app_arg=None, extr
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:image" content="{SITE}{image_url}">
+<meta property="og:image:alt" content="{e(image_alt or title)}">
 <meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{e(title)}">
+<meta name="twitter:description" content="{e(desc)}">
+<meta name="twitter:image" content="{SITE}{image_url}">
 {app}
 <link rel="icon" type="image/png" href="/assets/favicon-2.png">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon-2.png">
@@ -229,9 +233,10 @@ def qv(url):
     return "?" + q if q else ""
 
 
-def cover_card(s):
+def cover_card(s, alt=False):
     slug = s["catalog"]
-    return (f'<a class="bm-card" href="/summaries/{slug}/"><img src="/assets/summaries/{slug}-s.webp{ver(s)}" alt="" width="220" height="330" loading="lazy" decoding="async">'
+    alt_text = f"{e(short_title(s['title']))} summary cover" if alt else ""
+    return (f'<a class="bm-card" href="/summaries/{slug}/"><img src="/assets/summaries/{slug}-s.webp{ver(s)}" alt="{alt_text}" width="220" height="330" loading="lazy" decoding="async">'
             f'<b>{e(short_title(s["title"]))}</b><small>{e(s["author"])}</small></a>')
 
 
@@ -244,6 +249,15 @@ def row(s, n=None):
 
 
 # ---------- the book page ----------
+
+def meta_description(name, claim, limit=155):
+    """"<Title> summary: <core claim>", cut at a word boundary to at most `limit` characters (a "…" only when cut)."""
+    text = f"{name} summary: {' '.join((claim or '').split())}".strip()
+    if len(text) <= limit:
+        return text
+    cut = text[:limit - 1].rsplit(" ", 1)[0].rstrip(" ,;:—-")
+    return cut + "…"
+
 
 def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
     slug, title, author = s["catalog"], d["title"], d["author"]
@@ -272,6 +286,11 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
     intro = re.sub(r'<p class="hint" id="intro-hint">.*?</p>', "", intro, flags=re.S)
     intro = re.sub(r'(<img[^>]*id="bookmuse-cover"[^>]*?)src="data:[^"]*"',
                    rf'\1src="/assets/summaries/{slug}.webp{ver(d)}" width="480" height="720"', intro)
+    # the main cover is content, not decoration: give it a real alt and drop aria-hidden
+    def cover_alt(mm):
+        tag = re.sub(r'\s(?:alt|aria-hidden)="[^"]*"', "", mm.group(0))
+        return tag.replace("<img", f'<img alt="{e(short_title(title))} by {e(author)} book summary cover"', 1)
+    intro = re.sub(r'<img[^>]*id="bookmuse-cover"[^>]*>', cover_alt, intro, count=1)
     n = len(lessons) or len([x for x in sections if x[1] == "lesson"])
     extras = [w for w, k in (("quiz", "quiz"), ("takeaways", "takeaways")) if k in has]
     meta_line = f"{n} lessons · {minutes(d.get('duration_seconds'))} min" + (" · quiz and takeaways" if len(extras) == 2 else "")
@@ -285,6 +304,15 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
         intro = re.sub(r'(<p class="byline"[^>]*>.*?</p>)', lambda mm: mm.group(1) + cta, intro, count=1, flags=re.S)
     else:
         intro = re.sub(r"(</h1>)", lambda mm: mm.group(1) + cta, intro, count=1)
+
+    # Every lesson's title and one-line idea as visible, server-rendered text: the intro's "What you'll learn" list already is
+    # that (an <ol class="toc">, locked lessons only dimmed); name it for the book. If a preview lacks it, add a plain list.
+    ideas_h = f"All {n} key ideas in {short_title(title)}"
+    if '<ol class="toc">' in intro:
+        intro = re.sub(r'(<h3 id="intro-learn">)[^<]*(</h3>)', lambda mm: mm.group(1) + e(ideas_h) + mm.group(2), intro, count=1)
+    elif lessons:
+        items = "".join(f'<li><b>{e(l["title"])}</b>: {e(l.get("line"))}</li>' for l in lessons)
+        intro = intro.replace("</section>", f'<h3 id="intro-learn">{e(ideas_h)}</h3><ol class="bm-ideas">{items}</ol></section>', 1) if intro.rstrip().endswith("</section>") else intro
 
     locked = [l for l in lessons if l["id"] not in free_ids]
     rows = "".join(f'<li><span class="n">{i}</span><span><b>{e(l["title"])}</b><small>{e(l.get("line"))}</small></span></li>'
@@ -306,7 +334,7 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
     more_html = ""
     if similar:
         more_html = (f'<section class="bm-more" aria-labelledby="more-h"><h2 id="more-h">More like this</h2>'
-                     f'<div class="bm-grid six">{"".join(cover_card(x) for x in similar)}</div></section>')
+                     f'<div class="bm-grid six">{"".join(cover_card(x, True) for x in similar)}</div></section>')
 
     cat = (d.get("categories") or ["Self-Growth"])[0]
     path = f"/summaries/{slug}/"
@@ -319,12 +347,16 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
         trail = [("Summaries", "/summaries/"), (cat, f"/categories/{slugify(cat)}/"), (short_title(title), None)]
         page_title = f"{short_title(title)} Summary: {n} Key Ideas from {author} | Bookmuse"
         course_line = ""
-    desc = d.get("core_claim") or d.get("description") or ""
+    desc = meta_description(short_title(title), d.get("core_claim") or d.get("description") or "")
     src = meta.get("source") or {}
     book = {"@type": "Book", "name": src.get("title") or title,
             "author": [{"@type": "Person", "name": a["name"], "url": f"{SITE}/authors/{a['id']}/"} for a in d.get("authors") or [] if a["id"] != "bookmuse"]}
+    book["image"] = f"{SITE}/assets/summaries/{slug}.webp"
     if src.get("year"):
         book["datePublished"] = str(src["year"])
+    if rating.get("count", 0) >= 5:
+        book["aggregateRating"] = {"@type": "AggregateRating", "ratingValue": round(rating["average"], 1), "ratingCount": rating["count"],
+                                   "bestRating": 5, "worstRating": 1}
     article = {"@type": "Article", "@id": SITE + path + "#summary", "headline": f"{short_title(title)} summary",
                "description": desc, "inLanguage": "en", "image": f"{SITE}/assets/summaries/{slug}.webp",
                "datePublished": d.get("published_at"), "author": {"@type": "Organization", "name": "Bookmuse", "url": SITE + "/"},
@@ -333,7 +365,8 @@ def book_page(s, d, preview, course=None, part_no=None, author_cards=""):
     if not course:
         article["about"] = book
     ld = {"@context": "https://schema.org", "@graph": [article, crumbs_ld(trail, path)]}
-    page = head(page_title, desc, path, f"/assets/summaries/{slug}.webp", ld, "article", read, extra=f"<style>{style}</style>\n")
+    page = head(page_title, desc, path, f"/assets/summaries/{slug}.webp", ld, "article", read, extra=f"<style>{style}</style>\n",
+                image_alt=f"{short_title(title)} by {author} book summary cover")
     page += NAV + crumbs(trail) + f'\n<main id="main">\n{course_line}{intro}\n' + "\n".join(x[0] for x in free) + f"\n{wall}\n{shells}\n</main>\n"
     page += author_cards + more_html + FOOT + (f"<script>{script}</script>\n" if script else "") + "</body>\n</html>\n"
     return path, page
@@ -345,7 +378,7 @@ def author_block(d, authors):
         if a["id"] == "bookmuse" or a["id"] not in authors:
             continue
         full = authors[a["id"]]["author"]
-        photo = (f'<img src="/assets/authors/{a["id"]}.webp{qv(full.get('photo_url'))}" alt="" width="240" height="240" loading="lazy">'
+        photo = (f'<img src="/assets/authors/{a["id"]}.webp{qv(full.get('photo_url'))}" alt="{e(full['name'])}" width="240" height="240" loading="lazy">'
                  if full.get("photo_url") else f'<span class="bm-initials">{e("".join(w[0] for w in full["name"].split()[:2]))}</span>')
         bio = " ".join(re.split(r"(?<=[.!?])\s+", full.get("bio") or "")[:2])
         credit = f'<i class="bm-credit">{e(full["photo_credit"])}</i>' if full.get("photo_url") and full.get("photo_credit") else ""
@@ -544,7 +577,8 @@ def build():
                  f'<div class="bm-grid">{"".join(cover_card(s) for s in mine)}</div></section>')
     path, page = hub("/summaries/", f"Book Summaries: {len(summaries)} Great Books as Visual Lessons | Bookmuse",
                      f"Every Bookmuse summary: {len(summaries)} non-fiction books as short, visual lessons with diagrams, guess-first questions, a quiz and the key takeaways.",
-                     "All book summaries", f"{len(summaries)} great books, each a short course of visual lessons. New books every week.",
+                     "All book summaries", f"{len(summaries)} great books, each a short course of visual lessons"
+                     + (f", plus {len(courses)} course{'s' if len(courses) != 1 else ''} of {len(parts)} parts" if parts else "") + ". New books every week.",
                      body, item_list(summaries), [("Summaries", None)])
     pages[path] = page
 
