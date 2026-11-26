@@ -965,6 +965,145 @@ try {
 })();
 } catch (e) { console.error('lesson file why_db.js failed', e); }
 
+/* ---- tables.js ---- */
+try {
+/* ================= M1 · Lesson: tables, rows, columns and the four verbs ================= */
+(() => {
+  const LH = 24;
+  function sheet(id, x, y, w, name, lines) {
+    let o = S.box(id, x, y, w, 34 + lines.length * LH, { tone: 'paper', r: 6 });
+    o += S.text(id + '-name', x + 12, y + 19, name, { size: 11, weight: 800, color: 'var(--muted)' });
+    lines.forEach(([t, tn], k) => {
+      const ly = y + 28 + k * LH;
+      o += S.box(`${id}-b${k}`, x + 7, ly, w - 14, LH - 4, { tone: tn || 'card', flat: true, r: 4, stroke: 'none', op: tn ? 1 : 0 });
+      o += S.text(`${id}-l${k}`, x + 14, ly + 14, t, { size: 11.5 });
+    });
+    return o;
+  }
+  const MESSY = ['Lan bought Dune x1', 'minh - 2 emma', 'An: Hamlet (one copy), paid', 'Hoa bought Dnue', 'bao bought ulysses x one'];
+  const COLS = ['id', 'customer', 'book', 'qty', 'shipped_on'], W = [36, 84, 84, 44, 96];
+  const ROWS = [['1', 'Lan', 'Dune', '1', 'Mar 2'], ['2', 'Minh', 'Emma', '2', 'Mar 2'], ['3', 'An', 'Hamlet', '1', 'Mar 3'], ['4', 'Hoa', 'Dune', '1', 'NULL'], ['5', 'Bao', 'Ulysses', '1', 'NULL']];
+  const TRY = {
+    ok: ["(6, 'Chi', 'Emma', 1, NULL)", true, 'every value fits its column', 'qty = 1'],
+    word: ["(6, 'Chi', 'Emma', 'two', NULL)", false, 'qty must be a whole number', 'qty = ‘two’'],
+    missing: ["(6, 'Chi', NULL, 1, NULL)", false, 'book may not be empty', 'no book'],
+  };
+  const SQL = {
+    select: ["SELECT * FROM orders WHERE customer = 'Hoa';", ['SELECT = read', 'Gives back the rows that match.', 'Changes nothing.'], '1 read'],
+    insert: ["INSERT INTO orders VALUES (6, 'Chi', 'Emma', 1, NULL);", ['INSERT = add', 'A new row appears at the end.'], '1 added'],
+    update: ["UPDATE orders SET shipped_on = 'Mar 4' WHERE id = 4;", ['UPDATE = change', 'Order 4 gets a shipping date.'], '1 changed'],
+    delete: ['DELETE FROM orders WHERE id = 5;', ['DELETE = remove', 'Order 5 is gone.'], '1 removed'],
+  };
+
+  function table(st, y) {
+    const v = st.view, vb = v === 'verbs' ? st.verb : null;
+    const rows = ROWS.map(r => r.slice()), ids = rows.map((r, k) => 'o-' + (k + 1));
+    const tones = rows.map(() => null), strike = rows.map(() => false);
+    if (v === 'table') tones[1] = 'blue';
+    if (v === 'null') { tones[3] = 'yellow'; tones[4] = 'yellow'; }
+    if (vb === 'select') tones[3] = 'green';
+    if (vb === 'update') { rows[3][4] = 'Mar 4'; tones[3] = 'yellow'; }
+    if (vb === 'delete') { tones[4] = 'rose'; strike[4] = true; }
+    rows.push(['6', 'Chi', 'Emma', '1', 'NULL']); ids.push('o-6'); tones.push('green'); strike.push(false);
+    const ops = rows.map((r, k) => k < 5 || vb === 'insert' ? 1 : 0);
+    return S.table('ord', 16, y, { title: 'orders', cols: COLS, w: W, rows, ids, tones, strike, ops, hl: v === 'table' ? { 2: 'violet' } : v === 'null' ? { 4: 'yellow' } : null });
+  }
+
+  function scene(i, st) {
+    const v = st.view; let o = '';
+    if (v === 'messy') {
+      o += sheet('txt', 16, 40, 300, 'orders.txt', MESSY.map((t, k) => [t, k === 1 || k === 3 || k === 4 ? 'rose' : null]));
+      o += S.pill('q', 462, 54, 'How many Dune did we sell?', { tone: 'violet', size: 11 });
+      o += S.note('why', 340, 84, 'A PROGRAM CAN ONLY GUESS', ['Is “Dnue” the same book?', 'Is “one copy” the same as x1?', 'Does the name come first?', 'Every line has its own shape.'], { tone: 'rose', w: 244, boldLast: true });
+      return o;
+    }
+    if (v === 'types') {
+      const [row, ok, why] = TRY[st.try];
+      o += S.table('rules', 16, 48, { title: 'the rules of the table (its schema)', cols: ['column', 'must be'], w: [100, 170], rows: [['id', 'a whole number'], ['customer', 'text'], ['book', 'text, never empty'], ['qty', 'a whole number'], ['shipped_on', 'a date, or empty']], ids: ['ru0', 'ru1', 'ru2', 'ru3', 'ru4'], tones: [null, null, st.try === 'missing' ? 'rose' : null, st.try === 'word' ? 'rose' : null, null] });
+      o += S.text('inl', 446, 46, 'a new row arrives', { size: 10.5, anchor: 'middle', color: 'var(--muted)' });
+      o += S.pill('in', 446, 66, row, { tone: ok ? 'green' : 'rose', size: 10.5 });
+      o += S.arrow('ina', 446, 80, 446, 108, { color: ok ? 'green' : 'rust' });
+      o += S.box('gate', 346, 112, 200, 50, { tone: ok ? 'green' : 'rose', label: ok ? '✓ accepted' : '✗ rejected', sub: why });
+      o += S.note('tn', 316, 196, 'CHECKED ON EVERY WRITE', ['The database refuses data that', 'does not fit. A text file would', 'have swallowed it silently.'], { tone: 'paper', w: 268 });
+      return o;
+    }
+    if (v === 'ask') {
+      o += S.note('how', 16, 36, 'WITH A TEXT FILE: YOU WRITE HOW', ['open orders.txt', 'for each line in the file:', '· cut the line into pieces', '· is the name “Hoa”? keep it', 'close the file'], { tone: 'rose', w: 270 });
+      o += S.note('what', 314, 36, 'WITH A DATABASE: YOU SAY WHAT', ['SELECT * FROM orders', "WHERE customer = 'Hoa';"], { tone: 'green', w: 270 });
+      o += S.arrow('wa', 449, 102, 449, 140, { color: 'green' });
+      o += S.db('dbx', 374, 144, 150, 76, { tone: 'green', label: 'the database', sub: 'chooses how' });
+      o += S.note('free', 16, 256, 'WHY THIS MATTERS', ['Because you never say how, the database is free to find rows', 'its own way. The next three modules open it up and look inside.'], { tone: 'paper', w: 568 });
+      return o;
+    }
+    const verbs = v === 'verbs';
+    o += S.box('sqlb', 16, 22, 568, 34, { tone: 'paper', r: 6, op: verbs ? 1 : 0 });
+    o += S.text('sqlt', 28, 44, verbs ? SQL[st.verb][0] : '', { size: 11.5, weight: 700, op: verbs ? 1 : 0 });
+    o += table(st, verbs ? 96 : 48);
+    const note = verbs ? [SQL[st.verb][1][0].toUpperCase(), SQL[st.verb][1].slice(1), 'green']
+      : v === 'null' ? ['NULL = “NOT KNOWN YET”', ['not 0', 'not an empty text', 'simply: no value here'], 'yellow']
+        : ['THREE WORDS', ['table = one kind of thing', 'row = one order (blue)', 'column = one fact (purple)'], 'green'];
+    o += S.note('words', 376, verbs ? 96 : 48, note[0], note[1], { tone: note[2], w: 208 });
+    return o;
+  }
+
+  const B = o => Object.assign({ view: 'messy', try: 'word', verb: 'select' }, o);
+  L('m1', {
+    id: 'tables', order: 2, mins: 7, level: 'Start here',
+    title: 'Tables: give every line the same shape',
+    sub: 'Free text cannot be searched or checked. Rows and columns can, and four verbs do everything else.',
+    learn: ['Why free text is useless to a program', 'Table, row and column', 'Types and the schema: bad data is refused', 'NULL means “not known yet”', 'The four verbs: INSERT, SELECT, UPDATE, DELETE', 'You say what you want, not how to get it'],
+    state: B({}),
+    legend: [['var(--green)', 'fits / returned'], ['var(--rose)', 'does not fit'], ['var(--yellow)', 'changed / empty']],
+    metrics(i, st) {
+      const v = st.view;
+      if (v === 'messy') return [['Lines', '5'], ['Ways an order is written', '5', 'bad'], ['Can a program count Dune?', 'no', 'bad']];
+      if (v === 'types') { const t = TRY[st.try]; return [['Row to add', t[3]], ['The database says', t[1] ? 'accepted' : 'rejected', t[1] ? 'good' : 'bad']]; }
+      if (v === 'verbs') return [['Verb', st.verb.toUpperCase()], ['Rows', SQL[st.verb][2]]];
+      if (v === 'ask') return [['You write', 'what you want'], ['The database decides', 'how to get it', 'good']];
+      return [['Table', 'orders'], ['Rows', '5'], ['Columns', '5'], ['Empty cells (NULL)', '2']];
+    },
+    scene,
+    controls(i, st) {
+      if (i === 2) return `<div class="row"><span>Try to add a row with</span><span class="seg">${Object.keys(TRY).map(k => `<button data-act="try" data-v="${k}" class="${st.try === k ? 'on' : ''}">${TRY[k][3]}</button>`).join('')}</span></div>`;
+      if (i === 4) return `<div class="row"><span class="seg">${Object.keys(SQL).map(k => `<button data-act="verb" data-v="${k}" class="${st.verb === k ? 'on' : ''}">${k.toUpperCase()}</button>`).join('')}</span></div>`;
+      return '';
+    },
+    steps: [
+      { tag: 'PROBLEM', short: 'Messy lines', set: B({ view: 'messy' }), learn: 0, title: 'Free text: every line has its own shape',
+        body: `<p>Your orders file keeps growing, and different people type into it. Soon the lines look like this.</p><p>A person can still read them. A <b>program</b> cannot. To count how many copies of Dune you sold, it would have to understand every way a human might write an order.</p>`,
+        idea: ['key', 'Before anything can be fast or safe, the data needs a <b>shape</b> a program can rely on.'] },
+      { tag: 'INSIGHT', short: 'A grid', set: B({ view: 'table' }), learn: 1, title: 'The fix: the same fields on every line',
+        body: `<p>Decide once which facts an order has. Then write exactly those facts for every order, always in the same places. The file becomes a grid:</p><ul><li>a <b>table</b> holds one kind of thing (orders)</li><li>each <b>row</b> is one of them (one order)</li><li>each <b>column</b> is one fact about it (which book, how many)</li></ul><p>Now “how many Dune?” is easy: look down one column.</p>`,
+        idea: ['know', 'This grid idea is called the <b>relational model</b> (Edgar Codd, 1970). Databases built on it are called relational databases, or simply “SQL databases”.'] },
+      { tag: 'TRY IT', short: 'Types', set: B({ view: 'types', try: 'word' }), learn: 2, title: 'Every column has a type',
+        body: `<p>Each column also says what <b>kind</b> of value it holds: a whole number, text, a date. The list of columns and their types is the table’s <b>schema</b>.</p><p>The database checks every new row against it. Try the three rows below.</p>`,
+        idea: ['key', 'Bad data is stopped at the door. You never again have to wonder whether <code>qty</code> might contain the word “two”.'] },
+      { tag: 'GOTCHA', short: 'NULL', set: B({ view: 'null' }), learn: 3, title: 'An empty cell is called NULL',
+        body: `<p>Orders 4 and 5 have not shipped yet, so there is no shipping date to write. The cell stays empty, and the database shows that as <code>NULL</code>.</p><p>NULL is not zero, and it is not an empty text. It means <b>“we do not know this yet”</b>.</p>`,
+        idea: ['warn', 'Because NULL means “unknown”, comparing with it gives odd answers: is an unknown date equal to today? Unknown. You will meet this again when you filter and join.'] },
+      { tag: 'TRY IT', short: '4 verbs', set: B({ view: 'verbs', verb: 'select' }), learn: 4, title: 'Four verbs do the whole job',
+        body: `<p>Everything you ever do to a table is one of four actions. You write them in a small language called <b>SQL</b>:</p><ul><li><code>INSERT</code> adds a row</li><li><code>SELECT</code> reads rows</li><li><code>UPDATE</code> changes rows</li><li><code>DELETE</code> removes rows</li></ul><p>Press each one and watch the table.</p>`,
+        idea: ['know', 'The part after <code>WHERE</code> picks <b>which rows</b>. Leave it out and the verb applies to every row in the table.'] },
+      { tag: 'INSIGHT', short: 'What, not how', set: B({ view: 'ask' }), learn: 5, title: 'You say what you want, not how to get it',
+        body: `<p>With a text file, you wrote the steps yourself: open, loop over every line, compare, collect.</p><p>With a database, you only describe the <b>result</b>. How it finds those rows is the database’s business.</p>`,
+        idea: ['key', 'That freedom is the whole point. The database can now invent clever ways to be fast, safe and shared, and your question never has to change.'] },
+      { tag: 'TAKEAWAY', short: 'Recap', set: B({ view: 'table' }), title: 'Tables in four lines',
+        body: `<ul><li><b>Table</b> = one kind of thing. <b>Row</b> = one of them. <b>Column</b> = one fact, with a <b>type</b>.</li><li>The <b>schema</b> is checked on every write: data that does not fit is refused.</li><li><code>NULL</code> = no value yet (unknown).</li><li>Four verbs: <code>INSERT</code>, <code>SELECT</code>, <code>UPDATE</code>, <code>DELETE</code>. You say what, the database decides how.</li></ul>`,
+        idea: ['key', 'A table is still stored in a file. Next question: how do you lay rows out in that file so that changing one row does not mean rewriting all the others?'] },
+    ],
+  });
+
+  Q('m1', { lesson: 'tables', q: 'A sign-up form saves each person’s age into a column whose type is “whole number”. Someone types <code>twenty</code>. What happens?', opts: ['The database stores the word “twenty”', 'The database refuses the row, so the bad value never gets in', 'The database guesses 20'], a: 1,
+    why: 'Every write is checked against the schema. A value of the wrong type is rejected with an error, and your app can ask the person to fix it. That check is what a text file never did.',
+    wrong: { 0: 'That is what a text file would do. A typed column cannot hold a word.', 2: 'Databases do not guess meanings. They accept or refuse.' } });
+  Q('m1', { lesson: 'tables', q: 'In the <code>orders</code> table, one row has <code>shipped_on = NULL</code>. What does that tell you?', opts: ['The order shipped on day zero', 'There is no shipping date yet: the value is unknown', 'The row is damaged'], a: 1,
+    why: 'NULL means “no value here yet”. It is different from 0 and from an empty text, and the database keeps that difference.',
+    wrong: { 0: 'Zero would be a real value. NULL is the absence of one.', 2: 'NULL is a normal, intended state for a cell.' } });
+
+  CHEAT('m1', `<ul><li><b>Table</b> = one kind of thing, <b>row</b> = one of them, <b>column</b> = one fact with a <b>type</b>. The <b>schema</b> is checked on every write.</li><li><code>NULL</code> = not known yet (not 0, not empty text).</li><li>Four verbs: <code>INSERT</code> · <code>SELECT</code> · <code>UPDATE</code> · <code>DELETE</code>. You say <b>what</b>, the database decides <b>how</b>.</li></ul>`);
+})();
+} catch (e) { console.error('lesson file tables.js failed', e); }
+
 /* ---- m3_01_pages.js ---- */
 try {
 /* ================= M3 · Lesson: pages — the unit of disk I/O ================= */
@@ -2596,6 +2735,124 @@ try {
 })();
 } catch (e) { console.error('lesson file m1_01_keys.js failed', e); }
 
+/* ---- foreign_keys.js ---- */
+try {
+/* ================= M5 · Lesson: foreign keys, one-to-many, constraints ================= */
+(() => {
+  const TY = 48, RH = 22;
+  const rowC = k => TY + RH * (k + 1) + RH / 2;
+  const CUS = [['1', 'Lan'], ['2', 'Minh'], ['3', 'An']];
+  const DEL = { nofk: 'no foreign key', restrict: 'RESTRICT', cascade: 'CASCADE', setnull: 'SET NULL' };
+
+  function scene(i, st) {
+    const v = st.view; let o = '';
+    if (v === 'rules') {
+      o += S.table('rules', 16, 48, { title: 'constraints: rules every row must obey', cols: ['rule', 'what it stops'], w: [160, 300], rows: [['NOT NULL', 'an order with no book'], ['UNIQUE', 'two customers with the same email'], ['CHECK (qty > 0)', 'an order for -3 books'], ['PRIMARY KEY', 'two rows with the same id'], ['FOREIGN KEY', 'a pointer to a row that is not there']], ids: ['ru0', 'ru1', 'ru2', 'ru3', 'ru4'], tones: [null, null, null, null, 'green'] });
+      o += S.note('rn', 16, 214, 'WHY PUT THE RULES IN THE DATABASE?', ['Every app, every script and every person fixing data by hand', 'goes through the database. A rule that lives there cannot be skipped.'], { tone: 'green', w: 568 });
+      return o;
+    }
+    const on = st.fk === 'on', del = v === 'del' ? st.del : null, many = v === 'many';
+    const lanGone = del && del !== 'restrict';
+    o += S.table('cus', 16, TY, { title: 'customers', cols: ['id', 'name'], w: [44, 84], rows: CUS, ids: ['c-1', 'c-2', 'c-3'], tones: [lanGone ? 'rose' : many || del ? 'blue' : null, null, null], strike: [!!lanGone, false, false], hl: { 0: 'violet' } });
+    // orders: first three are fixed, the fourth is the one being added
+    const ord = [['101', '1', 'Dune'], ['102', '1', 'Emma'], ['103', '2', 'Hamlet']];
+    const tones = [null, null, null], strike = [false, false, false], ops = [1, 1, 1];
+    if (many) { tones[0] = 'blue'; tones[1] = 'blue'; }
+    if (del === 'cascade') { tones[0] = tones[1] = 'rose'; strike[0] = strike[1] = true; }
+    if (del === 'setnull') { ord[0][1] = ord[1][1] = 'NULL'; tones[0] = tones[1] = 'yellow'; }
+    if (del === 'nofk') tones[0] = tones[1] = 'orange';
+    if (del === 'restrict') tones[0] = tones[1] = 'blue';
+    const add = v === 'fk' && st.ins;
+    const bad = st.ins === 'bad', refused = add && bad && on;
+    ord.push(['104', bad ? '9' : '2', 'Dune']); tones.push(!add ? null : bad ? (on ? 'rose' : 'orange') : 'green'); strike.push(!!refused); ops.push(add ? 1 : 0);
+    o += S.table('ord', 300, TY, { title: 'orders', cols: ['id', 'customer_id', 'book'], w: [48, 104, 84], rows: ord, ids: ['o-1', 'o-2', 'o-3', 'o-4'], tones, strike, ops, hl: { 1: 'violet' } });
+    // pointers
+    const tgt = [0, 0, 1];
+    tgt.forEach((c, k) => {
+      const dead = (del === 'cascade' || del === 'setnull') && k < 2;
+      o += S.path('p' + k, `M298 ${rowC(k)} C 230 ${rowC(k)}, 214 ${rowC(c)}, 148 ${rowC(c)}`, { color: del === 'nofk' && k < 2 ? 'rust' : 'violet', dash: !on || (del === 'nofk'), op: dead ? 0 : 1 });
+    });
+    o += S.path('p3', `M298 ${rowC(3)} C 230 ${rowC(3)}, 214 ${rowC(1)}, 148 ${rowC(1)}`, { color: 'green', op: add && !bad ? 1 : 0 });
+    o += S.path('pbad', `M298 ${rowC(3)} C 250 ${rowC(3)}, 230 ${rowC(3) + 30}, 196 ${rowC(3) + 36}`, { color: 'rust', dash: true, op: add && bad && !on ? 1 : 0 });
+    o += S.pill('nobody', 130, rowC(3) + 44, '? there is no customer 9', { tone: 'rose', op: add && bad && !on ? 1 : 0 });
+    // verdict
+    let ver;
+    if (v === 'fk') ver = !add ? ['EVERY POINTER IS CHECKED', ['customer_id must be the id', 'of a row in customers.'], 'green']
+      : !bad ? ['✓ STORED', ['Customer 2 exists (Minh).', 'The pointer is valid.'], 'green']
+        : on ? ['✗ REFUSED', ['There is no customer 9.', 'The row is never stored.'], 'rose']
+          : ['STORED, AND WRONG', ['Nothing checked the pointer.', 'Order 104 belongs to nobody.'], 'orange'];
+    else if (many) ver = ['ONE CUSTOMER, MANY ORDERS', ['Each order has exactly one customer,', 'so one cell in orders holds the pointer.', 'A customer row never holds a list.'], 'blue'];
+    else ver = del === 'restrict' ? ['✗ DELETE REFUSED', ['Two orders still point at Lan.', 'Nothing changes.'], 'blue']
+      : del === 'cascade' ? ['LAN AND HER ORDERS: GONE', ['One delete removed 3 rows.', 'Clean, and easy to regret.'], 'rose']
+        : del === 'setnull' ? ['LAN GONE, ORDERS KEPT', ['The pointer is emptied (NULL).', 'The sales history survives.'], 'yellow']
+          : ['ORPHANS', ['Orders 101 and 102 point at', 'customer 1, who no longer exists.'], 'orange'];
+    o += S.note('ver', 150, 226, ver[0], ver[1], { tone: ver[2], w: 300, boldLast: v !== 'many' });
+    return o;
+  }
+
+  const B = o => Object.assign({ view: 'fk', fk: 'off', ins: 'bad', del: 'restrict' }, o);
+  L('m5', {
+    id: 'foreign-keys', order: 3, mins: 8, level: 'Beginner',
+    title: 'Foreign keys: pointers the database checks',
+    sub: 'Splitting data into tables created a new way to be wrong: a pointer to a row that is not there.',
+    learn: ['Why a plain pointer column is dangerous', 'What a foreign key is', 'One-to-many: where the pointer lives', 'What happens when you delete a row others point at', 'Other constraints: NOT NULL, UNIQUE, CHECK'],
+    state: B({}),
+    legend: [['var(--violet)', 'key / pointer'], ['var(--rose)', 'refused or removed'], ['var(--orange)', 'stored but wrong']],
+    metrics(i, st) {
+      const v = st.view;
+      if (v === 'rules') return [['Rules shown', '5'], ['Checked', 'on every write', 'good']];
+      if (v === 'many') return [['Customers', '3'], ['Orders', '3'], ['Orders that point at Lan', '2']];
+      if (v === 'del') { const d = st.del; return [['Delete Lan with', DEL[d]], ['Lan’s row', d === 'restrict' ? 'kept' : 'deleted'], ['Her 2 orders', d === 'restrict' ? 'kept, still valid' : d === 'cascade' ? 'deleted too' : d === 'setnull' ? 'kept, pointer emptied' : 'point at nobody', d === 'nofk' ? 'bad' : d === 'cascade' ? 'warn' : 'good']]; }
+      const on = st.fk === 'on', bad = st.ins === 'bad';
+      if (!st.ins) return [['Foreign key', 'on'], ['Pointers that dangle', '0', 'good']];
+      return [['Foreign key', on ? 'on' : 'off'], ['Order 104 points at', bad ? 'customer 9 (nobody)' : 'customer 2 (Minh)'], ['Result', !bad ? 'stored' : on ? 'refused' : 'stored anyway', !bad ? 'good' : on ? 'good' : 'bad']];
+    },
+    scene,
+    controls(i, st) {
+      if (i === 2) return `<div class="row"><span>Foreign key</span><span class="seg"><button data-act="fk" data-v="off" class="${st.fk === 'off' ? 'on' : ''}">off</button><button data-act="fk" data-v="on" class="${st.fk === 'on' ? 'on' : ''}">on</button></span><button class="tbtn" data-act="ins" data-v="good">Add order for customer 2</button><button class="tbtn" data-act="ins" data-v="bad">Add order for customer 9</button></div>`;
+      if (i === 4) return `<div class="row"><span>Delete Lan with</span><span class="seg">${Object.keys(DEL).map(k => `<button data-act="del" data-v="${k}" class="${st.del === k ? 'on' : ''}">${DEL[k]}</button>`).join('')}</span></div>`;
+      return '';
+    },
+    steps: [
+      { tag: 'PROBLEM', short: 'Dangling', set: B({ fk: 'off', ins: 'bad' }), learn: 0, title: 'An order that points at nobody',
+        body: `<p>After splitting the data, an order no longer stores the customer’s name. It stores a <b>pointer</b>: <code>customer_id = 1</code> means “look at row 1 of customers”.</p><p>But a pointer is only a number. A bug writes <code>customer_id = 9</code>, and the table happily keeps it. There is no customer 9. Who gets the book? Who gets the bill?</p>`,
+        idea: ['key', 'Splitting data into tables created a new way to be wrong: a pointer to a row that is not there.'] },
+      { tag: 'INSIGHT', short: 'Foreign key', set: B({ fk: 'on', ins: 'bad' }), learn: 1, title: 'Foreign key: a pointer the database checks',
+        body: `<p>Tell the database what the column means: “<code>customer_id</code> must be the <code>id</code> of an existing customer.” That declaration is a <b>foreign key</b>.</p><p>From now on every insert and update is checked. Order 104 for customer 9 is <b>refused</b> before it is stored.</p>`,
+        idea: ['know', 'Primary key = “this is who I am”. Foreign key = “this is who I point at”.'],
+        deep: { title: 'SQL: declaring it', html: `<pre>CREATE TABLE orders (
+  id          BIGINT PRIMARY KEY,
+  customer_id BIGINT NOT NULL REFERENCES customers(id),
+  book        TEXT   NOT NULL
+);</pre><p><code>REFERENCES customers(id)</code> is the foreign key.</p>` } },
+      { tag: 'TRY IT', short: 'Break it', set: B({ fk: 'on', ins: 'good' }), title: 'Try to break it',
+        body: `<p>Switch the foreign key off and on. Add an order for a real customer (2), then for a missing one (9).</p><p>Without the foreign key nothing complains today. The damage shows up weeks later, as a report that does not add up.</p>` },
+      { tag: 'INSIGHT', short: 'One-to-many', set: B({ view: 'many', fk: 'on', ins: null }), learn: 2, title: 'One-to-many: the “many” side holds the pointer',
+        body: `<p>Lan has two orders. One customer, many orders: a <b>one-to-many</b> relationship, the most common shape in any database.</p><p>Where does the pointer go? Each order has exactly <b>one</b> customer, so the order row can hold it in one cell. A customer row could never hold “all my orders” in one cell.</p>`,
+        idea: ['key', 'One-to-many: put the foreign key in the table on the <b>many</b> side.'] },
+      { tag: 'TRY IT', short: 'Delete', set: B({ view: 'del', fk: 'on', ins: null, del: 'restrict' }), learn: 3, title: 'What if you delete a row others point at?',
+        body: `<p>Lan closes her account, but her two orders still point at her. You decide once, in the schema, what should happen:</p><ul><li><b>RESTRICT</b> (the default): refuse the delete while orders point at her.</li><li><b>CASCADE</b>: delete her orders with her.</li><li><b>SET NULL</b>: keep the orders, empty the pointer.</li></ul><p>Compare each with “no foreign key”.</p>`,
+        idea: ['warn', '<code>CASCADE</code> is convenient and dangerous: deleting one customer can silently delete thousands of rows. Use it only where the children make no sense without the parent.'] },
+      { tag: 'TECHNIQUE', short: 'More rules', set: B({ view: 'rules' }), learn: 4, title: 'More rules the database can enforce',
+        body: `<p>A foreign key is one kind of <b>constraint</b>: a rule every row must obey, checked by the database on every write. Four more are worth knowing.</p>`,
+        idea: ['key', 'A check written in your app protects one app. A constraint in the database protects the data from <b>everything</b> that ever writes to it.'] },
+      { tag: 'TAKEAWAY', short: 'Recap', set: B({ view: 'fk', fk: 'on', ins: null }), title: 'Foreign keys in four lines',
+        body: `<ul><li>A <b>foreign key</b> is a column that must match the key of an existing row in another table.</li><li>The database checks it on every write, so a pointer can never dangle.</li><li><b>One-to-many</b>: the foreign key lives on the many side.</li><li>Constraints (<code>NOT NULL</code>, <code>UNIQUE</code>, <code>CHECK</code>, keys) are rules no app can skip.</li></ul>`,
+        idea: ['key', 'One-to-many fits in one column. But what if <em>both</em> sides are “many”? That needs one more trick: the next lesson.'] },
+    ],
+  });
+
+  Q('m5', { lesson: 'foreign-keys', q: 'A <code>comments</code> table has a <code>post_id</code> column but no foreign key. A cleanup script deletes old posts. What is left behind?', opts: ['Nothing: their comments vanish automatically', 'Comments that point at posts which no longer exist', 'The script fails with an error'], a: 1,
+    why: 'Without a foreign key the database does not know <code>post_id</code> is a pointer, so it checks nothing. The comments stay, pointing at nothing. With a foreign key you would have had to choose: refuse, cascade, or set NULL.',
+    wrong: { 0: 'That only happens with a foreign key declared <code>ON DELETE CASCADE</code>.', 2: 'Nothing stops the delete, which is exactly the problem.' } });
+  Q('m5', { lesson: 'foreign-keys', q: 'One author writes many books, and in this shop each book has exactly one author. Where does the foreign key go?', opts: ['<code>authors.book_id</code>', '<code>books.author_id</code>', 'Either one works the same'], a: 1,
+    why: 'The pointer lives on the <b>many</b> side. Each book has one author, so one cell in <code>books</code> can hold it.',
+    wrong: { 0: 'An author row would need to hold a list of books in one cell.', 2: 'Only the many side can hold its single parent in one column.' } });
+
+  CHEAT('m5', `<ul><li><b>Foreign key</b> = a column that must match an existing row’s key in another table; checked on every write, so pointers never dangle.</li><li><b>One-to-many</b>: the foreign key goes on the many side.</li><li>On delete: <code>RESTRICT</code> (refuse) · <code>CASCADE</code> (delete children) · <code>SET NULL</code>.</li><li>Constraints (<code>NOT NULL</code>, <code>UNIQUE</code>, <code>CHECK</code>) are rules no app can skip.</li></ul>`);
+})();
+} catch (e) { console.error('lesson file foreign_keys.js failed', e); }
+
 /* ---- m1_02_relations.js ---- */
 try {
 /* ================= M1 · Lesson: many-to-many & junction tables ================= */
@@ -2728,6 +2985,125 @@ try {
   CHEAT('m5', `<ul><li><b>M:N</b> → junction table: two FKs + <code>PRIMARY KEY(a, b)</code> (blocks double-enroll). Never a comma list in a cell.</li><li>Facts about the <b>pair</b> (<code>grade</code>, <code>quantity</code>, <code>joined_at</code>) live in the junction.</li><li>Link referenced by a 3rd table → promote: surrogate id + <code>UNIQUE(a, b)</code>.</li></ul>`);
 })();
 } catch (e) { console.error('lesson file m1_02_relations.js failed', e); }
+
+/* ---- sql_basics.js ---- */
+try {
+/* ================= M6 · Lesson: first questions — filter, sort, count, group ================= */
+(() => {
+  const RH = 22, TX = 16, TY = 96;
+  const COLS = ['id', 'customer', 'book', 'qty', 'price'], W = [34, 80, 80, 40, 52];
+  const ROWS = [['1', 'Lan', 'Dune', '1', '12'], ['2', 'Minh', 'Emma', '2', '9'], ['3', 'An', 'Hamlet', '1', '7'], ['4', 'Hoa', 'Dune', '1', '12'], ['5', 'Lan', 'Emma', '1', '9'], ['6', 'Bao', 'Ulysses', '3', '15'], ['7', 'Minh', 'Dune', '2', '12']];
+  const F = {
+    dune: ["SELECT * FROM orders WHERE book = 'Dune';", r => r[2] === 'Dune', "book = 'Dune'"],
+    qty: ['SELECT * FROM orders WHERE qty >= 2;', r => +r[3] >= 2, 'qty >= 2'],
+    both: ["SELECT * FROM orders WHERE book = 'Dune' AND qty >= 2;", r => r[2] === 'Dune' && +r[3] >= 2, 'both, with AND'],
+  };
+  const G = {
+    book: ['SELECT book, SUM(qty) FROM orders GROUP BY book;', 2, 'by book'],
+    customer: ['SELECT customer, SUM(qty) FROM orders GROUP BY customer;', 1, 'by customer'],
+  };
+  const GT = ['green', 'blue', 'yellow', 'violet', 'orange'];
+  const groups = col => { const keys = []; ROWS.forEach(r => { if (!keys.includes(r[col])) keys.push(r[col]); }); return keys.map(k => [k, ROWS.filter(r => r[col] === k).reduce((a, r) => a + +r[3], 0)]); };
+  const SORTED = ROWS.map((r, k) => k).sort((a, b) => +ROWS[b][4] - +ROWS[a][4] || a - b); // price, biggest first
+
+  function scene(i, st) {
+    const v = st.view; let o = '';
+    if (v === 'ask') {
+      [['Who bought Dune?', 'loop + test'], ['Our 3 biggest sales?', 'loop + sort'], ['Copies sold per book?', 'loop + count']].forEach(([q, p], k) => {
+        o += S.pill('aq' + k, 130, 54 + k * 44, q, { tone: 'violet' });
+        o += S.arrow('aa' + k, 232, 54 + k * 44, 318, 54 + k * 44, { color: 'muted' });
+        o += S.box('ap' + k, 322, 38 + k * 44, 262, 32, { tone: 'rose', label: `program ${k + 1}: ${p}`, size: 11.5 });
+      });
+      o += S.note('an', 16, 196, 'THE SAME FOUR MOVES, EVERY TIME', ['pick rows  ·  pick columns  ·  sort  ·  add up', 'SQL has one word for each move, and lets you combine them.'], { tone: 'green', w: 568, boldLast: true });
+      return o;
+    }
+    if (v === 'inject') {
+      o += S.note('bad', 16, 30, 'GLUED TOGETHER', [`"SELECT * FROM orders WHERE customer = '" + name + "'"`, `a visitor types this as their name:   x' OR '1'='1`, `the database runs:   ... WHERE customer = 'x' OR '1'='1'`, 'Always true. Everybody’s orders come back.'], { tone: 'rose', w: 568, boldLast: true });
+      o += S.note('good', 16, 172, 'WITH A PLACEHOLDER', ['SELECT * FROM orders WHERE customer = ?', `value, sent separately:   x' OR '1'='1`, 'The database looks for a customer with that odd name. Finds nobody.'], { tone: 'green', w: 568, boldLast: true });
+      return o;
+    }
+    let sql = 'SELECT customer, book FROM orders;', tones = ROWS.map(() => null), ops = ROWS.map(() => 1), y = null, hl = null, note, res = null;
+    if (v === 'cols') { hl = { 1: 'green', 2: 'green' }; note = ['SELECT = WHICH COLUMNS', ['FROM = which table', 'every row comes back', '* means “all columns”'], 'green']; }
+    if (v === 'where') { const f = F[st.f]; sql = f[0]; let n = 0; ROWS.forEach((r, k) => { if (f[1](r)) { tones[k] = 'green'; n++; } else ops[k] = .3; }); note = ['WHERE = WHICH ROWS', ['a test, run on every row', `${n} of 7 rows pass`], 'green']; }
+    if (v === 'sort') { sql = 'SELECT * FROM orders ORDER BY price DESC LIMIT 3;'; y = ROWS.map((r, k) => RH * (SORTED.indexOf(k) + 1)); ROWS.forEach((r, k) => { if (SORTED.indexOf(k) < 3) tones[k] = 'green'; else ops[k] = .3; }); hl = { 4: 'yellow' }; note = ['ORDER BY = SORT', ['DESC = biggest first', 'LIMIT 3 = keep the first 3'], 'yellow']; }
+    if (v === 'agg') { sql = "SELECT COUNT(*), SUM(qty) FROM orders WHERE book = 'Dune';"; ROWS.forEach((r, k) => { if (r[2] === 'Dune') tones[k] = 'green'; else ops[k] = .3; }); res = { cols: ['count', 'sum'], w: [70, 70], rows: [['3', '4']], tones: ['green'] }; note = ['MANY ROWS IN, ONE ROW OUT', ['3 orders of Dune', '1 + 1 + 2 = 4 copies'], 'green']; }
+    if (v === 'group') { const g = G[st.g], gs = groups(g[1]); sql = g[0]; ROWS.forEach((r, k) => { tones[k] = GT[gs.findIndex(x => x[0] === r[g[1]])]; }); hl = { [g[1]]: 'violet' }; res = { cols: [COLS[g[1]], 'sum'], w: [90, 50], rows: gs.map(x => [x[0], String(x[1])]), tones: gs.map((x, k) => GT[k]) }; }
+    o += S.box('sqlb', 16, 22, 568, 34, { tone: 'paper', r: 6 });
+    o += S.text('sqlt', 28, 44, sql, { size: 11.5, weight: 700 });
+    o += S.table('ord', TX, TY, { title: 'orders', cols: COLS, w: W, rows: ROWS, ids: ROWS.map(r => 'o-' + r[0]), tones, ops, y, hl });
+    if (res) {
+      o += S.arrow('ra', 308, 150, 350, 150, { color: 'green' });
+      o += S.table('res', 360, TY, { title: 'the answer', cols: res.cols, w: res.w, rows: res.rows, ids: res.rows.map((r, k) => 'r-' + k), tones: res.tones });
+    }
+    if (note) o += S.note('nt', 360, res ? 196 : TY, note[0], note[1], { tone: note[2], w: 224 });
+    return o;
+  }
+
+  const B = o => Object.assign({ view: 'ask', f: 'dune', g: 'book' }, o);
+  L('m6', {
+    id: 'sql-basics', order: 1, mins: 9, level: 'Beginner',
+    title: 'First questions: filter, sort, count',
+    sub: 'With a file, every new question is a new program. SQL replaces the programs with six words.',
+    learn: ['Why a question language exists', 'SELECT and FROM: columns and table', 'WHERE: keep the rows that pass a test', 'ORDER BY and LIMIT: sort, then cut', 'COUNT, SUM, AVG: many rows into one number', 'GROUP BY: one answer per group', 'Why you never glue user text into SQL'],
+    state: B({}),
+    legend: [['var(--green)', 'kept / returned'], ['var(--violet)', 'what you asked about'], ['var(--rose)', 'the pain']],
+    metrics(i, st) {
+      const v = st.view;
+      if (v === 'ask') return [['Questions', '3'], ['Programs to write', '3', 'bad']];
+      if (v === 'inject') return [['Glued text', 'runs as SQL', 'bad'], ['Placeholder', 'stays a value', 'good']];
+      if (v === 'cols') return [['Rows returned', '7'], ['Columns returned', '2 of 5']];
+      if (v === 'where') return [['Rows in the table', '7'], ['Rows that pass WHERE', String(ROWS.filter(F[st.f][1]).length), 'good']];
+      if (v === 'sort') return [['Sorted by', 'price, biggest first'], ['Rows kept by LIMIT', '3']];
+      if (v === 'agg') return [['Rows read', '3'], ['Rows returned', '1']];
+      const n = groups(G[st.g][1]).length; return [['Groups', String(n)], ['Rows returned', String(n)]];
+    },
+    scene,
+    controls(i, st) {
+      if (i === 2) return `<div class="row"><span>Keep rows where</span><span class="seg">${Object.keys(F).map(k => `<button data-act="f" data-v="${k}" class="${st.f === k ? 'on' : ''}">${F[k][2]}</button>`).join('')}</span></div>`;
+      if (i === 5) return `<div class="row"><span>One pile per</span><span class="seg">${Object.keys(G).map(k => `<button data-act="g" data-v="${k}" class="${st.g === k ? 'on' : ''}">${G[k][2].replace('by ', '')}</button>`).join('')}</span></div>`;
+      return '';
+    },
+    steps: [
+      { tag: 'PROBLEM', short: 'New program', set: B({ view: 'ask' }), learn: 0, title: 'Every new question is a new program',
+        body: `<p>The boss asks: who bought Dune? Then: what were our three biggest sales? Then: how many copies of each book did we sell?</p><p>With a file, each question is a new little program: loop over the lines, test, sort, count. Three questions, three programs, three places for bugs.</p>`,
+        idea: ['key', 'The loops are always the same four moves: <b>pick rows, pick columns, sort, add up</b>. SQL gives each move one word.'] },
+      { tag: 'TECHNIQUE', short: 'SELECT FROM', set: B({ view: 'cols' }), learn: 1, title: 'SELECT and FROM: which columns, which table',
+        body: `<p><code>FROM orders</code> names the table. <code>SELECT customer, book</code> names the columns you want back. Every row comes back, but only those two columns.</p><p><code>SELECT *</code> means “all columns”.</p>`,
+        idea: ['know', 'The answer to a query is itself a small table: rows and columns. That is why queries can later be stacked on top of each other.'] },
+      { tag: 'TRY IT', short: 'WHERE', set: B({ view: 'where', f: 'dune' }), learn: 2, title: 'WHERE: which rows',
+        body: `<p><code>WHERE</code> is a test the database runs on every row. Rows that pass are kept, the rest are dropped.</p><p>Combine tests with <code>AND</code> (both must be true) and <code>OR</code> (either one). Try the three filters.</p>`,
+        idea: ['warn', 'To test for an empty cell, write <code>IS NULL</code>. <code>= NULL</code> never matches anything, because “is unknown equal to unknown?” is itself unknown.'] },
+      { tag: 'TECHNIQUE', short: 'Sort & cut', set: B({ view: 'sort' }), learn: 3, title: 'ORDER BY and LIMIT: sort, then cut',
+        body: `<p>Rows come back in no promised order. If you care, say so: <code>ORDER BY price DESC</code> sorts by price, biggest first (<code>ASC</code> is smallest first).</p><p><code>LIMIT 3</code> keeps only the first 3 rows after sorting. Together they answer “the top 3”.</p>`,
+        idea: ['warn', '<code>LIMIT</code> without <code>ORDER BY</code> means “any 3 rows”, and they can change from one run to the next.'] },
+      { tag: 'TECHNIQUE', short: 'COUNT, SUM', set: B({ view: 'agg' }), learn: 4, title: 'COUNT, SUM, AVG: many rows in, one number out',
+        body: `<p>Some questions are not about rows. They are about a <b>total</b>. An <b>aggregate</b> function eats many rows and returns one value:</p><ul><li><code>COUNT(*)</code>: how many rows</li><li><code>SUM(qty)</code>: add them up</li><li><code>AVG</code>, <code>MIN</code>, <code>MAX</code>: average, smallest, biggest</li></ul><p>Here: 3 orders of Dune, 4 copies in total.</p>` },
+      { tag: 'TRY IT', short: 'GROUP BY', set: B({ view: 'group', g: 'book' }), learn: 5, title: 'GROUP BY: one answer per group',
+        body: `<p>“How many copies of <b>each</b> book?” You want that total once per book. <code>GROUP BY book</code> sorts the rows into piles, one pile per book, and runs the aggregate on every pile.</p><p>Now switch to one pile per customer.</p>`,
+        idea: ['key', 'After <code>GROUP BY</code>, each pile becomes <b>one row</b> of the answer. The single orders inside it are gone.'] },
+      { tag: 'GOTCHA', short: 'Injection', set: B({ view: 'inject' }), learn: 6, title: 'Never glue a user’s text into a query',
+        body: `<p>Your app builds queries from what visitors type. If you paste their text straight into the SQL, they can type SQL of their own, and the database will run it. This is <b>SQL injection</b>, one of the oldest and most common break-ins.</p><p>The fix is always the same: write the query with a <b>placeholder</b>, and pass the text separately.</p>`,
+        idea: ['key', 'With a placeholder, the visitor’s text can only ever be a <b>value</b>. It is never read as SQL.'],
+        deep: { title: 'A saved query is called a view', html: `<p>If you ask the same question often, give it a name:</p><pre>CREATE VIEW dune_orders AS
+  SELECT * FROM orders WHERE book = 'Dune';
+
+SELECT * FROM dune_orders;</pre><p>A <b>view</b> stores the question, not the answer. It runs again every time you read from it, so it is always up to date.</p>` } },
+      { tag: 'TAKEAWAY', short: 'Recap', set: B({ view: 'cols' }), title: 'Six words cover most questions',
+        body: `<ul><li><code>SELECT</code> columns <code>FROM</code> a table</li><li><code>WHERE</code> keeps the rows that pass a test</li><li><code>ORDER BY</code> sorts, <code>LIMIT</code> cuts</li><li><code>COUNT</code> / <code>SUM</code> / <code>AVG</code> squeeze rows into one number</li><li><code>GROUP BY</code> gives one number per pile</li></ul>`,
+        idea: ['key', 'You write these words in one order. The database runs them in a <b>different</b> order, and that explains most confusing SQL errors. Next lesson.'] },
+    ],
+  });
+
+  Q('m6', { lesson: 'sql-basics', q: 'You want the 5 most expensive orders. A teammate writes <code>SELECT * FROM orders LIMIT 5;</code>. What does it return?', opts: ['The 5 most expensive orders', 'Any 5 orders, and not always the same ones', 'An error: LIMIT needs ORDER BY'], a: 1,
+    why: 'Rows have no promised order. <code>LIMIT 5</code> alone keeps whichever 5 the database reaches first. Add <code>ORDER BY price DESC</code> so that “first” means “most expensive”.',
+    wrong: { 0: 'Nothing in the query mentions price.', 2: 'It runs fine, which is what makes the bug easy to miss.' } });
+  Q('m6', { lesson: 'sql-basics', q: 'A login form runs <code>"… WHERE email = \'" + input + "\'"</code>. Why is that dangerous?', opts: ['It is slow', 'The input can contain SQL, and the database will run it', 'Emails can contain capital letters'], a: 1,
+    why: 'Text pasted into a query becomes part of the query. A visitor can close the quote and add their own conditions or commands. A placeholder keeps their text a plain value.',
+    wrong: { 0: 'Speed is not the issue here.', 2: 'True, but harmless.' } });
+
+  CHEAT('m6', `<ul><li><code>SELECT</code> cols <code>FROM</code> table · <code>WHERE</code> test · <code>ORDER BY</code> col <code>DESC</code> · <code>LIMIT</code> n.</li><li>Aggregates (<code>COUNT</code>, <code>SUM</code>, <code>AVG</code>) turn many rows into one; <code>GROUP BY</code> gives one per pile.</li><li><code>IS NULL</code>, never <code>= NULL</code>. <code>LIMIT</code> needs <code>ORDER BY</code>.</li><li>User text goes in a <b>placeholder</b>, never glued into the SQL.</li></ul>`);
+})();
+} catch (e) { console.error('lesson file sql_basics.js failed', e); }
 
 /* ---- m2_01_pipeline.js ---- */
 try {
