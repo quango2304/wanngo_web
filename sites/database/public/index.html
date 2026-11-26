@@ -2280,24 +2280,24 @@ try {
   const LX = [20, 370], EW = 210, EH = 34;
   const ty = t => 62 + t * 46;
   const STORIES = {
-    race: { heads: ['T1 · deposit +50', 'T2 · deposit +30'], ev: [
+    race: { heads: ['T1 · nạp +50', 'T2 · nạp +30'], ev: [
       [0, 0, 'SELECT balance → 100', 'card'], [1, 1, 'SELECT balance → 100', 'card'], [0, 2, 'UPDATE balance = 150', 'orange'],
-      [0, 3, 'COMMIT', 'card'], [1, 4, 'UPDATE balance = 130', 'rose'], [1, 5, 'COMMIT → +50 is LOST', 'rose']],
+      [0, 3, 'COMMIT', 'card'], [1, 4, 'UPDATE balance = 130', 'rose'], [1, 5, 'COMMIT → +50 bị MẤT', 'rose']],
       vals: { 0: '100', 1: '100', 2: '100', 3: '150', 4: '150', 5: '130 ✗' } },
-    lock: { heads: ['T1 · deposit +50', 'T2 · deposit +30'], ev: [
-      [0, 0, 'SELECT … FOR UPDATE → 100', 'orange'], [1, 1, 'SELECT … FOR UPDATE → waits', 'yellow'], [0, 2, 'UPDATE balance = 150', 'orange'],
-      [0, 3, 'COMMIT → lock released', 'green'], [1, 4, 'gets row → reads 150', 'green'], [1, 5, 'UPDATE = 180, COMMIT', 'green']],
-      vals: { 0: '100 locked', 1: '100 locked', 2: '100 locked', 3: '150', 4: '150 locked', 5: '180 ✓' } },
-    think: { heads: ['Editor · FOR UPDATE', 'Everyone else'], ev: [
-      [0, 0, 'opens edit form (locks row)', 'orange'], [0, 1, '…user goes for coffee…', 'yellow'], [1, 1, 'UPDATE same row → waits', 'rose'],
-      [1, 2, 'UPDATE → still waiting', 'rose'], [0, 3, '…still thinking…', 'yellow'], [1, 3, 'request times out', 'rose'], [0, 4, 'saves after 5 min', 'card']],
-      vals: { 0: 'locked', 1: 'locked', 2: 'locked', 3: 'locked', 4: 'free' } },
-    opt: { heads: ['T1 · read v5', 'T2 · read v5'], ev: [
-      [0, 0, 'read: 100, version 5', 'card'], [1, 1, 'read: 100, version 5', 'card'], [0, 2, 'UPDATE … WHERE version=5', 'green'],
-      [1, 3, 'UPDATE … WHERE version=5', 'rose'], [1, 4, '0 rows → reload (150, v6)', 'yellow'], [1, 5, 'retry WHERE v=6 → 180', 'green']],
+    lock: { heads: ['T1 · nạp +50', 'T2 · nạp +30'], ev: [
+      [0, 0, 'SELECT … FOR UPDATE → 100', 'orange'], [1, 1, 'SELECT … FOR UPDATE → chờ', 'yellow'], [0, 2, 'UPDATE balance = 150', 'orange'],
+      [0, 3, 'COMMIT → nhả lock', 'green'], [1, 4, 'tới lượt → đọc ra 150', 'green'], [1, 5, 'UPDATE = 180, COMMIT', 'green']],
+      vals: { 0: '100 bị lock', 1: '100 bị lock', 2: '100 bị lock', 3: '150', 4: '150 bị lock', 5: '180 ✓' } },
+    think: { heads: ['Người sửa · FOR UPDATE', 'Mọi người khác'], ev: [
+      [0, 0, 'mở form sửa (lock dòng)', 'orange'], [0, 1, '…user đi pha cà phê…', 'yellow'], [1, 1, 'UPDATE cùng dòng → chờ', 'rose'],
+      [1, 2, 'UPDATE → vẫn đang chờ', 'rose'], [0, 3, '…vẫn đang nghĩ…', 'yellow'], [1, 3, 'request hết giờ chờ', 'rose'], [0, 4, 'lưu sau 5 phút', 'card']],
+      vals: { 0: 'bị lock', 1: 'bị lock', 2: 'bị lock', 3: 'bị lock', 4: 'rảnh' } },
+    opt: { heads: ['T1 · đọc v5', 'T2 · đọc v5'], ev: [
+      [0, 0, 'đọc: 100, version 5', 'card'], [1, 1, 'đọc: 100, version 5', 'card'], [0, 2, 'UPDATE … WHERE version=5', 'green'],
+      [1, 3, 'UPDATE … WHERE version=5', 'rose'], [1, 4, '0 dòng → đọc lại (150, v6)', 'yellow'], [1, 5, 'thử lại WHERE v=6 → 180', 'green']],
       vals: { 0: '100 · v5', 1: '100 · v5', 2: '150 · v6', 3: '150 · v6', 4: '150 · v6', 5: '180 · v7 ✓' } },
-    atomic: { heads: ['T1 · deposit +50', 'T2 · deposit +30'], ev: [
-      [0, 0, 'SET balance = balance+50', 'green'], [1, 1, 'SET balance = balance+30', 'yellow'], [0, 2, 'COMMIT', 'card'], [1, 3, 'runs on 150 → 180', 'green']],
+    atomic: { heads: ['T1 · nạp +50', 'T2 · nạp +30'], ev: [
+      [0, 0, 'SET balance = balance+50', 'green'], [1, 1, 'SET balance = balance+30', 'yellow'], [0, 2, 'COMMIT', 'card'], [1, 3, 'chạy trên 150 → 180', 'green']],
       vals: { 0: '150 (T1)', 1: '150 (T1)', 2: '150', 3: '180 ✓' } },
   };
   function timeline(key) {
@@ -2306,8 +2306,8 @@ try {
       o += S.box('lh' + k, LX[k], 10, EW, 30, { label: h, tone: k ? 'blue' : 'violet', size: 11.5 });
       o += S.path('ll' + k, `M${LX[k] + EW / 2} 44L${LX[k] + EW / 2} 352`, { color: 'muted', dash: true, head: false });
     });
-    o += S.text('tdown', 300, 24, 'time ↓', { size: 11, anchor: 'middle', weight: 800, color: 'var(--muted)' });
-    o += S.text('mid', 300, 52, 'balance in DB', { size: 10.5, anchor: 'middle', weight: 700, color: 'var(--muted)' });
+    o += S.text('tdown', 300, 24, 'thứ tự ↓', { size: 11, anchor: 'middle', weight: 800, color: 'var(--muted)' });
+    o += S.text('mid', 300, 52, 'số dư trong DB', { size: 10.5, anchor: 'middle', weight: 700, color: 'var(--muted)' });
     s.ev.forEach(([l, t, txt, tn]) => { o += S.box(`ev${l}-${t}`, LX[l], ty(t), EW, EH, { label: txt, tone: tn, size: 11 }); });
     Object.entries(s.vals).forEach(([t, v]) => { o += S.pill('cv' + t, 300, ty(+t) + EH / 2, v, { tone: /✗/.test(v) ? 'rose' : /✓/.test(v) ? 'green' : 'yellow', size: 10.5 }); });
     return o;
@@ -2319,16 +2319,16 @@ try {
     const attempts = opt ? n * (n + 1) / 2 : n;
     const wasted = attempts - n;
     let verdict, vt;
-    if (opt) { if (n <= 5) { verdict = 'cheap: retries are rare'; vt = 'green'; } else { verdict = `retry storm: ${n - 1} of ${n} fail each round`; vt = 'rose'; } }
-    else if (human) { verdict = 'disaster: lock held for minutes'; vt = 'rose'; }
-    else if (n <= 5) { verdict = 'fine, but optimistic is lighter'; vt = 'yellow'; }
-    else { verdict = 'brief queue: each works exactly once'; vt = 'green'; }
-    return { attempts, wasted, verdict, vt, held: human ? '~5 min' : '~5 ms' };
+    if (opt) { if (n <= 5) { verdict = 'rẻ: hiếm khi phải thử lại'; vt = 'green'; } else { verdict = `retry storm: mỗi vòng ${n - 1}/${n} thất bại`; vt = 'rose'; } }
+    else if (human) { verdict = 'thảm hoạ: giữ lock cả mấy phút'; vt = 'rose'; }
+    else if (n <= 5) { verdict = 'ổn, nhưng optimistic nhẹ hơn'; vt = 'yellow'; }
+    else { verdict = 'xếp hàng ngắn: mỗi request làm đúng 1 lần'; vt = 'green'; }
+    return { attempts, wasted, verdict, vt, held: human ? '~5 phút' : '~5 ms' };
   }
   const fmt = x => x >= 1e6 ? (+(x / 1e6).toFixed(1)) + 'M' : x >= 1e3 ? (+(x / 1e3).toFixed(1)) + 'K' : String(Math.round(x));
   function contention(st) {
     const m = model(st); const opt = st.strat === 'opt';
-    let o = S.text('c-h', 22, 30, `${st.n} requests hit the SAME row at once`, { size: 12.5, weight: 800 });
+    let o = S.text('c-h', 22, 30, `${st.n} request cùng lúc sửa CÙNG một dòng`, { size: 12.5, weight: 800 });
     const maxv = Math.log10(125250 + 1);
     const bar = (id, y, label, val, tn) => {
       const w = Math.max(6, 350 * Math.log10(val + 1) / maxv);
@@ -2336,15 +2336,15 @@ try {
         `<rect id="${id}" x="170" y="${y}" width="${w}" height="26" rx="5" style="fill:${tone(tn)[0]}" stroke="var(--ink)" stroke-width="1.3"/>` +
         S.text(id + '-v', 178 + w, y + 18, fmt(val), { size: 12, weight: 800 });
     };
-    o += bar('b-use', 60, 'useful writes', st.n, 'green');
-    o += bar('b-att', 100, 'total attempts', m.attempts, opt ? 'orange' : 'green');
-    o += bar('b-wait', 140, 'requests waiting', opt ? 0 : st.n - 1, 'yellow');
-    o += S.text('c-scale', 170, 186, 'bar length: log scale', { size: 10.5, color: 'var(--muted)' });
+    o += bar('b-use', 60, 'lần ghi có ích', st.n, 'green');
+    o += bar('b-att', 100, 'tổng số lần thử', m.attempts, opt ? 'orange' : 'green');
+    o += bar('b-wait', 140, 'request đang chờ', opt ? 0 : st.n - 1, 'yellow');
+    o += S.text('c-scale', 170, 186, 'độ dài thanh: thang log', { size: 10.5, color: 'var(--muted)' });
     // queue / storm icons
     const k = Math.min(st.n, 12);
     for (let j = 0; j < 12; j++) {
       const on = j < k; const x = 40 + j * 44; const y = opt ? 222 + (j % 2) * 18 : 232;
-      o += `<g id="rq${j}" style="transform:translate(${x}px,${y}px);opacity:${on ? 1 : 0}"><rect x="1.5" y="2" width="34" height="26" rx="5" fill="var(--drop)"/><rect width="34" height="26" rx="5" style="fill:${j === 0 ? 'var(--green)' : opt ? 'var(--rose)' : 'var(--yellow)'}" stroke="var(--ink)" stroke-width="1.2"/><text x="17" y="17" text-anchor="middle" font-size="10.5" font-weight="700">${j === 0 ? 'win' : opt ? 'retry' : 'wait'}</text></g>`;
+      o += `<g id="rq${j}" style="transform:translate(${x}px,${y}px);opacity:${on ? 1 : 0}"><rect x="1.5" y="2" width="34" height="26" rx="5" fill="var(--drop)"/><rect width="34" height="26" rx="5" style="fill:${j === 0 ? 'var(--green)' : opt ? 'var(--rose)' : 'var(--yellow)'}" stroke="var(--ink)" stroke-width="1.2"/><text x="17" y="17" text-anchor="middle" font-size="10.5" font-weight="700">${j === 0 ? 'thắng' : opt ? 'lại' : 'chờ'}</text></g>`;
     }
     o += S.pill('verdict', 300, 310, m.verdict, { tone: m.vt, size: 12 });
     return o;
@@ -2352,13 +2352,13 @@ try {
 
   function twopc() {
     let o = '';
-    o += S.box('coord', 210, 30, 180, 56, { label: 'coordinator', sub: '“can you commit?”', tone: 'violet' });
+    o += S.box('coord', 210, 30, 180, 56, { label: 'máy điều phối', sub: '“commit được chưa?”', tone: 'violet' });
     [['s3', 30], ['s17', 220], ['s41', 410]].forEach(([n, x]) => {
-      o += S.box('sh-' + n, x, 200, 160, 60, { label: 'shard ' + n.slice(1), sub: 'LOCKS row, votes yes', tone: 'orange' });
+      o += S.box('sh-' + n, x, 200, 160, 60, { label: 'máy ' + n.slice(1), sub: 'LOCK dòng, báo “được”', tone: 'orange' });
       o += S.flow('f-' + n, `M300 88 L${x + 80} 198`, { color: 'violet', n: 2, dur: 2.2 });
     });
-    o += S.pill('2pc-1', 300, 140, 'vote → wait → commit', { tone: 'card', size: 10.5 });
-    o += S.pill('2pc-2', 300, 300, 'coordinator dies between vote and commit → rows stay locked', { tone: 'rose', size: 10.5 });
+    o += S.pill('2pc-1', 300, 140, 'hỏi → chờ → commit', { tone: 'card', size: 10.5 });
+    o += S.pill('2pc-2', 300, 300, 'máy điều phối chết giữa lúc hỏi và commit → dòng kẹt lock', { tone: 'rose', size: 10.5 });
     return o;
   }
 
@@ -2369,86 +2369,77 @@ try {
   }
 
   L('m4', {
-    id: 'lost-update', order: 3, mins: 12, level: 'Intermediate',
-    title: 'Lost updates: when two writers race',
-    sub: 'Read, compute in the app, write back — the classic race, and three ways to kill it.',
-    learn: ['Why snapshots don’t stop the lost update', 'Pessimistic locking with SELECT … FOR UPDATE', 'Never hold a lock across human think-time', 'Optimistic locking with a version column', 'Atomic SQL: restructure so the race disappears', 'Which strategy fits which contention', 'Why a row lock is only cheap on one machine'],
+    id: 'lost-update', order: 3, mins: 11, level: 'Intermediate',
+    title: 'Lost update: khi hai người ghi giành nhau',
+    sub: 'Đọc ra, tính trong app, rồi ghi lại: giữa lúc đọc và lúc ghi có một khe hở, và người ghi sau lặng lẽ xoá mất việc của người ghi trước. Có ba cách vá.',
+    learn: ['Vì sao snapshot không chặn được lost update', 'Pessimistic lock với SELECT … FOR UPDATE', 'Đừng bao giờ giữ lock trong lúc con người suy nghĩ', 'Optimistic lock với cột version', 'Gộp đọc và ghi vào một câu SQL: hết chỗ để giành', 'Cách nào hợp với lúc đông, cách nào hợp với lúc vắng', 'Vì sao row lock chỉ rẻ trên một máy'],
     state: { v: 'race', n: 50, strat: 'opt', gap: 'short' },
-    legend: (i, st) => st.v === 'contention' ? [['var(--green)', 'useful'], ['var(--rose)', 'retry'], ['var(--yellow)', 'waiting']] : [['var(--orange)', 'write / lock'], ['var(--rose)', 'wrong'], ['var(--green)', 'correct'], ['var(--yellow)', 'waiting / DB value']],
+    legend: (i, st) => st.v === 'contention' ? [['var(--green)', 'có ích'], ['var(--rose)', 'thử lại'], ['var(--yellow)', 'đang chờ']] : [['var(--orange)', 'ghi / lock'], ['var(--rose)', 'sai'], ['var(--green)', 'đúng'], ['var(--yellow)', 'đang chờ / giá trị trong DB']],
     metrics(i, st) {
       const v = st.v;
-      if (v === 'race') return [['Expected', '$180'], ['Final', '$130', 'bad'], ['Lost', '$50', 'bad']];
-      if (v === 'lock') return [['Final', '$180', 'good'], ['T2 waited', 'until T1 commit', 'warn']];
-      if (v === 'think') return [['Lock held', '~5 min', 'bad'], ['Pooled connection', 'held hostage', 'bad'], ['Plain SELECTs', 'still fine', 'good']];
-      if (v === 'opt') return [['Final', '$180', 'good'], ['Locks taken', '0', 'good'], ['T2 retries', '1', 'warn']];
-      if (v === 'atomic') return [['Final', '$180', 'good'], ['Read→write gap', 'none', 'good'], ['Retries', '0', 'good']];
-      if (v === 'contention') { const m = model(st); return [['Strategy', st.strat === 'opt' ? 'optimistic' : 'pessimistic'], ['Attempts', fmt(m.attempts), m.wasted > st.n ? 'bad' : 'good'], ['Lock held', st.strat === 'opt' ? 'none' : m.held, st.strat !== 'opt' && st.gap === 'human' ? 'bad' : null]]; }
-      return [['Network round trips', '2+ while locked', 'bad'], ['On one box', 'lock = cheap', 'good']];
+      if (v === 'race') return [['Lẽ ra phải là', '$180'], ['Kết quả', '$130', 'bad'], ['Bị mất', '$50', 'bad']];
+      if (v === 'lock') return [['Kết quả', '$180', 'good'], ['T2 đã chờ', 'tới khi T1 commit', 'warn']];
+      if (v === 'think') return [['Giữ lock', '~5 phút', 'bad'], ['Kết nối tới database', 'bị giữ chặt', 'bad'], ['SELECT thường', 'vẫn chạy được', 'good']];
+      if (v === 'opt') return [['Kết quả', '$180', 'good'], ['Số lock đã giữ', '0', 'good'], ['T2 thử lại', '1 lần', 'warn']];
+      if (v === 'atomic') return [['Kết quả', '$180', 'good'], ['Khe hở đọc→ghi', 'không có', 'good'], ['Số lần thử lại', '0', 'good']];
+      if (v === 'contention') { const m = model(st); return [['Cách làm', st.strat === 'opt' ? 'optimistic' : 'pessimistic'], ['Số lần thử', fmt(m.attempts), m.wasted > st.n ? 'bad' : 'good'], ['Giữ lock', st.strat === 'opt' ? 'không' : m.held, st.strat !== 'opt' && st.gap === 'human' ? 'bad' : null]]; }
+      return [['Lượt đi về qua mạng', '2+ trong lúc giữ lock', 'bad'], ['Trên một máy', 'lock = rẻ', 'good']];
     },
     scene,
     controls(i, st) {
       if (st.v !== 'contention') return '';
       const seg = (act, opts) => `<span class="seg">${opts.map(([v, t]) => `<button data-act="${act}" data-v="${v}" class="${st[act] === v ? 'on' : ''}">${t}</button>`).join('')}</span>`;
-      return `<div class="row">${seg('strat', [['opt', 'Optimistic'], ['pess', 'Pessimistic']])} ${seg('gap', [['short', 'gap: ms'], ['human', 'gap: human']])}</div>
-        <div class="row" style="margin-top:6px"><label>requests on one row <input type="range" min="1" max="500" step="1" value="${st.n}" data-act="n"></label></div>`;
+      return `<div class="row">${seg('strat', [['opt', 'Optimistic'], ['pess', 'Pessimistic']])} ${seg('gap', [['short', 'khe hở: ms'], ['human', 'khe hở: con người']])}</div>
+        <div class="row" style="margin-top:6px"><label>số request vào một dòng <input type="range" min="1" max="500" step="1" value="${st.n}" data-act="n"></label></div>`;
     },
     steps: [
-      { tag: 'PROBLEM', short: 'The race', set: { v: 'race' }, learn: 0, title: 'Two deposits, one of them vanishes',
-        body: `<p>Balance $100. Two deposits run at once: +50 and +30. Each one <b>reads</b> the balance, <b>adds</b> in app code, then <b>writes</b> the result.</p><p>Both read 100. T1 writes 150, T2 writes 130. Final balance <b>$130</b> — the +50 is gone. This is the <b>lost update</b>.</p><p>Same story as overselling: two buyers both read “stock 1”, both write 0.</p>`,
-        idea: ['myth', '“MVCC snapshots protect me.” <b>No</b> — each read was correct for its snapshot. The bug is the gap between your <b>read</b> and your <b>write</b>.'] },
-      { tag: 'TECHNIQUE', short: 'FOR UPDATE', set: { v: 'lock' }, learn: 1, title: 'Fix 1 — pessimistic: lock the row when you read it',
-        body: `<p><code>SELECT … FOR UPDATE</code> takes the row lock at <b>read</b> time. T2’s locking read <b>waits</b> until T1 commits, then reads 150 and writes 180.</p><p>It blocks only other <b>writes and locks</b> on that row — plain MVCC <code>SELECT</code>s still sail past (readers never block).</p>`,
-        deep: { title: 'Example: SQLAlchemy with_for_update', html: `<pre>with Session() as session:
-    account = (
-        session.query(Account)
-        .filter(Account.id == 1)
-        .with_for_update()   # SELECT ... FOR UPDATE
-        .one()
-    )
-    account.balance -= 100
-    session.commit()  # lock released here</pre>` } },
-      { tag: 'GOTCHA', short: 'Think time', set: { v: 'think' }, learn: 2, title: 'Never hold a lock while a human thinks',
-        body: `<p>“Open edit form → lock row → user gets coffee → save.” For those minutes the row is locked <b>and</b> one pooled database connection is held hostage.</p><p>Every other writer queues behind it and times out. Pessimistic locks are for <b>milliseconds</b> inside one request, never across a human.</p>` },
-      { tag: 'TECHNIQUE', short: 'Version column', set: { v: 'opt' }, learn: 3, title: 'Fix 2 — optimistic: check at the end, redo on the rare loss',
-        body: `<p>No lock. Add an integer <code>version</code> column. Write <b>conditionally</b>: “update only if the version is still the one I read.”</p><ul><li><b>1 row affected</b> → my write landed (version +1)</li><li><b>0 rows affected</b> → someone else won → reload, re-apply, retry</li></ul><p>SQLAlchemy does it for you: <code>version_id_col</code> → raises <code>StaleDataError</code> on conflict.</p>`,
-        deep: { title: 'Example: conditional UPDATE', html: `<pre>-- read the row when version was 5, then save:
+      { tag: 'PROBLEM', short: 'Giành nhau', set: { v: 'race' }, learn: 0, title: 'Hai lần nạp tiền, một lần biến mất',
+        body: `<p>Nhớ hai nhân viên cùng bán cuốn Emma cuối cùng ở bài đầu tiên không? Giờ chuyện đó xảy ra với tiền. Số dư $100. Hai lần nạp chạy cùng lúc: +50 và +30. Mỗi bên <b>đọc</b> số dư, <b>cộng</b> trong code của app, rồi <b>ghi</b> kết quả.</p><p>Cả hai đọc ra 100. T1 ghi 150, T2 ghi 130. Số dư cuối là <b>$130</b>: khoản +50 bốc hơi. Đây gọi là <b>lost update</b> (mất một lần cập nhật).</p>`,
+        idea: ['myth', '“Đã có snapshot của MVCC che cho rồi.” <b>Không</b>. Mỗi lần đọc đều đúng theo snapshot của nó. Bug nằm ở khe hở giữa lúc bạn <b>đọc</b> và lúc bạn <b>ghi</b>.'] },
+      { tag: 'TECHNIQUE', short: 'FOR UPDATE', set: { v: 'lock' }, learn: 1, title: 'Cách 1, pessimistic: lock dòng ngay lúc đọc',
+        body: `<p><code>SELECT … FOR UPDATE</code> giữ <b>row lock</b> (lock trên đúng một dòng) ngay từ lúc <b>đọc</b>. Lần đọc của T2 phải <b>chờ</b> tới khi T1 commit, rồi mới đọc ra 150 và ghi 180.</p><p>Kiểu này gọi là <b>pessimistic</b> (bi quan): cứ cho là thế nào cũng có người đụng, nên bắt họ chờ. Nó chỉ chặn những ai muốn <b>ghi hoặc lock</b> dòng đó. <code>SELECT</code> thường vẫn đi qua bình thường.</p>`,
+        deep: { title: 'Deadlock: hai transaction chờ lẫn nhau', html: `<p>A lock dòng 1 rồi muốn lock dòng 2. B lock dòng 2 rồi muốn lock dòng 1. Không ai đi tiếp được: đó là <b>deadlock</b>.</p><p>Database tự phát hiện ra và huỷ một bên, kèm một lỗi. Cách tránh: lúc nào cũng lock các dòng theo cùng một thứ tự. Còn bên bị huỷ thì chạy lại.</p>` } },
+      { tag: 'GOTCHA', short: 'Lúc suy nghĩ', set: { v: 'think' }, learn: 2, title: 'Đừng bao giờ giữ lock trong lúc con người suy nghĩ',
+        body: `<p>“Mở form sửa, lock dòng, người dùng đi pha cà phê, rồi mới lưu.” Suốt mấy phút đó dòng bị lock, <b>và</b> một kết nối tới database bị giữ chặt theo.</p><p>Mọi người ghi khác xếp hàng sau nó rồi hết giờ chờ. Pessimistic lock chỉ dành cho vài <b>mili giây</b> bên trong một request, không bao giờ kéo qua lúc con người suy nghĩ.</p>` },
+      { tag: 'TECHNIQUE', short: 'Cột version', set: { v: 'opt' }, learn: 3, title: 'Cách 2, optimistic: kiểm lúc cuối, thua thì làm lại',
+        body: `<p>Không lock gì cả. Thêm một cột số nguyên tên <code>version</code>, rồi ghi <b>có điều kiện</b>: “chỉ sửa nếu version vẫn là số tôi đã đọc.”</p><ul><li><b>Sửa được 1 dòng</b>: lần ghi của tôi đã vào, version tăng 1.</li><li><b>Sửa được 0 dòng</b>: có người khác thắng rồi. Đọc lại, tính lại, thử lại.</li></ul><p>Kiểu này gọi là <b>optimistic</b> (lạc quan): cứ cho là chẳng ai đụng, hoạ hoằn mới phải làm lại.</p>`,
+        deep: { title: 'Ví dụ: UPDATE có điều kiện', html: `<pre>-- lúc đọc dòng này, version là 5. Giờ lưu:
 UPDATE products
 SET name = 'New name', version = version + 1
 WHERE id = 42 AND version = 5;
--- 1 row  → landed (version now 6)
--- 0 rows → conflict → reload, reapply, retry</pre>` } },
-      { tag: 'TECHNIQUE', short: 'Atomic SQL', set: { v: 'atomic' }, learn: 4, title: 'Fix 3 — make the race disappear',
-        body: `<p>Push the math into SQL: <code>UPDATE accounts SET balance = balance + 50 WHERE id = 1</code>.</p><p>The read and the write are one atomic step on the row. There is <b>no gap</b>, so nothing to lock in the app and nothing to version. T2’s update briefly waits on the row lock, then adds 30 to 150.</p>`,
-        idea: ['key', 'The best concurrency control is <b>restructuring so the race doesn’t exist</b>.'] },
-      { tag: 'TRY IT', short: 'Contention', set: { v: 'contention', n: 50, strat: 'opt', gap: 'short' }, learn: 5, title: 'Optimistic or pessimistic? It depends on contention',
-        body: `<p>Slide how many requests hit the <b>same row</b> at once (a flash sale on one product). Switch strategies, and switch the read→write gap between milliseconds and a human.</p><ul><li>Optimistic at 500: each round one wins, 499 reload and collide again → a <b>retry storm</b>.</li><li>Pessimistic at 500: a brief queue, each request does its work <b>exactly once</b>.</li><li>Pessimistic with a human gap: disaster.</li></ul>`,
-        idea: ['know', 'Attempt counts are an illustrative worst case (every loser retries every round).'] },
-      { tag: 'INSIGHT', short: 'Decide', set: { v: 'contention', n: 3, strat: 'opt', gap: 'human' }, learn: 5, title: 'The decision rule',
-        body: `<table><tr><th></th><th>Optimistic</th><th>Pessimistic</th></tr><tr><td>Conflicts <b>rare</b>, or gap is <b>long / human</b></td><td>✓ retries cheap</td><td>✗ locks + think-time</td></tr><tr><td>Conflicts <b>frequent</b> on a hot row (stock, counters)</td><td>✗ retry storms</td><td>✓ brief queue</td></tr></table><p>Both keep data correct; they differ in <b>efficiency under contention</b>.</p>`,
-        idea: ['key', '<b>Pessimistic</b> assumes someone WILL collide — make them wait. <b>Optimistic</b> assumes nobody will — check at the end, redo on the rare loss.'] },
-      { tag: 'INSIGHT', short: 'Across machines', set: { v: '2pc' }, learn: 6, title: 'Why the row lock is cheap — on one machine',
-        body: `<p>A row lock is cheap because <b>one box is the sole authority</b> over that row. Split the rows across 50 machines and a checkout touching 3 of them needs <b>two-phase commit</b>:</p><ol style="margin:0 0 9px;padding-left:20px"><li>coordinator asks “can you commit?” — each shard <b>locks</b> and votes yes</li><li>coordinator says “commit!” — each releases</li></ol><p>Between vote and commit, all three hold locks <b>across a network round trip</b>. If the coordinator dies there, the rows can stay locked — possibly forever.</p>`,
-        idea: ['key', 'ACID isn’t expensive in principle — it’s cheap <b>because a single box decides</b>. That’s why many distributed databases refuse 2PC (Module 06).'] },
-      { tag: 'TAKEAWAY', short: 'Summary', set: { v: 'atomic' }, title: 'Killing the lost update',
-        body: `<ul><li>The bug: read → compute in app → write. Snapshots don’t help.</li><li><b>Best:</b> one atomic SQL statement — no gap at all.</li><li>Hot row, short gap → <code>SELECT … FOR UPDATE</code>.</li><li>Rare conflicts or long/human gap → <b>version column</b> + retry.</li><li>Never hold a lock across human think-time.</li></ul>` },
+-- 1 dòng → đã vào (version giờ là 6)
+-- 0 dòng → đụng nhau → đọc lại, tính lại, thử lại</pre>` } },
+      { tag: 'TECHNIQUE', short: 'Một câu SQL', set: { v: 'atomic' }, learn: 4, title: 'Cách 3: làm cho chỗ giành nhau biến mất',
+        body: `<p>Đẩy phép cộng vào luôn trong SQL: <code>UPDATE accounts SET balance = balance + 50 WHERE id = 1</code>.</p><p>Đọc và ghi giờ là một bước liền trên dòng đó. <b>Không còn khe hở</b>, nên app chẳng phải lock gì, cũng chẳng cần cột version. UPDATE của T2 chờ row lock một thoáng, rồi cộng 30 vào 150.</p>`,
+        idea: ['key', 'Cách chống giành nhau tốt nhất là <b>viết lại sao cho không còn gì để giành</b>.'] },
+      { tag: 'TRY IT', short: 'Đông hay vắng', set: { v: 'contention', n: 50, strat: 'opt', gap: 'short' }, learn: 5, title: 'Optimistic hay pessimistic? Tuỳ đông hay vắng',
+        body: `<p>Kéo thanh trượt: bao nhiêu request cùng sửa <b>một dòng</b> (một hot row, ví dụ một món đang flash sale). Đổi cách làm, rồi đổi khe hở đọc→ghi giữa mili giây và con người.</p><ul><li>Optimistic với 500 request: mỗi vòng một bên thắng, 499 bên đọc lại rồi lại đụng nhau. Đó là <b>retry storm</b>.</li><li>Pessimistic với 500: xếp hàng một lát, mỗi request làm việc <b>đúng một lần</b>.</li><li>Pessimistic mà khe hở là con người: thảm hoạ.</li></ul>`,
+        idea: ['know', 'Số lần thử ở đây là trường hợp xấu nhất, chỉ để minh hoạ (bên thua nào cũng thử lại ở mọi vòng).'] },
+      { tag: 'INSIGHT', short: 'Chọn cách', set: { v: 'contention', n: 3, strat: 'opt', gap: 'human' }, learn: 5, title: 'Luật chọn',
+        body: `<table><tr><th></th><th>Optimistic</th><th>Pessimistic</th></tr><tr><td><b>Hiếm khi</b> đụng nhau, hoặc khe hở <b>dài / là con người</b></td><td>✓ thử lại rất rẻ</td><td>✗ giữ lock suốt lúc người ta nghĩ</td></tr><tr><td><b>Hay</b> đụng nhau trên một hot row (tồn kho, bộ đếm)</td><td>✗ retry storm</td><td>✓ xếp hàng một lát</td></tr></table><p>Cả hai đều giữ dữ liệu đúng. Chúng chỉ khác nhau ở chỗ <b>tốn bao nhiêu khi đông người</b>.</p>`,
+        idea: ['key', '<b>Pessimistic</b> tin rằng thế nào cũng có người đụng: bắt họ chờ. <b>Optimistic</b> tin rằng chẳng ai đụng: kiểm lúc cuối, thua thì làm lại.'] },
+      { tag: 'INSIGHT', short: 'Nhiều máy', set: { v: '2pc' }, learn: 6, title: 'Vì sao row lock rẻ, khi chỉ có một máy',
+        body: `<p>Row lock rẻ vì <b>một máy tự quyết định một mình</b>: dòng nào đang bị ai giữ, nó biết hết.</p><p>Rải các dòng ra nhiều máy thì hết như vậy. Một lần thanh toán đụng tới 3 máy sẽ cần một máy điều phối đi hỏi từng máy “commit được chưa?”, và máy nào cũng phải giữ lock trong lúc chờ câu trả lời đi qua mạng. Máy điều phối chết giữa chừng là các dòng kẹt lock luôn (module 09).</p>`,
+        idea: ['key', 'Ba lời hứa không đắt là nhờ <b>một máy tự quyết</b>. Khi một máy không còn đủ, mọi thứ khó hơn hẳn.'] },
+      { tag: 'TAKEAWAY', short: 'Tóm lại', set: { v: 'atomic' }, title: 'Diệt lost update',
+        body: `<ul><li>Bug: đọc → tính trong app → ghi. Snapshot không cứu được.</li><li><b>Tốt nhất:</b> một câu SQL duy nhất, không còn khe hở.</li><li>Hot row, khe hở ngắn: <code>SELECT … FOR UPDATE</code>.</li><li>Hiếm khi đụng nhau, hoặc khe hở dài (con người): <b>cột version</b> rồi thử lại.</li><li>Đừng bao giờ giữ lock trong lúc con người suy nghĩ.</li></ul>`,
+        idea: ['key', 'Ba lời hứa giờ đã đủ: nhanh, an toàn, dùng chung được. Đến lúc lo cho chính dữ liệu: cho nó một hình dạng tử tế. Đó là module 05.'] },
     ],
   });
 
-  Q('m4', { lesson: 'lost-update', q: 'A “like” button runs: read <code>likes</code>, add 1 in Python, write it back. Under load, counts come out too low. Simplest correct fix?', opts: ['Raise the isolation level to REPEATABLE READ', '<code>UPDATE posts SET likes = likes + 1 WHERE id = …</code>', 'Wrap the read and write in one transaction at READ COMMITTED'], a: 1,
-    why: 'One atomic statement removes the read-modify-write gap, so there is nothing to race on. No locks held in app code, no retries.',
-    wrong: { 0: 'Repeatable Read turns the lost update into serialization errors you must now retry — more work than removing the gap.', 2: 'A transaction at Read Committed still lets both read the same old value: that is exactly the lost update.' } });
-  Q('m4', { lesson: 'lost-update', q: 'A wiki lets editors open a page, edit for ~10 minutes, then save. Two editors rarely edit the same page. Which protection?', opts: ['SELECT … FOR UPDATE when the editor opens the page', 'Optimistic: a version column; on save, 0 rows → show “someone else changed this”', 'No protection — conflicts are rare'], a: 1,
-    why: 'Conflicts are rare and the gap is human-length: optimistic locking costs nothing until a real conflict, then lets the user resolve it.',
-    wrong: { 0: 'Holding a row lock (and a pooled connection) for 10 minutes of think-time blocks every other writer.', 2: 'Rare isn’t never: the second save would silently overwrite the first (a lost update).' } });
+  Q('m4', { lesson: 'lost-update', q: 'Nút “like” chạy thế này: đọc <code>likes</code>, cộng 1 trong code của app, rồi ghi lại. Lúc đông người, số like ra thấp hơn thật. Cách sửa đúng mà đơn giản nhất?', opts: ['Nâng isolation level lên REPEATABLE READ', '<code>UPDATE posts SET likes = likes + 1 WHERE id = …</code>', 'Bọc lần đọc và lần ghi trong một transaction ở mức READ COMMITTED'], a: 1,
+    why: 'Một câu lệnh duy nhất xoá luôn khe hở giữa đọc và ghi, nên chẳng còn gì để giành. App không phải giữ lock, cũng không phải thử lại.',
+    wrong: { 0: 'Repeatable Read biến lost update thành lỗi serialization mà bạn phải thử lại. Thế còn tốn công hơn là xoá khe hở.', 2: 'Transaction ở Read Committed vẫn để cả hai bên đọc ra cùng một giá trị cũ. Đó chính là lost update.' } });
+  Q('m4', { lesson: 'lost-update', q: 'Một trang wiki cho người viết mở một trang, sửa khoảng 10 phút rồi lưu. Hiếm khi hai người cùng sửa một trang. Nên bảo vệ kiểu nào?', opts: ['SELECT … FOR UPDATE ngay khi người viết mở trang', 'Optimistic: thêm cột version. Lúc lưu mà sửa được 0 dòng thì báo “có người vừa sửa trang này”', 'Không cần bảo vệ, vì hiếm khi đụng nhau'], a: 1,
+    why: 'Hiếm khi đụng nhau, mà khe hở lại dài cỡ con người: optimistic lock không tốn gì cho tới khi đụng thật, và lúc đó để người dùng tự xử lý.',
+    wrong: { 0: 'Giữ row lock (và một kết nối tới database) suốt 10 phút người ta suy nghĩ là chặn mọi người ghi khác.', 2: 'Hiếm không có nghĩa là không bao giờ: lần lưu thứ hai sẽ lặng lẽ ghi đè lần đầu. Đó là lost update.' } });
 
   CHEAT('m4', `<ul>
-<li><b>ACID:</b> A all-or-nothing · C rules checked at commit · I no race weirdness · D WAL on disk before “OK”. A/C/D are cheap (txn vs machine); I is costly (txn vs txn) → it gets a dial.</li>
-<li><b>Anomalies:</b> dirty (uncommitted data) → non-repeatable (same row changes) → phantom (new rows appear). Ladder RU → RC (Postgres default) → RR → SERIALIZABLE kills one more each.</li>
-<li><b>Postgres:</b> no dirty reads ever; its REPEATABLE READ also kills phantoms. RR/SER conflicts → serialization error → app must retry.</li>
-<li><b>MVCC:</b> UPDATE = new tuple + old one’s xmax stamped; DELETE = stamp only. Snapshot per statement (RC) or per txn (RR). Readers never block writers.</li>
-<li><b>Vacuum:</b> dead → reusable (FSM), file doesn’t shrink. Disk back to OS = rewrite (VACUUM FULL offline, pg_repack online) or DROP PARTITION. Never disable autovacuum (XID wraparound). Long txns block cleanup.</li>
-<li><b>Lost update:</b> read → compute → write races. Fix: atomic SQL › FOR UPDATE (hot row, short gap) › version column (rare conflicts, human gap).</li>
-<li>Row locks are cheap only on one box; across machines you need 2PC — slow and fragile.</li>
+<li><b>Anomaly:</b> dirty read (đọc dữ liệu chưa commit) → non-repeatable read (cùng một dòng, đọc lại ra khác) → phantom read (dòng mới hiện ra). Thang RU → RC (mặc định của Postgres) → RR → SERIALIZABLE: lên một bậc, chặn thêm một kiểu.</li>
+<li><b>Postgres:</b> không bao giờ có dirty read. REPEATABLE READ của nó chặn luôn phantom. Đụng nhau ở RR/SERIALIZABLE thì báo lỗi serialization, và app phải thử lại.</li>
+<li><b>MVCC:</b> UPDATE = thêm phiên bản mới + đóng dấu xmax lên bản cũ. DELETE = chỉ đóng dấu. Snapshot chụp mỗi lệnh (RC) hoặc một lần cho cả transaction (RR). Người đọc không chặn người ghi. Cái giá: phiên bản chết (dead tuple) chất đống, VACUUM dọn và cho dùng lại chỗ. Transaction chạy lâu ghìm việc dọn lại.</li>
+<li><b>Lost update:</b> đọc → tính → ghi thì giành nhau. Cách vá: một câu SQL duy nhất › FOR UPDATE (hot row, khe hở ngắn) › cột version (hiếm đụng, khe hở là con người). Lock nhiều dòng thì luôn theo cùng một thứ tự để tránh deadlock.</li>
+<li>Row lock chỉ rẻ khi một máy tự quyết. Rải ra nhiều máy thì chậm và dễ kẹt (module 09).</li>
 </ul>`);
 })();
 } catch (e) { console.error('lesson file m5_05_lost_update.js failed', e); }
@@ -3887,8 +3878,8 @@ try {
 (() => {
   const RMODE = {
     async: { ack: 'không ai', lat: '~1 ms', pdie: 'có thể MẤT', rdie: 'ổn', ackTxt: 'OK: trước replica', r1: '#42 đang gửi', r2: '#42 đang gửi' },
-    sync: { ack: 'MỌI replica', lat: '~1 ms + máy chậm nhất', pdie: 'không mất', rdie: 'commit bị KẸT', ackTxt: 'OK: sau MỌI replica', r1: '#42 ✓', r2: '#42 ✓' },
-    quorum: { ack: '1 trong 2', lat: '~1 ms + máy nhanh nhất', pdie: 'không mất', rdie: 'ổn', ackTxt: 'OK: sau 1 trong 2', r1: '#42 ✓', r2: '#42 đang gửi' },
+    sync: { ack: 'MỌI replica', lat: '~1 ms + chậm nhất', pdie: 'không mất', rdie: 'commit bị KẸT', ackTxt: 'OK: sau MỌI replica', r1: '#42 ✓', r2: '#42 ✓' },
+    quorum: { ack: '1 trong 2', lat: '~1 ms + nhanh nhất', pdie: 'không mất', rdie: 'ổn', ackTxt: 'OK: sau 1 trong 2', r1: '#42 ✓', r2: '#42 đang gửi' },
   };
   const OUTCOME = {
     'async-primary': ['rose', 'PRIMARY SẬP', ['Client đã nghe "OK".', 'Replica chưa có #42.', 'Đưa replica lên → MẤT #42.']],
@@ -4005,7 +3996,7 @@ try {
         body: `<p>Primary phải chọn lúc nào thì trả lời client “OK”. Đây là đổi tốc độ lấy an toàn, kiểu đánh đổi bạn sẽ gặp lại dưới tên CAP:</p><ul><li><b>async</b> (mặc định): OK ngay, không chờ ai. Nhanh. Nhưng nếu primary sập trước khi replica kịp nhận, lúc đưa một replica lên thay (<b>failover</b>) thì lượt ghi đó <b>mất</b>, dù client đã nghe “OK”.</li><li><b>sync</b>: chờ mọi replica xác nhận. Không mất gì, nhưng một replica sập là <b>mọi commit bị kẹt</b>.</li><li><b>quorum</b>: ở giữa. Chỉ cần 1 trong N replica xác nhận.</li></ul><p>Chọn một kiểu, rồi thử cho một máy sập.</p>`,
         idea: ['know', 'Thử <b>sync</b> rồi cho replica 2 sập: an toàn tuyệt đối, đổi lại cả hệ thống đứng hình.'] },
       { tag: 'TECHNIQUE', short: 'Replica đọc', set: { stage: 5, mode: null }, title: 'Ghi vào primary, đọc từ các bản sao',
-        body: `<p>Giờ app chia việc: <b>ghi → primary</b>, <b><code>SELECT</code> → replica</b>. Đọc còn ngộp thì thêm replica.</p><p>Vì mặc định là async, replica luôn đi sau primary một chút. Khoảng trễ đó gọi là <b>replication lag</b>: thường chỉ vài mili giây, nhưng lúc hệ thống bận có thể lên vài giây.</p>` },
+        body: `<p>Giờ app chia việc: <b>ghi → primary</b>, <b><code>SELECT</code> → replica</b>. Đọc còn ngộp thì thêm replica.</p><p>Vì mặc định là async, replica luôn đi sau primary một chút. Khoảng trễ đó gọi là <b>replication lag</b> (replica chậm hơn primary bao lâu): thường chỉ vài mili giây, nhưng lúc hệ thống bận có thể lên vài giây.</p>` },
       { tag: 'PROBLEM', short: 'Tên mới đâu?', set: { stage: 6 }, learn: 3, title: 'Read-your-own-writes: “tên mới của tôi đâu?”',
         body: `<p>Một người đổi tên thành <b>Leo</b>. Lệnh <code>UPDATE</code> vào primary. Trang tải lại, và lượt đọc rơi vào replica 2, máy chưa nhận được dòng WAL đó, nên hiện tên cũ <b>Lee</b>.</p><p>Không có gì hỏng: một giây nữa dữ liệu sẽ tới. Nhưng người dùng thì tưởng lưu thất bại. Lỗi này có tên: <b>read-your-own-writes</b> (không đọc lại được thứ mình vừa ghi).</p>`,
         idea: ['myth', '“Replica là bản sao y hệt, đọc ở máy nào cũng được.” Nó là bản sao y hệt <b>của quá khứ</b>. Độ trễ chính là nguồn gốc của lỗi này.'] },
@@ -4194,7 +4185,7 @@ try {
       if (s === 2) return [['Partition phải quét', '1 trong 12', 'good'], ['Máy thêm vào', '0'], ['Mỗi index', 'nhỏ hơn', 'good']];
       if (s === 3) { const d = st.ret === 'delete'; return [['Dòng chết', d ? 'mọi dòng cũ' : '0', d ? 'bad' : 'good'], ['WAL phải ghi', d ? 'cả núi' : '~0', d ? 'bad' : 'good'], ['Thời gian', d ? 'hàng giờ + vacuum' : 'tức thì', d ? 'bad' : 'good']]; }
       if (s === 4) return [['Số máy', '4'], ['Đỡ phần ghi', 'có', 'good'], ['JOIN xuyên shard', 'hết', 'bad']];
-      if (s === 5) { const k = st.key; return [['Lượt ghi', k === 'created_at' ? 'DỒN MỘT CHỖ' : 'trải đều', k === 'created_at' ? 'bad' : 'good'], ['Xem lịch sử phải hỏi', k === 'user_id' ? '1 shard' : '4 shard', k === 'user_id' ? 'good' : 'bad']]; }
+      if (s === 5) { const k = st.key; return [['Lượt ghi', k === 'created_at' ? 'HOT SPOT' : 'trải đều', k === 'created_at' ? 'bad' : 'good'], ['Xem lịch sử phải hỏi', k === 'user_id' ? '1 shard' : '4 shard', k === 'user_id' ? 'good' : 'bad']]; }
       const method = s === 6 ? 'mod' : 'ring'; const vn = s >= 8 ? st.vn : 1; const salt = s === 7 ? st.salt : 0;
       if (s === 6) return [['Số server', st.n === 5 ? '4 → 5' : '4'], ['Key bị dời (% N)', st.n === 5 ? pct(stats('mod', 1, 0).moved) : '—', st.n === 5 ? 'bad' : null], ['Lý tưởng (1 / N mới)', '20%']];
       const stt = stats(method, vn, salt);
@@ -4202,7 +4193,7 @@ try {
       const sh = shares(method, st.n, vn, salt); const fair = 1 / st.n;
       const mx = Math.max(...sh) / fair, mn = Math.min(...sh) / fair;
       const src = stt.from.filter(c => c > 0).length;
-      return [['Máy nặng nhất / phần đều', '×' + mx.toFixed(2), mx > 1.3 ? 'bad' : 'good'], ['Máy nhẹ nhất / phần đều', '×' + mn.toFixed(2), mn < 0.7 ? 'bad' : 'good'], ['E lấy key từ', st.n === 5 ? (src === 4 ? 'cả 4' : src + ' server' + (src > 1 ? '' : '')) : '—']];
+      return [['Nặng nhất / phần đều', '×' + mx.toFixed(2), mx > 1.3 ? 'bad' : 'good'], ['Nhẹ nhất / phần đều', '×' + mn.toFixed(2), mn < 0.7 ? 'bad' : 'good'], ['E lấy key từ', st.n === 5 ? (src === 4 ? 'cả 4' : src + ' server' + (src > 1 ? '' : '')) : '—']];
     },
     scene,
     act(st, a, v) {
@@ -4236,7 +4227,7 @@ CREATE TABLE orders_2026_03 PARTITION OF orders
         body: `<p>Rồi tới lúc lượt <b>ghi</b> vượt quá sức cái máy to nhất bạn mua được. Lúc đó đành chia dữ liệu ra nhiều <b>database độc lập</b>, mỗi cái gọi là một <b>shard</b>. Cũng là cắt nhỏ như partition, nhưng giờ không còn planner nào nhìn thấy hết mọi miếng.</p><p>Cái giá: <b>join và transaction xuyên shard hết chạy</b> (module 09 giải thích vì sao). Những database chấp nhận cái giá này ngay từ đầu gọi là NoSQL, cũng ở module 09.</p>`,
         idea: ['key', '<b>Partition để dọn cho gọn. Sharding chỉ khi hết đường.</b>'] },
       { tag: 'TRY IT', short: 'Shard key', set: { stage: 5, key: 'created_at' }, learn: 2, title: 'Shard key quyết định query nào còn rẻ',
-        body: `<p><b>Shard key</b> là cột dùng để chia dòng nào về shard nào. Chọn nó theo câu hỏi app hay hỏi nhất: câu nào nằm gọn trong một shard thì rẻ, câu nào phải hỏi <b>mọi shard</b> rồi gộp lại (scatter-gather) thì đắt.</p><ul><li><code>created_at</code>: mọi lượt ghi hôm nay dồn vào một shard. Một máy nóng ran, mấy máy kia ngồi chơi.</li><li><code>hash(order_id)</code>: ghi trải đều, nhưng đơn hàng của một người tản khắp nơi. Xem lịch sử phải hỏi mọi shard.</li><li><code>hash(user_id)</code>: ghi trải đều <b>và</b> dữ liệu của một người nằm một chỗ ✓</li></ul><p><code>hash</code> là hàm biến một giá trị thành một con số trông như ngẫu nhiên.</p>` },
+        body: `<p><b>Shard key</b> là cột dùng để chia dòng nào về shard nào. Chọn nó theo câu hỏi app hay hỏi nhất: câu nào nằm gọn trong một shard thì rẻ, câu nào phải hỏi <b>mọi shard</b> rồi gộp lại (scatter-gather) thì đắt.</p><ul><li><code>created_at</code>: mọi lượt ghi hôm nay dồn vào một shard. Đó là một <b>hot spot</b> (một chỗ gánh gần hết việc), còn mấy máy kia ngồi chơi.</li><li><code>hash(order_id)</code>: ghi trải đều, nhưng đơn hàng của một người tản khắp nơi. Xem lịch sử phải hỏi mọi shard.</li><li><code>hash(user_id)</code>: ghi trải đều <b>và</b> dữ liệu của một người nằm một chỗ ✓</li></ul><p><code>hash</code> là hàm biến một giá trị thành một con số trông như ngẫu nhiên.</p>` },
       { tag: 'PROBLEM', short: '% N', set: { stage: 6, n: 4 }, learn: 3, title: 'Chia key bằng hash % N, rồi thêm một server',
         body: `<p>Cách chia dễ nghĩ ra nhất: <code>shard = hash(key) % N</code>, tức lấy số hash chia cho số server N rồi lấy phần dư. Chạy ngon, cho tới khi N đổi. Bấm <b>Thêm server E</b>.</p><p>Một key chỉ ở yên nếu <code>h % 4 == h % 5</code>, khoảng 1 trong 5 lần. Vậy ~80% key phải dời chỗ. Với database đã sharding, đó là chép gần hết dữ liệu từ máy này sang máy khác, đúng lúc bạn đang thiếu sức.</p>`,
         idea: ['know', 'Cách vá ở bước sau ra đời ở MIT năm 1997, để rải trang web lên một dàn máy cứ ra vào liên tục. Tên nó: <b>consistent hashing</b>.'] },
@@ -4244,19 +4235,19 @@ CREATE TABLE orders_2026_03 PARTITION OF orders
         body: `<ol style="padding-left:18px;margin:0 0 9px"><li>Uốn dãy số hash thành một vòng tròn.</li><li>Hash mỗi <b>server</b> ra một điểm trên vòng. Hash mỗi <b>key</b> cũng ra một điểm.</li><li>Key thuộc về <b>server đầu tiên nó gặp khi đi theo chiều kim đồng hồ</b>.</li></ol><p>Thêm E: chỉ key trên một cung phải dời, và chỉ dời từ <b>một server hàng xóm</b>. Bấm xáo vài lần: lúc dời nhiều, lúc dời ít, tuỳ may rủi. Vì vậy hệ thống thật đặt mỗi server ở rất nhiều điểm trên vòng, để phần của các máy ra đều nhau.</p>`,
         idea: ['myth', '“Cái vòng hay ở chỗ biến 4 vị trí thành hàng nghìn.” Không phải. Hay ở chỗ <b>vị trí của key không còn dính tới N</b>: hash(key) nằm yên một chỗ, có bao nhiêu server cũng vậy.'] },
       { tag: 'TAKEAWAY', short: 'Tóm lại', set: { stage: 8, n: 5, vn: 150 }, title: 'Partition, shard, rồi đặt key',
-        body: `<ul><li><b>Partition</b>: dọn gọn trong một server. Bỏ qua được cả bảng con, index nhỏ hơn, <code>DROP</code> thay cho <code>DELETE</code>.</li><li><b>Sharding</b>: đường cùng cho phần ghi. Mất join và transaction xuyên shard. Chọn shard key theo câu hỏi hay hỏi nhất (<code>user_id</code> ✓, <code>created_at</code> dồn một chỗ).</li><li><code>hash % N</code>: đổi N là gần hết key dời chỗ. <b>Vòng hash</b>: chỉ dời khoảng 1/N. Trong hình, mỗi server có 150 điểm trên vòng. Kéo thanh trượt về 1 để xem phần của các máy lệch nhau ra sao.</li></ul>`,
+        body: `<ul><li><b>Partition</b>: dọn gọn trong một server. Bỏ qua được cả bảng con, index nhỏ hơn, <code>DROP</code> thay cho <code>DELETE</code>.</li><li><b>Sharding</b>: đường cùng cho phần ghi. Mất join và transaction xuyên shard. Chọn shard key theo câu hỏi hay hỏi nhất (<code>user_id</code> ✓, <code>created_at</code> thành hot spot).</li><li><code>hash % N</code>: đổi N là gần hết key dời chỗ. <b>Vòng hash</b>: chỉ dời khoảng 1/N. Trong hình, mỗi server có 150 điểm trên vòng. Kéo thanh trượt về 1 để xem phần của các máy lệch nhau ra sao.</li></ul>`,
         idea: ['key', 'Giờ dữ liệu nằm trên nhiều máy, nối nhau bằng dây mạng. Mà dây mạng thì có lúc đứt. Khi các máy không gọi được nhau, database nên làm gì? Bài sau: CAP.'] },
     ],
   });
 
-  Q('m8', { lesson: 'partition-shard', q: 'Một app chat sharding bảng tin nhắn theo <code>hash(message_id)</code>. Màn hình chính là “50 tin nhắn mới nhất của cuộc trò chuyện X”. Sai ở đâu?', opts: ['Một máy nóng ran: tin nhắn mới dồn hết vào một shard', 'Tin nhắn của một cuộc trò chuyện tản khắp nơi, nên mỗi lần mở màn hình phải hỏi mọi shard', 'Không sai gì: hash trải đều là đủ'], a: 1,
+  Q('m8', { lesson: 'partition-shard', q: 'Một app chat sharding bảng tin nhắn theo <code>hash(message_id)</code>. Màn hình chính là “50 tin nhắn mới nhất của cuộc trò chuyện X”. Sai ở đâu?', opts: ['Hot spot: tin nhắn mới dồn hết vào một shard', 'Tin nhắn của một cuộc trò chuyện tản khắp nơi, nên mỗi lần mở màn hình phải hỏi mọi shard', 'Không sai gì: hash trải đều là đủ'], a: 1,
     why: 'Shard key phải khớp với câu hỏi app hay hỏi nhất. Ở đây câu hỏi là theo từng cuộc trò chuyện, nên sharding theo <code>hash(conversation_id)</code>: ghi vẫn trải đều, và một cuộc trò chuyện nằm gọn trong một shard.',
-    wrong: { 0: 'Dồn một chỗ là chuyện của key tăng theo thời gian như <code>created_at</code>. Id đã hash thì ghi trải đều.', 2: 'Ghi trải đều mới là một nửa. Lượt ĐỌC nhiều nhất giờ phải hỏi mọi shard.' } });
+    wrong: { 0: 'Hot spot là chuyện của key tăng theo thời gian như <code>created_at</code>. Id đã hash thì ghi trải đều.', 2: 'Ghi trải đều mới là một nửa. Lượt ĐỌC nhiều nhất giờ phải hỏi mọi shard.' } });
   Q('m8', { lesson: 'partition-shard', q: 'Một database đã sharding đặt dòng bằng <code>hash(key) % N</code>. Đang có 5 shard, bạn thêm shard thứ 6 đúng giờ cao điểm. Chuyện gì xảy ra?', opts: ['Khoảng 1/6 số dòng phải dời', 'Khoảng 5/6 số dòng giờ thuộc về shard khác: một đợt chép dữ liệu khổng lồ', 'Không dòng nào dời: dòng cũ ở yên, chỉ dòng mới sang shard 6'], a: 1,
     why: 'Với % N, một key chỉ ở yên nếu h%5 == h%6, khoảng 1/6 số lần. Vậy ~83% phải dời, đúng lúc bạn đang cần thêm sức. Vòng hash thì chỉ dời khoảng 1/6.',
     wrong: { 0: 'Đó là con số của vòng hash, không phải của % N.', 2: 'Công thức % N tính lại chỗ ở cho MỌI key. Dòng cũ mà ở yên thì lần sau tìm sẽ không thấy.' } });
 
-  CHEAT('m8', `<ul><li><b>Partition</b> (cùng một server): planner bỏ qua cả bảng con, index nhỏ hơn, xoá dữ liệu cũ = <code>DROP</code> một partition (không dòng chết, không núi WAL). <b>Sharding</b>: đường cùng cho phần ghi, mất join và transaction xuyên shard. Shard key chọn theo câu hỏi hay hỏi nhất (<code>user_id</code> ✓, <code>created_at</code> → dồn một chỗ).</li><li><code>hash % N</code>: đổi N là gần hết key dời chỗ. <b>Vòng hash</b>, đi theo chiều kim đồng hồ: chỉ một cung dời (~1/N). Hệ thống thật cho mỗi server nhiều điểm trên vòng để chia cho đều.</li></ul>`);
+  CHEAT('m8', `<ul><li><b>Partition</b> (cùng một server): planner bỏ qua cả bảng con, index nhỏ hơn, xoá dữ liệu cũ = <code>DROP</code> một partition (không dòng chết, không núi WAL). <b>Sharding</b>: đường cùng cho phần ghi, mất join và transaction xuyên shard. Shard key chọn theo câu hỏi hay hỏi nhất (<code>user_id</code> ✓, <code>created_at</code> → hot spot).</li><li><code>hash % N</code>: đổi N là gần hết key dời chỗ. <b>Vòng hash</b>, đi theo chiều kim đồng hồ: chỉ một cung dời (~1/N). Hệ thống thật cho mỗi server nhiều điểm trên vòng để chia cho đều.</li></ul>`);
 })();
 } catch (e) { console.error('lesson file m8_02_partition_shard.js failed', e); }
 /* ---- m6_06_cap.js ---- */
@@ -5014,9 +5005,9 @@ try {
   const TYPES = [
     ['String', 'str / int', 'cache mọi giá trị + TTL', ['SET product:9 "{…}" EX 300', 'INCR page_views   # +1 an toàn', 'EXPIRE key 3600   # tự xoá']],
     ['Hash', 'dict', 'đọc MỘT trường, không cần cả object', ['HSET user:1 name An plan pro', 'HGET user:1 plan  → "pro"']],
-    ['List', 'deque', 'hàng đợi: đẩy vào đầu này, lấy ra đầu kia', ['LPUSH jobs "email:42"', 'RPOP jobs   # worker lấy một việc', '(Celery dùng List làm hàng đợi việc)']],
+    ['List', 'deque', 'hàng đợi: vào đầu này, ra đầu kia', ['LPUSH jobs "email:42"', 'RPOP jobs   # worker lấy một việc', '(List giữ việc tới khi có worker lấy)']],
     ['Set', 'set', 'kiểm tra có mặt, không trùng', ['SADD online 77 81', 'SISMEMBER online 77 → 1']],
-    ['Sorted Set', 'dict có thứ tự', 'lấy theo khoảng điểm: xếp hạng, thời gian', ['ZINCRBY bestsellers 1 "LOTR"', 'ZREVRANGE bestsellers 0 9', 'ZRANGEBYSCORE log now-60 now']],
+    ['Sorted Set', 'dict có thứ tự', 'theo khoảng điểm: xếp hạng, giờ', ['ZINCRBY bestsellers 1 "LOTR"', 'ZREVRANGE bestsellers 0 9', 'ZRANGEBYSCORE log now-60 now']],
   ];
   const BOOKS = ['LOTR', 'Dune', 'Hobbit', 'Emma', 'Ulysses'];
   const need = st => Math.round(st.rps * st.ms / 1000);
@@ -5159,8 +5150,8 @@ def update_user(user_id, data):
     db.update_user(user_id, data)            # sửa bản gốc trước
     redis.delete(f"user:{user_id}")          # rồi vứt bản sao</pre>` } },
       { tag: 'TRY IT', short: 'Cache trống', set: { phase: 'empty', redisDown: true, policy: 'fallback' }, learn: 4, title: 'Thử: Redis trống trơn thì sao?',
-        body: `<p>Redis giữ mọi thứ trong RAM. Việc lưu xuống ổ đĩa của nó chỉ là “cố hết sức”, nên một lần sập có thể làm mất hết. Đổi cách app của bạn phản ứng xem.</p><p>Ba giới hạn nữa cần nhớ:</p><ul><li><b>Chỉ lấy được theo key</b>: không hỏi được “sách nào trong cache giá trên $20”. Không WHERE, JOIN hay GROUP BY.</li><li><b>RAM đắt gấp ~10 lần SSD</b>: chỉ cất phần đang được đọc nhiều, đừng cất cả danh mục.</li><li><b>Stampede</b>: một key đang được hỏi dồn dập mà hết hạn là mọi request cùng ùa vào database (bài sau).</li></ul>`,
-        idea: ['warn', 'Lượt đọc nào cũng phải quay về hỏi Postgres được. <b>Nếu Redis trống mà app hỏng, thì bạn đã lỡ dựng một bản gốc thứ hai, chứ không phải một cái cache.</b>'] },
+        body: `<p>Redis giữ mọi thứ trong RAM. Việc lưu xuống ổ đĩa của nó chỉ là “cố hết sức”, nên một lần sập có thể làm mất những gì vừa ghi. Khởi động lại mà trống trơn cũng là chuyện phải tính tới. Đổi cách app của bạn phản ứng xem.</p><p>Ba giới hạn nữa cần nhớ:</p><ul><li><b>Chỉ lấy được theo key</b>: không hỏi được “sách nào trong cache giá trên $20”. Không WHERE, JOIN hay GROUP BY.</li><li><b>RAM đắt gấp ~10 lần SSD</b>: chỉ cất phần đang được đọc nhiều, đừng cất cả danh mục.</li><li><b>Cache stampede</b>: một hot key (key bị đọc liên tục) mà hết hạn là mọi request cùng ùa vào database (bài sau).</li></ul>`,
+        idea: ['warn', 'Lượt đọc nào cũng phải quay về hỏi Postgres được. <b>Nếu Redis trống mà app hỏng, thì bạn đã lỡ dựng một bản gốc thứ hai (một nguồn sự thật không ai ghi nhận), chứ không phải một cái cache.</b>'] },
       { tag: 'TAKEAWAY', short: 'Khi nào', set: { phase: 'take' }, title: 'Dùng cho những đáp án đọc nhiều, và dựng lại được',
         body: `<p>Redis thắng khi dữ liệu được đọc rất nhiều, ít khi đổi, tính lại thì đắt, hoặc cần bộ đếm atomic. Nó thua khi dữ liệu phải luôn mới, cần hỏi kiểu <code>WHERE</code> hay <code>JOIN</code>, hoặc rất to mà ít ai đọc.</p><p>Và nhớ: mọi thứ trong Redis ở bài này đều là <b>bản sao</b> của một thứ trong Postgres. Bản sao thì có thể sai, vì nó có thể cũ. Giữ cho nó đúng là chuyện của bài sau: caching.</p>`,
         idea: ['key', 'Redis nhanh vì nó <b>làm ít việc hơn</b>: không planner, không isolation, không hứa giữ dữ liệu qua một lần sập, không hỏi được theo giá trị. Lý do thật để thêm nó là <b>khoanh vùng sự cố</b>: cái widget có trục trặc cũng không kéo thanh toán sập theo.'] },
@@ -5186,8 +5177,8 @@ try {
   const P_APP_DB = 'M112 192L205 270';
   const P_C_DB = 'M265 116L265 232';
   const WRITE = {
-    through: { lat: 'chậm nhất (cache + DB)', after: 'giá trị mới', risk: 'cache chứa cả đồ thừa' },
-    behind: { lat: 'nhanh nhất (chỉ cache)', after: 'giá trị mới', risk: 'mất lượt ghi đã báo OK' },
+    through: { lat: 'chậm nhất (cache + DB)', after: 'giá trị mới', risk: 'cache đầy đồ thừa' },
+    behind: { lat: 'nhanh nhất (chỉ cache)', after: 'giá trị mới', risk: 'mất lượt ghi đã OK' },
     invalidate: { lat: 'chỉ DB', after: 'trống', risk: 'lượt đọc sau bị miss' },
   };
   const CASES = {
@@ -5242,7 +5233,7 @@ try {
       o += S.pill('cval', 265, 132, `cache giữ: ${cacheDown ? 'không gì (đã sập)' : w.after}`, { tone: cacheDown ? 'rose' : wmode === 'invalidate' ? 'yellow' : 'green', size: 10.5 });
       const lost = cacheDown && wmode === 'behind';
       o += S.note('n1', 360, 40, wmode === 'through' ? 'WRITE-THROUGH' : wmode === 'behind' ? 'WRITE-BEHIND' : 'WRITE-AROUND / INVALIDATE', wmode === 'through' ? ['ghi cache VÀ DB, lần lượt,', 'xong mới báo "OK" cho user.', 'Cache MỌI lượt ghi, cả đồ thừa.'] : wmode === 'behind' ? ['ghi cache, báo "OK" cho user,', 'lát sau mới ghi dồn xuống DB:', '1000 INCR → 1 UPDATE / phút.'] : ['ghi DB, rồi DELETE key.', 'lượt đọc sau miss và nạp lại.', 'Mặc định nên dùng cách này.'], { tone: lost ? 'rose' : 'paper', w: 228 });
-      if (cacheDown) o += S.note('n2', 360, 150, lost ? 'MẤT LƯỢT GHI ĐÃ BÁO OK' : 'CACHE SẬP', lost ? ['user đã nghe "đã lưu",', 'mà chưa kịp ghi xuống DB.', 'chỉ dùng cho thứ mất cũng được.'] : ['Postgres vẫn còn đủ mọi lượt ghi.', 'cache nạp lại từ đó.'], { tone: lost ? 'rose' : 'green', w: 228 });
+      if (cacheDown) o += S.note('n2', 360, 150, lost ? 'MẤT LƯỢT GHI ĐÃ OK' : 'CACHE SẬP', lost ? ['user đã nghe "đã lưu",', 'mà chưa kịp ghi xuống DB.', 'chỉ dùng cho thứ mất cũng được.'] : ['Postgres vẫn còn đủ mọi lượt ghi.', 'cache nạp lại từ đó.'], { tone: lost ? 'rose' : 'green', w: 228 });
     }
     if (s === 5) {
       const c = CASES[st.cs];
@@ -5338,7 +5329,7 @@ try {
         body: `<p>Bài trước cất bản sao của một đáp án chậm vào Redis. Ý tưởng này có từ trước Redis. Năm 2003, trang blog LiveJournal có ~50 triệu lượt xem mỗi ngày, và lượt nào cũng chọc vào database. Database ngộp, mà máy mới thì vài tuần nữa mới về.</p><p>Brad Fitzpatrick để ý: dãy máy web còn thừa cả đống <b>RAM rảnh</b>. Anh gom chỗ RAM đó thành một cái hộp chung để nhớ đáp án, gọi là <b>memcached</b>. Đó là <b>cache</b>: một bản sao đặt ở chỗ đọc nhanh, đứng trước nguồn chậm.</p>`,
         idea: ['key', 'Cache không hề biết database của bạn tồn tại. Nó là một cái hộp ngốc với ba lệnh: get, set, delete. Giữ cho bản sao đúng là việc của app.'] },
       { tag: 'TRY IT', short: 'Cache-aside', set: { stage: 2, hm: 'hit' }, learn: 1, title: 'Cache-aside: app đứng giữa',
-        body: `<p>Cách dùng cache phổ biến nhất. Mỗi lần đọc, app hỏi cache trước:</p><ul><li><b>hit</b> (có sẵn): trả về luôn, ~1 ms. Không đụng tới Postgres.</li><li><b>miss</b> (không có): hỏi Postgres, cất kết quả vào cache kèm một <b>TTL</b> (hạn dùng: hết hạn thì cache tự xoá), rồi trả về.</li></ul><p>Chữ “aside” là vì cache đứng bên cạnh database, còn app đứng giữa. Bấm đổi hit / miss.</p>`,
+        body: `<p>Cách dùng cache phổ biến nhất. Mỗi lần đọc, app hỏi cache trước:</p><ul><li><b>cache hit</b> (có sẵn): trả về luôn, ~1 ms. Không đụng tới Postgres.</li><li><b>cache miss</b> (không có): hỏi Postgres, cất kết quả vào cache kèm một <b>TTL</b> (hạn dùng: hết hạn thì cache tự xoá), rồi trả về.</li></ul><p>Chữ “aside” là vì cache đứng bên cạnh database, còn app đứng giữa. Bấm đổi hit / miss.</p>`,
         deep: { title: 'Ví dụ: cache-aside viết bằng Python', html: `<pre>def get_product(pid):
     if cached := redis.get(f"product:{pid}"):
         return cached                             # hit
@@ -5355,7 +5346,7 @@ try {
         body: `<p>“Ghi database trước, rồi xoá key” vẫn còn một kẽ hở. Bấm qua từng sự kiện.</p><p>Một người đọc bị miss, đọc ra giá 10 từ Postgres. Chưa kịp cất vào cache thì một người khác sửa giá thành 12 và xoá key (vốn đang trống). Sau đó người đọc mới cất số <b>10 cũ</b> vào. Từ đó ai cũng đọc ra 10, và không có gì sửa lại.</p><p>Luật duy nhất: <b>luôn đặt TTL</b>. Nó không chặn được cuộc đua, nhưng bản sao sai sẽ tự chết. Bật TTL lên rồi chạy lại.</p>`,
         deep: { title: 'Mấy cách vá khác', html: `<ul><li><b>Xoá hai lần</b>: xoá, sửa, rồi khoảng nửa giây sau xoá thêm lần nữa.</li><li><b>Kiểm phiên bản</b>: chỉ cất vào cache nếu phiên bản bạn đọc được vẫn là mới nhất.</li><li><b>Xoá theo log của database</b>: một chương trình đọc WAL và xoá key mỗi khi có commit (CDC, module 10). Thu hẹp kẽ hở rất nhiều, nhưng không bao giờ đóng hẳn.</li></ul>` } },
       { tag: 'TAKEAWAY', short: 'Tóm lại', set: { stage: 9 }, title: 'Caching trên một tấm thẻ',
-        body: `<ul><li>Cache là <b>bản sao</b>, mà bản sao thì có thể cũ. Postgres vẫn là bản gốc.</li><li><b>Đọc</b>: hỏi cache trước, miss thì hỏi database rồi cất lại (cache-aside).</li><li><b>Ghi</b>: mặc định là xoá bản sao. Sửa luôn bản sao (write-through) thì chậm hơn. Ghi bản sao trước (write-behind) chỉ dành cho thứ mất cũng được.</li><li><b>Stampede</b>: làm mới trước khi hết hạn, và chỉ một request đi dựng lại.</li><li><b>Luôn đặt TTL</b>, để bản sao sai tự chết.</li></ul>`,
+        body: `<ul><li>Cache là <b>bản sao</b>, mà bản sao thì có thể cũ. Postgres vẫn là bản gốc (nguồn sự thật duy nhất).</li><li><b>Đọc</b>: hỏi cache trước, miss thì hỏi database rồi cất lại (cache-aside).</li><li><b>Ghi</b>: mặc định là xoá bản sao. Sửa luôn bản sao (write-through) thì chậm hơn. Ghi bản sao trước (write-behind) chỉ dành cho thứ mất cũng được.</li><li><b>Stampede</b>: làm mới trước khi hết hạn, và chỉ một request đi dựng lại.</li><li><b>Luôn đặt TTL</b>, để bản sao sai tự chết.</li></ul>`,
         idea: ['key', 'Mọi câu hỏi trong bài này đều có một đáp án đúng duy nhất, và cache chỉ có thể đúng hoặc cũ. Nhưng có những câu hỏi không có đáp án đúng duy nhất: “sách nào nói về rồng?” Bài sau: search.'] },
     ],
   });
