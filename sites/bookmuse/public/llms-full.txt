@@ -64,21 +64,6 @@ Lessons:
 6. The third law: make it easy: Start in two minutes. To break a habit: make it difficult
 7. The fourth law: make it satisfying: Reward it right away. To break a habit: make it unsatisfying
 
-### The Mountain Is You — Brianna Wiest
-Page: https://bookmuse.wanngo.com/summaries/the-mountain-is-you/
-Core idea: Self-sabotage is not a flaw. It is a way of coping that meets a need you cannot see, so you get free by finding the need, feeling what you avoid, and changing one small step at a time.
-About the book: The Mountain Is You is a 2020 book by the writer Brianna Wiest about self-sabotage. She argues that the habits that hold us back are not signs of weakness. They are ways of coping that meet needs we do not see. The book is for anyone who keeps getting in their own way, and it shows how to understand those needs, feel what is underneath, and build a new life one small step at a time.
-Categories: Self-Growth, Happiness
-Length: 7 lessons, 17 min
-Lessons:
-1. Self-sabotage is a need in disguise: Why you cannot stop a habit you hate, and what it protects.
-2. Comfort pulls you back: Why a change for the better can feel wrong at first.
-3. Your feelings are messages: What anger, jealousy and regret are pointing at.
-4. Worry is not protection: Why worry grows, and how to end a fear.
-5. Small steps change you: How tiny daily actions beat big breakthroughs.
-6. Let go by building: How to leave a painful past behind.
-7. Choose how you respond: Why your power lies in what you do, not what you feel.
-
 ### How to Read a Book — Mortimer J. Adler
 Page: https://bookmuse.wanngo.com/summaries/how-to-read-a-book/
 Core idea: A hard book can lift your understanding, but only if you work on it: first to see its shape, then to grasp what it says, and last to judge it fairly.
@@ -93,6 +78,21 @@ Lessons:
 5. Say it in your own words: Claims, arguments and two tests of understanding
 6. Talk back, fairly: Judge only after you understand, and give reasons
 7. Start with the great books: Learn on books that teach, and read them together
+
+### The Mountain Is You — Brianna Wiest
+Page: https://bookmuse.wanngo.com/summaries/the-mountain-is-you/
+Core idea: Self-sabotage is not a flaw. It is a way of coping that meets a need you cannot see, so you get free by finding the need, feeling what you avoid, and changing one small step at a time.
+About the book: The Mountain Is You is a 2020 book by the writer Brianna Wiest about self-sabotage. She argues that the habits that hold us back are not signs of weakness. They are ways of coping that meet needs we do not see. The book is for anyone who keeps getting in their own way, and it shows how to understand those needs, feel what is underneath, and build a new life one small step at a time.
+Categories: Self-Growth, Happiness
+Length: 7 lessons, 17 min
+Lessons:
+1. Self-sabotage is a need in disguise: Why you cannot stop a habit you hate, and what it protects.
+2. Comfort pulls you back: Why a change for the better can feel wrong at first.
+3. Your feelings are messages: What anger, jealousy and regret are pointing at.
+4. Worry is not protection: Why worry grows, and how to end a fear.
+5. Small steps change you: How tiny daily actions beat big breakthroughs.
+6. Let go by building: How to leave a painful past behind.
+7. Choose how you respond: Why your power lies in what you do, not what you feel.
 
 ### Being Mortal — Atul Gawande
 Page: https://bookmuse.wanngo.com/summaries/being-mortal/
@@ -187,6 +187,22 @@ Lessons:
 7. Habit 6: Synergize: Treat differences as the way to a better answer
 8. Habit 7: Sharpen the saw: Renew body, mind, heart and spirit so the other habits last
 
+### The Psychology of Money — Morgan Housel
+Page: https://bookmuse.wanngo.com/summaries/the-psychology-of-money/
+Core idea: How you behave with money matters much more than how much you know about it.
+About the book: The Psychology of Money is a 2020 book by writer Morgan Housel. It uses short stories to argue that how you behave with money matters more than how much you know. In twenty short chapters it covers luck, risk, saving, time and the price of investing, for anyone who wants to feel calmer about money.
+Categories: Money & Investments, Business & Career
+Length: 8 lessons, 20 min
+Lessons:
+1. No one is crazy: Your own life shapes how you see money, so odd choices can make sense.
+2. Luck and risk are twins: Success is never as great, and failure never as awful, as it looks.
+3. Know when you have enough: Wanting more than enough makes rich people risk everything.
+4. Time does the work: Staying in the game for decades beats the biggest return.
+5. Leave room for error: Plan for your plan to go wrong.
+6. A few things drive everything: Half your picks can fail and you can still win.
+7. Wealth is what you don't see: Money you do not spend buys control of your time.
+8. Pay the price of returns: See market drops as a fee, not a fine.
+
 ### The ONE Thing — Gary Keller, Jay Papasan
 Page: https://bookmuse.wanngo.com/summaries/the-one-thing/
 Core idea: Big results come from going small: find the ONE Thing that makes everything else easier or unnecessary, and do it first.
@@ -217,6 +233,22 @@ Lessons:
 6. Trauma is remembered in pieces: Why a clear story may not be enough
 7. Healing starts in the body: Six ways to calm the alarm, and a yoga study
 8. Many roads back: Three roads to healing, and how to choose help
+
+### The Power of Habit — Charles Duhigg
+Page: https://bookmuse.wanngo.com/summaries/the-power-of-habit/
+Core idea: Habits are loops that run without thought, and once you know how a loop works, you can change it.
+About the book: The Power of Habit (2012) is journalist Charles Duhigg's look at the science of habits. It explains how a habit works in the brain, why some stick, and how to change them, in people, companies and whole societies. It argues that habits can be changed once we understand their parts. It is for anyone who wants to build a routine or drop one.
+Categories: Productivity, Self-Growth
+Length: 8 lessons, 20 min
+Lessons:
+1. Every habit is a loop: Cue, routine and reward
+2. A craving drives the loop: Why a cue and a reward are not enough
+3. Keep the cue, change the routine: The Golden Rule of habit change, in four steps
+4. Belief grows in a group: What holds a new routine under stress
+5. One habit can change the rest: Keystone habits and small wins
+6. Willpower becomes a habit: Why willpower tires, and a plan for hard moments
+7. How a movement is built: Friends, community and new habits
+8. You can choose your habits: Why knowing a habit makes it yours
 
 ### Boundaries — Dr. Henry Cloud, Dr. John Townsend
 Page: https://bookmuse.wanngo.com/summaries/boundaries/
@@ -551,6 +583,21 @@ Lessons:
 7. Mindsets in love: Why love needs work, not blame
 8. Changing your mindset: How to move from fixed to growth
 
+### The Secret — Rhonda Byrne
+Page: https://bookmuse.wanngo.com/summaries/the-secret/
+Core idea: Your thoughts and feelings send out a signal, and the law of attraction brings back whatever matches it.
+About the book: The Secret is a 2006 self-help book by Rhonda Byrne, based on her film of the same name. It says your thoughts and feelings send out a signal, and your life brings back whatever matches it, which it calls the law of attraction. Its steps are ask, believe and receive, with gratitude and picturing what you want as daily practices. Its claims are beliefs, not proven science, and the book gives no study for them.
+Categories: Happiness, Spirituality
+Length: 7 lessons, 17 min
+Lessons:
+1. Thoughts become things: What you think about most comes back as your life.
+2. Feelings show your frequency: How you feel tells you what you are thinking.
+3. Ask, believe, receive: The book's three steps for getting what you want.
+4. Aim at what you want: The law hears what you name, so name what you want.
+5. Gratitude: The book's one practice to keep if you keep only one.
+6. See it as already yours: Picture it, feel it, and act as if it is on its way.
+7. Your job is you: Fill yourself up first, then give from what overflows.
+
 ### Zero to One — Peter Thiel, Blake Masters
 Page: https://bookmuse.wanngo.com/summaries/zero-to-one/
 Core idea: Copying what works takes the world from 1 to n; real progress is making something new, from 0 to 1.
@@ -582,6 +629,22 @@ Lessons:
 6. Happiness is not a finish line: Getting more does not last. Daily life is where happiness lives.
 7. The crowd is in your head: The people you fear will judge you are mostly one or two.
 8. Love is something you give: You cannot win love. You can give it, and give it to yourself.
+
+### 12 Rules for Life — Jordan B. Peterson
+Page: https://bookmuse.wanngo.com/summaries/12-rules-for-life/
+Core idea: Life is hard and full of chaos, and the best answer is to take responsibility for yourself: stand tall, care for yourself, tell the truth, and aim at something worth the cost.
+About the book: 12 Rules for Life: An Antidote to Chaos is a self-help book by Jordan B. Peterson, a clinical psychologist and professor at the University of Toronto, published in 2018. It grew from a list of rules he posted online. Using stories, myths and psychology, he argues that life is hard, that people need order and meaning to face it, and that the answer starts with taking responsibility for your own life.
+Categories: Happiness, Self-Growth
+Length: 8 lessons, 20 min
+Lessons:
+1. Order and chaos: Meaning sits between what you know and what you don't.
+2. Stand up straight: Posture changes how you feel and how people treat you.
+3. Treat yourself like someone you help: Care for yourself the way you would care for someone you love.
+4. Choose your friends well: Friends who aim up pull you up.
+5. Compare yourself to yesterday: Aim at a small step better than yesterday.
+6. Set your house in order first: Fix your own life before you judge the world.
+7. Pursue what is meaningful: Give up an easy pleasure now for a larger good later.
+8. Tell the truth: When unsure, tell the truth.
 
 ### Astrophysics for People in a Hurry — Neil deGrasse Tyson
 Page: https://bookmuse.wanngo.com/summaries/astrophysics-for-people-in-a-hurry/
@@ -677,6 +740,21 @@ Lessons:
 8. How cooperation can win: Nice, forgiving and not envious beats cheating
 9. Memes: ideas that copy themselves: A new copier that spreads from mind to mind
 
+### The Simple Path to Wealth — J.L. Collins
+Page: https://bookmuse.wanngo.com/summaries/the-simple-path-to-wealth/
+Core idea: Spend less than you earn, avoid debt, and put the rest in one low-cost fund that owns the whole stock market. Then stay calm when it falls.
+About the book: The Simple Path to Wealth is a plain guide to investing by J.L. Collins, first published in 2016. It grew out of letters he wrote to his teenage daughter, and then his blog. Collins argues that you build wealth by spending less than you earn, avoiding debt, and putting the surplus in a low-cost index fund that owns the whole stock market. He writes for readers who have little time or interest for money.
+Categories: Money & Investments
+Length: 7 lessons, 18 min
+Lessons:
+1. Money buys freedom: Why saving half can set you free
+2. Debt comes first: Why it is the big obstacle, and how to clear it
+3. Money that works for you: Ask what it can earn, not what it can buy
+4. Ride the wild market: Why crashes should not scare you out
+5. Buy the whole market: Why index funds beat experts and advisors
+6. One fund while you build: The two-stage, two-fund plan
+7. Live on 4%: How much is enough, and how to spend it
+
 ### Don’t Believe Everything You Think — Joseph Nguyen
 Page: https://bookmuse.wanngo.com/summaries/don-t-believe-everything-you-think-why-your-thinking-is-the-beginning-and-end-of-suffering/
 Core idea: Joseph Nguyen says that events do not make you suffer, your thinking about them does, and when that thinking settles, peace is what is left.
@@ -753,6 +831,22 @@ Lessons:
 6. Careful minds see warnings: Why slowing down can save you money and mistakes
 7. Stretch for what you love: How to act outgoing without losing yourself
 8. Quiet people connect too: Different ways of being social, at home and at school
+
+### The Laws of Human Nature — Robert Greene
+Page: https://bookmuse.wanngo.com/summaries/the-laws-of-human-nature/
+Core idea: Deep forces such as emotion, self-love, envy and fear drive us without our knowing, and once you see them in others and in yourself, you stop being caught off guard.
+About the book: The Laws of Human Nature (2018) is Robert Greene's guide to why people act as they do. He draws on psychology, brain science, history and novels, and tells one famous story for each law. He argues that hidden forces such as emotion, self-love and envy drive us, and that seeing them makes us calmer and harder to fool. It is for anyone who wants to read people and understand themselves.
+Categories: Self-Growth, Personalities
+Length: 8 lessons, 22 min
+Lessons:
+1. Your feelings steer your thinking: The law of irrationality, and how to think before you react
+2. Self-love can become empathy: The law of narcissism, and how to turn your attention outward
+3. People wear masks: The law of role-playing, and how to read what leaks out
+4. People repeat their character: The law of compulsive behavior, and how to judge people
+5. Make people feel right: The law of defensiveness, and how to lower resistance
+6. Everyone has a dark side: The law of repression, and how to face your own
+7. Envy hides in friendship: The law of envy, and how to spot it early
+8. Death makes life real: The law of death denial, and what facing it gives you
 
 ### The Mind-Gut Connection — Emeran Mayer
 Page: https://bookmuse.wanngo.com/summaries/the-mind-gut-connection/
@@ -850,6 +944,22 @@ Lessons:
 7. True love is mutual work: Choose love, talk honestly, listen and give
 8. Love casts out fear: Facing death, shame and wounds with an open heart
 
+### Capital in the 21st Century — Thomas Piketty
+Page: https://bookmuse.wanngo.com/summaries/capital-in-the-21st-century/
+Core idea: When wealth earns more each year than the economy grows, money from the past pulls ahead of pay from the present, and inequality rises unless people choose to act.
+About the book: Capital in the Twenty-First Century (2014) is a book by the French economist Thomas Piketty. He gathers income and wealth records from more than twenty countries over three centuries to ask how wealth and income are shared. His central finding is that when the return on capital stays above the growth of the economy, wealth from the past grows faster than pay, and inequality rises. He ends with policy ideas, mainly a yearly tax on wealth that rises with the size of the fortune.
+Categories: Money & Investments, Society & Tech
+Length: 8 lessons, 21 min
+Lessons:
+1. Wealth, counted in years of income: What capital is, and how it splits a country's income
+2. Slow growth makes wealth heavy: Why the same saving adds up to more in a slow economy
+3. When money grows faster than the economy: The rule r > g, and why big fortunes pull ahead
+4. Wars, not growth, made us more equal: Why inequality fell last century, and why it is back
+5. Wealth is far less equal than pay: Who owns what, and the middle class that owns property
+6. Top managers set their own pay: The jump in top salaries since 1980
+7. Inheritance is coming back: Balzac's warning, and work against family money
+8. A yearly tax on wealth: Piketty's answer, and why banks must share data
+
 ### I Am Malala — Malala Yousafzai, Christina Lamb
 Page: https://bookmuse.wanngo.com/summaries/i-am-malala/
 Core idea: A girl who loved school kept speaking up for it when the Taliban banned it. They shot her for it, and her voice only grew louder.
@@ -896,6 +1006,22 @@ Lessons:
 7. Signs of success and failure: Seven traits to grow and seven signals to read
 8. Cut out old hurts: Forgive completely, yourself too
 
+### Steve Jobs — Walter Isaacson
+Page: https://bookmuse.wanngo.com/summaries/steve-jobs/
+Core idea: Steve Jobs made products people loved by joining art with technology, controlling the whole experience and keeping only what mattered, and the same intensity that drove the work often hurt the people around him.
+About the book: Steve Jobs is the 2011 biography by Walter Isaacson, based on more than forty talks with Jobs over two years and interviews with more than a hundred people who knew him. It follows the Apple co-founder from his adoption and his Silicon Valley childhood through the Mac, his firing, his return, and the iPod, iPhone and iPad. It shows how his love of perfection, simplicity and control made great products, and how his harshness hurt people. It is for anyone who wants lessons about innovation, leadership and character.
+Categories: Personalities, Business & Career
+Length: 8 lessons, 23 min
+Lessons:
+1. Care about the parts nobody sees: Why Jobs wanted the inside of a computer to be beautiful.
+2. Stand where art meets technology: How a class in beautiful letters shaped the first Mac.
+3. Simplicity takes hard work: How the iPod became easy by moving the hard parts away.
+4. Control the whole experience: Why Apple made the hardware, the software and the store.
+5. Expect the impossible: How Jobs pushed people past their limits, and the price.
+6. Say no to almost everything: How cutting products saved Apple in 1997.
+7. Show people what they will want: Why he skipped market research and replaced his own hit.
+8. Build a company, not just products: What he lost in 1985, and what he built to last.
+
 ### The Personal MBA — Josh Kaufman
 Page: https://bookmuse.wanngo.com/summaries/the-personal-mba/
 Core idea: Every business is five simple parts, and you can learn them yourself, along with how people and systems behave, without an expensive degree.
@@ -927,6 +1053,21 @@ Lessons:
 5. Love is what lasts: Give it, let it in, and it outlives you
 6. Be fully present: Give one person all of your attention
 7. Forgive, and do not wait: Make peace with yourself and others now
+
+### What If? — Randall Munroe
+Page: https://bookmuse.wanngo.com/summaries/what-if-serious-scientific-answers-to-absurd-hypothetical-questions/
+Core idea: A silly question, answered seriously with simple numbers, shows you how the world really works.
+About the book: What If? is a collection of answers to the wild questions readers send to Randall Munroe, the former NASA roboticist who draws the stick-figure webcomic xkcd. First published in 2014, it takes each absurd question seriously and answers it with simple math and real data, from a baseball pitched near the speed of light to a hair dryer in a box. It shows a way to think about any big question, for anyone who likes science, numbers and a good joke.
+Categories: Society & Tech, Home & Environment
+Length: 7 lessons, 19 min
+Lessons:
+1. Start with a rough guess: Get the rough size before you work out any digits.
+2. Turn the dial up in steps: Push one thing harder and watch what changes.
+3. Find what really limits you: The hard part is often not the one you first think.
+4. Trust the numbers, not your instinct: At extremes, your instincts point at the wrong danger.
+5. Make big numbers something you can picture: Match a number to something you have done.
+6. Look for the weak link: A neat plan often has one catch.
+7. Say which parts are guesses: Show which parts of an answer are solid.
 
 ### Who Moved My Cheese? — Spencer Johnson
 Page: https://bookmuse.wanngo.com/summaries/who-moved-my-cheese-an-amazing-way-to-deal-with-change-in-your-work-and-in-your-life/
@@ -1160,6 +1301,22 @@ Lessons:
 6. Everyone sees the whole picture: Why the Task Force shared everything.
 7. Let the closest people decide: What happened when the general stopped approving.
 8. Lead like a gardener: What a leader does instead of playing chess.
+
+### The Design of Everyday Things — Don Norman
+Page: https://bookmuse.wanngo.com/summaries/the-design-of-everyday-things/
+Core idea: When a thing is hard to use, the design failed, not you. Good design shows what to do, answers every action, and expects people to slip.
+About the book: The Design of Everyday Things is a classic about why doors, stoves, taps and screens confuse us. Don Norman, a psychologist and former engineer who also worked at Apple, first wrote it in 1988 and revised it in 2013. He argues that when people struggle, the fault lies in the design, and he lays out principles that make things clear: visible signals, controls that match their results, honest feedback and room for error. It is for anyone who makes things, buys things or has ever pushed a door that should be pulled.
+Categories: Society & Tech
+Length: 8 lessons, 20 min
+Lessons:
+1. Blame the design, not yourself: It is not your fault
+2. Seven questions every user asks: The steps of any action, and seven principles
+3. Signifiers show where to act: How a thing says what to do
+4. Natural mapping lines up controls: Why you turn on the wrong burner
+5. Show how it works and what happened: The story in your head, and feedback
+6. Constraints make wrong moves hard: Let only the right move fit
+7. Design for the slip: Why experts slip, and how design helps
+8. Solve the right problem: Watch people, test, repeat
 
 ### The Good Life — Robert Waldinger and Marc Schulz
 Page: https://bookmuse.wanngo.com/summaries/the-good-life-lessons-from-the-world-s-longest-scientific-study-of-happiness/
@@ -1506,22 +1663,6 @@ Lessons:
 7. Happiness is feeling useful: Three things that build a sense of being of use
 8. Live each moment like a dance: Give your full effort to now, not to a far summit
 
-### The Power of Habit — Charles Duhigg
-Page: https://bookmuse.wanngo.com/summaries/the-power-of-habit/
-Core idea: Habits are loops that run without thought, and once you know how a loop works, you can change it.
-About the book: The Power of Habit (2012) is journalist Charles Duhigg's look at the science of habits. It explains how a habit works in the brain, why some stick, and how to change them, in people, companies and whole societies. It argues that habits can be changed once we understand their parts. It is for anyone who wants to build a routine or drop one.
-Categories: Productivity, Self-Growth
-Length: 8 lessons, 20 min
-Lessons:
-1. Every habit is a loop: Cue, routine and reward
-2. A craving drives the loop: Why a cue and a reward are not enough
-3. Keep the cue, change the routine: The Golden Rule of habit change, in four steps
-4. Belief grows in a group: What holds a new routine under stress
-5. One habit can change the rest: Keystone habits and small wins
-6. Willpower becomes a habit: Why willpower tires, and a plan for hard moments
-7. How a movement is built: Friends, community and new habits
-8. You can choose your habits: Why knowing a habit makes it yours
-
 ### Man’s Search for Meaning — Viktor E. Frankl
 Page: https://bookmuse.wanngo.com/summaries/man-s-search-for-meaning/
 Core idea: People are driven most by a search for meaning, not by pleasure or power, and a person with a reason to live can bear almost any hardship, because one freedom can never be taken away: the freedom to choose how to respond.
@@ -1583,52 +1724,6 @@ Lessons:
 6. Choose happiness: A cheerful mind is a habit you can start today.
 7. Like people to be liked: Liking others is the first step to being liked.
 
-### The Secret — Rhonda Byrne
-Page: https://bookmuse.wanngo.com/summaries/the-secret/
-Core idea: Your thoughts and feelings send out a signal, and the law of attraction brings back whatever matches it.
-About the book: The Secret is a 2006 self-help book by Rhonda Byrne, based on her film of the same name. It says your thoughts and feelings send out a signal, and your life brings back whatever matches it, which it calls the law of attraction. Its steps are ask, believe and receive, with gratitude and picturing what you want as daily practices. Its claims are beliefs, not proven science, and the book gives no study for them.
-Categories: Happiness, Spirituality
-Length: 7 lessons, 17 min
-Lessons:
-1. Thoughts become things: What you think about most comes back as your life.
-2. Feelings show your frequency: How you feel tells you what you are thinking.
-3. Ask, believe, receive: The book's three steps for getting what you want.
-4. Aim at what you want: The law hears what you name, so name what you want.
-5. Gratitude: The book's one practice to keep if you keep only one.
-6. See it as already yours: Picture it, feel it, and act as if it is on its way.
-7. Your job is you: Fill yourself up first, then give from what overflows.
-
-### 12 Rules for Life — Jordan B. Peterson
-Page: https://bookmuse.wanngo.com/summaries/12-rules-for-life/
-Core idea: Life is hard and full of chaos, and the best answer is to take responsibility for yourself: stand tall, care for yourself, tell the truth, and aim at something worth the cost.
-About the book: 12 Rules for Life: An Antidote to Chaos is a self-help book by Jordan B. Peterson, a clinical psychologist and professor at the University of Toronto, published in 2018. It grew from a list of rules he posted online. Using stories, myths and psychology, he argues that life is hard, that people need order and meaning to face it, and that the answer starts with taking responsibility for your own life.
-Categories: Happiness, Self-Growth
-Length: 8 lessons, 20 min
-Lessons:
-1. Order and chaos: Meaning sits between what you know and what you don't.
-2. Stand up straight: Posture changes how you feel and how people treat you.
-3. Treat yourself like someone you help: Care for yourself the way you would care for someone you love.
-4. Choose your friends well: Friends who aim up pull you up.
-5. Compare yourself to yesterday: Aim at a small step better than yesterday.
-6. Set your house in order first: Fix your own life before you judge the world.
-7. Pursue what is meaningful: Give up an easy pleasure now for a larger good later.
-8. Tell the truth: When unsure, tell the truth.
-
-### The Simple Path to Wealth — J.L. Collins
-Page: https://bookmuse.wanngo.com/summaries/the-simple-path-to-wealth/
-Core idea: Spend less than you earn, avoid debt, and put the rest in one low-cost fund that owns the whole stock market. Then stay calm when it falls.
-About the book: The Simple Path to Wealth is a plain guide to investing by J.L. Collins, first published in 2016. It grew out of letters he wrote to his teenage daughter, and then his blog. Collins argues that you build wealth by spending less than you earn, avoiding debt, and putting the surplus in a low-cost index fund that owns the whole stock market. He writes for readers who have little time or interest for money.
-Categories: Money & Investments
-Length: 7 lessons, 18 min
-Lessons:
-1. Money buys freedom: Why saving half can set you free
-2. Debt comes first: Why it is the big obstacle, and how to clear it
-3. Money that works for you: Ask what it can earn, not what it can buy
-4. Ride the wild market: Why crashes should not scare you out
-5. Buy the whole market: Why index funds beat experts and advisors
-6. One fund while you build: The two-stage, two-fund plan
-7. Live on 4%: How much is enough, and how to spend it
-
 ### As a Man Thinketh — James Allen
 Page: https://bookmuse.wanngo.com/summaries/as-a-man-thinketh/
 Core idea: Your thoughts grow into your character, your circumstances and your health, so the way to change your life is to change what you think.
@@ -1644,69 +1739,6 @@ Lessons:
 6. Hold a clear vision: You grow toward the picture you keep in mind.
 7. Calm is power: Self-control brings peace, trust and influence.
 
-### The Laws of Human Nature — Robert Greene
-Page: https://bookmuse.wanngo.com/summaries/the-laws-of-human-nature/
-Core idea: Deep forces such as emotion, self-love, envy and fear drive us without our knowing, and once you see them in others and in yourself, you stop being caught off guard.
-About the book: The Laws of Human Nature (2018) is Robert Greene's guide to why people act as they do. He draws on psychology, brain science, history and novels, and tells one famous story for each law. He argues that hidden forces such as emotion, self-love and envy drive us, and that seeing them makes us calmer and harder to fool. It is for anyone who wants to read people and understand themselves.
-Categories: Self-Growth, Personalities
-Length: 8 lessons, 22 min
-Lessons:
-1. Your feelings steer your thinking: The law of irrationality, and how to think before you react
-2. Self-love can become empathy: The law of narcissism, and how to turn your attention outward
-3. People wear masks: The law of role-playing, and how to read what leaks out
-4. People repeat their character: The law of compulsive behavior, and how to judge people
-5. Make people feel right: The law of defensiveness, and how to lower resistance
-6. Everyone has a dark side: The law of repression, and how to face your own
-7. Envy hides in friendship: The law of envy, and how to spot it early
-8. Death makes life real: The law of death denial, and what facing it gives you
-
-### Capital in the 21st Century — Thomas Piketty
-Page: https://bookmuse.wanngo.com/summaries/capital-in-the-21st-century/
-Core idea: When wealth earns more each year than the economy grows, money from the past pulls ahead of pay from the present, and inequality rises unless people choose to act.
-About the book: Capital in the Twenty-First Century (2014) is a book by the French economist Thomas Piketty. He gathers income and wealth records from more than twenty countries over three centuries to ask how wealth and income are shared. His central finding is that when the return on capital stays above the growth of the economy, wealth from the past grows faster than pay, and inequality rises. He ends with policy ideas, mainly a yearly tax on wealth that rises with the size of the fortune.
-Categories: Money & Investments, Society & Tech
-Length: 8 lessons, 21 min
-Lessons:
-1. Wealth, counted in years of income: What capital is, and how it splits a country's income
-2. Slow growth makes wealth heavy: Why the same saving adds up to more in a slow economy
-3. When money grows faster than the economy: The rule r > g, and why big fortunes pull ahead
-4. Wars, not growth, made us more equal: Why inequality fell last century, and why it is back
-5. Wealth is far less equal than pay: Who owns what, and the middle class that owns property
-6. Top managers set their own pay: The jump in top salaries since 1980
-7. Inheritance is coming back: Balzac's warning, and work against family money
-8. A yearly tax on wealth: Piketty's answer, and why banks must share data
-
-### Steve Jobs — Walter Isaacson
-Page: https://bookmuse.wanngo.com/summaries/steve-jobs/
-Core idea: Steve Jobs made products people loved by joining art with technology, controlling the whole experience and keeping only what mattered, and the same intensity that drove the work often hurt the people around him.
-About the book: Steve Jobs is the 2011 biography by Walter Isaacson, based on more than forty talks with Jobs over two years and interviews with more than a hundred people who knew him. It follows the Apple co-founder from his adoption and his Silicon Valley childhood through the Mac, his firing, his return, and the iPod, iPhone and iPad. It shows how his love of perfection, simplicity and control made great products, and how his harshness hurt people. It is for anyone who wants lessons about innovation, leadership and character.
-Categories: Personalities, Business & Career
-Length: 8 lessons, 23 min
-Lessons:
-1. Care about the parts nobody sees: Why Jobs wanted the inside of a computer to be beautiful.
-2. Stand where art meets technology: How a class in beautiful letters shaped the first Mac.
-3. Simplicity takes hard work: How the iPod became easy by moving the hard parts away.
-4. Control the whole experience: Why Apple made the hardware, the software and the store.
-5. Expect the impossible: How Jobs pushed people past their limits, and the price.
-6. Say no to almost everything: How cutting products saved Apple in 1997.
-7. Show people what they will want: Why he skipped market research and replaced his own hit.
-8. Build a company, not just products: What he lost in 1985, and what he built to last.
-
-### What If? — Randall Munroe
-Page: https://bookmuse.wanngo.com/summaries/what-if-serious-scientific-answers-to-absurd-hypothetical-questions/
-Core idea: A silly question, answered seriously with simple numbers, shows you how the world really works.
-About the book: What If? is a collection of answers to the wild questions readers send to Randall Munroe, the former NASA roboticist who draws the stick-figure webcomic xkcd. First published in 2014, it takes each absurd question seriously and answers it with simple math and real data, from a baseball pitched near the speed of light to a hair dryer in a box. It shows a way to think about any big question, for anyone who likes science, numbers and a good joke.
-Categories: Society & Tech, Home & Environment
-Length: 7 lessons, 19 min
-Lessons:
-1. Start with a rough guess: Get the rough size before you work out any digits.
-2. Turn the dial up in steps: Push one thing harder and watch what changes.
-3. Find what really limits you: The hard part is often not the one you first think.
-4. Trust the numbers, not your instinct: At extremes, your instincts point at the wrong danger.
-5. Make big numbers something you can picture: Match a number to something you have done.
-6. Look for the weak link: A neat plan often has one catch.
-7. Say which parts are guesses: Show which parts of an answer are solid.
-
 ### The Bhagavad Gita — Vyasa
 Page: https://bookmuse.wanngo.com/summaries/the-bhagavad-gita/
 Core idea: You are a deathless self, so do your duty with a steady mind, let go of the reward, and make God your refuge.
@@ -1721,22 +1753,6 @@ Lessons:
 5. Three pulls on every act: Goodness, passion and darkness shape what you give and do.
 6. One life in everything: The same life runs through every being, so hate nothing.
 7. Make God your refuge: If you cannot do it all, do the next thing you can.
-
-### The Design of Everyday Things — Don Norman
-Page: https://bookmuse.wanngo.com/summaries/the-design-of-everyday-things/
-Core idea: When a thing is hard to use, the design failed, not you. Good design shows what to do, answers every action, and expects people to slip.
-About the book: The Design of Everyday Things is a classic about why doors, stoves, taps and screens confuse us. Don Norman, a psychologist and former engineer who also worked at Apple, first wrote it in 1988 and revised it in 2013. He argues that when people struggle, the fault lies in the design, and he lays out principles that make things clear: visible signals, controls that match their results, honest feedback and room for error. It is for anyone who makes things, buys things or has ever pushed a door that should be pulled.
-Categories: Society & Tech
-Length: 8 lessons, 20 min
-Lessons:
-1. Blame the design, not yourself: It is not your fault
-2. Seven questions every user asks: The steps of any action, and seven principles
-3. Signifiers show where to act: How a thing says what to do
-4. Natural mapping lines up controls: Why you turn on the wrong burner
-5. Show how it works and what happened: The story in your head, and feedback
-6. Constraints make wrong moves hard: Let only the right move fit
-7. Design for the slip: Why experts slip, and how design helps
-8. Solve the right problem: Watch people, test, repeat
 
 ### The Omnivore's Dilemma — Michael Pollan
 Page: https://bookmuse.wanngo.com/summaries/the-omnivores-dilemma/
@@ -1994,22 +2010,6 @@ Lessons:
 5. Don't force it: Effort and doubt block the result.
 6. Turn fear into its opposite: Face the fear, then fill your mind with what you want.
 7. Thoughts about others come back: Resentment hurts you. Forgiveness lets it go.
-
-### The Psychology of Money — Morgan Housel
-Page: https://bookmuse.wanngo.com/summaries/the-psychology-of-money/
-Core idea: How you behave with money matters much more than how much you know about it.
-About the book: The Psychology of Money is a 2020 book by writer Morgan Housel. It uses short stories to argue that how you behave with money matters more than how much you know. In twenty short chapters it covers luck, risk, saving, time and the price of investing, for anyone who wants to feel calmer about money.
-Categories: Money & Investments, Business & Career
-Length: 8 lessons, 20 min
-Lessons:
-1. No one is crazy: Your own life shapes how you see money, so odd choices can make sense.
-2. Luck and risk are twins: Success is never as great, and failure never as awful, as it looks.
-3. Know when you have enough: Wanting more than enough makes rich people risk everything.
-4. Time does the work: Staying in the game for decades beats the biggest return.
-5. Leave room for error: Plan for your plan to go wrong.
-6. A few things drive everything: Half your picks can fail and you can still win.
-7. Wealth is what you don't see: Money you do not spend buys control of your time.
-8. Pay the price of returns: See market drops as a fee, not a fine.
 
 ### The Subtle Art of Not Giving a F*ck — Mark Manson
 Page: https://bookmuse.wanngo.com/summaries/the-subtle-art-of-not-giving-a-f-ck/

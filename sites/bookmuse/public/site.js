@@ -1,3 +1,7 @@
+// Campaign tag: a ?via= from our social posts (bookmuse docs/social.md, "Measuring it") is kept for the visit and added to
+// every App Store link as App Store Connect campaign parameters, so installs show per platform. No tag, no change.
+(function(){try{var m=/[?&]via=([a-z]{2,10})(?:&|$)/.exec(location.search),v=m?m[1]:sessionStorage.getItem('via');if(!v)return;sessionStorage.setItem('via',v);document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach(function(a){var u=new URL(a.href);u.searchParams.set('pt','126834039');u.searchParams.set('ct',v);u.searchParams.set('mt','8');a.href=u.href;});}catch(e){}})();
+
 // The light and dark switch in the nav. Pages follow the system until someone picks the other look; the inline script in
 // each page's head applies a saved choice before the first paint.
 (function () {
